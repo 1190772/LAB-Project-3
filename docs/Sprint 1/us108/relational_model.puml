@@ -1,0 +1,103 @@
+@startuml
+
+entity Container {
+* id_container
+--
+* tare
+* iso_code
+payload
+refrigerated
+
+* max_weight_incl_container
+* max_weight
+* max_volume
+
+*csc_plate
+acep
+pes_date
+}
+
+entity ID_Container {
+* id_container
+--
+* id_owner
+* id_equipment
+* serial_number
+* check_digit
+}
+
+
+entity ISO {
+* iso_code
+--
+* lenght_code
+* width_height_code
+* container_type_code
+* reduced_strength_code
+}
+
+entity Lenght {
+* lenght_code
+--
+* value
+}
+
+entity Width_Height {
+* width_height_code
+--
+* value
+}
+
+entity Container_Type {
+* container_type_code
+--
+* value
+}
+
+entity Reduced_Strength {
+* reduced_strength_code
+--
+* value
+}
+
+entity Loading_Cargo_Manifesto {
+* id_container
+--
+* id_truck
+* position_code
+* load_weight
+}
+
+entity Position_Container {
+* position_code
+--
+* x_value
+* y_value
+* z_value
+}
+
+entity Ship {
+* imo_code
+--
+* mmsi_code
+* name_ship
+* number_generators
+* power_out_generator
+* call_sign
+* vessel_type
+* lenght_ship
+* width_ship
+* capacity_ship
+}
+
+Lenght ||--o{ ISO
+Width_Height ||--o{ ISO
+Container_Type ||--o{ ISO
+Reduced_Strength ||--o{ ISO
+
+ID_Container ||--|| Container
+ISO ||--o{ Container
+Loading_Cargo_Manifesto ||--|| Container
+Loading_Cargo_Manifesto ||--|| Position_Container
+
+@enduml
