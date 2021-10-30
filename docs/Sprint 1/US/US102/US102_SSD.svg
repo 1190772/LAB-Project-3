@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="377px" preserveAspectRatio="none" style="width:402px;height:377px;" version="1.1" viewBox="0 0 402 377" width="402px" zoomAndPan="magnify"><defs><filter height="300%" id="fol0ynwbh3lwr" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#fol0ynwbh3lwr)" height="174.1094" style="stroke:#A80036;stroke-width:1.0;" width="10" x="53" y="99.6094"/><rect fill="#FFFFFF" filter="url(#fol0ynwbh3lwr)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="353" y="121.9609"/><rect fill="#FFFFFF" filter="url(#fol0ynwbh3lwr)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="353" y="243.3672"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="58" x2="58" y1="89.6094" y2="291.7188"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="358" x2="358" y1="89.6094" y2="291.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="5" y="86.5332">Traffic Manager</text><ellipse cx="58" cy="15" fill="#FEFECE" filter="url(#fol0ynwbh3lwr)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M58,23 L58,50 M45,31 L71,31 M58,50 L45,65 M58,50 L71,65 " fill="none" filter="url(#fol0ynwbh3lwr)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="5" y="305.252">Traffic Manager</text><ellipse cx="58" cy="318.3281" fill="#FEFECE" filter="url(#fol0ynwbh3lwr)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M58,326.3281 L58,353.3281 M45,334.3281 L71,334.3281 M58,353.3281 L45,368.3281 M58,353.3281 L71,368.3281 " fill="none" filter="url(#fol0ynwbh3lwr)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#fol0ynwbh3lwr)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="64" x="324" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="331" y="74.5332">:System</text><rect fill="#FEFECE" filter="url(#fol0ynwbh3lwr)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="64" x="324" y="290.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="331" y="312.252">:System</text><rect fill="#FFFFFF" filter="url(#fol0ynwbh3lwr)" height="174.1094" style="stroke:#A80036;stroke-width:1.0;" width="10" x="53" y="99.6094"/><rect fill="#FFFFFF" filter="url(#fol0ynwbh3lwr)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="353" y="121.9609"/><rect fill="#FFFFFF" filter="url(#fol0ynwbh3lwr)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="353" y="243.3672"/><polygon fill="#A80036" points="341,117.9609,351,121.9609,341,125.9609,345,121.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="347" y1="121.9609" y2="121.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="70" y="117.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="141" x="81" y="117.1045">asks for details of a ship</text><polygon fill="#A80036" points="74,148.3125,64,152.3125,74,156.3125,70,152.3125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="357" y1="152.3125" y2="152.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="80" y="147.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="255" x="91" y="147.4561">shows code type list and asks to select one</text><polygon fill="#A80036" points="346,178.6641,356,182.6641,346,186.6641,350,182.6641" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="352" y1="182.6641" y2="182.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="70" y="177.8076">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="114" x="81" y="177.8076">selects a code type</text><polygon fill="#A80036" points="74,209.0156,64,213.0156,74,217.0156,70,213.0156" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="357" y1="213.0156" y2="213.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="80" y="208.1592">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="237" x="91" y="208.1592">requests data (code of the selected type)</text><polygon fill="#A80036" points="341,239.3672,351,243.3672,341,247.3672,345,243.3672" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="347" y1="243.3672" y2="243.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="70" y="238.5107">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="81" y="238.5107">types requested data</text><polygon fill="#A80036" points="69,269.7188,59,273.7188,69,277.7188,65,273.7188" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="63" x2="357" y1="273.7188" y2="273.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="75" y="268.8623">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="228" x="86" y="268.8623">shows details of the corresponding ship</text><!--MD5=[9986447425027a3b1a57036a793c1d9a]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : asks for details of a ship
+
+activate ":System"
+":System" - -> TM : shows code type list and asks to select one
+deactivate ":System"
+TM -> ":System" : selects a code type
+
+":System" - -> TM : requests data (code of the selected type)
+deactivate ":System"
+
+TM -> ":System" : types requested data
+
+activate ":System"
+":System" - -> TM : shows details of the corresponding ship
+deactivate ":System"
+
+deactivate TM
+
+@enduml
+
+@startuml
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : asks for details of a ship
+
+activate ":System"
+":System" - -> TM : shows code type list and asks to select one
+deactivate ":System"
+TM -> ":System" : selects a code type
+
+":System" - -> TM : requests data (code of the selected type)
+deactivate ":System"
+
+TM -> ":System" : types requested data
+
+activate ":System"
+":System" - -> TM : shows details of the corresponding ship
+deactivate ":System"
+
+deactivate TM
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

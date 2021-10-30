@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : asks for details of a ship
+
+activate ":System"
+":System" --> TM : shows code type list and asks to select one
+deactivate ":System"
+TM -> ":System" : selects a code type
+
+":System" --> TM : requests data (code of the selected type)
+deactivate ":System"
+
+TM -> ":System" : types requested data
+
+activate ":System"
+":System" --> TM : shows details of the corresponding ship
+deactivate ":System"
+
+deactivate TM
+
+@enduml
