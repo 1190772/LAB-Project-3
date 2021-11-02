@@ -1,0 +1,18 @@
+@startuml
+
+entity Ship {
+* imo_code
+--
+* mmsi_code
+* name_ship
+* number_generators
+* power_out_generator
+* call_sign
+* vessel_type
+* length_ship
+* width_ship
+* capacity_ship
+* draft
+}
+
+@enduml
