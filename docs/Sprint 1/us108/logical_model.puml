@@ -17,6 +17,12 @@ acep
 pes_date
 }
 
+entity Owner {
+* id_owner
+--
+* name
+}
+
 entity ID_Container {
 * id_container
 --
@@ -26,20 +32,23 @@ entity ID_Container {
 * check_digit
 }
 
+entity EquipmentIdentifier {
+* id_equipment
+--
+* description
+}
 
 entity ISO {
 * iso_code
 --
-* lenght_code
+* length_code
 * width_height_code
 * container_type_code
 * reduced_strength_code
 }
 
-
-
-entity Lenght {
-* lenght_code
+entity Length {
+* length_code
 --
 * value
 }
@@ -64,6 +73,7 @@ entity Reduced_Strength {
 
 entity Cargo_Manifesto {
 * id_container
+* id_manifesto
 --
  id_truck
  id_ship
@@ -71,16 +81,10 @@ entity Cargo_Manifesto {
 * load_weight
 }
 
-entity Position_Container {
-* position_code
---
-* x_value
-* y_value
-* z_value
-}
-
 entity Truck {
 * id_truck
+--
+* id_employee
 }
 
 entity Ship {
@@ -92,7 +96,7 @@ entity Ship {
 * power_out_generator
 * call_sign
 * vessel_type
-* lenght_ship
+* Length_ship
 * width_ship
 * capacity_ship
 * draft
@@ -100,8 +104,8 @@ entity Ship {
 
 entity Position_Ship {
 * imo_code
---
 * base_date_time
+--
 * latitude
 * longitude
 * sog
@@ -124,11 +128,11 @@ entity Port {
 entity Warehouse {
 * id_warehouse
 --
-* name_warehouse
-* continent_warehouse
-* country_warehouse
-* latitude_warehouse
-* longitude_warehouse
+* name
+* continent
+* country
+* latitude
+* longitude
 }
 
 entity Employee{
@@ -149,22 +153,28 @@ entity Role {
 }
 
 
-Lenght ||--o{ ISO
+Length ||--o{ ISO
 Width_Height ||--o{ ISO
 Container_Type ||--o{ ISO
 Reduced_Strength ||--o{ ISO
 
+Owner ||--|| ID_Container
+EquipmentIdentifier ||--|| ID_Container
+
 ID_Container ||--|| Container
 ISO ||--o{ Container
 Cargo_Manifesto ||--o{ Container
-Cargo_Manifesto ||--|| Position_Container
 Cargo_Manifesto ||--o| Ship
-Truck |o--|| Cargo_Manifesto
+Cargo_Manifesto ||--o| Truck
 Ship ||--|| Position_Ship
 
 Container }o--o| Warehouse
 Container }o--o| Port
 
+Truck ||--o{ Employee
+Ship ||--o{ Employee
+Warehouse ||--o{ Employee
+Port ||--o{ Employee
 Employee }o--|| Role
 
 @enduml
