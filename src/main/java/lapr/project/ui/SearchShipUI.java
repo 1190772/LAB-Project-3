@@ -55,6 +55,9 @@ public class SearchShipUI implements Runnable {
         e.printStackTrace();
     }
 
-    System.out.print(chosenShip.toString());
+    if (chosenShip != null)
+        System.out.println(chosenShip.toString());
+    else
+        System.out.println("No ship was found with the provided code.");
     }
 }

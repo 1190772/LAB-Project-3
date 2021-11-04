@@ -33,13 +33,13 @@ public class SearchShipController {
      * Gets the selected code type from the UI.
      */
     public void selectCodeType(String codeType) {
-        codeType = codeType;
+        this.codeType = codeType;
     }
 
     /**
      * Sends searchShip the necessary information the find the ship
      *
-     * @return Dto of the found ship
+     * @return a ship if found or null otherwise.
      */
     public Ship findShip(String code) throws OperationNotSupportedException {
         return searchShip.findShip(codeType, code);
