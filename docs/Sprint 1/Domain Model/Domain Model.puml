@@ -55,7 +55,11 @@ class Warehouse {
 -longitude
 }
 
-class Employee
+class Employee {
+-Name
+-Email
+-Password
+}
 
 class OrganizationRole {
 -Description
@@ -109,8 +113,8 @@ TrafficManager "1" -- "*" Truck : Controls position of >
 Truck "1" -- "1" Container : Transports >
 WarehouseStaff "1" -- "1" Container : Loads/Unloads >
 PortStaff "1" -- "*" Container : Loads/Unloads >
-UnloadingCargoManifest --|> CargoManifest
-LoadingCargoManifest --|> CargoManifest
+UnloadingCargoManifest -|> CargoManifest
+LoadingCargoManifest -|> CargoManifest
 CargoManifest "1" -- "*" Container : Keeps track of >
 
 @enduml
