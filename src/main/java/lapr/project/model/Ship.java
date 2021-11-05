@@ -40,7 +40,7 @@ public class Ship implements Comparable<Ship> {
     /**
      * The vessel type of the Ship.
      */
-    private final String vesselType;
+    private final int vesselType;
 
     /**
      * The length of the Ship, in meters.
@@ -78,7 +78,7 @@ public class Ship implements Comparable<Ship> {
      * @param draft the draft of the Ship, in meters.
      */
     public Ship(String MMSI, String name, String IMO, int numberEnergyGenerators,
-              int generatorPowerOutput, String callSign, String vesselType, int length, int width, int capacity, float draft) {
+              int generatorPowerOutput, String callSign, int vesselType, int length, int width, int capacity, float draft) {
 
         this.MMSI = MMSI;
         this.name = name;
@@ -140,7 +140,7 @@ public class Ship implements Comparable<Ship> {
      *
      * @return vessel type of the Ship
      */
-    public String getVesselType() { return vesselType; }
+    public int getVesselType() { return vesselType; }
 
     /**
      * Returns the length of the Ship, in meters.

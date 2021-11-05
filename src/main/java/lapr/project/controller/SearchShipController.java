@@ -1,7 +1,7 @@
 package lapr.project.controller;
 
-import lapr.project.model.SearchShip;
 import lapr.project.model.Ship;
+import lapr.project.model.ShipBST;
 
 import javax.naming.OperationNotSupportedException;
 
@@ -15,33 +15,23 @@ public class SearchShipController {
     /**
      * The instance of the domain class associated to this controller.
      */
-    private final SearchShip searchShip;
-
-    /**
-     * Holds the chosen code type.
-     */
-    private String codeType;
+    private final ShipBST shipBST;
 
     /**
      * Builds an instance of the Controller.
      */
     public SearchShipController() {
-        searchShip = new SearchShip();
+        shipBST = App.getInstance().getCompany().getShips();
     }
 
     /**
-     * Gets the selected code type from the UI.
-     */
-    public void selectCodeType(String codeType) {
-        this.codeType = codeType;
-    }
-
-    /**
-     * Sends searchShip the necessary information the find the ship
+     * Sends searchShip the code to be used to find the ship
+     *
+     * @param code the code to search by
      *
      * @return a ship if found or null otherwise.
      */
-    public Ship findShip(String code) throws OperationNotSupportedException {
-        return searchShip.findShip(codeType, code);
-    }
+    //public Ship findShip(String code) throws OperationNotSupportedException {
+        //return shipBST.findShip(code);
+    //}
 }

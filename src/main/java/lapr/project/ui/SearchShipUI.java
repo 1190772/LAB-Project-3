@@ -30,34 +30,24 @@ public class SearchShipUI implements Runnable {
      */
     @Override
     public void run() {
-        String[] codeTypes = new String[3];
-        codeTypes[0] = "MMSI";
-        codeTypes[1] = "IMO";
-        codeTypes[2] = "Call Sign";
-        int opcao;
         Scanner input = new Scanner(System.in);
         String code;
         Ship chosenShip = null;
 
-        do {
-            opcao = input.nextInt();
-        } while (opcao < 0 || opcao > 3);
-        input.nextLine();
-
-        controller.selectCodeType(codeTypes[opcao]);
-
         System.out.print("Enter code: ");
         code = input.nextLine();
+/*
+        try {
+            chosenShip = controller.findShip(code);
+        } catch (OperationNotSupportedException e) {
+            e.printStackTrace();
+        }
 
-    try {
-        chosenShip = controller.findShip(code);
-    } catch (OperationNotSupportedException e) {
-        e.printStackTrace();
-    }
+ */
 
-    if (chosenShip != null)
-        System.out.println(chosenShip.toString());
-    else
-        System.out.println("No ship was found with the provided code.");
+        if (chosenShip != null)
+            System.out.println(chosenShip.toString());
+        else
+            System.out.println("No ship was found with the provided code.");
     }
 }
