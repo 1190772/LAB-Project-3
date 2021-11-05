@@ -9,12 +9,8 @@ activate TM
 TM -> ":System" : asks for details of a ship
 
 activate ":System"
-":System" --> TM : shows code type list and asks to select one
-deactivate ":System"
-TM -> ":System" : selects a code type
-activate ":System"
 
-":System" --> TM : requests data (code of the selected type)
+":System" --> TM : requests data (code)
 deactivate ":System"
 
 TM -> ":System" : types requested data

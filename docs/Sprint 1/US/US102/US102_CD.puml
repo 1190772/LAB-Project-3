@@ -7,8 +7,6 @@ class SearchShipUI {
 
 class SearchShipController {
 - searchShip
-- codeType
-+ selectCodeType(codeType)
 + findShip(codeType, code)
 }
 
@@ -17,17 +15,18 @@ class SearchShip {
 - company
 - ships
 - mapper
-+ findShip(codeType, code)
++ findShip(code)
+- determineCodeType(code)
 - findShipByMMSI(MMSI)
 - findShipByIMO(IMO)
 - findShipByCallSign(CallSign)
 }
 
-class ShipMapper {
-- toDto(ship)
+class ShipBST {
++ ships
 }
 
-class ShipDto {
+class Ship {
 -MMSI
 -name
 -IMO
@@ -39,26 +38,16 @@ class ShipDto {
 -width
 -capacity
 -draft
-+ ShipDto(MMSI, name, IMO, numberEnergyGenerators,
++ Ship(MMSI, name, IMO, numberEnergyGenerators,
           generatorPowerOutput, callSign, vesselType, length, width, capacity, draft)
-+ getMMSI()
-+ getName()
-+ getIMO()
-+ getNumberEnergyGenerators()
-+ getGeneratorPowerOutPut()
-+ getCallSign()
-+ getVesselType()
-+ getLength()
-+ getWidth()
-+ getCapacity()
-+ getDraft()
++ toString()
 }
 
 SearchShipController <.. SearchShipUI
 SearchShip <.. SearchShipController
-ShipMapper <.. SearchShipController
-ShipDto <-- ShipMapper
-ShipDto <.. SearchShipUI
+ShipBST <.. SearchShip
+Ship <-- ShipBST
+Ship <.. SearchShipUI
 
 
 @enduml

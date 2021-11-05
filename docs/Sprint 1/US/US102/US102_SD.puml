@@ -9,27 +9,19 @@ participant ":SearchShipController" as CTRL
 participant ":SearchShip" as SS
 participant ":App" as APP
 participant ":Company" as COMP
-participant ":ShipMapper" as Mapper
-participant ":ShipDto" as ShipDto
 
 activate TM
 TM -> UI : asks for details of a ship
 activate UI
 activate CTRL
-UI --> TM : shows code type list and asks to select one
 
-TM -> UI : selects a code type
-autonumber 3.1
-UI -> CTRL : selectCodeType(chosenType)
-autonumber 4
-
-UI -> TM : requests data (code of the selected type)
+UI -> TM : requests data (code)
 TM -> UI : types requested data
 
-autonumber 5.1
-UI -> CTRL : chosenShipDto = findShip(code)
+autonumber 3.1
+UI -> CTRL : chosenShip = findShip(code)
 
-CTRL -> SS : chosenShipDto = findShip(codeType, code)
+CTRL -> SS : chosenShip = findShip(code)
 activate SS
 
 SS -> APP : app = getInstance()
@@ -39,8 +31,8 @@ deactivate APP
 SS -> COMP : ships = getShipBST()
 activate COMP
 deactivate COMP
-SS -> Mapper : mapper = new()
-activate Mapper
+
+SS -> SS : codeType = DetermineCodeType(code)
 
 alt codeType = MMSI
   SS -> SS : chosenShip = findShipByMMSI(MMSI)
@@ -50,15 +42,10 @@ else codeType = CallSign
   SS -> SS : chosenShip = findShipByCallSign(CallSign)
 end
 
-SS -> Mapper : chosenShipDto = toDto(chosenShip)
-Mapper -> ShipDto : chosenShipDto = new(ship)
-activate ShipDto
-deactivate ShipDto
-deactivate Mapper
 deactivate SS
 deactivate CTRL
 
-autonumber 6
+autonumber 4
 UI --> TM : shows details of the corresponding ship
 deactivate UI
 
