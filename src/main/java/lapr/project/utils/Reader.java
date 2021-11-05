@@ -1,49 +1,33 @@
 package lapr.project.utils;
 
 import java.io.*;
-import java.util.Map;
-import java.util.Scanner;
 
 public class Reader {
+    public static void main(String[] args) throws IOException {
 
-    private Scanner sc;
-    private static final int VALOR_NA = -1;
+        BST btree = new BST();
 
+        try{
+            BufferedReader imput = new BufferedReader(new FileReader("sships.csv"));
 
-    public Reader() {
-        try {
-            sc = new Scanner(new File("sships.csv"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public Reader(String nameFile) {
-        try {
-            sc = new Scanner(new File(nameFile));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void readFromFile() {
-        while (sc.hasNextLine()) {
-            String[] infoLinha;
-            String linha = sc.nextLine();
-            if (linha.trim().isEmpty()) continue;
-            infoLinha = fixLineData(linha.split(","));
-
-        }
-    }
-
-    public String[] fixLineData(String[] original) {
-        for (int i = 0; i < original.length; i++) {
-            original[i] = original[i].replaceAll("\"", "");
-            if (original[i].equals("NA")) {
-                original[i] = String.valueOf(VALOR_NA);
+            String word = imput.readLine();
+            while(word!= null){
+                btree.insert(word);
+                btree.inOrder();
+                word= imput.readLine();
+                System.out.println(word);
             }
+
         }
-        return original;
+        catch (FileNotFoundException fileNotFoundException){
+            System.out.println("File not found.");
+        }
+        catch(IOException ioException){
+            System.out.println("File imput error.");
+        }
+
+
+
     }
 }
 
