@@ -3,7 +3,6 @@ package lapr.project.ui;
 import lapr.project.controller.SearchShipController;
 import lapr.project.model.Ship;
 
-import javax.naming.OperationNotSupportedException;
 import java.util.Scanner;
 
 /**
@@ -32,18 +31,12 @@ public class SearchShipUI implements Runnable {
     public void run() {
         Scanner input = new Scanner(System.in);
         String code;
-        Ship chosenShip = null;
+        Ship chosenShip;
 
         System.out.print("Enter code: ");
         code = input.nextLine();
-/*
-        try {
-            chosenShip = controller.findShip(code);
-        } catch (OperationNotSupportedException e) {
-            e.printStackTrace();
-        }
 
- */
+        chosenShip = controller.findShip(code);
 
         if (chosenShip != null)
             System.out.println(chosenShip.toString());

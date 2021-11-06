@@ -31,7 +31,7 @@ public class SearchShipController {
      *
      * @return a ship if found or null otherwise.
      */
-    //public Ship findShip(String code) throws OperationNotSupportedException {
-        //return shipBST.findShip(code);
-    //}
+    public Ship findShip(String code) {
+        return shipBST.findShip(code);
+    }
 }
