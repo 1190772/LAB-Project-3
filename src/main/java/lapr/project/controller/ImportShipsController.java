@@ -67,6 +67,4 @@ public class ImportShipsController {
             e.printStackTrace();
         }
     }
-
-
 }
