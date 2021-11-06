@@ -4,15 +4,33 @@ import lapr.project.controller.ImportShipsController;
 
 import java.util.Scanner;
 
-public class ImportShipsUI implements Runnable{
+public class ImportShipsUI implements Runnable {
 
     private final ImportShipsController controller;
 
-    public ImportShipsUI(){
+    public ImportShipsUI() {
         controller = new ImportShipsController();
     }
 
-    public void run(){
+    public void run() {
         Scanner input = new Scanner(System.in);
+        String parameter;
+        System.out.println("Choose parameter:");
+        parameter = input.nextLine();
+        if (parameter.equals("MMSI")) {
+            controller.importShipsByMMSI();
+        } else {
+            if (parameter.equals("IMO")) {
+                controller.importShipsByMMSI();
+            } else {
+                if (parameter.equals("CallSign")) {
+                    controller.importShipsByCallSign();
+                }else{
+                    System.out.println("Parameter does not exist.");
+                }
+            }
+        }
     }
 }
+
+

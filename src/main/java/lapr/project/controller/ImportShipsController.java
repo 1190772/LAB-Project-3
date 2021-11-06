@@ -30,6 +30,7 @@ public class ImportShipsController {
                 aux_array = word.split(",");
                 ship_AVL_mmsi.insert(Integer.parseInt(aux_array[0]));
             }
+            System.out.println(ship_AVL_mmsi);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -46,6 +47,7 @@ public class ImportShipsController {
                 aux_array = word.split(",");
                 ship_AVL_imo.insert(Integer.parseInt(aux_array[8]));
             }
+            System.out.println(ship_AVL_imo);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -62,6 +64,7 @@ public class ImportShipsController {
                 aux_array = word.split(",");
                 ship_AVL_callSign.insert(Integer.parseInt(aux_array[9]));
             }
+            System.out.println(ship_AVL_callSign);
 
         } catch (IOException e) {
             e.printStackTrace();
