@@ -21,7 +21,7 @@ public class ImportShipsUI implements Runnable {
             controller.importShipsByMMSI();
         } else {
             if (parameter.equals("IMO")) {
-                controller.importShipsByMMSI();
+                controller.importShipsByIMO();
             } else {
                 if (parameter.equals("CallSign")) {
                     controller.importShipsByCallSign();
