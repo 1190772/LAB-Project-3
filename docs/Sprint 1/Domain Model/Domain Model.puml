@@ -31,9 +31,25 @@ class Ship {
 -Width
 -Capacity
 -Draft
+-FleetManager
+-ShipCaptain
+-ShipChiefElectricalEngineer
 }
 
-class Truck
+class ShipPosition {
+-Base Date Time
+-Latitude
+-Longitude
+-Speed over ground SOG
+-Course over ground COG
+-Heading
+-Position
+-Transceiver Class
+}
+
+class Truck {
+-TruckDriver
+}
 
 class Client
 
@@ -44,6 +60,8 @@ class Port {
 -Country
 -Latitude
 -longitude
+-PortMagager
+-PortStaff
 }
 
 class Warehouse {
@@ -53,6 +71,8 @@ class Warehouse {
 -Country
 -Latitude
 -longitude
+-WarehouseManager
+-WarehouseStaff
 }
 
 class Employee {
@@ -65,23 +85,7 @@ class OrganizationRole {
 -Description
 }
 
-class PortMagager
-
-class WarehouseManager
-
-class ShipCaptain
-
-class TruckDriver
-
-class FleetManager
-
-class ShipChiefElectricalEngineer
-
 class TrafficManager
-
-class WarehouseStaff
-
-class PortStaff
 
 class CargoManifest
 
@@ -92,29 +96,20 @@ class LoadingCargoManifest
 Company "1" -- "*" Shipping : Performs >
 Company "1" -- "1..*" Ship : Owns >
 Company "1" -- "1..*" Truck : Owns >
-Company "1" -- "*" Port : Owns >
-Company "1" -- "*" Warehouse : Owns >
+Company "1" --- "*" Port : Owns >
+Company "1" --- "*" Warehouse : Owns >
 Company "1" -- "*" Employee : Employs >
 Company "1" -- "*" CargoManifest : Knows >
-Company "1" - "*" OrganizationRole : Comprehends >
+Company "1" --- "*" OrganizationRole : Comprehends >
 Employee "*" - "1" OrganizationRole : Has/Plays >
 Shipping "1" -- "1" Client : Requested by >
-Port "*" -- "1" PortMagager : Managed by >
-Port "1" -- "1" PortStaff : Has >
-Warehouse "*" -- "1" WarehouseManager : Managed by >
-Warehouse "1" -- "1" WarehouseStaff : Has >
-Ship "1" -- "1" ShipCaptain : Overseen by >
-Ship "1" -- "1" ShipChiefElectricalEngineer : Electrical part controlled by >
 Ship "1" -- "*" Container : Transports >
-Ship "1" -- "1" FleetManager : Fleet controlled by >
-Truck "1" -- "1" TruckDriver : Overseen by >
-TrafficManager "1" -- "*" Ship : Controls position of >
+Ship "1" -- "1" ShipPosition : has >
+TrafficManager "1" - "*" ShipPosition : Controls >
 TrafficManager "1" -- "*" Truck : Controls position of >
 Truck "1" -- "1" Container : Transports >
-WarehouseStaff "1" -- "1" Container : Loads/Unloads >
-PortStaff "1" -- "*" Container : Loads/Unloads >
-UnloadingCargoManifest -|> CargoManifest
-LoadingCargoManifest -|> CargoManifest
+UnloadingCargoManifest --|> CargoManifest
+LoadingCargoManifest --|> CargoManifest
 CargoManifest "1" -- "*" Container : Keeps track of >
 
 @enduml

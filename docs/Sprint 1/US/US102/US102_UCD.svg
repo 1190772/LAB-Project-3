@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="92px" preserveAspectRatio="none" style="width:427px;height:92px;" version="1.1" viewBox="0 0 427 92" width="427px" zoomAndPan="magnify"><defs><filter height="300%" id="f1eyb3rh5iu70x" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[c6ddddda358f072e4f19aa798de5fbe9]
-entity TM--><ellipse cx="56" cy="14" fill="#FEFECE" filter="url(#f1eyb3rh5iu70x)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M56,22 L56,49 M43,30 L69,30 M56,49 L43,64 M56,49 L69,64 " fill="none" filter="url(#f1eyb3rh5iu70x)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="6" y="84.0332">Traffic Manager</text><ellipse cx="321.313" cy="45.7626" fill="#FEFECE" filter="url(#f1eyb3rh5iu70x)" rx="94.313" ry="21.2626" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="247.313" y="49.4911">Search details of a ship</text><!--MD5=[e96b729b963beef67941650a20dbe6bb]
-link TM to Use--><path d="M106.25,46 C138.69,46 182.28,46 221.67,46 " fill="none" id="TM-to-Use" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="226.95,46,217.95,42,221.95,46,217.95,50,226.95,46" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4ce1ab6bd86c405cac512f42687cc974]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="92px" preserveAspectRatio="none" style="width:426px;height:92px;" version="1.1" viewBox="0 0 426 92" width="426px" zoomAndPan="magnify"><defs><filter height="300%" id="fhduvo2uswsk3" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[c6ddddda358f072e4f19aa798de5fbe9]
+entity TM--><ellipse cx="56" cy="14" fill="#FEFECE" filter="url(#fhduvo2uswsk3)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M56,22 L56,49 M43,30 L69,30 M56,49 L43,64 M56,49 L69,64 " fill="none" filter="url(#fhduvo2uswsk3)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="6" y="84.0332">Traffic Manager</text><ellipse cx="320.8753" cy="46.1751" fill="#FEFECE" filter="url(#fhduvo2uswsk3)" rx="93.8753" ry="21.1751" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="247.3753" y="49.9036">Ask for details of a ship</text><!--MD5=[e96b729b963beef67941650a20dbe6bb]
+link TM to Use--><path d="M106.16,46 C138.6,46 182.23,46 221.62,46 " fill="none" id="TM-to-Use" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="226.9,46,217.9,42,221.9,46,217.9,50,226.9,46" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1585462b3719f683bcb6359d26641175]
 @startuml
 'https://plantuml.com/use-case-diagram
 
 left to right direction
 
 :Traffic Manager: as TM
-(Search details of a ship) as (Use)
+(Ask for details of a ship) as (Use)
 
 TM - - -> (Use)
 
@@ -18,7 +18,7 @@ TM - - -> (Use)
 left to right direction
 
 :Traffic Manager: as TM
-(Search details of a ship) as (Use)
+(Ask for details of a ship) as (Use)
 
 TM - - -> (Use)
 
