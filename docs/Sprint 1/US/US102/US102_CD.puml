@@ -6,24 +6,16 @@ class SearchShipUI {
 }
 
 class SearchShipController {
-- searchShip
-+ findShip(codeType, code)
+- ShipBST
++ findShip(code)
 }
 
-class SearchShip {
-- app
-- company
-- ships
-- mapper
+class ShipBST {
 + findShip(code)
 - determineCodeType(code)
 - findShipByMMSI(MMSI)
 - findShipByIMO(IMO)
 - findShipByCallSign(CallSign)
-}
-
-class ShipBST {
-+ ships
 }
 
 class Ship {
@@ -44,8 +36,7 @@ class Ship {
 }
 
 SearchShipController <.. SearchShipUI
-SearchShip <.. SearchShipController
-ShipBST <.. SearchShip
+ShipBST <.. SearchShipController
 Ship <-- ShipBST
 Ship <.. SearchShipUI
 

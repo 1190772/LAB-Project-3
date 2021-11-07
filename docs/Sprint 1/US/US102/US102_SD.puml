@@ -6,9 +6,8 @@ actor "Traffic Manager" as TM
 
 participant ":SearchShipUI" as UI
 participant ":SearchShipController" as CTRL
-participant ":SearchShip" as SS
-participant ":App" as APP
 participant ":Company" as COMP
+participant ":ShipBST" as BST
 
 activate TM
 TM -> UI : asks for details of a ship
@@ -19,30 +18,29 @@ UI -> TM : requests data (code)
 TM -> UI : types requested data
 
 autonumber 3.1
+
 UI -> CTRL : chosenShip = findShip(code)
 
-CTRL -> SS : chosenShip = findShip(code)
-activate SS
-
-SS -> APP : app = getInstance()
-activate APP
-SS -> APP : company = getCompany
-deactivate APP
-SS -> COMP : ships = getShipBST()
+CTRL -> COMP : ships = App.getInstance().getCompany().getShipBST()
 activate COMP
 deactivate COMP
 
-SS -> SS : codeType = DetermineCodeType(code)
+CTRL -> BST : chosenShip = findShip(code)
+activate BST
+
+
+
+BST -> BST : codeType = DetermineCodeType(code)
 
 alt codeType = MMSI
-  SS -> SS : chosenShip = findShipByMMSI(MMSI)
+  BST -> BST : chosenShip = findShipByMMSI(MMSI)
 else codeType = IMO
-  SS -> SS : chosenShip = findShipByIMO(IMO)
+  BST -> BST : chosenShip = findShipByIMO(IMO)
 else codeType = CallSign
-  SS -> SS : chosenShip = findShipByCallSign(CallSign)
+  BST -> BST : chosenShip = findShipByCallSign(CallSign)
 end
 
-deactivate SS
+deactivate BST
 deactivate CTRL
 
 autonumber 4
