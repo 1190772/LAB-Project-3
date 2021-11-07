@@ -4,9 +4,8 @@ import lapr.project.utils.AVL;
 
 public class ShipBST extends AVL<Ship> {
 
-
     /**
-     * Decides how for a ship using a provided code.
+     * Decides how to search for a ship using a provided code.
      *
      * @param code the code to search by.
      *
@@ -79,6 +78,7 @@ public class ShipBST extends AVL<Ship> {
     /**
      * Searches for a ship using its MMSI code.
      *
+     * @param node the current node.
      * @param code the code to search by.
      *
      * @return a ship if found or null otherwise.
@@ -101,6 +101,7 @@ public class ShipBST extends AVL<Ship> {
     /**
      * Searches for a ship using its Call Sign code.
      *
+     * @param node the current node.
      * @param code the code to search by.
      *
      * @return a ship if found or null otherwise.

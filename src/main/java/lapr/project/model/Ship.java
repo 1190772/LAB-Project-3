@@ -188,17 +188,17 @@ public class Ship implements Comparable<Ship> {
     @Override
     public String toString() {
         return "Ship{" +
-                "MMSI='" + MMSI + '\'' +
-                ", name='" + name + '\'' +
-                ", IMO='" + IMO + '\'' +
-                ", numberEnergyGenerators=" + numberEnergyGenerators +
-                ", generatorPowerOutput=" + generatorPowerOutput +
-                ", callSign='" + callSign + '\'' +
-                ", vesselType='" + vesselType + '\'' +
-                ", length=" + length +
-                ", width=" + width +
-                ", capacity=" + capacity +
-                ", draft=" + draft +
+                "MMSI code = '" + MMSI + '\'' +
+                ", Name = '" + name + '\'' +
+                ", IMO code = '" + IMO + '\'' +
+                ", Number of energy generators = " + numberEnergyGenerators +
+                ", Generator power output = " + generatorPowerOutput +
+                ", Call Sign code = '" + callSign + '\'' +
+                ", Vessel type = '" + vesselType + '\'' +
+                ", Length = " + length + 'm' +
+                ", Width = " + width + 'm' +
+                ", Capacity = " + capacity + "m3" +
+                ", Draft = " + draft +
                 '}';
     }
 }

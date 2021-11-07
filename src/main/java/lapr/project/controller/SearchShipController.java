@@ -3,8 +3,6 @@ package lapr.project.controller;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipBST;
 
-import javax.naming.OperationNotSupportedException;
-
 /**
  * Controller of US102.
  *
@@ -13,7 +11,7 @@ import javax.naming.OperationNotSupportedException;
 public class SearchShipController {
 
     /**
-     * The instance of the domain class associated to this controller.
+     * The current ship binary search tree.
      */
     private final ShipBST shipBST;
 
@@ -25,9 +23,9 @@ public class SearchShipController {
     }
 
     /**
-     * Sends searchShip the code to be used to find the ship
+     * Sends ShipBST the code to be used to find the ship.
      *
-     * @param code the code to search by
+     * @param code the code to search by.
      *
      * @return a ship if found or null otherwise.
      */
