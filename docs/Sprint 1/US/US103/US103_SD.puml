@@ -1,0 +1,35 @@
+@startuml
+autonumber
+
+'hide footbox
+actor "Traffic Manager" as TM
+
+participant ":SearchShipUI" as UI
+participant ":SearchShipController" as CTRL
+participant "ship\n:Ship" as Ship
+
+activate TM
+TM -> UI : asks for positional details of the ship
+activate UI
+
+UI --> TM : requests data (start date, end date)
+TM -> UI : types requested data
+
+autonumber 3.1
+
+UI -> CTRL : positions = getShipPositions(startDate, endDate)
+activate CTRL
+
+CTRL -> Ship : positions  = getPositions(startDate, endDate)
+activate Ship
+deactivate Ship
+
+deactivate CTRL
+
+autonumber 4
+UI --> TM : shows positional details of the ship
+deactivate UI
+
+deactivate TM
+
+@enduml

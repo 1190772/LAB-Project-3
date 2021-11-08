@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+
+class SearchShipUI {
+- controller
+}
+
+class SearchShipController {
+- ship
++ getShipPositions(startDate, endDate)
+}
+
+class Ship {
++ getPositions(startDate, endDate)
+}
+
+class ShipPosition {
+-baseDateTime
+-latitude
+-longitude
+-sog
+-cog
+-heading
+-position
+-transceiverClass
++ toString()
+}
+
+SearchShipController <.. SearchShipUI
+Ship <.. SearchShipController
+ShipPosition <-- Ship
+ShipPosition <.. SearchShipUI
+
+
+@enduml
