@@ -5,7 +5,6 @@ entity Container {
 --
 * tare
 * iso_code
-payload
 refrigeration_temperature
 
 * max_weight_incl_container
@@ -32,7 +31,7 @@ entity ID_Container {
 * check_digit
 }
 
-entity EquipmentIdentifier {
+entity Equipment_Identifier {
 * id_equipment
 --
 * description
@@ -73,12 +72,14 @@ entity Reduced_Strength {
 
 entity Cargo_Manifesto {
 * id_container
-* id_manifesto
+* date_time
 --
  id_truck
  id_ship
+ id_port
+ id_warehouse
 * position_code
-* load_weight
+* payload
 }
 
 entity Truck {
@@ -158,8 +159,8 @@ Width_Height ||--o{ ISO
 Container_Type ||--o{ ISO
 Reduced_Strength ||--o{ ISO
 
-Owner ||--|| ID_Container
-EquipmentIdentifier ||--|| ID_Container
+Owner ||--|{ ID_Container
+Equipment_Identifier ||--o{ ID_Container
 
 ID_Container ||--|| Container
 ISO ||--o{ Container
@@ -168,8 +169,8 @@ Cargo_Manifesto ||--o| Ship
 Cargo_Manifesto ||--o| Truck
 Ship ||--|| Position_Ship
 
-Container }o--o| Warehouse
-Container }o--o| Port
+Cargo_Manifesto }o--o| Warehouse
+Cargo_Manifesto }o--o| Port
 
 Truck ||--o{ Employee
 Ship ||--o{ Employee

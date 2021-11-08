@@ -1,0 +1,181 @@
+@startuml
+
+entity Container {
+* id_container              char(11)
+--
+* tare                      integer
+* iso_code                  char(4)
+refrigeration_temperature   number(3,1)
+
+* max_weight_incl_container integer
+* max_weight                integer
+* max_volume                integer
+
+*csc_plate                  char(?)
+acep                        integer
+pes_date                    date
+}
+
+entity Owner {
+* id_owner                  char(3)
+--
+* name                      varChar(30)
+}
+
+entity ID_Container {
+* id_container              char(11)
+--
+* id_owner                  char(3)
+* id_equipment              char(1)
+* serial_number             integer(6)
+* check_digit               integer(1)
+}
+
+entity Equipment_Identifier {
+* id_equipment              char(1)
+--
+* description               varChar(100)
+}
+
+entity ISO {
+* iso_code                  char(4)
+--
+* length_code               char(1)
+* width_height_code         char(1)
+* container_type_code       char(1)
+* reduced_strength_code     char(1)
+}
+
+entity Length {
+* length_code               char(1)
+--
+* value                     integer
+}
+
+entity Width_Height {
+* width_height_code         char(1)
+--
+* value                     integer
+}
+
+entity Container_Type {
+* container_type_code       char(1)
+--
+* value                     integer
+}
+
+entity Reduced_Strength {
+* reduced_strength_code     char(1)
+--
+* value                     integer
+}
+
+entity Cargo_Manifesto {
+* id_container              char(11)
+* date_time                 date
+--
+ id_truck                   char(?)
+ id_ship                    char(?)
+ id_port                    char(5)
+ id_warehouse               char(?)
+* position_code             integer(6)
+* payload                   number(5,1)
+}
+
+entity Truck {
+* id_truck                  char(?)
+--
+* id_employee               char(?)
+}
+
+entity Ship {
+* imo_code                  char(10)
+--
+* mmsi_code                 integer(9)
+* name_ship                 varChar(30)
+* number_generators         integer(2)
+* power_out_generator       integer(3/4)?
+* call_sign                 char(5)
+* vessel_type               integer(20)?
+* Length_ship               integer(3)
+* width_ship                integer(2)
+* draft                     number(3,1)
+* capacity_ship             integer(5)
+}
+
+entity Position_Ship {
+* imo_code			        char(4)
+* base_date_time	        date
+--
+* latitude			        number(7,5)
+* longitude			        number(7,5)
+* sog				        number(3,1)
+* cog			            number(3,1)
+* heading			        integer(3)
+* position			
+* transceiver_class         char(1)
+}
+
+entity Port {
+* id_port			        char(5)
+--
+* name				        varChar(20)
+* continent			        varChar(10)
+* country			        varChar(20)
+* latitude			        number(11,9)
+* longitude			        number(11,9)
+}
+
+entity Warehouse {
+* id_warehouse			    char(?)
+--
+* name				        varChar(30)
+* continent			        varChar(20)
+* country			        varChar(20)
+* latitude			        number(4,2)
+* longitude			        number(4,2)
+}
+
+entity Employee{
+* id_employee			    char(?)
+--
+* role_id		    	    integer(2)
+* name_employee			    varChar(30)
+* user_password			    varChar(15)
+ address_employee		    varChar(30)
+ phone_employee			    integer(20)
+
+}
+
+entity Role {
+* role_id	    		    integer(2)
+--
+* designation			    varChar(30)
+}
+
+
+Length ||--o{ ISO
+Width_Height ||--o{ ISO
+Container_Type ||--o{ ISO
+Reduced_Strength ||--o{ ISO
+
+Owner ||--|{ ID_Container
+Equipment_Identifier ||--o{ ID_Container
+
+ID_Container ||--|| Container
+ISO ||--o{ Container
+Cargo_Manifesto ||--o{ Container
+Cargo_Manifesto ||--o| Ship
+Cargo_Manifesto ||--o| Truck
+Ship ||--|| Position_Ship
+
+Cargo_Manifesto }o--o| Warehouse
+Cargo_Manifesto }o--o| Port
+
+Truck ||--o{ Employee
+Ship ||--o{ Employee
+Warehouse ||--o{ Employee
+Port ||--o{ Employee
+Employee }o--|| Role
+
+@enduml
