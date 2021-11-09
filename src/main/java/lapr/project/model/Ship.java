@@ -1,5 +1,7 @@
 package lapr.project.model;
 
+import java.util.ArrayList;
+
 /**
  * Represents a Ship.
  *
@@ -25,12 +27,12 @@ public class Ship implements Comparable<Ship> {
     /**
      * The number of energy generators of the Ship.
      */
-    private final int numberEnergyGenerators;
+    private int numberEnergyGenerators;
 
     /**
      * The power output of the Ship's energy generators.
      */
-    private final int generatorPowerOutput;
+    private int generatorPowerOutput;
 
     /**
      * The Call Sign code of the Ship.
@@ -55,15 +57,22 @@ public class Ship implements Comparable<Ship> {
     /**
      * The load capacity of the Ship, in m3.
      */
-    private final int capacity;
+    private int capacity;
 
     /**
      * The draft of the Ship, in meters. Varies with ship load and water density.
      */
     private float draft;
 
+    private int cargo;
+
     /**
-     * Builds an instance of Ship receiving all the necessary information.
+     * History of positions.
+     */
+    private ArrayList<ShipPosition> positions;
+
+    /**
+     * Builds an instance of Ship receiving all the information.
      *
      * @param MMSI the MMSI code of the ship.
      * @param name the name of the Ship.
@@ -88,9 +97,34 @@ public class Ship implements Comparable<Ship> {
         this.callSign = callSign;
         this.vesselType = vesselType;
         this.length = length;
-        this. width = width;
+        this.width = width;
         this.capacity = capacity;
         this.draft = draft;
+        positions = new ArrayList<>();
+    }
+
+    /**
+     * Builds an instance of Ship receiving MMSI, name, IMO, CallSign, vesselType, length, width, draft and cargo.
+     * @param MMSI the MMSI code of the ship.
+     * @param name the name of the Ship.
+     * @param IMO the IMO code of the Ship.
+     * @param callSign the Call Sign code of the Ship.
+     * @param vesselType the vessel type of the Ship.
+     * @param length the length of the Ship, in meters.
+     * @param width the width of the Ship, in meters.
+     * @param draft the draft of the Ship, in meters.
+     */
+    public Ship(String MMSI, String name, String IMO, String callSign, int vesselType, int length, int width, float draft, int cargo) {
+        this.MMSI = MMSI;
+        this.name = name;
+        this.IMO = IMO;
+        this.callSign = callSign;
+        this.vesselType = vesselType;
+        this.length = length;
+        this.width = width;
+        this.draft = draft;
+        this.cargo = cargo;
+        positions = new ArrayList<>();
     }
 
     /**
@@ -169,6 +203,15 @@ public class Ship implements Comparable<Ship> {
      * @return draft of the Ship, in meters
      */
     public float getDraft() { return draft; }
+
+    /**
+     * Adds a positions to the ship's list of positions.
+     *
+     * @param position a position.
+     */
+    public void addPosition(ShipPosition position) {
+        positions.add(position);
+    }
 
     /**
      * Compares two ships based on IMO code.
