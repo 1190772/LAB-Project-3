@@ -26,7 +26,11 @@ public class ImportShipsUI implements Runnable {
                 if (parameter.equals("CallSign")) {
                     controller.importShipsByCallSign();
                 }else{
-                    System.out.println("Parameter does not exist.");
+                    if (parameter.equals("All")) {
+                        controller.importShipsAll();
+                    } else{
+                        System.out.println("Parameter does not exist.");
+                    }
                 }
             }
         }

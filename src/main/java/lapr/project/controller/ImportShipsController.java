@@ -1,6 +1,7 @@
 package lapr.project.controller;
 
 import lapr.project.utils.AVL;
+import lapr.project.utils.BST;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,26 +12,42 @@ public class ImportShipsController {
     BufferedReader in;
     String word;
 
-    public AVL<Integer> ship_AVL_mmsi;
-    public AVL<Integer> ship_AVL_imo;
-    public AVL<Integer> ship_AVL_callSign;
+    public BST<Integer> ship_BST_mmsi;
+    public BST<String> ship_BST_imo;
+    public BST<String> ship_BST_callSign;
+    public BST<String> ship_BST_all;
 
     public ImportShipsController() {
 
     }
     //TODO
 
+
+    public void importShipsAll(){
+        ship_BST_all = new BST<>();
+        try{
+            in = new BufferedReader((new FileReader("sships.csv")));
+            in.readLine();
+            while((word = in.readLine()) != null){
+                ship_BST_all.insert(word);
+            }
+            System.out.println(ship_BST_all);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void importShipsByMMSI() {
-        ship_AVL_mmsi = new AVL<>();
+        ship_BST_mmsi = new BST<>();
         try {
             in = new BufferedReader(new FileReader("sships.csv"));
             String[] aux_array;
             in.readLine();
             while ((word = in.readLine()) != null) {
                 aux_array = word.split(",");
-                ship_AVL_mmsi.insert(Integer.parseInt(aux_array[0]));
+                ship_BST_mmsi.insert(Integer.parseInt(aux_array[0]));
             }
-            System.out.println(ship_AVL_mmsi);
+            System.out.println(ship_BST_mmsi);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,16 +55,16 @@ public class ImportShipsController {
     }
 
     public void importShipsByIMO() {
-        ship_AVL_imo = new AVL<>();
+        ship_BST_imo = new BST<>();
         try {
             in = new BufferedReader(new FileReader("sships.csv"));
             String[] aux_array;
             in.readLine();
             while ((word = in.readLine()) != null) {
                 aux_array = word.split(",");
-                ship_AVL_imo.insert(Integer.parseInt(aux_array[8]));
+                ship_BST_imo.insert((aux_array[8]));
             }
-            System.out.println(ship_AVL_imo);
+            System.out.println(ship_BST_imo);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -55,16 +72,16 @@ public class ImportShipsController {
     }
 
     public void importShipsByCallSign() {
-        ship_AVL_callSign = new AVL<>();
+        ship_BST_callSign = new BST<>();
         try {
             in = new BufferedReader(new FileReader("sships.csv"));
             String[] aux_array;
             in.readLine();
             while ((word = in.readLine()) != null) {
                 aux_array = word.split(",");
-                ship_AVL_callSign.insert(Integer.parseInt(aux_array[9]));
+                ship_BST_callSign.insert((aux_array[9]));
             }
-            System.out.println(ship_AVL_callSign);
+            System.out.println(ship_BST_callSign);
 
         } catch (IOException e) {
             e.printStackTrace();
