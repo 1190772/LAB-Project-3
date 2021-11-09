@@ -24,21 +24,21 @@ class ShipBSTTest {
     }
 
     @Test
-    void testFindShipByIMO() {
+    void findShipByIMOTest() {
         Ship expected = ship4;
         Ship found = shipBST.findShip("IMO9517575");
         Assert.assertEquals(expected, found);
     }
 
     @Test
-    void testFindShipByMMSI() {
+    void findShipByMMSITest() {
         Ship expected = ship3;
         Ship found = shipBST.findShip("228339600");
         Assert.assertEquals(expected, found);
     }
 
     @Test
-    void testFindShipByCallSign() {
+    void findShipByCallSignTest() {
         Ship expected = ship1;
         Ship found = shipBST.findShip("C4SQ2");
         Assert.assertEquals(expected, found);
