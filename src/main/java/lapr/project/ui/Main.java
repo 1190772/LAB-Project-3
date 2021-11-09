@@ -61,10 +61,10 @@ class Main {
 
             }
             else if(choiceentry == 2) {
-                //..something else
+
             }
             else if(choiceentry == 3) {
-                //...exit program
+
             }
 
         }

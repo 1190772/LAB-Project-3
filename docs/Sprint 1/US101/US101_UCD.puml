@@ -4,7 +4,7 @@
 left to right direction
 
 :Traffic Manager: as TM
-(Search details of a ship) as (Use)
+(Import ships) as (Use)
 
 TM ---> (Use)
 
