@@ -1,7 +1,5 @@
 package lapr.project.ui.console;
 
-import lapr.project.utils.Utils;
-
 import java.util.ArrayList;
 import java.util.List;
 
