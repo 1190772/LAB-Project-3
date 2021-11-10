@@ -32,11 +32,9 @@ public class App {
     private Properties getProperties() {
         Properties props = new Properties();
 
-        // Add default properties and values
         props.setProperty(Constants.PARAMS_COMPANY_DESIGNATION, "Companhia");
 
 
-        // Read configured values
         try {
             InputStream in = new FileInputStream(Constants.PARAMS_FILENAME);
             props.load(in);
