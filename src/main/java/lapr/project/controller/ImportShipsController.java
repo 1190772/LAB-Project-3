@@ -10,13 +10,14 @@ public class ImportShipsController {
 
     BufferedReader in;
     String word;
+    String fileName = "sships.csv";
 
     public BST<Integer> ship_BST_mmsi;
     public BST<String> ship_BST_imo;
     public BST<String> ship_BST_callSign;
     public BST<String> ship_BST_all;
 
-    public ImportShipsController() {
+    public ImportShipsController() throws UnsupportedOperationException{
 
     }
     //TODO
@@ -25,7 +26,7 @@ public class ImportShipsController {
     public void importShipsAll() {
         ship_BST_all = new BST<>();
         try {
-            in = new BufferedReader((new FileReader("sships.csv")));
+            in = new BufferedReader((new FileReader(fileName)));
             in.readLine();
             while ((word = in.readLine()) != null) {
                 ship_BST_all.insert(word);
@@ -39,7 +40,7 @@ public class ImportShipsController {
     public void importShipsByMMSI() {
         ship_BST_mmsi = new BST<>();
         try {
-            in = new BufferedReader(new FileReader("sships.csv"));
+            in = new BufferedReader(new FileReader(fileName));
             String[] aux_array;
             in.readLine();
             while ((word = in.readLine()) != null) {
@@ -56,7 +57,7 @@ public class ImportShipsController {
     public void importShipsByIMO() {
         ship_BST_imo = new BST<>();
         try {
-            in = new BufferedReader(new FileReader("sships.csv"));
+            in = new BufferedReader(new FileReader(fileName));
             String[] aux_array;
             in.readLine();
             while ((word = in.readLine()) != null) {
@@ -73,7 +74,7 @@ public class ImportShipsController {
     public void importShipsByCallSign() {
         ship_BST_callSign = new BST<>();
         try {
-            in = new BufferedReader(new FileReader("sships.csv"));
+            in = new BufferedReader(new FileReader(fileName));
             String[] aux_array;
             in.readLine();
             while ((word = in.readLine()) != null) {
