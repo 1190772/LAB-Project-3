@@ -178,4 +178,15 @@ public class BSTTest {
         List<Integer> lExpected = Arrays.asList(posorderT);
         assertEquals("posOrder should be "+lExpected.toString(), lExpected, instance.posOrder());
     }
+
+    @Test
+    public void testFind() {
+        System.out.println("find");
+        BST<String> sInstance = new BST<>();
+        sInstance.insert("A");
+        sInstance.insert("B");
+        sInstance.insert("C");
+        String expected = "A";
+        assertEquals(expected, sInstance.find(expected).getElement());
+    }
 }

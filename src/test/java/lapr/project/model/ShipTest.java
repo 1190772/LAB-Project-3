@@ -78,4 +78,11 @@ class ShipTest {
     void getDraft() {
         Assert.assertEquals(draft, ship.getDraft(), 0.5);
     }
+
+    @Test
+    public void testToString() {
+        System.out.println("toString");
+        String expected = "Ship{MMSI code = '210950000', Name = 'name', IMO code = 'IMO9395044', Number of energy generators = 10, Generator power output = 70, Call Sign code = 'C4SQ2', Vessel type = '70', Length = 166m, Width = 25m, Capacity = 100m3, Draft = 9.5}";
+        assertEquals(expected, ship.toString());
+    }
 }

@@ -25,12 +25,11 @@ class SearchShipControllerTest {
         controller = new SearchShipController();
     }
 
-/*
+
     @Test
     void findShipTest() {
         Ship expected = ship;
         Ship actual = controller.findShip("IMO9395044");
         Assert.assertEquals(expected, actual);
     }
- */
 }
