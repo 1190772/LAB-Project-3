@@ -6,7 +6,6 @@ public class Company {
     private final String designation;
 
 
-
     private final AuthFacade authFacade;
     private final ShipBST shipBST;
 
@@ -17,10 +16,12 @@ public class Company {
     }
 
     public String getDesignation() {
-return designation;
-}
+        return designation;
+    }
 
-    public ShipBST getShips() { return shipBST; }
+    public ShipBST getShips() {
+        return shipBST;
+    }
 
     public AuthFacade getAuthFacade() {
         return authFacade;

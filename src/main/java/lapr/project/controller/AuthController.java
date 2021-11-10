@@ -4,8 +4,8 @@ package lapr.project.controller;
 import lapr.project.ui.auth.mappers.dto.UserRoleDTO;
 
 import java.util.List;
+
 /**
- *
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class AuthController {

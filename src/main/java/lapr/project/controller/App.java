@@ -9,8 +9,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class App {
     private Company company;
@@ -25,33 +23,11 @@ public class App {
     }
 
     private void bootstrap() {
-        this.authFacade.addUserRole(Constants.ROLE_TRAFFIC_MANAGER,Constants.ROLE_TRAFFIC_MANAGER);
+        this.authFacade.addUserRole(Constants.ROLE_TRAFFIC_MANAGER, Constants.ROLE_TRAFFIC_MANAGER);
 
         this.authFacade.addUserWithRole("Traffic Manager", "manager@lei.sem1.pt", "123456", Constants.ROLE_TRAFFIC_MANAGER);
 
     }
-
-    /*private Properties getProperties()
-    {
-        Properties props = new Properties();
-
-        // Add default properties and values
-
-        // Read configured values
-        try
-        {
-            InputStream in = new FileInputStream(Constants.PARAMS_FILENAME);
-            props.load(in);
-            in.close();
-        }
-        catch(IOException ex)
-        {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return props;
-    }
-
-     */
 
     private Properties getProperties() {
         Properties props = new Properties();
@@ -72,8 +48,8 @@ public class App {
     }
 
     public static App getInstance() {
-        if(singleton == null) {
-            synchronized(App.class) {
+        if (singleton == null) {
+            synchronized (App.class) {
                 singleton = new App();
             }
         }
@@ -92,8 +68,7 @@ public class App {
         this.authFacade.doLogout();
     }
 
-    public Company getCompany()
-    {
-    return this.company;
+    public Company getCompany() {
+        return this.company;
     }
 }

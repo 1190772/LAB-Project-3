@@ -26,7 +26,6 @@ public class SearchShipController {
      * Sends ShipBST the code to be used to find the ship.
      *
      * @param code the code to search by.
-     *
      * @return a ship if found or null otherwise.
      */
     public Ship findShip(String code) {

@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- *
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class UserRole implements Serializable {
@@ -12,17 +11,15 @@ public class UserRole implements Serializable {
     private String id;
     private String description;
 
-    public UserRole(String id, String description)
-    {
-        if (id.length()==0 || description.length()==0)
+    public UserRole(String id, String description) {
+        if (id.length() == 0 || description.length() == 0)
             throw new IllegalArgumentException("UserRole id and/or description cannot be blank.");
 
         this.id = extractId(id);
         this.description = description;
     }
 
-    private String extractId(String id)
-    {
+    private String extractId(String id) {
         return id.trim().toUpperCase();
     }
 
@@ -34,16 +31,14 @@ public class UserRole implements Serializable {
         return description;
     }
 
-    public boolean hasId(String id)
-    {
-        if (id.length()==0)
+    public boolean hasId(String id) {
+        if (id.length() == 0)
             return false;
         return this.id.equals(extractId(id));
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 7;
         hash = 23 * hash + this.id.hashCode();
         return hash;
@@ -68,8 +63,7 @@ public class UserRole implements Serializable {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return String.format("%s - %s", this.id, this.description);
     }
 }

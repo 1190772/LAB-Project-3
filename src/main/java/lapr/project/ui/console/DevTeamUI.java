@@ -1,17 +1,15 @@
 package lapr.project.ui.console;
 
 /**
- *
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
-public class DevTeamUI implements Runnable{
+public class DevTeamUI implements Runnable {
 
-    public DevTeamUI()
-    {
+    public DevTeamUI() {
 
     }
-    public void run()
-    {
+
+    public void run() {
         System.out.println("\n");
         System.out.printf("Development Team:\n");
         System.out.printf("\t David Magalhães - 1201237@isep.ipp.pt \n");

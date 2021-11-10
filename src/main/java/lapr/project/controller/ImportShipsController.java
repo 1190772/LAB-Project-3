@@ -1,6 +1,5 @@
 package lapr.project.controller;
 
-import lapr.project.utils.AVL;
 import lapr.project.utils.BST;
 
 import java.io.BufferedReader;
@@ -23,12 +22,12 @@ public class ImportShipsController {
     //TODO
 
 
-    public void importShipsAll(){
+    public void importShipsAll() {
         ship_BST_all = new BST<>();
-        try{
+        try {
             in = new BufferedReader((new FileReader("sships.csv")));
             in.readLine();
-            while((word = in.readLine()) != null){
+            while ((word = in.readLine()) != null) {
                 ship_BST_all.insert(word);
             }
             System.out.println(ship_BST_all);
