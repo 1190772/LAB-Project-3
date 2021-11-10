@@ -10,12 +10,12 @@ import java.util.Objects;
  */
 public class Password implements Serializable {
 
-    private String password;
+    private final String passwordUser;
 
-    public Password(String password) {
-        if (!validate(password))
+    public Password(String passwordUser) {
+        if (!validate(passwordUser))
             throw new IllegalArgumentException("Invalid Email Address.");
-        this.password = createHash(password);
+        this.passwordUser = createHash(passwordUser);
     }
 
     private boolean validate(String password) {
@@ -34,14 +34,14 @@ public class Password implements Serializable {
     public boolean checkPassword(String pwd) {
         if (pwd.length() == 0)
             return false;
-        BCrypt.Result result = BCrypt.verifyer().verify(pwd.toCharArray(), this.password.toCharArray());
+        BCrypt.Result result = BCrypt.verifyer().verify(pwd.toCharArray(), this.passwordUser.toCharArray());
         return result.verified;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 7 * hash + this.password.hashCode();
+        hash = 7 * hash + this.passwordUser.hashCode();
         return hash;
     }
 
@@ -60,6 +60,6 @@ public class Password implements Serializable {
             return false;
         // field comparison
         Password obj = (Password) o;
-        return Objects.equals(this.password, obj.password);
+        return Objects.equals(this.passwordUser, obj.passwordUser);
     }
 }

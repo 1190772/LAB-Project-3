@@ -5,7 +5,7 @@ package lapr.project.ui.console;
  */
 public class DevTeamUI implements Runnable {
 
-    public DevTeamUI() {
+    public DevTeamUI() throws  UnsupportedOperationException{
 
     }
 
