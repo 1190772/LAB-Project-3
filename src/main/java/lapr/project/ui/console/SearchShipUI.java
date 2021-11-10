@@ -38,9 +38,10 @@ public class SearchShipUI implements Runnable {
 
         chosenShip = controller.findShip(code);
 
-        if (chosenShip != null)
-            System.out.println(chosenShip.toString());
-        else
+        if (chosenShip == null)
             System.out.println("No ship was found with the provided code.");
+        else {
+            System.out.println(chosenShip.toString());
+        }
     }
 }
