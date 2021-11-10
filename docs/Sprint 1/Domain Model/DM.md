@@ -1,4 +1,4 @@
-### Conceptual Class Category List ###
+## Conceptual Class Category List ###
 
 **Business Transactions**
 
