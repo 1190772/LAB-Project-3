@@ -32,14 +32,14 @@ class ShipBSTTest {
 
     @Test
     void findShipByMMSITest() {
-        Ship expected = ship3;
+        Ship expected = ship4;
         Ship found = shipBST.findShip("228339600");
         Assert.assertEquals(expected, found);
     }
 
     @Test
     void findShipByCallSignTest() {
-        Ship expected = ship1;
+        Ship expected = ship4;
         Ship found = shipBST.findShip("C4SQ2");
         Assert.assertEquals(expected, found);
     }
