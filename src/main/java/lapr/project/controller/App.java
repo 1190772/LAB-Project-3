@@ -10,6 +10,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ *
+ * @author Paulo Maio <pam@isep.ipp.pt>
+ */
 public class App {
     private Company company;
     private static App singleton = null;

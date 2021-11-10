@@ -31,7 +31,7 @@ public class BSTTest {
         for(int i :arr)
             instance.insert(i);        
     }    
-/**
+    /**
      * Test of size method, of class BST.
      */
     @Test
@@ -86,7 +86,7 @@ public class BSTTest {
         instance.remove(999);
         assertEquals("size should be = 0", 0,instance.size());
     }
-/**
+    /**
      * Test of isEmpty method, of class BST.
      */
     @Test
@@ -103,7 +103,7 @@ public class BSTTest {
         instance.remove(11);
         assertTrue("the BST should be empty", instance.isEmpty());
     }
-/**
+    /**
      * Test of height method, of class BST.
      */
     @Test
@@ -131,7 +131,7 @@ public class BSTTest {
         instance.remove(8);
         assertEquals(new Integer(10), instance.smallestElement());
     }    
-/**
+    /**
      * Test of processBstByLevel method, of class TREE.
      */
     @Test
@@ -151,7 +151,7 @@ public class BSTTest {
     }    
    
 
-/**
+    /**
      * Test of inOrder method, of class BST.
      */
     @Test
@@ -160,7 +160,7 @@ public class BSTTest {
         List<Integer> lExpected = Arrays.asList(inorderT);
         assertEquals("inOrder should be "+lExpected.toString(), lExpected, instance.inOrder());
     }
-/**
+    /**
      * Test of preOrder method, of class BST.
      */
     @Test
@@ -169,7 +169,7 @@ public class BSTTest {
         List<Integer> lExpected = Arrays.asList(preorderT);
         assertEquals("preOrder should be "+lExpected.toString(), lExpected, instance.preOrder());
     }
-/**
+    /**
      * Test of posOrder method, of class BST.
      */
     @Test
@@ -177,5 +177,5 @@ public class BSTTest {
         System.out.println("posOrder");
         List<Integer> lExpected = Arrays.asList(posorderT);
         assertEquals("posOrder should be "+lExpected.toString(), lExpected, instance.posOrder());
-    }    
+    }
 }

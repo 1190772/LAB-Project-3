@@ -93,7 +93,7 @@ public class BST<E extends Comparable<E>> implements BSTInterface<E> {
         }
         return node;
     }
-    
+
     /*
     * Inserts an element in the tree.
     */
@@ -123,7 +123,7 @@ public class BST<E extends Comparable<E>> implements BSTInterface<E> {
     private Node<E> remove(E element, Node<E> node) {
         
         if (node == null) {
-            return null;    //throw new IllegalArgumentException("Element does not exist");
+            return null;
         }   
         if (element.compareTo(node.getElement())==0) {
             // node is the Node to be removed
