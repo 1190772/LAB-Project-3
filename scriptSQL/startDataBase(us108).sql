@@ -81,15 +81,14 @@ create table Employee(
 
 create table Truck(
     id_truck                  integer constraint pk_truck Primary Key,
-    id_employee               integer, constraint fk_id_employee_truck references Employee(id_employee)
-);
+    id_employee               integer, constraint fk_id_employee_truck references Employee(id_employee));
 
 create table Ship(
     imo_code                  char(10) constraint pk_ship Primary Key,
     mmsi_code                 integer, constraint un_mmsi_code_ship unique, constraint ck_mmsi_code_ship check between 100000000 and 999999999,
     name_ship                 varChar(30),
---    number_generators         integer(2)?,
---    power_out_generator       integer(3/4)?,
+    number_generators         integer,
+    power_out_generator       integer,
     call_sign                 char(5), constraint un_call_sign_ship unique,
     vessel_type               integer,
     Length_ship               integer,
@@ -105,7 +104,7 @@ create table Position_Ship(
     sog	    			      number(3,1),
     cog 			          number(3,1),
     heading			          integer,
-    transceiver_class         char(1)
+    transceiver_class         char(1),
     Constraint pk_position_ship Primary Key (id_ship, base_date_time));
 
 create table Port(
@@ -117,7 +116,7 @@ create table Port(
     longitude			      number(11,9));
 
 create table Warehouse(
---    id_warehouse     		    char(?) constraint pk_warehouse Primary Key,
+    id_warehouse     		  integer constraint pk_warehouse Primary Key,
     name    	   			  varChar(30),
     continent		    	  varChar(20),
     country		         	  varChar(20),
@@ -130,7 +129,7 @@ create table Cargo_Manifesto(
     id_truck                  integer, constraint fk_truck_cargo_manifesto Foreign Key (id_truck) references Truck(id_truck),
     id_ship                   char(10), constraint fk_ship_cargo_manifesto Foreign Key (id_ship) references Ship(imo_code),
     id_port                   char(5), constraint fk_id_port_cargo_manifesto Foreign Key (id_port) references Port(id_port),
---    id_warehouse              char(?), constraint fk_id_warehouse_cargo_manifesto Foreign Key (id_warehouse) references Warehouse(id_warehouse),
+    id_warehouse              integer, constraint fk_id_warehouse_cargo_manifesto Foreign Key (id_warehouse) references Warehouse(id_warehouse),
     position_code             integer(6),
-    payload               number(5,1),
+    payload                   number(5,1),
     Constraint pk_cargo_manifesto Primary Key Cargo_Manifesto(id_container, date_time));
