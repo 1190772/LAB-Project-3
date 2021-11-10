@@ -29,7 +29,6 @@ class ShipPosition {
 -Speed over ground SOG
 -Course over ground COG
 -Heading
--Position
 -Transceiver Class
 }
 
