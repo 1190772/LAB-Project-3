@@ -1,7 +1,5 @@
 package lapr.project.model;
 
-import java.util.ArrayList;
-
 /**
  * Represents a Ship.
  *
@@ -69,7 +67,7 @@ public class Ship implements Comparable<Ship> {
     /**
      * History of positions.
      */
-    private ArrayList<ShipPosition> positions;
+    private ShipPositionBST positions;
 
     /**
      * Builds an instance of Ship receiving all the information.
@@ -100,7 +98,7 @@ public class Ship implements Comparable<Ship> {
         this.width = width;
         this.capacity = capacity;
         this.draft = draft;
-        positions = new ArrayList<>();
+        positions = new ShipPositionBST();
     }
 
     /**
@@ -124,7 +122,7 @@ public class Ship implements Comparable<Ship> {
         this.width = width;
         this.draft = draft;
         this.cargo = cargo;
-        positions = new ArrayList<>();
+        positions = new ShipPositionBST();
     }
 
     /**
@@ -210,7 +208,7 @@ public class Ship implements Comparable<Ship> {
      * @param position a position.
      */
     public void addPosition(ShipPosition position) {
-        positions.add(position);
+        positions.insert(position);
     }
 
     /**
