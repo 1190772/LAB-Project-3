@@ -1,4 +1,4 @@
-package lapr.project.utils;
+package lapr.project.ui.console;
 
 import java.io.*;
 import java.text.DateFormat;
