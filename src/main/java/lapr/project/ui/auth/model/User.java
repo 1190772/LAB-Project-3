@@ -8,10 +8,10 @@ import java.util.*;
  */
 public class User implements Serializable {
 
-    private Email id;
-    private Password password;
-    private String name;
-    private Set<UserRole> roles = new HashSet<UserRole>();
+    private final Email id;
+    private final Password password;
+    private final String name;
+    private final Set<UserRole> roles = new HashSet<UserRole>();
 
     public User(Email id, Password pwd, String name) {
         if (name.length() == 0)

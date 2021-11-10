@@ -5,7 +5,7 @@ import java.util.List;
 
 public class TrafficManagerUI implements Runnable {
 
-    public TrafficManagerUI() {
+    public TrafficManagerUI() throws UnsupportedOperationException {
 
     }
 

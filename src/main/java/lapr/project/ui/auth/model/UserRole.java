@@ -8,8 +8,8 @@ import java.util.Objects;
  */
 public class UserRole implements Serializable {
 
-    private String id;
-    private String description;
+    private final String id;
+    private final String description;
 
     public UserRole(String id, String description) {
         if (id.length() == 0 || description.length() == 0)

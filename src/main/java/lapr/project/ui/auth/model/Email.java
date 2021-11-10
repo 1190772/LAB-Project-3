@@ -8,12 +8,12 @@ import java.util.regex.Pattern;
  */
 public class Email {
 
-    private String email;
+    private final String emailUser;
 
-    public Email(String email) {
-        if (!validate(email))
+    public Email(String emailUser) {
+        if (!validate(emailUser))
             throw new IllegalArgumentException("Invalid Email Address.");
-        this.email = email;
+        this.emailUser = emailUser;
     }
 
     private boolean validate(String email) {
@@ -36,14 +36,14 @@ public class Email {
         return pat.matcher(email).matches();
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailUser() {
+        return emailUser;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 17 * hash + this.email.hashCode();
+        hash = 17 * hash + this.emailUser.hashCode();
         return hash;
     }
 
@@ -62,11 +62,11 @@ public class Email {
             return false;
         // field comparison
         Email obj = (Email) o;
-        return Objects.equals(this.email, obj.email);
+        return Objects.equals(this.emailUser, obj.emailUser);
     }
 
     @Override
     public String toString() {
-        return String.format("%s", this.email);
+        return String.format("%s", this.emailUser);
     }
 }
