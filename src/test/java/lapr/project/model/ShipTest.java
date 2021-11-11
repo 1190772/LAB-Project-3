@@ -94,10 +94,10 @@ class ShipTest {
         ArrayList<ShipPosition> expected = new ArrayList<>();
         ArrayList<ShipPosition> actual;
 
-        ShipPosition pos1 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 19), 42.97875,-66.97001,12.9,13.1,355, 'B');
-        ShipPosition pos2 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 3), 42.97875,-66.97001,12.9,13.1,355, 'B');
-        ShipPosition pos3 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 16, 20), 42.97875,-66.97001,12.9,13.1,355, 'B');
-        ShipPosition pos4 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 42.97875,-66.97001,12.9,13.1,355, 'B');
+        ShipPosition pos1 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 19), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
+        ShipPosition pos2 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 3), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
+        ShipPosition pos3 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 16, 20), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
+        ShipPosition pos4 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
 
         ship.addPosition(pos1);
         ship.addPosition(pos2);

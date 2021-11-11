@@ -66,8 +66,6 @@ public class Ship implements Comparable<Ship> {
      */
     private float draft;
 
-    private String cargo;
-
     /**
      * History of positions.
      */
@@ -116,7 +114,7 @@ public class Ship implements Comparable<Ship> {
      * @param width the width of the Ship, in meters.
      * @param draft the draft of the Ship, in meters.
      */
-    public Ship(String MMSI, String name, String IMO, String callSign, int vesselType, int length, int width, float draft, String cargo) {
+    public Ship(String MMSI, String name, String IMO, String callSign, int vesselType, int length, int width, float draft) {
         this.MMSI = MMSI;
         this.name = name;
         this.IMO = IMO;
@@ -125,7 +123,6 @@ public class Ship implements Comparable<Ship> {
         this.length = length;
         this.width = width;
         this.draft = draft;
-        this.cargo = cargo;
         positions = new ShipPositionBST();
     }
 
@@ -227,6 +224,7 @@ public class Ship implements Comparable<Ship> {
         ArrayList<ShipPosition> res = new ArrayList<>();
         Iterator<ShipPosition> positions;
         ShipPosition position;
+        boolean end = false;
 
         positions = this.positions.inOrder().iterator();
         position = positions.next();
@@ -234,9 +232,12 @@ public class Ship implements Comparable<Ship> {
         while (position.getBaseDateTime().compareTo(startDate) < 0)
             position = positions.next();
 
-        while (position.getBaseDateTime().compareTo(endDate) < 0) {
+        while (position.getBaseDateTime().compareTo(endDate) < 0 && !end) {
             res.add(position);
-            position = positions.next();
+            if (positions.hasNext())
+                position = positions.next();
+            else
+                end = true;
         }
 
         return res;

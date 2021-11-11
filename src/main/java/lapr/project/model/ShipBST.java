@@ -94,7 +94,6 @@ public class ShipBST extends AVL<Ship> {
             if (res == null)
                 res = findShipByMMSI(node.getRight(), code);
         }
-
         return res;
     }
 
@@ -117,7 +116,6 @@ public class ShipBST extends AVL<Ship> {
             if (res == null)
                 res = findShipByCallSign(node.getRight(), code);
         }
-
         return res;
     }
 
