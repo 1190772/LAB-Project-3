@@ -32,7 +32,7 @@ public class ShipMovementsAndDistance {
         Map<String,ArrayList<Double>> shipMap1;
         for (String mmsi:shipMap.keySet()
              ) {
-            shipMap.get(mmsi).get(0)
+            shipMap.get(mmsi).get(0);
         }
         return shipMap;
     }
