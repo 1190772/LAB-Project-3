@@ -3,7 +3,6 @@ package lapr.project.ui.console;
 import lapr.project.controller.AuthController;
 import lapr.project.model.shared.Constants;
 import lapr.project.ui.auth.mappers.dto.UserRoleDTO;
-import lapr.project.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,7 +14,7 @@ import java.util.Objects;
  */
 
 public class AuthUI implements Runnable {
-    private AuthController ctrl;
+    private final AuthController ctrl;
 
     public AuthUI() {
         ctrl = new AuthController();

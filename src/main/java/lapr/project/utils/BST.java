@@ -204,13 +204,6 @@ public class BST<E extends Comparable<E>> implements BSTInterface<E> {
         if (node.getLeft() != null)
             return smallestElement(node.getLeft());
         else return node.getElement();
-
-        /*
-        Node<E> nAux
-
-        for (nAux = node; nAux != null; nAux = node.getLeft())
-            return nAux.getElement;
-         */
     } 
     
    /*

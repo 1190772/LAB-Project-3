@@ -104,7 +104,7 @@ Company "1" --- "*" OrganizationRole : Comprehends >
 Employee "*" - "1" OrganizationRole : Has/Plays >
 Shipping "1" -- "1" Client : Requested by >
 Ship "1" -- "*" Container : Transports >
-Ship "1" -- "1" ShipPosition : has >
+Ship "1" -- "1..*" ShipPosition : has >
 TrafficManager "1" - "*" ShipPosition : Controls >
 TrafficManager "1" -- "*" Truck : Controls position of >
 Truck "1" -- "1" Container : Transports >

@@ -13,7 +13,7 @@ import java.util.Set;
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class UserStore implements Serializable {
-    private Set<User> store = new HashSet<User>();
+    private final Set<User> store = new HashSet<User>();
 
 
     public User create(String name, String email, String password) {

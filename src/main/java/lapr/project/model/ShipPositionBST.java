@@ -21,7 +21,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return distanceBetweenTwoCoordinates(list.get(0), list.get(list.size()-1));
     }
 
-    public double distanceTravelled(){
+    public double travelledDistance(){
         ArrayList<ShipPosition> list = (ArrayList<ShipPosition>) inOrder();
         if (list.isEmpty())
             return -1;
@@ -36,7 +36,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return distanceBetweenTwoCoordinates(list.get(position), list.get(position+1))+distanceTravelled(list, position+1);
     }
 
-    public int numberMovements() {
+    public int totalNumberMovements() {
         return size()-1;
     }
 }

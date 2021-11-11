@@ -1,5 +1,9 @@
 package lapr.project.model;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  * Represents a Ship.
  *
@@ -209,6 +213,33 @@ public class Ship implements Comparable<Ship> {
      */
     public void addPosition(ShipPosition position) {
         positions.insert(position);
+    }
+
+    /**
+     * Returns positions of ship given a date interval.
+     *
+     * @param startDate start of interval.
+     * @param endDate end of interval.
+     *
+     * @return negative, 0, or positive, depending on whose IMO code comes first.
+     */
+    public ArrayList<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
+        ArrayList<ShipPosition> res = new ArrayList<>();
+        Iterator<ShipPosition> positions;
+        ShipPosition position;
+
+        positions = this.positions.inOrder().iterator();
+        position = positions.next();
+
+        while (position.getBaseDateTime().compareTo(startDate) < 0)
+            position = positions.next();
+
+        while (position.getBaseDateTime().compareTo(endDate) < 0) {
+            res.add(position);
+            position = positions.next();
+        }
+
+        return res;
     }
 
     /**
