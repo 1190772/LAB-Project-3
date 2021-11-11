@@ -241,6 +241,10 @@ public class Ship implements Comparable<Ship> {
 
         return res;
     }
+    
+    public ShipPositionBST getPosition(){
+        return  positions;
+    } 
 
     /**
      * Compares two ships based on IMO code.
@@ -273,4 +277,5 @@ public class Ship implements Comparable<Ship> {
                 ", Draft = " + draft +
                 '}';
     }
+    
 }
