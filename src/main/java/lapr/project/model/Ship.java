@@ -62,7 +62,7 @@ public class Ship implements Comparable<Ship> {
      */
     private float draft;
 
-    private int cargo;
+    private String cargo;
 
     /**
      * History of positions.
@@ -112,7 +112,7 @@ public class Ship implements Comparable<Ship> {
      * @param width the width of the Ship, in meters.
      * @param draft the draft of the Ship, in meters.
      */
-    public Ship(String MMSI, String name, String IMO, String callSign, int vesselType, int length, int width, float draft, int cargo) {
+    public Ship(String MMSI, String name, String IMO, String callSign, int vesselType, int length, int width, float draft, String cargo) {
         this.MMSI = MMSI;
         this.name = name;
         this.IMO = IMO;
