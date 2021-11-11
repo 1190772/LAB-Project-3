@@ -3,13 +3,13 @@ package lapr.project.model;
 import java.time.LocalDateTime;
 
 public class ShipPosition implements Comparable<ShipPosition> {
-    private LocalDateTime baseDateTime;
-    private double latitude;
-    private double longitude;
-    private double sog;
-    private double cog;
-    private int heading;
-    private char transceiverClass;
+    private final LocalDateTime baseDateTime;
+    private final double latitude;
+    private final double longitude;
+    private final double sog;
+    private final double cog;
+    private final int heading;
+    private final char transceiverClass;
 
     public ShipPosition(LocalDateTime baseDateTime, double latitude, double longitude, double sog, double cog, int heading, char transceiverClass) {
         this.baseDateTime = baseDateTime;
@@ -42,13 +42,13 @@ public class ShipPosition implements Comparable<ShipPosition> {
     public String toString()
         {
         return "ShipPosition{" +
-                "baseDateTime=" + baseDateTime +
+                "Base date and time=" + baseDateTime +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
-                ", sog=" + sog +
-                ", cog=" + cog +
-                ", heading=" + heading +
-                ", transceiverClass=" + transceiverClass +
+                ", SOG=" + sog +
+                ", COG=" + cog +
+                ", Heading=" + heading +
+                ", Transceiver Class=" + transceiverClass +
                 '}';
         }
 }

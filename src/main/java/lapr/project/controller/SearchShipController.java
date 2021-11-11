@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
- * Controller of US102.
+ * Controller responsible for coordinating ship searches.
  *
  * @author David Magalhães 1201237
  */
@@ -42,6 +42,14 @@ public class SearchShipController {
         return ship;
     }
 
+    /**
+     * Sends Ship an interval of dates to search positions.
+     *
+     * @param startDate the start date.
+     * @param endDate the end date.
+     *
+     * @return a list of positions.
+     */
     public ArrayList<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
         return ship.getPositions(startDate, endDate);
     }

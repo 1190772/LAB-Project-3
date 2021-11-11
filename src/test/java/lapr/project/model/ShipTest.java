@@ -94,10 +94,10 @@ class ShipTest {
         ArrayList<ShipPosition> expected = new ArrayList<>();
         ArrayList<ShipPosition> actual;
 
-        ShipPosition pos1 = new ShipPosition(LocalDateTime.of(2020, Month.DECEMBER, 31, 17, 19), 42.97875,-66.97001,12.9,13.1,355, 'B');
-        ShipPosition pos2 = new ShipPosition(LocalDateTime.of(2020, Month.DECEMBER, 31, 17, 3), 42.97875,-66.97001,12.9,13.1,355, 'B');
-        ShipPosition pos3 = new ShipPosition(LocalDateTime.of(2020, Month.DECEMBER, 31, 16, 20), 42.97875,-66.97001,12.9,13.1,355, 'B');
-        ShipPosition pos4 = new ShipPosition(LocalDateTime.of(2020, Month.DECEMBER, 31, 17, 16), 42.97875,-66.97001,12.9,13.1,355, 'B');
+        ShipPosition pos1 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 19), 42.97875,-66.97001,12.9,13.1,355, 'B');
+        ShipPosition pos2 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 3), 42.97875,-66.97001,12.9,13.1,355, 'B');
+        ShipPosition pos3 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 16, 20), 42.97875,-66.97001,12.9,13.1,355, 'B');
+        ShipPosition pos4 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 42.97875,-66.97001,12.9,13.1,355, 'B');
 
         ship.addPosition(pos1);
         ship.addPosition(pos2);
@@ -107,7 +107,7 @@ class ShipTest {
         expected.add(pos2);
         expected.add(pos4);
 
-        actual = ship.getPositions(LocalDateTime.of(2020, Month.DECEMBER, 31, 17, 0), LocalDateTime.of(2020, Month.DECEMBER, 31, 17, 18));
+        actual = ship.getPositions(LocalDateTime.of(2020, 12, 31, 17, 0), LocalDateTime.of(2020, 12, 31, 17, 18));
 
         assertEquals(expected, actual);
     }
