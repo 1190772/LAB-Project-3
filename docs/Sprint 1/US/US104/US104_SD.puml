@@ -8,6 +8,7 @@ participant ":ShipMovementsUI" as UI
 participant ":ShipMovementsController" as CTRL
 participant ":SearchShipController" as CTRL2
 participant ":ShipPositionBST" as BST
+participant ":ShipMovements" as SM
 participant ":ShipPosition" as SP
 
 activate TM
@@ -32,37 +33,39 @@ note right of CTRL2 : More information in US102
 CTRL -> BST : attributes = getAttributes()
 activate BST
 autonumber 6.1
-BST -> BST : firstPosition = getFirstPosition()
+BST -> SM : firstPosition = getFirstPosition()
+activate SM
 
 autonumber 6.1.1
-BST -> SP : startBaseDateTime = firstPosition.getBaseDateTime()
+SM -> SP : startBaseDateTime = firstPosition.getBaseDateTime()
 activate SP
-BST -> SP : departureLatitude = firstPosition.getLatitude()
-BST -> SP : departureLongitude = firstPosition.getLongitude()
+SM -> SP : departureLatitude = firstPosition.getLatitude()
+SM -> SP : departureLongitude = firstPosition.getLongitude()
 deactivate SP
 
 autonumber 6.2
-BST -> BST : lastPosition = getLastPosition()
+BST -> SM : lastPosition = getLastPosition()
 
 autonumber 6.2.1
-BST -> SP : endBaseDateTime = lastPosition.getBaseDateTime()
+SM -> SP : endBaseDateTime = lastPosition.getBaseDateTime()
 activate SP
-BST -> SP : arrivalLatitude = lastPosition.getLatitude()
-BST -> SP : arrivalLongitude = lastPosition.getLongitude()
+SM -> SP : arrivalLatitude = lastPosition.getLatitude()
+SM -> SP : arrivalLongitude = lastPosition.getLongitude()
 deactivate SP
 
 autonumber 6.3
-BST -> BST : travelledDistance = travelledDistance()
-BST -> BST : deltaDistance = deltaDistance()
-BST -> BST : totalNumberMovements = totalNumberMovements()
-BST -> BST : maxSOG = getMaxSOG()
-BST -> BST : meanSOG = getMeanSOG()
-BST -> BST : maxCOG = getMaxCOG()
-BST -> BST : meanCOG = getMeanCOG()
-
+BST -> SM : travelledDistance = travelledDistance()
+BST -> SM : deltaDistance = deltaDistance()
+BST -> SM : totalNumberMovements = totalNumberMovements()
+BST -> SM : maxSOG = getMaxSOG()
+BST -> SM : meanSOG = getMeanSOG()
+BST -> SM : maxCOG = getMaxCOG()
+BST -> SM : meanCOG = getMeanCOG()
+SM --> BST : result = toString()
+deactivate SM
+deactivate BST
 autonumber 7
 CTRL -> UI : result
-deactivate BST
 deactivate CTRL
 
 UI --> TM : shows results
