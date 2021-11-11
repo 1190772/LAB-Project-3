@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ShipMovementsUI {
+- ShipMovementsController controller
+- ShipMovements details
+}
+
+class ShipMovementsController {
+- ShipPositionBST shipPositionBST
+- SearchShipController searchShipController
+}
+
+class SearchShipController {
+- ShipBST shipBST
++ findShip(code)
+}
+
+class ShipMovements {
+- String shipCode
+- String shipName
+- LocalDateTime startBaseDateTime
+- LocalDateTime endBaseDateTime
+- Time totalMovementTime
+- Integer totalNumberMovements
+- Double maxSOG
+- Double meanSOG
+- Double maxCOG
+- Double meanCOG
+- Double departureLatitude
+- Double departureLongitude
+- Double arrivalLatitude
+- Double arrivalLongitude
+- Double travelledDistance
+- Double deltaDistance
++ ShipMovements(shipCode, shipName, startBaseDateTime, \nendBaseDateTime, totalMovementTime, totalNumberMovements, \nmaxSOG, meanSOG, maxCOG, meanCOG, departureLatitude, \ndepartureLongitude, arrivalLatitude, arrivalLongitude, \ntravelledDistance, deltaDistance)
++ toString()
+}
+
+class ShipPositionBST
+
+class ShipPosition
+
+ShipMovementsController <.. ShipMovementsUI
+SearchShipController <.. ShipMovementsController
+ShipPositionBST <.. ShipMovementsController
+ShipPosition <-- ShipPositionBST
+ShipMovements <-- ShipPosition
+ShipMovements <.. ShipMovementsUI
+@enduml

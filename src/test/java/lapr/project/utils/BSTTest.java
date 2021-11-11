@@ -183,10 +183,13 @@ public class BSTTest {
     public void testFind() {
         System.out.println("find");
         BST<String> sInstance = new BST<>();
-        sInstance.insert("A");
         sInstance.insert("B");
+        sInstance.insert("A");
+        sInstance.insert("E");
         sInstance.insert("C");
-        String expected = "A";
+        sInstance.insert("F");
+        sInstance.insert("D");
+        String expected = "D";
         assertEquals(expected, sInstance.find(expected).getElement());
     }
 }
