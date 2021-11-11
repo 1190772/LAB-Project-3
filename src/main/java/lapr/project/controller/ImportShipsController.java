@@ -3,9 +3,7 @@ package lapr.project.controller;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipBST;
 import lapr.project.model.ShipPosition;
-import lapr.project.utils.BST;
 
-import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
