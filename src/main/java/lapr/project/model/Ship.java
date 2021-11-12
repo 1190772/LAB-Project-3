@@ -232,7 +232,7 @@ public class Ship implements Comparable<Ship> {
         while (position.getBaseDateTime().compareTo(startDate) < 0)
             position = positions.next();
 
-        while (position.getBaseDateTime().compareTo(endDate) < 0 && !end) {
+        while (position.getBaseDateTime().compareTo(endDate) <= 0 && !end) {
             res.add(position);
             if (positions.hasNext())
                 position = positions.next();
