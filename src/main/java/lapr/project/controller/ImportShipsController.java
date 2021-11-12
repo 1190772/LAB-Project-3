@@ -22,8 +22,8 @@ public class ImportShipsController {
     public void importShips() {
         String[] parameters;
         Ship ship;
-        try {
-            Scanner in = new Scanner((new FileReader(fileName)));
+        try (Scanner in = new Scanner((new FileReader(fileName)))) {
+            in.nextLine();
             while (in.hasNextLine()) {
                 parameters = in.nextLine().split(",");
                 String imo = parameters[8];

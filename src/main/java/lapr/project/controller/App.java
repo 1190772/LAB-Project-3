@@ -15,9 +15,9 @@ import java.util.Properties;
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class App {
-    private Company company;
+    private final Company company;
     private static App singleton = null;
-    private AuthFacade authFacade;
+    private final AuthFacade authFacade;
 
     private App() {
         Properties properties = getProperties();
