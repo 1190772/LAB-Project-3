@@ -103,6 +103,8 @@ public class BSTTest {
         
         instance.remove(999);
         assertEquals(0,instance.size());
+
+
     }
     /**
      * Test of isEmpty method, of class BST.

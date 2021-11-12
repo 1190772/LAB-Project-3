@@ -1,10 +1,9 @@
 package lapr.project.model;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ShipPositionTest {
 
@@ -32,27 +31,29 @@ class ShipPositionTest {
 
     @Test
     void getBaseDateTime() {
-        assertEquals(baseDateTime, shipPosition.baseDateTime);
+        Assertions.assertEquals(baseDateTime, shipPosition.baseDateTime);
     }
 
     @Test
     void getLatitude() {
-        assertEquals(latitude,shipPosition.getLatitude());
+    Assertions.assertEquals(latitude,shipPosition.getLatitude());
     }
 
     @Test
     void getLongitude() {
-        assertEquals(longitude, shipPosition.getLongitude());
+    Assertions.assertEquals(longitude, shipPosition.getLongitude());
     }
 
-//    @Test
-//    void testToString() {
-//        String expected="ShipPosition{year=2020, month=12, day=24, hour=13, minute=30, latitude=42.97875, longitude=-66.97001, sog=12.9, cog=13.1, heading=355.0, transceiverClass=|b}";
-//        Assert.assertEquals(expected, shipPosition.toString());
-//    }
-//
-//    @Test
-//    void compareTo() {
-//        Assert.assertTrue(baseDateTime.compareTo(shipPosition.getBaseDateTime()) == 0);
-//    }
+/*
+    @Test
+    void testToString() {
+        String expected="Ship Position{Base date and time = 2020-12-24T13:30, Latitude = 42.97875, Longitude = -66.97001, SOG = 12.9, COG = 13.1, Heading = 355.0, Transceiver Class = |b, Cargo = 355.0}";
+        Assertions.assertEquals(expected, shipPosition.toString());
+    }
+ */
+
+    @Test
+    void compareTo() {
+        Assertions.assertEquals(0, baseDateTime.compareTo(shipPosition.getBaseDateTime()));
+    }
 }

@@ -10,7 +10,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /**
  *
@@ -34,6 +35,8 @@ public class AVLTest {
         Integer[] inorder1={2,3,4,6,8,10};
         for (int i=0; i<arr.length; i++)            //new elements
             instance.insert(arr[i]);
+
+        instance.insert(arr[0]);
         
         List<Integer> lExpected = Arrays.asList(inorder1);           
         assertEquals(lExpected, instance.inOrder());
@@ -83,7 +86,6 @@ public class AVLTest {
         int arr[] = {8,4,10,2,6,3};
         for (int i=0; i<arr.length; i++)            
             instance.insert(arr[i]);
-        
 
         //no rotations needed
         instance.remove(3);
@@ -117,7 +119,10 @@ public class AVLTest {
         assertEquals(lExpected, instance.inOrder());
         assertEquals(-1, instance.height());
 
-        System.out.println("------------------------------------");
+        instance.root = null;
+        instance.remove(10);
+
+    System.out.println("------------------------------------");
     }
     
     @Test
