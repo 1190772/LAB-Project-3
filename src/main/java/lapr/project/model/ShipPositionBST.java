@@ -84,4 +84,19 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         mean /= size();
         return mean;
     }
+
+//    public void topNShips(){
+//        double distance;
+//        double auxDistance=0;
+//        int position = 0;
+//
+//        for(ShipPosition sp: list){
+//            distance = travelledDistance(list,position);
+//            position++;
+//            if(distance>auxDistance){
+//
+//            }
+//        }
+//    }
+
 }
