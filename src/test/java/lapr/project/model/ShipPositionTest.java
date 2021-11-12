@@ -7,8 +7,6 @@ import java.time.LocalDateTime;
 
 class ShipPositionTest {
 
-    private static final char B = 8;
-
     final ShipPosition shipPosition;
     final int year = 2020;
     final int month = 12;
@@ -20,7 +18,7 @@ class ShipPositionTest {
     final double sog = 12.9;
     final double cog = 13.1;
     final int heading = 355;
-    final char transceiverClass = B;
+    final char transceiverClass = 'B';
     final int cargo = 0;
     final LocalDateTime baseDateTime = LocalDateTime.of(year,month,day,hour,minute);
 
