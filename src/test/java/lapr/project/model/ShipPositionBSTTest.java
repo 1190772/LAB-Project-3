@@ -3,10 +3,11 @@ package lapr.project.model;
 import lapr.project.controller.App;
 import lapr.project.controller.ImportShipsController;
 import lapr.project.controller.ShipMovementsController;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ShipPositionBSTTest {
     ShipBST shipBST;
@@ -29,7 +30,7 @@ public class ShipPositionBSTTest {
     @Test
     public void deltaDistanceTest() {
         for (int i = 0; i < deltaDistance.length; i++)
-            Assert.assertEquals(deltaDistance[i], shipMovementsList.get(i).getDeltaDistance(), 5);
+            assertEquals(deltaDistance[i], shipMovementsList.get(i).getDeltaDistance(), 5);
 
         //Confirmation http://www.movable-type.co.uk/scripts/latlong.html
         for (Ship ship : shipBST.inOrder()) {
@@ -47,7 +48,7 @@ public class ShipPositionBSTTest {
     @Test
     public void travelledDistanceTest() {
         for (int i = 0; i < travelledDistance.length; i++)
-            Assert.assertEquals(travelledDistance[i], shipMovementsList.get(i).getTravelledDistance(), 5);
+            assertEquals(travelledDistance[i], shipMovementsList.get(i).getTravelledDistance(), 5);
 
         //Confirmation http://www.movable-type.co.uk/scripts/latlong.html
         for (Ship ship : shipBST.inOrder()) {
@@ -64,7 +65,7 @@ public class ShipPositionBSTTest {
     @Test
     public void totalMovementTimeTest() {
         for (int i = 0; i < totalMovementTime.length; i++)
-            Assert.assertEquals(totalMovementTime[i], shipMovementsList.get(i).getTotalMovementTime().toString());
+            assertEquals(totalMovementTime[i], shipMovementsList.get(i).getTotalMovementTime().toString());
     }
 
 

@@ -1,13 +1,11 @@
 package lapr.project.model;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ShipTest {
 
@@ -30,57 +28,57 @@ class ShipTest {
 
     @Test
     void getMMSI() {
-        Assert.assertEquals(mmsi, ship.getMMSI());
+        assertEquals(mmsi, ship.getMMSI());
     }
 
     @Test
     void getName() {
-        Assert.assertEquals(name, ship.getName());
+        assertEquals(name, ship.getName());
     }
 
     @Test
     void getIMO() {
-        Assert.assertEquals(imo, ship.getIMO());
+        assertEquals(imo, ship.getIMO());
     }
 
     @Test
     void getNumberEnergyGenerators() {
-        Assert.assertEquals(numberOfEnergyGenerators, ship.getNumberEnergyGenerators());
+        assertEquals(numberOfEnergyGenerators, ship.getNumberEnergyGenerators());
     }
 
     @Test
     void getGeneratorPowerOutput() {
-        Assert.assertEquals(generatorPowerOutput, ship.getGeneratorPowerOutput());
+        assertEquals(generatorPowerOutput, ship.getGeneratorPowerOutput());
     }
 
     @Test
     void getCallSign() {
-        Assert.assertEquals(callSign, ship.getCallSign());
+        assertEquals(callSign, ship.getCallSign());
     }
 
     @Test
     void getVesselType() {
-        Assert.assertEquals(vesselType, ship.getVesselType());
+        assertEquals(vesselType, ship.getVesselType());
     }
 
     @Test
     void getLength() {
-        Assert.assertEquals(length, ship.getLength());
+        assertEquals(length, ship.getLength());
     }
 
     @Test
     void getWidth() {
-        Assert.assertEquals(width, ship.getWidth());
+        assertEquals(width, ship.getWidth());
     }
 
     @Test
     void getCapacity() {
-        Assert.assertEquals(capacity, ship.getCapacity());
+        assertEquals(capacity, ship.getCapacity());
     }
 
     @Test
     void getDraft() {
-        Assert.assertEquals(draft, ship.getDraft(), 0.5);
+        assertEquals(draft, ship.getDraft(), 0.5);
     }
 
     @Test

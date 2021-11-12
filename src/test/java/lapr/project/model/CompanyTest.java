@@ -1,9 +1,8 @@
 package lapr.project.model;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CompanyTest {
 
@@ -17,6 +16,6 @@ class CompanyTest {
     void getDesignation() {
         String expected = "Designation";
         String actual = company.getDesignation();
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 }

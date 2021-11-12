@@ -3,10 +3,9 @@ package lapr.project.controller;
 import lapr.project.model.Company;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipBST;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SearchShipControllerTest {
 
@@ -25,12 +24,10 @@ class SearchShipControllerTest {
         controller = new SearchShipController();
     }
 
-/*
     @Test
     void findShipTest() {
         Ship expected = ship;
         Ship actual = controller.findShip("IMO9395044");
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
- */
 }

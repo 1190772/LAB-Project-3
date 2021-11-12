@@ -1,7 +1,8 @@
 package lapr.project.model;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ShipBSTTest {
 
@@ -27,21 +28,21 @@ class ShipBSTTest {
     void findShipByIMOTest() {
         Ship expected = ship4;
         Ship found = shipBST.findShip("IMO9517575");
-        Assert.assertEquals(expected, found);
+        assertEquals(expected, found);
     }
 
     @Test
     void findShipByMMSITest() {
         Ship expected = ship4;
         Ship found = shipBST.findShip("235092459");
-        Assert.assertEquals(expected, found);
+        assertEquals(expected, found);
     }
 
     @Test
     void findShipByCallSignTest() {
         Ship expected = ship4;
         Ship found = shipBST.findShip("2FMJ5");
-        Assert.assertEquals(expected, found);
+        assertEquals(expected, found);
     }
 
 }
