@@ -19,10 +19,6 @@ public class ImportShipsController {
         bst = App.getInstance().getCompany().getShips();
     }
 
-    public ImportShipsController(ShipBST bst) {
-        this.bst=bst;
-    }
-
     public void importShips() {
         String[] parameters;
         Ship ship;
