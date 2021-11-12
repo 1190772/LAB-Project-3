@@ -37,6 +37,14 @@ public class ShipPosition implements Comparable<ShipPosition> {
         return longitude;
     }
 
+    public double getSOG() {
+        return sog;
+    }
+
+    public double getCOG() {
+        return cog;
+    }
+
     @Override
     public String toString()
         {
@@ -56,6 +64,7 @@ public class ShipPosition implements Comparable<ShipPosition> {
     public int compareTo(ShipPosition o) {
         return baseDateTime.compareTo(o.getBaseDateTime());
     }
+
 
 }
 
