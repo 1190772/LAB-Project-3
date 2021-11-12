@@ -2,41 +2,86 @@ package lapr.project.model;
 
 import lapr.project.utils.AVL;
 
+import java.time.Duration;
+import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class ShipPositionBST extends AVL<ShipPosition> {
-    private double distanceBetweenTwoCoordinates(double lon1, double lat1, double lon2, double lat2){
-        return Math.sqrt(Math.pow(lon1-lon2, 2)+Math.pow(lat1-lat2, 2));
+
+    private final ArrayList<ShipPosition> list = (ArrayList<ShipPosition>) inOrder();
+
+    public double distanceBetweenTwoCoordinates(ShipPosition pos1, ShipPosition pos2) {
+        return distanceBetweenTwoCoordinates(pos1.getLongitude(), pos1.getLatitude(), pos2.getLongitude(), pos2.getLatitude());
     }
 
-    private double distanceBetweenTwoCoordinates(ShipPosition pos1, ShipPosition pos2){
-        double lon1 = pos1.getLongitude(),lat1=pos1.getLatitude();
-        double lon2=pos2.getLongitude(), lat2= pos2.getLatitude();
-        return Math.sqrt(Math.pow(lon1-lon2, 2)+Math.pow(lat1-lat2, 2));
+    private double distanceBetweenTwoCoordinates(double lon1, double lat1, double lon2, double lat2) {
+        double R = 6371 * Math.pow(10, 3);
+        lon1 *= Math.PI / 180;
+        lat1 *= Math.PI / 180;
+        lon2 *= Math.PI / 180;
+        lat2 *= Math.PI / 180;
+        double a = Math.pow(Math.sin((lat2 - lat1) / 2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin((lon2 - lon1) / 2), 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return R * c;
     }
 
-    public double deltaDistance(){
-        ArrayList<ShipPosition> list = (ArrayList<ShipPosition>) inOrder();
-        return distanceBetweenTwoCoordinates(list.get(0), list.get(list.size()-1));
+    public double deltaDistance() {
+        return distanceBetweenTwoCoordinates(list.get(0), list.get(list.size() - 1));
     }
 
-    public double travelledDistance(){
-        ArrayList<ShipPosition> list = (ArrayList<ShipPosition>) inOrder();
+    public double travelledDistance() {
         if (list.isEmpty())
             return -1;
-        if (list.size()==1)
+        if (list.size() == 1)
             return 0;
         return travelledDistance(list, 0);
     }
 
     private double travelledDistance(ArrayList<ShipPosition> list, int position) {
-        if (position== list.size()-1)
+        if (position == list.size() - 1)
             return 0;
-        return distanceBetweenTwoCoordinates(list.get(position), list.get(position+1))+travelledDistance(list, position+1);
+        return distanceBetweenTwoCoordinates(list.get(position), list.get(position + 1)) + travelledDistance(list, position + 1);
     }
 
     public int totalNumberMovements() {
-        return size()-1;
+        return size() - 1;
+    }
+
+    public LocalTime totalMovementTime() {
+        long min = Duration.between(list.get(0).getBaseDateTime(), list.get(list.size() - 1).getBaseDateTime()).toMinutes();
+        return LocalTime.of((int) min / 60, (int) min % 60);
+    }
+
+    public double maxSOG() {
+        double max = 0;
+        for (ShipPosition sp : list)
+            if (sp.getSOG() > max)
+                max = sp.getSOG();
+        return max;
+    }
+
+    public double meanSOG() {
+        double mean = 0;
+        for (ShipPosition sp : list)
+            mean += sp.getSOG();
+        mean /= size();
+        return mean;
+    }
+
+    public double maxCOG() {
+        double max = 0;
+        for (ShipPosition sp : list)
+            if (sp.getSOG() > max)
+                max = sp.getCOG();
+        return max;
+    }
+
+    public double meanCOG() {
+        double mean = 0;
+        for (ShipPosition sp : list)
+            mean += sp.getCOG();
+        mean /= size();
+        return mean;
     }
 }
