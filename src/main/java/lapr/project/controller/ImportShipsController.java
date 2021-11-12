@@ -15,7 +15,7 @@ public class ImportShipsController {
 
     ShipBST bst;
 
-    public ImportShipsController() throws UnsupportedOperationException {
+    public ImportShipsController() {
         bst = App.getInstance().getCompany().getShips();
     }
 
