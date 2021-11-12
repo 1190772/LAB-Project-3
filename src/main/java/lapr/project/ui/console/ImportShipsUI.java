@@ -2,8 +2,6 @@ package lapr.project.ui.console;
 
 import lapr.project.controller.ImportShipsController;
 
-import java.util.Scanner;
-
 public class ImportShipsUI implements Runnable {
 
     private final ImportShipsController controller;
@@ -14,7 +12,6 @@ public class ImportShipsUI implements Runnable {
 
     public void run() {
         controller.importShips();
-
-
+        System.out.println("Data has been saved.");
     }
 }

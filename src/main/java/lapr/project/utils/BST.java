@@ -84,14 +84,17 @@ public class BST<E extends Comparable<E>> implements BSTInterface<E> {
         Node<E> node = root;
         boolean find = false;
         while (node != null && !find) {
-        if (node.getElement() == element)
-            find = true;
-        else if (node.getElement().compareTo(element) > 0)
-            node = node.getLeft();
-        else if (node.getElement().compareTo(element) < 0)
-            node = node.getRight();
+            if (node.getElement() == element)
+                find = true;
+            else if (node.getElement().compareTo(element) > 0)
+                node = node.getLeft();
+            else if (node.getElement().compareTo(element) < 0)
+                node = node.getRight();
         }
-        return node;
+        if (find)
+            return node;
+        else
+            return null;
     }
 
     /*

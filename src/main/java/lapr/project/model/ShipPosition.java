@@ -5,21 +5,15 @@ import java.time.LocalDateTime;
 public class ShipPosition implements Comparable<ShipPosition> {
 
     LocalDateTime baseDateTime;
-    int year;
-    int month;
-    int day;
-    int hour;
-    int minute;
     double latitude;
     double longitude;
     double sog;
     double cog;
     double heading;
-    //int positionCode;
     char transceiverClass;
+    int cargo;
 
-
-    public ShipPosition(LocalDateTime baseDateTime, double latitude, double longitude, double sog, double cog, int heading, char transceiverClass) {
+    public ShipPosition(LocalDateTime baseDateTime, double latitude, double longitude, double sog, double cog, double heading, char transceiverClass, int cargo) {
 
         this.baseDateTime = baseDateTime;
         this.latitude = latitude;
@@ -28,20 +22,7 @@ public class ShipPosition implements Comparable<ShipPosition> {
         this.cog = cog;
         this.heading = heading;
         this.transceiverClass = transceiverClass;
-    }
-
-    public ShipPosition(int year, int month, int day, int hour, int minute, double latitude, double longitude, double sog, double cog, double heading, char transceiverClass) {
-        this.year = year;
-        this.month = month;
-        this.day = day;
-        this.hour = hour;
-        this.minute = minute;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.sog = sog;
-        this.cog = cog;
-        this.heading = heading;
-        this.transceiverClass = transceiverClass;
+        this.cargo = cargo;
     }
 
     public LocalDateTime getBaseDateTime() {
@@ -56,24 +37,30 @@ public class ShipPosition implements Comparable<ShipPosition> {
         return longitude;
     }
 
-    @Override
-    public String toString() {
-        return "ShipPosition{" +
-                "year=" + year +
-                ", month=" + month +
-                ", day=" + day +
-                ", hour=" + hour +
-                ", minute=" + minute +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
-                ", sog=" + sog +
-                ", cog=" + cog +
-                ", heading=" + heading +
-                ", transceiverClass=" + transceiverClass +
-                '}';
+    public double getSOG() {
+        return sog;
+    }
+
+    public double getCOG() {
+        return cog;
     }
 
     @Override
+    public String toString()
+        {
+        return "Ship Position{" +
+                "Base date and time = " + baseDateTime +
+                ", Latitude = " + latitude +
+                ", Longitude = " + longitude +
+                ", SOG = " + sog +
+                ", COG = " + cog +
+                ", Heading = " + heading +
+                ", Transceiver Class = " + transceiverClass +
+                ", Cargo = " + heading +
+                '}';
+        }
+
+@Override
     public int compareTo(ShipPosition o) {
         return baseDateTime.compareTo(o.getBaseDateTime());
     }

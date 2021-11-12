@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -30,7 +32,20 @@ public class BSTTest {
         instance = new BST();
         for(int i :arr)
             instance.insert(i);        
-    }    
+    }
+
+    /**
+     * Test of setElement method, of class BST.
+     */
+    @Test
+    public void setElement() {
+        System.out.println("setElement");
+        int expected = 9;
+        instance.root.setElement(expected);
+        int actual = instance.root.getElement();
+        Assert.assertEquals(expected, actual);
+    }
+
     /**
      * Test of size method, of class BST.
      */
@@ -47,6 +62,9 @@ public class BSTTest {
         assertEquals("size should be = 2",sInstance.size(), 2);
         sInstance.insert("A");
         assertEquals("size should be = 2",sInstance.size(), 2);
+
+        instance.root = null;
+        assertEquals(0, instance.size());
     }
    
     /**
@@ -118,6 +136,9 @@ public class BSTTest {
         }
         instance = new BST();
         assertEquals("height should be = -1", instance.height(), -1);
+
+        instance.root = null;
+        assertEquals(-1, instance.height());
     }
     /**
      * Test of smallestelement method, of class TREE.
@@ -130,6 +151,9 @@ public class BSTTest {
         assertEquals(new Integer(8), instance.smallestElement());
         instance.remove(8);
         assertEquals(new Integer(10), instance.smallestElement());
+
+        instance.root = null;
+        assertNull(instance.smallestElement());
     }    
     /**
      * Test of processBstByLevel method, of class TREE.
@@ -148,6 +172,9 @@ public class BSTTest {
         
         for(Map.Entry<Integer,List<Integer>> e : result.entrySet())
             assertEquals(expResult.get(e.getKey()), e.getValue());
+
+        instance.root = null;
+        assertEquals(new HashMap<>(), instance.nodesByLevel());
     }    
    
 
@@ -191,5 +218,7 @@ public class BSTTest {
         sInstance.insert("D");
         String expected = "D";
         assertEquals(expected, sInstance.find(expected).getElement());
+        expected = "G";
+        assertNull(sInstance.find(expected));
     }
 }

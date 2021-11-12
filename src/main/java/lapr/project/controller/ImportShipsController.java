@@ -3,9 +3,7 @@ package lapr.project.controller;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipBST;
 import lapr.project.model.ShipPosition;
-import lapr.project.utils.BST;
 
-import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -13,81 +11,55 @@ import java.util.Scanner;
 
 public class ImportShipsController {
 
-    BufferedReader in;
-    String word;
     String fileName = "sships.csv";
 
     ShipBST bst;
 
-    private String mmsi;
-    private String name;
-    private String imo;
-    private String callSign;
-    private int vesselType;
-    private int length;
-    private int width;
-    private float draft;
-    private String cargo;
-
-    private String dateTime;
-    private int year;
-    private int month;
-    private int day;
-    private int hour;
-    private int minute;
-    private double latitude;
-    private double longitude;
-    private double sog;
-    private double cog;
-    private double heading;
-    private char transceiverClass;
-
-
-    public ImportShipsController() throws UnsupportedOperationException {
+    public ImportShipsController() {
         bst = App.getInstance().getCompany().getShips();
     }
 
-    //TODO
-
-
-
     public void importShips() {
         String[] parameters;
+        Ship ship;
         try {
             Scanner in = new Scanner((new FileReader(fileName)));
             while (in.hasNextLine()) {
                 parameters = in.nextLine().split(",");
-                mmsi = parameters[0];
-                dateTime = parameters[1];
-                year = Integer.parseInt(dateTime.substring(6, 10));
-                month = Integer.parseInt(dateTime.substring(3, 5));
-                day = Integer.parseInt(dateTime.substring(0, 2));
-                hour = Integer.parseInt(dateTime.substring(11, 13));
-                minute = Integer.parseInt(dateTime.substring(14, 16));
-                latitude = Double.parseDouble(parameters[2]);
-                longitude = Double.parseDouble(parameters[3]);
-                sog = Double.parseDouble(parameters[4]);
-                cog = Double.parseDouble(parameters[5]);
-                heading = Double.parseDouble(parameters[6]);
-                name = parameters[7];
-                imo = parameters[8];
-                callSign = parameters[9];
-                vesselType = Integer.parseInt(parameters[10]);
-                length = Integer.parseInt(parameters[11]);
-                width = Integer.parseInt(parameters[12]);
-                draft = Float.parseFloat(parameters[13]);
-                cargo = parameters[14];
-                transceiverClass = parameters[15].charAt(0);
-
-                LocalDateTime localDateTime = LocalDateTime.of(year, month, day, hour, minute);
-
-                Ship ship = new Ship(mmsi, name, imo, callSign, vesselType, length, width, draft, cargo);
-                ShipPosition shipPosition = new ShipPosition(year, month, day, hour, minute, latitude, longitude, sog, cog, heading, transceiverClass);
+                String imo = parameters[8];
+                ship = bst.findShip(imo);
+                if (ship == null) {
+                    String mmsi = parameters[0];
+                    String name = parameters[7];
+                    String callSign = parameters[9];
+                    int vesselType = Integer.parseInt(parameters[10]);
+                    int length = Integer.parseInt(parameters[11]);
+                    int width = Integer.parseInt(parameters[12]);
+                    float draft = Float.parseFloat(parameters[13]);
+                    ship = new Ship(mmsi, name, imo, callSign, vesselType, length, width, draft);
                     bst.insert(ship);
+                }
 
-                System.out.println(ship);
-                System.out.println(shipPosition);
-                System.out.println();
+                String dateTime = parameters[1];
+                int year = Integer.parseInt(dateTime.substring(6, 10));
+                int month = Integer.parseInt(dateTime.substring(3, 5));
+                int day = Integer.parseInt(dateTime.substring(0, 2));
+                int hour = Integer.parseInt(dateTime.substring(11, 13));
+                int minute = Integer.parseInt(dateTime.substring(14, 16));
+                double latitude = Double.parseDouble(parameters[2]);
+                double longitude = Double.parseDouble(parameters[3]);
+                double sog = Double.parseDouble(parameters[4]);
+                double cog = Double.parseDouble(parameters[5]);
+                double heading = Double.parseDouble(parameters[6]);
+                int cargo;
+                if (!parameters[14].equals("NA"))
+                    cargo = Integer.parseInt(parameters[14]);
+                else
+                    cargo = 0;
+                char transceiverClass = parameters[15].charAt(0);
+                LocalDateTime localDateTime = LocalDateTime.of(year, month, day, hour, minute);
+                ShipPosition shipPosition = new ShipPosition(localDateTime, latitude, longitude, sog, cog, heading, transceiverClass, cargo);
+                ship.addPosition(shipPosition);
             }
         } catch (IOException e) {
             e.printStackTrace();

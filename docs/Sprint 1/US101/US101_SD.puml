@@ -1,14 +1,48 @@
 @startuml
-'https://plantuml.com/sequence-diagram
-
 autonumber
 
+'hide footbox
 actor "Traffic Manager" as TM
 
-activate TM
-TM -> ":System" : Import the ships from a text file to a BST
+participant ":ImportShipsUI" as UI
+participant ":ImportShipsController" as CTRL
+participant ":Company" as COMP
+participant ":ShipBST" as BST
+participant ":Ship" as SHIP
 
-activate ":System"
-":System" --> TM : Saves the ships data into the BST
+activate TM
+TM -> UI : Requests the ships import from file
+activate UI
+activate CTRL
+
+
+autonumber 1.1
+
+UI -> CTRL : controller.importShips()
+
+CTRL -> COMP : bst = App.getInstance().getCompany().getShips();
+activate COMP
+deactivate COMP
+
+CTRL -> BST : ship = bst.findShip(imo);
+activate BST
+
+CTRL -> SHIP : ship = new Ship(mmsi, name, imo, callSign, \nvesselType, length, width, draft);
+
+activate SHIP
+deactivate SHIP
+
+CTRL -> BST : bst.insert(ship);
+
+
+
+deactivate BST
+deactivate CTRL
+
+autonumber 4
+UI --> TM : Informs of the sucess of the operation
+deactivate UI
+
+deactivate TM
 
 @enduml

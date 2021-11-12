@@ -4,7 +4,7 @@
 left to right direction
 
 :Traffic Manager: as TM
-(Import ships) as (Use)
+(Import ships from file to a BST) as (Use)
 
 TM ---> (Use)
 

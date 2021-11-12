@@ -2,13 +2,13 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class SearchShipUI {
+class ImportShipsUI {
 - controller
 }
 
-class SearchShipController {
-- ShipBST
-+ findShip(code)
+class ImportShipsController {
++ importShips()
+- ShipBST bst
 }
 
 class ShipBST {
@@ -35,11 +35,10 @@ class Ship {
           generatorPowerOutput, callSign, vesselType, length, width, capacity, draft)
 + toString()
 }
-
-SearchShipController <.. SearchShipUI
-ShipBST <.. SearchShipController
+ImportShipsController <.. ImportShipsUI
+ShipBST <.. ImportShipsController
 Ship <-- ShipBST
-Ship <.. SearchShipUI
+Ship <.. ImportShipsUI
 
 
 @enduml
