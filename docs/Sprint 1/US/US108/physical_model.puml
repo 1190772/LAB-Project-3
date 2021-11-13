@@ -11,7 +11,7 @@ refrigeration_temperature   number(3,1)
 * max_weight                integer
 * max_volume                integer
 
-*csc_plate                  char(?)
+*csc_plate                  varChar(30)
 acep                        integer
 pes_date                    date
 }
