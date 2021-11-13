@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1367.1px" preserveAspectRatio="none" style="width:825px;height:1367px;" version="1.1" viewBox="0 0 825 1367" width="825.3px" zoomAndPan="magnify"><defs><filter height="300%" id="f1j8jdediubbxx" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="1.8"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="3.6" dy="3.6" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[23775766d9d9cbd7e35e8d659c509336]
+class SearchShipUI--><rect codeLine="3" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="55.6523" id="SearchShipUI" style="stroke:#A80036;stroke-width:1.35;" width="97.2" x="645.75" y="1170.9"/><ellipse cx="659.25" cy="1185.3" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M661.05,1182.15 Q661.2328,1181.7 661.4438,1181.475 Q661.6547,1181.25 661.8938,1181.25 Q662.3156,1181.25 662.5828,1181.5031 Q662.85,1181.7563 662.85,1182.3469 L662.85,1183.7531 Q662.85,1184.3438 662.5969,1184.5969 Q662.3438,1184.85 661.95,1184.85 Q661.5984,1184.85 661.3734,1184.6953 Q661.1484,1184.5406 661.05,1184.1328 Q661.0078,1183.8516 660.8531,1183.6969 Q660.5719,1183.4016 660.0656,1183.2328 Q659.5594,1183.05 659.0531,1183.05 Q658.4203,1183.05 657.8859,1183.3031 Q657.3656,1183.5563 656.9578,1184.1188 Q656.55,1184.6813 656.55,1185.4547 L656.55,1186.2844 Q656.55,1187.2125 657.3094,1187.8313 Q658.0688,1188.45 659.4188,1188.45 Q660.2203,1188.45 660.7828,1188.2672 Q661.1063,1188.1688 661.4719,1187.8453 Q661.7109,1187.6625 661.8375,1187.6063 Q661.9641,1187.55 662.1188,1187.55 Q662.4141,1187.55 662.625,1187.7891 Q662.85,1188.0141 662.85,1188.3375 Q662.85,1188.6469 662.5406,1189.0125 Q662.0906,1189.5469 661.3734,1189.8422 Q660.4313,1190.25 659.2781,1190.25 Q657.9281,1190.25 656.8453,1189.7156 Q655.9734,1189.2938 655.3547,1188.3797 Q654.75,1187.4656 654.75,1186.3828 L654.75,1185.3984 Q654.75,1184.2734 655.2844,1183.2891 Q655.8328,1182.3047 656.775,1181.7844 Q657.7313,1181.25 658.8,1181.25 Q659.4469,1181.25 660.0094,1181.475 Q660.5719,1181.7 661.05,1182.15 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="68.4" x="671.85" y="1189.7191">SearchShipUI</text><line style="stroke:#A80036;stroke-width:1.35;" x1="646.65" x2="742.05" y1="1199.7" y2="1199.7"/><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="652.95" y="1206.9"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="40.5" x="663.75" y="1213.5771">controller</text><line style="stroke:#A80036;stroke-width:1.35;" x1="646.65" x2="742.05" y1="1219.3523" y2="1219.3523"/><!--MD5=[e6f2cb470f06694f6a02b571e2ffcbb5]
+class SearchShipController--><rect codeLine="7" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="93.0094" id="SearchShipController" style="stroke:#A80036;stroke-width:1.35;" width="182.7" x="448.2" y="1017.9"/><ellipse cx="483.165" cy="1032.3" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M484.965,1029.15 Q485.1478,1028.7 485.3588,1028.475 Q485.5697,1028.25 485.8088,1028.25 Q486.2306,1028.25 486.4978,1028.5031 Q486.765,1028.7563 486.765,1029.3469 L486.765,1030.7531 Q486.765,1031.3438 486.5119,1031.5969 Q486.2588,1031.85 485.865,1031.85 Q485.5134,1031.85 485.2884,1031.6953 Q485.0634,1031.5406 484.965,1031.1328 Q484.9228,1030.8516 484.7681,1030.6969 Q484.4869,1030.4016 483.9806,1030.2328 Q483.4744,1030.05 482.9681,1030.05 Q482.3353,1030.05 481.8009,1030.3031 Q481.2806,1030.5563 480.8728,1031.1188 Q480.465,1031.6813 480.465,1032.4547 L480.465,1033.2844 Q480.465,1034.2125 481.2244,1034.8313 Q481.9838,1035.45 483.3338,1035.45 Q484.1353,1035.45 484.6978,1035.2672 Q485.0213,1035.1688 485.3869,1034.8453 Q485.6259,1034.6625 485.7525,1034.6063 Q485.8791,1034.55 486.0338,1034.55 Q486.3291,1034.55 486.54,1034.7891 Q486.765,1035.0141 486.765,1035.3375 Q486.765,1035.6469 486.4556,1036.0125 Q486.0056,1036.5469 485.2884,1036.8422 Q484.3463,1037.25 483.1931,1037.25 Q481.8431,1037.25 480.7603,1036.7156 Q479.8884,1036.2938 479.2697,1035.3797 Q478.665,1034.4656 478.665,1033.3828 L478.665,1032.3984 Q478.665,1031.2734 479.1994,1030.2891 Q479.7478,1029.3047 480.69,1028.7844 Q481.6463,1028.25 482.715,1028.25 Q483.3619,1028.25 483.9244,1028.475 Q484.4869,1028.7 484.965,1029.15 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="106.2" x="500.535" y="1036.7191">SearchShipController</text><line style="stroke:#A80036;stroke-width:1.35;" x1="449.1" x2="630" y1="1046.7" y2="1046.7"/><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="455.4" y="1053.9"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="36.9" x="466.2" y="1060.5771">ShipBST</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="455.4" y="1066.3523"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="18" x="466.2" y="1073.0294">ship</text><line style="stroke:#A80036;stroke-width:1.35;" x1="449.1" x2="630" y1="1078.8047" y2="1078.8047"/><ellipse cx="458.1" cy="1088.7047" fill="#84BE84" rx="2.7" ry="2.7" style="stroke:#038048;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="159.3" x="466.2" y="1092.6817">getShipPositions(startDate, endDate)</text><ellipse cx="458.1" cy="1101.157" fill="#84BE84" rx="2.7" ry="2.7" style="stroke:#038048;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="63.9" x="466.2" y="1105.1341">findShip(code)</text><!--MD5=[95f401ea9d0c63da0b3e1cc781f0d3e9]
+class ShipBST--><rect codeLine="14" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="105.4617" id="ShipBST" style="stroke:#A80036;stroke-width:1.35;" width="145.8" x="346.05" y="858.6"/><ellipse cx="393.525" cy="873" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M395.325,869.85 Q395.5078,869.4 395.7188,869.175 Q395.9297,868.95 396.1688,868.95 Q396.5906,868.95 396.8578,869.2031 Q397.125,869.4563 397.125,870.0469 L397.125,871.4531 Q397.125,872.0438 396.8719,872.2969 Q396.6188,872.55 396.225,872.55 Q395.8734,872.55 395.6484,872.3953 Q395.4234,872.2406 395.325,871.8328 Q395.2828,871.5516 395.1281,871.3969 Q394.8469,871.1016 394.3406,870.9328 Q393.8344,870.75 393.3281,870.75 Q392.6953,870.75 392.1609,871.0031 Q391.6406,871.2563 391.2328,871.8188 Q390.825,872.3813 390.825,873.1547 L390.825,873.9844 Q390.825,874.9125 391.5844,875.5313 Q392.3438,876.15 393.6938,876.15 Q394.4953,876.15 395.0578,875.9672 Q395.3813,875.8688 395.7469,875.5453 Q395.9859,875.3625 396.1125,875.3063 Q396.2391,875.25 396.3938,875.25 Q396.6891,875.25 396.9,875.4891 Q397.125,875.7141 397.125,876.0375 Q397.125,876.3469 396.8156,876.7125 Q396.3656,877.2469 395.6484,877.5422 Q394.7063,877.95 393.5531,877.95 Q392.2031,877.95 391.1203,877.4156 Q390.2484,876.9938 389.6297,876.0797 Q389.025,875.1656 389.025,874.0828 L389.025,873.0984 Q389.025,871.9734 389.5594,870.9891 Q390.1078,870.0047 391.05,869.4844 Q392.0063,868.95 393.075,868.95 Q393.7219,868.95 394.2844,869.175 Q394.8469,869.4 395.325,869.85 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="43.2" x="411.975" y="877.4191">ShipBST</text><line style="stroke:#A80036;stroke-width:1.35;" x1="346.95" x2="490.95" y1="887.4" y2="887.4"/><line style="stroke:#A80036;stroke-width:1.35;" x1="346.95" x2="490.95" y1="894.6" y2="894.6"/><ellipse cx="355.95" cy="904.5" fill="#84BE84" rx="2.7" ry="2.7" style="stroke:#038048;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="63.9" x="364.05" y="908.4771">findShip(code)</text><rect fill="#F24D5C" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="353.25" y="914.2523"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="115.2" x="364.05" y="920.9294">determineCodeType(code)</text><rect fill="#F24D5C" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="353.25" y="926.7047"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="99" x="364.05" y="933.3817">findShipByMMSI(MMSI)</text><rect fill="#F24D5C" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="353.25" y="939.157"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="86.4" x="364.05" y="945.8341">findShipByIMO(IMO)</text><rect fill="#F24D5C" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="353.25" y="951.6094"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="122.4" x="364.05" y="958.2864">findShipByCallSign(CallSign)</text><!--MD5=[0dc7f2ddb409b58bcf52b12238c25399]
+class Ship--><rect codeLine="22" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="217.5328" id="Ship" style="stroke:#A80036;stroke-width:1.35;" width="351" x="344.25" y="586.8"/><ellipse cx="504.675" cy="601.2" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M506.475,598.05 Q506.6578,597.6 506.8688,597.375 Q507.0797,597.15 507.3188,597.15 Q507.7406,597.15 508.0078,597.4031 Q508.275,597.6563 508.275,598.2469 L508.275,599.6531 Q508.275,600.2438 508.0219,600.4969 Q507.7688,600.75 507.375,600.75 Q507.0234,600.75 506.7984,600.5953 Q506.5734,600.4406 506.475,600.0328 Q506.4328,599.7516 506.2781,599.5969 Q505.9969,599.3016 505.4906,599.1328 Q504.9844,598.95 504.4781,598.95 Q503.8453,598.95 503.3109,599.2031 Q502.7906,599.4563 502.3828,600.0188 Q501.975,600.5813 501.975,601.3547 L501.975,602.1844 Q501.975,603.1125 502.7344,603.7313 Q503.4938,604.35 504.8438,604.35 Q505.6453,604.35 506.2078,604.1672 Q506.5313,604.0688 506.8969,603.7453 Q507.1359,603.5625 507.2625,603.5063 Q507.3891,603.45 507.5438,603.45 Q507.8391,603.45 508.05,603.6891 Q508.275,603.9141 508.275,604.2375 Q508.275,604.5469 507.9656,604.9125 Q507.5156,605.4469 506.7984,605.7422 Q505.8563,606.15 504.7031,606.15 Q503.3531,606.15 502.2703,605.6156 Q501.3984,605.1938 500.7797,604.2797 Q500.175,603.3656 500.175,602.2828 L500.175,601.2984 Q500.175,600.1734 500.7094,599.1891 Q501.2578,598.2047 502.2,597.6844 Q503.1563,597.15 504.225,597.15 Q504.8719,597.15 505.4344,597.375 Q505.9969,597.6 506.475,598.05 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="22.5" x="523.125" y="605.6191">Ship</text><line style="stroke:#A80036;stroke-width:1.35;" x1="345.15" x2="694.35" y1="615.6" y2="615.6"/><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="622.8"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="22.5" x="362.25" y="629.4771">MMSI</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="635.2523"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="23.4" x="362.25" y="641.9294">name</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="647.7047"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="16.2" x="362.25" y="654.3817">IMO</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="660.157"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="112.5" x="362.25" y="666.8341">numberEnergyGenerators</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="672.6094"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="99.9" x="362.25" y="679.2864">generatorPowerOutput</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="685.0617"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="33.3" x="362.25" y="691.7388">callSign</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="697.5141"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="50.4" x="362.25" y="704.1911">vesselType</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="709.9664"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="26.1" x="362.25" y="716.6435">length</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="722.4188"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="24.3" x="362.25" y="729.0958">width</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="734.8711"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="36.9" x="362.25" y="741.5481">capacity</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="351.45" y="747.3234"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="20.7" x="362.25" y="754.0005">draft</text><line style="stroke:#A80036;stroke-width:1.35;" x1="345.15" x2="694.35" y1="759.7758" y2="759.7758"/><ellipse cx="354.15" cy="769.6758" fill="#84BE84" rx="2.7" ry="2.7" style="stroke:#038048;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="216" x="362.25" y="773.6528">Ship(MMSI, name, IMO, numberEnergyGenerators,</text><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="327.6" x="362.25" y="786.1052">generatorPowerOutput, callSign, vesselType, length, width, capacity, draft)</text><ellipse cx="354.15" cy="794.5805" fill="#84BE84" rx="2.7" ry="2.7" style="stroke:#038048;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="140.4" x="362.25" y="798.5575">getPositions(startDate, endDate)</text><!--MD5=[1c0c3765e68dc4575d559b566278b914]
+class ShipPosition--><rect codeLine="39" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="155.2711" id="ShipPosition" style="stroke:#A80036;stroke-width:1.35;" width="97.2" x="566.55" y="377.1"/><ellipse cx="582.48" cy="391.5" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M584.28,388.35 Q584.4628,387.9 584.6738,387.675 Q584.8847,387.45 585.1238,387.45 Q585.5456,387.45 585.8128,387.7031 Q586.08,387.9563 586.08,388.5469 L586.08,389.9531 Q586.08,390.5438 585.8269,390.7969 Q585.5738,391.05 585.18,391.05 Q584.8284,391.05 584.6034,390.8953 Q584.3784,390.7406 584.28,390.3328 Q584.2378,390.0516 584.0831,389.8969 Q583.8019,389.6016 583.2956,389.4328 Q582.7894,389.25 582.2831,389.25 Q581.6503,389.25 581.1159,389.5031 Q580.5956,389.7563 580.1878,390.3188 Q579.78,390.8813 579.78,391.6547 L579.78,392.4844 Q579.78,393.4125 580.5394,394.0313 Q581.2988,394.65 582.6488,394.65 Q583.4503,394.65 584.0128,394.4672 Q584.3363,394.3688 584.7019,394.0453 Q584.9409,393.8625 585.0675,393.8063 Q585.1941,393.75 585.3488,393.75 Q585.6441,393.75 585.855,393.9891 Q586.08,394.2141 586.08,394.5375 Q586.08,394.8469 585.7706,395.2125 Q585.3206,395.7469 584.6034,396.0422 Q583.6613,396.45 582.5081,396.45 Q581.1581,396.45 580.0753,395.9156 Q579.2034,395.4938 578.5847,394.5797 Q577.98,393.6656 577.98,392.5828 L577.98,391.5984 Q577.98,390.4734 578.5144,389.4891 Q579.0628,388.5047 580.005,387.9844 Q580.9613,387.45 582.03,387.45 Q582.6769,387.45 583.2394,387.675 Q583.8019,387.9 584.28,388.35 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="63" x="595.62" y="395.9191">ShipPosition</text><line style="stroke:#A80036;stroke-width:1.35;" x1="567.45" x2="662.85" y1="405.9" y2="405.9"/><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="573.75" y="413.1"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="61.2" x="584.55" y="419.7771">baseDateTime</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="573.75" y="425.5523"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="30.6" x="584.55" y="432.2294">latitude</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="573.75" y="438.0047"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="38.7" x="584.55" y="444.6817">longitude</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="573.75" y="450.457"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="16.2" x="584.55" y="457.1341">sog</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="573.75" y="462.9094"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="16.2" x="584.55" y="469.5864">cog</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="573.75" y="475.3617"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="34.2" x="584.55" y="482.0388">heading</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="573.75" y="487.8141"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="33.3" x="584.55" y="494.4911">position</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="573.75" y="500.2664"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="73.8" x="584.55" y="506.9435">transceiverClass</text><line style="stroke:#A80036;stroke-width:1.35;" x1="567.45" x2="662.85" y1="512.7188" y2="512.7188"/><ellipse cx="576.45" cy="522.6188" fill="#84BE84" rx="2.7" ry="2.7" style="stroke:#038048;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="40.5" x="584.55" y="526.5958">toString()</text><!--MD5=[b6d0c52e77c3f7976dce8e4f35a15e09]
+class ShipMovementsUI--><rect codeLine="51" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="68.1047" id="ShipMovementsUI" style="stroke:#A80036;stroke-width:1.35;" width="176.4" x="577.35" y="1287"/><ellipse cx="616.77" cy="1301.4" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M618.57,1298.25 Q618.7528,1297.8 618.9638,1297.575 Q619.1747,1297.35 619.4137,1297.35 Q619.8356,1297.35 620.1028,1297.6031 Q620.37,1297.8563 620.37,1298.4469 L620.37,1299.8531 Q620.37,1300.4438 620.1169,1300.6969 Q619.8638,1300.95 619.47,1300.95 Q619.1184,1300.95 618.8934,1300.7953 Q618.6684,1300.6406 618.57,1300.2328 Q618.5278,1299.9516 618.3731,1299.7969 Q618.0919,1299.5016 617.5856,1299.3328 Q617.0794,1299.15 616.5731,1299.15 Q615.9403,1299.15 615.4059,1299.4031 Q614.8856,1299.6563 614.4778,1300.2188 Q614.07,1300.7813 614.07,1301.5547 L614.07,1302.3844 Q614.07,1303.3125 614.8294,1303.9313 Q615.5888,1304.55 616.9388,1304.55 Q617.7403,1304.55 618.3028,1304.3672 Q618.6263,1304.2688 618.9919,1303.9453 Q619.2309,1303.7625 619.3575,1303.7063 Q619.4841,1303.65 619.6388,1303.65 Q619.9341,1303.65 620.145,1303.8891 Q620.37,1304.1141 620.37,1304.4375 Q620.37,1304.7469 620.0606,1305.1125 Q619.6106,1305.6469 618.8934,1305.9422 Q617.9513,1306.35 616.7981,1306.35 Q615.4481,1306.35 614.3653,1305.8156 Q613.4934,1305.3938 612.8747,1304.4797 Q612.27,1303.5656 612.27,1302.4828 L612.27,1301.4984 Q612.27,1300.3734 612.8044,1299.3891 Q613.3528,1298.4047 614.295,1297.8844 Q615.2513,1297.35 616.32,1297.35 Q616.9669,1297.35 617.5294,1297.575 Q618.0919,1297.8 618.57,1298.25 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="90" x="635.13" y="1305.8191">ShipMovementsUI</text><line style="stroke:#A80036;stroke-width:1.35;" x1="578.25" x2="752.85" y1="1315.8" y2="1315.8"/><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="584.55" y="1323"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="153" x="595.35" y="1329.6771">ShipMovementsController controller</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="584.55" y="1335.4523"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="99" x="595.35" y="1342.1294">ShipMovements details</text><line style="stroke:#A80036;stroke-width:1.35;" x1="578.25" x2="752.85" y1="1347.9047" y2="1347.9047"/><!--MD5=[f18acb00d883d04e547ec44551f3f313]
+class ShipMovementsController--><rect codeLine="56" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="68.1047" id="ShipMovementsController" style="stroke:#A80036;stroke-width:1.35;" width="208.8" x="405.45" y="1164.6"/><ellipse cx="442.44" cy="1179" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M444.24,1175.85 Q444.4228,1175.4 444.6338,1175.175 Q444.8447,1174.95 445.0838,1174.95 Q445.5056,1174.95 445.7728,1175.2031 Q446.04,1175.4563 446.04,1176.0469 L446.04,1177.4531 Q446.04,1178.0438 445.7869,1178.2969 Q445.5338,1178.55 445.14,1178.55 Q444.7884,1178.55 444.5634,1178.3953 Q444.3384,1178.2406 444.24,1177.8328 Q444.1978,1177.5516 444.0431,1177.3969 Q443.7619,1177.1016 443.2556,1176.9328 Q442.7494,1176.75 442.2431,1176.75 Q441.6103,1176.75 441.0759,1177.0031 Q440.5556,1177.2563 440.1478,1177.8188 Q439.74,1178.3813 439.74,1179.1547 L439.74,1179.9844 Q439.74,1180.9125 440.4994,1181.5313 Q441.2588,1182.15 442.6088,1182.15 Q443.4103,1182.15 443.9728,1181.9672 Q444.2963,1181.8688 444.6619,1181.5453 Q444.9009,1181.3625 445.0275,1181.3063 Q445.1541,1181.25 445.3088,1181.25 Q445.6041,1181.25 445.815,1181.4891 Q446.04,1181.7141 446.04,1182.0375 Q446.04,1182.3469 445.7306,1182.7125 Q445.2806,1183.2469 444.5634,1183.5422 Q443.6213,1183.95 442.4681,1183.95 Q441.1181,1183.95 440.0353,1183.4156 Q439.1634,1182.9938 438.5447,1182.0797 Q437.94,1181.1656 437.94,1180.0828 L437.94,1179.0984 Q437.94,1177.9734 438.4744,1176.9891 Q439.0228,1176.0047 439.965,1175.4844 Q440.9213,1174.95 441.99,1174.95 Q442.6369,1174.95 443.1994,1175.175 Q443.7619,1175.4 444.24,1175.85 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="127.8" x="460.26" y="1183.4191">ShipMovementsController</text><line style="stroke:#A80036;stroke-width:1.35;" x1="406.35" x2="613.35" y1="1193.4" y2="1193.4"/><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="412.65" y="1200.6"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="142.2" x="423.45" y="1207.2771">ShipPositionBST shipPositionBST</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="412.65" y="1213.0523"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="185.4" x="423.45" y="1219.7294">SearchShipController searchShipController</text><line style="stroke:#A80036;stroke-width:1.35;" x1="406.35" x2="613.35" y1="1225.5047" y2="1225.5047"/><!--MD5=[e69d6fe1312529448929093d2b2c45ce]
+class ShipMovements--><rect codeLine="61" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="317.1516" id="ShipMovements" style="stroke:#A80036;stroke-width:1.35;" width="300.6" x="512.55" y="6.3"/><ellipse cx="619.425" cy="20.7" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M621.225,17.55 Q621.4078,17.1 621.6188,16.875 Q621.8297,16.65 622.0688,16.65 Q622.4906,16.65 622.7578,16.9031 Q623.025,17.1563 623.025,17.7469 L623.025,19.1531 Q623.025,19.7438 622.7719,19.9969 Q622.5188,20.25 622.125,20.25 Q621.7734,20.25 621.5484,20.0953 Q621.3234,19.9406 621.225,19.5328 Q621.1828,19.2516 621.0281,19.0969 Q620.7469,18.8016 620.2406,18.6328 Q619.7344,18.45 619.2281,18.45 Q618.5953,18.45 618.0609,18.7031 Q617.5406,18.9563 617.1328,19.5188 Q616.725,20.0813 616.725,20.8547 L616.725,21.6844 Q616.725,22.6125 617.4844,23.2313 Q618.2438,23.85 619.5938,23.85 Q620.3953,23.85 620.9578,23.6672 Q621.2813,23.5688 621.6469,23.2453 Q621.8859,23.0625 622.0125,23.0063 Q622.1391,22.95 622.2938,22.95 Q622.5891,22.95 622.8,23.1891 Q623.025,23.4141 623.025,23.7375 Q623.025,24.0469 622.7156,24.4125 Q622.2656,24.9469 621.5484,25.2422 Q620.6063,25.65 619.4531,25.65 Q618.1031,25.65 617.0203,25.1156 Q616.1484,24.6938 615.5297,23.7797 Q614.925,22.8656 614.925,21.7828 L614.925,20.7984 Q614.925,19.6734 615.4594,18.6891 Q616.0078,17.7047 616.95,17.1844 Q617.9063,16.65 618.975,16.65 Q619.6219,16.65 620.1844,16.875 Q620.7469,17.1 621.225,17.55 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="79.2" x="637.875" y="25.1191">ShipMovements</text><line style="stroke:#A80036;stroke-width:1.35;" x1="513.45" x2="812.25" y1="35.1" y2="35.1"/><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="42.3"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="68.4" x="530.55" y="48.9771">String shipCode</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="54.7523"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="70.2" x="530.55" y="61.4294">String shipName</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="67.2047"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="147.6" x="530.55" y="73.8817">LocalDateTime startBaseDateTime</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="79.657"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="144" x="530.55" y="86.3341">LocalDateTime endBaseDateTime</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="92.1094"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="104.4" x="530.55" y="98.7864">Time totalMovementTime</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="104.5617"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="133.2" x="530.55" y="111.2388">Integer totalNumberMovements</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="117.0141"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="71.1" x="530.55" y="123.6911">Double maxSOG</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="129.4664"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="76.5" x="530.55" y="136.1435">Double meanSOG</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="141.9188"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="71.1" x="530.55" y="148.5958">Double maxCOG</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="154.3711"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="76.5" x="530.55" y="161.0481">Double meanCOG</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="166.8234"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="108.9" x="530.55" y="173.5005">Double departureLatitude</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="179.2758"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="117" x="530.55" y="185.9528">Double departureLongitude</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="191.7281"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="93.6" x="530.55" y="198.4052">Double arrivalLatitude</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="204.1805"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="101.7" x="530.55" y="210.8575">Double arrivalLongitude</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="216.6328"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="107.1" x="530.55" y="223.3099">Double travelledDistance</text><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="519.75" y="229.0852"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="90.9" x="530.55" y="235.7622">Double deltaDistance</text><line style="stroke:#A80036;stroke-width:1.35;" x1="513.45" x2="812.25" y1="241.5375" y2="241.5375"/><ellipse cx="522.45" cy="251.4375" fill="#84BE84" rx="2.7" ry="2.7" style="stroke:#038048;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="250.2" x="530.55" y="255.4146">ShipMovements(shipCode, shipName, startBaseDateTime,</text><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="274.5" x="530.55" y="267.8669">endBaseDateTime, totalMovementTime, totalNumberMovements,</text><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="266.4" x="530.55" y="280.3192">maxSOG, meanSOG, maxCOG, meanCOG, departureLatitude,</text><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="228.6" x="530.55" y="292.7716">departureLongitude, arrivalLatitude, arrivalLongitude,</text><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="142.2" x="530.55" y="305.2239">travelledDistance, deltaDistance)</text><ellipse cx="522.45" cy="313.6992" fill="#84BE84" rx="2.7" ry="2.7" style="stroke:#038048;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="40.5" x="530.55" y="317.6763">toString()</text><!--MD5=[e20f0e393e33b6317137adc5adb8f6b1]
+class ShipPositionBST--><rect codeLine="82" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="43.2" id="ShipPositionBST" style="stroke:#A80036;stroke-width:1.35;" width="112.5" x="6.3" y="889.65"/><ellipse cx="19.8" cy="904.05" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M21.6,900.9 Q21.7828,900.45 21.9938,900.225 Q22.2047,900 22.4438,900 Q22.8656,900 23.1328,900.2531 Q23.4,900.5063 23.4,901.0969 L23.4,902.5031 Q23.4,903.0938 23.1469,903.3469 Q22.8938,903.6 22.5,903.6 Q22.1484,903.6 21.9234,903.4453 Q21.6984,903.2906 21.6,902.8828 Q21.5578,902.6016 21.4031,902.4469 Q21.1219,902.1516 20.6156,901.9828 Q20.1094,901.8 19.6031,901.8 Q18.9703,901.8 18.4359,902.0531 Q17.9156,902.3063 17.5078,902.8688 Q17.1,903.4313 17.1,904.2047 L17.1,905.0344 Q17.1,905.9625 17.8594,906.5813 Q18.6188,907.2 19.9688,907.2 Q20.7703,907.2 21.3328,907.0172 Q21.6563,906.9188 22.0219,906.5953 Q22.2609,906.4125 22.3875,906.3563 Q22.5141,906.3 22.6688,906.3 Q22.9641,906.3 23.175,906.5391 Q23.4,906.7641 23.4,907.0875 Q23.4,907.3969 23.0906,907.7625 Q22.6406,908.2969 21.9234,908.5922 Q20.9813,909 19.8281,909 Q18.4781,909 17.3953,908.4656 Q16.5234,908.0438 15.9047,907.1297 Q15.3,906.2156 15.3,905.1328 L15.3,904.1484 Q15.3,903.0234 15.8344,902.0391 Q16.3828,901.0547 17.325,900.5344 Q18.2813,900 19.35,900 Q19.9969,900 20.5594,900.225 Q21.1219,900.45 21.6,900.9 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="83.7" x="32.4" y="908.4691">ShipPositionBST</text><line style="stroke:#A80036;stroke-width:1.35;" x1="7.2" x2="117.9" y1="918.45" y2="918.45"/><line style="stroke:#A80036;stroke-width:1.35;" x1="7.2" x2="117.9" y1="925.65" y2="925.65"/><!--MD5=[68985b732702cd7a8d1ae9f7e11b3260]
+class ImportShipsUI--><rect codeLine="84" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="55.6523" id="ImportShipsUI" style="stroke:#A80036;stroke-width:1.35;" width="99.9" x="203.4" y="1170.9"/><ellipse cx="216.9" cy="1185.3" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M218.7,1182.15 Q218.8828,1181.7 219.0938,1181.475 Q219.3047,1181.25 219.5438,1181.25 Q219.9656,1181.25 220.2328,1181.5031 Q220.5,1181.7563 220.5,1182.3469 L220.5,1183.7531 Q220.5,1184.3438 220.2469,1184.5969 Q219.9938,1184.85 219.6,1184.85 Q219.2484,1184.85 219.0234,1184.6953 Q218.7984,1184.5406 218.7,1184.1328 Q218.6578,1183.8516 218.5031,1183.6969 Q218.2219,1183.4016 217.7156,1183.2328 Q217.2094,1183.05 216.7031,1183.05 Q216.0703,1183.05 215.5359,1183.3031 Q215.0156,1183.5563 214.6078,1184.1188 Q214.2,1184.6813 214.2,1185.4547 L214.2,1186.2844 Q214.2,1187.2125 214.9594,1187.8313 Q215.7188,1188.45 217.0688,1188.45 Q217.8703,1188.45 218.4328,1188.2672 Q218.7563,1188.1688 219.1219,1187.8453 Q219.3609,1187.6625 219.4875,1187.6063 Q219.6141,1187.55 219.7688,1187.55 Q220.0641,1187.55 220.275,1187.7891 Q220.5,1188.0141 220.5,1188.3375 Q220.5,1188.6469 220.1906,1189.0125 Q219.7406,1189.5469 219.0234,1189.8422 Q218.0813,1190.25 216.9281,1190.25 Q215.5781,1190.25 214.4953,1189.7156 Q213.6234,1189.2938 213.0047,1188.3797 Q212.4,1187.4656 212.4,1186.3828 L212.4,1185.3984 Q212.4,1184.2734 212.9344,1183.2891 Q213.4828,1182.3047 214.425,1181.7844 Q215.3813,1181.25 216.45,1181.25 Q217.0969,1181.25 217.6594,1181.475 Q218.2219,1181.7 218.7,1182.15 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="71.1" x="229.5" y="1189.7191">ImportShipsUI</text><line style="stroke:#A80036;stroke-width:1.35;" x1="204.3" x2="302.4" y1="1199.7" y2="1199.7"/><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="210.6" y="1206.9"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="40.5" x="221.4" y="1213.5771">controller</text><line style="stroke:#A80036;stroke-width:1.35;" x1="204.3" x2="302.4" y1="1219.3523" y2="1219.3523"/><!--MD5=[990bef4c2f1c4f7830655fe175b8ab92]
+class ImportShipsController--><rect codeLine="88" fill="#FEFECE" filter="url(#f1j8jdediubbxx)" height="68.1047" id="ImportShipsController" style="stroke:#A80036;stroke-width:1.35;" width="137.7" x="279" y="1030.05"/><ellipse cx="292.5" cy="1044.45" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/><path d="M294.3,1041.3 Q294.4828,1040.85 294.6938,1040.625 Q294.9047,1040.4 295.1438,1040.4 Q295.5656,1040.4 295.8328,1040.6531 Q296.1,1040.9063 296.1,1041.4969 L296.1,1042.9031 Q296.1,1043.4938 295.8469,1043.7469 Q295.5938,1044 295.2,1044 Q294.8484,1044 294.6234,1043.8453 Q294.3984,1043.6906 294.3,1043.2828 Q294.2578,1043.0016 294.1031,1042.8469 Q293.8219,1042.5516 293.3156,1042.3828 Q292.8094,1042.2 292.3031,1042.2 Q291.6703,1042.2 291.1359,1042.4531 Q290.6156,1042.7063 290.2078,1043.2688 Q289.8,1043.8313 289.8,1044.6047 L289.8,1045.4344 Q289.8,1046.3625 290.5594,1046.9813 Q291.3188,1047.6 292.6688,1047.6 Q293.4703,1047.6 294.0328,1047.4172 Q294.3563,1047.3188 294.7219,1046.9953 Q294.9609,1046.8125 295.0875,1046.7563 Q295.2141,1046.7 295.3688,1046.7 Q295.6641,1046.7 295.875,1046.9391 Q296.1,1047.1641 296.1,1047.4875 Q296.1,1047.7969 295.7906,1048.1625 Q295.3406,1048.6969 294.6234,1048.9922 Q293.6813,1049.4 292.5281,1049.4 Q291.1781,1049.4 290.0953,1048.8656 Q289.2234,1048.4438 288.6047,1047.5297 Q288,1046.6156 288,1045.5328 L288,1044.5484 Q288,1043.4234 288.5344,1042.4391 Q289.0828,1041.4547 290.025,1040.9344 Q290.9813,1040.4 292.05,1040.4 Q292.6969,1040.4 293.2594,1040.625 Q293.8219,1040.85 294.3,1041.3 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="108.9" x="305.1" y="1048.8691">ImportShipsController</text><line style="stroke:#A80036;stroke-width:1.35;" x1="279.9" x2="415.8" y1="1058.85" y2="1058.85"/><rect fill="none" height="5.4" style="stroke:#C82930;stroke-width:0.9;" width="5.4" x="286.2" y="1066.05"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="53.1" x="297" y="1072.7271">ShipBST bst</text><line style="stroke:#A80036;stroke-width:1.35;" x1="279.9" x2="415.8" y1="1078.5023" y2="1078.5023"/><ellipse cx="288.9" cy="1088.4023" fill="#84BE84" rx="2.7" ry="2.7" style="stroke:#038048;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="57.6" x="297" y="1092.3794">importShips()</text><!--MD5=[ad7d344b8c404c8a15851647c62b008f]
+reverse link ImportShipsController to ImportShipsUI--><path codeLine="94" d="M321.363,1102.356 C305.919,1124.055 286.776,1150.947 272.736,1170.666 " fill="none" id="ImportShipsController-backto-ImportShipsUI" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="324,1098.648,316.3685,1103.1569,321.3893,1102.3133,322.233,1107.3341,324,1098.648" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[370103ec2fbb485f8c11608e4389e9f8]
+reverse link Ship to ImportShipsUI--><path codeLine="95" d="M374.94,808.002 C358.866,823.932 343.665,840.942 330.75,858.6 C285.354,920.664 280.62,942.993 263.25,1017.9 C250.947,1070.946 250.794,1135.044 251.964,1170.657 " fill="none" id="Ship-backto-ImportShipsUI" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="378.162,804.834,369.8634,807.9489,374.9544,807.9901,374.9131,813.0811,378.162,804.834" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[904cdea99f292c06d995e83d3f609dcc]
+reverse link ShipBST to ImportShipsController--><path codeLine="96" d="M392.544,968.301 C382.797,989.028 372.06,1011.852 363.564,1029.942 " fill="none" id="ShipBST-backto-ImportShipsController" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="394.479,964.188,387.7753,969.9872,392.5648,968.2606,394.2914,973.05,394.479,964.188" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[a5b8fef5a27a3de80e0be3834823ca4b]
+reverse link ShipMovementsController to ShipMovementsUI--><path codeLine="99" d="M556.803,1236.069 C577.647,1252.215 602.028,1271.097 622.413,1286.883 " fill="none" id="ShipMovementsController-backto-ShipMovementsUI" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="553.221,1233.297,557.43,1241.0979,556.7821,1236.0481,561.8318,1235.4002,553.221,1233.297" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[9455e857914ba29a67e7e5eafbea2e1a]
+reverse link ShipMovements to ShipMovementsUI--><path codeLine="100" d="M730.818,327.501 C768.105,430.722 806.85,568.368 806.85,694.8 C806.85,694.8 806.85,694.8 806.85,1065.15 C806.85,1142.703 799.587,1166.823 759.15,1233 C746.694,1253.385 728.19,1272.042 710.919,1286.829 " fill="none" id="ShipMovements-backto-ShipMovementsUI" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="729.261,323.235,728.6307,332.0765,730.7916,327.4667,735.4015,329.6276,729.261,323.235" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[5247ca6476a6c08bca81328ab14d63dc]
+reverse link SearchShipController to ShipMovementsController--><path codeLine="101" d="M528.309,1115.406 C524.655,1131.741 520.686,1149.471 517.365,1164.294 " fill="none" id="SearchShipController-backto-ShipMovementsController" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="529.326,1110.834,524.0546,1117.9602,528.3498,1115.2268,531.0831,1119.5221,529.326,1110.834" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[af9120c38b07e4556d65a4642e83cc1e]
+reverse link ShipPositionBST to ShipMovementsController--><path codeLine="102" d="M81.072,936.468 C113.679,977.733 185.265,1061.712 263.25,1110.6 C306.639,1137.798 359.64,1157.976 405.369,1172.034 " fill="none" id="ShipPositionBST-backto-ShipMovementsController" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="78.228,932.85,80.4195,941.4388,81.0156,936.3826,86.0717,936.9787,78.228,932.85" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[025e8cc251879ee65f6310ef949d4402]
+reverse link SearchShipController to SearchShipUI--><path codeLine="105" d="M596.394,1113.894 C618.759,1133.082 643.599,1154.376 662.67,1170.729 " fill="none" id="SearchShipController-backto-SearchShipUI" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="592.821,1110.834,596.6132,1118.8458,596.2322,1113.7689,601.3091,1113.3879,592.821,1110.834" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[e52226460e74a527813323923d6fd540]
+reverse link ShipPosition to SearchShipUI--><path codeLine="106" d="M666.792,509.769 C684.549,531.864 702.261,558.801 711.45,586.8 C782.091,802.107 723.015,1083.33 701.451,1170.765 " fill="none" id="ShipPosition-backto-SearchShipUI" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="663.948,506.268,666.2772,514.8205,666.792,509.7554,671.857,510.2701,663.948,506.268" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[b526154c8a3de609529553356ca77e71]
+reverse link Ship to SearchShipUI--><path codeLine="107" d="M567.936,809.118 C593.154,870.246 623.511,947.52 646.65,1017.9 C664.218,1071.342 679.941,1135.287 688.212,1170.774 " fill="none" id="Ship-backto-SearchShipUI" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="566.127,804.744,565.896,813.605,567.8468,808.9024,572.5494,810.8532,566.127,804.744" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[6978326c1a712933a41357c731dc0636]
+reverse link Ship to SearchShipController--><path codeLine="108" d="M525.834,809.253 C529.623,879.462 534.294,966.015 537.093,1017.828 " fill="none" id="Ship-backto-SearchShipController" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="525.582,804.654,522.4264,812.9372,525.8259,809.1474,529.6158,812.5469,525.582,804.654" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[2c46739ec69633bb0ee3a4cb774bb427]
+reverse link ShipBST to SearchShipController--><path codeLine="109" d="M463.41,967.887 C476.505,984.312 490.68,1002.078 503.208,1017.783 " fill="none" id="ShipBST-backto-SearchShipController" style="stroke:#A80036;stroke-width:0.9;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="460.458,964.188,462.7031,972.7629,463.2676,967.7032,468.3273,968.2676,460.458,964.188" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[8e4268da9be0e39b8a4e2d0f58c06391]
+reverse link ShipPosition to Ship--><path codeLine="112" d="M582.543,537.525 C576.243,553.293 569.556,570.051 562.977,586.521 " fill="none" id="ShipPosition-backto-Ship" style="stroke:#A80036;stroke-width:0.9;"/><polygon fill="#A80036" points="584.307,533.097,577.9562,539.2807,582.6357,537.2751,584.6413,541.9547,584.307,533.097" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[38aa70d893a625648d3f7f015f685f9e]
+reverse link Ship to ShipBST--><path codeLine="113" d="M466.686,809.118 C458.55,826.38 450.504,843.435 443.403,858.492 " fill="none" id="Ship-backto-ShipBST" style="stroke:#A80036;stroke-width:0.9;"/><polygon fill="#A80036" points="468.756,804.726,462.0453,810.5171,466.8368,808.7962,468.5576,813.5878,468.756,804.726" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[776aaad076abadc535efa4f939152618]
+reverse link ShipMovements to ShipPosition--><path codeLine="114" d="M635.976,328.104 C633.186,344.997 630.45,361.557 627.921,376.821 " fill="none" id="ShipMovements-backto-ShipPosition" style="stroke:#A80036;stroke-width:0.9;"/><polygon fill="#A80036" points="636.768,323.325,631.8958,330.7298,636.0345,327.7648,638.9995,331.9035,636.768,323.325" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[bb6d2402499ef822123f543344b34427]
+reverse link ShipPosition to ShipPositionBST--><path codeLine="115" d="M562.176,471.987 C501.615,492.174 401.499,531.018 328.95,586.8 C209.556,678.618 109.062,833.49 74.97,889.416 " fill="none" id="ShipPosition-backto-ShipPositionBST" style="stroke:#A80036;stroke-width:0.9;"/><polygon fill="#A80036" points="566.469,470.565,557.6478,469.6952,562.1974,471.9803,559.9123,476.5299,566.469,470.565" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[5bda3b30b9775eb414e18e7856d74389]
+@startuml
+'https://plantuml.com/class-diagram
+
+class SearchShipUI {
+- controller
+}
+
+class SearchShipController {
+- ShipBST
+- ship
++ getShipPositions(startDate, endDate)
++ findShip(code)
+}
+
+class ShipBST {
++ findShip(code)
+- determineCodeType(code)
+- findShipByMMSI(MMSI)
+- findShipByIMO(IMO)
+- findShipByCallSign(CallSign)
+}
+
+class Ship {
+-MMSI
+-name
+-IMO
+-numberEnergyGenerators
+-generatorPowerOutput
+-callSign
+-vesselType
+-length
+-width
+-capacity
+-draft
++ Ship(MMSI, name, IMO, numberEnergyGenerators,
+          generatorPowerOutput, callSign, vesselType, length, width, capacity, draft)
++ getPositions(startDate, endDate)
+}
+
+class ShipPosition {
+-baseDateTime
+-latitude
+-longitude
+-sog
+-cog
+-heading
+-position
+-transceiverClass
++ toString()
+}
+
+class ShipMovementsUI {
+- ShipMovementsController controller
+- ShipMovements details
+}
+
+class ShipMovementsController {
+- ShipPositionBST shipPositionBST
+- SearchShipController searchShipController
+}
+
+class ShipMovements {
+- String shipCode
+- String shipName
+- LocalDateTime startBaseDateTime
+- LocalDateTime endBaseDateTime
+- Time totalMovementTime
+- Integer totalNumberMovements
+- Double maxSOG
+- Double meanSOG
+- Double maxCOG
+- Double meanCOG
+- Double departureLatitude
+- Double departureLongitude
+- Double arrivalLatitude
+- Double arrivalLongitude
+- Double travelledDistance
+- Double deltaDistance
++ ShipMovements(shipCode, shipName, startBaseDateTime, \nendBaseDateTime, totalMovementTime, totalNumberMovements, \nmaxSOG, meanSOG, maxCOG, meanCOG, departureLatitude, \ndepartureLongitude, arrivalLatitude, arrivalLongitude, \ntravelledDistance, deltaDistance)
++ toString()
+}
+
+class ShipPositionBST
+
+class ImportShipsUI {
+- controller
+}
+
+class ImportShipsController {
++ importShips()
+- ShipBST bst
+}
+
+
+ImportShipsController <.. ImportShipsUI
+Ship <.. ImportShipsUI
+ShipBST <.. ImportShipsController
+
+
+ShipMovementsController <.. ShipMovementsUI
+ShipMovements <.. ShipMovementsUI
+SearchShipController <.. ShipMovementsController
+ShipPositionBST <.. ShipMovementsController
+
+
+SearchShipController <.. SearchShipUI
+ShipPosition <.. SearchShipUI
+Ship <.. SearchShipUI
+Ship <.. SearchShipController
+ShipBST <.. SearchShipController
+
+
+ShipPosition <- - Ship
+Ship <- - ShipBST
+ShipMovements <- - ShipPosition
+ShipPosition <- - ShipPositionBST
+
+
+
+
+
+
+
+@enduml
+
+@startuml
+
+class SearchShipUI {
+- controller
+}
+
+class SearchShipController {
+- ShipBST
+- ship
++ getShipPositions(startDate, endDate)
++ findShip(code)
+}
+
+class ShipBST {
++ findShip(code)
+- determineCodeType(code)
+- findShipByMMSI(MMSI)
+- findShipByIMO(IMO)
+- findShipByCallSign(CallSign)
+}
+
+class Ship {
+-MMSI
+-name
+-IMO
+-numberEnergyGenerators
+-generatorPowerOutput
+-callSign
+-vesselType
+-length
+-width
+-capacity
+-draft
++ Ship(MMSI, name, IMO, numberEnergyGenerators,
+          generatorPowerOutput, callSign, vesselType, length, width, capacity, draft)
++ getPositions(startDate, endDate)
+}
+
+class ShipPosition {
+-baseDateTime
+-latitude
+-longitude
+-sog
+-cog
+-heading
+-position
+-transceiverClass
++ toString()
+}
+
+class ShipMovementsUI {
+- ShipMovementsController controller
+- ShipMovements details
+}
+
+class ShipMovementsController {
+- ShipPositionBST shipPositionBST
+- SearchShipController searchShipController
+}
+
+class ShipMovements {
+- String shipCode
+- String shipName
+- LocalDateTime startBaseDateTime
+- LocalDateTime endBaseDateTime
+- Time totalMovementTime
+- Integer totalNumberMovements
+- Double maxSOG
+- Double meanSOG
+- Double maxCOG
+- Double meanCOG
+- Double departureLatitude
+- Double departureLongitude
+- Double arrivalLatitude
+- Double arrivalLongitude
+- Double travelledDistance
+- Double deltaDistance
++ ShipMovements(shipCode, shipName, startBaseDateTime, \nendBaseDateTime, totalMovementTime, totalNumberMovements, \nmaxSOG, meanSOG, maxCOG, meanCOG, departureLatitude, \ndepartureLongitude, arrivalLatitude, arrivalLongitude, \ntravelledDistance, deltaDistance)
++ toString()
+}
+
+class ShipPositionBST
+
+class ImportShipsUI {
+- controller
+}
+
+class ImportShipsController {
++ importShips()
+- ShipBST bst
+}
+
+
+ImportShipsController <.. ImportShipsUI
+Ship <.. ImportShipsUI
+ShipBST <.. ImportShipsController
+
+
+ShipMovementsController <.. ShipMovementsUI
+ShipMovements <.. ShipMovementsUI
+SearchShipController <.. ShipMovementsController
+ShipPositionBST <.. ShipMovementsController
+
+
+SearchShipController <.. SearchShipUI
+ShipPosition <.. SearchShipUI
+Ship <.. SearchShipUI
+Ship <.. SearchShipController
+ShipBST <.. SearchShipController
+
+
+ShipPosition <- - Ship
+Ship <- - ShipBST
+ShipMovements <- - ShipPosition
+ShipPosition <- - ShipPositionBST
+
+
+
+
+
+
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>
