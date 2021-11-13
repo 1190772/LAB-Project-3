@@ -3,11 +3,12 @@ package lapr.project.model;
 import lapr.project.controller.App;
 import lapr.project.controller.ImportShipsController;
 import lapr.project.controller.ShipMovementsController;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class ShipPositionBSTTest {
     ShipBST shipBST;
@@ -48,13 +49,13 @@ public class ShipPositionBSTTest {
             shipMovementsList.add(controller.getAttributes(s.getIMO()));
         for (Ship s : shipBST.inOrder())
             shipBST.remove(s);
-
+        Assertions.assertTrue(((ArrayList<Ship>) shipBST.inOrder()).isEmpty());
     }
 
     @Test
     public void deltaDistanceTest() {
         for (int i = 0; i < deltaDistance.length; i++)
-            assertEquals(deltaDistance[i], shipMovementsList.get(i).getDeltaDistance(), 5);
+            Assertions.assertEquals(deltaDistance[i], shipMovementsList.get(i).getDeltaDistance(), 5);
 
         //Confirmation http://www.movable-type.co.uk/scripts/latlong.html
         for (Ship ship : shipBST.inOrder()) {
@@ -72,13 +73,13 @@ public class ShipPositionBSTTest {
     @Test
     public void travelledDistanceTest() {
         for (int i = 0; i < travelledDistance.length; i++)
-            assertEquals(travelledDistance[i], shipMovementsList.get(i).getTravelledDistance(), 5);
+            Assertions.assertEquals(travelledDistance[i], shipMovementsList.get(i).getTravelledDistance(), 5);
 
 
-        assertEquals(-1.0, new ShipPositionBST().travelledDistance(), 0);
+        Assertions.assertEquals(-1.0, new ShipPositionBST().travelledDistance(), 0);
         ShipPositionBST newBst = new ShipPositionBST();
         newBst.insert(new ShipPosition(null, 66, -66, 0, 0, 0, 'B', 0));
-        assertEquals(0.0, newBst.travelledDistance(), 0);
+        Assertions.assertEquals(0.0, newBst.travelledDistance(), 0);
 
         //Confirmation http://www.movable-type.co.uk/scripts/latlong.html
         for (Ship ship : shipBST.inOrder()) {
@@ -95,36 +96,36 @@ public class ShipPositionBSTTest {
     @Test
     public void totalMovementTimeTest() {
         for (int i = 0; i < totalMovementTime.length; i++)
-            assertEquals(totalMovementTime[i], shipMovementsList.get(i).getTotalMovementTime().toString());
+            Assertions.assertEquals(totalMovementTime[i], shipMovementsList.get(i).getTotalMovementTime().toString());
     }
 
     @Test
     public void totalNumberMovementsTest() {
         for (int i = 0; i < totalNumberMovements.length; i++)
-            assertEquals(totalNumberMovements[i], shipMovementsList.get(i).getTotalNumberMovements());
+            Assertions.assertEquals(totalNumberMovements[i], shipMovementsList.get(i).getTotalNumberMovements());
     }
 
     @Test
     public void maxMeanSOGTest() {
         for (int i = 0; i < maxSOG.length; i++)
-            assertEquals(maxSOG[i], shipMovementsList.get(i).getMaxSOG(), 0);
+            Assertions.assertEquals(maxSOG[i], shipMovementsList.get(i).getMaxSOG(), 0);
 
         for (int i = 0; i < meanSOG.length; i++)
-            assertEquals(meanSOG[i], shipMovementsList.get(i).getMeanSOG(), 0);
+            Assertions.assertEquals(meanSOG[i], shipMovementsList.get(i).getMeanSOG(), 0);
     }
 
     @Test
     public void maxMeanCOGTest() {
         for (int i = 0; i < maxCOG.length; i++)
-            assertEquals(maxCOG[i], shipMovementsList.get(i).getMaxCOG(), 0);
+            Assertions.assertEquals(maxCOG[i], shipMovementsList.get(i).getMaxCOG(), 0);
 
         for (int i = 0; i < meanCOG.length; i++)
-            assertEquals(meanCOG[i], shipMovementsList.get(i).getMeanCOG(), 0);
+            Assertions.assertEquals(meanCOG[i], shipMovementsList.get(i).getMeanCOG(), 0);
     }
 
     @Test
     public void toStringTest() {
-        assertEquals(toString, shipMovementsList.get(0).toString());
+        Assertions.assertEquals(toString, shipMovementsList.get(0).toString());
     }
 
 }
