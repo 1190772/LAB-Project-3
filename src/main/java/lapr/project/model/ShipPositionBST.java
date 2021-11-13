@@ -6,31 +6,62 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-
+/**
+ * @author Samuel Pereira 1201274
+ */
 public class ShipPositionBST extends AVL<ShipPosition> {
 
     public ShipPositionBST(){
         list = new ArrayList<>();
     }
 
+    /**
+     * Inserts a ShipPosition element and refreshes the ShipPosition's list
+     *
+     * @param element ShipPosition
+     */
     @Override
     public void insert(ShipPosition element) {
         super.insert(element);
         list = (ArrayList<ShipPosition>) inOrder();
     }
 
+    /**
+     * Removes a ShipPosition element and refreshes the ShipPosition's list
+     *
+     * @param element ShipPosition
+     */
     @Override
     public void remove(ShipPosition element) {
         super.remove(element);
         list = (ArrayList<ShipPosition>) inOrder();
     }
 
+    /**
+     * ShipPosition's list
+     */
     private ArrayList<ShipPosition> list;
 
+    /**
+     * Calculates the distance between two ShipPosition
+     *
+     * @param pos1 first position
+     * @param pos2 second position
+     * @return distance in meters
+     */
     public double distanceBetweenTwoCoordinates(ShipPosition pos1, ShipPosition pos2) {
         return distanceBetweenTwoCoordinates(pos1.getLongitude(), pos1.getLatitude(), pos2.getLongitude(), pos2.getLatitude());
     }
 
+    /**
+     * Calculates the distance between two coordinates
+     *
+     * @param lon1 first longitude
+     * @param lat1 first latitude
+     * @param lon2 second longitude
+     * @param lat2 second latitude
+     * @return distance in meters
+     */
     private double distanceBetweenTwoCoordinates(double lon1, double lat1, double lon2, double lat2) {
         double R = 6371 * Math.pow(10, 3);
         lon1 *= Math.PI / 180;
@@ -42,11 +73,21 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return R * c;
     }
 
+    /**
+     * Calculates the Delta Distance
+     *
+     * @return Delta Distance in meters
+     */
     public double deltaDistance() {
         
         return Math.round(distanceBetweenTwoCoordinates(list.get(0), list.get(list.size() - 1)));
     }
 
+    /**
+     * Calculates the Travelled Distance
+     *
+     * @return Travelled Distance in meters
+     */
     public double travelledDistance() {
         
         if (list.isEmpty())
@@ -56,16 +97,33 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return Math.round(travelledDistance(list, 0));
     }
 
+    /**
+     * Calculates the Travelled Distance
+     *
+     * @param list List of the positions
+     * @param position position indicator
+     * @return Travelled Distance in meters
+     */
     private double travelledDistance(ArrayList<ShipPosition> list, int position) {
         if (position == list.size() - 1)
             return 0;
         return distanceBetweenTwoCoordinates(list.get(position), list.get(position + 1)) + travelledDistance(list, position + 1);
     }
 
+    /**
+     * Returns the total number of movements
+     *
+     * @return total number of movements
+     */
     public int totalNumberMovements() {
         return size() - 1;
     }
 
+    /**
+     * Returns the total movement time
+     *
+     * @return total movement time
+     */
     public LocalTime totalMovementTime() {
         
         long min = Duration.between(list.get(0).getBaseDateTime(), list.get(list.size() - 1).getBaseDateTime()).toMinutes();
