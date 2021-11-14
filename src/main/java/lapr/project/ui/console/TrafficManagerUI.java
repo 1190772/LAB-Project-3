@@ -21,7 +21,6 @@ public class TrafficManagerUI implements Runnable {
     /**
      * Runs the UI.
      */
-
     public void run() {
 
         List<MenuItem> options = new ArrayList<MenuItem>();
