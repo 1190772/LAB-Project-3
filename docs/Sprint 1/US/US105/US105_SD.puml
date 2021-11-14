@@ -1,0 +1,65 @@
+@startuml
+autonumber
+
+'hide footbox
+actor "Traffic Manager" as TM
+
+participant ":ListMovementsAndDistanceUI" as UI
+participant ":ListMovementsAndDistanceController" as CTRL
+participant ":ShipBST" as SBST
+participant ":ShipMovements" as SM
+participant ":ShipPositionBST" as SPBST
+
+activate TM
+TM -> UI : asks to list for all ships, MMSI,total number of \nmovements, and Travelled and Delta Distances
+activate UI
+
+UI --> TM : asks to select the ordering type
+deactivate UI
+
+TM -> UI : selects type of order
+activate UI
+
+alt Travelled Distance ascending
+UI -> CTRL : list = travelledDistanceAsc()
+activate CTRL
+autonumber 4
+else Travelled Distance descending
+UI -> CTRL : list = travelledDistanceDesc()
+autonumber 4
+else Delta Distance ascending
+UI -> CTRL : list = deltaDistanceAsc()
+autonumber 4
+else Delta Distance descending
+UI -> CTRL : list = deltaDistanceDesc()
+end
+
+CTRL -> SBST : shipBST = App.getInstance().getShips()
+activate SBST
+deactivate SBST
+
+loop each ship in the company
+CTRL -> CTRL : shipMovement.setMMSI()
+CTRL -> SM : list.add(shipMovement)
+activate SM
+autonumber 7.1
+SM -> SPBST : shipMovement.setTravelledDistance(getTravelledDistance())
+activate SPBST
+SM -> SPBST : shipMovement.setDeltaDistance(getDeltaDistance())
+SM -> SPBST : shipMovement.setTotalNumberMovements(getTotalNumberMovements())
+
+deactivate SM
+deactivate SPBST
+end
+
+autonumber 8
+
+CTRL -> UI : result
+deactivate CTRL
+
+UI --> TM : shows list with the information requested
+deactivate UI
+
+deactivate TM
+
+@enduml

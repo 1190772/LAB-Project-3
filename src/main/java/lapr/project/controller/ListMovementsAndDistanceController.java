@@ -4,17 +4,16 @@ package lapr.project.controller;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipPositionBST;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
-public class ShipMovementsAndDistance {
+public class ListMovementsAndDistanceController {
 
     private Ship ship;
     ShipPositionBST shipPositionBST = new ShipPositionBST();
     Map<String, ArrayList<Double>> shipMap;
     ArrayList<Ship> shipList;
 
-    public ShipMovementsAndDistance(){
+    public ListMovementsAndDistanceController(){
         shipMap = new HashMap<>();
         shipList = (ArrayList<Ship>) App.getInstance().getCompany().getShips().inOrder();
         for (Ship ship: shipList)

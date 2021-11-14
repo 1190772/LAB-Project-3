@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Traffic Manager: as TM
+(Ask to list for all ships the MMSI, \nthe total number of movements, \nTravelled Distance and Delta Distance.) as (Use)
+
+TM ---> (Use)
+
+@enduml
