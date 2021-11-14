@@ -1,0 +1,76 @@
+@startuml
+autonumber
+
+'hide footbox
+actor "Traffic Manager" as TM
+
+participant ":TopNShipsUI" as UI
+participant ":TopNShipsController" as CTRL
+participant ":ShipPositionBST" as SPBST
+participant ":Ship" as SM
+participant ":ShipBST" as SBST
+participant ":ShipPosition" as SP
+
+activate TM
+TM -> UI : Requests the top-N ships
+activate UI
+
+UI -> TM : Requests data (N)
+
+deactivate UI
+
+TM -> UI : Types requested data
+activate UI
+UI -> CTRL : chosenShip = findShip(code)
+activate CTRL
+
+CTRL -> CTRL2 : chosenShip = findShip(code)
+activate CTRL2
+deactivate CTRL2
+note right of CTRL2 : More information in US102
+|||
+
+CTRL -> SPBST : attributes = getAttributes()
+activate SPBST
+autonumber 6.1
+SPBST -> SM : firstPosition = getFirstPosition()
+activate SM
+
+autonumber 6.1.1
+SM -> SBST : startBaseDateTime = firstPosition.getBaseDateTime()
+activate SBST
+SM -> SBST : departureLatitude = firstPosition.getLatitude()
+SM -> SBST : departureLongitude = firstPosition.getLongitude()
+deactivate SBST
+
+autonumber 6.2
+SPBST -> SM : lastPosition = getLastPosition()
+
+autonumber 6.2.1
+SM -> SBST : endBaseDateTime = lastPosition.getBaseDateTime()
+activate SBST
+SM -> SBST : arrivalLatitude = lastPosition.getLatitude()
+SM -> SBST : arrivalLongitude = lastPosition.getLongitude()
+deactivate SBST
+
+autonumber 6.3
+SPBST -> SM : travelledDistance = travelledDistance()
+SPBST -> SM : deltaDistance = deltaDistance()
+SPBST -> SM : totalNumberMovements = totalNumberMovements()
+SPBST -> SM : maxSOG = getMaxSOG()
+SPBST -> SM : meanSOG = getMeanSOG()
+SPBST -> SM : maxCOG = getMaxCOG()
+SPBST -> SM : meanCOG = getMeanCOG()
+SM --> SPBST : result = toString()
+deactivate SM
+deactivate SPBST
+autonumber 7
+CTRL -> UI : result
+deactivate CTRL
+
+UI --> TM : shows results
+deactivate UI
+
+deactivate TM
+
+@enduml
