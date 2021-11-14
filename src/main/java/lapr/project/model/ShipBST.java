@@ -5,7 +5,6 @@ import lapr.project.utils.AVL;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 
 public class ShipBST extends AVL<Ship> {
@@ -119,37 +118,44 @@ public class ShipBST extends AVL<Ship> {
         return res;
     }
 
+    /**
+     * Gets the top N ships with most kilometers travelled and their mean SOG grouped by VesselType in a period.
+     *
+     * @param n
+     * @param start
+     * @param end
+     * @return
+     */
     public ArrayList<Ship>[] topNShips(int n, LocalDateTime start, LocalDateTime end) {
 
         ArrayList<Ship>[] topNLists = new ArrayList[100];
         Iterator<Ship> list = inOrder().iterator();
         double distance;
         Ship ship;
-        int i ;
+        int i;
 
         while (list.hasNext()) {
             ship = list.next();
-            distance = ship.getPosition().travelledDistance(start,end);
+            distance = ship.getPosition().travelledDistance(start, end);
             if (topNLists[ship.getVesselType()] == null)
                 topNLists[ship.getVesselType()] = new ArrayList<>();
-            if(topNLists[ship.getVesselType()].isEmpty()){
+            if (topNLists[ship.getVesselType()].isEmpty()) {
                 topNLists[ship.getVesselType()].add(ship);
-            }
-            else if(topNLists[ship.getVesselType()].size() < n){
+            } else if (topNLists[ship.getVesselType()].size() < n) {
                 i = topNLists[ship.getVesselType()].size();
-                while (i > 0 && distance > topNLists[ship.getVesselType()].get(i-1).getPosition().travelledDistance(start,end)) {
+                while (i > 0 && distance > topNLists[ship.getVesselType()].get(i - 1).getPosition().travelledDistance(start, end)) {
                     i--;
                 }
                 if (i < topNLists[ship.getVesselType()].size())
                     topNLists[ship.getVesselType()].add(i, ship);
-            }else if(distance > topNLists[ship.getVesselType()].get(topNLists[ship.getVesselType()].size()-1).getPosition().travelledDistance(start, end)){
-                topNLists[ship.getVesselType()].remove(topNLists[ship.getVesselType()].size()-1);
-                    i = topNLists[ship.getVesselType()].size();
-                    while (i > 0 && distance > topNLists[ship.getVesselType()].get(i-1).getPosition().travelledDistance(start,end)) {
-                        i--;
-                    }
-                    if (i < topNLists[ship.getVesselType()].size())
-                        topNLists[ship.getVesselType()].add(i, ship);
+            } else if (distance > topNLists[ship.getVesselType()].get(topNLists[ship.getVesselType()].size() - 1).getPosition().travelledDistance(start, end)) {
+                topNLists[ship.getVesselType()].remove(topNLists[ship.getVesselType()].size() - 1);
+                i = topNLists[ship.getVesselType()].size();
+                while (i > 0 && distance > topNLists[ship.getVesselType()].get(i - 1).getPosition().travelledDistance(start, end)) {
+                    i--;
+                }
+                if (i < topNLists[ship.getVesselType()].size())
+                    topNLists[ship.getVesselType()].add(i, ship);
             }
         }
         return topNLists;

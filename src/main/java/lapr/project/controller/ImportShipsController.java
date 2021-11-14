@@ -9,14 +9,30 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
+/**
+ * Controller responsible for coordinating ship searches.
+ *
+ * @author José Silva 1190772
+ */
 public class ImportShipsController {
 
-    ShipBST bst;
+    /**
+     * The ship binary search tree.
+     */
+    private final ShipBST bst;
 
+    /**
+     * Builds an instance of the Controller.
+     */
     public ImportShipsController() {
         bst = App.getInstance().getCompany().getShips();
     }
 
+    /**
+     * Imports the ships from a text file to a binary search tree, after validating some parameteres.
+     *
+     * @param fileName
+     */
     public void importShips(String fileName) {
         String[] parameters;
         Ship ship;
@@ -66,6 +82,12 @@ public class ImportShipsController {
         }
     }
 
+    /**
+     * Checks the validity of heading.
+     *
+     * @param heading
+     * @return
+     */
     private boolean validateHeading(double heading) {
         boolean flag = false;
         if (heading >= 0 && heading < 360 || heading == 511) {
@@ -74,7 +96,12 @@ public class ImportShipsController {
         return flag;
     }
 
-
+    /**
+     * Checks the validity of sog.
+     *
+     * @param sog
+     * @return
+     */
     private boolean validateSOG(double sog) {
         boolean flag = false;
         if (sog >= 0) {
@@ -83,15 +110,26 @@ public class ImportShipsController {
         return flag;
     }
 
-
+    /**
+     * Checks the validity of cog.
+     *
+     * @param cog
+     * @return
+     */
     private boolean validateCOG(double cog) {
         boolean flag = false;
-        if (cog >= 0 && cog < 360){
+        if (cog >= 0 && cog < 360) {
             flag = true;
         }
         return flag;
     }
 
+    /**
+     * Checks the validity of latitude.
+     *
+     * @param latitude
+     * @return
+     */
     private boolean validateLatitude(double latitude) {
         boolean flag = false;
         if (latitude > -90 && latitude < 90 || latitude == 91) {
@@ -100,9 +138,15 @@ public class ImportShipsController {
         return flag;
     }
 
+    /**
+     * Checks the validity of longitude.
+     *
+     * @param longitude
+     * @return
+     */
     private boolean validateLongitude(double longitude) {
         boolean flag = false;
-        if (longitude > -180 && longitude < 180 || longitude == 181){
+        if (longitude > -180 && longitude < 180 || longitude == 181) {
             flag = true;
         }
         return flag;
