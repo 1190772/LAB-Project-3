@@ -5,7 +5,7 @@ autonumber
 actor "Traffic Manager" as TM
 
 participant ":ListMovementsAndDistanceUI" as UI
-participant ":ListMovementsAndDistanceController" as CTRL
+participant ":ListMovementsController" as CTRL
 participant ":ShipBST" as SBST
 participant ":ShipMovements" as SM
 participant ":ShipPositionBST" as SPBST
@@ -20,19 +20,8 @@ deactivate UI
 TM -> UI : selects type of order
 activate UI
 
-alt Travelled Distance ascending
-UI -> CTRL : list = travelledDistanceAsc()
+UI -> CTRL : listAllShip(sortCode)
 activate CTRL
-autonumber 4
-else Travelled Distance descending
-UI -> CTRL : list = travelledDistanceDesc()
-autonumber 4
-else Delta Distance ascending
-UI -> CTRL : list = deltaDistanceAsc()
-autonumber 4
-else Delta Distance descending
-UI -> CTRL : list = deltaDistanceDesc()
-end
 
 CTRL -> SBST : shipBST = App.getInstance().getShips()
 activate SBST
@@ -53,6 +42,20 @@ deactivate SPBST
 end
 
 autonumber 8
+alt Travelled Distance ascending
+CTRL -> CTRL : list = travelledDistanceAsc()
+autonumber 8
+else Travelled Distance descending
+CTRL -> CTRL : list = travelledDistanceDesc()
+autonumber 8
+else Delta Distance ascending
+CTRL -> CTRL : list = deltaDistanceAsc()
+autonumber 8
+else Delta Distance descending
+CTRL -> CTRL : list = deltaDistanceDesc()
+end
+
+
 
 CTRL -> UI : result
 deactivate CTRL

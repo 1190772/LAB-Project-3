@@ -9,6 +9,7 @@
 class ShipMovementsController {
 - ShipPositionBST shipPositionBST
 - SearchShipController searchShipController
++ ShipMovementsAllDetails getAttributes()
 }
 
 class SearchShipController {
@@ -16,13 +17,10 @@ class SearchShipController {
 + findShip(code)
 }
 
-class ShipMovements {
-- String shipCode
-- String shipName
+class ShipMovementsAllDetails {
 - LocalDateTime startBaseDateTime
 - LocalDateTime endBaseDateTime
 - Time totalMovementTime
-- Integer totalNumberMovements
 - Double maxSOG
 - Double meanSOG
 - Double maxCOG
@@ -31,20 +29,43 @@ class ShipMovements {
 - Double departureLongitude
 - Double arrivalLatitude
 - Double arrivalLongitude
-- Double travelledDistance
-- Double deltaDistance
-+ ShipMovements(shipCode, shipName, startBaseDateTime, \nendBaseDateTime, totalMovementTime, totalNumberMovements, \nmaxSOG, meanSOG, maxCOG, meanCOG, departureLatitude, \ndepartureLongitude, arrivalLatitude, arrivalLongitude, \ntravelledDistance, deltaDistance)
-+ toString()
++ ShipMovementsAllDetails(shipCode, shipName, startBaseDateTime, \nendBaseDateTime, totalMovementTime, totalNumberMovements, \nmaxSOG, meanSOG, maxCOG, meanCOG, departureLatitude, \ndepartureLongitude, arrivalLatitude, arrivalLongitude, \ntravelledDistance, deltaDistance)
++ String toString()
 }
 
-class ShipPositionBST
+class ShipMovements {
+- String shipCode
+- String shipName
+- Integer totalNumberMovements
+- Double travelledDistance
+- Double deltaDistance
++ ShipMovements(shipCode, shipName, \ntotalNumberMovements, travelledDistance, deltaDistance)
+}
 
-class ShipPosition
+
+
+class ShipPositionBST {
++ deltaDistance()
++ travelledDistance()
+}
+
+class ShipPosition {
+- LocalDateTime baseDateTime;
+- double latitude;
+- double longitude;
+- double sog;
+- double cog;
+- double heading;
+- char transceiverClass;
+- int cargo;
++ ShipPosition(baseDateTime, latitude, longitude, sog, \ncog, heading, transceiverClass, cargo)
+}
 
 'ShipMovementsController <.. ShipMovementsUI
 SearchShipController <.. ShipMovementsController
 ShipPositionBST <.. ShipMovementsController
 ShipPosition <-- ShipPositionBST
-ShipMovements <-- ShipPosition
+ShipMovements <-- ShipMovementsController
 'ShipMovements <.. ShipMovementsUI
+ShipMovementsAllDetails <-- ShipMovements
 @enduml

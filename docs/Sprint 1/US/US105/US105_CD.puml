@@ -6,17 +6,45 @@
 - ShipMovements details
 }'/
 
-class ListMovementsAndDistanceController {
+class ShipMovementsController {
 - ShipPositionBST shipPositionBST
++ ArrayList<ShipMovements> travelledDistanceAsc(list)
++ ArrayList<ShipMovements> travelledDistanceDesc(list)
++ ArrayList<ShipMovements> deltaDistanceAsc(list)
++ ArrayList<ShipMovements> deltaDistanceDesc(list)
 }
 
-class ShipPositionBST
+class ShipMovements {
+- String shipCode
+- String shipName
+- Integer totalNumberMovements
+- Double travelledDistance
+- Double deltaDistance
++ ShipMovements(shipCode, shipName, \ntotalNumberMovements, travelledDistance, deltaDistance)
++ String toString()
+}
 
-class ShipPosition
+class ShipPositionBST {
++ deltaDistance()
++ travelledDistance()
+}
 
-'ListMovementsAndDistanceController <.. ShipMovementsUI
+class ShipPosition {
+- LocalDateTime baseDateTime;
+- double latitude;
+- double longitude;
+- double sog;
+- double cog;
+- double heading;
+- char transceiverClass;
+- int cargo;
++ ShipPosition(baseDateTime, latitude, longitude, sog, \ncog, heading, transceiverClass, cargo)
+}
 
-ShipPositionBST <.. ListMovementsAndDistanceController
+'ShipMovementsController <.. ShipMovementsUI
+
+ShipPositionBST <.. ShipMovementsController
 ShipPosition <-- ShipPositionBST
 'ShipMovements <.. ShipMovementsUI
+ShipMovements <-- ShipMovementsController
 @enduml
