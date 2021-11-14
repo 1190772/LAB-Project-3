@@ -19,19 +19,7 @@ drop table Cargo_Manifesto cascade constraints;
 
 
 
-create table Container(
-    id_container              char(11) constraint pk_container Primary Key,
-    tare                      integer constraint ck_tare_positive check (tare > 0),
-    iso_code                  char(4),
-    refrigeration_temperature number(3,1),
-    max_weight_incl_container integer constraint ck_max_weight_incl_container_positive check (max_weight_incl_container > 0),
-    max_weight                integer constraint ck_max_weight_positive check (max_weight > 0),
-    max_volume                integer constraint ck_max_volume_positive check (max_volume > 0),
-    csc_plate                 varChar(30),
-    acep                      integer,
-    pes_date                  date,
-    constraint ck_max_weight_lesser_incl_container check (max_weight < max_weight_incl_container)
-);
+
 
 create table Owner(
     id_owner                  char(3) constraint pk_owner Primary Key,
@@ -56,7 +44,7 @@ create table Container_Length(
     value_length              integer constraint ck_value_length_positive check (value_length > 0)
 );
 
-create table Width_Height(
+    create table Width_Height(
     width_height_code         char(1) constraint pk_width_height Primary Key,
     value_height              integer constraint ck_value_height_positive check (value_height > 0),
     value_width               integer constraint ck_value_width_positive check (value_width > 0)
@@ -78,6 +66,20 @@ create table ISO(
     width_height_code         char(1), constraint fk_width_height_iso Foreign Key (width_height_code) references Width_Height(width_height_code),
     container_type_code       char(1), constraint fk_container_type_iso Foreign Key (container_type_code) references Container_Type(container_type_code),
     reduced_strength_code     char(1), constraint fk_reduced_strength_iso Foreign Key (reduced_strength_code) references Reduced_Strength(reduced_strength_code)
+);
+
+create table Container(
+    id_container              char(11) constraint pk_container Primary Key,
+    tare                      integer constraint ck_tare_positive check (tare > 0),
+    iso_code                  char(4), constraint fk_iso_container Foreign Key (iso_code) references ISO(iso_code),
+    refrigeration_temperature number(3,1),
+    max_weight_incl_container integer constraint ck_max_weight_incl_container_positive check (max_weight_incl_container > 0),
+    max_weight                integer constraint ck_max_weight_positive check (max_weight > 0),
+    max_volume                integer constraint ck_max_volume_positive check (max_volume > 0),
+    csc_plate                 varChar(30),
+    acep                      integer,
+    pes_date                  date,
+    constraint ck_max_weight_lesser_incl_container check (max_weight < max_weight_incl_container)
 );
 
 create table Role(

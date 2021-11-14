@@ -1,6 +1,7 @@
 Nomes devem estar em letra minúscula.
 Nomes devem conter apenas letras e underscores.
 Minimizar o tamanho dos nomes utilizados sempre que for possível.
+Caso o nome seja muito comprido ou caso já haja uma abreviatura conhecida deve ser usada a abreviatura como por exemplo: "sog" (Speed Over Ground) e "cog" (Course Over Ground)
 Sempre que for necessário incluir um espaço no nome deve ser usado um underscore.
 
 

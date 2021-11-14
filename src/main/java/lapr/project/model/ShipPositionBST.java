@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class ShipPositionBST extends AVL<ShipPosition> {
 
-    public ShipPositionBST(){
+    public ShipPositionBST() {
         list = new ArrayList<>();
     }
 
@@ -98,9 +98,16 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return Math.round(travelledDistance(list, 0));
     }
 
+    /**
+     * Calculates the travelled distance in a period of time.
+     *
+     * @param start
+     * @param end
+     * @return
+     */
     public double travelledDistance(LocalDateTime start, LocalDateTime end) {
 
-        ArrayList<ShipPosition> shipPositions = getPositions(start,end);
+        ArrayList<ShipPosition> shipPositions = getPositions(start, end);
 
         if (shipPositions.isEmpty())
             return -1;
@@ -112,7 +119,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
     /**
      * Calculates the Travelled Distance
      *
-     * @param list List of the positions
+     * @param list     List of the positions
      * @param position position indicator
      * @return Travelled Distance in meters
      */
@@ -146,52 +153,58 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         for (ShipPosition sp : list)
             if (sp.getSOG() > max)
                 max = sp.getSOG();
-        return (double) Math.round(max*100)/100;
+        return (double) Math.round(max * 100) / 100;
     }
 
     public double meanSOG() {
-        
+
         double mean = 0;
         for (ShipPosition sp : list)
             mean += sp.getSOG();
         mean /= size();
-        return (double) Math.round(mean*100)/100;
+        return (double) Math.round(mean * 100) / 100;
     }
 
+    /**
+     * Calculates the mean SOG of a ship.
+     *
+     * @param start
+     * @param end
+     * @return
+     */
     public double meanSOG(LocalDateTime start, LocalDateTime end) {
 
-        ArrayList<ShipPosition> shipPositions = getPositions(start,end);
+        ArrayList<ShipPosition> shipPositions = getPositions(start, end);
         double mean = 0;
         for (ShipPosition sp : shipPositions)
             mean += sp.getSOG();
         mean /= size();
-        return (double) Math.round(mean*100)/100;
+        return (double) Math.round(mean * 100) / 100;
     }
 
     public double maxCOG() {
-        
+
         double max = -Double.MAX_VALUE;
         for (ShipPosition sp : list)
             if (sp.getCOG() > max)
                 max = sp.getCOG();
-        return (double) Math.round(max*100)/100;
+        return (double) Math.round(max * 100) / 100;
     }
 
     public double meanCOG() {
-        
+
         double mean = 0;
         for (ShipPosition sp : list)
             mean += sp.getCOG();
         mean /= size();
-        return (double) Math.round(mean*100)/100;
+        return (double) Math.round(mean * 100) / 100;
     }
 
     /**
      * Returns positions of ship given a date interval.
      *
      * @param startDate start of interval.
-     * @param endDate end of interval.
-     *
+     * @param endDate   end of interval.
      * @return negative, 0, or positive, depending on whose IMO code comes first.
      */
     public ArrayList<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
@@ -209,7 +222,6 @@ public class ShipPositionBST extends AVL<ShipPosition> {
 
         return res;
     }
-
 
 
 }
