@@ -3,9 +3,9 @@
 
 left to right direction
 
-:User: as USER
+:Traffic Manager: as TM
 (Get the  top-N ships with the most kilometres travelled and their average speed) as (Use)
 
-USER ---> (Use)
+TM ---> (Use)
 
 @enduml
