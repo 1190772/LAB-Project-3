@@ -21,12 +21,11 @@ deactivate UI
 
 TM -> UI : Types requested data
 activate UI
-UI -> CTRL : chosenShip = findShip(code)
+UI -> CTRL : topNList = controller.topNShips(n,startDateTime,endDateTime)
 activate CTRL
 
 CTRL -> CTRL2 : chosenShip = findShip(code)
-activate CTRL2
-deactivate CTRL2
+
 note right of CTRL2 : More information in US102
 |||
 
