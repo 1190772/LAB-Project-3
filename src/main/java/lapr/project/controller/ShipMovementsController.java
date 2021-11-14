@@ -20,6 +20,8 @@ public class ShipMovementsController {
         Ship ship = new SearchShipController().findShip(shipCode);
         ShipPositionBST bst = ship.getPosition();
         ArrayList<ShipPosition> list = (ArrayList<ShipPosition>) bst.inOrder();
+        if (list.isEmpty())
+            return null;
         return new ShipMovementsAllDetails(shipCode, ship.getName(), list.get(0), list.get(list.size() - 1), bst.totalMovementTime(), bst.totalNumberMovements(),
                 bst.maxSOG(), bst.meanSOG(), bst.maxCOG(), bst.meanCOG(), bst.travelledDistance(), bst.deltaDistance());
     }
