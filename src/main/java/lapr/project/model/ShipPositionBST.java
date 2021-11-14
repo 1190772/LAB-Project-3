@@ -6,7 +6,6 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * @author Samuel Pereira 1201274
@@ -99,7 +98,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return Math.round(travelledDistance(list, 0));
     }
 
-    public double travelledDistanceInterval(LocalDateTime start, LocalDateTime end) {
+    public double travelledDistance(LocalDateTime start, LocalDateTime end) {
 
         ArrayList<ShipPosition> shipPositions = getPositions(start,end);
 
@@ -161,7 +160,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return (double) Math.round(mean*100)/100;
     }
 
-    public double meanSOGInterval(LocalDateTime start, LocalDateTime end) {
+    public double meanSOG(LocalDateTime start, LocalDateTime end) {
 
         ArrayList<ShipPosition> shipPositions = getPositions(start,end);
         double mean = 0;

@@ -11,15 +11,13 @@ import java.util.Scanner;
 
 public class ImportShipsController {
 
-    String fileName = "bships.csv";
-
     ShipBST bst;
 
     public ImportShipsController() {
         bst = App.getInstance().getCompany().getShips();
     }
 
-    public void importShips() {
+    public void importShips(String fileName) {
         String[] parameters;
         Ship ship;
         try (Scanner in = new Scanner((new FileReader(fileName)))) {

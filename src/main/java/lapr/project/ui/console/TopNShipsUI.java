@@ -41,7 +41,7 @@ public class TopNShipsUI implements Runnable {
         topNList = controller.topNShips(n,startDateTime,endDateTime);
                 LocalDateTime.of(Integer.parseInt(end[0]), Integer.parseInt(end[1]), Integer.parseInt(end[2]), Integer.parseInt(end[3]), Integer.parseInt(end[4]));
         for (Ship ship: topNList) {
-            System.out.println("MMSI: " + ship.getMMSI() + " VesselType: " + ship.getVesselType() + " Kilometers Travelled: " + ship.getPosition().travelledDistanceInterval(startDateTime,endDateTime) + " MeanSOG: " + ship.getPosition().meanSOGInterval(startDateTime,endDateTime));
+            System.out.println("MMSI: " + ship.getMMSI() + " VesselType: " + ship.getVesselType() + " Kilometers Travelled: " + ship.getPosition().travelledDistance(startDateTime,endDateTime) + " MeanSOG: " + ship.getPosition().meanSOG(startDateTime,endDateTime));
 
         }
     }

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class ShipPositionBSTTest {
     ShipBST shipBST;
-    ArrayList<ShipMovements> shipMovementsList;
+    ArrayList<ShipMovementsAllDetails> shipMovementsList;
     double[] deltaDistance = {1.243, 1.719, 17.86, 12160.0, 2469.0, 7.444, 0.0, 33250.0, 1527.0, 0.0, 0.0, 58870.0, 72.0, 85220.0, 13523.0, 138600.0};
     double[] travelledDistance = {2.0, 54.0, 93.0, 12158.0, 2555.0, 20.0, 0.0, 33256.0, 1527.0, 0.0, 0.0, 58875.0, 72.0, 85262.0, 13525.0, 138595.0, 6543.0, 0.0, 54077.0, 75787.0, 23.0, 78959.0};
     String[] totalMovementTime = {"00:57", "00:57", "09:54", "00:42", "04:30", "09:14", "00:00", "01:44", "00:07", "00:00", "00:00", "02:31", "02:03", "03:56", "00:29", "08:29", "00:14", "00:00", "02:33", "02:03", "00:03", "03:23"};
@@ -41,7 +41,7 @@ public class ShipPositionBSTTest {
 
     public ShipPositionBSTTest() {
         shipBST = App.getInstance().getCompany().getShips();
-        new ImportShipsController().importShips();
+        new ImportShipsController().importShips("sships.csv");
         ShipMovementsController controller = new ShipMovementsController();
 
         shipMovementsList = new ArrayList<>();
@@ -66,7 +66,7 @@ public class ShipPositionBSTTest {
             System.out.println();
         }
         System.out.println();
-        for (ShipMovements s : shipMovementsList)
+        for (ShipMovementsAllDetails s : shipMovementsList)
             System.out.println(s.getShipName() + " " + s.getDeltaDistance());
     }
 
@@ -89,7 +89,7 @@ public class ShipPositionBSTTest {
             System.out.println();
         }
         System.out.println();
-        for (ShipMovements s : shipMovementsList)
+        for (ShipMovementsAllDetails s : shipMovementsList)
             System.out.println(s.getShipName() + " " + s.getDeltaDistance());
     }
 

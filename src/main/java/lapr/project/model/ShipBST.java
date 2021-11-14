@@ -130,21 +130,21 @@ public class ShipBST extends AVL<Ship> {
 
         while (list.hasNext()) {
             ship = list.next();
-            distance = ship.getPosition().travelledDistanceInterval(start,end);
+            distance = ship.getPosition().travelledDistance(start,end);
             if(topNList.isEmpty()){
                 topNList.add(ship);
             }
             else if(topNList.size() < n){
                 i = topNList.size();
-                while (i > 0 && distance < topNList.get(i-1).getPosition().travelledDistanceInterval(start,end)) {
+                while (i > 0 && distance < topNList.get(i-1).getPosition().travelledDistance(start,end)) {
                     i--;
                 }
                 if (i < topNList.size())
                     topNList.add(i, ship);
-            }else if(distance < topNList.get(topNList.size()-1).getPosition().travelledDistanceInterval(start, end)){
+            }else if(distance < topNList.get(topNList.size()-1).getPosition().travelledDistance(start, end)){
                 topNList.remove(topNList.size()-1);
                     i = topNList.size();
-                    while (i > 0 && distance < topNList.get(i-1).getPosition().travelledDistanceInterval(start,end)) {
+                    while (i > 0 && distance < topNList.get(i-1).getPosition().travelledDistance(start,end)) {
                         i--;
                     }
                     if (i < topNList.size())
