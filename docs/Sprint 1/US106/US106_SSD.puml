@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "User" as USER
+
+activate USER
+USER -> ":System" : Requests the top-N ships with the most kilometres travelled and their average speed
+
+activate ":System"
+":System" --> USER : Asks how many ships the user wants to see
+
+USER -> ":System" : Enter the number of ships
+":System" --> USER : Asks for the start and end date (interval)
+
+USER -> ":System" : Enter the start and end date
+
+":System" --> USER : Shows the information requested
+
+
+
+@enduml
