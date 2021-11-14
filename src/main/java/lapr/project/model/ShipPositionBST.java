@@ -3,8 +3,10 @@ package lapr.project.model;
 import lapr.project.utils.AVL;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * @author Samuel Pereira 1201274
@@ -97,6 +99,17 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return Math.round(travelledDistance(list, 0));
     }
 
+    public double travelledDistanceInterval(LocalDateTime start, LocalDateTime end) {
+
+        ArrayList<ShipPosition> shipPositions = getPositions(start,end);
+
+        if (shipPositions.isEmpty())
+            return -1;
+        if (shipPositions.size() == 1)
+            return 0;
+        return Math.round(travelledDistance(shipPositions, 0));
+    }
+
     /**
      * Calculates the Travelled Distance
      *
@@ -148,6 +161,16 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return (double) Math.round(mean*100)/100;
     }
 
+    public double meanSOGInterval(LocalDateTime start, LocalDateTime end) {
+
+        ArrayList<ShipPosition> shipPositions = getPositions(start,end);
+        double mean = 0;
+        for (ShipPosition sp : shipPositions)
+            mean += sp.getSOG();
+        mean /= size();
+        return (double) Math.round(mean*100)/100;
+    }
+
     public double maxCOG() {
         
         double max = -Double.MAX_VALUE;
@@ -166,18 +189,30 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return (double) Math.round(mean*100)/100;
     }
 
-//    public void topNShips(){
-//        double distance;
-//        double auxDistance=0;
-//        int position = 0;
-//        
-//        for(ShipPosition sp: list){
-//            distance = travelledDistance(list,position);
-//            position++;
-//            if(distance>auxDistance){
-//
-//            }
-//        }
-//    }
+    /**
+     * Returns positions of ship given a date interval.
+     *
+     * @param startDate start of interval.
+     * @param endDate end of interval.
+     *
+     * @return negative, 0, or positive, depending on whose IMO code comes first.
+     */
+    public ArrayList<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
+        ArrayList<ShipPosition> res = new ArrayList<>();
+        int i = 0;
+
+        while (i < list.size() && list.get(i).getBaseDateTime().compareTo(startDate) < 0)
+            i++;
+
+        while (i < list.size() && list.get(i).getBaseDateTime().compareTo(endDate) <= 0) {
+            res.add(list.get(i));
+            i++;
+
+        }
+
+        return res;
+    }
+
+
 
 }
