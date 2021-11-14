@@ -136,15 +136,15 @@ public class ShipBST extends AVL<Ship> {
             }
             else if(topNList.size() < n){
                 i = topNList.size();
-                while (i > 0 && distance < topNList.get(i-1).getPosition().travelledDistance(start,end)) {
+                while (i > 0 && distance > topNList.get(i-1).getPosition().travelledDistance(start,end)) {
                     i--;
                 }
                 if (i < topNList.size())
                     topNList.add(i, ship);
-            }else if(distance < topNList.get(topNList.size()-1).getPosition().travelledDistance(start, end)){
+            }else if(distance > topNList.get(topNList.size()-1).getPosition().travelledDistance(start, end)){
                 topNList.remove(topNList.size()-1);
                     i = topNList.size();
-                    while (i > 0 && distance < topNList.get(i-1).getPosition().travelledDistance(start,end)) {
+                    while (i > 0 && distance > topNList.get(i-1).getPosition().travelledDistance(start,end)) {
                         i--;
                     }
                     if (i < topNList.size())

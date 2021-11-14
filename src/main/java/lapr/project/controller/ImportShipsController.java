@@ -57,10 +57,58 @@ public class ImportShipsController {
                 char transceiverClass = parameters[15].charAt(0);
                 LocalDateTime localDateTime = LocalDateTime.of(year, month, day, hour, minute);
                 ShipPosition shipPosition = new ShipPosition(localDateTime, latitude, longitude, sog, cog, heading, transceiverClass, cargo);
-                ship.addPosition(shipPosition);
+                if (validateHeading(shipPosition.getHeading()) && validateSOG(shipPosition.getSOG()) && validateCOG(shipPosition.getCOG()) && validateLatitude(shipPosition.getLatitude()) && validateLongitude(shipPosition.getLongitude())) {
+                    ship.addPosition(shipPosition);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    private boolean validateHeading(double heading) {
+        boolean flag = false;
+        if (heading >= 0 && heading < 360 || heading == 511) {
+            flag = true;
+        }
+        return flag;
+    }
+
+
+    private boolean validateSOG(double sog) {
+        boolean flag = false;
+        if (sog >= 0) {
+            flag = true;
+        }
+        return flag;
+    }
+
+
+    private boolean validateCOG(double cog) {
+        boolean flag = false;
+        if (cog >= 0 && cog < 360){
+            flag = true;
+        }
+        return flag;
+    }
+
+    private boolean validateLatitude(double latitude) {
+        boolean flag = false;
+        if (latitude > -90 && latitude < 90 || latitude == 91) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    private boolean validateLongitude(double longitude) {
+        boolean flag = false;
+        if (longitude > -180 && longitude < 180 || longitude == 181){
+            flag = true;
+        }
+        return flag;
+    }
 }
+
+
+
+

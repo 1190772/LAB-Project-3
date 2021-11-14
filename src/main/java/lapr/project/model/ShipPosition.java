@@ -41,6 +41,10 @@ public class ShipPosition implements Comparable<ShipPosition> {
         return sog;
     }
 
+    public double getHeading() {
+        return heading;
+    }
+
     public double getCOG() {
         return cog;
     }
