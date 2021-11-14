@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : asks to list for all ships, MMSI,total number of \nmovements, and Travelled and Delta Distances
+
+activate ":System"
+
+":System" --> TM : asks to select the ordering type
+deactivate ":System"
+
+TM -> ":System" : selects type of order
+activate ":System"
+
+
+":System" --> TM : shows list with the information requested
+deactivate ":System"
+
+deactivate TM
+@enduml

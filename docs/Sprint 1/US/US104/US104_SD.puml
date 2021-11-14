@@ -21,16 +21,16 @@ deactivate UI
 
 TM -> UI : types requested data
 activate UI
-UI -> CTRL : chosenShip = findShip(code)
+UI -> CTRL : details = getAttributes(code)
 activate CTRL
 
-CTRL -> CTRL2 : chosenShip = findShip(code)
+CTRL -> CTRL2 : ship = findShip(code)
 activate CTRL2
 deactivate CTRL2
 note right of CTRL2 : More information in US102
 |||
 
-CTRL -> BST : attributes = getAttributes()
+CTRL -> BST : bst=getPosition(ship)
 activate BST
 autonumber 6.1
 BST -> SM : firstPosition = getFirstPosition()
@@ -61,7 +61,6 @@ BST -> SM : maxSOG = getMaxSOG()
 BST -> SM : meanSOG = getMeanSOG()
 BST -> SM : maxCOG = getMaxCOG()
 BST -> SM : meanCOG = getMeanCOG()
-SM --> BST : result = toString()
 deactivate SM
 deactivate BST
 autonumber 7

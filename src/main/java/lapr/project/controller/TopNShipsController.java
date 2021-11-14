@@ -2,18 +2,20 @@ package lapr.project.controller;
 
 import lapr.project.model.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class TopNShipsController {
 
 
-    private ShipBST shipBST;
-    private ShipMovements shipMovements;
+    private final ShipBST shipBST;
 
-    public void topNShips(){
-        Scanner in = new Scanner(System.in);
-        in.nextLine();
+
+    public TopNShipsController() {
+        shipBST = App.getInstance().getCompany().getShips();
     }
 
+    public ArrayList<Ship> topNShips(int n, LocalDateTime start, LocalDateTime end){
+        return shipBST.topNShips(n,start,end);
+    }
 }
