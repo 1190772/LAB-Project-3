@@ -25,8 +25,9 @@ public class TopNShipsUI implements Runnable {
         String[] start;
         String endDate;
         String[] end;
-        ArrayList<Ship> topNList;
+        ArrayList<Ship>[] topNLists;
         Scanner in = new Scanner(System.in);
+
         System.out.println("Choose the number of ships:");
         n = in.nextInt();
         in.nextLine();
@@ -38,11 +39,15 @@ public class TopNShipsUI implements Runnable {
         end = endDate.split("-");
         startDateTime = LocalDateTime.of(Integer.parseInt(start[0]), Integer.parseInt(start[1]), Integer.parseInt(start[2]), Integer.parseInt(start[3]), Integer.parseInt(start[4]));
         endDateTime = LocalDateTime.of(Integer.parseInt(end[0]), Integer.parseInt(end[1]), Integer.parseInt(end[2]), Integer.parseInt(end[3]), Integer.parseInt(end[4]));
-        topNList = controller.topNShips(n,startDateTime,endDateTime);
+        topNLists = controller.topNShips(n,startDateTime,endDateTime);
                 LocalDateTime.of(Integer.parseInt(end[0]), Integer.parseInt(end[1]), Integer.parseInt(end[2]), Integer.parseInt(end[3]), Integer.parseInt(end[4]));
-        for (Ship ship: topNList) {
-            System.out.println("MMSI: " + ship.getMMSI() + " VesselType: " + ship.getVesselType() + " Kilometers Travelled: " + ship.getPosition().travelledDistance(startDateTime,endDateTime) + " MeanSOG: " + ship.getPosition().meanSOG(startDateTime,endDateTime));
 
+        for (ArrayList<Ship> ships : topNLists) {
+            if (ships != null) {
+                for (Ship ship: ships) {
+                    System.out.println("MMSI: " + ship.getMMSI() + " VesselType: " + ship.getVesselType() + " Kilometers Travelled: " + ship.getPosition().travelledDistance(startDateTime,endDateTime) + " MeanSOG: " + ship.getPosition().meanSOG(startDateTime,endDateTime));
+                }
+            }
         }
     }
 }

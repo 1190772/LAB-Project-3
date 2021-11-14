@@ -123,7 +123,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      * @return Travelled Distance in meters
      */
     private double travelledDistance(ArrayList<ShipPosition> list, int position) {
-        while (!list.isEmpty()&&((list.get(position+1).getLongitude()<-180&&list.get(position+1).getLongitude()>180)||(list.get(position+1).getLatitude()<-90&&list.get(position+1).getLatitude()>90)))
+        while (list.size() != position+1 &&((list.get(position+1).getLongitude()<-180&&list.get(position+1).getLongitude()>180)||(list.get(position+1).getLatitude()<-90&&list.get(position+1).getLatitude()>90)))
             remove(list.get(position+1));
         if (position == list.size() - 1)
             return 0;
