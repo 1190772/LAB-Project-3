@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class ImportShipsController {
 
-    String fileName = "sships.csv";
+    String fileName = "bships.csv";
 
     ShipBST bst;
 

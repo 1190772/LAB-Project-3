@@ -1,0 +1,73 @@
+@startuml
+@startuml
+'https://plantuml.com/class-diagram
+
+class TopNShipsUI {
+- TopNShipsController controller
+}
+
+class TopNShipsController {
+- ShipBST shipBST
+}
+
+class ShipBST {
++ topNShips(int n, LocalDateTime start, LocalDateTime end)
+}
+
+class ShipPositionBST {
+-list
++insert(ShipPosition element)
++remove(ShipPosition element)
++distanceBetweenTwoCoordinates(ShipPosition pos1, ShipPosition pos2)
++distanceBetweenTwoCoordinates(double lon1, double lat1, double lon2, double lat2)
++deltaDistance()
++travelledDistance()
++travelledDistanceInterval(LocalDateTime start, LocalDateTime end)
++travelledDistance(ArrayList<ShipPosition> list, int position)
++totalNumberMovements()
++totalMovementTime()
++maxSOG()
++meanSOG()
++meanSOGInterval(LocalDateTime start, LocalDateTime end)
++maxCOG()
++meanCOG()
++getPositions(LocalDateTime startDate, LocalDateTime endDate)
+}
+
+class ShipPosition {
+-baseDateTime
+-latitude
+-longitude
+-sog
+-cog
+-heading
+-position
+-transceiverClass
++ toString()
+}
+
+class Ship {
+-MMSI
+-name
+-IMO
+-numberEnergyGenerators
+-generatorPowerOutput
+-callSign
+-vesselType
+-length
+-width
+-capacity
+-draft
++ Ship(MMSI, name, IMO, numberEnergyGenerators,
+          generatorPowerOutput, callSign, vesselType, length, width, capacity, draft)
++ toString()
+}
+TopNShipsController <.. TopNShipsUI
+ShipBST <.. TopNShipsController
+Ship <-- ShipBST
+Ship <.. TopNShipsUI
+ShipPositionBST <.. TopNShipsController
+ShipPosition <-- ShipPositionBST
+
+
+@enduml
