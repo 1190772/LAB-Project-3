@@ -21,58 +21,69 @@ drop table Cargo_Manifesto cascade constraints;
 
 create table Container(
     id_container              char(11) constraint pk_container Primary Key,
-    tare                      integer,
+    tare                      integer constraint ck_tare_positive check (tare > 0),
     iso_code                  char(4),
     refrigeration_temperature number(3,1),
-    max_weight_incl_container integer,
-    max_weight                integer,
-    max_volume                integer,
+    max_weight_incl_container integer constraint ck_max_weight_incl_container_positive check (max_weight_incl_container > 0),
+    max_weight                integer constraint ck_max_weight_positive check (max_weight > 0),
+    max_volume                integer constraint ck_max_volume_positive check (max_volume > 0),
     csc_plate                 varChar(30),
     acep                      integer,
-    pes_date                  date);
+    pes_date                  date,
+    constraint ck_max_weight_lesser_incl_container check (max_weight < max_weight_incl_container)
+);
 
 create table Owner(
     id_owner                  char(3) constraint pk_owner Primary Key,
-    name                      varChar(30));
+    name                      varChar(30)
+);
 
 create table Equipment_Identifier(
     id_equipment              char(1) constraint pk_equipment_identifier Primary Key,
-    description               varChar(100));
+    description               varChar(100)
+);
 
 create table ID_Container(
     id_container              char(11)  constraint pk_id_container Primary Key, constraint fk_id_container_id_container Foreign Key (id_container) references Container(id_container),
     id_owner                  char(3), constraint fk_owner_id_container Foreign Key (id_owner) references Owner(id_owner),
     id_equipment              char(1), constraint fk_equipment_id_container Foreign Key (id_equipment) references Equipment_Identifier(id_equipment),
     serial_number             integer constraint un_serial_number_id_container unique,
-    check_digit               integer);
+    check_digit               integer
+);
 
 create table Container_Length(
     length_code               char(1) constraint pk_container_length Primary Key,
-    value_length              integer);
+    value_length              integer constraint ck_value_length_positive check (value_length > 0)
+);
 
 create table Width_Height(
     width_height_code         char(1) constraint pk_width_height Primary Key,
-    value_height              integer,
-    value_width               integer);
+    value_height              integer constraint ck_value_height_positive check (value_height > 0),
+    value_width               integer constraint ck_value_width_positive check (value_width > 0)
+);
 
 create table Container_Type(
     container_type_code       char(1) constraint pk_container_type Primary Key,
-    value_container_type      integer);
+    value_container_type      integer
+);
 
 create table Reduced_Strength(
     reduced_strength_code     char(1) constraint pk_reduced_strength Primary Key,
-    value_reduced_strength    integer);
+    value_reduced_strength    integer constraint ck_value_reduced_strength_positive check (value_reduced_strength > 0)
+);
 
 create table ISO(
     iso_code                  char(4) constraint pk_iso Primary Key,
     length_code               char(1), constraint fk_length_iso Foreign Key (length_code) references Container_Length(length_code),
     width_height_code         char(1), constraint fk_width_height_iso Foreign Key (width_height_code) references Width_Height(width_height_code),
     container_type_code       char(1), constraint fk_container_type_iso Foreign Key (container_type_code) references Container_Type(container_type_code),
-    reduced_strength_code     char(1), constraint fk_reduced_strength_iso Foreign Key (reduced_strength_code) references Reduced_Strength(reduced_strength_code));
+    reduced_strength_code     char(1), constraint fk_reduced_strength_iso Foreign Key (reduced_strength_code) references Reduced_Strength(reduced_strength_code)
+);
 
 create table Role(
     role_id       			  integer constraint pk_role Primary Key,
-    designation			      varChar(30));
+    designation			      varChar(30)
+);
 
 create table Employee(
     id_employee		    	  integer constraint pk_employee Primary Key,
@@ -80,24 +91,28 @@ create table Employee(
     name_employee			  varChar(30),
     user_password			  varChar(15),
     address_employee		  varChar(30),
-    phone_employee			  integer);
+    phone_employee			  integer constraint ck_phone_employee_nine_digits check (phone_employee > 99999999 and phone_employee < 1000000000)
+);
 
 create table Truck(
     id_truck                  integer constraint pk_truck Primary Key,
-    id_employee               integer, constraint fk_id_employee_truck Foreign Key (id_employee) references Employee(id_employee));
+    id_employee               integer, constraint fk_id_employee_truck Foreign Key (id_employee) references Employee(id_employee)
+);
 
 create table Ship(
     imo_code                  char(10) constraint pk_ship Primary Key,
-    mmsi_code                 number(9,0) constraint un_mmsi_code_ship unique,
+    mmsi_code                 integer constraint un_mmsi_code_ship unique
+                                      constraint ck_mmsi_code_nine_digits check (mmsi_code between 99999999 and 1000000000),
     name_ship                 varChar(30),
-    number_generators         integer,
-    power_out_generator       integer,
+    number_generators         integer constraint ck_number_generators_not_negative check (number_generators > -1),
+    power_out_generator       integer constraint ck_power_out_generator_not_negative check (power_out_generator > -1),
     call_sign                 char(5) constraint un_call_sign_ship unique,
-    vessel_type               integer,
-    Length_ship               integer,
-    width_ship                integer,
+    vessel_type               integer constraint ck_vessel_type_positive check (vessel_type > 0),
+    length_ship               integer constraint ck_length_ship_positive check (length_ship > 0),
+    width_ship                integer constraint ck_width_ship_positive check (width_ship > 0),
     draft                     number(3,1),
-    capacity_ship             integer);
+    capacity_ship             integer constraint ck_capacity_ship_positive check (capacity_ship > 0)
+);
 
 create table Position_Ship(
     id_ship                   char(10), constraint fk_ship_position_ship Foreign Key (id_ship) references Ship(imo_code),
@@ -106,9 +121,10 @@ create table Position_Ship(
     longitude			      number(7,5),
     sog	    			      number(3,1),
     cog 			          number(3,1),
-    heading			          integer,
+    heading			          integer constraint ck_heading_valid check (heading between 0 and 359),
     transceiver_class         char(1),
-    Constraint pk_position_ship Primary Key (id_ship, base_date_time));
+    Constraint pk_position_ship Primary Key (id_ship, base_date_time)
+);
 
 create table Port(
     id_port			          char(5) constraint pk_port Primary Key,
@@ -116,7 +132,8 @@ create table Port(
     continent			      varChar(10),
     country			          varChar(20),
     latitude			      number(11,9),
-    longitude			      number(11,9));
+    longitude			      number(11,9)
+);
 
 create table Warehouse(
     id_warehouse     		  integer constraint pk_warehouse Primary Key,
@@ -124,7 +141,8 @@ create table Warehouse(
     continent		    	  varChar(20),
     country		         	  varChar(20),
     latitude		    	  number(4,2),
-    longitude		    	  number(4,2));
+    longitude		    	  number(4,2)
+);
 
 create table Cargo_Manifesto(
     id_container              char(11), constraint fk_id_container_cargo_manifesto Foreign Key (id_container) references Container(id_container),
@@ -133,6 +151,7 @@ create table Cargo_Manifesto(
     id_ship                   char(10), constraint fk_ship_cargo_manifesto Foreign Key (id_ship) references Ship(imo_code),
     id_port                   char(5), constraint fk_id_port_cargo_manifesto Foreign Key (id_port) references Port(id_port),
     id_warehouse              integer, constraint fk_id_warehouse_cargo_manifesto Foreign Key (id_warehouse) references Warehouse(id_warehouse),
-    position_code             number(6,0),
-    payload                   number(5,1),
-    Constraint pk_cargo_manifesto Primary Key (id_container, date_time));
+    position_code             number(6,0) constraint ck_position_code_positive check (position_code > 0),
+    payload                   number(5,1) constraint ck_playload_positive check (payload > 0),
+    Constraint pk_cargo_manifesto Primary Key (id_container, date_time)
+);
