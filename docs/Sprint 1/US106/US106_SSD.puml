@@ -3,20 +3,20 @@
 
 autonumber
 
-actor "User" as USER
+actor "Traffic Manager" as TM
 
-activate USER
-USER -> ":System" : Requests the top-N ships with the most kilometres travelled and their average speed
+activate TM
+TM -> ":System" : Requests the top-N ships with the most kilometres travelled and their average speed
 
 activate ":System"
-":System" --> USER : Requests data (N)
+":System" --> TM : Requests data (N)
 
-USER -> ":System" : Types the requested data
-":System" --> USER : Requests data (start time and end time)
+TM -> ":System" : Types the requested data
+":System" --> TM : Requests data (start time and end time)
 
-USER -> ":System" : Types the requested data
+TM -> ":System" : Types the requested data
 
-":System" --> USER : Shows the information requested
+":System" --> TM : Shows the information requested
 
 
 

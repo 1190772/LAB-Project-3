@@ -133,7 +133,7 @@ public class ShipBST extends AVL<Ship> {
             if (topNLists[ship.getVesselType()] == null)
                 topNLists[ship.getVesselType()] = new ArrayList<>();
             if(topNLists[ship.getVesselType()].isEmpty()){
-                topNLists[ship.getVesselType()].add(ship);;
+                topNLists[ship.getVesselType()].add(ship);
             }
             else if(topNLists[ship.getVesselType()].size() < n){
                 i = topNLists[ship.getVesselType()].size();

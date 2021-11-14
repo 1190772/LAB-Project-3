@@ -6,70 +6,59 @@ actor "Traffic Manager" as TM
 
 participant ":TopNShipsUI" as UI
 participant ":TopNShipsController" as CTRL
-participant ":ShipPositionBST" as SPBST
-participant ":Ship" as SM
+participant ":Company" as COM
 participant ":ShipBST" as SBST
+participant ":Ship" as SM
+participant ":ShipPositionBST" as SPBST
 participant ":ShipPosition" as SP
+
 
 activate TM
 TM -> UI : Requests the top-N ships
 activate UI
 
-UI -> TM : Requests data (N)
+UI --> TM : Requests data (N)
+
 
 deactivate UI
 
 TM -> UI : Types requested data
 activate UI
+UI --> TM : Requests start and end date (interval)
+deactivate UI
+TM -> UI : Types requested data
+activate UI
+
+
 UI -> CTRL : topNList = controller.topNShips(n,startDateTime,endDateTime)
 activate CTRL
 
-CTRL -> CTRL2 : chosenShip = findShip(code)
+CTRL -> COM : shipBST = App.getInstance().getCompany().getShips();
+activate COM
+deactivate COM
 
-note right of CTRL2 : More information in US102
-|||
-
-CTRL -> SPBST : attributes = getAttributes()
-activate SPBST
-autonumber 6.1
-SPBST -> SM : firstPosition = getFirstPosition()
+CTRL -> SBST : ArrayList<Ship>[] topNShips(int n, LocalDateTime start, LocalDateTime end)
+activate SBST
+SBST -> SM : ship = list.next()
 activate SM
-
-autonumber 6.1.1
-SM -> SBST : startBaseDateTime = firstPosition.getBaseDateTime()
-activate SBST
-SM -> SBST : departureLatitude = firstPosition.getLatitude()
-SM -> SBST : departureLongitude = firstPosition.getLongitude()
-deactivate SBST
-
-autonumber 6.2
-SPBST -> SM : lastPosition = getLastPosition()
-
-autonumber 6.2.1
-SM -> SBST : endBaseDateTime = lastPosition.getBaseDateTime()
-activate SBST
-SM -> SBST : arrivalLatitude = lastPosition.getLatitude()
-SM -> SBST : arrivalLongitude = lastPosition.getLongitude()
-deactivate SBST
-
-autonumber 6.3
-SPBST -> SM : travelledDistance = travelledDistance()
-SPBST -> SM : deltaDistance = deltaDistance()
-SPBST -> SM : totalNumberMovements = totalNumberMovements()
-SPBST -> SM : maxSOG = getMaxSOG()
-SPBST -> SM : meanSOG = getMeanSOG()
-SPBST -> SM : maxCOG = getMaxCOG()
-SPBST -> SM : meanCOG = getMeanCOG()
-SM --> SPBST : result = toString()
-deactivate SM
+SM -> SPBST : distance = ship.getPosition().travelledDistance(start,end)
+activate SPBST
+SPBST -> SPBST : shipPositions = getPositions(start,end);
+SPBST -> SP : getPositions(LocalDateTime startDate, LocalDateTime endDate)
+activate SP
+deactivate SP
 deactivate SPBST
-autonumber 7
-CTRL -> UI : result
+
+SBST -> SM : topNLists[ship.getVesselType()
+SBST -> SBST : topNLists[ship.getVesselType()] = new ArrayList<>();
+SBST -> SBST : topNLists[ship.getVesselType()].add(ship);
+
+deactivate SM
+
+deactivate SBST
+CTRL --> UI : Results
 deactivate CTRL
-
-UI --> TM : shows results
+UI --> TM : Shows results
 deactivate UI
-
-deactivate TM
 
 @enduml
