@@ -15,7 +15,7 @@ public class TopNShipsController {
         shipBST = App.getInstance().getCompany().getShips();
     }
 
-    public ArrayList<Ship> topNShips(int n, LocalDateTime start, LocalDateTime end){
+    public ArrayList<Ship>[] topNShips(int n, LocalDateTime start, LocalDateTime end){
         return shipBST.topNShips(n,start,end);
     }
 }
