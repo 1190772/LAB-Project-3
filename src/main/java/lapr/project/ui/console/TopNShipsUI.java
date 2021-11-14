@@ -45,7 +45,7 @@ public class TopNShipsUI implements Runnable {
         for (ArrayList<Ship> ships : topNLists) {
             if (ships != null) {
                 for (Ship ship: ships) {
-                    System.out.println("MMSI: " + ship.getMMSI() + " VesselType: " + ship.getVesselType() + " Kilometers Travelled: " + ship.getPosition().travelledDistance(startDateTime,endDateTime) + " MeanSOG: " + ship.getPosition().meanSOG(startDateTime,endDateTime));
+                    System.out.println("MMSI: " + ship.getMMSI() + " | VesselType: " + ship.getVesselType() + " | Kilometers Travelled: " + ship.getPosition().travelledDistance(startDateTime,endDateTime) + " | MeanSOG: " + ship.getPosition().meanSOG(startDateTime,endDateTime));
                 }
             }
         }
