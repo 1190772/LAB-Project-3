@@ -64,14 +64,14 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      * @return distance in meters
      */
     private double distanceBetweenTwoCoordinates(double lon1, double lat1, double lon2, double lat2) {
-        double R = 6371 * Math.pow(10, 3);
+        double r = 6371 * Math.pow(10, 3);
         lon1 *= Math.PI / 180;
         lat1 *= Math.PI / 180;
         lon2 *= Math.PI / 180;
         lat2 *= Math.PI / 180;
         double a = Math.pow(Math.sin((lat2 - lat1) / 2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin((lon2 - lon1) / 2), 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        return R * c;
+        return r * c;
     }
 
     /**
@@ -80,7 +80,10 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      * @return Delta Distance in meters
      */
     public double deltaDistance() {
-        
+        if (list.isEmpty())
+            return -1;
+        if ((list.get(0).getLongitude()<-180&&list.get(0).getLongitude()>180)||(list.get(0).getLatitude()<-90&&list.get(0).getLatitude()>90)||(list.get(list.size() - 1).getLongitude()<-180&&list.get(list.size() - 1).getLongitude()>180)||(list.get(list.size() - 1).getLatitude()<-90&&list.get(list.size() - 1).getLatitude()>90))
+            return -1;
         return Math.round(distanceBetweenTwoCoordinates(list.get(0), list.get(list.size() - 1)));
     }
 
@@ -90,7 +93,8 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      * @return Travelled Distance in meters
      */
     public double travelledDistance() {
-        
+        while (!list.isEmpty()&&((list.get(0).getLongitude()<-180&&list.get(0).getLongitude()>180)||(list.get(0).getLatitude()<-90&&list.get(0).getLatitude()>90)))
+            remove(list.get(0));
         if (list.isEmpty())
             return -1;
         if (list.size() == 1)
@@ -106,6 +110,8 @@ public class ShipPositionBST extends AVL<ShipPosition> {
             return -1;
         if (shipPositions.size() == 1)
             return 0;
+        while (!shipPositions.isEmpty()&&((shipPositions.get(0).getLongitude()<-180&&shipPositions.get(0).getLongitude()>180)||(shipPositions.get(0).getLatitude()<-90&&shipPositions.get(0).getLatitude()>90)))
+            remove(shipPositions.get(0));
         return Math.round(travelledDistance(shipPositions, 0));
     }
 
@@ -117,6 +123,8 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      * @return Travelled Distance in meters
      */
     private double travelledDistance(ArrayList<ShipPosition> list, int position) {
+        while (!list.isEmpty()&&((list.get(position+1).getLongitude()<-180&&list.get(position+1).getLongitude()>180)||(list.get(position+1).getLatitude()<-90&&list.get(position+1).getLatitude()>90)))
+            remove(list.get(position+1));
         if (position == list.size() - 1)
             return 0;
         return distanceBetweenTwoCoordinates(list.get(position), list.get(position + 1)) + travelledDistance(list, position + 1);
@@ -137,7 +145,6 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      * @return total movement time
      */
     public LocalTime totalMovementTime() {
-        
         long min = Duration.between(list.get(0).getBaseDateTime(), list.get(list.size() - 1).getBaseDateTime()).toMinutes();
         return LocalTime.of((int) min / 60, (int) min % 60);
     }
