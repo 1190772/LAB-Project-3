@@ -1,0 +1,64 @@
+@startuml
+autonumber
+
+'hide footbox
+actor "Traffic Manager" as TM
+
+participant ":TopNShipsUI" as UI
+participant ":TopNShipsController" as CTRL
+participant ":Company" as COM
+participant ":ShipBST" as SBST
+participant ":Ship" as SM
+participant ":ShipPositionBST" as SPBST
+participant ":ShipPosition" as SP
+
+
+activate TM
+TM -> UI : Requests the top-N ships
+activate UI
+
+UI --> TM : Requests data (N)
+
+
+deactivate UI
+
+TM -> UI : Types requested data
+activate UI
+UI --> TM : Requests start and end date (interval)
+deactivate UI
+TM -> UI : Types requested data
+activate UI
+
+
+UI -> CTRL : topNList = controller.topNShips(n,startDateTime,endDateTime)
+activate CTRL
+
+CTRL -> COM : shipBST = App.getInstance().getCompany().getShips();
+activate COM
+deactivate COM
+
+CTRL -> SBST : ArrayList<Ship>[] topNShips(int n, LocalDateTime start, LocalDateTime end)
+activate SBST
+SBST -> SM : ship = list.next()
+activate SM
+SM -> SPBST : distance = ship.getPosition().travelledDistance(start,end)
+activate SPBST
+SPBST -> SPBST : shipPositions = getPositions(start,end);
+SPBST -> SP : getPositions(LocalDateTime startDate, LocalDateTime endDate)
+activate SP
+deactivate SP
+deactivate SPBST
+
+SBST -> SM : topNLists[ship.getVesselType()
+SBST -> SBST : topNLists[ship.getVesselType()] = new ArrayList<>();
+SBST -> SBST : topNLists[ship.getVesselType()].add(ship);
+
+deactivate SM
+
+deactivate SBST
+CTRL --> UI : Results
+deactivate CTRL
+UI --> TM : Shows results
+deactivate UI
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : asks for positional details the ship
+
+activate ":System"
+
+":System" --> TM : requests data (start date, end date)
+deactivate ":System"
+
+TM -> ":System" : types requested data
+
+activate ":System"
+":System" --> TM : shows positional details of the corresponding ship
+deactivate ":System"
+
+deactivate TM
+
+@enduml

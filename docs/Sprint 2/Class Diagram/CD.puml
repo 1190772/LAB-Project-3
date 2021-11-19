@@ -1,0 +1,152 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class SearchShipUI {
+- controller
+}
+
+class SearchShipController {
+- ShipBST
+- ship
++ getShipPositions(startDate, endDate)
++ findShip(code)
+}
+
+class ShipBST {
++ findShip(code)
+- determineCodeType(code)
+- findShipByMMSI(MMSI)
+- findShipByIMO(IMO)
+- findShipByCallSign(CallSign)
++ topNShips(int n, LocalDateTime start, LocalDateTime end)
+}
+
+class Ship {
+-MMSI
+-name
+-IMO
+-numberEnergyGenerators
+-generatorPowerOutput
+-callSign
+-vesselType
+-length
+-width
+-capacity
+-draft
++ Ship(MMSI, name, IMO, numberEnergyGenerators,
+          generatorPowerOutput, callSign, vesselType, length, width, capacity, draft)
++ toString()
+}
+
+class ShipPosition {
+-baseDateTime
+-latitude
+-longitude
+-sog
+-cog
+-heading
+-position
+-transceiverClass
++ toString()
+}
+
+class ShipMovementsUI {
+- ShipMovementsController controller
+- ShipMovements details
+}
+
+class ShipMovementsController {
+- ShipPositionBST shipPositionBST
+- SearchShipController searchShipController
+}
+
+class ShipMovements {
+- String shipCode
+- String shipName
+- LocalDateTime startBaseDateTime
+- LocalDateTime endBaseDateTime
+- Time totalMovementTime
+- Integer totalNumberMovements
+- Double maxSOG
+- Double meanSOG
+- Double maxCOG
+- Double meanCOG
+- Double departureLatitude
+- Double departureLongitude
+- Double arrivalLatitude
+- Double arrivalLongitude
+- Double travelledDistance
+- Double deltaDistance
++ ShipMovements(shipCode, shipName, startBaseDateTime, \nendBaseDateTime, totalMovementTime, totalNumberMovements, \nmaxSOG, meanSOG, maxCOG, meanCOG, departureLatitude, \ndepartureLongitude, arrivalLatitude, arrivalLongitude, \ntravelledDistance, deltaDistance)
++ toString()
+}
+
+class ImportShipsUI {
+- controller
+}
+
+class ImportShipsController {
++ importShips()
+- ShipBST bst
+}
+
+class TopNShipsUI {
+- TopNShipsController controller
+}
+
+class TopNShipsController {
+- ShipBST shipBST
+}
+
+class ShipPositionBST {
+-list
++insert(ShipPosition element)
++remove(ShipPosition element)
++distanceBetweenTwoCoordinates(ShipPosition pos1, ShipPosition pos2)
++distanceBetweenTwoCoordinates(double lon1, double lat1, double lon2, double lat2)
++deltaDistance()
++travelledDistance()
++travelledDistanceInterval(LocalDateTime start, LocalDateTime end)
++travelledDistance(ArrayList<ShipPosition> list, int position)
++totalNumberMovements()
++totalMovementTime()
++maxSOG()
++meanSOG()
++meanSOGInterval(LocalDateTime start, LocalDateTime end)
++maxCOG()
++meanCOG()
++getPositions(LocalDateTime startDate, LocalDateTime endDate)
+}
+
+
+ImportShipsController <.. ImportShipsUI
+Ship <.. ImportShipsUI
+ShipBST <.. ImportShipsController
+
+
+ShipMovementsController <.. ShipMovementsUI
+ShipMovements <.. ShipMovementsUI
+SearchShipController <.. ShipMovementsController
+ShipPositionBST <.. ShipMovementsController
+
+
+SearchShipController <.. SearchShipUI
+ShipPosition <.. SearchShipUI
+Ship <.. SearchShipUI
+Ship <.. SearchShipController
+ShipBST <.. SearchShipController
+
+
+ShipPosition <-- Ship
+Ship <-- ShipBST
+ShipMovements <-- ShipPosition
+ShipPosition <-- ShipPositionBST
+
+
+TopNShipsController <.. TopNShipsUI
+ShipBST <.. TopNShipsController
+Ship <.. TopNShipsUI
+ShipPositionBST <.. TopNShipsController
+
+
+@enduml

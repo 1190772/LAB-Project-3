@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : Requests the import of the ships from a text file to a BST
+
+activate ":System"
+":System" --> TM : Saves the ships data into the BST
+
+@enduml

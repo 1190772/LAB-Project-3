@@ -1,0 +1,181 @@
+@startuml
+
+entity Container {
+* id_container
+--
+* tare
+* iso_code
+refrigeration_temperature
+
+* max_weight_incl_container
+* max_weight
+* max_volume
+
+*csc_plate
+acep
+pes_date
+}
+
+entity Owner {
+* id_owner
+--
+* name
+}
+
+entity ID_Container {
+* id_container
+--
+* id_owner
+* id_equipment
+* serial_number
+* check_digit
+}
+
+entity Equipment_Identifier {
+* id_equipment
+--
+* description
+}
+
+entity ISO {
+* iso_code
+--
+* length_code
+* width_height_code
+* container_type_code
+* reduced_strength_code
+}
+
+entity Length {
+* length_code
+--
+* value
+}
+
+entity Width_Height {
+* width_height_code
+--
+* value
+}
+
+entity Container_Type {
+* container_type_code
+--
+* value
+}
+
+entity Reduced_Strength {
+* reduced_strength_code
+--
+* value
+}
+
+entity Cargo_Manifesto {
+* id_container
+* date_time
+--
+ id_truck
+ id_ship
+ id_port
+ id_warehouse
+* position_code
+* payload
+}
+
+entity Truck {
+* id_truck
+--
+* id_employee
+}
+
+entity Ship {
+* imo_code
+--
+* mmsi_code
+* name_ship
+* number_generators
+* power_out_generator
+* call_sign
+* vessel_type
+* Length_ship
+* width_ship
+* capacity_ship
+* draft
+}
+
+entity Position_Ship {
+* imo_code
+* base_date_time
+--
+* latitude
+* longitude
+* sog
+* cog
+* heading
+* position
+* transceiver_class
+}
+
+entity Port {
+* id_port
+--
+* name_port
+* continent_port
+* country_port
+* latitude_port
+* longitude_port
+}
+
+entity Warehouse {
+* id_warehouse
+--
+* name
+* continent
+* country
+* latitude
+* longitude
+}
+
+entity Employee{
+* id_employee
+--
+* role_id
+* name_employee
+* user_password
+ address_employee
+ phone_employee
+
+}
+
+entity Role {
+* role_id
+--
+* designation
+}
+
+
+Length ||--o{ ISO
+Width_Height ||--o{ ISO
+Container_Type ||--o{ ISO
+Reduced_Strength ||--o{ ISO
+
+Owner ||--|{ ID_Container
+Equipment_Identifier ||--o{ ID_Container
+
+ID_Container ||--|| Container
+ISO ||--o{ Container
+Cargo_Manifesto ||--o{ Container
+Cargo_Manifesto ||--o| Ship
+Cargo_Manifesto ||--o| Truck
+Ship ||--|| Position_Ship
+
+Cargo_Manifesto }o--o| Warehouse
+Cargo_Manifesto }o--o| Port
+
+Truck ||--o{ Employee
+Ship ||--o{ Employee
+Warehouse ||--o{ Employee
+Port ||--o{ Employee
+Employee }o--|| Role
+
+@enduml

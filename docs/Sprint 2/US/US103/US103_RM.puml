@@ -1,0 +1,35 @@
+@startuml
+
+left to right direction
+
+entity Ship {
+* imo_code
+--
+* mmsi_code
+* name_ship
+* number_generators
+* power_out_generator
+* call_sign
+* vessel_type
+* Length_ship
+* width_ship
+* capacity_ship
+* draft
+}
+
+entity Position_Ship {
+* imo_code
+* base_date_time
+--
+* latitude
+* longitude
+* sog
+* cog
+* heading
+* position
+* transceiver_class
+}
+
+Ship ||--o{ Position_Ship
+
+@enduml
