@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="179px" preserveAspectRatio="none" style="width:353px;height:179px;" version="1.1" viewBox="0 0 353 179" width="353px" zoomAndPan="magnify"><defs><filter height="300%" id="f1xb0gjtfcp7js" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company--><rect codeLine="7" fill="#FEFECE" filter="url(#f1xb0gjtfcp7js)" height="61.8359" id="Company" style="stroke:#A80036;stroke-width:1.5;" width="85" x="7" y="55.5"/><ellipse cx="22" cy="71.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M24,68 Q24.2031,67.5 24.4375,67.25 Q24.6719,67 24.9375,67 Q25.4063,67 25.7031,67.2813 Q26,67.5625 26,68.2188 L26,69.7813 Q26,70.4375 25.7188,70.7188 Q25.4375,71 25,71 Q24.6094,71 24.3594,70.8281 Q24.1094,70.6563 24,70.2031 Q23.9531,69.8906 23.7813,69.7188 Q23.4688,69.3906 22.9063,69.2031 Q22.3438,69 21.7813,69 Q21.0781,69 20.4844,69.2813 Q19.9063,69.5625 19.4531,70.1875 Q19,70.8125 19,71.6719 L19,72.5938 Q19,73.625 19.8438,74.3125 Q20.6875,75 22.1875,75 Q23.0781,75 23.7031,74.7969 Q24.0625,74.6875 24.4688,74.3281 Q24.7344,74.125 24.875,74.0625 Q25.0156,74 25.1875,74 Q25.5156,74 25.75,74.2656 Q26,74.5156 26,74.875 Q26,75.2188 25.6563,75.625 Q25.1563,76.2188 24.3594,76.5469 Q23.3125,77 22.0313,77 Q20.5313,77 19.3281,76.4063 Q18.3594,75.9375 17.6719,74.9219 Q17,73.9063 17,72.7031 L17,71.6094 Q17,70.3594 17.5938,69.2656 Q18.2031,68.1719 19.25,67.5938 Q20.3125,67 21.5,67 Q22.2188,67 22.8438,67.25 Q23.4688,67.5 24,68 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="36" y="76.4102">Company</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="91" y1="87.5" y2="87.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="13" y="102.9189">-Designation</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="91" y1="109.3359" y2="109.3359"/><!--MD5=[a0bfe97ac0a38e6e74cc1c7c7b744b71]
+class Port--><rect codeLine="11" fill="#FEFECE" filter="url(#f1xb0gjtfcp7js)" height="158.6875" id="Port" style="stroke:#A80036;stroke-width:1.5;" width="77" x="262" y="7"/><ellipse cx="287.35" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M289.35,19.5 Q289.5531,19 289.7875,18.75 Q290.0219,18.5 290.2875,18.5 Q290.7563,18.5 291.0531,18.7813 Q291.35,19.0625 291.35,19.7188 L291.35,21.2813 Q291.35,21.9375 291.0688,22.2188 Q290.7875,22.5 290.35,22.5 Q289.9594,22.5 289.7094,22.3281 Q289.4594,22.1563 289.35,21.7031 Q289.3031,21.3906 289.1313,21.2188 Q288.8188,20.8906 288.2563,20.7031 Q287.6938,20.5 287.1313,20.5 Q286.4281,20.5 285.8344,20.7813 Q285.2563,21.0625 284.8031,21.6875 Q284.35,22.3125 284.35,23.1719 L284.35,24.0938 Q284.35,25.125 285.1938,25.8125 Q286.0375,26.5 287.5375,26.5 Q288.4281,26.5 289.0531,26.2969 Q289.4125,26.1875 289.8188,25.8281 Q290.0844,25.625 290.225,25.5625 Q290.3656,25.5 290.5375,25.5 Q290.8656,25.5 291.1,25.7656 Q291.35,26.0156 291.35,26.375 Q291.35,26.7188 291.0063,27.125 Q290.5063,27.7188 289.7094,28.0469 Q288.6625,28.5 287.3813,28.5 Q285.8813,28.5 284.6781,27.9063 Q283.7094,27.4375 283.0219,26.4219 Q282.35,25.4063 282.35,24.2031 L282.35,23.1094 Q282.35,21.8594 282.9438,20.7656 Q283.5531,19.6719 284.6,19.0938 Q285.6625,18.5 286.85,18.5 Q287.5688,18.5 288.1938,18.75 Q288.8188,19 289.35,19.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="22" x="303.65" y="27.9102">Port</text><line style="stroke:#A80036;stroke-width:1.5;" x1="263" x2="338" y1="39" y2="39"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="268" y="54.4189">-Identification</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="268" y="68.2549">-Name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="268" y="82.0908">-Continent</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="268" y="95.9268">-Country</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="268" y="109.7627">-Latitude</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="47" x="268" y="123.5986">-longitude</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="65" x="268" y="137.4346">-PortMagager</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="47" x="268" y="151.2705">-PortStaff</text><line style="stroke:#A80036;stroke-width:1.5;" x1="263" x2="338" y1="157.6875" y2="157.6875"/><!--MD5=[5fd98a8c03cc0e5a408f548eb1c0ace8]
+link Company to Port--><path codeLine="22" d="M92.18,86.5 C139.53,86.5 216.12,86.5 261.77,86.5 " fill="none" id="Company-Port" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="163,77.6758,153.9549,74.7369,153.9549,80.6147,163,77.6758" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="167" y="82.9951">Owns</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="100.1172" y="101.4144">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="248.9105" y="101.5834">*</text><!--MD5=[472d4f6be9441eccf080184d57c273fa]
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam classAttributeIconSize 0
+
+left to right direction
+
+class Company {
+-Designation
+}
+
+class Port {
+-Identification
+-Name
+-Continent
+-Country
+-Latitude
+-longitude
+-PortMagager
+-PortStaff
+}
+
+Company "1" - - - "*" Port : Owns >
+
+@enduml
+
+@startuml
+
+skinparam classAttributeIconSize 0
+
+left to right direction
+
+class Company {
+-Designation
+}
+
+class Port {
+-Identification
+-Name
+-Continent
+-Country
+-Latitude
+-longitude
+-PortMagager
+-PortStaff
+}
+
+Company "1" - - - "*" Port : Owns >
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

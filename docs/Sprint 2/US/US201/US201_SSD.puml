@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Port Manager" as PM
+
+activate PM
+PM -> ":System" : asks to import ports from a text file
+
+activate ":System"
+":System" --> ":System" : Imports Ports
+deactivate ":System"
+
+deactivate PM
+
+@enduml
