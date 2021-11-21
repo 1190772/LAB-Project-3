@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="408px" preserveAspectRatio="none" style="width:699px;height:408px;" version="1.1" viewBox="0 0 699 408" width="699px" zoomAndPan="magnify"><defs><filter height="300%" id="fz7ezfouomyuo" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="213.7578" style="stroke:#A80036;stroke-width:1.0;" width="10" x="46" y="99.6094"/><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="191.4063" style="stroke:#A80036;stroke-width:1.0;" width="10" x="288" y="121.9609"/><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="161.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="429" y="152.3125"/><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="540.5" y="208.0156"/><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="622" y="268.3672"/><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="139.0547" style="stroke:#000000;stroke-width:2.0;" width="339" x="346" y="167.3125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="51" x2="51" y1="89.6094" y2="323.3672"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="293" x2="293" y1="89.6094" y2="323.3672"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="434" x2="434" y1="89.6094" y2="323.3672"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="545" x2="545" y1="89.6094" y2="323.3672"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="627" x2="627" y1="89.6094" y2="323.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="5" y="86.5332">Port Manager</text><ellipse cx="51" cy="15" fill="#FEFECE" filter="url(#fz7ezfouomyuo)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M51,23 L51,50 M38,31 L64,31 M51,50 L38,65 M51,50 L64,65 " fill="none" filter="url(#fz7ezfouomyuo)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="5" y="336.9004">Port Manager</text><ellipse cx="51" cy="349.9766" fill="#FEFECE" filter="url(#fz7ezfouomyuo)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M51,357.9766 L51,384.9766 M38,365.9766 L64,365.9766 M51,384.9766 L38,399.9766 M51,384.9766 L64,399.9766 " fill="none" filter="url(#fz7ezfouomyuo)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#fz7ezfouomyuo)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="102" x="240" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="247" y="74.5332">:ImportPortsUI</text><rect fill="#FEFECE" filter="url(#fz7ezfouomyuo)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="102" x="240" y="322.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="247" y="343.9004">:ImportPortsUI</text><rect fill="#FEFECE" filter="url(#fz7ezfouomyuo)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="152" x="356" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="363" y="74.5332">:ImportPortsController</text><rect fill="#FEFECE" filter="url(#fz7ezfouomyuo)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="152" x="356" y="322.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="363" y="343.9004">:ImportPortsController</text><rect fill="#FEFECE" filter="url(#fz7ezfouomyuo)" height="49.2188" style="stroke:#A80036;stroke-width:1.5;" width="43" x="522" y="35.3906"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="530.5" y="56.9238">Port</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="529" y="74.5332">:port</text><rect fill="#FEFECE" filter="url(#fz7ezfouomyuo)" height="49.2188" style="stroke:#A80036;stroke-width:1.5;" width="43" x="522" y="322.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="530.5" y="343.9004">Port</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="529" y="361.5098">:port</text><rect fill="#FEFECE" filter="url(#fz7ezfouomyuo)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="92" x="579" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="586" y="74.5332">:Port2DTree</text><rect fill="#FEFECE" filter="url(#fz7ezfouomyuo)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="92" x="579" y="322.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="586" y="343.9004">:Port2DTree</text><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="213.7578" style="stroke:#A80036;stroke-width:1.0;" width="10" x="46" y="99.6094"/><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="191.4063" style="stroke:#A80036;stroke-width:1.0;" width="10" x="288" y="121.9609"/><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="161.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="429" y="152.3125"/><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="540.5" y="208.0156"/><rect fill="#FFFFFF" filter="url(#fz7ezfouomyuo)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="622" y="268.3672"/><polygon fill="#A80036" points="276,117.9609,286,121.9609,276,125.9609,280,121.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="56" x2="282" y1="121.9609" y2="121.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="63" y="117.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="202" x="74" y="117.1045">asks to import ports from a text file</text><polygon fill="#A80036" points="417,148.3125,427,152.3125,417,156.3125,421,152.3125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="298" x2="423" y1="152.3125" y2="152.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="305" y="147.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="75" x="316" y="147.4561">ImportPorts()</text><path d="M346,167.3125 L419,167.3125 L419,175.3125 L409,185.3125 L346,185.3125 L346,167.3125 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="139.0547" style="stroke:#000000;stroke-width:2.0;" width="339" x="346" y="167.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="361" y="181.8076">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="189" x="434" y="180.7314">[while the text file has more lines]</text><polygon fill="#A80036" points="528.5,204.0156,538.5,208.0156,528.5,212.0156,532.5,208.0156" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="439" x2="534.5" y1="208.0156" y2="208.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="446" y="203.1592">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="457" y="203.1592">port = new()</text><polygon fill="#A80036" points="610,264.3672,620,268.3672,610,272.3672,614,268.3672" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="439" x2="616" y1="268.3672" y2="268.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="446" y="263.5107">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="457" y="263.5107">insert(port)</text><!--MD5=[6a051556af8704b855d5569429437e99]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Port Manager" as PM
+
+participant ":ImportPortsUI" as UI
+participant ":ImportPortsController" as CTRL
+participant "Port\n:port" as Port
+participant ":Port2DTree" as Tree
+
+activate PM
+PM -> UI : asks to import ports from a text file
+
+activate UI
+UI -> CTRL : ImportPorts()
+
+activate CTRL
+loop while the text file has more lines
+
+    CTRL -> Port : port = new()
+    activate Port
+    deactivate Port
+    
+    CTRL -> Tree : insert(port)
+    activate Tree
+    deactivate Tree
+
+end
+
+deactivate CTRL
+deactivate UI
+deactivate PM
+
+@enduml
+
+@startuml
+
+autonumber
+
+actor "Port Manager" as PM
+
+participant ":ImportPortsUI" as UI
+participant ":ImportPortsController" as CTRL
+participant "Port\n:port" as Port
+participant ":Port2DTree" as Tree
+
+activate PM
+PM -> UI : asks to import ports from a text file
+
+activate UI
+UI -> CTRL : ImportPorts()
+
+activate CTRL
+loop while the text file has more lines
+
+    CTRL -> Port : port = new()
+    activate Port
+    deactivate Port
+    
+    CTRL -> Tree : insert(port)
+    activate Tree
+    deactivate Tree
+
+end
+
+deactivate CTRL
+deactivate UI
+deactivate PM
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

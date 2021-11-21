@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Port Manager" as PM
+
+participant ":ImportPortsUI" as UI
+participant ":ImportPortsController" as CTRL
+participant "Port\n:port" as Port
+participant ":Port2DTree" as Tree
+
+activate PM
+PM -> UI : asks to import ports from a text file
+
+activate UI
+UI -> CTRL : ImportPorts()
+
+activate CTRL
+loop while the text file has more lines
+
+    CTRL -> Port : port = new()
+    activate Port
+    deactivate Port
+
+    CTRL -> Tree : insert(port)
+    activate Tree
+    deactivate Tree
+
+end
+
+deactivate CTRL
+deactivate UI
+deactivate PM
+
+@enduml

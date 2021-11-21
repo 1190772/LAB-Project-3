@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+entity Port {
+* id_port
+--
+* name_port
+* continent_port
+* country_port
+* latitude_port
+* longitude_port
+}
+
+@enduml
