@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/*package lapr.project.utils;
+package lapr.project.utils;
 
 import oracle.jdbc.pool.OracleDataSource;
 
@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 /**
  * @author nunocastro
  */
-/*public class DatabaseConnection {
+public class DatabaseConnection {
     private OracleDataSource oracleDataSource;
     private Connection connection;
     private SQLException error;
@@ -54,4 +54,3 @@ import java.util.logging.Logger;
         return lastError;
     }
 }
-*/
