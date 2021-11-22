@@ -28,6 +28,6 @@ class SearchShipControllerTest {
     void findShipTest() {
         Ship expected = ship;
         Ship actual = controller.findShip("IMO9395044");
-        assertEquals(expected, actual);
+        assertEquals(expected.toString(), actual.toString());
     }
 }
