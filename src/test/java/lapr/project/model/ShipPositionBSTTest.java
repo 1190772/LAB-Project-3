@@ -52,10 +52,6 @@ public class ShipPositionBSTTest {
                 shipMovementsList.add(smad);
         }
 
-        //Removes the second to last ShipPosition from the ship int the 7th position
-        ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().remove(((ArrayList<ShipPosition>)((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().inOrder()).get(((ArrayList) ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().inOrder()).size()-2));
-
-
     }
 
     @Test
@@ -90,6 +86,9 @@ public class ShipPositionBSTTest {
 
     @Test
     public void maxMeanSOGTest() {
+        //Removes the second to last ShipPosition from the ship int the 7th position
+        ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().remove(((ArrayList<ShipPosition>)((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().inOrder()).get(((ArrayList) ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().inOrder()).size()-2));
+
         for (int i = 0; i < maxSOG.length; i++)
             Assertions.assertEquals(maxSOG[i], shipMovementsList.get(i).getMaxSOG(), 0);
 
@@ -103,6 +102,9 @@ public class ShipPositionBSTTest {
 
     @Test
     public void maxMeanCOGTest() {
+        //Removes the second to last ShipPosition from the ship int the 7th position
+        ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().remove(((ArrayList<ShipPosition>)((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().inOrder()).get(((ArrayList) ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().inOrder()).size()-2));
+
         for (int i = 0; i < maxCOG.length; i++)
             Assertions.assertEquals(maxCOG[i], shipMovementsList.get(i).getMaxCOG(), 0);
 
