@@ -29,29 +29,18 @@ public class ShipMovementsController {
     /**
      * Returns a list with some details of the movements for each and all ships
      *
-     * @param sortCode sort code
+     * @param asc if true, orders in an ascending order, otherwise in a descending order
      * @return a list with some details of the movements for each and all ships
      */
-    public ArrayList<ShipMovements> listAllShip(String sortCode) {
+    public ArrayList<ShipMovements> listAllShip(boolean asc) {
         ArrayList<ShipMovements> list = new ArrayList<>();
         for (Ship s : App.getInstance().getCompany().getShips().inOrder()) {
             ShipPositionBST bst = s.getPosition();
             list.add(new ShipMovements(s.getMMSI(), bst.totalNumberMovements(), bst.travelledDistance(), bst.deltaDistance()));
         }
-        switch (sortCode) {
-            case "travelledDistanceAsc":
-                list = travelledDistanceAsc(list);
-                break;
-            case "travelledDistanceDesc":
-                list = travelledDistanceDesc(list);
-                break;
-            case "deltaDistanceAsc":
-                list = deltaDistanceAsc(list);
-                break;
-            case "deltaDistanceDesc":
-                list = deltaDistanceDesc(list);
-                break;
-        }
+        travelledDistanceAsc(list);
+        if (!asc)
+            invertArrayList(list);
         return list;
     }
 
@@ -69,16 +58,6 @@ public class ShipMovementsController {
     }
 
     /**
-     * Sorts a list os ShipMovements by descending Travelled Distance
-     *
-     * @param list unsorted list
-     * @return sorted list
-     */
-    private ArrayList<ShipMovements> travelledDistanceDesc(ArrayList<ShipMovements> list) {
-        return invertArrayList(travelledDistanceAsc(list));
-    }
-
-    /**
      * Sorts a list os ShipMovements by ascending Delta Distance
      *
      * @param list unsorted list
@@ -89,16 +68,6 @@ public class ShipMovementsController {
             s.setCompareByTravelledDistance(false);
         Collections.sort(list);
         return list;
-    }
-
-    /**
-     * Sorts a list os ShipMovements by descending Delta Distance
-     *
-     * @param list unsorted list
-     * @return sorted list
-     */
-    private ArrayList<ShipMovements> deltaDistanceDesc(ArrayList<ShipMovements> list) {
-        return invertArrayList(deltaDistanceAsc(list));
     }
 
     /**

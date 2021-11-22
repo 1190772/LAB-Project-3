@@ -204,7 +204,24 @@ public class BST<E extends Comparable<E>> implements BSTInterface<E> {
         if (node.getLeft() != null)
             return smallestElement(node.getLeft());
         else return node.getElement();
-    } 
+    }
+
+    /**
+    * Returns the largest element within the tree.
+    * @return the largest element within the tree
+    */
+    public E largestElement(){
+        return largestElement(root);
+    }
+
+    protected E largestElement(Node<E> node){
+        if (node == null)
+            return null;
+
+        if (node.getRight() != null)
+            return largestElement(node.getRight());
+        else return node.getElement();
+    }
     
    /*
    * Returns an iterable collection of elements of the tree, reported in in-order.

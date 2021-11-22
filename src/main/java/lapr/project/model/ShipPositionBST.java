@@ -11,37 +11,49 @@ import java.util.ArrayList;
  * @author Samuel Pereira 1201274
  */
 public class ShipPositionBST extends AVL<ShipPosition> {
+    private double maxSOG = -Double.MAX_VALUE;
+    private double meanSOG = 0;
+    private double maxCOG = -Double.MAX_VALUE;
+    private double meanCOG = 0;
 
     public ShipPositionBST() {
         list = new ArrayList<>();
     }
 
     /**
-     * Inserts a ShipPosition element and refreshes the ShipPosition's list
-     *
-     * @param element ShipPosition
-     */
-    @Override
-    public void insert(ShipPosition element) {
-        super.insert(element);
-        list = (ArrayList<ShipPosition>) inOrder();
-    }
-
-    /**
-     * Removes a ShipPosition element and refreshes the ShipPosition's list
-     *
-     * @param element ShipPosition
-     */
-    @Override
-    public void remove(ShipPosition element) {
-        super.remove(element);
-        list = (ArrayList<ShipPosition>) inOrder();
-    }
-
-    /**
      * ShipPosition's list
      */
     private ArrayList<ShipPosition> list;
+
+    @Override
+    public void insert(ShipPosition element) {
+        super.insert(element);
+        if (element.getSOG() > maxSOG)
+            maxSOG = element.getSOG();
+        if (element.getCOG() > maxCOG)
+            maxCOG = element.getCOG();
+        meanSOG += element.getSOG();
+        meanCOG += element.getCOG();
+    }
+
+    @Override
+    public void remove(ShipPosition element) {
+        super.remove(element);
+        meanSOG -= element.getSOG();
+        meanCOG -= element.getCOG();
+        if (element.getSOG() == maxSOG) {
+            maxSOG = -Double.MAX_VALUE;
+            for (ShipPosition sp : list)
+                if (sp.getSOG() > maxSOG)
+                    maxSOG = sp.getSOG();
+        }
+        if (element.getCOG() == maxCOG) {
+            maxCOG = -Double.MAX_VALUE;
+            for (ShipPosition sp : list)
+                if (sp.getSOG() > maxCOG)
+                    maxCOG = sp.getSOG();
+        }
+    }
 
     /**
      * Calculates the distance between two ShipPosition
@@ -80,9 +92,9 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      * @return Delta Distance in meters
      */
     public double deltaDistance() {
-        if (list.isEmpty())
+        if (root() == null)
             return -1;
-        return Math.round(distanceBetweenTwoCoordinates(list.get(0), list.get(list.size() - 1)));
+        return Math.round(distanceBetweenTwoCoordinates(smallestElement(), largestElement()));
     }
 
     /**
@@ -91,6 +103,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      * @return Travelled Distance in meters
      */
     public double travelledDistance() {
+        list = (ArrayList<ShipPosition>) inOrder();
         if (list.isEmpty())
             return -1;
         if (list.size() == 1)
@@ -144,25 +157,17 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      * @return total movement time
      */
     public LocalTime totalMovementTime() {
-        long min = Duration.between(list.get(0).getBaseDateTime(), list.get(list.size() - 1).getBaseDateTime()).toMinutes();
+        long min = Duration.between(smallestElement().getBaseDateTime(), largestElement().getBaseDateTime()).toMinutes();
         return LocalTime.of((int) min / 60, (int) min % 60);
     }
 
     public double maxSOG() {
-        double max = -Double.MAX_VALUE;
-        for (ShipPosition sp : list)
-            if (sp.getSOG() > max)
-                max = sp.getSOG();
-        return (double) Math.round(max * 100) / 100;
+        return (double) Math.round(maxSOG * 100) / 100;
     }
 
     public double meanSOG() {
-
-        double mean = 0;
-        for (ShipPosition sp : list)
-            mean += sp.getSOG();
-        mean /= size();
-        return (double) Math.round(mean * 100) / 100;
+        meanSOG /= size();
+        return (double) Math.round(meanSOG * 100) / 100;
     }
 
     /**
@@ -183,21 +188,12 @@ public class ShipPositionBST extends AVL<ShipPosition> {
     }
 
     public double maxCOG() {
-
-        double max = -Double.MAX_VALUE;
-        for (ShipPosition sp : list)
-            if (sp.getCOG() > max)
-                max = sp.getCOG();
-        return (double) Math.round(max * 100) / 100;
+        return (double) Math.round(maxCOG * 100) / 100;
     }
 
     public double meanCOG() {
-
-        double mean = 0;
-        for (ShipPosition sp : list)
-            mean += sp.getCOG();
-        mean /= size();
-        return (double) Math.round(mean * 100) / 100;
+        meanCOG /= size();
+        return (double) Math.round(meanCOG * 100) / 100;
     }
 
     /**
@@ -209,6 +205,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      */
     public ArrayList<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
         ArrayList<ShipPosition> res = new ArrayList<>();
+        list = (ArrayList<ShipPosition>) inOrder();
         int i = 0;
 
         while (i < list.size() && list.get(i).getBaseDateTime().compareTo(startDate) < 0)
