@@ -18,7 +18,7 @@ class SearchShipControllerTest {
     public SearchShipControllerTest() {
         app = App.getInstance();
         company = app.getCompany();
-        ship = new Ship("210950000","name1","IMO9395044",10,70,"C4SQ2",70,166,25,100,(float) 9.5);
+        ship = new Ship("210950000","VARAMO","IMO9395044",0,0,"C4SQ2",70,166,25,0,(float) 9.5);
         shipBST = company.getShips();
         shipBST.insert(ship);
         controller = new SearchShipController();
