@@ -5,7 +5,6 @@ public class ShipMovements implements Comparable<ShipMovements> {
     private final int totalNumberMovements;
     private final double travelledDistance;
     private final double deltaDistance;
-    private boolean compareByTravelledDistance = true;
 
 
     public ShipMovements(String shipCode, int totalNumberMovements, double travelledDistance, double deltaDistance) {
@@ -13,10 +12,6 @@ public class ShipMovements implements Comparable<ShipMovements> {
         this.totalNumberMovements = totalNumberMovements;
         this.travelledDistance = travelledDistance;
         this.deltaDistance = deltaDistance;
-    }
-
-    public void setCompareByTravelledDistance(boolean compareByTravelledDistance) {
-        this.compareByTravelledDistance = compareByTravelledDistance;
     }
 
     public String getShipCode() {
@@ -52,17 +47,14 @@ public class ShipMovements implements Comparable<ShipMovements> {
         if (this == o)
             return 0;
         ShipMovements other = (ShipMovements) o;
-        if (compareByTravelledDistance)
-            if (travelledDistance == other.travelledDistance)
-                return 0;
-            else
-                return (travelledDistance > other.travelledDistance) ? 1 : -1;
-        else {
+
+        if (travelledDistance == other.travelledDistance)
             if (deltaDistance == other.deltaDistance)
                 return 0;
             else
                 return (deltaDistance > other.deltaDistance) ? 1 : -1;
-        }
+        else
+            return (travelledDistance > other.travelledDistance) ? 1 : -1;
     }
 }
 

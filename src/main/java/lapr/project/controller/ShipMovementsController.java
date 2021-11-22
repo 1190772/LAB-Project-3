@@ -38,35 +38,11 @@ public class ShipMovementsController {
             ShipPositionBST bst = s.getPosition();
             list.add(new ShipMovements(s.getMMSI(), bst.totalNumberMovements(), bst.travelledDistance(), bst.deltaDistance()));
         }
-        travelledDistanceAsc(list);
+
+        Collections.sort(list);
+
         if (!asc)
-            invertArrayList(list);
-        return list;
-    }
-
-    /**
-     * Sorts a list os ShipMovements by ascending Travelled Distance
-     *
-     * @param list unsorted list
-     * @return sorted list
-     */
-    private ArrayList<ShipMovements> travelledDistanceAsc(ArrayList<ShipMovements> list) {
-        for (ShipMovements s : list)
-            s.setCompareByTravelledDistance(true);
-        Collections.sort(list);
-        return list;
-    }
-
-    /**
-     * Sorts a list os ShipMovements by ascending Delta Distance
-     *
-     * @param list unsorted list
-     * @return sorted list
-     */
-    private ArrayList<ShipMovements> deltaDistanceAsc(ArrayList<ShipMovements> list) {
-        for (ShipMovements s : list)
-            s.setCompareByTravelledDistance(false);
-        Collections.sort(list);
+            return invertArrayList(list);
         return list;
     }
 
@@ -77,7 +53,6 @@ public class ShipMovementsController {
      * @return list in its inverted order
      */
     private ArrayList<ShipMovements> invertArrayList(ArrayList<ShipMovements> list) {
-        ShipMovements first = list.get(0);
         for (int i = 0; i<(list.size())/2; i++)
             Collections.swap(list, i, list.size()-1-i);
         return list;
