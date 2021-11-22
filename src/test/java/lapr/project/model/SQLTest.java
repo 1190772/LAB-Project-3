@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class SQLTest {
-    SQL sql = new SQL(Constants.DATABASE_TEST_USERNAME, Constants.DATABASE_TEST_PASSWORD);
+    SQL sql = new SQL(Constants.DATABASE_TEST_USERNAME, Constants.DATABASE_TEST_THE_OTHER_ONE);
 
     @Test
     public void startDataBaseTest(){

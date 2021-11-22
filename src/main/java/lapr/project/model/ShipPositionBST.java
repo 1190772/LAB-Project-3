@@ -166,8 +166,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
     }
 
     public double meanSOG() {
-        meanSOG /= size();
-        return (double) Math.round(meanSOG * 100) / 100;
+        return (double) Math.round(meanSOG/size() * 100) / 100;
     }
 
     /**
@@ -192,8 +191,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
     }
 
     public double meanCOG() {
-        meanCOG /= size();
-        return (double) Math.round(meanCOG * 100) / 100;
+        return (double) Math.round(meanCOG/size() * 100) / 100;
     }
 
     /**

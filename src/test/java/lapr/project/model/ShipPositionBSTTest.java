@@ -40,6 +40,8 @@ public class ShipPositionBSTTest {
 
     public ShipPositionBSTTest() {
         shipBST = App.getInstance().getCompany().getShips();
+        for (Ship s :  App.getInstance().getCompany().getShips().inOrder())
+            App.getInstance().getCompany().getShips().remove(s);
         new ImportShipsController().importShips("sships.csv");
         ShipMovementsController controller = new ShipMovementsController();
 
@@ -49,27 +51,17 @@ public class ShipPositionBSTTest {
             if (smad != null)
                 shipMovementsList.add(smad);
         }
-        for (Ship s : shipBST.inOrder())
-            shipBST.remove(s);
-        Assertions.assertTrue(((ArrayList<Ship>) shipBST.inOrder()).isEmpty());
+
+        //Removes the second to last ShipPosition from the ship int the 7th position
+        ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().remove(((ArrayList<ShipPosition>)((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().inOrder()).get(((ArrayList) ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().inOrder()).size()-2));
+
+
     }
 
     @Test
     public void deltaDistanceTest() {
         for (int i = 0; i < deltaDistance.length; i++)
             Assertions.assertEquals(deltaDistance[i], shipMovementsList.get(i).getDeltaDistance(), 5);
-
-        //Confirmation http://www.movable-type.co.uk/scripts/latlong.html
-        for (Ship ship : shipBST.inOrder()) {
-            System.out.print(ship.getName());
-            ArrayList<ShipPosition> list = (ArrayList<ShipPosition>) ship.getPosition().inOrder();
-            System.out.println("\n" + list.get(0).getLatitude() + "\n" + list.get(0).getLongitude());
-            System.out.println(list.get(list.size() - 1).getLatitude() + "\n" + list.get(list.size() - 1).getLongitude());
-            System.out.println();
-        }
-        System.out.println();
-        for (ShipMovementsAllDetails s : shipMovementsList)
-            System.out.println(s.getShipName() + " " + s.getDeltaDistance());
     }
 
     @Test
@@ -82,29 +74,18 @@ public class ShipPositionBSTTest {
         ShipPositionBST newBst = new ShipPositionBST();
         newBst.insert(new ShipPosition(null, 66, -66, 0, 0, 0, 'B', 0));
         Assertions.assertEquals(0.0, newBst.travelledDistance(), 0);
-
-        //Confirmation http://www.movable-type.co.uk/scripts/latlong.html
-        for (Ship ship : shipBST.inOrder()) {
-            System.out.println(ship.getName());
-            for (ShipPosition shipPosition : ship.getPosition().inOrder())
-                System.out.println(shipPosition.getLatitude() + "\n" + shipPosition.getLongitude());
-            System.out.println();
-        }
-        System.out.println();
-        for (ShipMovementsAllDetails s : shipMovementsList)
-            System.out.println(s.getShipName() + " " + s.getDeltaDistance());
     }
 
     @Test
     public void totalMovementTimeTest() {
-        for (ShipMovementsAllDetails s : shipMovementsList)
-            System.out.print("\"" + s.getTotalMovementTime() + "\", ");
+        for (int i = 0; i < totalMovementTime.length; i++)
+        Assertions.assertEquals(totalMovementTime[i], shipMovementsList.get(i).getTotalMovementTime().toString());
     }
 
     @Test
     public void totalNumberMovementsTest() {
-        for (ShipMovementsAllDetails s : shipMovementsList)
-            System.out.print(s.getTotalNumberMovements() + ", ");
+        for (int i = 0; i < totalNumberMovements.length; i++)
+            Assertions.assertEquals(totalNumberMovements[i], shipMovementsList.get(i).getTotalNumberMovements());
     }
 
     @Test
@@ -114,6 +95,10 @@ public class ShipPositionBSTTest {
 
         for (int i = 0; i < meanSOG.length; i++)
             Assertions.assertEquals(meanSOG[i], shipMovementsList.get(i).getMeanSOG(), 0);
+
+        Assertions.assertEquals(10.5, ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().maxSOG());
+        Assertions.assertEquals(10.33, ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().meanSOG());
+
     }
 
     @Test
@@ -123,6 +108,10 @@ public class ShipPositionBSTTest {
 
         for (int i = 0; i < meanCOG.length; i++)
             Assertions.assertEquals(meanCOG[i], shipMovementsList.get(i).getMeanCOG(), 0);
+
+
+        Assertions.assertEquals(10.5, ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().maxCOG());
+        Assertions.assertEquals(72.77, ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().meanCOG());
     }
 
     @Test
