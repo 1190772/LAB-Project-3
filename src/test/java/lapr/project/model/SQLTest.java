@@ -1,4 +1,4 @@
-/*package lapr.project.model;
+package lapr.project.model;
 
 import lapr.project.model.shared.Constants;
 import lapr.project.model.shared.SQL;
@@ -13,4 +13,4 @@ public class SQLTest {
         Assertions.assertTrue(sql.scriptInTextFile("scriptSQL/startDataBase(us108).sql"));
     }
 }
- */
+ 
