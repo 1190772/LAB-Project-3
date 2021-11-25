@@ -42,17 +42,8 @@ deactivate SPBST
 end
 
 autonumber 8
-alt Travelled Distance ascending
-CTRL -> CTRL : list = travelledDistanceAsc()
-autonumber 8
-else Travelled Distance descending
-CTRL -> CTRL : list = travelledDistanceDesc()
-autonumber 8
-else Delta Distance ascending
-CTRL -> CTRL : list = deltaDistanceAsc()
-autonumber 8
-else Delta Distance descending
-CTRL -> CTRL : list = deltaDistanceDesc()
+alt Descending
+CTRL -> CTRL : list = invertArrayList()
 end
 
 

@@ -8,10 +8,8 @@
 
 class ShipMovementsController {
 - ShipPositionBST shipPositionBST
-+ ArrayList<ShipMovements> travelledDistanceAsc(list)
-+ ArrayList<ShipMovements> travelledDistanceDesc(list)
-+ ArrayList<ShipMovements> deltaDistanceAsc(list)
-+ ArrayList<ShipMovements> deltaDistanceDesc(list)
++ ArrayList<ShipMovements> listAllShip
++ ArrayList<ShipMovements> invertArrayList
 }
 
 class ShipMovements {
