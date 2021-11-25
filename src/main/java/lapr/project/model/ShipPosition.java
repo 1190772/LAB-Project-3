@@ -4,14 +4,14 @@ import java.time.LocalDateTime;
 
 public class ShipPosition implements Comparable<ShipPosition> {
 
-    LocalDateTime baseDateTime;
-    double latitude;
-    double longitude;
-    double sog;
-    double cog;
-    double heading;
-    char transceiverClass;
-    int cargo;
+    private final LocalDateTime baseDateTime;
+    private final double latitude;
+    private final double longitude;
+    private final double sog;
+    private final double cog;
+    private final double heading;
+    private final char transceiverClass;
+    private final int cargo;
 
     public ShipPosition(LocalDateTime baseDateTime, double latitude, double longitude, double sog, double cog, double heading, char transceiverClass, int cargo) {
 
@@ -47,6 +47,14 @@ public class ShipPosition implements Comparable<ShipPosition> {
 
     public double getCOG() {
         return cog;
+    }
+
+    public int getCargo() {
+        return cargo;
+    }
+
+    public char getTransceiverClass() {
+        return transceiverClass;
     }
 
     @Override

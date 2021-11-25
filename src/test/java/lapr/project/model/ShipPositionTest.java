@@ -29,7 +29,7 @@ class ShipPositionTest {
 
     @Test
     void getBaseDateTime() {
-        Assertions.assertEquals(baseDateTime, shipPosition.baseDateTime);
+        Assertions.assertEquals(baseDateTime, shipPosition.getBaseDateTime());
     }
 
     @Test
@@ -42,13 +42,32 @@ class ShipPositionTest {
     Assertions.assertEquals(longitude, shipPosition.getLongitude());
     }
 
-/*
+    @Test
+    void getSOG(){
+        Assertions.assertEquals(sog, shipPosition.getSOG());
+    }
+    @Test
+    void getCOG(){
+        Assertions.assertEquals(cog, shipPosition.getCOG());
+    }
+    @Test
+    void getHeading(){
+        Assertions.assertEquals(heading, shipPosition.getHeading());
+    }
+    @Test
+    void getTransceiverClass(){
+        Assertions.assertEquals(transceiverClass, shipPosition.getTransceiverClass());
+    }
+    @Test
+    void getCargo(){
+        Assertions.assertEquals(cargo, shipPosition.getCargo());
+    }
+
     @Test
     void testToString() {
-        String expected="Ship Position{Base date and time = 2020-12-24T13:30, Latitude = 42.97875, Longitude = -66.97001, SOG = 12.9, COG = 13.1, Heading = 355.0, Transceiver Class = |b, Cargo = 355.0}";
+        String expected="Ship Position{Base date and time = 2020-12-24T13:30, Latitude = 42.97875, Longitude = -66.97001, SOG = 12.9, COG = 13.1, Heading = 355.0, Transceiver Class = B, Cargo = 355.0}";
         Assertions.assertEquals(expected, shipPosition.toString());
     }
- */
 
     @Test
     void compareTo() {
