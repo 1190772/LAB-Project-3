@@ -9,13 +9,13 @@ activate TM
 TM -> ":System" : asks to find the closest port
 
 activate ":System"
-":System" -> TM : asks for the callsign of the ship
+":System" --> TM : asks for the callsign and \nbase date and time of the ship
 deactivate ":System"
 
 TM -> ":System" : types requested data
 
 activate ":System"
-":System" -> TM : returns the closest port
+":System" --> TM : returns the closest port
 deactivate ":System"
 
 deactivate TM

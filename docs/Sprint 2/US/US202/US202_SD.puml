@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+participant ":FindClosestPortUI" as UI
+participant ":FindClosestPortController" as CTRL
+participant "SearchShipController" as SSCTRL
+participant "ShipPositionBST" as SPBST
+participant "TwoDTree" as Tree
+
+activate TM
+TM -> UI : asks to find the closest port
+activate UI
+UI --> TM : asks for the callsign and \nbase date and time of the ship
+deactivate UI
+TM -> UI : types requested data
+activate UI
+UI -> CTRL : findClosestPort(callsign, baseDateTime)
+activate CTRL
+CTRL -> SSCTRL : ship = findShip(callsign)
+activate SSCTRL
+deactivate SSCTRL
+note right of SSCTRL : More information in US102
+|||
+CTRL -> SPBST : shipPosition = ship.getPositions.getPosition(baseDateTime)
+activate SPBST
+deactivate SPBST
+CTRL -> Tree : closestPort = findNearestNeighbour(lat, lon)
+activate Tree
+Tree -> Tree : findNearestNeighbour(port, lat, lon, closestPort, compLat)
+
+CTRL -> UI : result
+deactivate Tree
+deactivate CTRL
+UI --> TM : returns the closest port
+deactivate UI
+deactivate TM
+
+@enduml

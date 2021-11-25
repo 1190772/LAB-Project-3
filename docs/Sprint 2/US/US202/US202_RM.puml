@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+entity Port {
+* id_port
+--
+* name_port
+* continent_port
+* country_port
+* latitude_port
+* longitude_port
+}
+
+entity Ship {
+* imo_code
+--
+* mmsi_code
+* name_ship
+* number_generators
+* power_out_generator
+* call_sign
+* vessel_type
+* length_ship
+* width_ship
+* capacity_ship
+* draft
+}
+
+entity Position_Ship {
+* imo_code
+* base_date_time
+--
+* latitude
+* longitude
+* sog
+* cog
+* heading
+* position
+* transceiver_class
+}
+
+Ship ||--|| Position_Ship
+
+@enduml
