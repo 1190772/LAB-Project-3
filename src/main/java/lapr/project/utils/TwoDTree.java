@@ -21,7 +21,7 @@ public class TwoDTree<T> {
      * @param x x value
      * @param y y value
      */
-    protected Node2D(T element, Double x, Double y){
+    protected Node2D(T element, double x, double y){
     this.element = element;
     this.coords = new Point2D.Double();
     this.coords.x = x;

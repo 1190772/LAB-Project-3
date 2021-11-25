@@ -28,9 +28,10 @@ public class App {
 
     private void bootstrap() {
         this.authFacade.addUserRole(Constants.ROLE_TRAFFIC_MANAGER, Constants.ROLE_TRAFFIC_MANAGER);
+        this.authFacade.addUserRole(Constants.ROLE_PORT_MANAGER, Constants.ROLE_PORT_MANAGER);
 
         this.authFacade.addUserWithRole("Traffic Manager", "manager@lei.sem1.pt", "123456", Constants.ROLE_TRAFFIC_MANAGER);
-
+        this.authFacade.addUserWithRole("Port Manager", "portmanager@lei.pt", "123456", Constants.ROLE_PORT_MANAGER);
     }
 
     private Properties getProperties() {

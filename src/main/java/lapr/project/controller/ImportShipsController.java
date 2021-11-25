@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 /**
- * Controller responsible for coordinating ship searches.
+ * Controller responsible for importing ships.
  *
  * @author José Silva 1190772
  */
