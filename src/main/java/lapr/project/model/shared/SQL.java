@@ -1,4 +1,4 @@
-/*package lapr.project.model.shared;
+package lapr.project.model.shared;
 
 import lapr.project.utils.DatabaseConnection;
 
@@ -42,4 +42,4 @@ public class SQL {
         return true;
     }
 }
- */
+
