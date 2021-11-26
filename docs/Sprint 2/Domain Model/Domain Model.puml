@@ -89,27 +89,27 @@ class TrafficManager
 
 class CargoManifest
 
-class UnloadingCargoManifest
+class Trip {
+-Starting point
+-Destination
+}
 
-class LoadingCargoManifest
-
-Company "1" -- "*" Shipping : Performs >
 Company "1" -- "1..*" Ship : Owns >
 Company "1" -- "1..*" Truck : Owns >
-Company "1" --- "*" Port : Owns >
-Company "1" --- "*" Warehouse : Owns >
+Company "1" -- "*" Port : Owns >
+Company "1" -- "*" Warehouse : Owns >
 Company "1" -- "*" Employee : Employs >
 Company "1" -- "*" CargoManifest : Knows >
 Company "1" --- "*" OrganizationRole : Comprehends >
 Employee "*" - "1" OrganizationRole : Has/Plays >
-Shipping "1" -- "1" Client : Requested by >
-Ship "1" -- "*" Container : Transports >
+Ship "1" -- "*" Trip : performs >
+Trip "1" -- "1" CargoManifest : has >
 Ship "1" -- "1..*" ShipPosition : has >
 TrafficManager "1" - "*" ShipPosition : Controls >
 TrafficManager "1" -- "*" Truck : Controls position of >
-Truck "1" -- "1" Container : Transports >
-UnloadingCargoManifest --|> CargoManifest
-LoadingCargoManifest --|> CargoManifest
-CargoManifest "1" -- "*" Container : Keeps track of >
+Truck "1" -- "*" Trip : performs >
+CargoManifest "*" -- "*" Container : Keeps track of >
+Container "1..*" -- "1" Client : tranports goods of
+
 
 @enduml
