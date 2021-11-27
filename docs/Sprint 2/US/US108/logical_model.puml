@@ -1,40 +1,31 @@
 @startuml
 
+entity Trip {
+* id_trip
+* ship_imo
+--
+* id_start_port
+* id_destination_port
+}
+
 entity Container {
 * id_container
 --
 * tare
 * iso_code
-refrigeration_temperature
 
 * max_weight_incl_container
 * max_weight
 * max_volume
 
+* owner_prefix
+* equipment_identifier
+* serial_number
+* check_digit
+
 *csc_plate
 acep
 pes_date
-}
-
-entity Owner {
-* id_owner
---
-* name
-}
-
-entity ID_Container {
-* id_container
---
-* id_owner
-* id_equipment
-* serial_number
-* check_digit
-}
-
-entity Equipment_Identifier {
-* id_equipment
---
-* description
 }
 
 entity ISO {
@@ -70,8 +61,8 @@ entity Reduced_Strength {
 * value
 }
 
-entity Cargo_Manifesto {
-* id_container
+entity Cargo_Manifest {
+* id_cargo_manifest
 * date_time
 --
  id_truck
@@ -80,6 +71,22 @@ entity Cargo_Manifesto {
  id_warehouse
 * position_code
 * payload
+}
+
+entity Container_Shipping {
+* id_cargo_manifest
+* id_container
+--
+* id_destination_port
+* cargo_weight
+* refrigeration_temperature
+}
+
+entity Container_Client {
+* id_cargo_manifest
+* id_container
+* id_client
+--
 }
 
 entity Truck {
@@ -101,19 +108,6 @@ entity Ship {
 * width_ship
 * capacity_ship
 * draft
-}
-
-entity Position_Ship {
-* imo_code
-* base_date_time
---
-* latitude
-* longitude
-* sog
-* cog
-* heading
-* position
-* transceiver_class
 }
 
 entity Port {
@@ -144,7 +138,19 @@ entity Employee{
 * user_password
  address_employee
  phone_employee
+}
 
+entity Position_Ship {
+* imo_code
+* base_date_time
+--
+* latitude
+* longitude
+* sog
+* cog
+* heading
+* position
+* transceiver_class
 }
 
 entity Role {
@@ -153,26 +159,29 @@ entity Role {
 * designation
 }
 
+entity Client {
+* id_client
+--
+* name
+* address
+* phone_number
+}
 
-Length ||--o{ ISO
-Width_Height ||--o{ ISO
-Container_Type ||--o{ ISO
-Reduced_Strength ||--o{ ISO
+ISO }o--|| Length
+ISO }o--|| Width_Height
+ISO }o--|| Container_Type
+ISO }o--|| Reduced_Strength
 
-Owner ||--|{ ID_Container
-Equipment_Identifier ||--o{ ID_Container
-
-ID_Container ||--|| Container
-ISO ||--o{ Container
-Cargo_Manifesto ||--o{ Container
-Cargo_Manifesto ||--o| Ship
-Cargo_Manifesto ||--o| Truck
-Ship ||--|| Position_Ship
-
-Cargo_Manifesto }o--o| Warehouse
-Cargo_Manifesto }o--o| Port
+Container }o--|| ISO
+Cargo_Manifest ||--|{ Container_Shipping
+Container_Shipping }|--|| Container
+Container_Shipping ||--|{ Container_Client
+Container_Client }|--|| Client
+Trip }|--|| Cargo_Manifest
+Ship ||--o{ Position_Ship
 
 Truck ||--o{ Employee
+Ship ||--o{ Trip
 Ship ||--o{ Employee
 Warehouse ||--o{ Employee
 Port ||--o{ Employee
