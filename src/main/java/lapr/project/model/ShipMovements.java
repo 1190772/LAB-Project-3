@@ -46,15 +46,14 @@ public class ShipMovements implements Comparable<ShipMovements> {
     public int compareTo(ShipMovements o) {
         if (this == o)
             return 0;
-        ShipMovements other = (ShipMovements) o;
 
-        if (travelledDistance == other.travelledDistance)
-            if (deltaDistance == other.deltaDistance)
+        if (travelledDistance == o.travelledDistance)
+            if (deltaDistance == o.deltaDistance)
                 return 0;
             else
-                return (deltaDistance > other.deltaDistance) ? 1 : -1;
+                return (deltaDistance > o.deltaDistance) ? 1 : -1;
         else
-            return (travelledDistance > other.travelledDistance) ? 1 : -1;
+            return (travelledDistance > o.travelledDistance) ? 1 : -1;
     }
 }
 

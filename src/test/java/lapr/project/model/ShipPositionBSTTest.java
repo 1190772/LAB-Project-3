@@ -70,6 +70,7 @@ public class ShipPositionBSTTest {
         ShipPositionBST newBst = new ShipPositionBST();
         newBst.insert(new ShipPosition(null, 66, -66, 0, 0, 0, 'B', 0));
         Assertions.assertEquals(0.0, newBst.travelledDistance(), 0);
+        Assertions.assertEquals(travelledDistance[0], ((ArrayList<Ship>) shipBST.inOrder()).get(0).getPosition().travelledDistance(((ArrayList<Ship>) shipBST.inOrder()).get(0).getPosition().smallestElement().getBaseDateTime(), ((ArrayList<Ship>) shipBST.inOrder()).get(0).getPosition().largestElement().getBaseDateTime()));
     }
 
     @Test
@@ -97,6 +98,7 @@ public class ShipPositionBSTTest {
 
         Assertions.assertEquals(10.5, ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().maxSOG());
         Assertions.assertEquals(10.33, ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().meanSOG());
+        Assertions.assertEquals(meanSOG[0], ((ArrayList<Ship>) shipBST.inOrder()).get(0).getPosition().meanSOG(((ArrayList<Ship>) shipBST.inOrder()).get(0).getPosition().smallestElement().getBaseDateTime(), ((ArrayList<Ship>) shipBST.inOrder()).get(0).getPosition().largestElement().getBaseDateTime()));
 
     }
 
