@@ -1,6 +1,5 @@
 package lapr.project.ui.console;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,8 +7,8 @@ public class MainMenuUI {
     public MainMenuUI() throws  UnsupportedOperationException{
     }
 
-    public void run() throws IOException {
-        List<MenuItem> options = new ArrayList<MenuItem>();
+    public void run() {
+        List<MenuItem> options = new ArrayList<>();
         options.add(new MenuItem("Do Login", new AuthUI()));
         options.add(new MenuItem("Know the Development Team", new DevTeamUI()));
 

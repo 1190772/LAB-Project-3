@@ -3,7 +3,6 @@ package lapr.project.controller;
 import lapr.project.model.Port;
 import lapr.project.utils.TwoDTree;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
