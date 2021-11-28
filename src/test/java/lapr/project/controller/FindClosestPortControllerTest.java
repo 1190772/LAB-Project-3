@@ -1,9 +1,7 @@
 package lapr.project.controller;
 
-import lapr.project.model.Port;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipPosition;
-import lapr.project.utils.TwoDTree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

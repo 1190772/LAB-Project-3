@@ -25,7 +25,6 @@ class TwoDTreeTest {
      */
     @Test
     public void testSize() {
-        System.out.println("size");
         assertEquals(elements.length, instance.size());
 
         TwoDTree<String> sInstance = new TwoDTree<>();
@@ -43,7 +42,6 @@ class TwoDTreeTest {
      */
     @Test
     public void testHeight() {
-        System.out.println("height");
 
         instance = new TwoDTree<>();
         assertEquals(instance.height(), -1);
@@ -62,7 +60,6 @@ class TwoDTreeTest {
      */
     @Test
     public void testInsert() {
-        System.out.println("insert");
         int[] elements2 = {20,15,10,13,8,17,40,50,30,20,15,10};
         double[] x2 = {17.2,12.1,7.4,9.6,2.3,15.9,24.5,32.0,21.7,4.8, 3.1, 24.8};
         double[] y2 = {20.9,15.6,10.8,13.5,8.3,17.7,40.1,50.6,30.2,7.3, 1.2, 30.1};
@@ -81,7 +78,6 @@ class TwoDTreeTest {
 
     @Test
     void findNearestNeighbour() {
-        System.out.println("nearestNeighbour");
         int expected;
         int actual;
 
