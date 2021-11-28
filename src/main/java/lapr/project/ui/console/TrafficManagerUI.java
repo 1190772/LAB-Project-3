@@ -12,9 +12,8 @@ public class TrafficManagerUI implements Runnable {
 
     /**
      * Constructor.
-     * @throws UnsupportedOperationException
      */
-    public TrafficManagerUI() throws UnsupportedOperationException {
+    public TrafficManagerUI() {
 
     }
 
@@ -23,7 +22,7 @@ public class TrafficManagerUI implements Runnable {
      */
     public void run() {
 
-        List<MenuItem> options = new ArrayList<MenuItem>();
+        List<MenuItem> options = new ArrayList<>();
         options.add(new MenuItem("Import Ships From File", new ImportShipsUI()));
         options.add(new MenuItem("Search a ship", new SearchShipUI()));
         options.add(new MenuItem("TopN Ships", new TopNShipsUI()));

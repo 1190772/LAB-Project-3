@@ -106,19 +106,9 @@ public class TwoDTree<T> {
         return 1 + (Math.max(hl, hr));
     }
 
-    protected final Comparator<Node2D<T>> cmpX = new Comparator<Node2D<T>>() {
-        @Override
-        public int compare(Node2D<T> p1, Node2D<T> p2) {
-            return Double.compare(p1.getX(), p2.getX());
-        }
-    };
+    protected final Comparator<Node2D<T>> cmpX = Comparator.comparingDouble(Node2D::getX);
 
-    protected final Comparator<Node2D<T>> cmpY = new Comparator<Node2D<T>>() {
-        @Override
-        public int compare(Node2D<T> p1, Node2D<T> p2) {
-            return Double.compare(p1.getY(), p2.getY());
-        }
-    };
+    protected final Comparator<Node2D<T>> cmpY = Comparator.comparingDouble(Node2D::getY);
 
     public void insert(T obj, Double x, Double y) {
         Node2D<T> node = new Node2D<>(obj, x, y);

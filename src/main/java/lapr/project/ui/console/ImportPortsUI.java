@@ -2,7 +2,6 @@ package lapr.project.ui.console;
 
 import lapr.project.controller.ImportPortsController;
 
-import java.io.FileNotFoundException;
 
 /**
  * UI of US201.

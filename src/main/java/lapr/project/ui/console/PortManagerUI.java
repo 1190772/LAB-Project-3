@@ -11,9 +11,8 @@ import java.util.List;
 public class PortManagerUI implements Runnable{
     /**
      * Constructor.
-     * @throws UnsupportedOperationException
      */
-    public PortManagerUI() throws UnsupportedOperationException {
+    public PortManagerUI() {
     }
 
     /**
