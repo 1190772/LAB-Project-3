@@ -33,7 +33,7 @@ public class FindClosestPortControllerTest {
     @Test
     public void findClosestPortControllerTest(){
         new ImportPortsController().importPorts("bports.csv");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             Assertions.assertEquals(namePort[i], new FindClosestPortController().findClosestPortController(shipBST.get(i).getCallSign(), ((ArrayList<ShipPosition>)shipBST.get(i).getPosition().inOrder()).get(((ArrayList<ShipPosition>)shipBST.get(i).getPosition().inOrder()).size()/2).getBaseDateTime()).getName());
         }
     }
