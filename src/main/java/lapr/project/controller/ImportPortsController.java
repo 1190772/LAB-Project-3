@@ -24,7 +24,7 @@ public class ImportPortsController {
      * Builds an instance of the Controller.
      */
     public ImportPortsController() {
-        ports = new TwoDTree<>();
+        ports = App.getInstance().getCompany().getPorts();
     }
 
     /**

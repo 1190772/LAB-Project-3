@@ -1,5 +1,7 @@
 package lapr.project.utils;
 
+import lapr.project.model.shared.Utils;
+
 import java.awt.geom.Point2D;
 import java.util.Comparator;
 
@@ -151,8 +153,8 @@ public class TwoDTree<T> {
         if (node == null)
             return closestNode;
 
-        double d = Point2D.distanceSq(node.getX(), node.getY(), x, y);
-        double closestDist = Point2D.distanceSq(closestNode.getX(), closestNode.getY(), x, y);
+        double d = Utils.distanceBetweenTwoCoordinates(node.getX(), node.getY(), x, y);
+        double closestDist = Utils.distanceBetweenTwoCoordinates(closestNode.getX(), closestNode.getY(), x, y);
 
         if (closestDist >= d)
             closestNode = node;
