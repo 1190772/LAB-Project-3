@@ -1,24 +1,24 @@
-drop table Container cascade constraints;
-drop table Owner cascade constraints;
-drop table Equipment_Identifier cascade constraints;
-drop table ID_Container cascade constraints;
-drop table Container_Length cascade constraints;
-drop table Width_Height cascade constraints;
-drop table Container_Type cascade constraints;
-drop table Reduced_Strength cascade constraints;
-drop table ISO cascade constraints;
-drop table Role cascade constraints;
-drop table Employee cascade constraints;
-drop table Truck cascade constraints;
-drop table Ship cascade constraints;
-drop table Position_Ship cascade constraints;
-drop table Port cascade constraints;
-drop table Warehouse cascade constraints;
-drop table Cargo_Manifesto cascade constraints;
-
-
-
-
+drop table Container cascade constraints purge;
+drop table Owner cascade constraints purge;
+drop table Equipment_Identifier cascade constraints purge;
+drop table Container_Length cascade constraints purge;
+drop table Width_Height cascade constraints purge;
+drop table Container_Type cascade constraints purge;
+drop table Reduced_Strength cascade constraints purge;
+drop table ISO cascade constraints purge;
+drop table Role cascade constraints purge;
+drop table Employee cascade constraints purge;
+drop table Truck cascade constraints purge;
+drop table Ship cascade constraints purge;
+drop table Position_Ship cascade constraints purge;
+drop table Port cascade constraints purge;
+drop table Warehouse cascade constraints purge;
+drop table Cargo_Manifest cascade constraints purge;
+drop table Trip cascade constraints purge;
+drop table Container_Shipping cascade constraints purge;
+drop table Container_Client cascade constraints purge;
+drop table Client cascade constraints purge;
+drop table Trip_Manifests cascade constraints purge;
 
 
 create table Owner(
@@ -31,23 +31,15 @@ create table Equipment_Identifier(
     description               varChar(100)
 );
 
-create table ID_Container(
-    id_container              char(11)  constraint pk_id_container Primary Key, constraint fk_id_container_id_container Foreign Key (id_container) references Container(id_container),
-    id_owner                  char(3), constraint fk_owner_id_container Foreign Key (id_owner) references Owner(id_owner),
-    id_equipment              char(1), constraint fk_equipment_id_container Foreign Key (id_equipment) references Equipment_Identifier(id_equipment),
-    serial_number             integer constraint un_serial_number_id_container unique,
-    check_digit               integer
-);
-
 create table Container_Length(
     length_code               char(1) constraint pk_container_length Primary Key,
     value_length              integer constraint ck_value_length_positive check (value_length > 0)
 );
 
-    create table Width_Height(
-    width_height_code         char(1) constraint pk_width_height Primary Key,
-    value_height              integer constraint ck_value_height_positive check (value_height > 0),
-    value_width               integer constraint ck_value_width_positive check (value_width > 0)
+create table Width_Height(
+width_height_code         char(1) constraint pk_width_height Primary Key,
+value_height              integer constraint ck_value_height_positive check (value_height > 0),
+value_width               integer constraint ck_value_width_positive check (value_width > 0)
 );
 
 create table Container_Type(
@@ -70,15 +62,16 @@ create table ISO(
 
 create table Container(
     id_container              char(11) constraint pk_container Primary Key,
+    iso_code                  char(4) constraint fk_iso_container references ISO(iso_code),
     tare                      integer constraint ck_tare_positive check (tare > 0),
-    iso_code                  char(4), constraint fk_iso_container Foreign Key (iso_code) references ISO(iso_code),
-    refrigeration_temperature number(3,1),
     max_weight_incl_container integer constraint ck_max_weight_incl_container_positive check (max_weight_incl_container > 0),
     max_weight                integer constraint ck_max_weight_positive check (max_weight > 0),
     max_volume                integer constraint ck_max_volume_positive check (max_volume > 0),
-    csc_plate                 varChar(30),
-    acep                      integer,
-    pes_date                  date,
+    id_owner                  char(3) constraint fk_owner_id_container references Owner(id_owner),
+    id_equipment              char(1) constraint fk_equipment_id_container references Equipment_Identifier(id_equipment),
+    serial_number             integer constraint un_serial_number_id_container unique,
+    check_digit               integer,
+    constraint ck_tare_lesser_max_weight check (tare < max_weight),
     constraint ck_max_weight_lesser_incl_container check (max_weight < max_weight_incl_container)
 );
 
@@ -146,14 +139,45 @@ create table Warehouse(
     longitude		    	  number(4,2)
 );
 
-create table Cargo_Manifesto(
-    id_container              char(11), constraint fk_id_container_cargo_manifesto Foreign Key (id_container) references Container(id_container),
-    date_time                 date,
-    id_truck                  integer, constraint fk_truck_cargo_manifesto Foreign Key (id_truck) references Truck(id_truck),
-    id_ship                   char(10), constraint fk_ship_cargo_manifesto Foreign Key (id_ship) references Ship(imo_code),
-    id_port                   char(5), constraint fk_id_port_cargo_manifesto Foreign Key (id_port) references Port(id_port),
-    id_warehouse              integer, constraint fk_id_warehouse_cargo_manifesto Foreign Key (id_warehouse) references Warehouse(id_warehouse),
+create table Cargo_Manifest(
+    id_cargo_manifest             integer constraint pk_cargo_manifest Primary Key,
+    id_destination_port           char(5), constraint fk_cargo_manifest_destination_port Foreign Key (id_destination_port) references Port(id_port),
+    date_time_start               date,
+    date_time_end                 date
+);
+
+create table Trip(
+    id_trip                   integer constraint pk_trip Primary Key,
+    ship_imo                  char(10) constraint fk_trip_ship references Ship(imo_code),
+    id_start_port             char(5) constraint fk_trip_start_port references Port(id_port),
+    id_destination_port       char(5) constraint fk_trip_destination_port references Port(id_port)
+);
+
+create table Container_Shipping(
+    id_cargo_manifest         integer, constraint fk_container_shipping_cargo_manifest Foreign Key (id_cargo_manifest) references Cargo_Manifest(id_cargo_manifest),
+    id_container              char(11), constraint fk_container_shipping_container Foreign Key (id_container) references Container(id_container),
     position_code             number(6,0) constraint ck_position_code_positive check (position_code > 0),
-    payload                   number(5,1) constraint ck_playload_positive check (payload > 0),
-    Constraint pk_cargo_manifesto Primary Key (id_container, date_time)
+    cargo_weight              integer,
+    refrigeration_temperature number(3,1),
+    Constraint pk_Container_Shipping Primary Key (id_cargo_manifest, id_container)
+);
+
+create table Client(
+    id_client                 integer constraint pk_client Primary Key,
+    name_client               varchar(30),
+    address_client            varChar(40),
+    phone_client              integer constraint ck_phone_client_nine_digits check (phone_client > 99999999 and phone_client < 1000000000)
+);
+
+create table Container_Client(
+    id_cargo_manifest         integer, constraint fk_container_client_cargo_manifest Foreign Key (id_cargo_manifest) references Cargo_Manifest(id_cargo_manifest),
+    id_container              char(11), constraint fk_container_client_container Foreign Key (id_container) references Container(id_container),
+    id_client                 integer, constraint fk_container_client_client Foreign Key (id_client) references Client(id_client),
+    Constraint pk_Container_Client Primary Key (id_cargo_manifest, id_container, id_client)
+);
+
+create table Trip_Manifests(
+    id_cargo_manifest         integer constraint fk_trip_manifests_cargo_manifest references Cargo_Manifest(id_cargo_manifest),
+    id_trip                   integer constraint fk_trip_manifests_trip references Trip(id_trip),
+    Constraint pk_trip_manifests Primary Key (id_cargo_manifest, id_trip)
 );

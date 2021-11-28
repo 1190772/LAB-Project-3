@@ -2,8 +2,8 @@
 
 entity Trip {
 * id_trip
-* ship_imo
 --
+* ship_imo
 * id_start_port
 * id_destination_port
 }
@@ -11,21 +11,17 @@ entity Trip {
 entity Container {
 * id_container
 --
-* tare
 * iso_code
 
+* tare
 * max_weight_incl_container
 * max_weight
 * max_volume
 
-* owner_prefix
-* equipment_identifier
+* id_owner
+* id_equipment
 * serial_number
 * check_digit
-
-*csc_plate
-acep
-pes_date
 }
 
 entity ISO {
@@ -63,21 +59,23 @@ entity Reduced_Strength {
 
 entity Cargo_Manifest {
 * id_cargo_manifest
-* date_time
 --
- id_truck
- id_ship
- id_port
- id_warehouse
-* position_code
-* payload
+* id_destination_port
+* date_time_start
+* date_time_end
+}
+
+entity Trip_Manifests {
+* id_cargo_manifest
+* id_trip
+--
 }
 
 entity Container_Shipping {
 * id_cargo_manifest
 * id_container
 --
-* id_destination_port
+* position_code
 * cargo_weight
 * refrigeration_temperature
 }
@@ -167,17 +165,32 @@ entity Client {
 * phone_number
 }
 
+entity Container_Owner {
+* id_owner
+--
+* name_owner
+}
+
+entity Container_Equipment_Identifier {
+* id_equipment
+--
+* description
+}
+
 ISO }o--|| Length
 ISO }o--|| Width_Height
 ISO }o--|| Container_Type
 ISO }o--|| Reduced_Strength
 
+Container }o--|| Container_Owner
+Container }o--|| Container_Equipment_Identifier
 Container }o--|| ISO
 Cargo_Manifest ||--|{ Container_Shipping
 Container_Shipping }|--|| Container
 Container_Shipping ||--|{ Container_Client
 Container_Client }|--|| Client
-Trip }|--|| Cargo_Manifest
+Trip ||--|{ Trip_Manifests
+Trip_Manifests }|--|| Cargo_Manifest
 Ship ||--o{ Position_Ship
 
 Truck ||--o{ Employee
