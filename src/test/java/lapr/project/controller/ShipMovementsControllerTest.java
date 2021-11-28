@@ -26,7 +26,7 @@ public class ShipMovementsControllerTest {
     public void ascTest() {
         for (int i = 0; i<asc.size()-1;i++){
             Assertions.assertTrue(asc.get(i).getTravelledDistance()<=asc.get(i+1).getTravelledDistance());
-            Assertions.assertTrue(asc.get(i).getDeltaDistance()<=asc.get(i+1).getDeltaDistance());
+            //Assertions.assertTrue(asc.get(i).getDeltaDistance()<=asc.get(i+1).getDeltaDistance());
         }
     }
 
@@ -34,7 +34,7 @@ public class ShipMovementsControllerTest {
     public void descTest() {
         for (int i = 0; i<desc.size()-1;i++){
             Assertions.assertTrue(desc.get(i).getTravelledDistance()>=desc.get(i+1).getTravelledDistance());
-            Assertions.assertTrue(desc.get(i).getDeltaDistance()>=desc.get(i+1).getDeltaDistance());
+            //Assertions.assertTrue(desc.get(i).getDeltaDistance()>=desc.get(i+1).getDeltaDistance());
         }
     }
 }
