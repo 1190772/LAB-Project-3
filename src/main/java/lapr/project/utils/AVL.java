@@ -26,6 +26,8 @@ public class AVL <E extends Comparable<E>> extends BST<E> {
     
     private Node<E> rightRotation(Node<E> node){
         Node<E> leftson = node.getLeft();
+        if (leftson==null)
+            return null;
         node.setLeft(leftson.getRight());
         leftson.setRight(node);
         node = leftson;
@@ -34,6 +36,8 @@ public class AVL <E extends Comparable<E>> extends BST<E> {
     
     private Node<E> leftRotation(Node<E> node){
         Node<E> rightson = node.getRight();
+        if (rightson==null)
+            return null;
         node.setRight(rightson.getLeft());
         rightson.setLeft(node);
         node = rightson;
