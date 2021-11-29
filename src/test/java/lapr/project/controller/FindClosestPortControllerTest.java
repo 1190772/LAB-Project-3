@@ -10,11 +10,12 @@ import java.util.ArrayList;
 
 public class FindClosestPortControllerTest {
     private ArrayList<Ship> shipBST;
-    private String[] namePort = {"Cristobal", "Cutuco", "Cutuco", "Vancouver", "Los Angeles", "Cutuco", "Cutuco", "Puerto Limon", "Cutuco", "Cutuco"};
+    private String[] namePort = {"Vancouver", "Vancouver", "Cartagena", "Halifax", "Cartagena", "Cartagena", "Buenaventura", "Halifax", "Cartagena", "Buenaventura"};
 
     public FindClosestPortControllerTest() {
-        new ImportShipsController().importShips("bships.csv");
+        new ImportShipsController().importShips("sships.csv");
         shipBST =(ArrayList<Ship>) App.getInstance().getCompany().getShips().inOrder();
+        shipBST.removeIf(s -> s.getPosition().isEmpty());
     }
 
     @Test
@@ -32,7 +33,7 @@ public class FindClosestPortControllerTest {
 
     @Test
     public void findClosestPortControllerTest(){
-        new ImportPortsController().importPorts("bports.csv");
+        new ImportPortsController().importPorts("sports.csv");
         for (int i = 0; i < 5; i++) {
             Assertions.assertEquals(namePort[i], new FindClosestPortController().findClosestPortController(shipBST.get(i).getCallSign(), ((ArrayList<ShipPosition>)shipBST.get(i).getPosition().inOrder()).get(((ArrayList<ShipPosition>)shipBST.get(i).getPosition().inOrder()).size()/2).getBaseDateTime()).getName());
         }
