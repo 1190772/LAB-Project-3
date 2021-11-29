@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : asks for pairs of ships
+
+activate ":System"
+":System" --> "TM" : Shows pairs of ships
+deactivate ":System"
+
+deactivate TM
+
+@enduml

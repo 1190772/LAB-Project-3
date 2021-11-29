@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Traffic Manager: as TM
+(Ask for Pairs of Ships) as (Use)
+
+TM ---> (Use)
+
+@enduml
