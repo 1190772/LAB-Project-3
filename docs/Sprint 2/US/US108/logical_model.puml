@@ -78,13 +78,7 @@ entity Container_Shipping {
 * position_code
 * cargo_weight
 * refrigeration_temperature
-}
-
-entity Container_Client {
-* id_cargo_manifest
-* id_container
 * id_client
---
 }
 
 entity Truck {
@@ -106,6 +100,7 @@ entity Ship {
 * width_ship
 * capacity_ship
 * draft
+* id_employee_captain
 }
 
 entity Port {
@@ -187,8 +182,7 @@ Container }o--|| Container_Equipment_Identifier
 Container }o--|| ISO
 Cargo_Manifest ||--|{ Container_Shipping
 Container_Shipping }|--|| Container
-Container_Shipping ||--|{ Container_Client
-Container_Client }|--|| Client
+Container_Shipping }|--|| Client
 Trip ||--|{ Trip_Manifests
 Trip_Manifests }|--|| Cargo_Manifest
 Ship ||--o{ Position_Ship
