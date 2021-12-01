@@ -16,7 +16,6 @@ drop table Warehouse cascade constraints purge;
 drop table Cargo_Manifest cascade constraints purge;
 drop table Trip cascade constraints purge;
 drop table Container_Shipping cascade constraints purge;
-drop table Container_Client cascade constraints purge;
 drop table Client cascade constraints purge;
 drop table Trip_Manifests cascade constraints purge;
 
@@ -37,9 +36,9 @@ create table Container_Length(
 );
 
 create table Width_Height(
-width_height_code         char(1) constraint pk_width_height Primary Key,
-value_height              integer constraint ck_value_height_positive check (value_height > 0),
-value_width               integer constraint ck_value_width_positive check (value_width > 0)
+    width_height_code         char(1) constraint pk_width_height Primary Key,
+    value_height              integer constraint ck_value_height_positive check (value_height > 0),
+    value_width               integer constraint ck_value_width_positive check (value_width > 0)
 );
 
 create table Container_Type(
@@ -106,7 +105,8 @@ create table Ship(
     length_ship               integer constraint ck_length_ship_positive check (length_ship > 0),
     width_ship                integer constraint ck_width_ship_positive check (width_ship > 0),
     draft                     number(3,1),
-    capacity_ship             integer constraint ck_capacity_ship_positive check (capacity_ship > 0)
+    capacity_ship             integer constraint ck_capacity_ship_positive check (capacity_ship > 0),
+    id_employee_captain       integer constraint fk_ship_Employee references Employee(id_employee)
 );
 
 create table Position_Ship(
@@ -153,15 +153,6 @@ create table Trip(
     id_destination_port       char(5) constraint fk_trip_destination_port references Port(id_port)
 );
 
-create table Container_Shipping(
-    id_cargo_manifest         integer, constraint fk_container_shipping_cargo_manifest Foreign Key (id_cargo_manifest) references Cargo_Manifest(id_cargo_manifest),
-    id_container              char(11), constraint fk_container_shipping_container Foreign Key (id_container) references Container(id_container),
-    position_code             number(6,0) constraint ck_position_code_positive check (position_code > 0),
-    cargo_weight              integer,
-    refrigeration_temperature number(3,1),
-    Constraint pk_Container_Shipping Primary Key (id_cargo_manifest, id_container)
-);
-
 create table Client(
     id_client                 integer constraint pk_client Primary Key,
     name_client               varchar(30),
@@ -169,11 +160,14 @@ create table Client(
     phone_client              integer constraint ck_phone_client_nine_digits check (phone_client > 99999999 and phone_client < 1000000000)
 );
 
-create table Container_Client(
-    id_cargo_manifest         integer, constraint fk_container_client_cargo_manifest Foreign Key (id_cargo_manifest) references Cargo_Manifest(id_cargo_manifest),
-    id_container              char(11), constraint fk_container_client_container Foreign Key (id_container) references Container(id_container),
-    id_client                 integer, constraint fk_container_client_client Foreign Key (id_client) references Client(id_client),
-    Constraint pk_Container_Client Primary Key (id_cargo_manifest, id_container, id_client)
+create table Container_Shipping(
+    id_cargo_manifest         integer, constraint fk_container_shipping_cargo_manifest Foreign Key (id_cargo_manifest) references Cargo_Manifest(id_cargo_manifest),
+    id_container              char(11), constraint fk_container_shipping_container Foreign Key (id_container) references Container(id_container),
+    position_code             number(6,0) constraint ck_position_code_positive check (position_code > 0),
+    cargo_weight              integer,
+    refrigeration_temperature number(3,1),
+    id_client                 integer constraint fk_container_shipping_client references Client(id_client),
+    Constraint pk_Container_Shipping Primary Key (id_cargo_manifest, id_container)
 );
 
 create table Trip_Manifests(
