@@ -188,5 +188,24 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return res;
     }
 
+    public ShipPosition findPosition(LocalDateTime dateTime) {
+        Node<ShipPosition> node = root;
+        ShipPosition res = null;
+        boolean find = false;
+
+        while (node != null && !find) {
+            if (node.getElement().getBaseDateTime().equals(dateTime))
+                find = true;
+            else if (node.getElement().getBaseDateTime().compareTo(dateTime) > 0)
+                node = node.getLeft();
+            else if (node.getElement().getBaseDateTime().compareTo(dateTime) < 0)
+                node = node.getRight();
+        }
+
+        if (find)
+            res = node.getElement();
+
+        return res;
+    }
 
 }

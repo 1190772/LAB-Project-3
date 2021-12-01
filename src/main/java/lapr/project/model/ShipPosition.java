@@ -72,11 +72,10 @@ public class ShipPosition implements Comparable<ShipPosition> {
                 '}';
         }
 
-@Override
+    @Override
     public int compareTo(ShipPosition o) {
         return baseDateTime.compareTo(o.getBaseDateTime());
     }
-
 
 }
 

@@ -111,7 +111,7 @@ create table Ship(
 
 create table Position_Ship(
     id_ship                   char(10), constraint fk_ship_position_ship Foreign Key (id_ship) references Ship(imo_code),
-    base_date_time  	      date,
+    base_date_time  	      timestamp,
     latitude			      number(7,5),
     longitude			      number(7,5),
     sog	    			      number(3,1),
@@ -142,8 +142,8 @@ create table Warehouse(
 create table Cargo_Manifest(
     id_cargo_manifest             integer constraint pk_cargo_manifest Primary Key,
     id_destination_port           char(5), constraint fk_cargo_manifest_destination_port Foreign Key (id_destination_port) references Port(id_port),
-    date_time_start               date,
-    date_time_end                 date
+    date_time_start               timestamp,
+    date_time_end                 timestamp
 );
 
 create table Trip(

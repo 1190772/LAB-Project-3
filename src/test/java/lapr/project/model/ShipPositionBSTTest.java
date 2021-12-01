@@ -6,7 +6,10 @@ import lapr.project.controller.ShipMovementsController;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class ShipPositionBSTTest {
@@ -121,6 +124,26 @@ public class ShipPositionBSTTest {
     @Test
     public void toStringTest() {
         Assertions.assertEquals(toString, shipMovementsList.get(0).toString());
+    }
+
+    @Test
+    public void findPositionTest() {
+        Ship ship = new Ship("210950000","name1","IMO9395044",10,70,"C4SQ2",60,166,25,100,(float) 9.5);
+        ShipPosition position1 = new ShipPosition(LocalDateTime.of(2020,12,24,9,10), 42.97875,66.97001,12.9,13.1,355,'B', 0);
+        ShipPosition position5 = new ShipPosition(LocalDateTime.of(2020,12,24,13,50), 42.97875,66.97001,12.9,13.1,355,'B', 0);
+        ShipPosition position2 = new ShipPosition(LocalDateTime.of(2020,12,24,10,20), 42.97875,66.97001,12.9,13.1,355,'B', 0);
+        ShipPosition position4 = new ShipPosition(LocalDateTime.of(2020,12,24,12,40), 42.97875,66.97001,12.9,13.1,355,'B', 0);
+        ShipPosition position3 = new ShipPosition(LocalDateTime.of(2020,12,24,11,30), 42.97875,66.97001,12.9,13.1,355,'B', 0);
+
+        ship.addPosition(position1);
+        ship.addPosition(position5);
+        ship.addPosition(position2);
+        ship.addPosition(position4);
+        ship.addPosition(position3);
+
+        ShipPosition expected = position4;
+        ShipPosition found = ship.getPosition().findPosition(LocalDateTime.of(2020,12,24,12,40));
+        assertEquals(expected, found);
     }
 
 }
