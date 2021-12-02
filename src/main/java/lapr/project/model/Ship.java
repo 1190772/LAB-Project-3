@@ -124,6 +124,7 @@ public class Ship implements Comparable<Ship> {
         this.width = width;
         this.draft = draft;
         positions = new ShipPositionBST();
+        capacity = 1;
     }
 
     /**

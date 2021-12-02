@@ -9,16 +9,16 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class SQL {
-    private final Connection connection;
+    private final DatabaseConnection databaseConnection;
     private final String url = "jdbc:oracle:thin:@//vsgate-s1.dei.isep.ipp.pt:10601/xepdb1";
 
     public SQL(String user, String password) {
-        connection = new DatabaseConnection(url, user, password).getConnection();
+    databaseConnection = new DatabaseConnection(url, user, password);
     }
 
     public boolean executeLine(String sqlLine) {
         try {
-            return connection.createStatement().execute(sqlLine);
+            return databaseConnection.getConnection().createStatement().execute(sqlLine);
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -40,6 +40,10 @@ public class SQL {
             return false;
         }
         return true;
+    }
+
+    public DatabaseConnection getDatabaseConnection() {
+        return databaseConnection;
     }
 }
 

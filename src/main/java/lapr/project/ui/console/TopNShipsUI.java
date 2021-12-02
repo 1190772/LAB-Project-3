@@ -3,6 +3,7 @@ package lapr.project.ui.console;
 import lapr.project.controller.TopNShipsController;
 import lapr.project.model.Ship;
 
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,13 +12,13 @@ public class TopNShipsUI implements Runnable {
 
     private final TopNShipsController controller;
 
-    public TopNShipsUI() {
+    public TopNShipsUI() throws SQLException {
         controller = new TopNShipsController();
     }
 
-
     @Override
     public void run() {
+        controller.getShips();
         int n ;
         LocalDateTime startDateTime;
         LocalDateTime endDateTime;

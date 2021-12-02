@@ -3,7 +3,9 @@ package lapr.project.controller;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipBST;
 import lapr.project.model.ShipPosition;
+import lapr.project.utils.DatabaseConnection;
 
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -15,9 +17,9 @@ import java.util.ArrayList;
 public class SearchShipController {
 
     /**
-     * The current ship binary search tree.
+     * The ship binary search tree.
      */
-    private final ShipBST shipBST;
+    private  ShipBST shipBST;
 
     /**
      * Holder of the selected ship.
@@ -27,7 +29,9 @@ public class SearchShipController {
     /**
      * Builds an instance of the Controller.
      */
-    public SearchShipController() {
+    public SearchShipController() {}
+
+    public void getShips() {
         shipBST = App.getInstance().getCompany().getShips();
     }
 

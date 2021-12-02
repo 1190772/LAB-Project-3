@@ -1,5 +1,8 @@
 package lapr.project.ui.console;
 
+import lapr.project.controller.App;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +24,14 @@ public class TrafficManagerUI implements Runnable {
      * Runs the UI.
      */
     public void run() {
-
         List<MenuItem> options = new ArrayList<>();
         options.add(new MenuItem("Import Ships From File", new ImportShipsUI()));
-        options.add(new MenuItem("Search a ship", new SearchShipUI()));
-        options.add(new MenuItem("TopN Ships", new TopNShipsUI()));
+        try {
+            options.add(new MenuItem("Search a ship", new SearchShipUI()));
+            options.add(new MenuItem("TopN Ships", new TopNShipsUI()));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         int option = 0;
         do {
             option = Utils.showAndSelectIndex(options, "\n\nTraffic Manager Menu:");

@@ -1,6 +1,9 @@
 package lapr.project.ui.console;
 
+import lapr.project.controller.App;
 import lapr.project.controller.ImportShipsController;
+
+import java.sql.SQLException;
 
 /**
  * UI of US101
@@ -25,7 +28,8 @@ public class ImportShipsUI implements Runnable {
      * Runs the US.
      */
     public void run() {
-        controller.importShips("bships.csv");
+        controller.importShips("sships.csv");
+        controller.saveShipsToDb();
         System.out.println("Data has been saved.");
     }
 }

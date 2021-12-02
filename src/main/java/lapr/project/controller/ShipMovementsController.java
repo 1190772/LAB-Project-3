@@ -3,6 +3,7 @@ package lapr.project.controller;
 
 import lapr.project.model.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -34,7 +35,9 @@ public class ShipMovementsController {
      */
     public ArrayList<ShipMovements> listAllShip(boolean asc) {
         ArrayList<ShipMovements> list = new ArrayList<>();
-        for (Ship s : App.getInstance().getCompany().getShips().inOrder()) {
+        ShipBST shipBST = App.getInstance().getCompany().getShips();
+
+        for (Ship s : shipBST.inOrder()) {
             ShipPositionBST bst = s.getPosition();
             list.add(new ShipMovements(s.getMMSI(), bst.totalNumberMovements(), bst.travelledDistance(), bst.deltaDistance()));
         }

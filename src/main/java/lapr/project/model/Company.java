@@ -1,11 +1,13 @@
 package lapr.project.model;
 
+import lapr.project.controller.App;
 import lapr.project.ui.auth.AuthFacade;
 import lapr.project.utils.TwoDTree;
 
+import java.sql.SQLException;
+
 public class Company {
     private final String designation;
-
 
     private final AuthFacade authFacade;
     private final ShipBST shipBST;
@@ -23,6 +25,11 @@ public class Company {
     }
 
     public ShipBST getShips() {
+        try {
+            shipBST.loadShipsFromDatabase();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return shipBST;
     }
 

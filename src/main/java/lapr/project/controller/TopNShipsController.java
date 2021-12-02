@@ -3,6 +3,7 @@ package lapr.project.controller;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipBST;
 
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -16,12 +17,16 @@ public class TopNShipsController {
     /**
      * The ship binary search tree.
      */
-    private final ShipBST shipBST;
+    private ShipBST shipBST;
 
     /**
      * Builds an instance of the Controller.
      */
     public TopNShipsController() {
+
+    }
+
+    public void getShips() {
         shipBST = App.getInstance().getCompany().getShips();
     }
 

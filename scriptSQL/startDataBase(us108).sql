@@ -100,7 +100,7 @@ create table Ship(
     name_ship                 varChar(30),
     number_generators         integer constraint ck_number_generators_not_negative check (number_generators > -1),
     power_out_generator       integer constraint ck_power_out_generator_not_negative check (power_out_generator > -1),
-    call_sign                 char(5) constraint un_call_sign_ship unique,
+    call_sign                 varChar(9) constraint un_call_sign_ship unique,
     vessel_type               integer constraint ck_vessel_type_positive check (vessel_type > 0),
     length_ship               integer constraint ck_length_ship_positive check (length_ship > 0),
     width_ship                integer constraint ck_width_ship_positive check (width_ship > 0),
@@ -112,12 +112,13 @@ create table Ship(
 create table Position_Ship(
     id_ship                   char(10), constraint fk_ship_position_ship Foreign Key (id_ship) references Ship(imo_code),
     base_date_time  	      timestamp,
-    latitude			      number(7,5),
-    longitude			      number(7,5),
-    sog	    			      number(3,1),
-    cog 			          number(3,1),
-    heading			          integer constraint ck_heading_valid check (heading between 0 and 359),
+    latitude			      number,
+    longitude			      number,
+    sog	    			      number,
+    cog 			          number,
+    heading			          integer constraint ck_heading_valid check (heading between 0 and 359 or heading = 511),
     transceiver_class         char(1),
+    cargo                     integer,
     Constraint pk_position_ship Primary Key (id_ship, base_date_time)
 );
 

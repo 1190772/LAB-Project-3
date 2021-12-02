@@ -4,6 +4,7 @@ import lapr.project.controller.SearchShipController;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipPosition;
 
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -32,6 +33,7 @@ public class SearchShipUI implements Runnable {
      */
     @Override
     public void run() {
+        controller.getShips();
         Scanner input = new Scanner(System.in);
         String code;
         Ship chosenShip;
