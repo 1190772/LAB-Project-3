@@ -94,4 +94,11 @@ class TwoDTreeTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void balanceFactorTest() {
+        assertEquals(-2, instance.balanceFactor(instance.root));
+        assertEquals(-2, instance.balanceFactor(instance.root.getLeft()));
+        assertEquals(0, instance.balanceFactor(instance.root.getRight()));
+    }
+
 }
