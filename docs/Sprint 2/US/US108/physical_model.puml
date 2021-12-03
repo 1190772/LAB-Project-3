@@ -63,6 +63,18 @@ entity Cargo_Manifest {
 * id_client                 integer
 }
 
+entity Unloading_Cargo_Manifest {
+* id_cargo_manifest         integer
+* id_container              char(11)
+--
+}
+
+entity Loading_Cargo_Manifest {
+* id_cargo_manifest         integer
+* id_container              char(11)
+--
+}
+
 entity Truck {
 * id_truck                  integer
 --
@@ -91,8 +103,8 @@ entity Port {
 * name_port                 varChar(20)
 * continent_port            varChar(10)
 * country_port              varChar(20)
-* latitude_port             number(11,9)
-* longitude_port            number(11,9)
+* latitude_port             number(12,9)
+* longitude_port            number(12,9)
 }
 
 entity Warehouse {
@@ -100,8 +112,8 @@ entity Warehouse {
 * name    	   			    varChar(30)
 * continent		    	    varChar(20)
 * country	         	    varChar(20)
-* latitude		    	    number(4,2)
-* longitude 	    	    number(4,2)
+* latitude		    	    number(12,9)
+* longitude 	    	    number(12,9)
 }
 
 entity Employee{
@@ -118,8 +130,8 @@ entity Position_Ship {
 * imo_code                  char(10)
 * base_date_time            timestamp
 --
-* latitude                  number(11,9)
-* longitude                 number(11,9)
+* latitude                  number(12,9)
+* longitude                 number(12,9)
 * sog                       number(4,1)
 * cog                       number(4,1)
 * heading                   integer
@@ -156,12 +168,12 @@ entity Container_Equipment_Identifier {
 ISO }o--|| Length
 ISO }o--|| Width_Height
 ISO }o--|| Container_Type
-ISO }o--|| Reduced_Strength
+
 
 Container }o--|| Container_Owner
 Container }o--|| Container_Equipment_Identifier
 Container }o--|| ISO
-Trip ||--o{ Cargo_Manifest
+Trip ||--|| Cargo_Manifest
 Cargo_Manifest }o--|| Container
 Cargo_Manifest }|--|| Client
 Ship ||--o{ Position_Ship
@@ -172,5 +184,8 @@ Ship ||--o{ Employee
 Warehouse ||--o{ Employee
 Port ||--o{ Employee
 Employee }o--|| Role
+
+Unloading_Cargo_Manifest ||--|| Cargo_Manifest
+Loading_Cargo_Manifest ||--|| Cargo_Manifest
 
 @enduml

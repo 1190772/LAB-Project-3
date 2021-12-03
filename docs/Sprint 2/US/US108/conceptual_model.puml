@@ -3,6 +3,8 @@
 entity Container
 
 entity Cargo_Manifest
+entity Unloading_Cargo_Manifest
+entity Loading_Cargo_Manifest
 
 entity Trip
 
@@ -46,5 +48,8 @@ Cargo_Manifest }|--|| Client
 
 "toEmployee" -- Employee : work <
 Employee -- Role : has >
+
+Unloading_Cargo_Manifest -- Cargo_Manifest : can be <
+Loading_Cargo_Manifest -- Cargo_Manifest : can be <
 
 @enduml
