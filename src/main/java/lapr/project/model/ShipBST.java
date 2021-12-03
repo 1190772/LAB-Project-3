@@ -39,16 +39,18 @@ public class ShipBST extends AVL<Ship> {
             insert(ship);
             ResultSet positions = shipStoreDb.getShipPostions(connection, ships.getString("imo_code"));
             while (positions.next()) {
-                ship.addPosition(new ShipPosition(positions.getTimestamp("base_date_time").toLocalDateTime(),
-                                                positions.getDouble("latitude"),
-                                                positions.getDouble("longitude"),
-                                                positions.getDouble("sog"),
-                                                positions.getDouble("cog"),
-                                                positions.getInt("heading"),
-                                                positions.getString("transceiver_class").charAt(0),
-                                                positions.getInt("cargo")));
+            ship.addPosition(new ShipPosition(positions.getTimestamp("base_date_time").toLocalDateTime(),
+                    positions.getDouble("latitude"),
+                    positions.getDouble("longitude"),
+                    positions.getDouble("sog"),
+                    positions.getDouble("cog"),
+                    positions.getInt("heading"),
+                    positions.getString("transceiver_class").charAt(0),
+                    positions.getInt("cargo")));
             }
+            positions.close();
         }
+        ships.close();
     }
 
     /**

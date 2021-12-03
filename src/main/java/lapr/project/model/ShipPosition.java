@@ -68,7 +68,7 @@ public class ShipPosition implements Comparable<ShipPosition> {
                 ", COG = " + cog +
                 ", Heading = " + heading +
                 ", Transceiver Class = " + transceiverClass +
-                ", Cargo = " + heading +
+                ", Cargo = " + cargo +
                 '}';
         }
 

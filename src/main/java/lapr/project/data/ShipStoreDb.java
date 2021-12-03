@@ -158,19 +158,20 @@ public class ShipStoreDb implements Persistable{
     private void executeShipStatementOnDatabase(DatabaseConnection databaseConnection, Ship ship, String sqlCommand) throws SQLException {
         Connection connection = databaseConnection.getConnection();
 
-        PreparedStatement saveShipPreparedStatement = connection.prepareStatement(sqlCommand);
-        saveShipPreparedStatement.setString(1, ship.getMMSI());
-        saveShipPreparedStatement.setString(2, ship.getName());
-        saveShipPreparedStatement.setInt(3, ship.getNumberEnergyGenerators());
-        saveShipPreparedStatement.setInt(4, ship.getGeneratorPowerOutput());
-        saveShipPreparedStatement.setString(5, ship.getCallSign());
-        saveShipPreparedStatement.setInt(6, ship.getVesselType());
-        saveShipPreparedStatement.setInt(7, ship.getLength());
-        saveShipPreparedStatement.setInt(8, ship.getWidth());
-        saveShipPreparedStatement.setDouble(9, ship.getDraft());
-        saveShipPreparedStatement.setDouble(10, ship.getCapacity());
-        saveShipPreparedStatement.setString(11, ship.getIMO());
-        saveShipPreparedStatement.executeUpdate();
+        try (PreparedStatement saveShipPreparedStatement = connection.prepareStatement(sqlCommand)) {
+            saveShipPreparedStatement.setString(1, ship.getMMSI());
+            saveShipPreparedStatement.setString(2, ship.getName());
+            saveShipPreparedStatement.setInt(3, ship.getNumberEnergyGenerators());
+            saveShipPreparedStatement.setInt(4, ship.getGeneratorPowerOutput());
+            saveShipPreparedStatement.setString(5, ship.getCallSign());
+            saveShipPreparedStatement.setInt(6, ship.getVesselType());
+            saveShipPreparedStatement.setInt(7, ship.getLength());
+            saveShipPreparedStatement.setInt(8, ship.getWidth());
+            saveShipPreparedStatement.setDouble(9, ship.getDraft());
+            saveShipPreparedStatement.setDouble(10, ship.getCapacity());
+            saveShipPreparedStatement.setString(11, ship.getIMO());
+            saveShipPreparedStatement.executeUpdate();
+        }
     }
 
     private void deleteShipPositions(DatabaseConnection databaseConnection, Ship ship) throws SQLException {
@@ -181,24 +182,22 @@ public class ShipStoreDb implements Persistable{
         try (PreparedStatement getShipPositionsPreparedStatement = connection.prepareStatement(sqlCommand)) {
             getShipPositionsPreparedStatement.setString(1, ship.getIMO());
             try (ResultSet shipPositionsResultSet = getShipPositionsPreparedStatement.executeQuery()) {
-                if (!shipPositionsResultSet.isBeforeFirst()) {
-                    while (shipPositionsResultSet.next()) {
-                    boolean found = false;
-                    LocalDateTime positionDateTime = shipPositionsResultSet.getTimestamp("base_date_time").toLocalDateTime();
+                while (shipPositionsResultSet.next()) {
+                boolean found = false;
+                LocalDateTime positionDateTime = shipPositionsResultSet.getTimestamp("base_date_time").toLocalDateTime();
 
-                    ShipPosition position = ship.getPosition().findPosition(positionDateTime);
+                ShipPosition position = ship.getPosition().findPosition(positionDateTime);
 
-                    if (position != null) {
-                        found = true;
-                    }
-                    if (!found) {
-                        sqlCommand = "delete from Position_Ship where id_ship = ? and base_date_time = ?";
+                if (position != null) {
+                    found = true;
+                }
+                if (!found) {
+                    sqlCommand = "delete from Position_Ship where id_ship = ? and base_date_time = ?";
 
-                        try (PreparedStatement shipPositionDeletePreparedStatement = connection.prepareStatement(sqlCommand)) {
-                            shipPositionDeletePreparedStatement.setString(1, ship.getIMO());
-                            shipPositionDeletePreparedStatement.setTimestamp(2, shipPositionsResultSet.getTimestamp("base_date_time"));
-                            getShipPositionsPreparedStatement.executeUpdate();
-                            }
+                    try (PreparedStatement shipPositionDeletePreparedStatement = connection.prepareStatement(sqlCommand)) {
+                        shipPositionDeletePreparedStatement.setString(1, ship.getIMO());
+                        shipPositionDeletePreparedStatement.setTimestamp(2, shipPositionsResultSet.getTimestamp("base_date_time"));
+                        getShipPositionsPreparedStatement.executeUpdate();
                         }
                     }
                 }
@@ -244,15 +243,15 @@ public class ShipStoreDb implements Persistable{
         Connection connection = databaseConnection.getConnection();
         String sqlCommand = "select * from Ship";
         PreparedStatement shipsPreparedStatement = connection.prepareStatement(sqlCommand);
-        return shipsPreparedStatement.executeQuery();
+            return shipsPreparedStatement.executeQuery();
     }
 
     public ResultSet getShipPostions(DatabaseConnection databaseConnection, String shipIMO) throws SQLException {
         Connection connection = databaseConnection.getConnection();
         String sqlCommand = "select * from Position_Ship where id_ship = ?";
         PreparedStatement positionsPreparedStatement = connection.prepareStatement(sqlCommand);
-        positionsPreparedStatement.setString(1, shipIMO);
-        return positionsPreparedStatement.executeQuery();
+            positionsPreparedStatement.setString(1, shipIMO);
+            return positionsPreparedStatement.executeQuery();
     }
 
 }
