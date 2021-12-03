@@ -53,4 +53,8 @@ public class ImportPortsController {
             e.printStackTrace();
         }
     }
+
+    public void saveShipsToDb() {
+ports.savePortsToDb();
+}
 }

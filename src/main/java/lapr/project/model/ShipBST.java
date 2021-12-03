@@ -53,6 +53,18 @@ public class ShipBST extends AVL<Ship> {
         ships.close();
     }
 
+    public void saveShipsToDb() {
+        saveShipsToDb(root);
+    }
+
+    private void saveShipsToDb(Node<Ship> node) {
+        if (node == null)
+            return;
+        saveShipsToDb(node.getLeft());
+        shipStoreDb.save(App.getInstance().getSql().getDatabaseConnection(), node.getElement());
+        saveShipsToDb(node.getRight());
+    }
+
     /**
      * Decides how to search for a ship using a provided code.
      *
@@ -195,17 +207,5 @@ public class ShipBST extends AVL<Ship> {
             }
         }
         return topNLists;
-    }
-
-    public void saveShipsToDb() {
-        saveShipsToDb(root);
-    }
-
-    private void saveShipsToDb(Node<Ship> node) {
-        if (node == null)
-            return;
-        saveShipsToDb(node.getLeft());
-        shipStoreDb.save(App.getInstance().getSql().getDatabaseConnection(), node.getElement());
-        saveShipsToDb(node.getRight());
     }
 }

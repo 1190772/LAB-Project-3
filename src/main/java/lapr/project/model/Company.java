@@ -1,7 +1,6 @@
 package lapr.project.model;
 
 import lapr.project.ui.auth.AuthFacade;
-import lapr.project.utils.TwoDTree;
 
 import java.sql.SQLException;
 
@@ -31,6 +30,14 @@ public class Company {
 
     public Port2DTree getPorts() {
     return port2DTree;
+    }
+
+    public void refreshPorts() {
+        try {
+            port2DTree.loadPortsFromDatabase();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     public AuthFacade getAuthFacade() {

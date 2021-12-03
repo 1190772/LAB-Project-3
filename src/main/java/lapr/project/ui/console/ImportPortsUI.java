@@ -29,5 +29,6 @@ public class ImportPortsUI implements Runnable{
     @Override
     public void run() {
         controller.importPorts("sports.csv");
+        controller.saveShipsToDb();
     }
 }
