@@ -31,7 +31,7 @@ class Port2DTreeTest {
     @Test
     void createdBalancedPort2DTree() {
         port2DTree.createdBalancedPort2DTree(portList);
-        verifyBalance(port2DTree.root);
+        verifyBalance(port2DTree.getRoot());
         assertEquals(7, port2DTree.findNearestNeighbour(43.7, -60.3).getID());
     }
 

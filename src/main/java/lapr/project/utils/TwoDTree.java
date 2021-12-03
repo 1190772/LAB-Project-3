@@ -46,7 +46,9 @@ public class TwoDTree<T> {
     public void setRight(Node2D<T> rightChild) { right = rightChild; }
     }
 
-    public Node2D<T> root; // root of the tree
+    protected Node2D<T> root; // root of the tree
+
+    public Node2D<T> getRoot() { return root; }
 
     /* Constructs an empty TwoDTree. */
     public TwoDTree() { root = null; }
