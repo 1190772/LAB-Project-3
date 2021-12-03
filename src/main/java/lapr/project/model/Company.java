@@ -24,13 +24,10 @@ public class Company {
         return designation;
     }
 
-    public ShipBST getShips() {
-        try {
-            shipBST.loadShipsFromDatabase();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return shipBST;
+    public ShipBST getShips() { return shipBST; }
+
+    public void refreshShips() throws SQLException {
+        shipBST.loadShipsFromDatabase();
     }
 
     public TwoDTree<Port> getPorts() {

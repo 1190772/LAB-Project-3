@@ -40,7 +40,7 @@ public class ShipPositionBSTTest {
             "\tArrival Longitude=-149.34997, \n" +
             "\tTravelled Distance=2.0, \n" +
             "\tDelta Distance=1.0}";
-/*
+
     public ShipPositionBSTTest() {
         shipBST = App.getInstance().getCompany().getShips();
         for (Ship s :  App.getInstance().getCompany().getShips().inOrder())
@@ -121,7 +121,6 @@ public class ShipPositionBSTTest {
         Assertions.assertEquals(72.77, ((ArrayList<Ship>) shipBST.inOrder()).get(7).getPosition().meanCOG());
     }
 
- */
     @Test
     public void toStringTest() {
         Assertions.assertEquals(toString, shipMovementsList.get(0).toString());

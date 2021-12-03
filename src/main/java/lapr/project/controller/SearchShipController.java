@@ -29,10 +29,12 @@ public class SearchShipController {
     /**
      * Builds an instance of the Controller.
      */
-    public SearchShipController() {}
-
-    public void getShips() {
+    public SearchShipController() {
         shipBST = App.getInstance().getCompany().getShips();
+    }
+
+    public void refreshShips() throws SQLException {
+        App.getInstance().getCompany().refreshShips();
     }
 
     /**
