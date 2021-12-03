@@ -2,7 +2,9 @@
 
 entity Container
 
-entity Cargo_Manifesto
+entity Cargo_Manifest
+
+entity Trip
 
 rectangle " " as "toEmployee"{
 
@@ -24,22 +26,23 @@ rectangle " " as "toISO" {
 }
 entity ISO
 
-entity ID_Container
 rectangle " " as "toIDContainer"{
     entity Owner
     entity Equipment_Identifier
 }
 
-Cargo_Manifesto -- Container : has information about the position >
+Cargo_Manifest -- Container : has information about the position >
 
-Cargo_Manifesto -- "toEmployee" : has information >
+Cargo_Manifest -- "toEmployee" : has information >
 
 
-"toIDContainer" -- ID_Container : has information <
+"toIDContainer" -- Container : has information <
 ISO -- Container : has <
 ISO -- toISO : has information <
-ID_Container -- Container : has <
 
+Cargo_Manifest }o--|| Trip
+Trip }o--|| Ship
+Cargo_Manifest }|--|| Client
 
 "toEmployee" -- Employee : work <
 Employee -- Role : has >

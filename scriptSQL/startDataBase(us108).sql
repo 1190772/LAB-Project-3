@@ -22,7 +22,7 @@ drop table Trip_Manifests cascade constraints purge;
 
 create table Owner(
     id_owner                  char(3) constraint pk_owner Primary Key,
-    name                      varChar(30)
+    name                      varChar(40)
 );
 
 create table Equipment_Identifier(
@@ -42,21 +42,16 @@ create table Width_Height(
 );
 
 create table Container_Type(
-    container_type_code       char(1) constraint pk_container_type Primary Key,
-    value_container_type      integer
+    container_type_code       char(2) constraint pk_container_type Primary Key,
+    container_type_description varChar(200)
 );
 
-create table Reduced_Strength(
-    reduced_strength_code     char(1) constraint pk_reduced_strength Primary Key,
-    value_reduced_strength    integer constraint ck_value_reduced_strength_positive check (value_reduced_strength > 0)
-);
 
 create table ISO(
     iso_code                  char(4) constraint pk_iso Primary Key,
     length_code               char(1), constraint fk_length_iso Foreign Key (length_code) references Container_Length(length_code),
     width_height_code         char(1), constraint fk_width_height_iso Foreign Key (width_height_code) references Width_Height(width_height_code),
-    container_type_code       char(1), constraint fk_container_type_iso Foreign Key (container_type_code) references Container_Type(container_type_code),
-    reduced_strength_code     char(1), constraint fk_reduced_strength_iso Foreign Key (reduced_strength_code) references Reduced_Strength(reduced_strength_code)
+    container_type_code       char(2), constraint fk_container_type_iso Foreign Key (container_type_code) references Container_Type(container_type_code)
 );
 
 create table Container(
@@ -65,7 +60,7 @@ create table Container(
     tare                      integer constraint ck_tare_positive check (tare > 0),
     max_weight_incl_container integer constraint ck_max_weight_incl_container_positive check (max_weight_incl_container > 0),
     max_weight                integer constraint ck_max_weight_positive check (max_weight > 0),
-    max_volume                integer constraint ck_max_volume_positive check (max_volume > 0),
+    max_volume                number(3,1) constraint ck_max_volume_positive check (max_volume > 0),
     id_owner                  char(3) constraint fk_owner_id_container references Owner(id_owner),
     id_equipment              char(1) constraint fk_equipment_id_container references Equipment_Identifier(id_equipment),
     serial_number             integer constraint un_serial_number_id_container unique,
@@ -123,12 +118,12 @@ create table Position_Ship(
 );
 
 create table Port(
-    id_port			          int constraint pk_port Primary Key,
+    id_port			          char(5) constraint pk_port Primary Key,
     name				      varChar(20),
     continent			      varChar(10),
     country			          varChar(20),
-    latitude			      number,
-    longitude			      number
+    latitude			      number(11,9),
+    longitude			      number(11,9)
 );
 
 create table Warehouse(
@@ -142,7 +137,7 @@ create table Warehouse(
 
 create table Cargo_Manifest(
     id_cargo_manifest             integer constraint pk_cargo_manifest Primary Key,
-    id_destination_port           integer, constraint fk_cargo_manifest_destination_port Foreign Key (id_destination_port) references Port(id_port),
+    id_destination_port           char(5), constraint fk_cargo_manifest_destination_port Foreign Key (id_destination_port) references Port(id_port),
     date_time_start               timestamp,
     date_time_end                 timestamp
 );
@@ -150,8 +145,8 @@ create table Cargo_Manifest(
 create table Trip(
     id_trip                   integer constraint pk_trip Primary Key,
     ship_imo                  char(10) constraint fk_trip_ship references Ship(imo_code),
-    id_start_port             integer constraint fk_trip_start_port references Port(id_port),
-    id_destination_port       integer constraint fk_trip_destination_port references Port(id_port)
+    id_start_port             char(5) constraint fk_trip_start_port references Port(id_port),
+    id_destination_port       char(5) constraint fk_trip_destination_port references Port(id_port)
 );
 
 create table Client(

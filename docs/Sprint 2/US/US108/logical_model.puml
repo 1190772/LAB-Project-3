@@ -32,7 +32,6 @@ entity ISO {
 * length_code
 * width_height_code
 * container_type_code
-* reduced_strength_code
 }
 
 entity Length {
@@ -49,12 +48,6 @@ entity Width_Height {
 
 entity Container_Type {
 * container_type_code
---
-* value
-}
-
-entity Reduced_Strength {
-* reduced_strength_code
 --
 * value
 }
@@ -133,6 +126,7 @@ entity Position_Ship {
 * heading
 * position
 * transceiver_class
+* cargo
 }
 
 entity Role {
@@ -164,7 +158,6 @@ entity Container_Equipment_Identifier {
 ISO }o--|| Length
 ISO }o--|| Width_Height
 ISO }o--|| Container_Type
-ISO }o--|| Reduced_Strength
 
 Container }o--|| Container_Owner
 Container }o--|| Container_Equipment_Identifier
