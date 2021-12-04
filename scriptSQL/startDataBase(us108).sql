@@ -105,11 +105,6 @@ create table Ship(
 create table Position_Ship(
     id_ship                   char(10), constraint fk_ship_position_ship Foreign Key (id_ship) references Ship(imo_code),
     base_date_time  	      timestamp,
-    latitude			      number(7,5),
-    longitude			      number(8,5),
-    sog	    			      number(3,1),
-    cog 			          number(3,1),
-    heading			          integer constraint ck_heading_valid check (heading between 0 and 359),
     latitude			      number(12,9),
     longitude			      number(12,9),
     sog	    			      number(4,1),
