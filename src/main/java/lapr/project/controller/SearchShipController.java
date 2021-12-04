@@ -3,7 +3,6 @@ package lapr.project.controller;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipBST;
 import lapr.project.model.ShipPosition;
-import lapr.project.utils.DatabaseConnection;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -29,10 +28,12 @@ public class SearchShipController {
     /**
      * Builds an instance of the Controller.
      */
-    public SearchShipController() {}
-
-    public void getShips() {
+    public SearchShipController() {
         shipBST = App.getInstance().getCompany().getShips();
+    }
+
+    public void refreshShips() throws SQLException {
+        App.getInstance().getCompany().refreshShips();
     }
 
     /**

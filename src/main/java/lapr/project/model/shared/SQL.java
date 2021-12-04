@@ -4,7 +4,6 @@ import lapr.project.utils.DatabaseConnection;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Scanner;
 

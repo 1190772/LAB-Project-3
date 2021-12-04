@@ -26,12 +26,8 @@ public class TrafficManagerUI implements Runnable {
     public void run() {
         List<MenuItem> options = new ArrayList<>();
         options.add(new MenuItem("Import Ships From File", new ImportShipsUI()));
-        try {
-            options.add(new MenuItem("Search a ship", new SearchShipUI()));
-            options.add(new MenuItem("TopN Ships", new TopNShipsUI()));
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        options.add(new MenuItem("Search a ship", new SearchShipUI()));
+        options.add(new MenuItem("TopN Ships", new TopNShipsUI()));
         int option = 0;
         do {
             option = Utils.showAndSelectIndex(options, "\n\nTraffic Manager Menu:");

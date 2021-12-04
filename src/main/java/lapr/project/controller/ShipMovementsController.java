@@ -3,7 +3,6 @@ package lapr.project.controller;
 
 import lapr.project.model.*;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 

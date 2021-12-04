@@ -1,8 +1,6 @@
 package lapr.project.model;
 
-import lapr.project.controller.App;
 import lapr.project.ui.auth.AuthFacade;
-import lapr.project.utils.TwoDTree;
 
 import java.sql.SQLException;
 
@@ -11,12 +9,12 @@ public class Company {
 
     private final AuthFacade authFacade;
     private final ShipBST shipBST;
-    private final TwoDTree<Port> port2DTree;
+    private final Port2DTree port2DTree;
 
     public Company(String designation) {
         this.designation = designation;
         shipBST = new ShipBST();
-        port2DTree = new TwoDTree<>();
+        port2DTree = new Port2DTree();
         this.authFacade = new AuthFacade();
     }
 
@@ -24,17 +22,22 @@ public class Company {
         return designation;
     }
 
-    public ShipBST getShips() {
-        try {
-            shipBST.loadShipsFromDatabase();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return shipBST;
+    public ShipBST getShips() { return shipBST; }
+
+    public void refreshShips() throws SQLException {
+        shipBST.loadShipsFromDatabase();
     }
 
-    public TwoDTree<Port> getPorts() {
+    public Port2DTree getPorts() {
     return port2DTree;
+    }
+
+    public void refreshPorts() {
+        try {
+            port2DTree.loadPortsFromDatabase();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     public AuthFacade getAuthFacade() {

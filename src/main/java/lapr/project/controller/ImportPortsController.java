@@ -1,10 +1,11 @@
 package lapr.project.controller;
 
 import lapr.project.model.Port;
-import lapr.project.utils.TwoDTree;
+import lapr.project.model.Port2DTree;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -17,7 +18,7 @@ public class ImportPortsController {
     /**
      * Port 2D-tree.
      */
-    private final TwoDTree<Port> ports;
+    private final Port2DTree ports;
 
     /**
      * Builds an instance of the Controller.
@@ -33,6 +34,7 @@ public class ImportPortsController {
      */
     public void importPorts(String fileName) {
         String[] parameters;
+        ArrayList<Port> list = new ArrayList<>();
 
         try (Scanner in = new Scanner((new FileReader(fileName)))) {
             in.nextLine();
@@ -44,10 +46,15 @@ public class ImportPortsController {
                 String name = parameters[3];
                 double latitude = Double.parseDouble(parameters[4]);
                 double longitude = Double.parseDouble(parameters[5]);
-                ports.insert(new Port(id, name, continent, country, latitude, longitude), latitude, longitude);
+                list.add(new Port(id, name, continent, country, latitude, longitude));
             }
+            ports.createdBalancedPort2DTree(list);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    public void saveShipsToDb() {
+ports.savePortsToDb();
+}
 }

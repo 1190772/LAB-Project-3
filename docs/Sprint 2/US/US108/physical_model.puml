@@ -1,40 +1,29 @@
 @startuml
 
+entity Trip {
+* id_trip                   integer
+--
+* ship_imo                  char(10)
+* id_start_port             char(5)
+* id_destination_port       char(5)
+* date_time_start           timestamp
+* date_time_end             timestamp
+}
+
 entity Container {
 * id_container              char(11)
 --
-* tare                      integer
 * iso_code                  char(4)
-refrigeration_temperature   number(3,1)
 
+* tare                      integer
 * max_weight_incl_container integer
 * max_weight                integer
-* max_volume                integer
+* max_volume                number(3,1)
 
-*csc_plate                  varChar(30)
-acep                        integer
-pes_date                    date
-}
-
-entity Owner {
-* id_owner                  char(3)
---
-* name                      varChar(30)
-}
-
-entity ID_Container {
-* id_container              char(11)
---
 * id_owner                  char(3)
 * id_equipment              char(1)
-* serial_number             integer(6)
-* check_digit               integer(1)
-}
-
-entity Equipment_Identifier {
-* id_equipment              char(1)
---
-* description               varChar(100)
+* serial_number             integer
+* check_digit               integer
 }
 
 entity ISO {
@@ -42,8 +31,7 @@ entity ISO {
 --
 * length_code               char(1)
 * width_height_code         char(1)
-* container_type_code       char(1)
-* reduced_strength_code     char(1)
+* container_type_code       char(2)
 }
 
 entity Length {
@@ -59,123 +47,145 @@ entity Width_Height {
 }
 
 entity Container_Type {
-* container_type_code       char(1)
+* container_type_code       char(2)
 --
-* value                     integer
+* value                     varChar(200)
 }
 
-entity Reduced_Strength {
-* reduced_strength_code     char(1)
---
-* value                     integer
-}
-
-entity Cargo_Manifesto {
+entity Cargo_Manifest {
+* id_cargo_manifest         integer
 * id_container              char(11)
-* date_time                 date
 --
- id_truck                   char(?)
- id_ship                    char(?)
- id_port                    char(5)
- id_warehouse               char(?)
-* position_code             integer(6)
-* payload                   number(5,1)
+* id_trip                   integer
+* position_code             number(6,0)
+* cargo_weight              integer
+* refrigeration_temperature number(3,1)
+* id_client                 integer
+}
+
+entity Unloading_Cargo_Manifest {
+* id_cargo_manifest         integer
+* id_container              char(11)
+--
+}
+
+entity Loading_Cargo_Manifest {
+* id_cargo_manifest         integer
+* id_container              char(11)
+--
 }
 
 entity Truck {
-* id_truck                  char(?)
+* id_truck                  integer
 --
-* id_employee               char(?)
+* id_employee               integer
 }
 
 entity Ship {
 * imo_code                  char(10)
 --
-* mmsi_code                 integer(9)
+* mmsi_code                 integer
 * name_ship                 varChar(30)
-* number_generators         integer(2)
-* power_out_generator       integer(3/4)?
-* call_sign                 char(5)
-* vessel_type               integer(20)?
-* Length_ship               integer(3)
-* width_ship                integer(2)
+* number_generators         integer
+* power_out_generator       integer
+* call_sign                 varChar(9)
+* vessel_type               integer
+* Length_ship               integer
+* width_ship                integer
+* capacity_ship             integer
 * draft                     number(3,1)
-* capacity_ship             integer(5)
-}
-
-entity Position_Ship {
-* imo_code			        char(4)
-* base_date_time	        date
---
-* latitude			        number(7,5)
-* longitude			        number(7,5)
-* sog				        number(3,1)
-* cog			            number(3,1)
-* heading			        integer(3)
-* position			
-* transceiver_class         char(1)
+* id_employee_captain       integer
 }
 
 entity Port {
-* id_port			        char(5)
+* id_port                   integer
 --
-* name				        varChar(20)
-* continent			        varChar(10)
-* country			        varChar(20)
-* latitude			        number(11,9)
-* longitude			        number(11,9)
+* name_port                 varChar(20)
+* continent_port            varChar(10)
+* country_port              varChar(20)
+* latitude_port             number(12,9)
+* longitude_port            number(12,9)
 }
 
 entity Warehouse {
-* id_warehouse			    char(?)
---
-* name				        varChar(30)
-* continent			        varChar(20)
-* country			        varChar(20)
-* latitude			        number(4,2)
-* longitude			        number(4,2)
+* id_warehouse              integer
+* name    	   			    varChar(30)
+* continent		    	    varChar(20)
+* country	         	    varChar(20)
+* latitude		    	    number(12,9)
+* longitude 	    	    number(12,9)
 }
 
 entity Employee{
-* id_employee			    char(?)
+* id_employee               integer
 --
-* role_id		    	    integer(2)
-* name_employee			    varChar(30)
-* user_password			    varChar(15)
- address_employee		    varChar(30)
- phone_employee			    integer(20)
+* role_id                   integer
+* name_employee             varChar(30)
+* user_password             varChar(15)
+ address_employee           varChar(30)
+ phone_employee             integer
+}
 
+entity Position_Ship {
+* imo_code                  char(10)
+* base_date_time            timestamp
+--
+* latitude                  number(12,9)
+* longitude                 number(12,9)
+* sog                       number(4,1)
+* cog                       number(4,1)
+* heading                   integer
+* transceiver_class         char(1)
+* cargo                     integer
 }
 
 entity Role {
-* role_id	    		    integer(2)
+* role_id                   integer
 --
-* designation			    varChar(30)
+* designation               varChar(30)
 }
 
+entity Client {
+* id_client                 integer
+--
+* name                      varChar(30)
+* address                   varChar(40)
+* phone_number              integer
+}
 
-Length ||--o{ ISO
-Width_Height ||--o{ ISO
-Container_Type ||--o{ ISO
-Reduced_Strength ||--o{ ISO
+entity Container_Owner {
+* id_owner                  char(3)
+--
+* name_owner                varChar(40)
+}
 
-Owner ||--|{ ID_Container
-Equipment_Identifier ||--o{ ID_Container
+entity Container_Equipment_Identifier {
+* id_equipment              char(1)
+--
+* description               varChar(100)
+}
 
-ID_Container ||--|| Container
-ISO ||--o{ Container
-Cargo_Manifesto ||--o{ Container
-Cargo_Manifesto ||--o| Ship
-Cargo_Manifesto ||--o| Truck
-Ship ||--|| Position_Ship
+ISO }o--|| Length
+ISO }o--|| Width_Height
+ISO }o--|| Container_Type
 
-Cargo_Manifesto }o--o| Warehouse
-Cargo_Manifesto }o--o| Port
+
+Container }o--|| Container_Owner
+Container }o--|| Container_Equipment_Identifier
+Container }o--|| ISO
+Trip ||--|| Cargo_Manifest
+Cargo_Manifest }o--|| Container
+Cargo_Manifest }|--|| Client
+Ship ||--o{ Position_Ship
 
 Truck ||--o{ Employee
+Ship ||--o{ Trip
 Ship ||--o{ Employee
 Warehouse ||--o{ Employee
 Port ||--o{ Employee
 Employee }o--|| Role
+
+Unloading_Cargo_Manifest ||--|| Cargo_Manifest
+Loading_Cargo_Manifest ||--|| Cargo_Manifest
 
 @enduml

@@ -12,13 +12,17 @@ public class TopNShipsUI implements Runnable {
 
     private final TopNShipsController controller;
 
-    public TopNShipsUI() throws SQLException {
+    public TopNShipsUI() {
         controller = new TopNShipsController();
     }
 
     @Override
     public void run() {
-        controller.getShips();
+        try {
+            controller.refreshShips();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         int n ;
         LocalDateTime startDateTime;
         LocalDateTime endDateTime;

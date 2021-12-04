@@ -10,7 +10,7 @@ import java.util.Comparator;
  * @author David Magalhães 1201237
  */
 public class TwoDTree<T> {
-    protected static class Node2D<T> {
+    public static class Node2D<T> {
     protected Point2D.Double coords;
     protected T element;
     protected Node2D<T> left;
@@ -23,29 +23,31 @@ public class TwoDTree<T> {
      * @param x x value
      * @param y y value
      */
-    protected Node2D(T element, double x, double y){
-    this.element = element;
-    this.coords = new Point2D.Double();
-    this.coords.x = x;
-    this.coords.y = y;
+    public Node2D(T element, double x, double y){
+        this.element = element;
+        this.coords = new Point2D.Double();
+        this.coords.x = x;
+        this.coords.y = y;
     }
 
     // accessor methods
-    protected double getX() { return coords.x; }
-    protected double getY() { return coords.y; }
-    protected T getElement() { return element; }
-    protected Node2D<T> getLeft() { return left; }
-    protected Node2D<T> getRight() { return right; }
+    public double getX() { return coords.x; }
+    public double getY() { return coords.y; }
+    public T getElement() { return element; }
+    public Node2D<T> getLeft() { return left; }
+    public Node2D<T> getRight() { return right; }
 
     // update methods
-    protected void setX(Double x) { coords.x = x; }
-    protected void setY(Double y) { coords.y = y; }
-    protected void setElement(Node2D<T> node) { element = node.element; }
-    protected void setLeft(Node2D<T> leftChild) { left = leftChild; }
-    protected void setRight(Node2D<T> rightChild) { right = rightChild; }
+    public void setX(Double x) { coords.x = x; }
+    public void setY(Double y) { coords.y = y; }
+    public void setElement(Node2D<T> node) { element = node.element; }
+    public void setLeft(Node2D<T> leftChild) { left = leftChild; }
+    public void setRight(Node2D<T> rightChild) { right = rightChild; }
     }
 
     protected Node2D<T> root; // root of the tree
+
+    public Node2D<T> getRoot() { return root; }
 
     /* Constructs an empty TwoDTree. */
     public TwoDTree() { root = null; }
@@ -163,7 +165,7 @@ public class TwoDTree<T> {
         return closestNode;
     }
 
-    int balanceFactor(Node2D<T> node) {
+    public int balanceFactor(Node2D<T> node) {
         return height(node.getRight()) - height(node.getLeft());
     }
 

@@ -6,6 +6,8 @@ entity Trip {
 * ship_imo
 * id_start_port
 * id_destination_port
+* date_time_start
+* date_time_end
 }
 
 entity Container {
@@ -30,7 +32,6 @@ entity ISO {
 * length_code
 * width_height_code
 * container_type_code
-* reduced_strength_code
 }
 
 entity Length {
@@ -51,34 +52,25 @@ entity Container_Type {
 * value
 }
 
-entity Reduced_Strength {
-* reduced_strength_code
---
-* value
-}
-
 entity Cargo_Manifest {
-* id_cargo_manifest
---
-* id_destination_port
-* date_time_start
-* date_time_end
-}
-
-entity Trip_Manifests {
-* id_cargo_manifest
-* id_trip
---
-}
-
-entity Container_Shipping {
 * id_cargo_manifest
 * id_container
 --
+* id_trip
 * position_code
 * cargo_weight
 * refrigeration_temperature
 * id_client
+}
+
+entity Unloading_Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+}
+
+entity Loading_Cargo_Manifest {
+* id_cargo_manifest
+* id_container
 }
 
 entity Truck {
@@ -144,6 +136,7 @@ entity Position_Ship {
 * heading
 * position
 * transceiver_class
+* cargo
 }
 
 entity Role {
@@ -175,16 +168,13 @@ entity Container_Equipment_Identifier {
 ISO }o--|| Length
 ISO }o--|| Width_Height
 ISO }o--|| Container_Type
-ISO }o--|| Reduced_Strength
 
 Container }o--|| Container_Owner
 Container }o--|| Container_Equipment_Identifier
 Container }o--|| ISO
-Cargo_Manifest ||--|{ Container_Shipping
-Container_Shipping }|--|| Container
-Container_Shipping }|--|| Client
-Trip ||--|{ Trip_Manifests
-Trip_Manifests }|--|| Cargo_Manifest
+Trip ||--|| Cargo_Manifest
+Cargo_Manifest }o--|| Container
+Cargo_Manifest }|--|| Client
 Ship ||--o{ Position_Ship
 
 Truck ||--o{ Employee
@@ -193,5 +183,8 @@ Ship ||--o{ Employee
 Warehouse ||--o{ Employee
 Port ||--o{ Employee
 Employee }o--|| Role
+
+Unloading_Cargo_Manifest ||--|| Cargo_Manifest
+Loading_Cargo_Manifest ||--|| Cargo_Manifest
 
 @enduml

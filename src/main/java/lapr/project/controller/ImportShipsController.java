@@ -6,9 +6,7 @@ import lapr.project.model.ShipPosition;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**

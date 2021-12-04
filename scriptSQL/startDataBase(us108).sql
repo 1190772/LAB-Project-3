@@ -13,10 +13,10 @@ drop table Position_Ship cascade constraints purge;
 drop table Port cascade constraints purge;
 drop table Warehouse cascade constraints purge;
 drop table Cargo_Manifest cascade constraints purge;
+drop table Unloading_Cargo_Manifest cascade constraints purge;
+drop table Loading_Cargo_Manifest cascade constraints purge;
 drop table Trip cascade constraints purge;
-drop table Container_Shipping cascade constraints purge;
 drop table Client cascade constraints purge;
-drop table Trip_Manifests cascade constraints purge;
 
 
 create table Owner(
@@ -110,6 +110,11 @@ create table Position_Ship(
     sog	    			      number(3,1),
     cog 			          number(3,1),
     heading			          integer constraint ck_heading_valid check (heading between 0 and 359),
+    latitude			      number(12,9),
+    longitude			      number(12,9),
+    sog	    			      number(4,1),
+    cog 			          number(4,1),
+    heading			          integer constraint ck_heading_valid check (heading between 0 and 359 or heading = 511),
     transceiver_class         char(1),
     Constraint pk_position_ship Primary Key (id_ship, base_date_time)
 );
@@ -119,8 +124,8 @@ create table Port(
     name				      varChar(20),
     continent			      varChar(10),
     country			          varChar(20),
-    latitude			      number(11,9),
-    longitude			      number(11,9)
+    latitude			      number(12,9),
+    longitude			      number(12,9)
 );
 
 create table Warehouse(
@@ -128,22 +133,8 @@ create table Warehouse(
     name    	   			  varChar(30),
     continent		    	  varChar(20),
     country		         	  varChar(20),
-    latitude		    	  number(4,2),
-    longitude		    	  number(4,2)
-);
-
-create table Cargo_Manifest(
-    id_cargo_manifest             integer constraint pk_cargo_manifest Primary Key,
-    id_destination_port           char(5), constraint fk_cargo_manifest_destination_port Foreign Key (id_destination_port) references Port(id_port),
-    date_time_start               timestamp,
-    date_time_end                 timestamp
-);
-
-create table Trip(
-    id_trip                   integer constraint pk_trip Primary Key,
-    ship_imo                  char(10) constraint fk_trip_ship references Ship(imo_code),
-    id_start_port             char(5) constraint fk_trip_start_port references Port(id_port),
-    id_destination_port       char(5) constraint fk_trip_destination_port references Port(id_port)
+    latitude		    	  number(12,9),
+    longitude		    	  number(12,9)
 );
 
 create table Client(
@@ -153,18 +144,38 @@ create table Client(
     phone_client              integer constraint ck_phone_client_nine_digits check (phone_client > 99999999 and phone_client < 1000000000)
 );
 
-create table Container_Shipping(
-    id_cargo_manifest         integer, constraint fk_container_shipping_cargo_manifest Foreign Key (id_cargo_manifest) references Cargo_Manifest(id_cargo_manifest),
-    id_container              char(11), constraint fk_container_shipping_container Foreign Key (id_container) references Container(id_container),
+create table Trip(
+    id_trip                   integer constraint pk_trip Primary Key,
+    ship_imo                  char(10) constraint fk_trip_ship references Ship(imo_code),
+    id_start_port             char(5) constraint fk_trip_start_port references Port(id_port),
+    id_destination_port       char(5) constraint fk_trip_destination_port references Port(id_port),
+    date_time_start               timestamp,
+    date_time_end                 timestamp
+);
+
+
+create table Cargo_Manifest(
+    id_cargo_manifest         integer,
+    id_container              char(11), constraint fk_container_cargo_manifest Foreign Key (id_container) references Container(id_container),
+    id_trip                   integer, constraint fk_trip_cargo_manifest Foreign Key (id_trip) references Trip(id_trip),
     position_code             number(6,0) constraint ck_position_code_positive check (position_code > 0),
     cargo_weight              integer,
     refrigeration_temperature number(3,1),
     id_client                 integer constraint fk_container_shipping_client references Client(id_client),
-    Constraint pk_Container_Shipping Primary Key (id_cargo_manifest, id_container)
+    Constraint pk_Cargo_Manifest Primary Key (id_cargo_manifest, id_container)
 );
 
-create table Trip_Manifests(
-    id_cargo_manifest         integer constraint fk_trip_manifests_cargo_manifest references Cargo_Manifest(id_cargo_manifest),
-    id_trip                   integer constraint fk_trip_manifests_trip references Trip(id_trip),
-    Constraint pk_trip_manifests Primary Key (id_cargo_manifest, id_trip)
+
+create table Unloading_Cargo_Manifest(
+    id_cargo_manifest         integer,
+    id_container              char(11),
+    Constraint fk_cargo_manifest_unloading_cargo_manifest Foreign Key (id_cargo_manifest, id_container) references Cargo_Manifest(id_cargo_manifest, id_container),
+    Constraint pk_Unloading_Cargo_Manifest Primary Key (id_cargo_manifest, id_container)
+);
+
+create table Loading_Cargo_Manifest(
+    id_cargo_manifest         integer,
+    id_container              char(11),
+    Constraint fk_cargo_manifest_loading_cargo_manifest Foreign Key (id_cargo_manifest, id_container) references Cargo_Manifest(id_cargo_manifest, id_container),
+    Constraint pk_Loading_Cargo_Manifest Primary Key (id_cargo_manifest, id_container)
 );

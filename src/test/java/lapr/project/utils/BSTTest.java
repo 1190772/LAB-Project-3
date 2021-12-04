@@ -1,6 +1,7 @@
 
 package lapr.project.utils;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -149,7 +150,22 @@ public class BSTTest {
 
         instance.root = null;
         assertNull(instance.smallestElement());
-    }    
+    }
+
+    /**
+     * Test of largestElement method, of class TREE.
+     */
+    @Test
+    public void testLargestElement() {
+        assertEquals(new Integer(50), instance.largestElement());
+        instance.remove(50);
+        assertEquals(new Integer(40), instance.largestElement());
+        instance.remove(40);
+        assertEquals(new Integer(30), instance.largestElement());
+
+        instance.root = null;
+        assertNull(instance.largestElement());
+    }
     /**
      * Test of processBstByLevel method, of class TREE.
      */
@@ -179,6 +195,9 @@ public class BSTTest {
     public void testInOrder() {
         List<Integer> lExpected = Arrays.asList(inorderT);
         assertEquals(lExpected, instance.inOrder());
+
+        instance.root = null;
+        Assertions.assertFalse(instance.inOrder().iterator().hasNext());
     }
     /**
      * Test of preOrder method, of class BST.
@@ -187,6 +206,9 @@ public class BSTTest {
     public void testpreOrder() {
         List<Integer> lExpected = Arrays.asList(preorderT);
         assertEquals(lExpected, instance.preOrder());
+
+        instance.root = null;
+        Assertions.assertFalse(instance.preOrder().iterator().hasNext());
     }
     /**
      * Test of posOrder method, of class BST.
@@ -195,6 +217,9 @@ public class BSTTest {
     public void testposOrder() {
         List<Integer> lExpected = Arrays.asList(posorderT);
         assertEquals(lExpected, instance.posOrder());
+
+        instance.root = null;
+        Assertions.assertFalse(instance.posOrder().iterator().hasNext());
     }
 
     @Test

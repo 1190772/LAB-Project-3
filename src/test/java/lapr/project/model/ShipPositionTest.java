@@ -65,7 +65,7 @@ class ShipPositionTest {
 
     @Test
     void testToString() {
-        String expected="Ship Position{Base date and time = 2020-12-24T13:30, Latitude = 42.97875, Longitude = -66.97001, SOG = 12.9, COG = 13.1, Heading = 355.0, Transceiver Class = B, Cargo = 355.0}";
+        String expected="Ship Position{Base date and time = 2020-12-24T13:30, Latitude = 42.97875, Longitude = -66.97001, SOG = 12.9, COG = 13.1, Heading = 355.0, Transceiver Class = B, Cargo = 0}";
         Assertions.assertEquals(expected, shipPosition.toString());
     }
 

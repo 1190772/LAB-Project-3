@@ -22,12 +22,10 @@ public class TopNShipsController {
     /**
      * Builds an instance of the Controller.
      */
-    public TopNShipsController() {
+    public TopNShipsController() { shipBST = App.getInstance().getCompany().getShips(); }
 
-    }
-
-    public void getShips() {
-        shipBST = App.getInstance().getCompany().getShips();
+    public void refreshShips() throws SQLException {
+        App.getInstance().getCompany().refreshShips();
     }
 
     /**
