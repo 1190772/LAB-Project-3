@@ -1,9 +1,7 @@
 package lapr.project.ui.console;
 
-import lapr.project.controller.App;
 import lapr.project.controller.ImportShipsController;
 
-import java.sql.SQLException;
 
 /**
  * UI of US101

@@ -3,7 +3,6 @@ package lapr.project.utils;
 import lapr.project.model.shared.Utils;
 
 import java.awt.geom.Point2D;
-import java.util.ArrayList;
 import java.util.Comparator;
 
 /**

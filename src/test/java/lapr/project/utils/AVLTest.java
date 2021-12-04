@@ -10,8 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
@@ -112,6 +111,8 @@ public class AVLTest {
     @Test
     public void testEquals() {
         AVL<Integer> instance = new AVL();
+        assertEquals(instance.root(), instance.root);
+
         int arr[] = {1, 8};
         for (int i = 0; i < arr.length; i++)
         {

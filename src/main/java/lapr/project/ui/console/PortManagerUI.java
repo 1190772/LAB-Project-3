@@ -25,7 +25,7 @@ public class PortManagerUI implements Runnable{
     int option;
 
     do {
-        option = Utils.showAndSelectIndex(options, "\n\nTraffic Manager Menu:");
+        option = Utils.showAndSelectIndex(options, "\n\nPort Manager Menu:");
 
         if ((option >= 0) && (option < options.size())) {
         options.get(option).run();

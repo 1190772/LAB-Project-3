@@ -71,6 +71,11 @@ public class ShipPositionBSTTest {
 
         Assertions.assertEquals(-1.0, new ShipPositionBST().travelledDistance(), 0);
         ShipPositionBST newBst = new ShipPositionBST();
+        LocalDateTime now = LocalDateTime.now();
+        Assertions.assertEquals(-1, newBst.travelledDistance(now, now));
+        newBst.insert(new ShipPosition(now, 66, -66, 0, 0, 0, 'B', 0));
+        Assertions.assertEquals(0, newBst.travelledDistance(now, now));
+        newBst = new ShipPositionBST();
         newBst.insert(new ShipPosition(null, 66, -66, 0, 0, 0, 'B', 0));
         Assertions.assertEquals(0.0, newBst.travelledDistance(), 0);
         Assertions.assertEquals(travelledDistance[0], ((ArrayList<Ship>) shipBST.inOrder()).get(0).getPosition().travelledDistance(((ArrayList<Ship>) shipBST.inOrder()).get(0).getPosition().smallestElement().getBaseDateTime(), ((ArrayList<Ship>) shipBST.inOrder()).get(0).getPosition().largestElement().getBaseDateTime()));

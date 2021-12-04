@@ -1,5 +1,6 @@
 package lapr.project.utils;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -99,6 +100,26 @@ class TwoDTreeTest {
         assertEquals(-2, instance.balanceFactor(instance.root));
         assertEquals(-2, instance.balanceFactor(instance.root.getLeft()));
         assertEquals(0, instance.balanceFactor(instance.root.getRight()));
+    }
+
+    @Test
+    public void nodeTest() {
+        TwoDTree<Integer> instance = new TwoDTree<>();
+        instance.insert(1, 0.0, 0.0);
+        instance.root().setElement(new TwoDTree.Node2D<>(2, 0.1, 0.1));
+        instance.root().setX(0.1);
+        instance.root().setY(0.2);
+        Assertions.assertEquals(2, instance.root().getElement());
+        Assertions.assertEquals(0.1, instance.root().getX());
+        Assertions.assertEquals(0.2, instance.root().getY());
+    }
+
+    @Test
+    public void emptyTreeTest() {
+        TwoDTree<Integer> instance = new TwoDTree<>();
+        Assertions.assertTrue(instance.isEmpty());
+        instance.insert(1, 0.0, 0.0);
+        Assertions.assertFalse(instance.isEmpty());
     }
 
 }

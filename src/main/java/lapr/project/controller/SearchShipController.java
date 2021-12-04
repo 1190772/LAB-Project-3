@@ -3,7 +3,6 @@ package lapr.project.controller;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipBST;
 import lapr.project.model.ShipPosition;
-import lapr.project.utils.DatabaseConnection;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
