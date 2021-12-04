@@ -7,18 +7,19 @@ Begin
     SELECT COUNT(*) into v_count from employee e
         where e.id_employee = idEmployee
             and e.role_id = (select r.role_id from role r
-                                where r.designation = 'Ship Captain');
+                                where r.designation = 'Ship captain');
     if v_count = 0 then
         raise invalidID;
     end if;
 
-    SELECT count(*) into v_count from ship s, trip t, trip_manifests tm, cargo_manifest cm
+
+    SELECT count(*) into v_count from
+    (select distinct cm.id_cargo_manifest from ship s, trip t, cargo_manifest cm
         where s.id_employee_captain = idEmployee
             and s.imo_code = t.ship_imo
-            and t.id_trip=tm.id_trip
-            and tm.id_cargo_manifest=cm.id_cargo_manifest
-            and year = (select extract(year from cm.date_time_start) from cargo_manifest cm1
-                        where tm.id_cargo_manifest=cm1.id_cargo_manifest);
+            and t.id_trip=cm.id_trip
+            and year = (select extract(year from t.date_time_start) from trip t1
+                        where t1.id_trip=cm.id_trip));
 
     return v_count;
 EXCEPTION
@@ -32,27 +33,25 @@ create or replace FUNCTION averageContainersPerCargoPerYear(idEmployee employee.
 is
     v_count integer;
     invalidID exception;
-    result number(7,2);
 
 Begin
     SELECT COUNT(*) into v_count from employee e
             where e.id_employee = idEmployee
                 and e.role_id = (select r.role_id from role r
-                                    where r.designation = 'Ship Captain');
+                                    where r.designation = 'Ship captain');
         if v_count = 0 then
             raise invalidID;
         end if;
 
-        SELECT avg(count(*)) into result from ship s, trip t, trip_manifests tm, cargo_manifest cm
-                where s.id_employee_captain = idEmployee
-                    and s.imo_code = t.ship_imo
-                    and t.id_trip=tm.id_trip
-                    and tm.id_cargo_manifest=cm.id_cargo_manifest
-                    and year = (select extract(year from cm.date_time_start) from cargo_manifest cm1
-                                where tm.id_cargo_manifest=cm1.id_cargo_manifest)
-                group by cm.id_cargo_manifest;
+        SELECT count(*) into v_count from ship s, trip t, cargo_manifest cm
+                 where s.id_employee_captain = idEmployee
+                     and s.imo_code = t.ship_imo
+                     and t.id_trip=cm.id_trip
+                     and year = (select extract(year from t.date_time_start) from trip t1
+                                 where t1.id_trip=cm.id_trip);
 
-    return result;
+
+    return v_count/nCargoManifestsPerYear(idEmployee, year);
 EXCEPTION
     when invalidID then
         return null;
