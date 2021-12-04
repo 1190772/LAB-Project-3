@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+left to right direction
+
+class ShipPairsUI {
+- controller
+}
+
+class ShipPairsController {
+- ShipBST
++ getShipPairs()
+}
+
+class ShipBST {
++ getShipPairs()
+}
+
+class Ship {
+- ShipPositionBST
++ getPositions()
+}
+
+class ShipPositionBST {
+}
+
+class ShipPosition {
+-baseDateTime
+-latitude
+-longitude
+}
+
+ShipPairsUI ..> ShipPairsController
+ShipPairsController ..> ShipBST
+ShipBST --> Ship
+Ship ..> ShipPositionBST
+ShipPositionBST --> ShipPosition
+
+@enduml

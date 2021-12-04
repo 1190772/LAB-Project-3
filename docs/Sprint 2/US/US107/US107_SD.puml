@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+'hide footbox
+actor "Traffic Manager" as TM
+
+participant ":ShipPairsUI" as UI
+participant ":ShipPairsController" as CTRL
+participant ":Company" as COMP
+participant ":ShipBST" as BST
+
+activate TM
+TM -> UI : asks for pairs of ships
+activate UI
+activate CTRL
+
+autonumber 2.1
+
+UI -> CTRL : shipPairs = getShipsPairs()
+
+CTRL -> COMP : shipBST = getShips()
+activate COMP
+deactivate COMP
+
+CTRL -> BST : shipPairs = getShipPairs()
+activate BST
+deactivate BST
+
+deactivate CTRL
+
+UI --> TM : shows pairs of ships
+deactivate UI
+
+deactivate TM
+@enduml
