@@ -105,6 +105,11 @@ INSERT INTO ISO VALUES ('20P1','2','0','P1');
 INSERT INTO ISO VALUES ('25U3','2','5','U3');
 INSERT INTO ISO VALUES ('20S1','2','0','S1');
 
+INSERT INTO ISO VALUES ('20T1','2','0','T1');
+INSERT INTO ISO VALUES ('22S2','2','2','S2');
+INSERT INTO ISO VALUES ('20R3','2','0','R3');
+INSERT INTO ISO VALUES ('25H6','2','5','H6');
+
 
 
 -- ** tabela Container / espaço a mais no id container **
@@ -119,6 +124,12 @@ INSERT INTO Container VALUES ('NIKJ1111116', '25U2', 2100, 29500 , 27400 , 28.5 
 INSERT INTO Container VALUES ('ADIJ2222227', '22T8', 2400, 28500 , 26100 , 35   , 'ADI' , 'J' , 222222 , 7);
 INSERT INTO Container VALUES ('FILR4564568', '22H1', 2600, 26500 , 23900 , 36   , 'FIL' , 'R' , 456456 , 8);
 INSERT INTO Container VALUES ('BICJ1212129', '20P1', 2200, 26000 , 23800 , 34   , 'BIC' , 'J' , 121212 , 9);
+
+INSERT INTO Container VALUES ('BICJ4444445', '20S1', 2400, 30000 , 27600 , 37.7 , 'BIC' , 'J' , 444444 , 5);
+INSERT INTO Container VALUES ('NIKJ5555556', '25U3', 1900, 28000 , 26100 , 34.5 , 'NIK' , 'J' , 555555 , 6);
+INSERT INTO Container VALUES ('ADIZ6666667', '20R3', 2300, 26000 , 23700 , 34   , 'ADI' , 'Z' , 666666 , 7);
+INSERT INTO Container VALUES ('FILR7777778', '25H6', 2500, 29000 , 26500 , 35   , 'FIL' , 'R' , 777777 , 8);
+INSERT INTO Container VALUES ('BICR8888889', '22S2', 2200, 29300 , 27100 , 37   , 'BIC' , 'R' , 888888 , 9);
 
 
 
@@ -153,6 +164,13 @@ INSERT INTO Employee VALUES (333355, 8888,'Pedro Cruz'     ,'123gm', 'rua pbd,Po
 INSERT INTO Employee VALUES (333366, 8888,'Ruben Silva'    ,'123gp', 'rua pbe,Porto',911222299 );
 INSERT INTO Employee VALUES (333377, 8888,'Jorge Mendes'   ,'123gq', 'rua pbx,Porto',911222211 );
 INSERT INTO Employee VALUES (333388, 8888,'Kendrick Lamar' ,'123gt', 'rua pby,Porto',911222233 );
+
+INSERT INTO Employee VALUES (343381, 8888,'Jermain Cole' , '123ggg', 'rua pbyx,Porto',991222233 );
+INSERT INTO Employee VALUES (343382, 8888,'Sergio Ramos' , '123gtg', 'rua pbyy,Porto',991222233 );
+INSERT INTO Employee VALUES (343383, 8888,'Bruna Meiga'  , '123gtg', 'rua pbyz,Porto',991222233 );
+INSERT INTO Employee VALUES (343384, 8888,'Tyson Fury'   , '123gtg', 'rua pbyd,Porto',991222233 );
+INSERT INTO Employee VALUES (343385, 8888,'Manuel Fatela', '123gtg', 'rua pbye,Porto',991222233 );
+
 INSERT INTO Employee VALUES (565656, 9999,'Bruna Lopes'    ,'123vv', 'rua d, Porto' ,911222228 );
 INSERT INTO Employee VALUES (656565, 1010,'Lionel Neto'    ,'123nn', 'rua r, Porto' ,911222229 );
 INSERT INTO Employee VALUES (676767, 1010,'Marcos Lopes'   ,'123kk', 'rua q, Porto' ,911222211 );
@@ -180,6 +198,12 @@ INSERT INTO Ship VALUES ('IMO3333333',111122226, 'Titanic'     ,2, 400, 'YH4FF' 
 INSERT INTO Ship VALUES ('IMO4444444',111122227, 'Monica'      ,3, 400, 'KWQ8K' ,54, 360, 15 ,8.8  ,234 ,333366);
 INSERT INTO Ship VALUES ('IMO5555555',111122228, 'Fasty'       ,3, 400, 'CEE8N' ,32, 430, 18 ,6.8  ,560 ,333377);
 INSERT INTO Ship VALUES ('IMO6666666',111122229, 'Caribbean'   ,2, 400, 'UEE6V' ,33, 402, 15 ,8.8  ,540 ,333388);
+
+INSERT INTO Ship VALUES ('IMO7777777',211122229, 'References'          ,3, 400, 'ESE6V' ,33, 390, 12 ,9    ,440 ,343381);
+INSERT INTO Ship VALUES ('IMO8888888',611122221, 'Black Pearl'         ,4, 400, 'PTE6V' ,43, 480, 20 ,11.8 ,600 ,343382);
+INSERT INTO Ship VALUES ('IMO9999999',611122222, 'Queen Anne Revenge'  ,2, 400, 'BRE6V' ,45, 440, 14 ,8.7  ,560 ,343383);
+INSERT INTO Ship VALUES ('IMO6161616',611122223, 'The Fair Wind'       ,3, 400, 'USE6V' ,53, 395, 15 ,9.8  ,440 ,343384);
+INSERT INTO Ship VALUES ('IMO6262626',611122224, 'Royal Fortune'       ,2, 400, 'CVE6V' ,35, 400, 16 ,8.8  ,500 ,343385);
 
 
 -- ** tabela position ship**
@@ -220,31 +244,70 @@ INSERT INTO Trip VALUES (1237,'IMO4444444','IN233', 'ES456', timestamp '2021-03-
 INSERT INTO Trip VALUES (1238,'IMO5555555','ES456', 'PT345', timestamp '2021-09-01 19:35:33', timestamp '2021-10-12 08:36:33');
 INSERT INTO Trip VALUES (1239,'IMO6666666','PT345', 'IN233', timestamp '2021-08-20 19:35:33', timestamp '2021-09-22 09:36:33');
 
+INSERT INTO Trip VALUES (2235,'IMO7777777','PT345', 'AN345', timestamp '2021-02-08 19:35:33', timestamp '2021-03-01 06:13:23');
+INSERT INTO Trip VALUES (2236,'IMO8888888','AN345', 'IN233', timestamp '2021-03-15 19:35:33', timestamp '2021-04-22 07:26:13');
+INSERT INTO Trip VALUES (2237,'IMO9999999','IN233', 'ES456', timestamp '2021-04-23 19:35:33', timestamp '2021-05-30 12:46:22');
+INSERT INTO Trip VALUES (2238,'IMO6161616','ES456', 'PT345', timestamp '2020-05-21 19:35:33', timestamp '2021-01-12 15:56:44');
+INSERT INTO Trip VALUES (2239,'IMO6262626','PT345', 'IN233', timestamp '2020-06-10 19:35:33', timestamp '2021-01-12 18:16:12');
+
+
 -- ** tabela Client **
 
-INSERT INTO Client VALUES (8884441, 'Manuel Ferreira', 'Rua xx,Porto', 993399331 );
-INSERT INTO Client VALUES (8884442, 'Pedro Lopes'    , 'Rua xy,Porto', 993399332 );
-INSERT INTO Client VALUES (8884443, 'David Silva'    , 'Rua xz,Porto', 993399333 );
-INSERT INTO Client VALUES (8884444, 'Bruno Furtado'  , 'Rua xd,Porto', 993399334 );
+INSERT INTO Client VALUES (8884441, 'Manuel Ferreira', 'Rua xx,Porto' , 993399331 );
+INSERT INTO Client VALUES (8884442, 'Pedro Lopes'    , 'Rua xy,Porto' , 993399332 );
+INSERT INTO Client VALUES (8884443, 'David Silva'    , 'Rua xz,Porto' , 993399333 );
+INSERT INTO Client VALUES (8884444, 'Bruno Furtado'  , 'Rua xd,Porto' , 993399334 );
+INSERT INTO Client VALUES (8884445, 'Manuel Ferreira', 'Rua xxd,Porto', 993399335 );
+INSERT INTO Client VALUES (8884446, 'Pedro Lopes'    , 'Rua xye,Porto', 993399336 );
+INSERT INTO Client VALUES (8884447, 'David Silva'    , 'Rua xzr,Porto', 993399337 );
+INSERT INTO Client VALUES (8884448, 'Bruno Furtado'  , 'Rua xdb,Porto', 993399338 );
+
+INSERT INTO Client VALUES (1884441, 'Bruna Guimarães', 'Rua xdbs,Porto', 999399331 );
+INSERT INTO Client VALUES (1884442, 'Jõao Rodrigues' , 'Rua xdbd,Porto', 999399332 );
+INSERT INTO Client VALUES (1884443, 'Mike Limeiro'   , 'Rua xdbg,Porto', 999399333 );
+INSERT INTO Client VALUES (1884444, 'Nuno Santo'     , 'Rua xdbh,Porto', 999399334 );
+INSERT INTO Client VALUES (1884445, 'Pedro Gonçalves', 'Rua xdbl,Porto', 999399335 );
 
 
 -- ** tabela cargo_manifest **
 
-INSERT INTO Cargo_Manifest VALUES (22111,'BICU1234561',1231,120703,23, 7,8884441);
-INSERT INTO Cargo_Manifest VALUES (22112,'NIKR1352462',1232,110300,14, 3,8884442);
-INSERT INTO Cargo_Manifest VALUES (22121,'ADIJ6543223',1233,100601,15,-5,8884443);
-INSERT INTO Cargo_Manifest VALUES (22122,'FILZ6543214',1234,130400,26,-5,8884444);
+INSERT INTO Cargo_Manifest VALUES (22111,'BICU1234561',1231, 120703, 23,  7, 8884441);
+INSERT INTO Cargo_Manifest VALUES (22112,'NIKR1352462',1232, 110300, 14,  3, 8884442);
+INSERT INTO Cargo_Manifest VALUES (22121,'ADIJ6543223',1233, 100601, 15, -5, 8884443);
+INSERT INTO Cargo_Manifest VALUES (22122,'FILZ6543214',1234, 130400, 20, -5, 8884444);
+INSERT INTO Cargo_Manifest VALUES (12122,'BICZ1231235',1235, 020510, 21,  2, 8884445);
+INSERT INTO Cargo_Manifest VALUES (12122,'NIKJ1111116',1236, 051001, 15,  0, 8884446);
+INSERT INTO Cargo_Manifest VALUES (12122,'ADIJ2222227',1237, 070300, 16,- 5, 8884447);
+INSERT INTO Cargo_Manifest VALUES (12122,'FILR4564568',1238, 101012, 18,  6, 8884448);
+
+INSERT INTO Cargo_Manifest VALUES (32122,'BICJ4444445' ,1239, 120000, 100000, 2, 1884441);
+INSERT INTO Cargo_Manifest VALUES (32122,'NIKJ5555556',2235, 110201, 80000,  3, 1884442);
+INSERT INTO Cargo_Manifest VALUES (32122,'ADIZ6666667',2236, 031102, 90000,  4, 1884443);
+INSERT INTO Cargo_Manifest VALUES (32122,'FILR7777778',2237, 011103, 120000,-5, 1884444);
+INSERT INTO Cargo_Manifest VALUES (12122,'BICR8888889',2238, 100705, 100000,-5, 1884445);
 
 
 -- ** tabela Unloading_Cargo_Manifest**
 
 INSERT INTO Unloading_Cargo_Manifest VALUES (22111,'BICU1234561');
 INSERT INTO Unloading_Cargo_Manifest VALUES (22112,'NIKR1352462');
+INSERT INTO Unloading_Cargo_Manifest VALUES (22121,'ADIJ6543223');
+INSERT INTO Unloading_Cargo_Manifest VALUES (22122,'FILZ6543214');
+
+INSERT INTO Unloading_Cargo_Manifest VALUES (32122,'ADIZ6666667');
+INSERT INTO Unloading_Cargo_Manifest VALUES (32122,'FILR7777778');
+INSERT INTO Unloading_Cargo_Manifest VALUES (12122,'BICR8888889');
+
 
 -- ** tabela Loading_Cargo_Manifest**
 
-INSERT INTO Loading_Cargo_Manifest VALUES (22121,'ADIJ6543223');
-INSERT INTO Loading_Cargo_Manifest VALUES (22122,'FILZ6543214');
+INSERT INTO Loading_Cargo_Manifest VALUES (12122,'BICZ1231235');
+INSERT INTO Loading_Cargo_Manifest VALUES (12122,'NIKJ1111116');
+INSERT INTO Loading_Cargo_Manifest VALUES (12122,'ADIJ2222227');
+INSERT INTO Loading_Cargo_Manifest VALUES (12122,'FILR4564568');
+
+INSERT INTO Loading_Cargo_Manifest VALUES (32122,'FILR7777778');
+INSERT INTO Loading_Cargo_Manifest VALUES (12122,'BICR8888889');
 
 select * from Owner;
 select * from Equipment_Identifier;
@@ -265,3 +328,4 @@ select * from Client;
 select * from Cargo_Manifest;
 select * from Unloading_Cargo_Manifest;
 select * from Loading_Cargo_Manifest;
+
