@@ -4,7 +4,6 @@ drop table Equipment_Identifier cascade constraints purge;
 drop table Container_Length cascade constraints purge;
 drop table Width_Height cascade constraints purge;
 drop table Container_Type cascade constraints purge;
-drop table Reduced_Strength cascade constraints purge;
 drop table ISO cascade constraints purge;
 drop table Role cascade constraints purge;
 drop table Employee cascade constraints purge;
@@ -22,7 +21,7 @@ drop table Trip_Manifests cascade constraints purge;
 
 create table Owner(
     id_owner                  char(3) constraint pk_owner Primary Key,
-    name                      varChar(30)
+    name                      varChar(40)
 );
 
 create table Equipment_Identifier(
@@ -42,21 +41,15 @@ create table Width_Height(
 );
 
 create table Container_Type(
-    container_type_code       char(1) constraint pk_container_type Primary Key,
-    value_container_type      integer
-);
-
-create table Reduced_Strength(
-    reduced_strength_code     char(1) constraint pk_reduced_strength Primary Key,
-    value_reduced_strength    integer constraint ck_value_reduced_strength_positive check (value_reduced_strength > 0)
+    container_type_code       char(2) constraint pk_container_type Primary Key,
+    container_type_description varChar(200)
 );
 
 create table ISO(
     iso_code                  char(4) constraint pk_iso Primary Key,
     length_code               char(1), constraint fk_length_iso Foreign Key (length_code) references Container_Length(length_code),
     width_height_code         char(1), constraint fk_width_height_iso Foreign Key (width_height_code) references Width_Height(width_height_code),
-    container_type_code       char(1), constraint fk_container_type_iso Foreign Key (container_type_code) references Container_Type(container_type_code),
-    reduced_strength_code     char(1), constraint fk_reduced_strength_iso Foreign Key (reduced_strength_code) references Reduced_Strength(reduced_strength_code)
+    container_type_code       char(2), constraint fk_container_type_iso Foreign Key (container_type_code) references Container_Type(container_type_code)
 );
 
 create table Container(
@@ -65,7 +58,7 @@ create table Container(
     tare                      integer constraint ck_tare_positive check (tare > 0),
     max_weight_incl_container integer constraint ck_max_weight_incl_container_positive check (max_weight_incl_container > 0),
     max_weight                integer constraint ck_max_weight_positive check (max_weight > 0),
-    max_volume                integer constraint ck_max_volume_positive check (max_volume > 0),
+    max_volume                number(3,1) constraint ck_max_volume_positive check (max_volume > 0),
     id_owner                  char(3) constraint fk_owner_id_container references Owner(id_owner),
     id_equipment              char(1) constraint fk_equipment_id_container references Equipment_Identifier(id_equipment),
     serial_number             integer constraint un_serial_number_id_container unique,
@@ -100,7 +93,7 @@ create table Ship(
     name_ship                 varChar(30),
     number_generators         integer constraint ck_number_generators_not_negative check (number_generators > -1),
     power_out_generator       integer constraint ck_power_out_generator_not_negative check (power_out_generator > -1),
-    call_sign                 varChar(9) constraint un_call_sign_ship unique,
+    call_sign                 char(5) constraint un_call_sign_ship unique,
     vessel_type               integer constraint ck_vessel_type_positive check (vessel_type > 0),
     length_ship               integer constraint ck_length_ship_positive check (length_ship > 0),
     width_ship                integer constraint ck_width_ship_positive check (width_ship > 0),
@@ -112,13 +105,12 @@ create table Ship(
 create table Position_Ship(
     id_ship                   char(10), constraint fk_ship_position_ship Foreign Key (id_ship) references Ship(imo_code),
     base_date_time  	      timestamp,
-    latitude			      number,
-    longitude			      number,
-    sog	    			      number,
-    cog 			          number,
-    heading			          integer constraint ck_heading_valid check (heading between 0 and 359 or heading = 511),
+    latitude			      number(7,5),
+    longitude			      number(8,5),
+    sog	    			      number(3,1),
+    cog 			          number(3,1),
+    heading			          integer constraint ck_heading_valid check (heading between 0 and 359),
     transceiver_class         char(1),
-    cargo                     integer,
     Constraint pk_position_ship Primary Key (id_ship, base_date_time)
 );
 
