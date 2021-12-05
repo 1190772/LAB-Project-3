@@ -18,7 +18,7 @@ INSERT INTO Equipment_Identifier VALUES ('R','refridgerated containers');
 -- ** tabela Container_Length **
 -- **values in cm **
 
-INSERT INTO Container_Length VALUES ('2',61);
+INSERT INTO Container_Length VALUES ('2',610);
 
 
 -- ** tabela Width_Height **
@@ -234,10 +234,10 @@ INSERT INTO Warehouse VALUES (11224, 'Cruz warehouse'  , 'Europa', 'Espanha' , 2
 
 -- ** tabela trip **
 
-INSERT INTO Trip VALUES (1231,'IMO1234567','PT345', 'ES456', timestamp '2020-01-01 02:02:11', timestamp '2021-05-23 11:24:33');
-INSERT INTO Trip VALUES (1232,'IMO1212121','AN345', 'IN233', timestamp '2020-02-12 03:13:22', timestamp '2021-12-06 21:24:33');
-INSERT INTO Trip VALUES (1233,'IMO2121212','IN233', 'AN345', timestamp '2021-11-23 11:24:33', timestamp '2021-12-25 22:23:33');
-INSERT INTO Trip VALUES (1234,'IMO2222222','ES456', 'PT345', timestamp '2021-06-20 19:35:33', timestamp '2021-07-22 04:36:33');
+INSERT INTO Trip VALUES (1231,'IMO1234567','PT345', 'ES456', timestamp '2020-01-01 02:02:11', null);
+INSERT INTO Trip VALUES (1232,'IMO1212121','AN345', 'IN233', timestamp '2020-02-12 03:13:22', null);
+INSERT INTO Trip VALUES (1233,'IMO2121212','IN233', 'AN345', timestamp '2021-11-23 11:24:33', null);
+INSERT INTO Trip VALUES (1234,'IMO2222222','ES456', 'PT345', timestamp '2021-06-20 19:35:33', null);
 INSERT INTO Trip VALUES (1235,'IMO1111111','PT345', 'AN345', timestamp '2021-05-18 19:35:33', timestamp '2021-06-02 05:36:33');
 INSERT INTO Trip VALUES (1236,'IMO3333333','AN345', 'IN233', timestamp '2021-04-25 19:35:33', timestamp '2021-05-02 06:36:33');
 INSERT INTO Trip VALUES (1237,'IMO4444444','IN233', 'ES456', timestamp '2021-03-13 19:35:33', timestamp '2021-04-22 07:36:33');
@@ -246,9 +246,9 @@ INSERT INTO Trip VALUES (1239,'IMO6666666','PT345', 'IN233', timestamp '2021-08-
 
 INSERT INTO Trip VALUES (2235,'IMO7777777','PT345', 'AN345', timestamp '2021-02-08 19:35:33', timestamp '2021-03-01 06:13:23');
 INSERT INTO Trip VALUES (2236,'IMO8888888','AN345', 'IN233', timestamp '2021-03-15 19:35:33', timestamp '2021-04-22 07:26:13');
-INSERT INTO Trip VALUES (2237,'IMO9999999','IN233', 'ES456', timestamp '2021-04-23 19:35:33', timestamp '2021-05-30 12:46:22');
-INSERT INTO Trip VALUES (2238,'IMO6161616','ES456', 'PT345', timestamp '2020-05-21 19:35:33', timestamp '2021-01-12 15:56:44');
-INSERT INTO Trip VALUES (2239,'IMO6262626','PT345', 'IN233', timestamp '2020-06-10 19:35:33', timestamp '2021-01-12 18:16:12');
+INSERT INTO Trip VALUES (2237,'IMO9999999','IN233', 'ES456', timestamp '2021-04-23 19:35:33', timestamp null);
+INSERT INTO Trip VALUES (2238,'IMO6161616','ES456', 'PT345', timestamp '2020-05-21 19:35:33', timestamp null);
+INSERT INTO Trip VALUES (2239,'IMO6262626','PT345', 'IN233', timestamp '2020-06-10 19:35:33', timestamp null);
 
 
 -- ** tabela Client **
