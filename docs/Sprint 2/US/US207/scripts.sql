@@ -58,3 +58,7 @@ EXCEPTION
 
 end;
 /
+
+-- if values from insertValues(us111).sql were inserted
+select nCargoManifestsPerYear(333344, 2021) from dual; --should return 2 cargo manifest cm
+select averageContainersPerCargoPerYear(333344, 2021) from dual; --should return average of cm1(4 containers) cm2(1 container) = 2.5
