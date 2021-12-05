@@ -20,7 +20,7 @@ class Port {
 }
 
 class Port2DTree {
-+ insert(Port)
++ createdBalancedPort2DTree()
 }
 
 ImportPortsController <.. ImportPortsUI

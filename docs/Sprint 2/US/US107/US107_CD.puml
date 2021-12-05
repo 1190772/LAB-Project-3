@@ -14,7 +14,7 @@ class ShipPairsController {
 
 class ShipBST {
 + getShipPairs()
-- getPositions
+- getPositions()
 }
 
 class Ship {
