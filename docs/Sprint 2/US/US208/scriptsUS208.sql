@@ -38,7 +38,7 @@ THEN return null;
 END;
 /
 
-SELECT round( occupancy_Rate('IMO1234567', 22111), 2) as "Occupancy Rate (%)"
+SELECT round( occupancy_Rate('IMO1234567', 22111), 2) as "Occupancy Rate (%):"
 from dual;
 
 

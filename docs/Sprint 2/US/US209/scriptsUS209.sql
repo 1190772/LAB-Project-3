@@ -17,5 +17,5 @@ return occupancy_Rate(imoShip,cargo_manifest);
 
 END;
 /
-SELECT round( occupancy_Rate_GivenMoment('IMO4444444'),2 ) as "Occupancy Rate at Given Moment (%)"
+SELECT round( occupancy_Rate_GivenMoment('IMO4444444'),2 ) as "Occupancy Rate at Given Moment (%):"
 from dual;
