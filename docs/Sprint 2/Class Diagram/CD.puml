@@ -19,6 +19,8 @@ class ShipBST {
 - findShipByIMO(IMO)
 - findShipByCallSign(CallSign)
 + topNShips(int n, LocalDateTime start, LocalDateTime end)
++ getShipPairs()
+- getPositions()
 }
 
 class Ship {
@@ -116,8 +118,46 @@ class ShipPositionBST {
 +maxCOG()
 +meanCOG()
 +getPositions(LocalDateTime startDate, LocalDateTime endDate)
++ getFirstPosition()
++ getLastPosition()
 }
 
+class ShipPairsUI {
+- controller
+}
+
+class ShipPairsController {
+- ShipBST
++ getShipPairs()
+}
+
+class ImportPortsUI {
+- controller
+}
+
+class ImportPortsController {
++ ImportPorts()
+}
+
+class Port {
+- identification
+- name
+- continent
+- country
+- latitude
+- longitude
++ Port(identification, name, continent, country, latitude, longitude)
+}
+
+class Port2DTree {
++ createdBalancedPort2DTree()
++ findNearestNeighbour(lat, lon)
+- findNearestNeighbour(port, lat, lon, closestPort, comLat)
+}
+
+class FindClosestPortController {
++ FindClosestPort()
+}
 
 ImportShipsController <.. ImportShipsUI
 Ship <.. ImportShipsUI
@@ -148,5 +188,20 @@ ShipBST <.. TopNShipsController
 Ship <.. TopNShipsUI
 ShipPositionBST <.. TopNShipsController
 
+
+ShipPairsUI ..> ShipPairsController
+ShipPairsController ..> ShipBST
+
+
+ImportPortsController <.. ImportPortsUI
+Port2DTree <.. ImportPortsController
+Port <-- ImportPortsController
+
+Port2DTree <.. FindClosestPortController
+ShipBST <.. FindClosestPortController
+ShipPositionBST <.. FindClosestPortController
+Port <-- FindClosestPortController
+ShipPosition <-- FindClosestPortController
+Ship <-- FindClosestPortController
 
 @enduml
