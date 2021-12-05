@@ -51,36 +51,78 @@ class ShipBSTTest {
 
     @Test
     void topNShipsTest() {
-    ArrayList<Ship>[] expected = new ArrayList[100];
-    ArrayList<Ship>[] actual;
+        ArrayList<Ship>[] expected = new ArrayList[100];
+        ArrayList<Ship>[] actual;
 
-    ShipPosition pos1 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 0), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
-    ShipPosition pos2 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 30), 42.97890,-66.97010,12.9,13.1,355, 'B', 0);
-    ShipPosition pos3 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 16, 20), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
-    ShipPosition pos4 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 42.97900,-66.97020,12.9,13.1,355, 'B', 0);
-    ShipPosition pos5 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 19), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
-    ShipPosition pos6 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 18, 3), 42.97895,-66.970020,12.9,13.1,355, 'B', 0);
-    ShipPosition pos7 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 16, 20), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
-    ShipPosition pos8 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 42.97880,-66.97010,12.9,13.1,355, 'B', 0);
+        ShipPosition pos1 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 0), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
+        ShipPosition pos2 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 30), 42.97890,-66.97010,12.9,13.1,355, 'B', 0);
+        ShipPosition pos3 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 16, 20), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
+        ShipPosition pos4 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 42.97900,-66.97020,12.9,13.1,355, 'B', 0);
+        ShipPosition pos5 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 19), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
+        ShipPosition pos6 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 18, 3), 42.97895,-66.970020,12.9,13.1,355, 'B', 0);
+        ShipPosition pos7 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 16, 20), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
+        ShipPosition pos8 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 42.97880,-66.97010,12.9,13.1,355, 'B', 0);
 
-    ship1.addPosition(pos1);
-    ship1.addPosition(pos2);
-    ship2.addPosition(pos3);
-    ship2.addPosition(pos4);
-    ship3.addPosition(pos5);
-    ship3.addPosition(pos6);
-    ship4.addPosition(pos7);
-    ship4.addPosition(pos8);
+        ship1.addPosition(pos1);
+        ship1.addPosition(pos2);
+        ship2.addPosition(pos3);
+        ship2.addPosition(pos4);
+        ship3.addPosition(pos5);
+        ship3.addPosition(pos6);
+        ship4.addPosition(pos7);
+        ship4.addPosition(pos8);
 
-    expected[60] = new ArrayList<>();
-    expected[60].add(ship2);
-    expected[70] = new ArrayList<>();
-    expected[70].add(ship3);
+        expected[60] = new ArrayList<>();
+        expected[60].add(ship2);
+        expected[70] = new ArrayList<>();
+        expected[70].add(ship3);
 
-    actual = shipBST.topNShips(1, LocalDateTime.of(2020, 12, 31, 16, 0), LocalDateTime.of(2020, 12, 31, 19, 18));
+        actual = shipBST.topNShips(1, LocalDateTime.of(2020, 12, 31, 16, 0), LocalDateTime.of(2020, 12, 31, 19, 18));
 
-    assertSame(expected[60].get(0), actual[60].get(0));
-    assertSame(expected[70].get(0), actual[70].get(0));
+        assertSame(expected[60].get(0), actual[60].get(0));
+        assertSame(expected[70].get(0), actual[70].get(0));
+    }
+
+    @Test
+    void ShipPairsTest() {
+        ArrayList<Ship[]> expected = new ArrayList<>();
+        ArrayList<Ship[]> actual;
+
+        ShipPosition pos1 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 0), 42.97800,-66.96500,12.9,13.1,355, 'B', 0);
+        ShipPosition pos2 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 30), 60.97900,-65.97050,12.9,13.1,355, 'B', 0);
+
+        ShipPosition pos3 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 16, 20), 30.97870,-30.97000,12.9,13.1,355, 'B', 0);
+        ShipPosition pos4 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 50.97880,-50.97000,12.9,13.1,355, 'B', 0);
+
+        ShipPosition pos5 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 19), 42.97875,-66.97001,12.9,13.1,355, 'B', 0);
+        ShipPosition pos6 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 18, 3), 60.97900,-65.97020,12.9,13.1,355, 'B', 0);
+
+        ShipPosition pos7 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 16, 20), 30.97875,-30.97001,12.9,13.1,355, 'B', 0);
+        ShipPosition pos8 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 50.97890,-50.97010,12.9,13.1,355, 'B', 0);
+
+        ship1.addPosition(pos1);
+        ship1.addPosition(pos2);
+        ship2.addPosition(pos3);
+        ship2.addPosition(pos4);
+        ship3.addPosition(pos5);
+        ship3.addPosition(pos6);
+        ship4.addPosition(pos7);
+        ship4.addPosition(pos8);
+
+        expected.add(new Ship[2]);
+        expected.get(0)[0] = ship2;
+        expected.get(0)[1] = ship4;
+
+        expected.add(new Ship[2]);
+        expected.get(1)[0] = ship1;
+        expected.get(1)[1] = ship3;
+
+        actual = shipBST.getShipPairs();
+
+        assertSame(expected.get(0)[0], actual.get(0)[0]);
+        assertSame(expected.get(0)[1], actual.get(0)[1]);
+        assertSame(expected.get(1)[0], actual.get(1)[0]);
+        assertSame(expected.get(1)[1], actual.get(1)[1]);
     }
 
 }

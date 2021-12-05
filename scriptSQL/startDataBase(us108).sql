@@ -93,7 +93,7 @@ create table Ship(
     name_ship                 varChar(30),
     number_generators         integer constraint ck_number_generators_not_negative check (number_generators > -1),
     power_out_generator       integer constraint ck_power_out_generator_not_negative check (power_out_generator > -1),
-    call_sign                 char(5) constraint un_call_sign_ship unique,
+    call_sign                 varChar(9) constraint un_call_sign_ship unique,
     vessel_type               integer constraint ck_vessel_type_positive check (vessel_type > 0),
     length_ship               integer constraint ck_length_ship_positive check (length_ship > 0),
     width_ship                integer constraint ck_width_ship_positive check (width_ship > 0),

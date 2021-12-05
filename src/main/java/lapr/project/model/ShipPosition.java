@@ -25,6 +25,18 @@ public class ShipPosition implements Comparable<ShipPosition> {
         this.cargo = cargo;
     }
 
+    public ShipPosition(LocalDateTime baseDateTime, double latitude, double longitude, double sog, double cog, double heading, char transceiverClass) {
+
+        this.baseDateTime = baseDateTime;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.sog = sog;
+        this.cog = cog;
+        this.heading = heading;
+        this.transceiverClass = transceiverClass;
+        cargo = 0;
+    }
+
     public LocalDateTime getBaseDateTime() {
         return baseDateTime;
     }
@@ -58,8 +70,7 @@ public class ShipPosition implements Comparable<ShipPosition> {
     }
 
     @Override
-    public String toString()
-        {
+    public String toString() {
         return "Ship Position{" +
                 "Base date and time = " + baseDateTime +
                 ", Latitude = " + latitude +
@@ -70,7 +81,7 @@ public class ShipPosition implements Comparable<ShipPosition> {
                 ", Transceiver Class = " + transceiverClass +
                 ", Cargo = " + cargo +
                 '}';
-        }
+    }
 
     @Override
     public int compareTo(ShipPosition o) {
