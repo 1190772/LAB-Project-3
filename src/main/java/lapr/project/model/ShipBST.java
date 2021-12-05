@@ -2,6 +2,7 @@ package lapr.project.model;
 
 import lapr.project.controller.App;
 import lapr.project.data.ShipStoreDb;
+import lapr.project.model.shared.Utils;
 import lapr.project.utils.AVL;
 import lapr.project.utils.DatabaseConnection;
 
@@ -10,6 +11,7 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.TreeMap;
 
 
 public class ShipBST extends AVL<Ship> {
@@ -45,8 +47,8 @@ public class ShipBST extends AVL<Ship> {
                     positions.getDouble("sog"),
                     positions.getDouble("cog"),
                     positions.getInt("heading"),
-                    positions.getString("transceiver_class").charAt(0),
-                    positions.getInt("cargo")));
+                    positions.getString("transceiver_class").charAt(0)));
+                    //positions.getInt("cargo")));
             }
             positions.close();
         }
@@ -207,5 +209,54 @@ public class ShipBST extends AVL<Ship> {
             }
         }
         return topNLists;
+    }
+
+    public ArrayList<Ship[]> getShipPairs() {
+        ArrayList<Ship[]> res = new ArrayList<>();
+        TreeMap<Ship, Double> travelledDistances = new TreeMap<>();
+        TreeMap<Ship, ShipPosition> startPositions = new TreeMap<>();
+        TreeMap<Ship, ShipPosition> endPositions = new TreeMap<>();
+        Ship[] ships;
+        int index;
+
+        getPositions(startPositions, endPositions, root);
+
+        ships = startPositions.keySet().toArray(new Ship[0]);
+
+        for (Ship ship : ships)
+           travelledDistances.put(ship, ship.getPosition().travelledDistance());
+
+
+        for (int i = 0; i < ships.length; i++) {
+            for (int j = i+1; j < ships.length; j++) {
+                if (Utils.distanceBetweenTwoCoordinates(startPositions.get(ships[i]), startPositions.get(ships[j])) <= 5000 &&
+                    Utils.distanceBetweenTwoCoordinates(endPositions.get(ships[i]), endPositions.get(ships[j])) <= 5000 ) {
+
+                    index = res.size();
+                    while (index > 0 &&
+                            Math.abs(travelledDistances.get(ships[i]) - travelledDistances.get(ships[j])) <
+                            Math.abs(travelledDistances.get(res.get(index-1)[0]) - travelledDistances.get(res.get(index-1)[1])))
+                        index--;
+
+                    if (ships[i].getMMSI().compareTo(ships[j].getMMSI()) < 0)
+                        res.add(index, new Ship[] {ships[i], ships[j]});
+                    else
+                        res.add(index, new Ship[] {ships[j], ships[i]});
+                }
+            }
+        }
+        return res;
+    }
+
+    private void getPositions(TreeMap<Ship, ShipPosition> startMap, TreeMap<Ship, ShipPosition> endMap, Node<Ship> node) {
+        if (node != null) {
+            getPositions(startMap, endMap, node.getLeft());
+            Ship ship = node.getElement();
+            if (ship.getPosition().travelledDistance() >= 10) {
+                startMap.put(ship, ship.getPosition().getFirstPosition());
+                endMap.put(ship, ship.getPosition().getLastPosition());
+            }
+            getPositions(startMap, endMap, node.getRight());
+        }
     }
 }

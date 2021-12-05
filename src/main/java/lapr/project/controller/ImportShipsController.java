@@ -43,16 +43,16 @@ public class ImportShipsController {
                 String imo = parameters[8];
                 ship = bst.findShip(imo);
                 if (ship == null) {
-                String mmsi = parameters[0];
-                String name = parameters[7];
-                String callSign = parameters[9];
-                int vesselType = Integer.parseInt(parameters[10]);
-                int length = Integer.parseInt(parameters[11]);
-                int width = Integer.parseInt(parameters[12]);
-                float draft = Float.parseFloat(parameters[13]);
-                ship = new Ship(mmsi, name, imo, callSign, vesselType, length, width, draft);
-                bst.insert(ship);
-            }
+                    String mmsi = parameters[0];
+                    String name = parameters[7];
+                    String callSign = parameters[9];
+                    int vesselType = Integer.parseInt(parameters[10]);
+                    int length = Integer.parseInt(parameters[11]);
+                    int width = Integer.parseInt(parameters[12]);
+                    float draft = Float.parseFloat(parameters[13]);
+                    ship = new Ship(mmsi, name, imo, callSign, vesselType, length, width, draft);
+                    bst.insert(ship);
+                }
 
                 String dateTime = parameters[1];
                 int year = Integer.parseInt(dateTime.substring(6, 10));
@@ -74,7 +74,7 @@ public class ImportShipsController {
                 LocalDateTime localDateTime = LocalDateTime.of(year, month, day, hour, minute);
                 ShipPosition shipPosition = new ShipPosition(localDateTime, latitude, longitude, sog, cog, heading, transceiverClass, cargo);
                 if (validateHeading(shipPosition.getHeading()) && validateSOG(shipPosition.getSOG()) && validateCOG(shipPosition.getCOG()) && validateLatitude(shipPosition.getLatitude()) && validateLongitude(shipPosition.getLongitude())) {
-                ship.addPosition(shipPosition);
+                    ship.addPosition(shipPosition);
                 }
             }
         } catch (IOException e) {

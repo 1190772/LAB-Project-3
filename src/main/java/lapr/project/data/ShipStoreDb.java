@@ -220,7 +220,7 @@ public class ShipStoreDb implements Persistable{
 
             try (ResultSet shipPositionsResultSet = shipPositionsPreparedStatement.executeQuery()) {
                 if (!shipPositionsResultSet.next()) {
-                    sqlCommand = "insert into Position_Ship(id_ship, base_date_time, latitude, longitude, sog, cog, heading, transceiver_class, cargo) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    sqlCommand = "insert into Position_Ship(id_ship, base_date_time, latitude, longitude, sog, cog, heading, transceiver_class) values (?, ?, ?, ?, ?, ?, ?, ?)";
                     try (PreparedStatement insertShipPositionsPreparedStatement = connection.prepareStatement(sqlCommand)) {
                         insertShipPositionsPreparedStatement.setString(1, ship.getIMO());
                         insertShipPositionsPreparedStatement.setTimestamp(2, Timestamp.valueOf(position.getBaseDateTime()));
@@ -230,7 +230,7 @@ public class ShipStoreDb implements Persistable{
                         insertShipPositionsPreparedStatement.setDouble(6, position.getCOG());
                         insertShipPositionsPreparedStatement.setDouble(7, position.getHeading());
                         insertShipPositionsPreparedStatement.setString(8, String.valueOf(position.getTransceiverClass()));
-                        insertShipPositionsPreparedStatement.setDouble(9, position.getCargo());
+                        //insertShipPositionsPreparedStatement.setDouble(9, position.getCargo());
                         insertShipPositionsPreparedStatement.executeUpdate();
                         }
                     }

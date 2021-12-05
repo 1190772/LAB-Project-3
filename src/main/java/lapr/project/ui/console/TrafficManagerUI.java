@@ -28,6 +28,7 @@ public class TrafficManagerUI implements Runnable {
         options.add(new MenuItem("Import Ships From File", new ImportShipsUI()));
         options.add(new MenuItem("Search a ship", new SearchShipUI()));
         options.add(new MenuItem("TopN Ships", new TopNShipsUI()));
+        options.add(new MenuItem("Pairs of ships", new ShipPairsUI()));
         int option = 0;
         do {
             option = Utils.showAndSelectIndex(options, "\n\nTraffic Manager Menu:");

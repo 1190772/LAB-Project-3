@@ -7,6 +7,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 /**
  * @author Samuel Pereira 1201274
@@ -208,4 +209,21 @@ public class ShipPositionBST extends AVL<ShipPosition> {
         return res;
     }
 
+    public ShipPosition getFirstPosition() {
+        Node<ShipPosition> node = root;
+
+        while (node.getLeft() != null)
+            node = node.getLeft();
+
+        return node.getElement();
+    }
+
+    public ShipPosition getLastPosition() {
+        Node<ShipPosition> node = root;
+
+        while (node.getRight() != null)
+            node = node.getRight();
+
+        return node.getElement();
+    }
 }
