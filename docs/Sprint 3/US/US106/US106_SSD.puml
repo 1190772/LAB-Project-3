@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : Requests the top-N ships with the most kilometres travelled and their average speed
+
+activate ":System"
+":System" --> TM : Requests data (N)
+
+TM -> ":System" : Types the requested data
+":System" --> TM : Requests data (start time and end time)
+
+TM -> ":System" : Types the requested data
+
+":System" --> TM : Shows the information requested
+
+
+
+@enduml

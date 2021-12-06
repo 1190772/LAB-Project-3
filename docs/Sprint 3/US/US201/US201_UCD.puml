@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Port Manager: as PM
+(Asks to import ports from a text file) as (Use)
+
+PM ---> (Use)
+@enduml

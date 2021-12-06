@@ -1,0 +1,44 @@
+@startuml
+@startuml
+'https://plantuml.com/class-diagram
+
+class ImportShipsUI {
+- controller
+}
+
+class ImportShipsController {
++ importShips()
+- ShipBST bst
+}
+
+class ShipBST {
++ findShip(code)
+- determineCodeType(code)
+- findShipByMMSI(MMSI)
+- findShipByIMO(IMO)
+- findShipByCallSign(CallSign)
+}
+
+class Ship {
+-MMSI
+-name
+-IMO
+-numberEnergyGenerators
+-generatorPowerOutput
+-callSign
+-vesselType
+-length
+-width
+-capacity
+-draft
++ Ship(MMSI, name, IMO, numberEnergyGenerators,
+          generatorPowerOutput, callSign, vesselType, length, width, capacity, draft)
++ toString()
+}
+ImportShipsController <.. ImportShipsUI
+ShipBST <.. ImportShipsController
+Ship <-- ShipBST
+Ship <.. ImportShipsUI
+
+
+@enduml

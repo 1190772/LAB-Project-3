@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Traffic Manager: as TM
+(Get the  top-N ships with the most kilometres travelled and their average speed) as (Use)
+
+TM ---> (Use)
+
+@enduml

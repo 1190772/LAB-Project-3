@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="268px" preserveAspectRatio="none" style="width:401px;height:268px;" version="1.1" viewBox="0 0 401 268" width="401px" zoomAndPan="magnify"><defs><filter height="300%" id="feehxjj1q1ts1" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#feehxjj1q1ts1)" height="58.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="46" y="99.6094"/><rect fill="#FFFFFF" filter="url(#feehxjj1q1ts1)" height="36.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="288" y="121.9609"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="51" x2="51" y1="89.6094" y2="183.3125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="293" x2="293" y1="89.6094" y2="183.3125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="5" y="86.5332">Port Manager</text><ellipse cx="51" cy="15" fill="#FEFECE" filter="url(#feehxjj1q1ts1)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M51,23 L51,50 M38,31 L64,31 M51,50 L38,65 M51,50 L64,65 " fill="none" filter="url(#feehxjj1q1ts1)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="5" y="196.8457">Port Manager</text><ellipse cx="51" cy="209.9219" fill="#FEFECE" filter="url(#feehxjj1q1ts1)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M51,217.9219 L51,244.9219 M38,225.9219 L64,225.9219 M51,244.9219 L38,259.9219 M51,244.9219 L64,259.9219 " fill="none" filter="url(#feehxjj1q1ts1)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#feehxjj1q1ts1)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="64" x="259" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="266" y="74.5332">:System</text><rect fill="#FEFECE" filter="url(#feehxjj1q1ts1)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="64" x="259" y="182.3125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="266" y="203.8457">:System</text><rect fill="#FFFFFF" filter="url(#feehxjj1q1ts1)" height="58.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="46" y="99.6094"/><rect fill="#FFFFFF" filter="url(#feehxjj1q1ts1)" height="36.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="288" y="121.9609"/><polygon fill="#A80036" points="276,117.9609,286,121.9609,276,125.9609,280,121.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="56" x2="282" y1="121.9609" y2="121.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="63" y="117.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="202" x="74" y="117.1045">asks to import ports from a text file</text><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="298" x2="340" y1="157.3125" y2="157.3125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="340" x2="340" y1="157.3125" y2="170.3125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="293" x2="340" y1="170.3125" y2="170.3125"/><polygon fill="#A80036" points="303,166.3125,293,170.3125,303,174.3125,299,170.3125" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="305" y="152.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="316" y="152.4561">Imports Ports</text><!--MD5=[f827e12c899920f22cdb3086070c5f9a]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Port Manager" as PM
+
+activate PM
+PM -> ":System" : asks to import ports from a text file
+
+activate ":System"
+":System" - -> ":System" : Imports Ports
+deactivate ":System"
+
+deactivate PM
+
+@enduml
+
+@startuml
+
+autonumber
+
+actor "Port Manager" as PM
+
+activate PM
+PM -> ":System" : asks to import ports from a text file
+
+activate ":System"
+":System" - -> ":System" : Imports Ports
+deactivate ":System"
+
+deactivate PM
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Traffic Manager: as TM
+(Asks to find the closest port for the ship) as (Use)
+
+TM ---> (Use)
+@enduml

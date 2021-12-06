@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+/'class ShipMovementsUI {
+- ShipMovementsController controller
+- ShipMovements details
+}'/
+
+class ShipMovementsController {
+- ShipPositionBST shipPositionBST
++ ArrayList<ShipMovements> listAllShip
++ ArrayList<ShipMovements> invertArrayList
+}
+
+class ShipMovements {
+- String shipCode
+- String shipName
+- Integer totalNumberMovements
+- Double travelledDistance
+- Double deltaDistance
++ ShipMovements(shipCode, shipName, \ntotalNumberMovements, travelledDistance, deltaDistance)
++ String toString()
+}
+
+class ShipPositionBST {
++ deltaDistance()
++ travelledDistance()
+}
+
+class ShipPosition {
+- LocalDateTime baseDateTime;
+- double latitude;
+- double longitude;
+- double sog;
+- double cog;
+- double heading;
+- char transceiverClass;
+- int cargo;
++ ShipPosition(baseDateTime, latitude, longitude, sog, \ncog, heading, transceiverClass, cargo)
+}
+
+'ShipMovementsController <.. ShipMovementsUI
+
+ShipPositionBST <.. ShipMovementsController
+ShipPosition <-- ShipPositionBST
+'ShipMovements <.. ShipMovementsUI
+ShipMovements <-- ShipMovementsController
+@enduml

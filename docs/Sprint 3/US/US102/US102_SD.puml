@@ -1,0 +1,52 @@
+@startuml
+autonumber
+
+'hide footbox
+actor "Traffic Manager" as TM
+
+participant ":SearchShipUI" as UI
+participant ":SearchShipController" as CTRL
+participant ":Company" as COMP
+participant ":ShipBST" as BST
+
+activate TM
+TM -> UI : asks for details of a ship
+activate UI
+activate CTRL
+
+UI -> TM : requests data (code)
+TM -> UI : types requested data
+
+autonumber 3.1
+
+UI -> CTRL : chosenShip = findShip(code)
+
+CTRL -> COMP : ships = App.getInstance().getCompany().getShipBST()
+activate COMP
+deactivate COMP
+
+CTRL -> BST : chosenShip = findShip(code)
+activate BST
+
+
+
+BST -> BST : codeType = DetermineCodeType(code)
+
+alt codeType = MMSI
+  BST -> BST : chosenShip = findShipByMMSI(MMSI)
+else codeType = IMO
+  BST -> BST : chosenShip = findShipByIMO(IMO)
+else codeType = CallSign
+  BST -> BST : chosenShip = findShipByCallSign(CallSign)
+end
+
+deactivate BST
+deactivate CTRL
+
+autonumber 4
+UI --> TM : shows details of the corresponding ship
+deactivate UI
+
+deactivate TM
+
+@enduml

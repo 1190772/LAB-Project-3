@@ -1,0 +1,76 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+/'class FindClosestPortUI {
+- controller
+}'/
+
+class FindClosestPortController {
++ FindClosestPort()
+}
+
+class Port {
+- identification
+- name
+- continent
+- country
+- latitude
+- longitude
++ Port(identification, name, continent, country, latitude, longitude)
+}
+
+class Port2DTree {
++ findNearestNeighbour(lat, lon)
+- findNearestNeighbour(port, lat, lon, closestPort, comLat)
+}
+
+class ShipPositionBST {
++ getPosition(lat, lon)
+}
+
+class ShipPosition {
+- LocalDateTime baseDateTime;
+- double latitude;
+- double longitude;
+- double sog;
+- double cog;
+- double heading;
+- char transceiverClass;
+- int cargo;
++ ShipPosition(baseDateTime, latitude, longitude, sog, \ncog, heading, transceiverClass, cargo)
+}
+
+class ShipBST {
++ findShip(code)
+- determineCodeType(code)
+- findShipByCallSign(CallSign)
+}
+
+class Ship {
+-MMSI
+-name
+-IMO
+-numberEnergyGenerators
+-generatorPowerOutput
+-callSign
+-vesselType
+-length
+-width
+-capacity
+-draft
++ getPositions()
+}
+
+'FindClosestPortController <.. FindClosestPortUI
+Port2DTree <.. FindClosestPortController
+ShipBST <.. FindClosestPortController
+ShipPositionBST <.. FindClosestPortController
+Port <-- FindClosestPortController
+ShipPosition <-- FindClosestPortController
+Ship <-- FindClosestPortController
+Port <-- Port2DTree
+Ship <-- ShipBST
+ShipPositionBST <-- Ship
+ShipPosition <-- ShipPositionBST
+
+@enduml

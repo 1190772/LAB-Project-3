@@ -1,0 +1,55 @@
+@startuml
+
+entity Container
+
+entity Cargo_Manifest
+entity Unloading_Cargo_Manifest
+entity Loading_Cargo_Manifest
+
+entity Trip
+
+rectangle " " as "toEmployee"{
+
+        entity Truck
+
+        entity Ship
+        entity Port
+        entity Warehouse
+
+}
+entity Employee
+
+entity Role
+rectangle " " as "toISO" {
+    entity Length
+    entity Width_Height
+    entity Container_Type
+    entity Reduced_Strength
+}
+entity ISO
+
+rectangle " " as "toIDContainer"{
+    entity Owner
+    entity Equipment_Identifier
+}
+
+Cargo_Manifest -- Container : has information about the position >
+
+Cargo_Manifest -- "toEmployee" : has information >
+
+
+"toIDContainer" -- Container : has information <
+ISO -- Container : has <
+ISO -- toISO : has information <
+
+Cargo_Manifest }o--|| Trip
+Trip }o--|| Ship
+Cargo_Manifest }|--|| Client
+
+"toEmployee" -- Employee : work <
+Employee -- Role : has >
+
+Unloading_Cargo_Manifest -- Cargo_Manifest : can be <
+Loading_Cargo_Manifest -- Cargo_Manifest : can be <
+
+@enduml

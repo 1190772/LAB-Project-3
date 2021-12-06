@@ -1,0 +1,71 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+/'class ShipMovementsUI {
+- ShipMovementsController controller
+- ShipMovements details
+}'/
+
+class ShipMovementsController {
+- ShipPositionBST shipPositionBST
+- SearchShipController searchShipController
++ ShipMovementsAllDetails getAttributes()
+}
+
+class SearchShipController {
+- ShipBST shipBST
++ findShip(code)
+}
+
+class ShipMovementsAllDetails {
+- LocalDateTime startBaseDateTime
+- LocalDateTime endBaseDateTime
+- Time totalMovementTime
+- Double maxSOG
+- Double meanSOG
+- Double maxCOG
+- Double meanCOG
+- Double departureLatitude
+- Double departureLongitude
+- Double arrivalLatitude
+- Double arrivalLongitude
++ ShipMovementsAllDetails(shipCode, shipName, startBaseDateTime, \nendBaseDateTime, totalMovementTime, totalNumberMovements, \nmaxSOG, meanSOG, maxCOG, meanCOG, departureLatitude, \ndepartureLongitude, arrivalLatitude, arrivalLongitude, \ntravelledDistance, deltaDistance)
++ String toString()
+}
+
+class ShipMovements {
+- String shipCode
+- String shipName
+- Integer totalNumberMovements
+- Double travelledDistance
+- Double deltaDistance
++ ShipMovements(shipCode, shipName, \ntotalNumberMovements, travelledDistance, deltaDistance)
+}
+
+
+
+class ShipPositionBST {
++ deltaDistance()
++ travelledDistance()
+}
+
+class ShipPosition {
+- LocalDateTime baseDateTime;
+- double latitude;
+- double longitude;
+- double sog;
+- double cog;
+- double heading;
+- char transceiverClass;
+- int cargo;
++ ShipPosition(baseDateTime, latitude, longitude, sog, \ncog, heading, transceiverClass, cargo)
+}
+
+'ShipMovementsController <.. ShipMovementsUI
+SearchShipController <.. ShipMovementsController
+ShipPositionBST <.. ShipMovementsController
+ShipPosition <-- ShipPositionBST
+ShipMovements <-- ShipMovementsController
+'ShipMovements <.. ShipMovementsUI
+ShipMovementsAllDetails <-- ShipMovements
+@enduml
