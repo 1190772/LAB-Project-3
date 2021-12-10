@@ -134,7 +134,7 @@ TrafficManager "1" -- "*" Truck : Controls position of >
 Truck "1" -- "*" Trip : performs >
 CargoManifest "*" -- "1..*" Container : Keeps track of >
 Container "1..*" -- "1" Client : tranports goods of >
-Country "1" -- "*" Border
+Country "1" -- "*" Border : has >
 
 
 @enduml

@@ -38,6 +38,6 @@ class Port {
 
 Company "1" -- "*" Port : Owns >
 Company "1" -- "*" Country : knows >
-Country "1" -- "*" Border
+Country "1" -- "*" Border : has >
 
 @enduml
