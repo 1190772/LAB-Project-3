@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam classAttributeIconSize 0
+
+class Company {
+-Designation
+}
+
+left to right direction
+
+class Country {
+-Continent
+-Alpha2-Code
+-Alpha3-Code
+-Country
+-Population
+-Capital
+-Latitude
+-Longitude
+}
+
+class Border {
+-Country1
+-Country2
+}
+
+class Port {
+-Identification
+-Name
+-Continent
+-Country
+-Latitude
+-longitude
+-PortMagager
+-PortStaff
+}
+
+Company "1" -- "*" Port : Owns >
+Company "1" -- "*" Country : knows >
+Country "1" -- "*" Border : has >
+
+@enduml
