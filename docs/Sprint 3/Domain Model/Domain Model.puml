@@ -102,12 +102,29 @@ class Trip {
 -Destination
 }
 
+class Country {
+-Continent
+-Alpha2-Code
+-Alpha3-Code
+-Country
+-Population
+-Capital
+-Latitude
+-Longitude
+}
+
+class Border {
+-Country1
+-Country2
+}
+
 Company "1" -- "1..*" Ship : Owns >
 Company "1" -- "1..*" Truck : Owns >
 Company "1" -- "*" Port : Owns >
 Company "1" -- "*" Warehouse : Owns >
 Company "1" -- "*" Employee : Employs >
 Company "1" --- "*" OrganizationRole : Comprehends >
+Company "1" -- "*" Country : knows >
 Employee "*" - "1" OrganizationRole : Has/Plays >
 Ship "1" -- "*" Trip : performs >
 Trip "1..*" -- "1..*" CargoManifest : has >
@@ -117,6 +134,7 @@ TrafficManager "1" -- "*" Truck : Controls position of >
 Truck "1" -- "*" Trip : performs >
 CargoManifest "*" -- "1..*" Container : Keeps track of >
 Container "1..*" -- "1" Client : tranports goods of >
+Country "1" -- "*" Border
 
 
 @enduml

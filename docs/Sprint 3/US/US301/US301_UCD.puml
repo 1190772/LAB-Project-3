@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Traffic Manager: as TM
+(Asks to build a freight network) as (Use)
+
+TM ---> (Use)
+@enduml

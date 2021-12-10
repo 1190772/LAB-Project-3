@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : asks to build a freight network
+
+activate ":System"
+":System" --> ":System" : Builds a freight network
+deactivate ":System"
+
+deactivate TM
+
+@enduml
