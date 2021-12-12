@@ -1,11 +1,23 @@
 @startuml
 
+entity Contianer_Operation {
+* id_cargo_manifest
+* id_container
+* base_date_time
+--
+* id_employee
+* type_operation
+}
+
 entity Trip {
 * id_trip
 --
 * ship_imo
+* id_truck
 * id_start_port
 * id_destination_port
+* id_start_warehouse
+* id_destination_warehouse
 * date_time_start
 * date_time_end
 }
@@ -66,11 +78,15 @@ entity Cargo_Manifest {
 entity Unloading_Cargo_Manifest {
 * id_cargo_manifest
 * id_container
+--
+* id_warehouse
 }
 
 entity Loading_Cargo_Manifest {
 * id_cargo_manifest
 * id_container
+--
+* id_warehouse
 }
 
 entity Truck {
@@ -98,21 +114,21 @@ entity Ship {
 entity Port {
 * id_port
 --
-* name_port
-* continent_port
-* country_port
-* latitude_port
-* longitude_port
+* name
+* country_code
+* latitude
+* longitude
+* capacity
 }
 
 entity Warehouse {
 * id_warehouse
 --
 * name
-* continent
-* country
+* country_code
 * latitude
 * longitude
+* capacity
 }
 
 entity Employee{
@@ -165,6 +181,30 @@ entity Container_Equipment_Identifier {
 * description
 }
 
+entity Country {
+* alpha2_code
+--
+* alpha3_code
+* capital
+* country
+* continent
+* population
+* latitude
+* longitude
+}
+
+entity Border {
+* country1
+* country2
+}
+
+entity Sea_Distance {
+* id_port1
+* id_port2
+--
+* distance
+}
+
 ISO }o--|| Length
 ISO }o--|| Width_Height
 ISO }o--|| Container_Type
@@ -175,9 +215,10 @@ Container }o--|| ISO
 Trip ||--|| Cargo_Manifest
 Cargo_Manifest }o--|| Container
 Cargo_Manifest }|--|| Client
-Ship ||--o{ Position_Ship
+Position_Ship }o--|| Ship
 
-Truck ||--o{ Employee
+Employee }o--|| Truck
+Trip }o--|| Truck
 Ship ||--o{ Trip
 Ship ||--o{ Employee
 Warehouse ||--o{ Employee
@@ -186,5 +227,15 @@ Employee }o--|| Role
 
 Unloading_Cargo_Manifest ||--|| Cargo_Manifest
 Loading_Cargo_Manifest ||--|| Cargo_Manifest
+
+Country ||--o{ Port
+Country ||--o{ Warehouse
+Country }|--o| Border
+Country }|--o| Border
+Sea_Distance ||--|{ Port
+Sea_Distance ||--|{ Port
+
+Cargo_Manifest -- Contianer_Operation
+
 
 @enduml
