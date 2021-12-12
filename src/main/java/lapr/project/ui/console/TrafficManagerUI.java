@@ -1,8 +1,5 @@
 package lapr.project.ui.console;
 
-import lapr.project.controller.App;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

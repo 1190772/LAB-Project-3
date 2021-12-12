@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainMenuUI {
-    public MainMenuUI() throws  UnsupportedOperationException{
+    public MainMenuUI() {
     }
 
     public void run() {

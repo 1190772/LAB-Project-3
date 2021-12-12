@@ -3,6 +3,7 @@ package lapr.project.utils.graph;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @author DEI-ISEP
@@ -30,7 +31,7 @@ public class MatrixGraph<V, E> extends CommonGraph<V, E> {
         copy(g, this);
     }
 
-    public MatrixGraph(boolean directed, ArrayList<V> vs, E[][] m) {
+    public MatrixGraph(boolean directed, List<V> vs, E[][] m) {
         this(directed, vs.size());
         numVerts = vs.size();
         vertices = new ArrayList<>(vs);

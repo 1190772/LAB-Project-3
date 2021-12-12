@@ -3,7 +3,7 @@ package lapr.project.ui.console;
 import lapr.project.controller.ShipPairsController;
 import lapr.project.model.Ship;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * UI of US102.
@@ -15,7 +15,7 @@ public class ShipPairsUI implements Runnable {
     /**
      * The Controller associated to this UI.
      */
-    private ShipPairsController controller;
+    private final ShipPairsController controller;
 
     /**
      * Builds an instance of the UI.
@@ -26,7 +26,7 @@ controller = new ShipPairsController();
 
     @Override
     public void run() {
-        ArrayList<Ship[]> pairs;
+        List<Ship[]> pairs;
 
         controller.refreshShips();
         pairs = controller.getShipPairs();

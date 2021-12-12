@@ -13,7 +13,5 @@ public class Constants {
 
     public static final String DATABASE_USERNAME = "LAPR3_G033";
     public static final String DATABASE_THE_OTHER_ONE = "bddad33";
-    public static final String DATABASE_TEST_USERNAME = "Test";
-    public static final String DATABASE_TEST_THE_OTHER_ONE = "12345";
 
 }

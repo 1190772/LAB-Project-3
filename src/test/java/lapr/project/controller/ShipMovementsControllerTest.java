@@ -5,12 +5,12 @@ import lapr.project.model.ShipMovements;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ShipMovementsControllerTest {
     ShipBST shipBST;
-    ArrayList<ShipMovements> asc;
-    ArrayList<ShipMovements> desc;
+    List<ShipMovements> asc;
+    List<ShipMovements> desc;
 
     public ShipMovementsControllerTest() {
         shipBST = App.getInstance().getCompany().getShips();

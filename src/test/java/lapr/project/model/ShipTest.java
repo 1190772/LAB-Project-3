@@ -105,7 +105,7 @@ class ShipTest {
         expected.add(pos2);
         expected.add(pos4);
 
-        actual = ship.getPositions(LocalDateTime.of(2020, 12, 31, 17, 0), LocalDateTime.of(2020, 12, 31, 17, 18));
+        actual =(ArrayList<ShipPosition>) ship.getPositions(LocalDateTime.of(2020, 12, 31, 17, 0), LocalDateTime.of(2020, 12, 31, 17, 18));
 
         assertEquals(expected, actual);
     }

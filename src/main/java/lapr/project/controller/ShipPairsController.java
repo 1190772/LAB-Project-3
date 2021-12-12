@@ -4,7 +4,7 @@ import lapr.project.model.Ship;
 import lapr.project.model.ShipBST;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Controller responsible for finding pairs of ships.
@@ -16,7 +16,7 @@ public class ShipPairsController {
     /**
      * The ship binary search tree.
      */
-    private ShipBST shipBST;
+    private final ShipBST shipBST;
 
     /**
      * Builds an instance of the Controller.
@@ -33,7 +33,7 @@ shipBST = App.getInstance().getCompany().getShips();
         }
     }
 
-    public ArrayList<Ship[]> getShipPairs() {
+    public List<Ship[]> getShipPairs() {
         return shipBST.getShipPairs();
     }
 }

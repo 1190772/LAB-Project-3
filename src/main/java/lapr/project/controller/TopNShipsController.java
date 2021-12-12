@@ -17,7 +17,7 @@ public class TopNShipsController {
     /**
      * The ship binary search tree.
      */
-    private ShipBST shipBST;
+    private final ShipBST shipBST;
 
     /**
      * Builds an instance of the Controller.

@@ -5,6 +5,7 @@ import lapr.project.model.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Samuel Pereira 1201274
@@ -32,7 +33,7 @@ public class ShipMovementsController {
      * @param asc if true, orders in an ascending order, otherwise in a descending order
      * @return a list with some details of the movements for each and all ships
      */
-    public ArrayList<ShipMovements> listAllShip(boolean asc) {
+    public List<ShipMovements> listAllShip(boolean asc) {
         ArrayList<ShipMovements> list = new ArrayList<>();
         ShipBST shipBST = App.getInstance().getCompany().getShips();
 

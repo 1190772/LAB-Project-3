@@ -8,7 +8,8 @@ import java.util.ArrayList;
 public class FindClosestPortController {
 
     public Port findClosestPortController(String callsign, LocalDateTime baseDatetime) {
-        double latitude = -92, longitude = 0;
+        double latitude = -92;
+        double longitude = 0;
         Ship ship = new SearchShipController().findShip(callsign);
         if (ship==null)
             return null;

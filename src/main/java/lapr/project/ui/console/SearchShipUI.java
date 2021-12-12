@@ -6,7 +6,7 @@ import lapr.project.model.ShipPosition;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -45,7 +45,7 @@ public class SearchShipUI implements Runnable {
         String[] start;
         String endDate;
         String[] end;
-        ArrayList<ShipPosition> positions;
+        List<ShipPosition> positions;
 
         System.out.print("Enter code: ");
         code = input.nextLine();

@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  *
@@ -16,21 +17,21 @@ import java.util.Comparator;
  */
 public class Port2DTree extends TwoDTree<Port> {
 
-    private PortStoreDb portStoreDb;
+    private final PortStoreDb portStoreDb;
 
     public Port2DTree() {
         super();
         portStoreDb = new PortStoreDb();
     }
 
-    public void createdBalancedPort2DTree(ArrayList<Port> list) {
+    public void createdBalancedPort2DTree(List<Port> list) {
         root = port2DTreeBalanced(list, true);
     }
 
-    private Node2D<Port> port2DTreeBalanced(ArrayList<Port> list, boolean divX) {
+    private Node2D<Port> port2DTreeBalanced(List<Port> list, boolean divX) {
         if (list.isEmpty())
             return null;
-        list.sort(divX ? cmpX : cmpY);
+        list.sort(divX ? cmpLat : cmpLon);
         Port port = list.get(list.size()/2);
         Node2D<Port> node = new Node2D<>(port, port.getLatitude(), port.getLongitude());
         ArrayList<Port> listLeft = new ArrayList<>(list.subList(0, list.size() / 2));
@@ -40,9 +41,9 @@ public class Port2DTree extends TwoDTree<Port> {
         return node;
     }
 
-    protected final Comparator<Port> cmpX = Comparator.comparingDouble(Port::getLatitude);
+    protected final Comparator<Port> cmpLat = Comparator.comparingDouble(Port::getLatitude);
 
-    protected final Comparator<Port> cmpY = Comparator.comparingDouble(Port::getLongitude);
+    protected final Comparator<Port> cmpLon = Comparator.comparingDouble(Port::getLongitude);
 
     public void loadPortsFromDatabase() throws SQLException {
         DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();

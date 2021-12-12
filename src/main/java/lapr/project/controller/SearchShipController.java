@@ -6,7 +6,7 @@ import lapr.project.model.ShipPosition;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Controller responsible for coordinating ship searches.
@@ -18,7 +18,7 @@ public class SearchShipController {
     /**
      * The ship binary search tree.
      */
-    private  ShipBST shipBST;
+    private final ShipBST shipBST;
 
     /**
      * Holder of the selected ship.
@@ -55,7 +55,7 @@ public class SearchShipController {
      *
      * @return a list of positions.
      */
-    public ArrayList<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
+    public List<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
         return ship.getPositions(startDate, endDate);
     }
 }

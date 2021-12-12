@@ -117,7 +117,7 @@ class ShipBSTTest {
         expected.get(1)[0] = ship1;
         expected.get(1)[1] = ship3;
 
-        actual = shipBST.getShipPairs();
+        actual = (ArrayList<Ship[]>) shipBST.getShipPairs();
 
         assertSame(expected.get(0)[0], actual.get(0)[0]);
         assertSame(expected.get(0)[1], actual.get(0)[1]);

@@ -47,9 +47,7 @@ public class App {
             InputStream in = new FileInputStream(Constants.PARAMS_FILENAME);
             props.load(in);
             in.close();
-        } catch (IOException ex) {
-
-        }
+        } catch (IOException ignored) {}
         return props;
     }
 

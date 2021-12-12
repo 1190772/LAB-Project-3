@@ -11,12 +11,13 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.TreeMap;
 
 
 public class ShipBST extends AVL<Ship> {
 
-    private ShipStoreDb shipStoreDb;
+    private final ShipStoreDb shipStoreDb;
 
     public ShipBST() {
         super();
@@ -211,7 +212,7 @@ public class ShipBST extends AVL<Ship> {
         return topNLists;
     }
 
-    public ArrayList<Ship[]> getShipPairs() {
+    public List<Ship[]> getShipPairs() {
         ArrayList<Ship[]> res = new ArrayList<>();
         TreeMap<Ship, Double> travelledDistances = new TreeMap<>();
         TreeMap<Ship, ShipPosition> startPositions = new TreeMap<>();

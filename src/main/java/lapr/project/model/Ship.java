@@ -3,6 +3,7 @@ package lapr.project.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Represents a Ship.
@@ -14,7 +15,7 @@ public class Ship implements Comparable<Ship> {
     /**
      * The MMSI code of the Ship.
      */
-    private final String MMSI;
+    private final String mmsi;
 
     /**
      * The name of the Ship.
@@ -24,7 +25,7 @@ public class Ship implements Comparable<Ship> {
     /**
      * The IMO code of the Ship.
      */
-    private final String IMO;
+    private final String imo;
 
     /**
      * The number of energy generators of the Ship.
@@ -59,7 +60,7 @@ public class Ship implements Comparable<Ship> {
     /**
      * The load capacity of the Ship, in m3.
      */
-    private int capacity;
+    private final int capacity;
 
     /**
      * The draft of the Ship, in meters. Varies with ship load and water density.
@@ -74,9 +75,9 @@ public class Ship implements Comparable<Ship> {
     /**
      * Builds an instance of Ship receiving all the information.
      *
-     * @param MMSI the MMSI code of the ship.
+     * @param mmsi the mmsi code of the ship.
      * @param name the name of the Ship.
-     * @param IMO the IMO code of the Ship.
+     * @param imo the imo code of the Ship.
      * @param numberEnergyGenerators the number of energy generators of the Ship.
      * @param generatorPowerOutput the power output of the Ship's energy generators.
      * @param callSign the Call Sign code of the Ship.
@@ -86,12 +87,12 @@ public class Ship implements Comparable<Ship> {
      * @param capacity the load capacity of the Ship, in m3.
      * @param draft the draft of the Ship, in meters.
      */
-    public Ship(String MMSI, String name, String IMO, int numberEnergyGenerators,
-              int generatorPowerOutput, String callSign, int vesselType, int length, int width, int capacity, float draft) {
+    public Ship(String mmsi, String name, String imo, int numberEnergyGenerators,
+                int generatorPowerOutput, String callSign, int vesselType, int length, int width, int capacity, float draft) {
 
-        this.MMSI = MMSI;
+        this.mmsi = mmsi;
         this.name = name;
-        this.IMO = IMO;
+        this.imo = imo;
         this.numberEnergyGenerators = numberEnergyGenerators;
         this.generatorPowerOutput = generatorPowerOutput;
         this.callSign = callSign;
@@ -104,20 +105,20 @@ public class Ship implements Comparable<Ship> {
     }
 
     /**
-     * Builds an instance of Ship receiving MMSI, name, IMO, CallSign, vesselType, length, width, draft and cargo.
-     * @param MMSI the MMSI code of the ship.
+     * Builds an instance of Ship receiving mmsi, name, imo, CallSign, vesselType, length, width, draft and cargo.
+     * @param mmsi the mmsi code of the ship.
      * @param name the name of the Ship.
-     * @param IMO the IMO code of the Ship.
+     * @param imo the imo code of the Ship.
      * @param callSign the Call Sign code of the Ship.
      * @param vesselType the vessel type of the Ship.
      * @param length the length of the Ship, in meters.
      * @param width the width of the Ship, in meters.
      * @param draft the draft of the Ship, in meters.
      */
-    public Ship(String MMSI, String name, String IMO, String callSign, int vesselType, int length, int width, float draft) {
-        this.MMSI = MMSI;
+    public Ship(String mmsi, String name, String imo, String callSign, int vesselType, int length, int width, float draft) {
+        this.mmsi = mmsi;
         this.name = name;
-        this.IMO = IMO;
+        this.imo = imo;
         this.callSign = callSign;
         this.vesselType = vesselType;
         this.length = length;
@@ -128,11 +129,11 @@ public class Ship implements Comparable<Ship> {
     }
 
     /**
-     * Returns the MMSI code of the ship.
+     * Returns the mmsi code of the ship.
      *
-     * @return MMSI code of the ship
+     * @return mmsi code of the ship
      */
-    public String getMMSI() { return MMSI; }
+    public String getMMSI() { return mmsi; }
 
     /**
      * Returns the name of the Ship.
@@ -142,11 +143,11 @@ public class Ship implements Comparable<Ship> {
     public String getName() { return name; }
 
     /**
-     * Returns the IMO code of the Ship.
+     * Returns the imo code of the Ship.
      *
-     * @return IMO code of the Ship
+     * @return imo code of the Ship
      */
-    public String getIMO() { return IMO; }
+    public String getIMO() { return imo; }
 
     /**
      * Returns the number of energy generators of the Ship.
@@ -219,24 +220,24 @@ public class Ship implements Comparable<Ship> {
      * @param startDate start of interval.
      * @param endDate end of interval.
      *
-     * @return negative, 0, or positive, depending on whose IMO code comes first.
+     * @return negative, 0, or positive, depending on whose imo code comes first.
      */
-    public ArrayList<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
+    public List<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
         ArrayList<ShipPosition> res = new ArrayList<>();
-        Iterator<ShipPosition> positions;
+        Iterator<ShipPosition> allPositions;
         ShipPosition position;
         boolean end = false;
 
-        positions = this.positions.inOrder().iterator();
-        position = positions.next();
+        allPositions = this.positions.inOrder().iterator();
+        position = allPositions.next();
 
         while (position.getBaseDateTime().compareTo(startDate) < 0)
-            position = positions.next();
+            position = allPositions.next();
 
         while (position.getBaseDateTime().compareTo(endDate) <= 0 && !end) {
             res.add(position);
-            if (positions.hasNext())
-                position = positions.next();
+            if (allPositions.hasNext())
+                position = allPositions.next();
             else
                 end = true;
         }
@@ -249,11 +250,11 @@ public class Ship implements Comparable<Ship> {
     } 
 
     /**
-     * Compares two ships based on IMO code.
+     * Compares two ships based on imo code.
      *
      * @param o another ship.
      *
-     * @return negative, 0, or positive, depending on whose IMO code comes first.
+     * @return negative, 0, or positive, depending on whose imo code comes first.
      */
     @Override
     public int compareTo(Ship o) { return this.getIMO().compareTo(o.getIMO()); }
@@ -266,9 +267,9 @@ public class Ship implements Comparable<Ship> {
     @Override
     public String toString() {
         return "Ship{" +
-                "MMSI code = '" + MMSI + '\'' +
+                "MMSI code = '" + mmsi + '\'' +
                 ", Name = '" + name + '\'' +
-                ", IMO code = '" + IMO + '\'' +
+                ", IMO code = '" + imo + '\'' +
                 ", Number of energy generators = " + numberEnergyGenerators +
                 ", Generator power output = " + generatorPowerOutput +
                 ", Call Sign code = '" + callSign + '\'' +

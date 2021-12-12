@@ -13,7 +13,9 @@ package lapr.project.utils;
 public class AVL <E extends Comparable<E>> extends BST<E> {
 
     private int balanceFactor(Node<E> node){
-        int heightRight, heightLeft, res = 0;
+        int heightRight;
+        int heightLeft;
+        int res = 0;
 
         if (node != null) {
             heightRight = super.height(node.getRight());

@@ -106,13 +106,7 @@ public class ShipStoreDb implements Persistable{
 
             try (ResultSet shipsResultSet = getShipsPreparedStatement.executeQuery()) {
 
-                if (shipsResultSet.next()) {
-                    // if ship already exists in the database
-                    isShipOnDatabase = true;
-                } else {
-                    // if ship does not exist in the database
-                    isShipOnDatabase = false;
-                }
+                isShipOnDatabase = shipsResultSet.next();
             }
         }
 
@@ -128,7 +122,6 @@ public class ShipStoreDb implements Persistable{
      * @throws SQLException
      */
     private void insertShipOnDatabase(DatabaseConnection databaseConnection, Ship ship) throws SQLException {
-        Connection connection = databaseConnection.getConnection();
         String sqlCommand = "insert into Ship(mmsi_code, name_ship, number_generators, power_out_generator, call_sign, vessel_type, length_ship, width_ship, draft, capacity_ship, imo_code) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         executeShipStatementOnDatabase(databaseConnection, ship, sqlCommand);
@@ -142,7 +135,6 @@ public class ShipStoreDb implements Persistable{
      * @throws SQLException
      */
     private void updateShipOnDatabase(DatabaseConnection databaseConnection, Ship ship) throws SQLException {
-        Connection connection = databaseConnection.getConnection();
         String sqlCommand = "update Ship set mmsi_code = ?, name_ship = ?, number_generators = ?, power_out_generator = ?, call_sign = ?, vessel_type = ?, length_ship = ?, width_ship = ?, draft = ?, capacity_ship = ? where imo_code = ?";
 
         executeShipStatementOnDatabase(databaseConnection, ship,  sqlCommand);

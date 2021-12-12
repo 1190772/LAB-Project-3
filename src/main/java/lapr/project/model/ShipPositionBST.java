@@ -7,7 +7,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.List;
 
 /**
  * @author Samuel Pereira 1201274
@@ -91,7 +91,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      */
     public double travelledDistance(LocalDateTime start, LocalDateTime end) {
 
-        ArrayList<ShipPosition> shipPositions = getPositions(start, end);
+        ArrayList<ShipPosition> shipPositions = (ArrayList<ShipPosition>) getPositions(start, end);
 
         if (shipPositions.isEmpty())
             return -1;
@@ -149,7 +149,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      */
     public double meanSOG(LocalDateTime start, LocalDateTime end) {
 
-        ArrayList<ShipPosition> shipPositions = getPositions(start, end);
+        ArrayList<ShipPosition> shipPositions = (ArrayList<ShipPosition>) getPositions(start, end);
         double mean = 0;
         for (ShipPosition sp : shipPositions)
             mean += sp.getSOG();
@@ -172,7 +172,7 @@ public class ShipPositionBST extends AVL<ShipPosition> {
      * @param endDate   end of interval.
      * @return negative, 0, or positive, depending on whose IMO code comes first.
      */
-    public ArrayList<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
+    public List<ShipPosition> getPositions(LocalDateTime startDate, LocalDateTime endDate) {
         ArrayList<ShipPosition> res = new ArrayList<>();
         list = (ArrayList<ShipPosition>) inOrder();
         int i = 0;

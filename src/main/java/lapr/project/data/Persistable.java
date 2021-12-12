@@ -24,5 +24,5 @@ public interface Persistable {
      */
     boolean delete(DatabaseConnection databaseConnection, Object object);
 
-    //TODO: não faltará aqui uma operação para obter um objeto da base de dados?
+    // não faltará aqui uma operação para obter um objeto da base de dados?
 }
