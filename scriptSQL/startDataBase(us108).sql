@@ -215,8 +215,10 @@ create table Type_Operation (
 );
 
 create table Container_Operation (
-	id_container	          char(11) constraint fk_id_container_container_operation references Container(id_container),
+    id_cargo_manifest         integer,
+	id_container	          char(11),
 	base_date_time            timestamp,
 	type_operation            char(1) constraint fk_type_operation_container_operation references Type_Operation(code),
-	constraint pk_container_operation Primary Key (id_container, base_date_time)
+	Constraint fk_container_cargo_manifest_container_operation Foreign Key (id_cargo_manifest, id_container) references Cargo_Manifest(id_cargo_manifest, id_container),
+	Constraint pk_container_operation Primary Key (id_cargo_manifest, id_container, base_date_time)
 );
