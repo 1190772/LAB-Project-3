@@ -122,7 +122,7 @@ create table Position_Ship(
 create table Country (
 	alpha2_code	char(2) constraint pk_country Primary Key,
 	alpha3_code	char(3) constraint un_alpha3_code_country unique,
-	name		varChar(20) constraint un_name_country unique,
+	country		varChar(20) constraint un_name_country unique,
 	capital		varchar(30) constraint un_capital_country unique,
 	continent	varChar(10),
 	population	integer constraint ck_population_country_positive check (population > 0),
@@ -203,8 +203,8 @@ create table Border (
 );
 
 create table Sea_Distance (
-	id_port1        	      char(2),
-	id_port2	              char(2),
+	id_port1        	      char(5),
+	id_port2	              char(5),
 	distance	              integer constraint ck_distance_sea_distance_positive check (distance > 0),
 	Constraint pk_sea_distance Primary Key (id_port1, id_port2)
 );
@@ -219,6 +219,7 @@ create table Container_Operation (
 	id_container	          char(11),
 	base_date_time            timestamp,
 	type_operation            char(1) constraint fk_type_operation_container_operation references Type_Operation(code),
+	id_employee               integer constraint fk_id_employee_employee references Employee(id_employee),
 	Constraint fk_container_cargo_manifest_container_operation Foreign Key (id_cargo_manifest, id_container) references Cargo_Manifest(id_cargo_manifest, id_container),
 	Constraint pk_container_operation Primary Key (id_cargo_manifest, id_container, base_date_time)
 );
