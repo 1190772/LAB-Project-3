@@ -3,21 +3,21 @@
 
 autonumber
 
-actor "Ship Captain" as SP
+actor "Port Manager" as PM
 
-activate SP
-SP -> ":System" : asks for map of port resources
-
-activate ":System"
-":System" --> "SP" : requests data (month)
-deactivate ":System"
-
-SP -> ":System" : types requested data
+activate PM
+PM -> ":System" : asks for map of port resources
 
 activate ":System"
-":System" --> SP : shows map of port resources
+":System" --> "PM" : requests data (month)
 deactivate ":System"
 
-deactivate SP
+PM -> ":System" : types requested data
+
+activate ":System"
+":System" --> PM : shows map of port resources
+deactivate ":System"
+
+deactivate PM
 
 @enduml
