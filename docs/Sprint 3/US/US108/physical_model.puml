@@ -1,11 +1,30 @@
 @startuml
 
+entity Contianer_Operation {
+* id_cargo_manifest         integer
+* id_container              char(11)
+* base_date_time            timestamp
+--
+* id_employee               integer
+* type_operation            char(1)
+}
+
+entity Type_Operation {
+* code                      char(1)
+--
+* description               char(6)
+}
+
+
 entity Trip {
 * id_trip                   integer
 --
 * ship_imo                  char(10)
+* id_truck                  integer
 * id_start_port             char(5)
 * id_destination_port       char(5)
+* id_start_warehouse        integer
+* id_destination_warehouse  integer
 * date_time_start           timestamp
 * date_time_end             timestamp
 }
@@ -67,12 +86,14 @@ entity Unloading_Cargo_Manifest {
 * id_cargo_manifest         integer
 * id_container              char(11)
 --
+* id_warehouse              integer
 }
 
 entity Loading_Cargo_Manifest {
 * id_cargo_manifest         integer
 * id_container              char(11)
 --
+* id_warehouse              integer
 }
 
 entity Truck {
@@ -100,18 +121,16 @@ entity Ship {
 entity Port {
 * id_port                   integer
 --
-* name_port                 varChar(20)
-* continent_port            varChar(10)
-* country_port              varChar(20)
-* latitude_port             number(12,9)
-* longitude_port            number(12,9)
+* name                      varChar(20)
+* country_code              char(2)
+* latitude                  number(12,9)
+* longitude                 number(12,9)
 }
 
 entity Warehouse {
 * id_warehouse              integer
 * name    	   			    varChar(30)
-* continent		    	    varChar(20)
-* country	         	    varChar(20)
+* country_code              char(2)
 * latitude		    	    number(12,9)
 * longitude 	    	    number(12,9)
 }
@@ -165,10 +184,34 @@ entity Container_Equipment_Identifier {
 * description               varChar(100)
 }
 
+entity Country {
+* alpha2_code               char(2)
+--
+* alpha3_code               char(3)
+* capital                   varChar(30)
+* country                   varChar(20)
+* continent                 varChar(10)
+* population                integer
+* latitude                  number(12,9)
+* longitude                 number(12,9)
+}
+
+entity Border {
+* country1                  char(2)
+* country2                  char(2)
+}
+
+entity Sea_Distance {
+* id_port1                  char(5)
+* id_port2                  char(5)
+--
+* distance                  integer
+}
+
+
 ISO }o--|| Length
 ISO }o--|| Width_Height
 ISO }o--|| Container_Type
-
 
 Container }o--|| Container_Owner
 Container }o--|| Container_Equipment_Identifier
@@ -176,9 +219,10 @@ Container }o--|| ISO
 Trip ||--|| Cargo_Manifest
 Cargo_Manifest }o--|| Container
 Cargo_Manifest }|--|| Client
-Ship ||--o{ Position_Ship
+Position_Ship }o--|| Ship
 
-Truck ||--o{ Employee
+Employee }o--|| Truck
+Trip }o--|| Truck
 Ship ||--o{ Trip
 Ship ||--o{ Employee
 Warehouse ||--o{ Employee
@@ -187,5 +231,15 @@ Employee }o--|| Role
 
 Unloading_Cargo_Manifest ||--|| Cargo_Manifest
 Loading_Cargo_Manifest ||--|| Cargo_Manifest
+
+Country ||--o{ Port
+Country ||--o{ Warehouse
+Country }|--o| Border
+Country }|--o| Border
+Sea_Distance ||--|{ Port
+Sea_Distance ||--|{ Port
+
+Cargo_Manifest ||--|{ Contianer_Operation
+Contianer_Operation }o--|| Type_Operation
 
 @enduml
