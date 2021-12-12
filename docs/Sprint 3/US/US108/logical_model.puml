@@ -9,6 +9,12 @@ entity Contianer_Operation {
 * type_operation
 }
 
+entity Type_Operation {
+* code
+--
+* description
+}
+
 entity Trip {
 * id_trip
 --
@@ -235,7 +241,8 @@ Country }|--o| Border
 Sea_Distance ||--|{ Port
 Sea_Distance ||--|{ Port
 
-Cargo_Manifest -- Contianer_Operation
+Cargo_Manifest ||--|{ Contianer_Operation
+Contianer_Operation }o--|| Type_Operation
 
 
 @enduml
