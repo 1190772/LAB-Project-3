@@ -120,7 +120,7 @@ class Border {
 
 Company "1" -- "1..*" Ship : Owns >
 Company "1" -- "1..*" Truck : Owns >
-Company "1" -- "*" Port : Owns >
+Company "1" -- "1..*" Port : Owns >
 Company "1" -- "*" Warehouse : Owns >
 Company "1" -- "*" Employee : Employs >
 Company "1" --- "*" OrganizationRole : Comprehends >
