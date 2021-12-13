@@ -17,6 +17,11 @@ drop table Unloading_Cargo_Manifest cascade constraints purge;
 drop table Loading_Cargo_Manifest cascade constraints purge;
 drop table Trip cascade constraints purge;
 drop table Client cascade constraints purge;
+drop table Country cascade constraints purge;
+drop table Border cascade constraints purge;
+drop table Sea_Distance cascade constraints purge;
+drop table Container_Operation cascade constraints purge;
+drop table Type_Operation cascade constraints purge;
 
 
 create table Owner(
@@ -114,22 +119,33 @@ create table Position_Ship(
     Constraint pk_position_ship Primary Key (id_ship, base_date_time)
 );
 
+create table Country (
+	alpha2_code	char(2) constraint pk_country Primary Key,
+	alpha3_code	char(3) constraint un_alpha3_code_country unique,
+	country		varChar(20) constraint un_name_country unique,
+	capital		varchar(30) constraint un_capital_country unique,
+	continent	varChar(10),
+	population	integer constraint ck_population_country_positive check (population > 0),
+	latitude	number(12,9),
+	longitude	number(12,9)
+);
+
 create table Port(
     id_port			          char(5) constraint pk_port Primary Key,
     name				      varChar(20),
-    continent			      varChar(10),
-    country			          varChar(20),
+    country_code	          char(2),
     latitude			      number(12,9),
-    longitude			      number(12,9)
+    longitude			      number(12,9),
+    capacity                  integer
 );
 
 create table Warehouse(
     id_warehouse     		  integer constraint pk_warehouse Primary Key,
     name    	   			  varChar(30),
-    continent		    	  varChar(20),
-    country		         	  varChar(20),
+    country_code	          char(2),
     latitude		    	  number(12,9),
-    longitude		    	  number(12,9)
+    longitude		    	  number(12,9),
+    capacity                  integer
 );
 
 create table Client(
@@ -142,10 +158,13 @@ create table Client(
 create table Trip(
     id_trip                   integer constraint pk_trip Primary Key,
     ship_imo                  char(10) constraint fk_trip_ship references Ship(imo_code),
+    id_truck                  integer constraint fk_trip_truck references Truck(id_truck),
     id_start_port             char(5) constraint fk_trip_start_port references Port(id_port),
     id_destination_port       char(5) constraint fk_trip_destination_port references Port(id_port),
-    date_time_start               timestamp,
-    date_time_end                 timestamp
+    id_start_warehouse        integer constraint fk_trip_start_warehouse references Warehouse(id_warehouse),
+    id_destination_warehouse  integer constraint fk_trip_destination_warehouse references Warehouse(id_warehouse),
+    date_time_start           timestamp,
+    date_time_end             timestamp
 );
 
 
@@ -164,6 +183,7 @@ create table Cargo_Manifest(
 create table Unloading_Cargo_Manifest(
     id_cargo_manifest         integer,
     id_container              char(11),
+    id_warehouse              integer constraint fk_warehouse_unloading_cargo_manifest references Warehouse(id_warehouse),
     Constraint fk_cargo_manifest_unloading_cargo_manifest Foreign Key (id_cargo_manifest, id_container) references Cargo_Manifest(id_cargo_manifest, id_container),
     Constraint pk_Unloading_Cargo_Manifest Primary Key (id_cargo_manifest, id_container)
 );
@@ -171,6 +191,35 @@ create table Unloading_Cargo_Manifest(
 create table Loading_Cargo_Manifest(
     id_cargo_manifest         integer,
     id_container              char(11),
+    id_warehouse              integer constraint fk_warehouse_loading_cargo_manifest references Warehouse(id_warehouse),
     Constraint fk_cargo_manifest_loading_cargo_manifest Foreign Key (id_cargo_manifest, id_container) references Cargo_Manifest(id_cargo_manifest, id_container),
     Constraint pk_Loading_Cargo_Manifest Primary Key (id_cargo_manifest, id_container)
+);
+
+create table Border (
+	id_country1	              char(2) constraint fk_id_country1_border  references Country(alpha2_code),
+	id_country2	              char(2) constraint fk_id_country2_border  references Country(alpha2_code),
+	Constraint pk_border Primary Key (id_country1, id_country2)
+);
+
+create table Sea_Distance (
+	id_port1        	      char(5),
+	id_port2	              char(5),
+	distance	              integer constraint ck_distance_sea_distance_positive check (distance > 0),
+	Constraint pk_sea_distance Primary Key (id_port1, id_port2)
+);
+
+create table Type_Operation (
+    code                      char(1) constraint pk_type_operation Primary Key,
+    description               char(6)
+);
+
+create table Container_Operation (
+    id_cargo_manifest         integer,
+	id_container	          char(11),
+	base_date_time            timestamp,
+	type_operation            char(1) constraint fk_type_operation_container_operation references Type_Operation(code),
+	id_employee               integer constraint fk_id_employee_employee references Employee(id_employee),
+	Constraint fk_container_cargo_manifest_container_operation Foreign Key (id_cargo_manifest, id_container) references Cargo_Manifest(id_cargo_manifest, id_container),
+	Constraint pk_container_operation Primary Key (id_cargo_manifest, id_container, base_date_time)
 );

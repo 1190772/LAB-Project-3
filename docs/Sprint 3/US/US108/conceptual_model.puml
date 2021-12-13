@@ -39,11 +39,12 @@ Cargo_Manifest -- "toEmployee" : has information >
 
 
 "toIDContainer" -- Container : has information <
-ISO -- Container : has <
+Container -- ISO : has <
 ISO -- toISO : has information <
 
 Cargo_Manifest }o--|| Trip
 Trip }o--|| Ship
+Trip }o--|| Truck
 Cargo_Manifest }|--|| Client
 
 "toEmployee" -- Employee : work <
@@ -51,5 +52,8 @@ Employee -- Role : has >
 
 Unloading_Cargo_Manifest -- Cargo_Manifest : can be <
 Loading_Cargo_Manifest -- Cargo_Manifest : can be <
+
+Country ||--o{ Port
+Country ||--o{ Warehouse
 
 @enduml
