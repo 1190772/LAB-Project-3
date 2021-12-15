@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+entity Country {
+* alpha2_code
+--
+* alpha3_code
+* capital
+* country
+* continent
+* population
+* latitude
+* longitude
+}
+
+entity Port {
+* id_port
+--
+* name
+* country_code
+* latitude
+* longitude
+* capacity
+}
+
+entity Border {
+* country1
+* country2
+}
+
+entity Sea_Distance {
+* id_port1
+* id_port2
+--
+* distance
+}
+
+Country ||--o{ Port
+Country }|--o| Border
+Country }|--o| Border
+
+Sea_Distance ||--|{ Port
+Sea_Distance ||--|{ Port
+
+@enduml

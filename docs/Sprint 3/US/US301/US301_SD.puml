@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+participant ":buildFreightNetworkUI" as UI
+participant ":buildFreightNetworkController" as CTRL
+participant ":PortStoreDb" as P
+participant ":SeaDistanceStoreDb" as SD
+participant ":BorderStoreDb" as B
+participant ":CountryStoreDb" as C
+participant ":FreightNetwork" as NET
+
+activate TM
+TM -> UI : asks to build a freight network
+
+activate UI
+UI -> CTRL : buildFreightNetwork()
+
+activate CTRL
+
+CTRL -> P : ports = getPorts()
+activate P
+deactivate P
+
+CTRL -> SD : seaDists = getSeaDistances()
+activate SD
+deactivate SD
+
+CTRL -> B : borders = getBorders()
+activate B
+deactivate B
+
+CTRL -> C : countries = getCountries()
+activate C
+deactivate C
+
+CTRL -> CTRL : vs = createVertices(ports, countries)
+CTRL -> CTRL : m = createEdges(seaDists, borders)
+
+CTRL -> NET : BuildFreightNetwork(false, vs, m)
+activate NET
+deactivate NET
+
+deactivate NET
+deactivate CTRL
+deactivate UI
+deactivate TM
+@enduml
