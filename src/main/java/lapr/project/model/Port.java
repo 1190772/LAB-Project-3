@@ -7,6 +7,7 @@ public class Port {
     private final String country;
     private final double latitude;
     private final double longitude;
+    private final int capacity;
 
     public Port(int id, String name, String continent, String country, double latitude, double longitude) {
         this.id=id;
@@ -15,6 +16,7 @@ public class Port {
         this.country=country;
         this.latitude=latitude;
         this.longitude=longitude;
+        this.capacity = 0;
     }
 
     public int getID() {
@@ -40,6 +42,8 @@ public class Port {
     public double getLongitude() {
         return longitude;
     }
+
+    public int getCapacity() { return capacity; }
 
     @Override
     public String toString() {

@@ -26,7 +26,7 @@ public class ImportShipsUI implements Runnable {
      * Runs the US.
      */
     public void run() {
-        controller.importShips("sships.csv");
+        controller.importShips("bships.csv");
         controller.saveShipsToDb();
         System.out.println("Data has been saved.");
     }

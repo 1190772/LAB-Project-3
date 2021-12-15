@@ -125,13 +125,13 @@ create table Country (
 	country		varChar(20) constraint un_name_country unique,
 	capital		varchar(30) constraint un_capital_country unique,
 	continent	varChar(10),
-	population	integer constraint ck_population_country_positive check (population > 0),
+	population	number constraint ck_population_country_positive check (population > 0),
 	latitude	number(12,9),
 	longitude	number(12,9)
 );
 
 create table Port(
-    id_port			          char(5) constraint pk_port Primary Key,
+    id_port			          char(6) constraint pk_port Primary Key,
     name				      varChar(20),
     country_code	          char(2),
     latitude			      number(12,9),

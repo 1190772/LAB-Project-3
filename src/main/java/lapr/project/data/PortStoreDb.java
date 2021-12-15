@@ -16,6 +16,7 @@ public class PortStoreDb implements Persistable {
     public boolean save(DatabaseConnection databaseConnection, Object object) {
 
     Connection connection = databaseConnection.getConnection();
+    CountryStoreDb countryStoreDb = new CountryStoreDb();
     Port port = (Port) object;
 
     String sqlCommand = "select * from Port where id_port = ?";
@@ -24,15 +25,15 @@ public class PortStoreDb implements Persistable {
         getAddressedPreparedStatement.setInt(1, port.getID());
         try (ResultSet addressesResultSet = getAddressedPreparedStatement.executeQuery()) {
             if (addressesResultSet.next()) {
-                sqlCommand = "update Port set name = ?, continent = ?, country = ?, latitude = ?, longitude = ? where id_port = ?";
+                sqlCommand = "update Port set name = ?, capacity = ?, country_code = ?, latitude = ?, longitude = ? where id_port = ?";
             } else {
-                sqlCommand = "insert into Port(name, continent, country, latitude, longitude, id_port) values (?, ?, ?, ?, ?, ?)";
+                sqlCommand = "insert into Port(name, capacity, country_code, latitude, longitude, id_port) values (?, ?, ?, ?, ?, ?)";
             }
 
             try (PreparedStatement saveAddressPreparedStatement = connection.prepareStatement(sqlCommand)) {
                 saveAddressPreparedStatement.setString(1, port.getName());
-                saveAddressPreparedStatement.setString(2, port.getContinent());
-                saveAddressPreparedStatement.setString(3, port.getCountry());
+                saveAddressPreparedStatement.setInt(2, port.getCapacity());
+                saveAddressPreparedStatement.setString(3, countryStoreDb.getCountryCodeByName(connection, port.getCountry()));
                 saveAddressPreparedStatement.setDouble(4, port.getLatitude());
                 saveAddressPreparedStatement.setDouble(5, port.getLongitude());
                 saveAddressPreparedStatement.setInt(6, port.getID());
