@@ -159,8 +159,8 @@ create table Trip(
     id_trip                   integer constraint pk_trip Primary Key,
     ship_imo                  char(10) constraint fk_trip_ship references Ship(imo_code),
     id_truck                  integer constraint fk_trip_truck references Truck(id_truck),
-    id_start_port             char(5) constraint fk_trip_start_port references Port(id_port),
-    id_destination_port       char(5) constraint fk_trip_destination_port references Port(id_port),
+    id_start_port             char(6) constraint fk_trip_start_port references Port(id_port),
+    id_destination_port       char(6) constraint fk_trip_destination_port references Port(id_port),
     id_start_warehouse        integer constraint fk_trip_start_warehouse references Warehouse(id_warehouse),
     id_destination_warehouse  integer constraint fk_trip_destination_warehouse references Warehouse(id_warehouse),
     date_time_start           timestamp,
@@ -203,8 +203,8 @@ create table Border (
 );
 
 create table Sea_Distance (
-	id_port1        	      char(5),
-	id_port2	              char(5),
+	id_port1        	      char(6),
+	id_port2	              char(6),
 	distance	              integer constraint ck_distance_sea_distance_positive check (distance > 0),
 	Constraint pk_sea_distance Primary Key (id_port1, id_port2)
 );
