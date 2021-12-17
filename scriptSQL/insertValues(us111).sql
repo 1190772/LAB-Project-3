@@ -211,44 +211,53 @@ INSERT INTO Ship VALUES ('IMO6262626',611122224, 'Royal Fortune'       ,2, 400, 
 INSERT INTO Position_Ship VALUES ('IMO1234567' , timestamp '2020-02-12  01:11:12', -56.14751  ,   111.78123 , 22.3  , 33.2 , 11  , 'A');
 INSERT INTO Position_Ship VALUES ('IMO1212121' , timestamp '2020-01-23  02:22:21', -29.65593  ,   155.52546 , 16.4  , 22.4 , 223 , 'B');
 INSERT INTO Position_Ship VALUES ('IMO2121212' , timestamp '2021-06-30  13:33:32',  22.83719  ,   119.43955 , 33.4  , 11.1 , 333 , 'A');
-INSERT INTO Position_Ship VALUES ('IMO2222222' , timestamp '2021-12-02  14:44:41', -66.09539  ,  -56.96413  , 44.5  , 42.2 , 1   , 'B');
-INSERT INTO Position_Ship VALUES ('IMO1111111' , timestamp '2021-12-05  05:55:52',  59.84337  ,  -35.55917  , 53.4  , 53.3 , 23  , 'A');
-INSERT INTO Position_Ship VALUES ('IMO3333333' , timestamp '2020-04-06  06:16:11', -40.87156  ,   1.65903   , 25.6  , 64.4 , 344 , 'B');
-INSERT INTO Position_Ship VALUES ('IMO4444444' , timestamp '2020-02-13  17:27:22', -8.93165   ,   -15.55008 , 17.6  , 75.5 , 0   , 'A');
 INSERT INTO Position_Ship VALUES ('IMO5555555' , timestamp '2021-11-16  18:38:32', -15.55008  ,  -15.55008  , 45.9  , 86.6 , 13  , 'B');
 INSERT INTO Position_Ship VALUES ('IMO6666666' , timestamp '2021-10-15  09:49:41', -42.220168 , -42.22016   , 13.4  , 57.7 , 233 , 'A');
+INSERT INTO Position_Ship VALUES ('IMO2222222' , timestamp '2021-12-02  14:44:41', -66.09539  ,  -56.96413  , 44.5  , 42.2 , 1   , 'B');
+INSERT INTO Position_Ship VALUES ('IMO1111111' , timestamp '2021-12-05  05:55:52',  59.84337  ,  -35.55917  , 53.4  , 53.3 , 23  , 'A');
+INSERT INTO Position_Ship VALUES ('IMO4444444' , timestamp '2020-02-13  17:27:22', -8.93165   ,   -15.55008 , 17.6  , 75.5 , 0   , 'A');
+INSERT INTO Position_Ship VALUES ('IMO3333333' , timestamp '2020-04-06  06:16:11', -40.87156  ,   1.65903   , 25.6  , 64.4 , 344 , 'B');
+
+-- ** tabela Country **
+
+INSERT INTO Country VALUES ('PT','PRT','Portugal','Lisbon','Europe',10.31,38.71666667,-9.133333);
+INSERT INTO Country VALUES ('ES','ESP','Spain','Madrid','Europe',46.53,40.4,-3.683333);
+INSERT INTO Country VALUES ('BR','BRA','Brazil','Brasilia','America',206.12,-15.78333333,-47.916667);
+INSERT INTO Country VALUES ('AO','AGO','Angola','Luanda','Africa',32.87,-8.838333,13.234444);
+INSERT INTO Country VALUES ('IN','IND','India','Nova Delhi','Asia',1393.41,28.644800,28.644800);
 
 -- ** tabela Port**
 
-INSERT INTO Port VALUES ('PT345', 'Portuguelas', 'Europa', 'Portugal', 34.11492 ,  26.38083 );
-INSERT INTO Port VALUES ('AN345', 'Porto Mar'  , 'África', 'Angola'  , 9.63635  ,  22.68017 );
-INSERT INTO Port VALUES ('IN233', 'Dalil'      , 'Ásia'  , 'India'   , 22.68017,  25.42360);
-INSERT INTO Port VALUES ('ES456', 'MariBela'   , 'Europa', 'Espanha' , 26.97284 ,  26.97284 );
+INSERT INTO Port VALUES ('PT345', 'Portuguelas', 'PT', 34.11492 ,  26.38083, 60);
+INSERT INTO Port VALUES ('AN345', 'Porto Mar'  , 'ES', 9.63635  ,  22.68017, 70);
+INSERT INTO Port VALUES ('IN233', 'Dalil'      , 'AO', 22.68017 ,  25.42360, 80);
+INSERT INTO Port VALUES ('ES456', 'MariBela'   , 'IN', 26.97284 ,  26.97284, 90);
 
 -- **tabela warehouse **
 
-INSERT INTO Warehouse VALUES (11221, 'Warehouse Port'  , 'Europa', 'Portugal', 34.11492 , 26.38083 );
-INSERT INTO Warehouse VALUES (11222, 'The warehouse'   , 'África', 'Angola'  , 19.63635  , 22.68017 );
-INSERT INTO Warehouse VALUES (11223, 'Port Warehouse'  , 'Ásia'  , 'India'   , 22.68017  , 25.42360);
-INSERT INTO Warehouse VALUES (11224, 'Cruz warehouse'  , 'Europa', 'Espanha' , 26.97284 ,  26.97284 );
+INSERT INTO Warehouse VALUES (11221, 'Warehouse Port'  , 'PT', 34.11492 , 26.38083,100 );
+INSERT INTO Warehouse VALUES (11222, 'The warehouse'   , 'ES', 19.63635 , 22.68017,110 );
+INSERT INTO Warehouse VALUES (11223, 'Port Warehouse'  , 'AO', 22.68017 , 25.42360,120 );
+INSERT INTO Warehouse VALUES (11224, 'Cruz warehouse'  , 'IN', 26.97284 , 26.97284,130 );
 
 -- ** tabela trip **
 
-INSERT INTO Trip VALUES (1231,'IMO1234567','PT345', 'ES456', timestamp '2020-01-01 02:02:11', null);
-INSERT INTO Trip VALUES (1232,'IMO1212121','AN345', 'IN233', timestamp '2020-02-12 03:13:22', null);
-INSERT INTO Trip VALUES (1233,'IMO2121212','IN233', 'AN345', timestamp '2021-11-23 11:24:33', null);
-INSERT INTO Trip VALUES (1234,'IMO2222222','ES456', 'PT345', timestamp '2021-06-20 19:35:33', null);
-INSERT INTO Trip VALUES (1235,'IMO1111111','PT345', 'AN345', timestamp '2021-05-18 19:35:33', timestamp '2021-06-02 05:36:33');
-INSERT INTO Trip VALUES (1236,'IMO1111111','AN345', 'IN233', timestamp '2021-04-25 19:35:33', timestamp '2021-05-02 06:36:33');
-INSERT INTO Trip VALUES (1237,'IMO4444444','IN233', 'ES456', timestamp '2021-03-13 19:35:33', timestamp '2021-04-22 07:36:33');
-INSERT INTO Trip VALUES (1238,'IMO5555555','ES456', 'PT345', timestamp '2021-09-01 19:35:33', timestamp '2021-10-12 08:36:33');
-INSERT INTO Trip VALUES (1239,'IMO6666666','PT345', 'IN233', timestamp '2021-08-20 19:35:33', timestamp '2021-09-22 09:36:33');
+INSERT INTO Trip VALUES (1231,'IMO1234567',null,'PT345', 'ES456',null, null, timestamp '2020-01-01 02:02:11',timestamp '2020-03-03 02:02:11');
+INSERT INTO Trip VALUES (1232,'IMO1212121',null, 'AN345',  null  ,11221,null ,timestamp '2020-02-12 03:13:22', timestamp '2021-03-02 02:36:33');
+INSERT INTO Trip VALUES (1233,'IMO2121212',null, 'IN233',  null  ,11222,null ,timestamp '2021-11-23 11:24:33', timestamp '2022-04-02 03:36:33');
+INSERT INTO Trip VALUES (1234,'IMO2222222',null, 'ES456',  null  ,11223,null ,timestamp '2021-06-20 19:35:33', timestamp '2022-05-02 04:36:33');
+INSERT INTO Trip VALUES (1235,'IMO1111111',null,    null, 'AN345',11224,null ,timestamp '2021-05-18 19:35:33', timestamp '2022-06-02 05:36:33');
+INSERT INTO Trip VALUES (1236,'IMO1111111',null,    null, 'IN233',null ,11221, timestamp '2021-04-25 19:35:33', timestamp '2021-05-02 06:36:33');
+INSERT INTO Trip VALUES (1237,'IMO4444444',null,    null, 'ES456',null ,11222, timestamp '2021-03-13 19:35:33', timestamp '2021-04-22 07:36:33');
+INSERT INTO Trip VALUES (1238,'IMO5555555',null,    null, 'PT345',null ,11223, timestamp '2021-09-01 19:35:33', timestamp '2021-10-12 08:36:33');
+INSERT INTO Trip VALUES (1239,'IMO6666666',null,    null, 'IN233',null ,11224, timestamp '2021-08-20 19:35:33', timestamp '2021-09-22 09:36:33');
 
-INSERT INTO Trip VALUES (2235,'IMO7777777','PT345', 'AN345', timestamp '2021-02-08 19:35:33', timestamp '2021-03-01 06:13:23');
-INSERT INTO Trip VALUES (2236,'IMO8888888','AN345', 'IN233', timestamp '2021-03-15 19:35:33', timestamp '2021-04-22 07:26:13');
-INSERT INTO Trip VALUES (2237,'IMO9999999','IN233', 'ES456', timestamp '2021-04-23 19:35:33', timestamp null);
-INSERT INTO Trip VALUES (2238,'IMO6161616','ES456', 'PT345', timestamp '2020-05-21 19:35:33', timestamp null);
-INSERT INTO Trip VALUES (2239,'IMO6262626','PT345', 'IN233', timestamp '2020-06-10 19:35:33', timestamp null);
+INSERT INTO Trip VALUES (2235,null,12345,'PT345', null, null, 11221, timestamp '2021-02-08 19:35:33', timestamp '2021-03-01 06:13:23');
+INSERT INTO Trip VALUES (2236,null,12346,'AN345', null, null, 11222, timestamp '2021-03-15 19:35:33', timestamp '2021-04-22 07:26:13');
+INSERT INTO Trip VALUES (2237,null,12347,'IN233', null, null, 11223, timestamp '2021-04-23 19:35:33', timestamp '2022-04-22 08:26:13');
+INSERT INTO Trip VALUES (2238,'IMO6161616',null, 'PT345',null, null,11221, timestamp '2020-05-21 19:35:33', timestamp '2022-05-22 08:26:13');
+INSERT INTO Trip VALUES (2239,'IMO6262626',null, 'IN233',null, null,11222, timestamp '2020-06-10 19:35:33', timestamp '2022-06-22 08:26:13');
+
 
 
 -- ** tabela Client **
@@ -290,25 +299,37 @@ INSERT INTO Cargo_Manifest VALUES (12122,'BICR8888889',2238, 100705, 100000,-5, 
 
 -- ** tabela Unloading_Cargo_Manifest**
 
-INSERT INTO Unloading_Cargo_Manifest VALUES (22111,'BICU1234561');
-INSERT INTO Unloading_Cargo_Manifest VALUES (22112,'NIKR1352462');
-INSERT INTO Unloading_Cargo_Manifest VALUES (22121,'ADIJ6543223');
-INSERT INTO Unloading_Cargo_Manifest VALUES (22122,'FILZ6543214');
+INSERT INTO Unloading_Cargo_Manifest VALUES (22111,'BICU1234561',11221);
+INSERT INTO Unloading_Cargo_Manifest VALUES (22112,'NIKR1352462',11222);
+INSERT INTO Unloading_Cargo_Manifest VALUES (22121,'ADIJ6543223',11223);
+INSERT INTO Unloading_Cargo_Manifest VALUES (22122,'FILZ6543214',11224);
 
-INSERT INTO Unloading_Cargo_Manifest VALUES (32122,'ADIZ6666667');
-INSERT INTO Unloading_Cargo_Manifest VALUES (32122,'FILR7777778');
-INSERT INTO Unloading_Cargo_Manifest VALUES (12122,'BICR8888889');
-
+INSERT INTO Unloading_Cargo_Manifest VALUES (32122,'ADIZ6666667',11221);
+INSERT INTO Unloading_Cargo_Manifest VALUES (32122,'FILR7777778',11222);
+INSERT INTO Unloading_Cargo_Manifest VALUES (12122,'BICR8888889',11223);
 
 -- ** tabela Loading_Cargo_Manifest**
 
-INSERT INTO Loading_Cargo_Manifest VALUES (12122,'BICZ1231235');
-INSERT INTO Loading_Cargo_Manifest VALUES (12122,'NIKJ1111116');
-INSERT INTO Loading_Cargo_Manifest VALUES (12122,'ADIJ2222227');
-INSERT INTO Loading_Cargo_Manifest VALUES (12122,'FILR4564568');
+INSERT INTO Loading_Cargo_Manifest VALUES (12122,'BICZ1231235',11221);
+INSERT INTO Loading_Cargo_Manifest VALUES (12122,'NIKJ1111116',11222);
+INSERT INTO Loading_Cargo_Manifest VALUES (12122,'ADIJ2222227',11223);
+INSERT INTO Loading_Cargo_Manifest VALUES (12122,'FILR4564568',11224);
 
-INSERT INTO Loading_Cargo_Manifest VALUES (32122,'FILR7777778');
-INSERT INTO Loading_Cargo_Manifest VALUES (12122,'BICR8888889');
+INSERT INTO Loading_Cargo_Manifest VALUES (32122,'FILR7777778',11221);
+INSERT INTO Loading_Cargo_Manifest VALUES (12122,'BICR8888889',11222);
+
+-- ** tabela Border **
+
+INSERT INTO Border VALUES ('PT','ES');
+INSERT INTO Border VALUES ('ES','PT');
+
+-- **tabela type_operation **
+
+INSERT INTO Type_Operation VALUES ('U','Update');
+INSERT INTO Type_Operation VALUES ('I','Insert');
+INSERT INTO Type_Operation VALUES ('D','Delete');
+
+
 
 select * from Owner;
 select * from Equipment_Identifier;
@@ -329,4 +350,7 @@ select * from Client;
 select * from Cargo_Manifest;
 select * from Unloading_Cargo_Manifest;
 select * from Loading_Cargo_Manifest;
+select * from Border;
+select * from type_operation;
+select * from Country;
 
