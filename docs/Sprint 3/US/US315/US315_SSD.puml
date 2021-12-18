@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : asks to check if a container is in a certain position
+
+activate ":System"
+":System" --> TM : asks for the container's ID and position
+deactivate ":System"
+
+TM -> ":System" : types requested data
+
+activate ":System"
+":System" --> TM : returns 1 if the container is in that position and 0 if not.
+deactivate ":System"
+
+deactivate TM
+
+@enduml

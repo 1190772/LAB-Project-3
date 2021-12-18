@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+entity Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_trip
+* position_code
+* cargo_weight
+* refrigeration_temperature
+* id_client
+}
+
+
+@enduml
