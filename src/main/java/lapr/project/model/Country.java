@@ -22,6 +22,8 @@ public class Country {
         this.longitude = longitude;
     }
 
+    public String getAlpha2_code() { return alpha2_code; }
+
     public String getCapital() { return capital; }
 
     public double getLatitude() { return latitude; }
