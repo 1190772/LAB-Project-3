@@ -1,12 +1,43 @@
 package lapr.project.controller;
 
+import lapr.project.data.BorderStoreDb;
+import lapr.project.data.CountryStoreDb;
+import lapr.project.data.PortStoreDb;
+import lapr.project.data.SeaDistanceStoreDb;
 import lapr.project.model.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static lapr.project.model.shared.Utils.distanceBetweenTwoCoordinates;
 
 public class BuildFreightNetworkController {
+
+    private final CountryStoreDb countryStoreDb;
+    private final PortStoreDb portStoreDb;
+    private final BorderStoreDb borderStoreDb;
+    private final SeaDistanceStoreDb seaDistanceStoreDb;
+
+    public BuildFreightNetworkController() {
+        countryStoreDb = new CountryStoreDb();
+        portStoreDb = new PortStoreDb();
+        borderStoreDb = new BorderStoreDb();
+        seaDistanceStoreDb = new SeaDistanceStoreDb();
+    }
+
+    public void BuildFreightNetwork() {
+        try {
+            ArrayList<Country> countries = (ArrayList<Country>) countryStoreDb.getAllCountries();
+
+            App.getInstance().getCompany().setFreightNetwork(BuildFreightNetwork(countries,
+                            (ArrayList<Port>) portStoreDb.getAllPorts(),
+                            (ArrayList<Border>) borderStoreDb.getAllBorders(countries),
+                            (ArrayList<SeaDistance>) seaDistanceStoreDb.getAllSeaDistances(),
+                        1));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public FreightNetwork BuildFreightNetwork(ArrayList<Country> countries, ArrayList<Port> ports, ArrayList<Border> borders, ArrayList<SeaDistance> seaDistances, int n) {
         ArrayList<String> vs = new ArrayList<>();

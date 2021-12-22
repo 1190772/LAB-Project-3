@@ -10,9 +10,7 @@ public class Border {
         this.country2 = country2;
     }
 
-    public Country getCountry1() {
-        return country1;
-    }
+    public Country getCountry1() { return country1; }
 
     public Country getCountry2() {
         return country2;

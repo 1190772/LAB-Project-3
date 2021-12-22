@@ -10,12 +10,14 @@ public class Company {
     private final AuthFacade authFacade;
     private final ShipBST shipBST;
     private final Port2DTree port2DTree;
+    private FreightNetwork freightNetwork;
 
     public Company(String designation) {
         this.designation = designation;
         shipBST = new ShipBST();
         port2DTree = new Port2DTree();
         this.authFacade = new AuthFacade();
+        freightNetwork = null;
     }
 
     public String getDesignation() {
@@ -43,4 +45,8 @@ public class Company {
     public AuthFacade getAuthFacade() {
         return authFacade;
     }
+
+    public FreightNetwork getFreightNetwork() { return freightNetwork; }
+
+    public void setFreightNetwork(FreightNetwork freightNetwork) { this.freightNetwork = freightNetwork; }
 }

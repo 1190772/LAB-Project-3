@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BuildFreightNetworkControllerTest {
 
     @Test
-    void buildFreightNetwork() {
+    void buildFreightNetwork1() {
         BuildFreightNetworkController controller = new BuildFreightNetworkController();
         ArrayList<Country> countries = new ArrayList<>();
         Country country1 = new Country("BZ","BLZ","Belize","Belmopan","America",397.6,17.25,-88.766667);

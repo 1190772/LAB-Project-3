@@ -46,20 +46,9 @@ public class Port2DTree extends TwoDTree<Port> {
     protected final Comparator<Port> cmpLon = Comparator.comparingDouble(Port::getLongitude);
 
     public void loadPortsFromDatabase() throws SQLException {
-        DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
-        ResultSet ports = portStoreDb.getAllPorts(connection);
-        ArrayList<Port> list = new ArrayList<>();
-        while (ports.next()) {
-        Port port = new Port(ports.getInt("id_port"),
-                ports.getString("name"),
-                ports.getString("continent"),
-                ports.getString("country"),
-                ports.getDouble("latitude"),
-                ports.getDouble("longitude"));
-        list.add(port);
-        }
-        ports.close();
-        createdBalancedPort2DTree(list);
+        ArrayList<Port> ports = (ArrayList<Port>) portStoreDb.getAllPorts();
+
+        createdBalancedPort2DTree(ports);
     }
 
     public void savePortsToDb() {

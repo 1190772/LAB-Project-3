@@ -1,5 +1,6 @@
 package lapr.project.data;
 
+import lapr.project.controller.App;
 import lapr.project.model.Port;
 import lapr.project.utils.DatabaseConnection;
 
@@ -7,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,7 +36,7 @@ public class PortStoreDb implements Persistable {
             try (PreparedStatement saveAddressPreparedStatement = connection.prepareStatement(sqlCommand)) {
                 saveAddressPreparedStatement.setString(1, port.getName());
                 saveAddressPreparedStatement.setInt(2, port.getCapacity());
-                saveAddressPreparedStatement.setString(3, countryStoreDb.getCountryCodeByName(connection, port.getCountry()));
+                saveAddressPreparedStatement.setString(3, countryStoreDb.getCountryCodeByName(port.getCountry()));
                 saveAddressPreparedStatement.setDouble(4, port.getLatitude());
                 saveAddressPreparedStatement.setDouble(5, port.getLongitude());
                 saveAddressPreparedStatement.setInt(6, port.getID());
@@ -72,11 +75,24 @@ public class PortStoreDb implements Persistable {
     return returnValue;
     }
 
-    public ResultSet getAllPorts(DatabaseConnection databaseConnection) throws SQLException {
-        Connection connection = databaseConnection.getConnection();
+    public List<Port> getAllPorts() throws SQLException {
+        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Port";
+        ResultSet ports;
+        ArrayList<Port> res = new ArrayList<>();
+
         try (PreparedStatement shipsPreparedStatement = connection.prepareStatement(sqlCommand)) {
-            return shipsPreparedStatement.executeQuery();
+            ports = shipsPreparedStatement.executeQuery();
+            while (ports.next()) {
+                res.add(new Port(ports.getInt("id_port"),
+                            ports.getString("name"),
+                            ports.getString("continent"),
+                            ports.getString("country"),
+                            ports.getDouble("latitude"),
+                            ports.getDouble("longitude")));
+            }
+            ports.close();
         }
+        return res;
     }
 }
