@@ -57,15 +57,16 @@ public class ShipBST extends AVL<Ship> {
     }
 
     public void saveShipsToDb() {
-        saveShipsToDb(root);
+        DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
+        saveShipsToDb(root, connection);
     }
 
-    private void saveShipsToDb(Node<Ship> node) {
+    private void saveShipsToDb(Node<Ship> node, DatabaseConnection connection) {
         if (node == null)
             return;
-        saveShipsToDb(node.getLeft());
-        shipStoreDb.save(App.getInstance().getSql().getDatabaseConnection(), node.getElement());
-        saveShipsToDb(node.getRight());
+        saveShipsToDb(node.getLeft(), connection);
+        shipStoreDb.save(connection, node.getElement());
+        saveShipsToDb(node.getRight(), connection);
     }
 
     /**
