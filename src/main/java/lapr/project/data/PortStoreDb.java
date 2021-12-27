@@ -24,23 +24,23 @@ public class PortStoreDb implements Persistable {
 
     String sqlCommand = "select * from Port where id_port = ?";
     boolean returnValue;
-    try (PreparedStatement getAddressedPreparedStatement = connection.prepareStatement(sqlCommand)) {
-        getAddressedPreparedStatement.setInt(1, port.getID());
-        try (ResultSet addressesResultSet = getAddressedPreparedStatement.executeQuery()) {
+    try (PreparedStatement getPortsPreparedStatement = connection.prepareStatement(sqlCommand)) {
+        getPortsPreparedStatement.setInt(1, port.getID());
+        try (ResultSet addressesResultSet = getPortsPreparedStatement.executeQuery()) {
             if (addressesResultSet.next()) {
                 sqlCommand = "update Port set name = ?, capacity = ?, country_code = ?, latitude = ?, longitude = ? where id_port = ?";
             } else {
                 sqlCommand = "insert into Port(name, capacity, country_code, latitude, longitude, id_port) values (?, ?, ?, ?, ?, ?)";
             }
 
-            try (PreparedStatement saveAddressPreparedStatement = connection.prepareStatement(sqlCommand)) {
-                saveAddressPreparedStatement.setString(1, port.getName());
-                saveAddressPreparedStatement.setInt(2, port.getCapacity());
-                saveAddressPreparedStatement.setString(3, countryStoreDb.getCountryCodeByName(port.getCountry()));
-                saveAddressPreparedStatement.setDouble(4, port.getLatitude());
-                saveAddressPreparedStatement.setDouble(5, port.getLongitude());
-                saveAddressPreparedStatement.setInt(6, port.getID());
-                saveAddressPreparedStatement.executeUpdate();
+            try (PreparedStatement savePortPreparedStatement = connection.prepareStatement(sqlCommand)) {
+                savePortPreparedStatement.setString(1, port.getName());
+                savePortPreparedStatement.setInt(2, port.getCapacity());
+                savePortPreparedStatement.setString(3, countryStoreDb.getCountryCodeByName(port.getCountry()));
+                savePortPreparedStatement.setDouble(4, port.getLatitude());
+                savePortPreparedStatement.setDouble(5, port.getLongitude());
+                savePortPreparedStatement.setInt(6, port.getID());
+                savePortPreparedStatement.executeUpdate();
                 returnValue = true;
             }
         }
@@ -86,10 +86,11 @@ public class PortStoreDb implements Persistable {
             while (ports.next()) {
                 res.add(new Port(ports.getInt("id_port"),
                             ports.getString("name"),
-                            ports.getString("continent"),
-                            ports.getString("country"),
+                            ports.getString("country_code"),
                             ports.getDouble("latitude"),
-                            ports.getDouble("longitude")));
+                            ports.getDouble("longitude"),
+                            ports.getInt("Capacity")
+                        ));
             }
             ports.close();
         }

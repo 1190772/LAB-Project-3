@@ -24,7 +24,15 @@ public class Country {
 
     public String getAlpha2_code() { return alpha2_code; }
 
+    public String getAlpha3_code() { return alpha3_code; }
+
+    public String getName() { return name; }
+
     public String getCapital() { return capital; }
+
+    public String getContinent() { return continent; }
+
+    public double getPopulation() { return population; }
 
     public double getLatitude() { return latitude; }
 

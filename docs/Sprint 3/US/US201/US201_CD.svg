@@ -28,7 +28,7 @@ class Port {
 }
 
 class Port2DTree {
-+ createdBalancedPort2DTree()
++ createBalancedPort2DTree()
 }
 
 ImportPortsController <.. ImportPortsUI
@@ -58,7 +58,7 @@ class Port {
 }
 
 class Port2DTree {
-+ createdBalancedPort2DTree()
++ createBalancedPort2DTree()
 }
 
 ImportPortsController <.. ImportPortsUI

@@ -5,7 +5,6 @@ import lapr.project.data.PortStoreDb;
 import lapr.project.utils.DatabaseConnection;
 import lapr.project.utils.TwoDTree;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -24,7 +23,7 @@ public class Port2DTree extends TwoDTree<Port> {
         portStoreDb = new PortStoreDb();
     }
 
-    public void createdBalancedPort2DTree(List<Port> list) {
+    public void createBalancedPort2DTree(List<Port> list) {
         root = port2DTreeBalanced(list, true);
     }
 
@@ -48,18 +47,33 @@ public class Port2DTree extends TwoDTree<Port> {
     public void loadPortsFromDatabase() throws SQLException {
         ArrayList<Port> ports = (ArrayList<Port>) portStoreDb.getAllPorts();
 
-        createdBalancedPort2DTree(ports);
+        createBalancedPort2DTree(ports);
     }
 
     public void savePortsToDb() {
-        savePortsToDb(root);
+        DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
+        savePortsToDb(connection, root);
     }
 
-    private void savePortsToDb(Node2D<Port> node) {
+    private void savePortsToDb(DatabaseConnection connection, Node2D<Port> node) {
         if (node == null)
             return;
-        savePortsToDb(node.getLeft());
-        portStoreDb.save(App.getInstance().getSql().getDatabaseConnection(), node.getElement());
-        savePortsToDb(node.getRight());
+        savePortsToDb(connection, node.getLeft());
+        portStoreDb.save(connection, node.getElement());
+        savePortsToDb(connection, node.getRight());
+    }
+
+    public List<Port> getAllPorts() {
+        ArrayList<Port> ports = new ArrayList<>();
+        getAllPorts(root, ports);
+        return ports;
+    }
+
+    private void getAllPorts(Node2D<Port> node, ArrayList<Port> ports) {
+        if (node == null)
+            return;
+        getAllPorts(node.getLeft(), ports);
+        ports.add(node.getElement());
+        getAllPorts(node.getRight(), ports);
     }
 }

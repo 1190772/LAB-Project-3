@@ -3,6 +3,7 @@ package lapr.project.data;
 import lapr.project.controller.App;
 import lapr.project.model.Border;
 import lapr.project.model.Country;
+import lapr.project.utils.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +11,62 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class BorderStoreDb {
+public class BorderStoreDb implements Persistable{
+
+    @Override
+    public boolean save(DatabaseConnection databaseConnection, Object object) {
+        Connection connection = databaseConnection.getConnection();
+        Border border = (Border) object;
+
+        String sqlCommand = "select * from Border where id_country1 = ? and id_country2 = ?";
+        boolean returnValue = true;
+        try (PreparedStatement getBordersPreparedStatement = connection.prepareStatement(sqlCommand)) {
+            getBordersPreparedStatement.setString(1, border.getCountry1().getAlpha2_code());
+            getBordersPreparedStatement.setString(2, border.getCountry2().getAlpha2_code());
+            try (ResultSet bordersResultSet = getBordersPreparedStatement.executeQuery()) {
+                if (!bordersResultSet.next()) {
+                    sqlCommand = "insert into Border(id_country1, id_country2) values (?, ?)";
+                    try (PreparedStatement saveBorderPreparedStatement = connection.prepareStatement(sqlCommand)) {
+                        saveBorderPreparedStatement.setString(1, border.getCountry1().getAlpha2_code());
+                        saveBorderPreparedStatement.setString(2, border.getCountry2().getAlpha2_code());
+                        saveBorderPreparedStatement.executeUpdate();
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PortStoreDb.class.getName()).log(Level.SEVERE, null, ex);
+            databaseConnection.registerError(ex);
+            returnValue = false;
+        }
+        return returnValue;
+    }
+
+    @Override
+    public boolean delete(DatabaseConnection databaseConnection, Object object) {
+
+        Connection conn = databaseConnection.getConnection();
+        Border border = (Border) object;
+
+        boolean returnValue;
+        try {
+            String sqlCommand;
+            sqlCommand = "delete from Border where id_country1 = ? and id_country2 = ?";
+            try (PreparedStatement deleteBorderPreparedStatement = conn.prepareStatement(sqlCommand)) {
+                deleteBorderPreparedStatement.setString(1, border.getCountry1().getAlpha2_code());
+                deleteBorderPreparedStatement.setString(2, border.getCountry2().getAlpha2_code());
+                deleteBorderPreparedStatement.executeUpdate();
+                returnValue = true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PortStoreDb.class.getName()).log(Level.SEVERE, null, ex);
+            databaseConnection.registerError(ex);
+            returnValue = false;
+        }
+        return returnValue;
+    }
 
     public List<Border> getAllBorders(ArrayList<Country> countries) throws SQLException {
         Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();

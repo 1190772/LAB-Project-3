@@ -19,10 +19,10 @@ class BuildFreightNetworkControllerTest {
         countries.add(country1);
         countries.add(country2);
         ArrayList<Port> ports = new ArrayList<>();
-        Port port1 = new Port(12345, "port1", "America", "BZ", 17.05, -88.3456373);
-        Port port2 = new Port(23456, "port2", "America", "BZ", 14.36, -94.5874937);
-        Port port3 = new Port(34567, "port3", "America", "MX", 17.65, -93.5572935);
-        Port port4 = new Port(45678, "port4", "America", "MX", 19.21, -99.4094854);
+        Port port1 = new Port(12345, "port1", "BZ", 17.05, -88.3456373, 0);
+        Port port2 = new Port(23456, "port2", "BZ", 14.36, -94.5874937, 0);
+        Port port3 = new Port(34567, "port3", "MX", 17.65, -93.5572935, 0);
+        Port port4 = new Port(45678, "port4", "MX", 19.21, -99.4094854, 0);
         ports.add(port1);
         ports.add(port2);
         ports.add(port3);

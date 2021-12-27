@@ -46,15 +46,15 @@ public class ImportPortsController {
                 String name = parameters[3];
                 double latitude = Double.parseDouble(parameters[4]);
                 double longitude = Double.parseDouble(parameters[5]);
-                list.add(new Port(id, name, continent, country, latitude, longitude));
+                list.add(new Port(id, name, country, latitude, longitude, 0));
             }
-            ports.createdBalancedPort2DTree(list);
+            ports.createBalancedPort2DTree(list);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void saveShipsToDb() {
+    public void savePortsToDb() {
 ports.savePortsToDb();
 }
 }

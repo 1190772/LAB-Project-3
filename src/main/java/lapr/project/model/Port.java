@@ -3,20 +3,18 @@ package lapr.project.model;
 public class Port {
     private final int id;
     private final String name;
-    private final String continent;
     private final String country;
     private final double latitude;
     private final double longitude;
     private final int capacity;
 
-    public Port(int id, String name, String continent, String country, double latitude, double longitude) {
+    public Port(int id, String name, String country, double latitude, double longitude, int capacity) {
         this.id=id;
         this.name=name;
-        this.continent=continent;
         this.country=country;
         this.latitude=latitude;
         this.longitude=longitude;
-        this.capacity = 0;
+        this.capacity = capacity;
     }
 
     public int getID() {
@@ -25,10 +23,6 @@ public class Port {
 
     public String getName() {
         return name;
-    }
-
-    public String getContinent() {
-        return continent;
     }
 
     public String getCountry() {
@@ -50,10 +44,10 @@ public class Port {
         return "Port{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", continent='" + continent + '\'' +
                 ", country='" + country + '\'' +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
+                ", capacity=" + capacity +
                 '}';
     }
 }

@@ -26,6 +26,9 @@ public class TrafficManagerUI implements Runnable {
         options.add(new MenuItem("Search a ship", new SearchShipUI()));
         options.add(new MenuItem("TopN Ships", new TopNShipsUI()));
         options.add(new MenuItem("Pairs of ships", new ShipPairsUI()));
+        options.add(new MenuItem("Import Countries from file", new ImportCountriesUI()));
+        options.add(new MenuItem("Import Borders from file", new ImportBordersUI()));
+        options.add(new MenuItem("Import Sea Distances from file", new ImportSeaDistancesUI()));
         options.add(new MenuItem("Build Freight Network", new BuildFreightNetworkUI()));
 
         int option = 0;

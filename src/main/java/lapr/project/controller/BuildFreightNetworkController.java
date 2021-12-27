@@ -1,10 +1,10 @@
 package lapr.project.controller;
 
-import lapr.project.data.BorderStoreDb;
-import lapr.project.data.CountryStoreDb;
 import lapr.project.data.PortStoreDb;
-import lapr.project.data.SeaDistanceStoreDb;
 import lapr.project.model.*;
+import lapr.project.model.store.BorderStore;
+import lapr.project.model.store.CountryStore;
+import lapr.project.model.store.SeaDistanceStore;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,26 +13,31 @@ import static lapr.project.model.shared.Utils.distanceBetweenTwoCoordinates;
 
 public class BuildFreightNetworkController {
 
-    private final CountryStoreDb countryStoreDb;
-    private final PortStoreDb portStoreDb;
-    private final BorderStoreDb borderStoreDb;
-    private final SeaDistanceStoreDb seaDistanceStoreDb;
+    private final CountryStore countryStore;
+    private final Port2DTree port2DTree;
+    private final BorderStore borderStore;
+    private final SeaDistanceStore seaDistanceStore;
 
     public BuildFreightNetworkController() {
-        countryStoreDb = new CountryStoreDb();
-        portStoreDb = new PortStoreDb();
-        borderStoreDb = new BorderStoreDb();
-        seaDistanceStoreDb = new SeaDistanceStoreDb();
+        Company company = App.getInstance().getCompany();
+        countryStore = company.getCountryStore();
+        port2DTree = company.getPorts();
+        borderStore = company.getBorderStore();
+        seaDistanceStore = company.getSeadistanceStore();
     }
 
     public void BuildFreightNetwork() {
         try {
-            ArrayList<Country> countries = (ArrayList<Country>) countryStoreDb.getAllCountries();
+            countryStore.refresh();
+            port2DTree.loadPortsFromDatabase();
+            borderStore.refresh();
+            seaDistanceStore.refresh();
 
-            App.getInstance().getCompany().setFreightNetwork(BuildFreightNetwork(countries,
-                            (ArrayList<Port>) portStoreDb.getAllPorts(),
-                            (ArrayList<Border>) borderStoreDb.getAllBorders(countries),
-                            (ArrayList<SeaDistance>) seaDistanceStoreDb.getAllSeaDistances(),
+            App.getInstance().getCompany().setFreightNetwork(BuildFreightNetwork(
+                            countryStore.countries,
+                            (ArrayList<Port>) port2DTree.getAllPorts(),
+                            borderStore.borders,
+                            seaDistanceStore.seadists,
                         1));
         } catch (SQLException e) {
             e.printStackTrace();
@@ -104,11 +109,14 @@ public class BuildFreightNetworkController {
             for (Country country : countries) {
                 if (!port1.getCountry().equals(country.getAlpha2_code())) {
                     for (Port port2 : ports) {
-                        distance = -1;
                         if (port2.getCountry().equals(country.getAlpha2_code())) {
-                            for (SeaDistance seaDistance : seaDistances)
-                                if (seaDistance.getId_port1() == port1.getID() && seaDistance.getId_port2() == port2.getID())
-                                    distance = seaDistance.getDistance();
+                            int i = 0;
+                            distance = -1;
+                            while (i < seaDistances.size() && distance == -1) {
+                                if (seaDistances.get(i).getId_port1() == port1.getID() && seaDistances.get(i).getId_port2() == port2.getID())
+                                    distance = seaDistances.get(i).getDistance();
+                                i++;
+                            }
                             if (distance != -1) {
                                 index = closestPorts.size();
                                 while (index >= 1 && distance < distanceBetweenTwoCoordinates(port1.getLongitude(), port1.getLatitude(), closestPorts.get(index - 1).getLongitude(), closestPorts.get(index - 1).getLatitude())) {
@@ -126,10 +134,13 @@ public class BuildFreightNetworkController {
             for (Port port2 : closestPorts) {
                 index1 = countries.size() + ports.indexOf(port1);
                 index2 = countries.size() + ports.indexOf(port2);
+                int i = 0;
                 distance = -1;
-                for (SeaDistance seaDistance : seaDistances)
-                    if (seaDistance.getId_port1() == port1.getID() && seaDistance.getId_port2() == port2.getID())
-                        distance = seaDistance.getDistance();
+                while (i < seaDistances.size() && distance == -1) {
+                if (seaDistances.get(i).getId_port1() == port1.getID() && seaDistances.get(i).getId_port2() == port2.getID())
+                    distance = seaDistances.get(i).getDistance();
+                i++;
+                }
                 if (distance != -1) {
                     m[index1][index2] = distance;
                     m[index2][index1] = distance;

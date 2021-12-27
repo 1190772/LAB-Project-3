@@ -7,14 +7,14 @@ public class PortTest {
     Port port;
     int id= 29002;
     String name="Liverpool";
-    String continent="Europe";
+    //String continent="Europe";
     String country="United Kingdom";
     double latitude=53.46666667;
     double longitude=-3.033333333;
-    String toString = "Port{id='29002', name='Liverpool', continent='Europe', country='United Kingdom', latitude=53.46666667, longitude=-3.033333333}";
+    String toString = "Port{id='29002', name='Liverpool', country='United Kingdom', latitude=53.46666667, longitude=-3.033333333, capacity=0}";
 
     public PortTest(){
-        port = new Port(id, name, continent, country, latitude, longitude);
+        port = new Port(id, name, country, latitude, longitude, 0);
     }
 
     @Test
@@ -25,11 +25,6 @@ public class PortTest {
     @Test
     public void getName(){
         Assertions.assertEquals( name, port.getName());
-    }
-
-    @Test
-    public void getContinent(){
-        Assertions.assertEquals( continent, port.getContinent());
     }
 
     @Test
