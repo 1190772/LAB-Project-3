@@ -1,0 +1,77 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class BuildFreightNetworkUI {
+- controller
+}
+
+class BuildFreightNetworkController {
++ FreightNetwork
++ buildFreightNetwork()
+- createVertices(ports, countries)
+- createEdges(seaDists, borders)
+}
+
+class Port {
++ getIdentification()
++ getName()
++ getContinent()
++ getCountry()
++ getLatitude()
++ getLongitude()
+}
+
+class PortStoreDb {
++ getPorts()
+}
+
+class SeaDistance {
++ getPort1()
++ getPort2()
++ getDistance()
+}
+
+class SeaDistanceStoreDb {
++ getSeaDistances()
+}
+
+class Border {
++ getCountry1()
++ getCountry2()
+}
+
+class BorderStoreDb {
++ getSeaDistances()
+}
+
+class Country {
++ getAlpha2_code()
++ getAlpha3_code()
++ getcapital()
++ getcountry()
++ getcontinent()
++ getpopulation()
++ getlatitude()
++ getlongitude()
+}
+
+class CountryStoreDb {
++ getCountries()
+}
+
+class FreightNetwork {
++ BuildFreightNetwork(boolean directed, List<V> vs, E[][] m)
+}
+
+BuildFreightNetworkController <.. BuildFreightNetworkUI
+FreightNetwork <... BuildFreightNetworkController
+PortStoreDb <.. BuildFreightNetworkController
+SeaDistanceStoreDb <.. BuildFreightNetworkController
+BorderStoreDb <.. BuildFreightNetworkController
+CountryStoreDb <.. BuildFreightNetworkController
+Port <-- FreightNetwork
+SeaDistance <-- FreightNetwork
+Border <-- FreightNetwork
+Country <-- FreightNetwork
+
+@enduml

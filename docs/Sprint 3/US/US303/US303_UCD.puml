@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Traffic Manager: as TM
+(Asks to know which places are closest to all other places) as (Use)
+
+TM ---> (Use)
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : asks to know which places are closest to all other places
+
+activate ":System"
+":System" --> TM : asks for the number of countries per continent
+deactivate ":System"
+
+TM -> ":System" : types requested data
+
+activate ":System"
+":System" --> TM : returns the countries divided by continents
+deactivate ":System"
+
+deactivate TM
+
+@enduml
