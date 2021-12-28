@@ -33,10 +33,10 @@ public class BuildFreightNetworkController {
             seaDistanceStore.refresh();
 
             App.getInstance().getCompany().setFreightNetwork(BuildFreightNetwork(
-                            countryStore.countries,
+                            countryStore.getCountries(),
                             (ArrayList<Port>) port2DTree.getAllPorts(),
-                            borderStore.borders,
-                            seaDistanceStore.seadists,
+                            borderStore.getBorders(),
+                            seaDistanceStore.getSeadists(),
                         1));
         } catch (SQLException e) {
             e.printStackTrace();

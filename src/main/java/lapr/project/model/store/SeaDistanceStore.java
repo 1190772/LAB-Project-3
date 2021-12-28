@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class SeaDistanceStore {
 
-    public ArrayList<SeaDistance> seadists;
+    private ArrayList<SeaDistance> seadists;
     private final SeaDistanceStoreDb seadistsDb;
 
     public SeaDistanceStore() {
@@ -28,4 +28,6 @@ public class SeaDistanceStore {
     public void refresh() throws SQLException {
         seadists = (ArrayList<SeaDistance>) seadistsDb.getAllSeaDistances();
     }
+
+    public ArrayList<SeaDistance> getSeadists() { return seadists; }
 }

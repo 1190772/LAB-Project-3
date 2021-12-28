@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class BorderStore {
 
-    public ArrayList<Border> borders;
+    private ArrayList<Border> borders;
     private final BorderStoreDb bordersDb;
 
     public BorderStore() {
@@ -26,6 +26,8 @@ public class BorderStore {
     }
 
     public void refresh() throws SQLException {
-        borders = (ArrayList<Border>) bordersDb.getAllBorders(App.getInstance().getCompany().getCountryStore().countries);
+        borders = (ArrayList<Border>) bordersDb.getAllBorders(App.getInstance().getCompany().getCountryStore().getCountries());
     }
+
+    public ArrayList<Border> getBorders() { return borders; }
 }

@@ -16,7 +16,7 @@ public class ImportSeaDistancesController {
 
     public void importSeaDistances(String filePath) {
         String[] parameters;
-        ArrayList<SeaDistance> list = seadistanceStore.seadists;
+        ArrayList<SeaDistance> list = seadistanceStore.getSeadists();
 
         try (Scanner in = new Scanner((new FileReader(filePath)))) {
             in.nextLine();

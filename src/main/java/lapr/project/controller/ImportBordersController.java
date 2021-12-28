@@ -22,7 +22,7 @@ public class ImportBordersController {
 
     public void importBorders(String filePath) {
         String[] parameters;
-        ArrayList<Border> list = borderStore.borders;
+        ArrayList<Border> list = borderStore.getBorders();
 
         try (Scanner in = new Scanner((new FileReader(filePath)))) {
         in.nextLine();

@@ -16,7 +16,7 @@ public class ImportCountriesController {
 
     public void importCountries(String filePath) {
         String[] parameters;
-        ArrayList<Country> list = countryStore.countries;
+        ArrayList<Country> list = countryStore.getCountries();
 
         try (Scanner in = new Scanner((new FileReader(filePath)))) {
             in.nextLine();

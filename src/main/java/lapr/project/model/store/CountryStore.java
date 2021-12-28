@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class CountryStore {
 
-    public ArrayList<Country> countries;
+    private ArrayList<Country> countries;
     private final CountryStoreDb countriesDb;
 
     public CountryStore() {
@@ -40,4 +40,6 @@ public class CountryStore {
     public void refresh() throws SQLException {
         countries = (ArrayList<Country>) countriesDb.getAllCountries();
     }
+
+    public ArrayList<Country> getCountries() { return countries; }
 }
