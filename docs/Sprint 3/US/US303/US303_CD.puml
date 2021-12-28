@@ -1,0 +1,60 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ClosestPlacesUI {
+- controller
+}
+
+class ClosestPlacesController {
++ closestPlaces(int n)
+- closestPlaces(FreightNetwork shortPathMatrix, int n)
+}
+
+class Port {
++ getIdentification()
++ getName()
++ getContinent()
++ getCountry()
++ getLatitude()
++ getLongitude()
+}
+
+class SeaDistance {
++ getPort1()
++ getPort2()
++ getDistance()
+}
+
+class Border {
++ getCountry1()
++ getCountry2()
+}
+
+class Country {
++ getAlpha2_code()
++ getAlpha3_code()
++ getcapital()
++ getcountry()
++ getcontinent()
++ getpopulation()
++ getlatitude()
++ getlongitude()
+}
+
+class FreightNetwork {
++ ClosestPlaces(boolean directed, List<V> vs, E[][] m)
+}
+
+class BuildFreightNetworkController {
++ buildFreightNetwork()
+}
+
+ClosestPlacesController <.. ClosestPlacesUI
+FreightNetwork <... ClosestPlacesController
+Port <-- FreightNetwork
+SeaDistance <-- FreightNetwork
+Border <-- FreightNetwork
+Country <-- FreightNetwork
+BuildFreightNetworkController <.. ClosestPlacesController
+
+@enduml

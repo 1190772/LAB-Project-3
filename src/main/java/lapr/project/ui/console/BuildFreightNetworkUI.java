@@ -1,10 +1,11 @@
 package lapr.project.ui.console;
 
+import lapr.project.controller.App;
 import lapr.project.controller.BuildFreightNetworkController;
 
 public class BuildFreightNetworkUI implements Runnable {
 
-    private BuildFreightNetworkController controller;
+    private final BuildFreightNetworkController controller;
 
     public BuildFreightNetworkUI() {
         controller = new BuildFreightNetworkController();
@@ -12,6 +13,6 @@ public class BuildFreightNetworkUI implements Runnable {
 
     @Override
     public void run() {
-        controller.BuildFreightNetwork();
+        controller.buildFreightNetwork();
     }
 }

@@ -7,6 +7,7 @@ import lapr.project.utils.DatabaseConnection;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CountryStore {
 
@@ -41,7 +42,7 @@ public class CountryStore {
         countries = (ArrayList<Country>) countriesDb.getAllCountries();
     }
 
-    public ArrayList<Country> getCountries() { return new ArrayList<>(countries); }
+    public List<Country> getCountries() { return new ArrayList<>(countries); }
 
     public void addCountry(Country country) { countries.add(country); }
 }

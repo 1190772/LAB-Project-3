@@ -41,7 +41,7 @@ deactivate C
 CTRL -> CTRL : buildFreightNetwork()
 
 create NET
-CTRL - -> NET : BuildFreightNetwork(false, vs, m)
+CTRL - -> NET : buildFreightNetwork(false, vs, m)
 
 deactivate NET
 deactivate CTRL
@@ -90,7 +90,7 @@ deactivate C
 CTRL -> CTRL : buildFreightNetwork()
 
 create NET
-CTRL - -> NET : BuildFreightNetwork(false, vs, m)
+CTRL - -> NET : buildFreightNetwork(false, vs, m)
 
 deactivate NET
 deactivate CTRL

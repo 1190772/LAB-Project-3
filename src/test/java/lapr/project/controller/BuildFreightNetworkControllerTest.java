@@ -64,26 +64,26 @@ class BuildFreightNetworkControllerTest {
     @Test
     void buildFreightNetwork0() {
         BuildFreightNetworkController controller = new BuildFreightNetworkController();
-        ArrayList<String> vs = new ArrayList<>();
-        vs.add(country1.getCapital());
-        vs.add(country2.getCapital());
-        vs.add(port1.getName());
-        vs.add(port2.getName());
-        vs.add(port3.getName());
-        vs.add(port4.getName());
-        Integer[][] m = new Integer[vs.size()][vs.size()];
-        m[0][1] = (int) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), country2.getLongitude(), country2.getLatitude());
+        ArrayList<Object> vs = new ArrayList<>();
+        vs.add(country1);
+        vs.add(country2);
+        vs.add(port1);
+        vs.add(port2);
+        vs.add(port3);
+        vs.add(port4);
+        Long[][] m = new Long[vs.size()][vs.size()];
+        m[0][1] = (long) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), country2.getLongitude(), country2.getLatitude());
         m[1][0] = m[0][1];
-        m[2][3] = seaDistance5.getDistance();
+        m[2][3] = (long) seaDistance5.getDistance();
         m[3][2] = m[2][3];
-        m[4][5] = seaDistance6.getDistance();
+        m[4][5] = (long) seaDistance6.getDistance();
         m[5][4] = m [4][5];
-        m[0][2] = (int) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), port1.getLongitude(), port1.getLatitude());
+        m[0][2] = (long) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), port1.getLongitude(), port1.getLatitude());
         m[2][0] = m [0][2];
-        m[1][5] = (int) distanceBetweenTwoCoordinates(country2.getLongitude(), country2.getLatitude(), port4.getLongitude(), port4.getLatitude());
+        m[1][5] = (long) distanceBetweenTwoCoordinates(country2.getLongitude(), country2.getLatitude(), port4.getLongitude(), port4.getLatitude());
         m[5][1] = m [1][5];
 
-        FreightNetwork actual = controller.BuildFreightNetwork(countries, ports, borders, seaDistances, 0);
+        FreightNetwork actual = controller.buildFreightNetwork(countries, ports, borders, seaDistances, 0);
         FreightNetwork expected = new FreightNetwork(vs, m);
         assertEquals(expected, actual);
     }
@@ -91,32 +91,32 @@ class BuildFreightNetworkControllerTest {
     @Test
     void buildFreightNetwork1() {
         BuildFreightNetworkController controller = new BuildFreightNetworkController();
-        ArrayList<String> vs = new ArrayList<>();
-        vs.add(country1.getCapital());
-        vs.add(country2.getCapital());
-        vs.add(port1.getName());
-        vs.add(port2.getName());
-        vs.add(port3.getName());
-        vs.add(port4.getName());
-        Integer[][] m = new Integer[vs.size()][vs.size()];
-        m[0][1] = (int) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), country2.getLongitude(), country2.getLatitude());
+        ArrayList<Object> vs = new ArrayList<>();
+        vs.add(country1);
+        vs.add(country2);
+        vs.add(port1);
+        vs.add(port2);
+        vs.add(port3);
+        vs.add(port4);
+        Long[][] m = new Long[vs.size()][vs.size()];
+        m[0][1] = (long) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), country2.getLongitude(), country2.getLatitude());
         m[1][0] = m[0][1];
-        m[2][3] = seaDistance5.getDistance();
+        m[2][3] = (long) seaDistance5.getDistance();
         m[3][2] = m[2][3];
-        m[4][5] = seaDistance6.getDistance();
+        m[4][5] = (long) seaDistance6.getDistance();
         m[5][4] = m [4][5];
-        m[0][2] = (int) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), port1.getLongitude(), port1.getLatitude());
+        m[0][2] = (long) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), port1.getLongitude(), port1.getLatitude());
         m[2][0] = m [0][2];
-        m[1][5] = (int) distanceBetweenTwoCoordinates(country2.getLongitude(), country2.getLatitude(), port4.getLongitude(), port4.getLatitude());
+        m[1][5] = (long) distanceBetweenTwoCoordinates(country2.getLongitude(), country2.getLatitude(), port4.getLongitude(), port4.getLatitude());
         m[5][1] = m [1][5];
-        m[2][4] = seaDistance1.getDistance();
+        m[2][4] = (long) seaDistance1.getDistance();
         m[4][2] = m [2][4];
-        m[3][4] = seaDistance2.getDistance();
+        m[3][4] = (long) seaDistance2.getDistance();
         m[4][3] = m [3][4];
-        m[3][5] = seaDistance3.getDistance();
+        m[3][5] = (long) seaDistance3.getDistance();
         m[5][3] = m [3][5];
 
-        FreightNetwork actual = controller.BuildFreightNetwork(countries, ports, borders, seaDistances, 1);
+        FreightNetwork actual = controller.buildFreightNetwork(countries, ports, borders, seaDistances, 1);
         FreightNetwork expected = new FreightNetwork(vs, m);
         assertEquals(expected, actual);
     }
@@ -124,34 +124,34 @@ class BuildFreightNetworkControllerTest {
     @Test
     void buildFreightNetwork2() {
         BuildFreightNetworkController controller = new BuildFreightNetworkController();
-        ArrayList<String> vs = new ArrayList<>();
-        vs.add(country1.getCapital());
-        vs.add(country2.getCapital());
-        vs.add(port1.getName());
-        vs.add(port2.getName());
-        vs.add(port3.getName());
-        vs.add(port4.getName());
-        Integer[][] m = new Integer[vs.size()][vs.size()];
-        m[0][1] = (int) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), country2.getLongitude(), country2.getLatitude());
+        ArrayList<Object> vs = new ArrayList<>();
+        vs.add(country1);
+        vs.add(country2);
+        vs.add(port1);
+        vs.add(port2);
+        vs.add(port3);
+        vs.add(port4);
+        Long[][] m = new Long[vs.size()][vs.size()];
+        m[0][1] = (long) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), country2.getLongitude(), country2.getLatitude());
         m[1][0] = m[0][1];
-        m[2][3] = seaDistance5.getDistance();
+        m[2][3] = (long) seaDistance5.getDistance();
         m[3][2] = m[2][3];
-        m[4][5] = seaDistance6.getDistance();
+        m[4][5] = (long) seaDistance6.getDistance();
         m[5][4] = m [4][5];
-        m[0][2] = (int) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), port1.getLongitude(), port1.getLatitude());
+        m[0][2] = (long) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), port1.getLongitude(), port1.getLatitude());
         m[2][0] = m [0][2];
-        m[1][5] = (int) distanceBetweenTwoCoordinates(country2.getLongitude(), country2.getLatitude(), port4.getLongitude(), port4.getLatitude());
+        m[1][5] = (long) distanceBetweenTwoCoordinates(country2.getLongitude(), country2.getLatitude(), port4.getLongitude(), port4.getLatitude());
         m[5][1] = m [1][5];
-        m[2][4] = seaDistance1.getDistance();
+        m[2][4] = (long) seaDistance1.getDistance();
         m[4][2] = m [2][4];
-        m[3][4] = seaDistance2.getDistance();
+        m[3][4] = (long) seaDistance2.getDistance();
         m[4][3] = m [3][4];
-        m[5][3] = seaDistance3.getDistance();
+        m[5][3] = (long) seaDistance3.getDistance();
         m[3][5] = m [5][3];
-        m[2][5] = seaDistance4.getDistance();
+        m[2][5] = (long) seaDistance4.getDistance();
         m[5][2] = m [2][5];
 
-        FreightNetwork actual = controller.BuildFreightNetwork(countries, ports, borders, seaDistances, 2);
+        FreightNetwork actual = controller.buildFreightNetwork(countries, ports, borders, seaDistances, 2);
         FreightNetwork expected = new FreightNetwork(vs, m);
         assertEquals(expected, actual);
     }

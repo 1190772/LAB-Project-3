@@ -7,6 +7,7 @@ import lapr.project.model.store.SeaDistanceStore;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import static lapr.project.model.shared.Utils.distanceBetweenTwoCoordinates;
 
@@ -25,16 +26,16 @@ public class BuildFreightNetworkController {
         seaDistanceStore = company.getSeadistanceStore();
     }
 
-    public void BuildFreightNetwork() {
+    public void buildFreightNetwork() {
         try {
             countryStore.refresh();
             port2DTree.loadPortsFromDatabase();
             borderStore.refresh();
             seaDistanceStore.refresh();
 
-            App.getInstance().getCompany().setFreightNetwork(BuildFreightNetwork(
+            App.getInstance().getCompany().setFreightNetwork(buildFreightNetwork(
                             countryStore.getCountries(),
-                            (ArrayList<Port>) port2DTree.getAllPorts(),
+                            port2DTree.getAllPorts(),
                             borderStore.getBorders(),
                             seaDistanceStore.getSeadists(),
                         1));
@@ -43,27 +44,22 @@ public class BuildFreightNetworkController {
         }
     }
 
-    public FreightNetwork BuildFreightNetwork(ArrayList<Country> countries, ArrayList<Port> ports, ArrayList<Border> borders, ArrayList<SeaDistance> seaDistances, int n) {
-        ArrayList<String> vs = new ArrayList<>();
-        Integer[][] m;
+    public FreightNetwork buildFreightNetwork(List<Country> countries, List<Port> ports, List<Border> borders, List<SeaDistance> seaDistances, int n) {
+        ArrayList<Object> vs = new ArrayList<>();
+        Long[][] m;
         int index1;
         int index2;
-        int distance;
-        int closestDistance;
+        long distance;
+        long closestDistance;
         Port closestPort;
         ArrayList<Port> closestPorts = new ArrayList<>();
-        ArrayList<Integer> closestDistances = new ArrayList<>();
+        ArrayList<Long> closestDistances = new ArrayList<>();
         int index;
 
-        for (Country country : countries) {
-            vs.add(country.getCapital());
-        }
+        vs.addAll(countries);
+        vs.addAll(ports);
 
-        for (Port port : ports) {
-            vs.add(port.getName());
-        }
-
-        m = new Integer[vs.size()][vs.size()];
+        m = new Long[vs.size()][vs.size()];
 
         // The capital of a country has a direct connection with the capitals of the countries with which it borders
         for (Border border : borders) {
@@ -71,7 +67,7 @@ public class BuildFreightNetworkController {
             Country country2 = border.getCountry2();
             index1 = countries.indexOf(country1);
             index2 = countries.indexOf(country2);
-            distance = (int) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), country2.getLongitude(), country2.getLatitude());
+            distance = (long) distanceBetweenTwoCoordinates(country1.getLongitude(), country1.getLatitude(), country2.getLongitude(), country2.getLatitude());
             m[index1][index2] = distance;
             m[index2][index1] = distance;
         }
@@ -87,7 +83,7 @@ public class BuildFreightNetworkController {
                     int g = 0;
                     distance = -1;
                     while (g < seaDistances.size() && distance == -1) {
-                        if (seaDistances.get(g).getId_port1() == port1.getID() && seaDistances.get(g).getId_port2() == port2.getID() || seaDistances.get(g).getId_port1() == port2.getID() && seaDistances.get(g).getId_port2() == port1.getID())
+                        if (seaDistances.get(g).getIdPort1() == port1.getID() && seaDistances.get(g).getIdPort2() == port2.getID() || seaDistances.get(g).getIdPort1() == port2.getID() && seaDistances.get(g).getIdPort2() == port1.getID())
                             distance = seaDistances.get(g).getDistance();
                         g++;
                     }
@@ -104,8 +100,8 @@ public class BuildFreightNetworkController {
             closestDistance = Integer.MAX_VALUE;
             closestPort = null;
             for (Port port : ports) {
-                if (port.getCountry().equals(country.getAlpha2_code())) {
-                    distance = (int) distanceBetweenTwoCoordinates(port.getLongitude(), port.getLatitude(), country.getLongitude(), country.getLatitude());
+                if (port.getCountry().equals(country.getAlpha2code())) {
+                    distance = (long) distanceBetweenTwoCoordinates(port.getLongitude(), port.getLatitude(), country.getLongitude(), country.getLatitude());
                     if (distanceBetweenTwoCoordinates(port.getLongitude(), port.getLatitude(), country.getLongitude(), country.getLatitude()) < closestDistance) {
                         closestPort = port;
                         closestDistance = distance;
@@ -122,13 +118,13 @@ public class BuildFreightNetworkController {
         if (n > 0) {
             for (Port port1 : ports) {
                 for (Country country : countries) {
-                    if (!port1.getCountry().equals(country.getAlpha2_code())) {
+                    if (!port1.getCountry().equals(country.getAlpha2code())) {
                         for (Port port2 : ports) {
-                            if (port2.getCountry().equals(country.getAlpha2_code()) && port2.getID() != port1.getID()) {
+                            if (port2.getCountry().equals(country.getAlpha2code()) && port2.getID() != port1.getID()) {
                                 int i = 0;
                                 distance = -1;
                                 while (i < seaDistances.size() && distance == -1) {
-                                    if (seaDistances.get(i).getId_port1() == port1.getID() && seaDistances.get(i).getId_port2() == port2.getID() || seaDistances.get(i).getId_port1() == port2.getID() && seaDistances.get(i).getId_port2() == port1.getID())
+                                    if (seaDistances.get(i).getIdPort1() == port1.getID() && seaDistances.get(i).getIdPort2() == port2.getID() || seaDistances.get(i).getIdPort1() == port2.getID() && seaDistances.get(i).getIdPort2() == port1.getID())
                                         distance = seaDistances.get(i).getDistance();
                                     i++;
                                 }

@@ -24,14 +24,14 @@ public class BorderStoreDb implements Persistable{
         String sqlCommand = "select * from Border where id_country1 = ? and id_country2 = ?";
         boolean returnValue = true;
         try (PreparedStatement getBordersPreparedStatement = connection.prepareStatement(sqlCommand)) {
-            getBordersPreparedStatement.setString(1, border.getCountry1().getAlpha2_code());
-            getBordersPreparedStatement.setString(2, border.getCountry2().getAlpha2_code());
+            getBordersPreparedStatement.setString(1, border.getCountry1().getAlpha2code());
+            getBordersPreparedStatement.setString(2, border.getCountry2().getAlpha2code());
             try (ResultSet bordersResultSet = getBordersPreparedStatement.executeQuery()) {
                 if (!bordersResultSet.next()) {
                     sqlCommand = "insert into Border(id_country1, id_country2) values (?, ?)";
                     try (PreparedStatement saveBorderPreparedStatement = connection.prepareStatement(sqlCommand)) {
-                        saveBorderPreparedStatement.setString(1, border.getCountry1().getAlpha2_code());
-                        saveBorderPreparedStatement.setString(2, border.getCountry2().getAlpha2_code());
+                        saveBorderPreparedStatement.setString(1, border.getCountry1().getAlpha2code());
+                        saveBorderPreparedStatement.setString(2, border.getCountry2().getAlpha2code());
                         saveBorderPreparedStatement.executeUpdate();
                     }
                 }
@@ -55,8 +55,8 @@ public class BorderStoreDb implements Persistable{
             String sqlCommand;
             sqlCommand = "delete from Border where id_country1 = ? and id_country2 = ?";
             try (PreparedStatement deleteBorderPreparedStatement = conn.prepareStatement(sqlCommand)) {
-                deleteBorderPreparedStatement.setString(1, border.getCountry1().getAlpha2_code());
-                deleteBorderPreparedStatement.setString(2, border.getCountry2().getAlpha2_code());
+                deleteBorderPreparedStatement.setString(1, border.getCountry1().getAlpha2code());
+                deleteBorderPreparedStatement.setString(2, border.getCountry2().getAlpha2code());
                 deleteBorderPreparedStatement.executeUpdate();
                 returnValue = true;
             }
@@ -68,7 +68,7 @@ public class BorderStoreDb implements Persistable{
         return returnValue;
     }
 
-    public List<Border> getAllBorders(ArrayList<Country> countries) throws SQLException {
+    public List<Border> getAllBorders(List<Country> countries) throws SQLException {
         Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Border";
         ResultSet borders;
@@ -87,7 +87,7 @@ public class BorderStoreDb implements Persistable{
                 countryID = borders.getString("id_country1");
                 i = 0;
                 while (country1Index == -1 && i < countries.size()) {
-                    if (countries.get(i).getAlpha2_code() .equals(countryID))
+                    if (countries.get(i).getAlpha2code() .equals(countryID))
                         country1Index = i;
                     i++;
                 }
@@ -95,7 +95,7 @@ public class BorderStoreDb implements Persistable{
                 countryID = borders.getString("id_country2");
                 i = 0;
                 while (country2Index == -1 && i < countries.size()) {
-                    if (countries.get(i).getAlpha2_code().equals(countryID))
+                    if (countries.get(i).getAlpha2code().equals(countryID))
                         country2Index = i;
                     i++;
                 }

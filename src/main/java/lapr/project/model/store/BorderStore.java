@@ -7,6 +7,7 @@ import lapr.project.utils.DatabaseConnection;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BorderStore {
 
@@ -29,7 +30,7 @@ public class BorderStore {
         borders = (ArrayList<Border>) bordersDb.getAllBorders(App.getInstance().getCompany().getCountryStore().getCountries());
     }
 
-    public ArrayList<Border> getBorders() { return new ArrayList<>(borders); }
+    public List<Border> getBorders() { return new ArrayList<>(borders); }
 
     public void addBorder(Border border) { borders.add(border); }
 }
