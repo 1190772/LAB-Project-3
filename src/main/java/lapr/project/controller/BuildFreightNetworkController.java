@@ -1,6 +1,5 @@
 package lapr.project.controller;
 
-import lapr.project.data.PortStoreDb;
 import lapr.project.model.*;
 import lapr.project.model.store.BorderStore;
 import lapr.project.model.store.CountryStore;
@@ -50,9 +49,10 @@ public class BuildFreightNetworkController {
         int index1;
         int index2;
         int distance;
-        int closestDistance = Integer.MAX_VALUE;
-        Port closestPort = null;
+        int closestDistance;
+        Port closestPort;
         ArrayList<Port> closestPorts = new ArrayList<>();
+        ArrayList<Integer> closestDistances = new ArrayList<>();
         int index;
 
         for (Country country : countries) {
@@ -65,6 +65,7 @@ public class BuildFreightNetworkController {
 
         m = new Integer[vs.size()][vs.size()];
 
+        // The capital of a country has a direct connection with the capitals of the countries with which it borders
         for (Border border : borders) {
             Country country1 = border.getCountry1();
             Country country2 = border.getCountry2();
@@ -75,6 +76,7 @@ public class BuildFreightNetworkController {
             m[index2][index1] = distance;
         }
 
+        // The ports of a country connect with all the ports of the same country
         for (int i = 0; i < ports.size()-1; i++) {
             for (int j = i+1; j < ports.size(); j++) {
                 Port port1 = ports.get(i);
@@ -82,14 +84,25 @@ public class BuildFreightNetworkController {
                 if (port1.getCountry().equals(port2.getCountry())) {
                     index1 = countries.size() + i;
                     index2 = countries.size() + j;
-                    distance = (int) distanceBetweenTwoCoordinates(port1.getLongitude(), port1.getLatitude(), port2.getLongitude(), port2.getLatitude());
-                    m[index1][index2] = distance;
-                    m[index2][index1] = distance;
+                    int g = 0;
+                    distance = -1;
+                    while (g < seaDistances.size() && distance == -1) {
+                        if (seaDistances.get(g).getId_port1() == port1.getID() && seaDistances.get(g).getId_port2() == port2.getID() || seaDistances.get(g).getId_port1() == port2.getID() && seaDistances.get(g).getId_port2() == port1.getID())
+                            distance = seaDistances.get(g).getDistance();
+                        g++;
+                    }
+                    if (distance != -1) {
+                        m[index1][index2] = distance;
+                        m[index2][index1] = distance;
+                    }
                 }
             }
         }
 
+        // the port closest to the capital of the country connects with it
         for (Country country : countries) {
+            closestDistance = Integer.MAX_VALUE;
+            closestPort = null;
             for (Port port : ports) {
                 if (port.getCountry().equals(country.getAlpha2_code())) {
                     distance = (int) distanceBetweenTwoCoordinates(port.getLongitude(), port.getLatitude(), country.getLongitude(), country.getLatitude());
@@ -105,45 +118,44 @@ public class BuildFreightNetworkController {
             m[index2][index2] = closestDistance;
         }
 
-        for (Port port1 : ports) {
-            for (Country country : countries) {
-                if (!port1.getCountry().equals(country.getAlpha2_code())) {
-                    for (Port port2 : ports) {
-                        if (port2.getCountry().equals(country.getAlpha2_code())) {
-                            int i = 0;
-                            distance = -1;
-                            while (i < seaDistances.size() && distance == -1) {
-                                if (seaDistances.get(i).getId_port1() == port1.getID() && seaDistances.get(i).getId_port2() == port2.getID())
-                                    distance = seaDistances.get(i).getDistance();
-                                i++;
-                            }
-                            if (distance != -1) {
-                                index = closestPorts.size();
-                                while (index >= 1 && distance < distanceBetweenTwoCoordinates(port1.getLongitude(), port1.getLatitude(), closestPorts.get(index - 1).getLongitude(), closestPorts.get(index - 1).getLatitude())) {
-                                    index--;
+        //each port of a country connects with the n closest ports of any other country
+        if (n > 0) {
+            for (Port port1 : ports) {
+                for (Country country : countries) {
+                    if (!port1.getCountry().equals(country.getAlpha2_code())) {
+                        for (Port port2 : ports) {
+                            if (port2.getCountry().equals(country.getAlpha2_code()) && port2.getID() != port1.getID()) {
+                                int i = 0;
+                                distance = -1;
+                                while (i < seaDistances.size() && distance == -1) {
+                                    if (seaDistances.get(i).getId_port1() == port1.getID() && seaDistances.get(i).getId_port2() == port2.getID() || seaDistances.get(i).getId_port1() == port2.getID() && seaDistances.get(i).getId_port2() == port1.getID())
+                                        distance = seaDistances.get(i).getDistance();
+                                    i++;
                                 }
-                                closestPorts.add(index, port2);
-                                if (closestPorts.size() > n) {
-                                    closestPorts.remove(closestPorts.size()-1);
+                                if (distance != -1) {
+                                    index = closestPorts.size();
+                                    while (index >= 1 && distance < closestDistances.get(index - 1)) {
+                                        index--;
+                                    }
+                                    closestDistances.add(index, distance);
+                                    closestPorts.add(index, port2);
+                                    if (closestPorts.size() > n) {
+                                        closestPorts.remove(closestPorts.size() - 1);
+                                        closestDistances.remove(closestDistances.size() - 1);
+                                    }
                                 }
                             }
                         }
+                        for (int i = 0; i < closestPorts.size(); i++) {
+                            index1 = countries.size() + ports.indexOf(port1);
+                            index2 = countries.size() + ports.indexOf(closestPorts.get(i));
+                            distance = closestDistances.get(i);
+                            m[index1][index2] = distance;
+                            m[index2][index1] = distance;
+                        }
+                        closestPorts.clear();
+                        closestDistances.clear();
                     }
-                }
-            }
-            for (Port port2 : closestPorts) {
-                index1 = countries.size() + ports.indexOf(port1);
-                index2 = countries.size() + ports.indexOf(port2);
-                int i = 0;
-                distance = -1;
-                while (i < seaDistances.size() && distance == -1) {
-                if (seaDistances.get(i).getId_port1() == port1.getID() && seaDistances.get(i).getId_port2() == port2.getID())
-                    distance = seaDistances.get(i).getDistance();
-                i++;
-                }
-                if (distance != -1) {
-                    m[index1][index2] = distance;
-                    m[index2][index1] = distance;
                 }
             }
         }
