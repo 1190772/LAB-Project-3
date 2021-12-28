@@ -2,14 +2,14 @@ package lapr.project.model;
 
 public class Country {
 
-    String alpha2code;
-    String alpha3code;
-    String name;
-    String capital;
-    String continent;
-    double population;
-    double latitude;
-    double longitude;
+    private final String alpha2code;
+    private final String alpha3code;
+    private final String name;
+    private final String capital;
+    private final String continent;
+    private final double population;
+    private final double latitude;
+    private final double longitude;
 
     public Country(String alpha2code, String alpha3code, String name, String capital, String continent, double population, double latitude, double longitude) {
         this.alpha2code = alpha2code;
