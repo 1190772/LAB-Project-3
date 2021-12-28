@@ -27,7 +27,7 @@ UI -> CTRL : closestPlaces(n)
 activate CTRL
 
 alt Freight Network does not exist
-CTRL -> NET : BuildFreightNetwork()
+CTRL -> NET : buildFreightNetwork()
 activate NET
 deactivate NET
 end
@@ -81,7 +81,7 @@ UI -> CTRL : closestPlaces(n)
 activate CTRL
 
 alt Freight Network does not exist
-CTRL -> NET : BuildFreightNetwork()
+CTRL -> NET : buildFreightNetwork()
 activate NET
 deactivate NET
 end

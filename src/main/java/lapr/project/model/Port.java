@@ -41,14 +41,7 @@ public class Port {
 
     @Override
     public String toString() {
-        return "Port{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", country='" + country + '\'' +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
-                ", capacity=" + capacity +
-                '}';
+        return "Port = " + name;
     }
 }
 

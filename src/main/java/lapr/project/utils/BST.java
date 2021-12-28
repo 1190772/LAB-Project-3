@@ -309,8 +309,7 @@ public class BST<E extends Comparable<E>> implements BSTInterface<E> {
         if (node == null)
             return;
 
-        if (result.get(level) == null)
-            result.put(level, new ArrayList<E>());
+        result.computeIfAbsent(level, k -> new ArrayList<E>());
 
         result.get(level).add(node.getElement());
 

@@ -78,7 +78,7 @@ public class MatrixAlgorithmsTest {
                 "Faro\n" +
                 "\n" +
                 "Matrix:\n" +
-                "    |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  10 \n" +
+                "    |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  10\n" +
                 " 0\t|     |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  \n" +
                 " 1\t|  X  |     |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  \n" +
                 " 2\t|  X  |  X  |     |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  \n" +

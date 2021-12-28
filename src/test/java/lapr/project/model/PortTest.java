@@ -11,7 +11,7 @@ public class PortTest {
     String country="United Kingdom";
     double latitude=53.46666667;
     double longitude=-3.033333333;
-    String toString = "Port{id='29002', name='Liverpool', country='United Kingdom', latitude=53.46666667, longitude=-3.033333333, capacity=0}";
+    String toString = "Port = Liverpool";
 
     public PortTest(){
         port = new Port(id, name, country, latitude, longitude, 0);

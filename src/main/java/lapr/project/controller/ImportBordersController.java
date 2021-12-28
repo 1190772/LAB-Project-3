@@ -7,7 +7,7 @@ import lapr.project.model.store.CountryStore;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ImportBordersController {
@@ -22,7 +22,7 @@ public class ImportBordersController {
 
     public void importBorders(String filePath) {
         String[] parameters;
-        ArrayList<Border> list = borderStore.getBorders();
+        List<Border> list = borderStore.getBorders();
 
         try (Scanner in = new Scanner((new FileReader(filePath)))) {
         in.nextLine();

@@ -5,7 +5,7 @@ import lapr.project.model.store.CountryStore;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ImportCountriesController {
@@ -16,7 +16,7 @@ public class ImportCountriesController {
 
     public void importCountries(String filePath) {
         String[] parameters;
-        ArrayList<Country> list = countryStore.getCountries();
+        List<Country> list = countryStore.getCountries();
 
         try (Scanner in = new Scanner((new FileReader(filePath)))) {
             in.nextLine();

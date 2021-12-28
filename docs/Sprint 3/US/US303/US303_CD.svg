@@ -47,8 +47,8 @@ class Border {
 }
 
 class Country {
-+ getAlpha2_code()
-+ getAlpha3_code()
++ getAlpha2code()
++ getAlpha3code()
 + getcapital()
 + getcountry()
 + getcontinent()
@@ -107,8 +107,8 @@ class Border {
 }
 
 class Country {
-+ getAlpha2_code()
-+ getAlpha3_code()
++ getAlpha2code()
++ getAlpha3code()
 + getcapital()
 + getcountry()
 + getcontinent()

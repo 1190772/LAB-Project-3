@@ -66,7 +66,7 @@ class BorderStore {
 }
 
 class Country {
-+ getAlpha2_code()
++ getAlpha2code()
 + getcapital()
 + getcountry()
 + getlatitude()
@@ -78,7 +78,7 @@ class CountryStore {
 }
 
 class FreightNetwork {
-+ BuildFreightNetwork(boolean directed, List<V> vs, E[][] m)
++ buildFreightNetwork(boolean directed, List<V> vs, E[][] m)
 }
 
 BuildFreightNetworkController <.. BuildFreightNetworkUI
@@ -139,7 +139,7 @@ class BorderStore {
 }
 
 class Country {
-+ getAlpha2_code()
++ getAlpha2code()
 + getcapital()
 + getcountry()
 + getlatitude()
@@ -151,7 +151,7 @@ class CountryStore {
 }
 
 class FreightNetwork {
-+ BuildFreightNetwork(boolean directed, List<V> vs, E[][] m)
++ buildFreightNetwork(boolean directed, List<V> vs, E[][] m)
 }
 
 BuildFreightNetworkController <.. BuildFreightNetworkUI
