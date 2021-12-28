@@ -41,5 +41,7 @@ public class CountryStore {
         countries = (ArrayList<Country>) countriesDb.getAllCountries();
     }
 
-    public ArrayList<Country> getCountries() { return countries; }
+    public ArrayList<Country> getCountries() { return new ArrayList<>(countries); }
+
+    public void addCountry(Country country) { countries.add(country); }
 }

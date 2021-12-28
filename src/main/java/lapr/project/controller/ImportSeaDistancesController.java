@@ -5,7 +5,6 @@ import lapr.project.model.store.SeaDistanceStore;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ImportSeaDistancesController {
@@ -16,7 +15,6 @@ public class ImportSeaDistancesController {
 
     public void importSeaDistances(String filePath) {
         String[] parameters;
-        ArrayList<SeaDistance> list = seadistanceStore.getSeadists();
 
         try (Scanner in = new Scanner((new FileReader(filePath)))) {
             in.nextLine();
@@ -25,7 +23,7 @@ public class ImportSeaDistancesController {
                 int id_port1 = Integer.parseInt(parameters[1]);
                 int id_port2 = Integer.parseInt(parameters[4]);
                 int distance = Integer.parseInt(parameters[6]);
-                list.add(new SeaDistance(id_port1, id_port2, distance));
+                seadistanceStore.addSeaDistance(new SeaDistance(id_port1, id_port2, distance));
             }
         } catch (IOException e) {
             e.printStackTrace();

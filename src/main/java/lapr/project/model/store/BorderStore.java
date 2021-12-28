@@ -29,5 +29,7 @@ public class BorderStore {
         borders = (ArrayList<Border>) bordersDb.getAllBorders(App.getInstance().getCompany().getCountryStore().getCountries());
     }
 
-    public ArrayList<Border> getBorders() { return borders; }
+    public ArrayList<Border> getBorders() { return new ArrayList<>(borders); }
+
+    public void addBorder(Border border) { borders.add(border); }
 }

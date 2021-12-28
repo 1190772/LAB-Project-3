@@ -29,5 +29,7 @@ public class SeaDistanceStore {
         seadists = (ArrayList<SeaDistance>) seadistsDb.getAllSeaDistances();
     }
 
-    public ArrayList<SeaDistance> getSeadists() { return seadists; }
+    public ArrayList<SeaDistance> getSeadists() { return new ArrayList<>(seadists); }
+
+    public void addSeaDistance(SeaDistance seadist) { seadists.add(seadist); }
 }
