@@ -6,23 +6,22 @@ class BuildFreightNetworkUI {
 }
 
 class BuildFreightNetworkController {
-+ FreightNetwork
+- countryStore;
+- port2DTree;
+- borderStore;
+- seaDistanceStore;
 + buildFreightNetwork()
-- createVertices(ports, countries)
-- createEdges(seaDists, borders)
 }
 
 class Port {
-+ getIdentification()
-+ getName()
-+ getContinent()
++ getID()
 + getCountry()
 + getLatitude()
 + getLongitude()
 }
 
-class PortStoreDb {
-+ getPorts()
+class Port2DTree {
++ getAllPorts()
 }
 
 class SeaDistance {
@@ -31,8 +30,8 @@ class SeaDistance {
 + getDistance()
 }
 
-class SeaDistanceStoreDb {
-+ getSeaDistances()
+class SeaDistanceStore {
++ getSeaDists()
 }
 
 class Border {
@@ -40,22 +39,19 @@ class Border {
 + getCountry2()
 }
 
-class BorderStoreDb {
-+ getSeaDistances()
+class BorderStore {
++ getBorders()
 }
 
 class Country {
 + getAlpha2_code()
-+ getAlpha3_code()
 + getcapital()
 + getcountry()
-+ getcontinent()
-+ getpopulation()
 + getlatitude()
 + getlongitude()
 }
 
-class CountryStoreDb {
+class CountryStore {
 + getCountries()
 }
 
@@ -64,14 +60,14 @@ class FreightNetwork {
 }
 
 BuildFreightNetworkController <.. BuildFreightNetworkUI
-FreightNetwork <... BuildFreightNetworkController
-PortStoreDb <.. BuildFreightNetworkController
-SeaDistanceStoreDb <.. BuildFreightNetworkController
-BorderStoreDb <.. BuildFreightNetworkController
-CountryStoreDb <.. BuildFreightNetworkController
-Port <-- FreightNetwork
-SeaDistance <-- FreightNetwork
-Border <-- FreightNetwork
-Country <-- FreightNetwork
+FreightNetwork <.. BuildFreightNetworkController
+Port2DTree <.. BuildFreightNetworkController
+SeaDistanceStore <.. BuildFreightNetworkController
+BorderStore <.. BuildFreightNetworkController
+CountryStore <.. BuildFreightNetworkController
+Port <-- Port2DTree
+SeaDistance <-- SeaDistanceStore
+Border <-- BorderStore
+Country <-- CountryStore
 
 @enduml

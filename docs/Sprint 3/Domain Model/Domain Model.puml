@@ -68,6 +68,12 @@ class Port {
 -PortStaff
 }
 
+class SeaDistance {
+-Port1
+-Port2
+-Distance
+}
+
 class Warehouse {
 -Identification
 -Name
@@ -135,6 +141,7 @@ Truck "1" -- "*" Trip : performs >
 CargoManifest "*" -- "1..*" Container : Keeps track of >
 Container "1..*" -- "1" Client : tranports goods of >
 Country "1" -- "*" Border : has >
+Port "1" -- "1..*" SeaDistance : has >
 
 
 @enduml

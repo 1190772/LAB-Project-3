@@ -5,23 +5,45 @@ skinparam classAttributeIconSize 0
 
 left to right direction
 
-class CargoManifest {
--Destination
--Date_time_start
--Date_time_end
+class Company {
+-Designation
 }
 
-class Container {
+class Port {
 -Identification
--Payload
--Tare
--Gross
--Width
--Height
--Length
--Refrigerated
--Temperature
+-Name
+-Continent
+-Country
+-Latitude
+-longitude
+-PortMagager
+-PortStaff
 }
 
-CargoManifest "*" -- "1..*" Container : Keeps track of >
+class SeaDistance {
+-Port1
+-Port2
+-Distance
+}
+
+class Country {
+-Continent
+-Alpha2-Code
+-Alpha3-Code
+-Country
+-Population
+-Capital
+-Latitude
+-Longitude
+}
+
+class Border {
+-Country1
+-Country2
+}
+
+Company "1" -- "1..*" Port : Owns >
+Company "1" -- "*" Country : knows >
+Country "1" -- "*" Border : has >
+Port "1" -- "1..*" SeaDistance : has >
 @enduml
