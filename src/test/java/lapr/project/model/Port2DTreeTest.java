@@ -29,10 +29,11 @@ class Port2DTreeTest {
     }
 
     @Test
-    void createdBalancedPort2DTree() {
+    void createBalancedPort2DTreeGetPorts() {
         port2DTree.createBalancedPort2DTree(portList);
         verifyBalance(port2DTree.getRoot());
         assertEquals(7, port2DTree.findNearestNeighbour(43.7, -60.3).getID());
+        assertTrue(port2DTree.getAllPorts().containsAll(portList));
     }
 
     void verifyBalance(TwoDTree.Node2D<Port> node) {
