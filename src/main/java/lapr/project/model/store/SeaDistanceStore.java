@@ -7,6 +7,7 @@ import lapr.project.utils.DatabaseConnection;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SeaDistanceStore {
 
@@ -29,7 +30,7 @@ public class SeaDistanceStore {
         seadists = (ArrayList<SeaDistance>) seadistsDb.getAllSeaDistances();
     }
 
-    public ArrayList<SeaDistance> getSeadists() { return new ArrayList<>(seadists); }
+    public List<SeaDistance> getSeadists() { return new ArrayList<>(seadists); }
 
     public void addSeaDistance(SeaDistance seadist) { seadists.add(seadist); }
 }

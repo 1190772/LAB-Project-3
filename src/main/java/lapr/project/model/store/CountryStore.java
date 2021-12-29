@@ -38,8 +38,12 @@ public class CountryStore {
         }
     }
 
-    public void refresh() throws SQLException {
-        countries = (ArrayList<Country>) countriesDb.getAllCountries();
+    public void refresh() {
+        try {
+            countries = (ArrayList<Country>) countriesDb.getAllCountries();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Country> getCountries() { return new ArrayList<>(countries); }
