@@ -1,0 +1,73 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class BuildFreightNetworkUI {
+- controller
+}
+
+class BuildFreightNetworkController {
+- countryStore;
+- port2DTree;
+- borderStore;
+- seaDistanceStore;
++ buildFreightNetwork()
+}
+
+class Port {
++ getID()
++ getCountry()
++ getLatitude()
++ getLongitude()
+}
+
+class Port2DTree {
++ getAllPorts()
+}
+
+class SeaDistance {
++ getPort1()
++ getPort2()
++ getDistance()
+}
+
+class SeaDistanceStore {
++ getSeaDists()
+}
+
+class Border {
++ getCountry1()
++ getCountry2()
+}
+
+class BorderStore {
++ getBorders()
+}
+
+class Country {
++ getAlpha2_code()
++ getcapital()
++ getcountry()
++ getlatitude()
++ getlongitude()
+}
+
+class CountryStore {
++ getCountries()
+}
+
+class FreightNetwork {
++ BuildFreightNetwork(boolean directed, List<V> vs, E[][] m)
+}
+
+BuildFreightNetworkController <.. BuildFreightNetworkUI
+FreightNetwork <.. BuildFreightNetworkController
+Port2DTree <.. BuildFreightNetworkController
+SeaDistanceStore <.. BuildFreightNetworkController
+BorderStore <.. BuildFreightNetworkController
+CountryStore <.. BuildFreightNetworkController
+Port <-- Port2DTree
+SeaDistance <-- SeaDistanceStore
+Border <-- BorderStore
+Country <-- CountryStore
+
+@enduml
