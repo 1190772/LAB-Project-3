@@ -44,11 +44,7 @@ public class Company {
     }
 
     public void refreshPorts() {
-        try {
-            port2DTree.loadPortsFromDatabase();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        port2DTree.loadPortsFromDatabase();
     }
 
     public AuthFacade getAuthFacade() {

@@ -26,8 +26,12 @@ public class BorderStore {
         }
     }
 
-    public void refresh() throws SQLException {
-        borders = (ArrayList<Border>) bordersDb.getAllBorders(App.getInstance().getCompany().getCountryStore().getCountries());
+    public void refresh(){
+        try {
+            borders = (ArrayList<Border>) bordersDb.getAllBorders(App.getInstance().getCompany().getCountryStore().getCountries());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Border> getBorders() { return new ArrayList<>(borders); }

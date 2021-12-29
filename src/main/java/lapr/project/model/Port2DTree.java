@@ -2,6 +2,7 @@ package lapr.project.model;
 
 import lapr.project.controller.App;
 import lapr.project.data.PortStoreDb;
+import lapr.project.model.shared.SQL;
 import lapr.project.utils.DatabaseConnection;
 import lapr.project.utils.TwoDTree;
 
@@ -44,10 +45,13 @@ public class Port2DTree extends TwoDTree<Port> {
 
     protected final Comparator<Port> cmpLon = Comparator.comparingDouble(Port::getLongitude);
 
-    public void loadPortsFromDatabase() throws SQLException {
-        ArrayList<Port> ports = (ArrayList<Port>) portStoreDb.getAllPorts();
-
-        createBalancedPort2DTree(ports);
+    public void loadPortsFromDatabase() {
+        try {
+            ArrayList<Port> ports = (ArrayList<Port>) portStoreDb.getAllPorts();
+            createBalancedPort2DTree(ports);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void savePortsToDb() {

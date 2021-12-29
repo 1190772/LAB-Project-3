@@ -27,7 +27,6 @@ public class BuildFreightNetworkController {
     }
 
     public void buildFreightNetwork() {
-        try {
             countryStore.refresh();
             port2DTree.loadPortsFromDatabase();
             borderStore.refresh();
@@ -39,9 +38,6 @@ public class BuildFreightNetworkController {
                             borderStore.getBorders(),
                             seaDistanceStore.getSeadists(),
                         1));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     public FreightNetwork buildFreightNetwork(List<Country> countries, List<Port> ports, List<Border> borders, List<SeaDistance> seaDistances, int n) {

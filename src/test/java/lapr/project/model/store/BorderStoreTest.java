@@ -29,15 +29,6 @@ class BorderStoreTest {
     }
 
     @Test
-    void refresh() throws SQLException {
-        BorderStoreDb borderStoreDb = mock(BorderStoreDb.class);
-
-        when(borderStoreDb.getAllBorders(anyList())).thenReturn(borders);
-
-        Assertions.assertEquals(borders, borderStoreDb.getAllBorders(new ArrayList<>()));
-    }
-
-    @Test
     void addBorderGetBorders() {
         BorderStore borderStore = new BorderStore();
 

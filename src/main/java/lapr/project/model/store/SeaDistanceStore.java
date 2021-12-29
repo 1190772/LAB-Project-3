@@ -26,8 +26,12 @@ public class SeaDistanceStore {
         }
     }
 
-    public void refresh() throws SQLException {
-        seadists = (ArrayList<SeaDistance>) seadistsDb.getAllSeaDistances();
+    public void refresh() {
+        try {
+            seadists = (ArrayList<SeaDistance>) seadistsDb.getAllSeaDistances();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<SeaDistance> getSeadists() { return new ArrayList<>(seadists); }

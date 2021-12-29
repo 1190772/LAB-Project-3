@@ -26,15 +26,6 @@ class SeaDistanceStoreTest {
     }
 
     @Test
-    void refresh() throws SQLException {
-        SeaDistanceStoreDb seaDistanceStoreDb = mock(SeaDistanceStoreDb.class);
-
-        when(seaDistanceStoreDb.getAllSeaDistances()).thenReturn(seaDistances);
-
-        Assertions.assertEquals(seaDistances, seaDistanceStoreDb.getAllSeaDistances());
-    }
-
-    @Test
     void addSeaDistanceGetSeaDistances() {
         SeaDistanceStore seaDistanceStore = new SeaDistanceStore();
 

@@ -33,15 +33,7 @@ class CountryStoreTest {
         countryStore.addCountry(country2);
 
         Assertions.assertEquals(country2, countryStore.getCountryByName(country2.getName()));
-    }
-
-    @Test
-    void refresh() throws SQLException {
-        CountryStoreDb countryStoreDb = mock(CountryStoreDb.class);
-
-        when(countryStoreDb.getAllCountries()).thenReturn(countries);
-
-        Assertions.assertEquals(countries, countryStoreDb.getAllCountries());
+        Assertions.assertNull(countryStore.getCountryByName("Nome"));
     }
 
     @Test
