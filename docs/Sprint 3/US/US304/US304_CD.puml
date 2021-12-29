@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ContainerOperationsUI {
+- controller
+}
+
+class ContainerOperationsController {
+- ContainerOperationStoreDb
++ getContainerOperations(cargoManifestID)
+}
+
+class ContainerOperationStoreDb {
++ getContainerOperations(cargoManifestID)
+}
+
+class ContainerOperation {
+- user
+- dateTime
+- type
+- containerID
+- cargoManifestID
++ new (user, dateTime, type, containerID, cargoManifestID)
++ toString()
+}
+
+ContainerOperationsController <.. ContainerOperationsUI
+ContainerOperationStoreDb <.. ContainerOperationsController
+ContainerOperation <-- ContainerOperationStoreDb
+ContainerOperation <.. ContainerOperationsUI
+
+@enduml
