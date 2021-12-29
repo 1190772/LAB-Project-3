@@ -5,7 +5,6 @@ import lapr.project.model.store.BorderStore;
 import lapr.project.model.store.CountryStore;
 import lapr.project.model.store.SeaDistanceStore;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -96,7 +95,7 @@ public class BuildFreightNetworkController {
             closestDistance = Integer.MAX_VALUE;
             closestPort = null;
             for (Port port : ports) {
-                if (port.getCountry().equals(country.getAlpha2code())) {
+                if (port.getCountry().equals(country)) {
                     distance = (long) distanceBetweenTwoCoordinates(port.getLongitude(), port.getLatitude(), country.getLongitude(), country.getLatitude());
                     if (distanceBetweenTwoCoordinates(port.getLongitude(), port.getLatitude(), country.getLongitude(), country.getLatitude()) < closestDistance) {
                         closestPort = port;
@@ -114,9 +113,9 @@ public class BuildFreightNetworkController {
         if (n > 0) {
             for (Port port1 : ports) {
                 for (Country country : countries) {
-                    if (!port1.getCountry().equals(country.getAlpha2code())) {
+                    if (!port1.getCountry().equals(country)) {
                         for (Port port2 : ports) {
-                            if (port2.getCountry().equals(country.getAlpha2code()) && port2.getID() != port1.getID()) {
+                            if (port2.getCountry().equals(country) && port2.getID() != port1.getID()) {
                                 int i = 0;
                                 distance = -1;
                                 while (i < seaDistances.size() && distance == -1) {

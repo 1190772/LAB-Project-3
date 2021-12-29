@@ -2,7 +2,6 @@ package lapr.project.model;
 
 import lapr.project.controller.App;
 import lapr.project.data.PortStoreDb;
-import lapr.project.model.shared.SQL;
 import lapr.project.utils.DatabaseConnection;
 import lapr.project.utils.TwoDTree;
 

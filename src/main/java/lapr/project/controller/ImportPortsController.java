@@ -1,5 +1,6 @@
 package lapr.project.controller;
 
+import lapr.project.model.Country;
 import lapr.project.model.Port;
 import lapr.project.model.Port2DTree;
 
@@ -41,7 +42,7 @@ public class ImportPortsController {
             while (in.hasNextLine()) {
                 parameters = in.nextLine().split(",");
                 String continent = parameters[0];
-                String country = parameters[1];
+                Country country = App.getInstance().getCompany().getCountryStore().getCountryByAlpha2code(parameters[1]);
                 int id = Integer.parseInt(parameters[2]);
                 String name = parameters[3];
                 double latitude = Double.parseDouble(parameters[4]);

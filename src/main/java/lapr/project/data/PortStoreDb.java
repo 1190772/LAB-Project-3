@@ -36,7 +36,7 @@ public class PortStoreDb implements Persistable {
             try (PreparedStatement savePortPreparedStatement = connection.prepareStatement(sqlCommand)) {
                 savePortPreparedStatement.setString(1, port.getName());
                 savePortPreparedStatement.setInt(2, port.getCapacity());
-                savePortPreparedStatement.setString(3, countryStoreDb.getCountryCodeByName(port.getCountry()));
+                savePortPreparedStatement.setString(3, countryStoreDb.getCountryCodeByName(port.getCountry().getName()));
                 savePortPreparedStatement.setDouble(4, port.getLatitude());
                 savePortPreparedStatement.setDouble(5, port.getLongitude());
                 savePortPreparedStatement.setInt(6, port.getID());
@@ -86,7 +86,7 @@ public class PortStoreDb implements Persistable {
             while (ports.next()) {
                 res.add(new Port(ports.getInt("id_port"),
                             ports.getString("name"),
-                            ports.getString("country_code"),
+                            App.getInstance().getCompany().getCountryStore().getCountryByAlpha2code(ports.getString("country_code")),
                             ports.getDouble("latitude"),
                             ports.getDouble("longitude"),
                             ports.getInt("Capacity")
