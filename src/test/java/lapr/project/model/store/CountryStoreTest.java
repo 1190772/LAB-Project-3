@@ -1,15 +1,10 @@
 package lapr.project.model.store;
 
-import lapr.project.data.CountryStoreDb;
 import lapr.project.model.Country;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 class CountryStoreTest {
 
@@ -34,6 +29,17 @@ class CountryStoreTest {
 
         Assertions.assertEquals(country2, countryStore.getCountryByName(country2.getName()));
         Assertions.assertNull(countryStore.getCountryByName("Nome"));
+    }
+
+    @Test
+    void getCountryByAlpha2code() {
+        CountryStore countryStore = new CountryStore();
+
+        countryStore.addCountry(country1);
+        countryStore.addCountry(country2);
+
+        Assertions.assertEquals(country2, countryStore.getCountryByAlpha2code(country2.getAlpha2code()));
+        Assertions.assertNull(countryStore.getCountryByAlpha2code("Nome"));
     }
 
     @Test

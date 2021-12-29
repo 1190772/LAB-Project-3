@@ -1,15 +1,10 @@
 package lapr.project.model.store;
 
-import lapr.project.data.SeaDistanceStoreDb;
 import lapr.project.model.SeaDistance;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 class SeaDistanceStoreTest {
 

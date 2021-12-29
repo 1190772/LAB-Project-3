@@ -1,18 +1,11 @@
 package lapr.project.model.store;
 
-import lapr.project.data.BorderStoreDb;
 import lapr.project.model.Border;
 import lapr.project.model.Country;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.anyList;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 class BorderStoreTest {
 

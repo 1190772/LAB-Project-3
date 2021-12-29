@@ -31,6 +31,18 @@ public class CountryStore {
         return found;
     }
 
+    public Country getCountryByAlpha2code(String alpha2code) {
+        int i = 0;
+        Country found = null;
+
+        while (i < countries.size() && found == null) {
+            if (countries.get(i).getAlpha2code().equals(alpha2code))
+                found = countries.get(i);
+            i++;
+        }
+        return found;
+    }
+
     public void saveCountriesToDb() {
         DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
         for ( Country country: countries ) {

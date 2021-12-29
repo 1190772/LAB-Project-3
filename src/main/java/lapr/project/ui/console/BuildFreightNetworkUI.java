@@ -1,6 +1,5 @@
 package lapr.project.ui.console;
 
-import lapr.project.controller.App;
 import lapr.project.controller.BuildFreightNetworkController;
 
 public class BuildFreightNetworkUI implements Runnable {

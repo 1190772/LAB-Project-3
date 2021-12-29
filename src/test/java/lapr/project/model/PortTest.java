@@ -8,7 +8,7 @@ public class PortTest {
     int id= 29002;
     String name="Liverpool";
     //String continent="Europe";
-    String country="United Kingdom";
+    Country country=new Country("UK", null, "United Kingdom", "London", "Europe", 0, 0, 0);
     double latitude=53.46666667;
     double longitude=-3.033333333;
     String toString = "Port = Liverpool";

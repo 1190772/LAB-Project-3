@@ -9,7 +9,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class DatabaseConnectionTest {
-    final String url = "jdbc:oracle:thin:@//vsgate-s1.dei.isep.ipp.pt:10601/xepdb1";
     private final DatabaseConnection connection = mock(DatabaseConnection.class);
 
     @Test
