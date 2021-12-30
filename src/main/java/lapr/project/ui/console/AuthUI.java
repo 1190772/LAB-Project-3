@@ -44,6 +44,7 @@ public class AuthUI implements Runnable {
         List<MenuItem> rolesUI = new ArrayList<>();
         rolesUI.add(new MenuItem(Constants.ROLE_TRAFFIC_MANAGER, new TrafficManagerUI()));
         rolesUI.add(new MenuItem(Constants.ROLE_PORT_MANAGER, new PortManagerUI()));
+        rolesUI.add(new MenuItem(Constants.ROLE_SHIP_CAPTAIN, new ShipCaptainUI()));
 
         return rolesUI;
     }
