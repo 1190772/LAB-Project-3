@@ -20,11 +20,11 @@ BEGIN
     
     SELECT count(*) into containersInB  
         FROM CARGO_MANIFEST JOIN TRIP ON cargo_manifest.id_cargo_manifest = trip.id_trip RIGHT JOIN LOADING_CARGO_MANIFEST on cargo_manifest.id_cargo_manifest = loading_cargo_manifest.id_cargo_manifest
-    WHERE trip.id_destination_port = id_warehouse AND trip.date_time_end>minDate and trip.date_time_end<maxDate;
+    WHERE trip.id_destination_warehouse = id_warehouse AND trip.date_time_end>minDate and trip.date_time_end<maxDate;
     
     SELECT count(*) into containersOutB  
         FROM CARGO_MANIFEST JOIN TRIP ON cargo_manifest.id_cargo_manifest = trip.id_trip RIGHT JOIN LOADING_CARGO_MANIFEST on cargo_manifest.id_cargo_manifest = loading_cargo_manifest.id_cargo_manifest
-    WHERE trip.id_destination_port = id_warehouse AND trip.date_time_end>minDate and trip.date_time_end<maxDate;
+    WHERE trip.id_destination_warehouse = id_warehouse AND trip.date_time_end>minDate and trip.date_time_end<maxDate;
     
     fill := containersInB - containersOutB + containersIn - containersOut;
 
