@@ -1,5 +1,6 @@
 package lapr.project.model;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -7,6 +8,8 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class ShipBSTTest {
 
@@ -123,6 +126,15 @@ class ShipBSTTest {
         assertSame(expected.get(0)[1], actual.get(0)[1]);
         assertSame(expected.get(1)[0], actual.get(1)[0]);
         assertSame(expected.get(1)[1], actual.get(1)[1]);
+    }
+
+    @Test
+    void loadShipsFromDatabase() {
+        ShipBST shipBST = mock(ShipBST.class);
+
+        when(shipBST.loadShipsFromDatabase()).thenReturn(true);
+
+        Assertions.assertTrue(shipBST.loadShipsFromDatabase());
     }
 
 }

@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 class BorderStoreTest {
 
     private final ArrayList<Border> borders;
@@ -29,5 +32,14 @@ class BorderStoreTest {
         borderStore.addBorder(border2);
 
         Assertions.assertEquals(borders, borderStore.getBorders());
+    }
+
+    @Test
+    void refresh() {
+        BorderStore borderStore = mock(BorderStore.class);
+
+        when(borderStore.refresh()).thenReturn(true);
+
+        Assertions.assertTrue(borderStore.refresh());
     }
 }

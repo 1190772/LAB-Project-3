@@ -26,11 +26,7 @@ shipBST = App.getInstance().getCompany().getShips();
 }
 
     public void refreshShips() {
-        try {
-            App.getInstance().getCompany().refreshShips();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        App.getInstance().getCompany().refreshShips();
     }
 
     public List<Ship[]> getShipPairs() {

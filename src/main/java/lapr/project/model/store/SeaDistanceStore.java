@@ -26,12 +26,17 @@ public class SeaDistanceStore {
         }
     }
 
-    public void refresh() {
+    public boolean refresh() {
+        boolean returnValue = true;
+
         try {
             seadists = (ArrayList<SeaDistance>) seadistsDb.getAllSeaDistances();
         } catch (SQLException e) {
             e.printStackTrace();
+            returnValue = false;
         }
+
+        return returnValue;
     }
 
     public List<SeaDistance> getSeadists() { return new ArrayList<>(seadists); }

@@ -35,9 +35,7 @@ public class Company {
 
     public ShipBST getShips() { return shipBST; }
 
-    public void refreshShips() throws SQLException {
-        shipBST.loadShipsFromDatabase();
-    }
+    public void refreshShips() { shipBST.loadShipsFromDatabase(); }
 
     public Port2DTree getPorts() {
     return port2DTree;

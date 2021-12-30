@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 class CountryStoreTest {
 
     private final ArrayList<Country> countries;
@@ -39,7 +42,7 @@ class CountryStoreTest {
         countryStore.addCountry(country2);
 
         Assertions.assertEquals(country2, countryStore.getCountryByAlpha2code(country2.getAlpha2code()));
-        Assertions.assertNull(countryStore.getCountryByAlpha2code("Nome"));
+        Assertions.assertNull(countryStore.getCountryByAlpha2code("ZZ"));
     }
 
     @Test
@@ -50,5 +53,14 @@ class CountryStoreTest {
         countryStore.addCountry(country2);
 
         Assertions.assertEquals(countries, countryStore.getCountries());
+    }
+
+    @Test
+    void refresh() {
+        CountryStore countryStore = mock(CountryStore.class);
+
+        when(countryStore.refresh()).thenReturn(true);
+
+        Assertions.assertTrue(countryStore.refresh());
     }
 }

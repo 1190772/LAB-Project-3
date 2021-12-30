@@ -50,12 +50,17 @@ public class CountryStore {
         }
     }
 
-    public void refresh() {
+    public boolean refresh() {
+        boolean returnValue = true;
+
         try {
             countries = (ArrayList<Country>) countriesDb.getAllCountries();
         } catch (SQLException e) {
             e.printStackTrace();
+            returnValue = false;
         }
+
+        return returnValue;
     }
 
     public List<Country> getCountries() { return new ArrayList<>(countries); }

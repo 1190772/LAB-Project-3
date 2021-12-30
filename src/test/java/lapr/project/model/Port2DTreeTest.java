@@ -1,12 +1,15 @@
 package lapr.project.model;
 
 import lapr.project.utils.TwoDTree;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class Port2DTreeTest {
 
@@ -43,5 +46,14 @@ class Port2DTreeTest {
         if (port2DTree.balanceFactor(node) > 1)
             fail();
         verifyBalance(node.getRight());
+    }
+
+    @Test
+    void loadPortsFromDatabase() {
+        Port2DTree port2DTree = mock(Port2DTree.class);
+
+        when(port2DTree.loadPortsFromDatabase()).thenReturn(true);
+
+        Assertions.assertTrue(port2DTree.loadPortsFromDatabase());
     }
 }

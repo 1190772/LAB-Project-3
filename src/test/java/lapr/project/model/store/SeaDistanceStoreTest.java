@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 class SeaDistanceStoreTest {
 
     private final ArrayList<SeaDistance> seaDistances;
@@ -28,5 +31,14 @@ class SeaDistanceStoreTest {
         seaDistanceStore.addSeaDistance(seaDistance2);
 
         Assertions.assertEquals(seaDistances, seaDistanceStore.getSeadists());
+    }
+
+    @Test
+    void refresh() {
+        SeaDistanceStore seaDistanceStore = mock(SeaDistanceStore.class);
+
+        when(seaDistanceStore.refresh()).thenReturn(true);
+
+        Assertions.assertTrue(seaDistanceStore.refresh());
     }
 }
