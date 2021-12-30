@@ -77,22 +77,21 @@ public class CountryStoreDb implements Persistable {
     public List<Country> getAllCountries() throws SQLException {
         Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Country";
-        ResultSet countries;
         ArrayList<Country> res = new ArrayList<>();
 
         try (PreparedStatement seaDistancesPreparedStatement = connection.prepareStatement(sqlCommand)) {
-            countries = seaDistancesPreparedStatement.executeQuery();
-            while (countries.next()) {
-                res.add(new Country(countries.getNString(1),
-                        countries.getString(2),
-                        countries.getString(3),
-                        countries.getString(4),
-                        countries.getString(5),
-                        countries.getDouble(6),
-                        countries.getDouble(7),
-                        countries.getDouble(8)));
+            try (ResultSet countries = seaDistancesPreparedStatement.executeQuery()) {
+                while (countries.next()) {
+                    res.add(new Country(countries.getNString(1),
+                            countries.getString(2),
+                            countries.getString(3),
+                            countries.getString(4),
+                            countries.getString(5),
+                            countries.getDouble(6),
+                            countries.getDouble(7),
+                            countries.getDouble(8)));
+                }
             }
-            countries.close();
         }
         return res;
     }

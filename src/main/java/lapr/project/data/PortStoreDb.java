@@ -78,21 +78,20 @@ public class PortStoreDb implements Persistable {
     public List<Port> getAllPorts() throws SQLException {
         Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Port";
-        ResultSet ports;
         ArrayList<Port> res = new ArrayList<>();
 
         try (PreparedStatement shipsPreparedStatement = connection.prepareStatement(sqlCommand)) {
-            ports = shipsPreparedStatement.executeQuery();
+            try (ResultSet ports = shipsPreparedStatement.executeQuery()) {
             while (ports.next()) {
                 res.add(new Port(ports.getInt("id_port"),
-                            ports.getString("name"),
-                            App.getInstance().getCompany().getCountryStore().getCountryByAlpha2code(ports.getString("country_code")),
-                            ports.getDouble("latitude"),
-                            ports.getDouble("longitude"),
-                            ports.getInt("Capacity")
-                        ));
+                        ports.getString("name"),
+                        App.getInstance().getCompany().getCountryStore().getCountryByAlpha2code(ports.getString("country_code")),
+                        ports.getDouble("latitude"),
+                        ports.getDouble("longitude"),
+                        ports.getInt("Capacity")
+                ));
+                }
             }
-            ports.close();
         }
         return res;
     }

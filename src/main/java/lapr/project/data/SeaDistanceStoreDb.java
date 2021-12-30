@@ -75,17 +75,16 @@ public class SeaDistanceStoreDb implements Persistable {
     public List<SeaDistance> getAllSeaDistances() throws SQLException {
         Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Sea_Distance";
-        ResultSet seaDistances;
         ArrayList<SeaDistance> res = new ArrayList<>();
 
         try (PreparedStatement seaDistancesPreparedStatement = connection.prepareStatement(sqlCommand)) {
-            seaDistances = seaDistancesPreparedStatement.executeQuery();
+            try (ResultSet seaDistances = seaDistancesPreparedStatement.executeQuery()) {
             while (seaDistances.next()) {
                 res.add(new SeaDistance(Integer.parseInt(seaDistances.getString("id_port1").trim()),
-                                        Integer.parseInt(seaDistances.getString("id_port2").trim()),
-                                        seaDistances.getInt("distance")));
+                        Integer.parseInt(seaDistances.getString("id_port2").trim()),
+                        seaDistances.getInt("distance")));
+                }
             }
-            seaDistances.close();
         }
         return res;
     }
