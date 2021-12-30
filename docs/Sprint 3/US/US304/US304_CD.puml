@@ -7,11 +7,11 @@ class ContainerOperationsUI {
 
 class ContainerOperationsController {
 - ContainerOperationStoreDb
-+ getContainerOperations(cargoManifestID)
++ getContainerOperationsByCargoManifestID(cargoManifestID)
 }
 
 class ContainerOperationStoreDb {
-+ getContainerOperations(cargoManifestID)
++ getContainerOperationsByCargoManifestID(cargoManifestID)
 }
 
 class ContainerOperation {

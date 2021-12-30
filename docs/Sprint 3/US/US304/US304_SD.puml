@@ -20,11 +20,11 @@ SP -> "UI" : types requested data
 
 autonumber 3.1
 
-UI -> CTRL : getContainerOperations(cargoManifestID)
+UI -> CTRL : getContainerOperationsByCargoManifestID(cargoManifestID)
 
 activate CTRL
 
-CTRL -> CS : getContainerOperations(cargoManifestID)
+CTRL -> CS : getContainerOperationsByCargoManifestID(cargoManifestID)
 activate CS
 
 loop while there are more container operations in the chosen manifest

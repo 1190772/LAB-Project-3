@@ -33,7 +33,7 @@ public class ContainerOperationsUI implements Runnable{
         ArrayList<ContainerOperation> containerOperations;
 
         cargoManifestID = Utils.readIntegerFromConsole("Cargo Manifest ID: ");
-        containerOperations = controller.getContainerOperations(cargoManifestID);
+        containerOperations = controller.getContainerOperationsByCargoManifestID(cargoManifestID);
 
         if (containerOperations.size() > 0)
             for ( ContainerOperation containerOperation : containerOperations )

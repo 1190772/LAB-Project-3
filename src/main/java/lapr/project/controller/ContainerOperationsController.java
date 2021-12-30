@@ -30,7 +30,7 @@ public class ContainerOperationsController {
      * @param cargoManifestID the Cargo Manifest ID to search by.
      * @return List of the found Container Operations.
      */
-    public ArrayList<ContainerOperation> getContainerOperations(int cargoManifestID) {
+    public ArrayList<ContainerOperation> getContainerOperationsByCargoManifestID(int cargoManifestID) {
         return containerOperationStoreDb.getContainerOperationsByCargoManifestID(cargoManifestID);
     }
 }
