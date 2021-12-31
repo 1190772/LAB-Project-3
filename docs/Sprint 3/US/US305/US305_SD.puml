@@ -3,21 +3,21 @@
 
 autonumber
 
-actor "Ship Captain" as SP
+actor "Client" as C
 
 participant ":ContainersRouteUI" as UI
 participant ":ContainersRouteController" as CTRL
 participant ":DatabaseFunctions" as DBF
 participant ":ContainersRoute" as CR
 
-activate SP
-SP -> UI : asks for container's route
+activate C
+C -> UI : asks for container's route
 
 activate UI
-UI --> SP : requests data (userID, containerID)
+UI --> C : requests data (userID, containerID)
 deactivate UI
 
-SP -> UI : types requested data
+C -> UI : types requested data
 activate UI
 
 
@@ -31,16 +31,16 @@ activate DBF
 
 loop while Unloading Cargo Manifest does not have a line relative to the container
 
-    DBF --> CR : list.add(new ContainersRoute(startingPoint, endingPoint,\n startingDateTime, endingDateTime, transport))
+    DBF --> CR : list.add(new ContainersRoute(startingPoint, endingPoint,\n startingDateTime, endingDateTime, tranCort))
     activate CR
     deactivate CR
 end
 
-"UI" --> SP : shows container's route and other details
+"UI" --> C : shows container's route and other details
 
 deactivate DBF
 deactivate CTRL
 deactivate UI
-deactivate SP
+deactivate C
 
 @enduml

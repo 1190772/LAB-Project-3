@@ -3,21 +3,21 @@
 
 autonumber
 
-actor "Ship Captain" as SP
+actor "Client" as C
 
-activate SP
-SP -> ":System" : asks for container's route
-
-activate ":System"
-":System" --> "SP" : requests data (userID, containerID)
-deactivate ":System"
-
-SP -> ":System" : types requested data
+activate C
+C -> ":System" : asks for container's route
 
 activate ":System"
-":System" --> SP : shows container's route and other details
+":System" --> "C" : requests data (userID, containerID)
 deactivate ":System"
 
-deactivate SP
+C -> ":System" : types requested data
+
+activate ":System"
+":System" --> C : shows container's route and other details
+deactivate ":System"
+
+deactivate C
 
 @enduml
