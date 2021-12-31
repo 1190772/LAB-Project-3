@@ -34,9 +34,9 @@ public class App {
         this.authFacade.addUserRole(Constants.ROLE_PORT_MANAGER, Constants.ROLE_PORT_MANAGER);
         this.authFacade.addUserRole(Constants.ROLE_SHIP_CAPTAIN, Constants.ROLE_SHIP_CAPTAIN);
 
-        this.authFacade.addUserWithRole("Traffic Manager", "manager@lei.sem1.pt", "123456", Constants.ROLE_TRAFFIC_MANAGER);
-        this.authFacade.addUserWithRole("Port Manager", "portmanager@lei.pt", "123456", Constants.ROLE_PORT_MANAGER);
-        this.authFacade.addUserWithRole("Ship Captain", "captain@lei.pt", "123456", Constants.ROLE_SHIP_CAPTAIN);
+        this.authFacade.addUserWithRole("Traffic Manager", "manager@lei.sem1.pt", Constants.THE_OTHER_ONE, Constants.ROLE_TRAFFIC_MANAGER);
+        this.authFacade.addUserWithRole("Port Manager", "portmanager@lei.pt", Constants.THE_OTHER_ONE, Constants.ROLE_PORT_MANAGER);
+        this.authFacade.addUserWithRole("Ship Captain", "captain@lei.pt", Constants.THE_OTHER_ONE, Constants.ROLE_SHIP_CAPTAIN);
     }
 
     private Properties getProperties() {

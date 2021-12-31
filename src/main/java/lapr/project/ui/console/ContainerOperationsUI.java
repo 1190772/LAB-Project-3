@@ -3,7 +3,7 @@ package lapr.project.ui.console;
 import lapr.project.controller.ContainerOperationsController;
 import lapr.project.model.ContainerOperation;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * UI of US304.
@@ -30,12 +30,12 @@ public class ContainerOperationsUI implements Runnable{
     @Override
     public void run() {
         int cargoManifestID;
-        ArrayList<ContainerOperation> containerOperations;
+        List<ContainerOperation> containerOperations;
 
         cargoManifestID = Utils.readIntegerFromConsole("Cargo Manifest ID: ");
         containerOperations = controller.getContainerOperationsByCargoManifestID(cargoManifestID);
 
-        if (containerOperations.size() > 0)
+        if (!containerOperations.isEmpty())
             for ( ContainerOperation containerOperation : containerOperations )
                 System.out.println(containerOperation);
         else

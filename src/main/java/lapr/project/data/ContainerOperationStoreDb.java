@@ -8,10 +8,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContainerOperationStoreDb {
 
-    public ArrayList<ContainerOperation> getContainerOperationsByCargoManifestID(int cargoManifestID) {
+    public List<ContainerOperation> getContainerOperationsByCargoManifestID(int cargoManifestID) {
         ArrayList<ContainerOperation> containerOperations = new ArrayList<>();
         Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
 

@@ -5,8 +5,6 @@ import lapr.project.model.store.CountryStore;
 import lapr.project.model.store.SeaDistanceStore;
 import lapr.project.ui.auth.AuthFacade;
 
-import java.sql.SQLException;
-
 public class Company {
     private final String designation;
 

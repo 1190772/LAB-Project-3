@@ -3,7 +3,7 @@ package lapr.project.controller;
 import lapr.project.data.ContainerOperationStoreDb;
 import lapr.project.model.ContainerOperation;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Controller responsible for coordinating US304.
@@ -30,7 +30,7 @@ public class ContainerOperationsController {
      * @param cargoManifestID the Cargo Manifest ID to search by.
      * @return List of the found Container Operations.
      */
-    public ArrayList<ContainerOperation> getContainerOperationsByCargoManifestID(int cargoManifestID) {
+    public List<ContainerOperation> getContainerOperationsByCargoManifestID(int cargoManifestID) {
         return containerOperationStoreDb.getContainerOperationsByCargoManifestID(cargoManifestID);
     }
 }

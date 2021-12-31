@@ -14,21 +14,6 @@ entity Trip {
 * date_time_end
 }
 
-entity Container {
-* id_container
---
-* iso_code
-
-* tare
-* max_weight_incl_container
-* max_weight
-* max_volume
-
-* id_owner
-* id_equipment
-* serial_number
-* check_digit
-}
 entity Cargo_Manifest {
 * id_cargo_manifest
 * id_container
@@ -40,64 +25,8 @@ entity Cargo_Manifest {
 * id_client
 }
 
-entity Unloading_Cargo_Manifest {
-* id_cargo_manifest
-* id_container
---
-* id_warehouse
-}
-
-entity Loading_Cargo_Manifest {
-* id_cargo_manifest
-* id_container
---
-* id_warehouse
-}
-
-entity Truck {
-* id_truck
---
-* id_employee
-}
-
-entity Ship {
-* imo_code
---
-* mmsi_code
-* name_ship
-* number_generators
-* power_out_generator
-* call_sign
-* vessel_type
-* Length_ship
-* width_ship
-* capacity_ship
-* draft
-* id_employee_captain
-}
-
-entity Position_Ship {
-* imo_code
-* base_date_time
---
-* latitude
-* longitude
-* sog
-* cog
-* heading
-* position
-* transceiver_class
-* cargo
-}
-
 
 Trip ||--|| Cargo_Manifest
-Cargo_Manifest }o--|| Container
-Position_Ship }o--|| Ship
-Trip }o--|| Truck
-Ship ||--o{ Trip
-Unloading_Cargo_Manifest ||--|| Cargo_Manifest
-Loading_Cargo_Manifest ||--|| Cargo_Manifest
 
 
 @enduml
