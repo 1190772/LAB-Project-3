@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Crew: as C
+(Asks for a list of containers,\n and respective data, loaded on to the ship) as (Use)
+
+C ---> (Use)
+@enduml

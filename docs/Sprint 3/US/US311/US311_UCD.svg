@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="84.6px" preserveAspectRatio="none" style="width:458px;height:84px;" version="1.1" viewBox="0 0 458 84" width="458.1px" zoomAndPan="magnify"><defs><filter height="300%" id="fg9p4vz2ihn1v" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="1.8"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="3.6" dy="3.6" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[16fab723be418f7eaf2ea4bd895a8e51]
+entity C--><ellipse cx="19.8" cy="12.6" fill="#FEFECE" filter="url(#fg9p4vz2ihn1v)" rx="7.2" ry="7.2" style="stroke:#A80036;stroke-width:1.35;"/><path d="M19.8,19.8 L19.8,44.1 M8.1,27 L31.5,27 M19.8,44.1 L8.1,57.6 M19.8,44.1 L31.5,57.6 " fill="none" filter="url(#fg9p4vz2ihn1v)" style="stroke:#A80036;stroke-width:1.35;"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="28.8" x="5.4" y="75.6299">Crew</text><ellipse cx="295.4093" cy="41.6219" fill="#FEFECE" filter="url(#fg9p4vz2ihn1v)" rx="152.3093" ry="32.6219" style="stroke:#A80036;stroke-width:1.35;"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="156.6" x="217.1093" y="37.0533">Asks for a list of containers,</text><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="239.4" x="177.5093" y="52.9017">and respective data, loaded on to the ship</text><!--MD5=[e2a95cbe568efc31c360856dbde9315e]
+link C to Use--><path d="M34.272,41.4 C54.558,41.4 95.049,41.4 138.15,41.4 " fill="none" id="C-to-Use" style="stroke:#A80036;stroke-width:0.9;"/><polygon fill="#A80036" points="142.875,41.4,134.775,37.8,138.375,41.4,134.775,45,142.875,41.4" style="stroke:#A80036;stroke-width:0.9;"/><!--MD5=[95ad534ef44658e9c68fa5c6cb238cd5]
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Crew: as C
+(Asks for a list of containers,\n and respective data, loaded on to the ship) as (Use)
+
+C - - -> (Use)
+@enduml
+
+@startuml
+
+left to right direction
+
+:Crew: as C
+(Asks for a list of containers,\n and respective data, loaded on to the ship) as (Use)
+
+C - - -> (Use)
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
