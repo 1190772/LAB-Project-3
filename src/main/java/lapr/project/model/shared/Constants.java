@@ -4,6 +4,7 @@ public class Constants {
     public static final String ROLE_TRAFFIC_MANAGER = "TRAFFIC_MANAGER";
     public static final String ROLE_PORT_MANAGER = "PORT_MANAGER";
     public static final String ROLE_SHIP_CAPTAIN = "SHIP_CAPTAIN";
+    public static final String ROLE_PORT_STAFF = "PORT_STAFF";
 
     //the word PASSWORD creates a vulnerability
     public static final String EMAIL = "manager@lei.sem1.pt";

@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Crew" as SP
+
+activate SP
+SP -> ":System" : asks for a list of containers, and respective data,\n loaded on to the ship
+
+activate ":System"
+":System" --> "SP" : requests data (shipID)
+deactivate ":System"
+
+SP -> ":System" : types requested data
+
+activate ":System"
+":System" --> SP : shows list of containers, and respective data,\n loaded on to the ship
+deactivate ":System"
+
+deactivate SP
+
+@enduml
