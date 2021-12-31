@@ -6,7 +6,7 @@ const int MAX_X = 50;
 const int MAX_Y = 50;
 const int MAX_Z = 50;
 char *position_data [MAX_X] [MAX_Y] [MAX_Z] ;
-char name [9];
+char name [11];
 char vazio[1] = {'0'};
 
 int x,y,z;
@@ -17,7 +17,6 @@ for(int i = 0; i < MAX_X; i++){
    for(int j = 0; j < MAX_Y; j++){
        for(int t = 0; t < MAX_Z; t++){
            position_data[i][j][t] = vazio;
-           printf("position_data[%d][%d][%d] = %s\n",i,j,t,position_data[i][j][t]);
            }
    }
 }
@@ -26,7 +25,7 @@ if(fp == NULL ){
         printf("Impossivel abrir o ficheiro\n");
         exit(-1);
 } else {
-        printf("Ficheiro aberto\n");
+        printf("File Opened\n");
 
 while(fscanf(fp,"%d %d %d %s",&x,&y,&z,name)!= EOF){
 
@@ -36,9 +35,10 @@ exit(-1);
 }
 
 position_data [x] [y] [z] = name;
-printf("position = %s\n",position_data[x][y][z]);
+printf("In the position x = %d, y = %d, z = %d\nThere's the container : %s\n",x,y,z,position_data[x][y][z]);
 }
 
 }
 
 return 0;
+}
