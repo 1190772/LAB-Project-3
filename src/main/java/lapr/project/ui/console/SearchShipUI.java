@@ -33,11 +33,7 @@ public class SearchShipUI implements Runnable {
      */
     @Override
     public void run() {
-        try {
-            controller.refreshShips();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        controller.refreshShips();
         Scanner input = new Scanner(System.in);
         String code;
         Ship chosenShip;

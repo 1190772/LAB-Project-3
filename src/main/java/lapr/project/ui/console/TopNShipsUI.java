@@ -18,11 +18,7 @@ public class TopNShipsUI implements Runnable {
 
     @Override
     public void run() {
-        try {
-            controller.refreshShips();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        controller.refreshShips();
         int n ;
         LocalDateTime startDateTime;
         LocalDateTime endDateTime;
