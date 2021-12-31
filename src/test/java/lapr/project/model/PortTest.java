@@ -8,10 +8,10 @@ public class PortTest {
     int id= 29002;
     String name="Liverpool";
     //String continent="Europe";
-    String country="United Kingdom";
+    Country country=new Country("UK", null, "United Kingdom", "London", "Europe", 0, 0, 0);
     double latitude=53.46666667;
     double longitude=-3.033333333;
-    String toString = "Port{id='29002', name='Liverpool', country='United Kingdom', latitude=53.46666667, longitude=-3.033333333, capacity=0}";
+    String toString = "Port = Liverpool";
 
     public PortTest(){
         port = new Port(id, name, country, latitude, longitude, 0);

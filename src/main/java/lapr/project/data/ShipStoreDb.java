@@ -234,16 +234,17 @@ public class ShipStoreDb implements Persistable{
     public ResultSet getAllShips(DatabaseConnection databaseConnection) throws SQLException {
         Connection connection = databaseConnection.getConnection();
         String sqlCommand = "select * from Ship";
-        PreparedStatement shipsPreparedStatement = connection.prepareStatement(sqlCommand);
+        try (PreparedStatement shipsPreparedStatement = connection.prepareStatement(sqlCommand)) {
             return shipsPreparedStatement.executeQuery();
+        }
     }
 
     public ResultSet getShipPostions(DatabaseConnection databaseConnection, String shipIMO) throws SQLException {
         Connection connection = databaseConnection.getConnection();
         String sqlCommand = "select * from Position_Ship where id_ship = ?";
-        PreparedStatement positionsPreparedStatement = connection.prepareStatement(sqlCommand);
+        try (PreparedStatement positionsPreparedStatement = connection.prepareStatement(sqlCommand)) {
             positionsPreparedStatement.setString(1, shipIMO);
             return positionsPreparedStatement.executeQuery();
+        }
     }
-
 }

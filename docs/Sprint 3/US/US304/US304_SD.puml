@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+autonumber
+
+actor "Ship Captain" as SP
+
+participant ":ContainerOperationsUI" as UI
+participant ":ContainerOperationsController" as CTRL
+participant ":ContainerOperationStoreDb" as CS
+participant ":ContainerOperation" as CO
+
+activate SP
+SP -> UI : asks for container operations
+
+activate "UI"
+"UI" --> "SP" : requests data (cargo manifest id)
+
+SP -> "UI" : types requested data
+
+autonumber 3.1
+
+UI -> CTRL : getContainerOperationsByCargoManifestID(cargoManifestID)
+
+activate CTRL
+
+CTRL -> CS : getContainerOperationsByCargoManifestID(cargoManifestID)
+activate CS
+
+loop while there are more container operations in the chosen manifest
+    create CO
+    CS --> CO : new (user, dateTime, type, containerID, cargoManifestID)
+end
+
+autonumber 4
+
+"UI" --> SP : shows container operations of the chosen manifest
+
+deactivate CS
+deactivate CTRL
+deactivate UI
+deactivate SP
+
+@enduml

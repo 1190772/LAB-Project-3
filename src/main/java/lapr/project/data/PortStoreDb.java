@@ -36,7 +36,7 @@ public class PortStoreDb implements Persistable {
             try (PreparedStatement savePortPreparedStatement = connection.prepareStatement(sqlCommand)) {
                 savePortPreparedStatement.setString(1, port.getName());
                 savePortPreparedStatement.setInt(2, port.getCapacity());
-                savePortPreparedStatement.setString(3, countryStoreDb.getCountryCodeByName(port.getCountry()));
+                savePortPreparedStatement.setString(3, countryStoreDb.getCountryCodeByName(port.getCountry().getName()));
                 savePortPreparedStatement.setDouble(4, port.getLatitude());
                 savePortPreparedStatement.setDouble(5, port.getLongitude());
                 savePortPreparedStatement.setInt(6, port.getID());
@@ -78,21 +78,20 @@ public class PortStoreDb implements Persistable {
     public List<Port> getAllPorts() throws SQLException {
         Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Port";
-        ResultSet ports;
         ArrayList<Port> res = new ArrayList<>();
 
         try (PreparedStatement shipsPreparedStatement = connection.prepareStatement(sqlCommand)) {
-            ports = shipsPreparedStatement.executeQuery();
+            try (ResultSet ports = shipsPreparedStatement.executeQuery()) {
             while (ports.next()) {
                 res.add(new Port(ports.getInt("id_port"),
-                            ports.getString("name"),
-                            ports.getString("country_code"),
-                            ports.getDouble("latitude"),
-                            ports.getDouble("longitude"),
-                            ports.getInt("Capacity")
-                        ));
+                        ports.getString("name"),
+                        App.getInstance().getCompany().getCountryStore().getCountryByAlpha2code(ports.getString("country_code")),
+                        ports.getDouble("latitude"),
+                        ports.getDouble("longitude"),
+                        ports.getInt("Capacity")
+                ));
+                }
             }
-            ports.close();
         }
         return res;
     }

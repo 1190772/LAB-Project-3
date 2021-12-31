@@ -7,10 +7,11 @@ import lapr.project.utils.DatabaseConnection;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BorderStore {
 
-    public ArrayList<Border> borders;
+    private ArrayList<Border> borders;
     private final BorderStoreDb bordersDb;
 
     public BorderStore() {
@@ -25,7 +26,20 @@ public class BorderStore {
         }
     }
 
-    public void refresh() throws SQLException {
-        borders = (ArrayList<Border>) bordersDb.getAllBorders(App.getInstance().getCompany().getCountryStore().countries);
+    public boolean refresh(){
+        boolean returnValue = true;
+
+        try {
+            borders = (ArrayList<Border>) bordersDb.getAllBorders(App.getInstance().getCompany().getCountryStore().getCountries());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            returnValue = false;
+        }
+
+        return returnValue;
     }
+
+    public List<Border> getBorders() { return new ArrayList<>(borders); }
+
+    public void addBorder(Border border) { borders.add(border); }
 }

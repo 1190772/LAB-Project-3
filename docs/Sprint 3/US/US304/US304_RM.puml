@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+left to right direction
+
+entity Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_trip
+* position_code
+* cargo_weight
+* refrigeration_temperature
+* id_client
+}
+
+entity Contianer_Operation {
+* id_cargo_manifest
+* id_container
+* base_date_time
+--
+* id_employee
+* type_operation
+}
+
+entity Type_Operation {
+* code
+--
+* description
+}
+
+Cargo_Manifest ||--|{ Contianer_Operation
+Contianer_Operation }o--|| Type_Operation
+
+@enduml

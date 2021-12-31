@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class SQL {
     private final DatabaseConnection databaseConnection;
-    private final static String url = "jdbc:oracle:thin:@//vsrvbd1.dei.isep.ipp.pt:1521/pdborcl";
+    private static final String URL = "jdbc:oracle:thin:@//vsrvbd1.dei.isep.ipp.pt:1521/pdborcl";
 
     public SQL(String user, String password) {
-    databaseConnection = new DatabaseConnection(url, user, password);
+    databaseConnection = new DatabaseConnection(URL, user, password);
     }
 
     public boolean executeLine(String sqlLine) {

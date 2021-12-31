@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -149,6 +151,14 @@ public class ShipPositionBSTTest {
         ShipPosition expected = position4;
         ShipPosition found = ship.getPosition().findPosition(LocalDateTime.of(2020,12,24,12,40));
         assertEquals(expected, found);
+
+        List<ShipPosition> expected1 = new ArrayList<>(Arrays.asList(position2));
+        List<ShipPosition> actual = ship.getPosition().getPositions(LocalDateTime.of(2020, 12, 24, 10, 19), LocalDateTime.of(2020, 12, 24, 10, 23));
+        assertSame(expected1.get(0), actual.get(0));
+
+        actual = ship.getPosition().getPositions(LocalDateTime.of(2020, 12, 24, 14, 19), LocalDateTime.of(2020, 12, 24, 14, 23));
+        assertTrue(actual.isEmpty());
+
     }
 
     @Test

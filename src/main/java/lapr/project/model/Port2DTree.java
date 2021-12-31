@@ -44,10 +44,18 @@ public class Port2DTree extends TwoDTree<Port> {
 
     protected final Comparator<Port> cmpLon = Comparator.comparingDouble(Port::getLongitude);
 
-    public void loadPortsFromDatabase() throws SQLException {
-        ArrayList<Port> ports = (ArrayList<Port>) portStoreDb.getAllPorts();
+    public boolean loadPortsFromDatabase() {
+        boolean returnValue = true;
 
-        createBalancedPort2DTree(ports);
+        try {
+            ArrayList<Port> ports = (ArrayList<Port>) portStoreDb.getAllPorts();
+            createBalancedPort2DTree(ports);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            returnValue = false;
+        }
+
+        return returnValue;
     }
 
     public void savePortsToDb() {

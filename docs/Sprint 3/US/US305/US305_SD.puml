@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+autonumber
+
+actor "Ship Captain" as SP
+
+participant ":ContainersRouteUI" as UI
+participant ":ContainersRouteController" as CTRL
+participant ":DatabaseFunctions" as DBF
+participant ":ContainersRoute" as CR
+
+activate SP
+SP -> UI : asks for container's route
+
+activate UI
+UI --> SP : requests data (userID, containerID)
+deactivate UI
+
+SP -> UI : types requested data
+activate UI
+
+
+
+UI -> CTRL : getContainersRoute(userID,containerID)
+
+activate CTRL
+
+CTRL -> DBF : result = getContainersRoute(userID,containerID)
+activate DBF
+
+loop while Unloading Cargo Manifest does not have a line relative to the container
+
+    DBF --> CR : list.add(new ContainersRoute(startingPoint, endingPoint,\n startingDateTime, endingDateTime, transport))
+    activate CR
+    deactivate CR
+end
+
+"UI" --> SP : shows container's route and other details
+
+deactivate DBF
+deactivate CTRL
+deactivate UI
+deactivate SP
+
+@enduml

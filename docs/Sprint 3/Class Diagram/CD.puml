@@ -150,7 +150,7 @@ class Port {
 }
 
 class Port2DTree {
-+ createdBalancedPort2DTree()
++ createBalancedPort2DTree()
 + findNearestNeighbour(lat, lon)
 - findNearestNeighbour(port, lat, lon, closestPort, comLat)
 }

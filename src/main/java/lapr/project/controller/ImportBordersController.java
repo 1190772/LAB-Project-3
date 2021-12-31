@@ -7,7 +7,6 @@ import lapr.project.model.store.CountryStore;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ImportBordersController {
@@ -22,17 +21,16 @@ public class ImportBordersController {
 
     public void importBorders(String filePath) {
         String[] parameters;
-        ArrayList<Border> list = borderStore.borders;
 
         try (Scanner in = new Scanner((new FileReader(filePath)))) {
-        in.nextLine();
-        while (in.hasNextLine()) {
-            parameters = in.nextLine().split(",");
-            Country country1 = countryStore.getCountryByName(parameters[0]);
-            Country country2 = countryStore.getCountryByName(parameters[1]);
-            if (country1 != null && country2 != null)
-                list.add(new Border(country1, country2));
-        }
+            in.nextLine();
+            while (in.hasNextLine()) {
+                parameters = in.nextLine().split(",");
+                Country country1 = countryStore.getCountryByName(parameters[0]);
+                Country country2 = countryStore.getCountryByName(parameters[1]);
+                if (country1 != null && country2 != null)
+                    borderStore.addBorder(new Border(country1, country2));
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

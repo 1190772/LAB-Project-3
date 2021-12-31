@@ -3,7 +3,6 @@ package lapr.project.controller;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipBST;
 
-import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -26,11 +25,7 @@ shipBST = App.getInstance().getCompany().getShips();
 }
 
     public void refreshShips() {
-        try {
-            App.getInstance().getCompany().refreshShips();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        App.getInstance().getCompany().refreshShips();
     }
 
     public List<Ship[]> getShipPairs() {

@@ -1,0 +1,14 @@
+create or replace trigger Register_Operation AFTER INSERT or UPDATE or DELETE on Cargo_Manifest
+for each row
+
+BEGIN
+
+    IF INSERTING THEN
+        INSERT INTO Container_Operation VALUES(:new.id_cargo_manifest, :new.id_container, LOCALTIMESTAMP, 'I', USER);
+    ELSIF UPDATING THEN
+        INSERT INTO Container_Operation VALUES(:old.id_cargo_manifest, :old.id_container, LOCALTIMESTAMP, 'U', USER);
+    ELSE
+        INSERT INTO Container_Operation VALUES(:old.id_cargo_manifest, :old.id_container, LOCALTIMESTAMP, 'D', USER);
+    END IF;
+
+END;

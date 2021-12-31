@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="371px" preserveAspectRatio="none" style="width:254px;height:371px;" version="1.1" viewBox="0 0 254 371" width="254px" zoomAndPan="magnify"><defs><filter height="300%" id="f1n67klgzuzo9u" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[deb4e1f6eb1e3c1256fdb830f96abfbb]
+class Country--><rect codeLine="3" fill="#FEFECE" filter="url(#f1n67klgzuzo9u)" height="158.6875" id="Country" style="stroke:#A80036;stroke-width:1.5;" width="88" x="152" y="7"/><ellipse cx="173.3" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M171.8,24 L171.8,26 L175.8,26 L175.8,25 L175.8,24.5156 L176.425,24 L176.8,24 L177.175,24 L177.8,24.5156 L177.8,25 L177.8,28 L169.8,28 L169.3156,28 L168.8,27.375 L168.8,27 L168.8,26.625 L169.3156,26 L169.8,26 L169.8,26 L169.8,20 L169.8,20 L169.3156,20 L168.8,19.375 L168.8,19 L168.8,18.625 L169.3156,18 L169.8,18 L177.8,18 L177.8,21 L177.8,21.4844 L177.175,22 L176.8,22 L176.425,22 L175.8,21.4844 L175.8,21 L175.8,20 L171.8,20 L171.8,22 L172.8,22 L172.8,21.5156 L172.8,21.5156 L173.425,21 L173.8,21 L174.175,21 L174.8,21.5156 L174.8,22 L174.8,24 L174.8,24.4844 L174.175,25 L174.175,25 L173.8,25 L173.425,25 L172.8,24.4844 L172.8,24.4844 L172.8,24 L171.8,24 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42" x="188.7" y="27.9102">Country</text><line style="stroke:#A80036;stroke-width:1.5;" x1="153" x2="239" y1="39" y2="39"/><ellipse cx="163" cy="50" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="62" x="172" y="54.4189">alpha2code</text><line style="stroke:#A80036;stroke-width:1.0;" x1="153" x2="239" y1="60.8359" y2="60.8359"/><ellipse cx="163" cy="71.8359" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="62" x="172" y="76.2549">alpha3code</text><ellipse cx="163" cy="85.6719" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="172" y="90.0908">capital</text><ellipse cx="163" cy="99.5078" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="37" x="172" y="103.9268">country</text><ellipse cx="163" cy="113.3438" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="172" y="117.7627">continent</text><ellipse cx="163" cy="127.1797" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="172" y="131.5986">population</text><ellipse cx="163" cy="141.0156" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="34" x="172" y="145.4346">latitude</text><ellipse cx="163" cy="154.8516" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="172" y="159.2705">longitude</text><!--MD5=[a0bfe97ac0a38e6e74cc1c7c7b744b71]
+class Port--><rect codeLine="15" fill="#FEFECE" filter="url(#f1n67klgzuzo9u)" height="131.0156" id="Port" style="stroke:#A80036;stroke-width:1.5;" width="93" x="15.5" y="226"/><ellipse cx="48.05" cy="242" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M46.55,243 L46.55,245 L50.55,245 L50.55,244 L50.55,243.5156 L51.175,243 L51.55,243 L51.925,243 L52.55,243.5156 L52.55,244 L52.55,247 L44.55,247 L44.0656,247 L43.55,246.375 L43.55,246 L43.55,245.625 L44.0656,245 L44.55,245 L44.55,245 L44.55,239 L44.55,239 L44.0656,239 L43.55,238.375 L43.55,238 L43.55,237.625 L44.0656,237 L44.55,237 L52.55,237 L52.55,240 L52.55,240.4844 L51.925,241 L51.55,241 L51.175,241 L50.55,240.4844 L50.55,240 L50.55,239 L46.55,239 L46.55,241 L47.55,241 L47.55,240.5156 L47.55,240.5156 L48.175,240 L48.55,240 L48.925,240 L49.55,240.5156 L49.55,241 L49.55,243 L49.55,243.4844 L48.925,244 L48.925,244 L48.55,244 L48.175,244 L47.55,243.4844 L47.55,243.4844 L47.55,243 L46.55,243 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="22" x="65.95" y="246.9102">Port</text><line style="stroke:#A80036;stroke-width:1.5;" x1="16.5" x2="107.5" y1="258" y2="258"/><ellipse cx="26.5" cy="269" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="35.5" y="273.4189">id_port</text><line style="stroke:#A80036;stroke-width:1.0;" x1="16.5" x2="107.5" y1="279.8359" y2="279.8359"/><ellipse cx="26.5" cy="290.8359" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="26" x="35.5" y="295.2549">name</text><ellipse cx="26.5" cy="304.6719" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="35.5" y="309.0908">country_code</text><ellipse cx="26.5" cy="318.5078" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="34" x="35.5" y="322.9268">latitude</text><ellipse cx="26.5" cy="332.3438" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="35.5" y="336.7627">longitude</text><ellipse cx="26.5" cy="346.1797" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="41" x="35.5" y="350.5986">capacity</text><!--MD5=[a0336aaa8110b78d9cacadb9d45e00a3]
+class Border--><rect codeLine="25" fill="#FEFECE" filter="url(#f1n67klgzuzo9u)" height="75.6719" id="Border" style="stroke:#A80036;stroke-width:1.5;" width="69" x="161.5" y="253.5"/><ellipse cx="176.5" cy="269.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M175,270.5 L175,272.5 L179,272.5 L179,271.5 L179,271.0156 L179.625,270.5 L180,270.5 L180.375,270.5 L181,271.0156 L181,271.5 L181,274.5 L173,274.5 L172.5156,274.5 L172,273.875 L172,273.5 L172,273.125 L172.5156,272.5 L173,272.5 L173,272.5 L173,266.5 L173,266.5 L172.5156,266.5 L172,265.875 L172,265.5 L172,265.125 L172.5156,264.5 L173,264.5 L181,264.5 L181,267.5 L181,267.9844 L180.375,268.5 L180,268.5 L179.625,268.5 L179,267.9844 L179,267.5 L179,266.5 L175,266.5 L175,268.5 L176,268.5 L176,268.0156 L176,268.0156 L176.625,267.5 L177,267.5 L177.375,267.5 L178,268.0156 L178,268.5 L178,270.5 L178,270.9844 L177.375,271.5 L177.375,271.5 L177,271.5 L176.625,271.5 L176,270.9844 L176,270.9844 L176,270.5 L175,270.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="37" x="190.5" y="274.4102">Border</text><line style="stroke:#A80036;stroke-width:1.5;" x1="162.5" x2="229.5" y1="285.5" y2="285.5"/><ellipse cx="172.5" cy="296.5" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="181.5" y="300.9189">country1</text><ellipse cx="172.5" cy="310.3359" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="181.5" y="314.7549">country2</text><line style="stroke:#A80036;stroke-width:1.5;" x1="162.5" x2="229.5" y1="321.1719" y2="321.1719"/><!--MD5=[87afe4df255ca750ac0d69b0a5e605c7]
+class Sea_Distance--><rect codeLine="30" fill="#FEFECE" filter="url(#f1n67klgzuzo9u)" height="89.5078" id="Sea_Distance" style="stroke:#A80036;stroke-width:1.5;" width="110" x="7" y="41.5"/><ellipse cx="22" cy="57.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M20.5,58.5 L20.5,60.5 L24.5,60.5 L24.5,59.5 L24.5,59.0156 L25.125,58.5 L25.5,58.5 L25.875,58.5 L26.5,59.0156 L26.5,59.5 L26.5,62.5 L18.5,62.5 L18.0156,62.5 L17.5,61.875 L17.5,61.5 L17.5,61.125 L18.0156,60.5 L18.5,60.5 L18.5,60.5 L18.5,54.5 L18.5,54.5 L18.0156,54.5 L17.5,53.875 L17.5,53.5 L17.5,53.125 L18.0156,52.5 L18.5,52.5 L26.5,52.5 L26.5,55.5 L26.5,55.9844 L25.875,56.5 L25.5,56.5 L25.125,56.5 L24.5,55.9844 L24.5,55.5 L24.5,54.5 L20.5,54.5 L20.5,56.5 L21.5,56.5 L21.5,56.0156 L21.5,56.0156 L22.125,55.5 L22.5,55.5 L22.875,55.5 L23.5,56.0156 L23.5,56.5 L23.5,58.5 L23.5,58.9844 L22.875,59.5 L22.875,59.5 L22.5,59.5 L22.125,59.5 L21.5,58.9844 L21.5,58.9844 L21.5,58.5 L20.5,58.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="78" x="36" y="62.4102">Sea_Distance</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="116" y1="73.5" y2="73.5"/><ellipse cx="18" cy="84.5" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="39" x="27" y="88.9189">idPort1</text><ellipse cx="18" cy="98.3359" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="39" x="27" y="102.7549">idPort2</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="116" y1="109.1719" y2="109.1719"/><ellipse cx="18" cy="120.1719" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="41" x="27" y="124.5908">distance</text><!--MD5=[1c49245d7a7e90fcfb9bb62e49d927d2]
+link Country to Port--><path codeLine="37" d="M147.44,161.06 C134.99,179.92 121.62,200.18 109.23,218.94 " fill="none" id="Country-Port" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="109.1345" x2="109.7238" y1="219.1083" y2="229.0909"/><line style="stroke:#A80036;stroke-width:1.0;" x1="109.1345" x2="99.7162" y1="219.1083" y2="222.4691"/><line style="stroke:#A80036;stroke-width:1.0;" x1="109.1345" x2="104.72" y1="219.1083" y2="225.78"/><ellipse cx="112.4454" cy="214.1044" fill="none" rx="4" ry="4" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="146.3997" x2="153.0823" y1="155.3923" y2="159.7903"/><line style="stroke:#A80036;stroke-width:1.0;" x1="144.7504" x2="151.4331" y1="157.8983" y2="162.2963"/><line style="stroke:#A80036;stroke-width:1.0;" x1="147.542" x2="151.94" y1="160.9326" y2="154.25"/><!--MD5=[553c71e238892de64676e9482c62727a]
+link Country to Border--><path codeLine="38" d="M183.37,174.42 C182.97,198.83 183.58,224.4 185.18,245.31 " fill="none" id="Country-Border" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="184.9372" x2="185.88" y1="242.4105" y2="253.37"/><ellipse cx="184.9372" cy="242.4105" fill="none" rx="4" ry="4" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="189.5225" x2="181.5519" y1="249.0419" y2="249.7275"/><line style="stroke:#A80036;stroke-width:1.0;" x1="183.3829" x2="177.5412" y1="174.2785" y2="166.1622"/><line style="stroke:#A80036;stroke-width:1.0;" x1="183.3829" x2="189.5388" y1="174.2785" y2="166.3978"/><line style="stroke:#A80036;stroke-width:1.0;" x1="183.3829" x2="183.54" y1="174.2785" y2="166.28"/><line style="stroke:#A80036;stroke-width:1.0;" x1="179.3444" x2="187.3428" y1="176.1995" y2="176.3566"/><!--MD5=[553c71e238892de64676e9482c62727a]
+link Country to Border--><path codeLine="39" d="M209.38,174.42 C209.8,198.83 209.15,224.4 207.45,245.31 " fill="none" id="Country-Border-1" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="207.7212" x2="206.72" y1="242.4157" y2="253.37"/><ellipse cx="207.7212" cy="242.4157" fill="none" rx="4" ry="4" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="211.0675" x2="203.1007" y1="249.7507" y2="249.0225"/><line style="stroke:#A80036;stroke-width:1.0;" x1="209.3757" x2="203.1916" y1="174.2778" y2="166.4192"/><line style="stroke:#A80036;stroke-width:1.0;" x1="209.3757" x2="215.1884" y1="174.2778" y2="166.1408"/><line style="stroke:#A80036;stroke-width:1.0;" x1="209.3757" x2="209.19" y1="174.2778" y2="166.28"/><line style="stroke:#A80036;stroke-width:1.0;" x1="205.4232" x2="213.421" y1="176.3701" y2="176.1845"/><!--MD5=[10627f9eda3bb7e1415bf4717fc742f2]
+link Sea_Distance to Port--><path codeLine="41" d="M50.69,139.84 C49.19,163.48 48.86,191.8 49.71,217.48 " fill="none" id="Sea_Distance-Port" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="49.7197" x2="56.0158" y1="217.7256" y2="225.4948"/><line style="stroke:#A80036;stroke-width:1.0;" x1="49.7197" x2="44.0242" y1="217.7256" y2="225.9452"/><line style="stroke:#A80036;stroke-width:1.0;" x1="49.7197" x2="50.02" y1="217.7256" y2="225.72"/><line style="stroke:#A80036;stroke-width:1.0;" x1="53.6418" x2="45.6474" y1="215.5769" y2="215.8772"/><line style="stroke:#A80036;stroke-width:1.0;" x1="46.9947" x2="54.9743" y1="135.2543" y2="135.8253"/><line style="stroke:#A80036;stroke-width:1.0;" x1="46.7806" x2="54.7602" y1="138.2467" y2="138.8176"/><line style="stroke:#A80036;stroke-width:1.0;" x1="50.699" x2="51.27" y1="139.5296" y2="131.55"/><!--MD5=[10627f9eda3bb7e1415bf4717fc742f2]
+link Sea_Distance to Port--><path codeLine="42" d="M73.98,139.84 C75.57,163.48 75.91,191.8 75.02,217.48 " fill="none" id="Sea_Distance-Port-1" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="75.0089" x2="80.6749" y1="217.7268" y2="225.9667"/><line style="stroke:#A80036;stroke-width:1.0;" x1="75.0089" x2="68.6851" y1="217.7268" y2="225.4733"/><line style="stroke:#A80036;stroke-width:1.0;" x1="75.0089" x2="74.68" y1="217.7268" y2="225.72"/><line style="stroke:#A80036;stroke-width:1.0;" x1="79.0877" x2="71.0945" y1="215.8929" y2="215.564"/><line style="stroke:#A80036;stroke-width:1.0;" x1="69.6709" x2="77.6484" y1="135.8384" y2="135.2391"/><line style="stroke:#A80036;stroke-width:1.0;" x1="69.8957" x2="77.8732" y1="138.83" y2="138.2306"/><line style="stroke:#A80036;stroke-width:1.0;" x1="73.9594" x2="73.36" y1="139.5275" y2="131.55"/><!--MD5=[6d92c891f05cbd9b38231f4a6cc51762]
+@startuml
+'https://plantuml.com/class-diagram
+
+entity Country {
+* alpha2code
+- -
+* alpha3code
+* capital
+* country
+* continent
+* population
+* latitude
+* longitude
+}
+
+entity Port {
+* id_port
+- -
+* name
+* country_code
+* latitude
+* longitude
+* capacity
+}
+
+entity Border {
+* country1
+* country2
+}
+
+entity Sea_Distance {
+* idPort1
+* idPort2
+- -
+* distance
+}
+
+Country ||- -o{ Port
+Country }|- -o| Border
+Country }|- -o| Border
+
+Sea_Distance ||- -|{ Port
+Sea_Distance ||- -|{ Port
+
+@enduml
+
+@startuml
+
+entity Country {
+* alpha2code
+- -
+* alpha3code
+* capital
+* country
+* continent
+* population
+* latitude
+* longitude
+}
+
+entity Port {
+* id_port
+- -
+* name
+* country_code
+* latitude
+* longitude
+* capacity
+}
+
+entity Border {
+* country1
+* country2
+}
+
+entity Sea_Distance {
+* idPort1
+* idPort2
+- -
+* distance
+}
+
+Country ||- -o{ Port
+Country }|- -o| Border
+Country }|- -o| Border
+
+Sea_Distance ||- -|{ Port
+Sea_Distance ||- -|{ Port
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

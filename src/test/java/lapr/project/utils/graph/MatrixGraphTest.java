@@ -1,6 +1,5 @@
 package lapr.project.utils.graph;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -557,7 +556,7 @@ public class MatrixGraphTest {
                 "K\n" +
                 "\n" +
                 "Matrix:\n" +
-                "    |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  10 \n" +
+                "    |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  10\n" +
                 " 0\t|     |  X  |  X  |     |     |     |     |     |     |     |     \n" +
                 " 1\t|     |     |     |  X  |     |     |     |     |     |     |     \n" +
                 " 2\t|     |     |     |  X  |  X  |     |     |     |     |     |     \n" +

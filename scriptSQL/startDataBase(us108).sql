@@ -219,7 +219,21 @@ create table Container_Operation (
 	id_container	          char(11),
 	base_date_time            timestamp,
 	type_operation            char(1) constraint fk_type_operation_container_operation references Type_Operation(code),
-	id_employee               integer constraint fk_id_employee_employee references Employee(id_employee),
-	Constraint fk_container_cargo_manifest_container_operation Foreign Key (id_cargo_manifest, id_container) references Cargo_Manifest(id_cargo_manifest, id_container),
+	employee                  varchar(50),
 	Constraint pk_container_operation Primary Key (id_cargo_manifest, id_container, base_date_time)
 );
+
+create or replace trigger Register_Operation AFTER INSERT or UPDATE or DELETE on Cargo_Manifest
+for each row
+
+BEGIN
+
+    IF INSERTING THEN
+        INSERT INTO Container_Operation VALUES(:new.id_cargo_manifest, :new.id_container, LOCALTIMESTAMP, 'I', USER);
+    ELSIF UPDATING THEN
+        INSERT INTO Container_Operation VALUES(:old.id_cargo_manifest, :old.id_container, LOCALTIMESTAMP, 'U', USER);
+    ELSE
+        INSERT INTO Container_Operation VALUES(:old.id_cargo_manifest, :old.id_container, LOCALTIMESTAMP, 'D', USER);
+    END IF;
+
+END;

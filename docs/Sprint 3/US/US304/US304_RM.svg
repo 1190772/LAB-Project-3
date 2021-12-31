@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="165px" preserveAspectRatio="none" style="width:556px;height:165px;" version="1.1" viewBox="0 0 556 165" width="556px" zoomAndPan="magnify"><defs><filter height="300%" id="f1grvesmxufuh7" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[0baaf300b4e708ac3e376d44e9cdca27]
+class Cargo_Manifest--><rect codeLine="5" fill="#FEFECE" filter="url(#f1grvesmxufuh7)" height="144.8516" id="Cargo_Manifest" style="stroke:#A80036;stroke-width:1.5;" width="149" x="7" y="7"/><ellipse cx="35.5" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M34,24 L34,26 L38,26 L38,25 L38,24.5156 L38.625,24 L39,24 L39.375,24 L40,24.5156 L40,25 L40,28 L32,28 L31.5156,28 L31,27.375 L31,27 L31,26.625 L31.5156,26 L32,26 L32,26 L32,20 L32,20 L31.5156,20 L31,19.375 L31,19 L31,18.625 L31.5156,18 L32,18 L40,18 L40,21 L40,21.4844 L39.375,22 L39,22 L38.625,22 L38,21.4844 L38,21 L38,20 L34,20 L34,22 L35,22 L35,21.5156 L35,21.5156 L35.625,21 L36,21 L36.375,21 L37,21.5156 L37,22 L37,24 L37,24.4844 L36.375,25 L36.375,25 L36,25 L35.625,25 L35,24.4844 L35,24.4844 L35,24 L34,24 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="87" x="52.5" y="27.9102">Cargo_Manifest</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="155" y1="39" y2="39"/><ellipse cx="18" cy="50" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="27" y="54.4189">id_cargo_manifest</text><ellipse cx="18" cy="63.8359" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="27" y="68.2549">id_container</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="155" y1="74.6719" y2="74.6719"/><ellipse cx="18" cy="85.6719" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="27" y="90.0908">id_trip</text><ellipse cx="18" cy="99.5078" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="27" y="103.9268">position_code</text><ellipse cx="18" cy="113.3438" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="27" y="117.7627">cargo_weight</text><ellipse cx="18" cy="127.1797" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="27" y="131.5986">refrigeration_temperature</text><ellipse cx="18" cy="141.0156" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="39" x="27" y="145.4346">id_client</text><!--MD5=[eef427c574f86253b2545f4fbd6f07d7]
+class Contianer_Operation--><rect codeLine="16" fill="#FEFECE" filter="url(#f1grvesmxufuh7)" height="117.1797" id="Contianer_Operation" style="stroke:#A80036;stroke-width:1.5;" width="147" x="216" y="21"/><ellipse cx="231" cy="37" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M229.5,38 L229.5,40 L233.5,40 L233.5,39 L233.5,38.5156 L234.125,38 L234.5,38 L234.875,38 L235.5,38.5156 L235.5,39 L235.5,42 L227.5,42 L227.0156,42 L226.5,41.375 L226.5,41 L226.5,40.625 L227.0156,40 L227.5,40 L227.5,40 L227.5,34 L227.5,34 L227.0156,34 L226.5,33.375 L226.5,33 L226.5,32.625 L227.0156,32 L227.5,32 L235.5,32 L235.5,35 L235.5,35.4844 L234.875,36 L234.5,36 L234.125,36 L233.5,35.4844 L233.5,35 L233.5,34 L229.5,34 L229.5,36 L230.5,36 L230.5,35.5156 L230.5,35.5156 L231.125,35 L231.5,35 L231.875,35 L232.5,35.5156 L232.5,36 L232.5,38 L232.5,38.4844 L231.875,39 L231.875,39 L231.5,39 L231.125,39 L230.5,38.4844 L230.5,38.4844 L230.5,38 L229.5,38 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="115" x="245" y="41.9102">Contianer_Operation</text><line style="stroke:#A80036;stroke-width:1.5;" x1="217" x2="362" y1="53" y2="53"/><ellipse cx="227" cy="64" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="236" y="68.4189">id_cargo_manifest</text><ellipse cx="227" cy="77.8359" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="236" y="82.2549">id_container</text><ellipse cx="227" cy="91.6719" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="236" y="96.0908">base_date_time</text><line style="stroke:#A80036;stroke-width:1.0;" x1="217" x2="362" y1="102.5078" y2="102.5078"/><ellipse cx="227" cy="113.5078" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="236" y="117.9268">id_employee</text><ellipse cx="227" cy="127.3438" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="236" y="131.7627">type_operation</text><!--MD5=[aa94c80a2d1fc593c74bc8afbd945bc9]
+class Type_Operation--><rect codeLine="25" fill="#FEFECE" filter="url(#f1grvesmxufuh7)" height="75.6719" id="Type_Operation" style="stroke:#A80036;stroke-width:1.5;" width="119" x="423" y="41.5"/><ellipse cx="438" cy="57.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M436.5,58.5 L436.5,60.5 L440.5,60.5 L440.5,59.5 L440.5,59.0156 L441.125,58.5 L441.5,58.5 L441.875,58.5 L442.5,59.0156 L442.5,59.5 L442.5,62.5 L434.5,62.5 L434.0156,62.5 L433.5,61.875 L433.5,61.5 L433.5,61.125 L434.0156,60.5 L434.5,60.5 L434.5,60.5 L434.5,54.5 L434.5,54.5 L434.0156,54.5 L433.5,53.875 L433.5,53.5 L433.5,53.125 L434.0156,52.5 L434.5,52.5 L442.5,52.5 L442.5,55.5 L442.5,55.9844 L441.875,56.5 L441.5,56.5 L441.125,56.5 L440.5,55.9844 L440.5,55.5 L440.5,54.5 L436.5,54.5 L436.5,56.5 L437.5,56.5 L437.5,56.0156 L437.5,56.0156 L438.125,55.5 L438.5,55.5 L438.875,55.5 L439.5,56.0156 L439.5,56.5 L439.5,58.5 L439.5,58.9844 L438.875,59.5 L438.875,59.5 L438.5,59.5 L438.125,59.5 L437.5,58.9844 L437.5,58.9844 L437.5,58.5 L436.5,58.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="87" x="452" y="62.4102">Type_Operation</text><line style="stroke:#A80036;stroke-width:1.5;" x1="424" x2="541" y1="73.5" y2="73.5"/><ellipse cx="434" cy="84.5" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="443" y="88.9189">code</text><line style="stroke:#A80036;stroke-width:1.0;" x1="424" x2="541" y1="95.3359" y2="95.3359"/><ellipse cx="434" cy="106.3359" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="443" y="110.7549">description</text><!--MD5=[0c3d705ce56d4526543e00ef636e1adf]
+link Cargo_Manifest to Contianer_Operation--><path codeLine="31" d="M164.55,79.5 C178.75,79.5 193.49,79.5 207.66,79.5 " fill="none" id="Cargo_Manifest-Contianer_Operation" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="207.92" x2="215.92" y1="79.5" y2="73.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="207.92" x2="215.92" y1="79.5" y2="85.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="207.92" x2="215.92" y1="79.5" y2="79.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="205.92" x2="205.92" y1="75.5" y2="83.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="160.29" x2="160.29" y1="83.5" y2="75.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="163.29" x2="163.29" y1="83.5" y2="75.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="164.29" x2="156.29" y1="79.5" y2="79.5"/><!--MD5=[76eaec9991bfff511eef60612e9e7f51]
+link Contianer_Operation to Type_Operation--><path codeLine="32" d="M371.64,79.5 C386.03,79.5 400.86,79.5 414.79,79.5 " fill="none" id="Contianer_Operation-Type_Operation" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="418.88" x2="418.88" y1="75.5" y2="83.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="415.88" x2="415.88" y1="75.5" y2="83.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="414.88" x2="422.88" y1="79.5" y2="79.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="371.25" x2="363.25" y1="79.5" y2="85.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="371.25" x2="363.25" y1="79.5" y2="73.5"/><line style="stroke:#A80036;stroke-width:1.0;" x1="371.25" x2="363.25" y1="79.5" y2="79.5"/><ellipse cx="377.25" cy="79.5" fill="none" rx="4" ry="4" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[048e7a61719d61b46c7bef4522d53907]
+@startuml
+'https://plantuml.com/class-diagram
+
+left to right direction
+
+entity Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+- -
+* id_trip
+* position_code
+* cargo_weight
+* refrigeration_temperature
+* id_client
+}
+
+entity Contianer_Operation {
+* id_cargo_manifest
+* id_container
+* base_date_time
+- -
+* id_employee
+* type_operation
+}
+
+entity Type_Operation {
+* code
+- -
+* description
+}
+
+Cargo_Manifest ||- -|{ Contianer_Operation
+Contianer_Operation }o- -|| Type_Operation
+
+@enduml
+
+@startuml
+
+left to right direction
+
+entity Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+- -
+* id_trip
+* position_code
+* cargo_weight
+* refrigeration_temperature
+* id_client
+}
+
+entity Contianer_Operation {
+* id_cargo_manifest
+* id_container
+* base_date_time
+- -
+* id_employee
+* type_operation
+}
+
+entity Type_Operation {
+* code
+- -
+* description
+}
+
+Cargo_Manifest ||- -|{ Contianer_Operation
+Contianer_Operation }o- -|| Type_Operation
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

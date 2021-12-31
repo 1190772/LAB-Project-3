@@ -7,10 +7,11 @@ import lapr.project.utils.DatabaseConnection;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CountryStore {
 
-    public ArrayList<Country> countries;
+    private ArrayList<Country> countries;
     private final CountryStoreDb countriesDb;
 
     public CountryStore() {
@@ -30,6 +31,18 @@ public class CountryStore {
         return found;
     }
 
+    public Country getCountryByAlpha2code(String alpha2code) {
+        int i = 0;
+        Country found = null;
+
+        while (i < countries.size() && found == null) {
+            if (countries.get(i).getAlpha2code().equals(alpha2code))
+                found = countries.get(i);
+            i++;
+        }
+        return found;
+    }
+
     public void saveCountriesToDb() {
         DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
         for ( Country country: countries ) {
@@ -37,7 +50,20 @@ public class CountryStore {
         }
     }
 
-    public void refresh() throws SQLException {
-        countries = (ArrayList<Country>) countriesDb.getAllCountries();
+    public boolean refresh() {
+        boolean returnValue = true;
+
+        try {
+            countries = (ArrayList<Country>) countriesDb.getAllCountries();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            returnValue = false;
+        }
+
+        return returnValue;
     }
+
+    public List<Country> getCountries() { return new ArrayList<>(countries); }
+
+    public void addCountry(Country country) { countries.add(country); }
 }

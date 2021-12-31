@@ -14,7 +14,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
 
-
 public class ShipBST extends AVL<Ship> {
 
     private final ShipStoreDb shipStoreDb;
@@ -24,36 +23,44 @@ public class ShipBST extends AVL<Ship> {
         shipStoreDb = new ShipStoreDb();
     }
 
-    public void loadShipsFromDatabase() throws SQLException {
-        DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
-        ResultSet ships = shipStoreDb.getAllShips(connection);
-        while (ships.next()) {
-            Ship ship = new Ship(ships.getString("mmsi_code"),
-                    ships.getString("name_ship"),
-                    ships.getString("imo_code"),
-                    ships.getInt("number_generators"),
-                    ships.getInt("power_out_generator"),
-                    ships.getString("call_sign"),
-                    ships.getInt("vessel_type"),
-                    ships.getInt("length_ship"),
-                    ships.getInt("width_ship"),
-                    ships.getInt("capacity_ship"),
-                    ships.getFloat("draft"));
-            insert(ship);
-            ResultSet positions = shipStoreDb.getShipPostions(connection, ships.getString("imo_code"));
-            while (positions.next()) {
-            ship.addPosition(new ShipPosition(positions.getTimestamp("base_date_time").toLocalDateTime(),
-                    positions.getDouble("latitude"),
-                    positions.getDouble("longitude"),
-                    positions.getDouble("sog"),
-                    positions.getDouble("cog"),
-                    positions.getInt("heading"),
-                    positions.getString("transceiver_class").charAt(0)));
-                    //positions.getInt("cargo")));
+    public boolean loadShipsFromDatabase() {
+        boolean returnValue = true;
+
+        try {
+            DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
+            ResultSet ships = shipStoreDb.getAllShips(connection);
+            while (ships.next()) {
+                Ship ship = new Ship(ships.getString("mmsi_code"),
+                        ships.getString("name_ship"),
+                        ships.getString("imo_code"),
+                        ships.getInt("number_generators"),
+                        ships.getInt("power_out_generator"),
+                        ships.getString("call_sign"),
+                        ships.getInt("vessel_type"),
+                        ships.getInt("length_ship"),
+                        ships.getInt("width_ship"),
+                        ships.getInt("capacity_ship"),
+                        ships.getFloat("draft"));
+                insert(ship);
+                ResultSet positions = shipStoreDb.getShipPostions(connection, ships.getString("imo_code"));
+                while (positions.next()) {
+                ship.addPosition(new ShipPosition(positions.getTimestamp("base_date_time").toLocalDateTime(),
+                        positions.getDouble("latitude"),
+                        positions.getDouble("longitude"),
+                        positions.getDouble("sog"),
+                        positions.getDouble("cog"),
+                        positions.getInt("heading"),
+                        positions.getString("transceiver_class").charAt(0)));
+                }
+                positions.close();
             }
-            positions.close();
+            ships.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            returnValue = false;
         }
-        ships.close();
+
+        return returnValue;
     }
 
     public void saveShipsToDb() {

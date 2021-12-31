@@ -5,8 +5,6 @@ import lapr.project.model.store.CountryStore;
 import lapr.project.model.store.SeaDistanceStore;
 import lapr.project.ui.auth.AuthFacade;
 
-import java.sql.SQLException;
-
 public class Company {
     private final String designation;
 
@@ -35,20 +33,14 @@ public class Company {
 
     public ShipBST getShips() { return shipBST; }
 
-    public void refreshShips() throws SQLException {
-        shipBST.loadShipsFromDatabase();
-    }
+    public void refreshShips() { shipBST.loadShipsFromDatabase(); }
 
     public Port2DTree getPorts() {
     return port2DTree;
     }
 
     public void refreshPorts() {
-        try {
-            port2DTree.loadPortsFromDatabase();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        port2DTree.loadPortsFromDatabase();
     }
 
     public AuthFacade getAuthFacade() {
