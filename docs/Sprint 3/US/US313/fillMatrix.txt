@@ -1,25 +1,30 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
-int main(){
 const int MAX_X = 50;
 const int MAX_Y = 50;
 const int MAX_Z = 50;
-char *position_data [MAX_X] [MAX_Y] [MAX_Z] ;
-char name [11];
-char vazio[1] = {'0'};
-
+const int ID_CONATINER_SIZE = 12;
 int x,y,z;
+char *position_data_ptr;
+
+int main(){
+
+char name[12];
+char position_data [MAX_X][MAX_Y][MAX_Z][ID_CONATINER_SIZE];
+position_data_ptr = position_data[0][0][0];
 
 FILE *fp = fopen("xx.txt","r");
 
 for(int i = 0; i < MAX_X; i++){
    for(int j = 0; j < MAX_Y; j++){
        for(int t = 0; t < MAX_Z; t++){
-           position_data[i][j][t] = vazio;
+           position_data[i][j][t][0] = 0;
            }
    }
 }
+
 
 if(fp == NULL ){
         printf("Impossivel abrir o ficheiro\n");
@@ -29,16 +34,18 @@ if(fp == NULL ){
 
 while(fscanf(fp,"%d %d %d %s",&x,&y,&z,name)!= EOF){
 
+strcpy(&position_data[x][y][z][0],name);
+
 if(x < 0 || y < 0 || z < 0){
 printf("ERROR : Positions can not be negative\n");
 exit(-1);
+   }
+  }
 }
-
-position_data [x] [y] [z] = name;
-printf("In the position x = %d, y = %d, z = %d\nThere's the container : %s\n",x,y,z,position_data[x][y][z]);
-}
-
-}
+printf("\n\nPosition[10][10][10] = %s\n",&position_data[10][10][10][0]);
+printf("Position[20][20][20] = %s\n",&position_data[20][20][20][0]);
+printf("Position[30][30][30] = %s\n\n",&position_data[30][30][30][0]);
 
 return 0;
 }
+
