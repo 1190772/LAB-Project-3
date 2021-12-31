@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+const int MAX_X = 50;
+const int MAX_Y = 50;
+const int MAX_Z = 50;
+char *position_data [MAX_X] [MAX_Y] [MAX_Z] ;
+char name [9];
+char vazio[1] = {'0'};
+
+int x,y,z;
+
+FILE *fp = fopen("xx.txt","r");
+
+for(int i = 0; i < MAX_X; i++){
+   for(int j = 0; j < MAX_Y; j++){
+       for(int t = 0; t < MAX_Z; t++){
+           position_data[i][j][t] = vazio;
+           printf("position_data[%d][%d][%d] = %s\n",i,j,t,position_data[i][j][t]);
+           }
+   }
+}
+
+if(fp == NULL ){
+        printf("Impossivel abrir o ficheiro\n");
+        exit(-1);
+} else {
+        printf("Ficheiro aberto\n");
+
+while(fscanf(fp,"%d %d %d %s",&x,&y,&z,name)!= EOF){
+
+if(x < 0 || y < 0 || z < 0){
+printf("ERROR : Positions can not be negative\n");
+exit(-1);
+}
+
+position_data [x] [y] [z] = name;
+printf("position = %s\n",position_data[x][y][z]);
+}
+
+}
+
+return 0;
