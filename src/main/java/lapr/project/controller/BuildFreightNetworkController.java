@@ -78,7 +78,7 @@ public class BuildFreightNetworkController {
                     int g = 0;
                     distance = -1;
                     while (g < seaDistances.size() && distance == -1) {
-                        if (seaDistances.get(g).getIdPort1() == port1.getID() && seaDistances.get(g).getIdPort2() == port2.getID() || seaDistances.get(g).getIdPort1() == port2.getID() && seaDistances.get(g).getIdPort2() == port1.getID())
+                        if (seaDistances.get(g).getIdPort1().equals(port1.getID()) && seaDistances.get(g).getIdPort2().equals(port2.getID()) || seaDistances.get(g).getIdPort1().equals(port2.getID()) && seaDistances.get(g).getIdPort2().equals(port1.getID()))
                             distance = seaDistances.get(g).getDistance();
                         g++;
                     }

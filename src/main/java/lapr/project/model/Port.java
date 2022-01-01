@@ -1,14 +1,14 @@
 package lapr.project.model;
 
 public class Port {
-    private final int id;
+    private final String  id;
     private final String name;
     private final Country country;
     private final double latitude;
     private final double longitude;
     private final int capacity;
 
-    public Port(int id, String name, Country country, double latitude, double longitude, int capacity) {
+    public Port(String id, String name, Country country, double latitude, double longitude, int capacity) {
         this.id=id;
         this.name=name;
         this.country=country;
@@ -17,7 +17,7 @@ public class Port {
         this.capacity = capacity;
     }
 
-    public int getID() {
+    public String getID() {
         return id;
     }
 

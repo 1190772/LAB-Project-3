@@ -17,8 +17,8 @@ class SeaDistanceStoreTest {
 
     public SeaDistanceStoreTest() {
         seaDistances = new ArrayList<>();
-        seaDistance1 = new SeaDistance(10358,246265,3673);
-        seaDistance2 = new SeaDistance(10358,21863,3377);
+        seaDistance1 = new SeaDistance("10358","246265",3673);
+        seaDistance2 = new SeaDistance("10358","21863",3377);
         seaDistances.add(seaDistance1);
         seaDistances.add(seaDistance2);
     }

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class PortTest {
     Port port;
-    int id= 29002;
+    String id= "29002";
     String name="Liverpool";
     //String continent="Europe";
     Country country=new Country("UK", null, "United Kingdom", "London", "Europe", 0, 0, 0);

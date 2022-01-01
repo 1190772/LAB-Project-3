@@ -23,8 +23,8 @@ public class SeaDistanceStoreDb implements Persistable {
         String sqlCommand = "select * from Sea_Distance where id_port1 = ? and id_port2 = ?";
         boolean returnValue;
         try (PreparedStatement getSeaDistancePreparedStatement = connection.prepareStatement(sqlCommand)) {
-            getSeaDistancePreparedStatement.setInt(1, seaDistance.getIdPort1());
-            getSeaDistancePreparedStatement.setInt(2, seaDistance.getIdPort2());
+            getSeaDistancePreparedStatement.setString(1, seaDistance.getIdPort1());
+            getSeaDistancePreparedStatement.setString(2, seaDistance.getIdPort2());
             try (ResultSet addressesResultSet = getSeaDistancePreparedStatement.executeQuery()) {
                 if (addressesResultSet.next()) {
                     sqlCommand = "update Sea_Distance set distance = ? where id_port1 = ? and id_port2 = ?";
@@ -34,8 +34,8 @@ public class SeaDistanceStoreDb implements Persistable {
 
                 try (PreparedStatement saveSeaDistancePreparedStatement = connection.prepareStatement(sqlCommand)) {
                     saveSeaDistancePreparedStatement.setInt(1, seaDistance.getDistance());
-                    saveSeaDistancePreparedStatement.setInt(2, seaDistance.getIdPort1());
-                    saveSeaDistancePreparedStatement.setInt(3, seaDistance.getIdPort2());
+                    saveSeaDistancePreparedStatement.setString(2, seaDistance.getIdPort1());
+                    saveSeaDistancePreparedStatement.setString(3, seaDistance.getIdPort2());
                     saveSeaDistancePreparedStatement.executeUpdate();
                     returnValue = true;
                 }
@@ -58,8 +58,8 @@ public class SeaDistanceStoreDb implements Persistable {
             String sqlCommand;
             sqlCommand = "delete from Sea_Distance where id_port1 = ? and id_port2 = ?";
             try (PreparedStatement deleteSeaDistancePreparedStatement = conn.prepareStatement(sqlCommand)) {
-                deleteSeaDistancePreparedStatement.setInt(1, seaDistance.getIdPort1());
-                deleteSeaDistancePreparedStatement.setInt(2, seaDistance.getIdPort2());
+                deleteSeaDistancePreparedStatement.setString(1, seaDistance.getIdPort1());
+                deleteSeaDistancePreparedStatement.setString(2, seaDistance.getIdPort2());
                 deleteSeaDistancePreparedStatement.executeUpdate();
                 returnValue = true;
             }
@@ -80,8 +80,8 @@ public class SeaDistanceStoreDb implements Persistable {
         try (PreparedStatement seaDistancesPreparedStatement = connection.prepareStatement(sqlCommand)) {
             try (ResultSet seaDistances = seaDistancesPreparedStatement.executeQuery()) {
             while (seaDistances.next()) {
-                res.add(new SeaDistance(Integer.parseInt(seaDistances.getString("id_port1").trim()),
-                        Integer.parseInt(seaDistances.getString("id_port2").trim()),
+                res.add(new SeaDistance(seaDistances.getString("id_port1"),
+                        seaDistances.getString("id_port2"),
                         seaDistances.getInt("distance")));
                 }
             }

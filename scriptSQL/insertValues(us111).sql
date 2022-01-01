@@ -1,3 +1,10 @@
+-- **tabela type_operation **
+
+INSERT INTO Type_Operation VALUES ('U','Update');
+INSERT INTO Type_Operation VALUES ('I','Insert');
+INSERT INTO Type_Operation VALUES ('D','Delete');
+
+
 -- ** tabela Owner **
 
 INSERT INTO Owner VALUES ('NIK','Nike');
@@ -251,6 +258,7 @@ INSERT INTO Trip VALUES (1236,'IMO1111111',null,    null, 'IN233',null ,11221, t
 INSERT INTO Trip VALUES (1237,'IMO4444444',null,    null, 'ES456',null ,11222, timestamp '2021-03-13 19:35:33', timestamp '2021-04-22 07:36:33');
 INSERT INTO Trip VALUES (1238,'IMO5555555',null,    null, 'PT345',null ,11223, timestamp '2021-09-01 19:35:33', timestamp '2021-10-12 08:36:33');
 INSERT INTO Trip VALUES (1239,'IMO6666666',null,    null, 'IN233',null ,11224, timestamp '2021-08-20 19:35:33', timestamp '2021-09-22 09:36:33');
+INSERT INTO Trip VALUES (1240,        null,12345,'IN233',    null,11224, null, timestamp '2020-01-01 02:02:11',timestamp '2020-03-03 02:02:11');
 
 INSERT INTO Trip VALUES (2235,null,12345,'PT345', null, null, 11221, timestamp '2021-02-08 19:35:33', timestamp '2021-03-01 06:13:23');
 INSERT INTO Trip VALUES (2236,null,12346,'AN345', null, null, 11222, timestamp '2021-03-15 19:35:33', timestamp '2021-04-22 07:26:13');
@@ -291,6 +299,7 @@ INSERT INTO Cargo_Manifest VALUES (12122,'FILR4564568',1235, 101012, 18,  6, 888
 INSERT INTO Cargo_Manifest VALUES (12623,'FILR4564568',1236, 101012, 18,  6, 8884448);
 
 INSERT INTO Cargo_Manifest VALUES (32122,'BICJ4444445' ,1239, 120000, 100000, 2, 1884441);
+INSERT INTO Cargo_Manifest VALUES (32123,'BICJ4444445' ,1240, 120000, 100000, 2, 1884441);
 INSERT INTO Cargo_Manifest VALUES (32122,'NIKJ5555556' ,2235, 110201, 80000,  3, 1884442);
 INSERT INTO Cargo_Manifest VALUES (32122,'ADIZ6666667' ,2236, 031102, 90000,  4, 1884443);
 INSERT INTO Cargo_Manifest VALUES (32122,'FILR7777778' ,2237, 011103, 120000,-5, 1884444);
@@ -323,12 +332,7 @@ INSERT INTO Loading_Cargo_Manifest VALUES (12122,'BICR8888889',11222);
 INSERT INTO Border VALUES ('PT','ES');
 INSERT INTO Border VALUES ('ES','PT');
 
--- **tabela type_operation **
-
-INSERT INTO Type_Operation VALUES ('U','Update');
-INSERT INTO Type_Operation VALUES ('I','Insert');
-INSERT INTO Type_Operation VALUES ('D','Delete');
-
+commit;
 
 
 select * from Owner;

@@ -43,7 +43,7 @@ public class ImportPortsController {
                 parameters = in.nextLine().split(",");
                 String continent = parameters[0];
                 Country country = App.getInstance().getCompany().getCountryStore().getCountryByAlpha2code(parameters[1]);
-                int id = Integer.parseInt(parameters[2]);
+                String id = parameters[2];
                 String name = parameters[3];
                 double latitude = Double.parseDouble(parameters[4]);
                 double longitude = Double.parseDouble(parameters[5]);

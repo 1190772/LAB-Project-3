@@ -20,8 +20,8 @@ public class ImportSeaDistancesController {
             in.nextLine();
             while (in.hasNextLine()) {
                 parameters = in.nextLine().split(",");
-                int idPort1 = Integer.parseInt(parameters[1]);
-                int idPort2 = Integer.parseInt(parameters[4]);
+                String idPort1 = parameters[1];
+                String idPort2 = parameters[4];
                 int distance = Integer.parseInt(parameters[6]);
                 seadistanceStore.addSeaDistance(new SeaDistance(idPort1, idPort2, distance));
             }

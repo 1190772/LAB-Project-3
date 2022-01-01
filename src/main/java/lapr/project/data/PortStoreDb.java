@@ -25,7 +25,7 @@ public class PortStoreDb implements Persistable {
     String sqlCommand = "select * from Port where id_port = ?";
     boolean returnValue;
     try (PreparedStatement getPortsPreparedStatement = connection.prepareStatement(sqlCommand)) {
-        getPortsPreparedStatement.setInt(1, port.getID());
+        getPortsPreparedStatement.setString(1, port.getID());
         try (ResultSet addressesResultSet = getPortsPreparedStatement.executeQuery()) {
             if (addressesResultSet.next()) {
                 sqlCommand = "update Port set name = ?, capacity = ?, country_code = ?, latitude = ?, longitude = ? where id_port = ?";
@@ -39,7 +39,7 @@ public class PortStoreDb implements Persistable {
                 savePortPreparedStatement.setString(3, countryStoreDb.getCountryCodeByName(port.getCountry().getName()));
                 savePortPreparedStatement.setDouble(4, port.getLatitude());
                 savePortPreparedStatement.setDouble(5, port.getLongitude());
-                savePortPreparedStatement.setInt(6, port.getID());
+                savePortPreparedStatement.setString(6, port.getID());
                 savePortPreparedStatement.executeUpdate();
                 returnValue = true;
             }
@@ -63,7 +63,7 @@ public class PortStoreDb implements Persistable {
         String sqlCommand;
         sqlCommand = "delete from Port where id_port = ?";
         try (PreparedStatement deleteAddressPreparedStatement = conn.prepareStatement(sqlCommand)) {
-            deleteAddressPreparedStatement.setInt(1, port.getID());
+            deleteAddressPreparedStatement.setString(1, port.getID());
             deleteAddressPreparedStatement.executeUpdate();
             returnValue = true;
         }
@@ -83,7 +83,7 @@ public class PortStoreDb implements Persistable {
         try (PreparedStatement shipsPreparedStatement = connection.prepareStatement(sqlCommand)) {
             try (ResultSet ports = shipsPreparedStatement.executeQuery()) {
             while (ports.next()) {
-                res.add(new Port(ports.getInt("id_port"),
+                res.add(new Port(ports.getString("id_port"),
                         ports.getString("name"),
                         App.getInstance().getCompany().getCountryStore().getCountryByAlpha2code(ports.getString("country_code")),
                         ports.getDouble("latitude"),
