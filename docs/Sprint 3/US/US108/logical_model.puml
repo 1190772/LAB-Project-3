@@ -135,6 +135,7 @@ entity Warehouse {
 * latitude
 * longitude
 * capacity
+* id_port
 }
 
 entity Employee{
@@ -229,6 +230,7 @@ Ship ||--o{ Trip
 Ship ||--o{ Employee
 Warehouse ||--o{ Employee
 Port ||--o{ Employee
+Port |o--o| Warehouse
 Employee }o--|| Role
 
 Unloading_Cargo_Manifest ||--|| Cargo_Manifest

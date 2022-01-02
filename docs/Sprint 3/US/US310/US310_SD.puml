@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Port Manager" as PM
+
+participant ":PortOccupationUI" as UI
+participant ":PortOccupationController" as CTRL
+participant ":PortOccupationDb" as PO
+
+activate PM
+PM -> UI : asks for map of port resources
+
+activate UI
+UI --> PM : requests data (port_id, month)
+PM -> UI : types requested data
+
+autonumber 3.1
+
+UI -> CTRL : getPortOccupation(port_id, month)
+activate CTRL
+
+CTRL -> PO : getPortOccupation(port_id, month)
+activate PO
+deactivate PO
+
+autonumber 4
+
+UI --> PM : shows map of port resources
+
+deactivate CTRL
+deactivate UI
+deactivate PM
+@enduml

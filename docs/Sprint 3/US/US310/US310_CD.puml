@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class PortOccupationUI {
+- controller
+}
+
+class PortOccupationController {
+- portOccupationDb
++ getPortOccupation(port_id, month)
+}
+
+class PortOccupationDb {
++ getPortOccupation(port_id, month)
+}
+
+PortOccupationUI <.. PortOccupationController
+PortOccupationController <.. PortOccupationDb
+
+@enduml

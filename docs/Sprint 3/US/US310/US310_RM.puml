@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+entity Trip {
+* id_trip
+--
+* ship_imo
+* id_truck
+* id_start_port
+* id_destination_port
+* id_start_warehouse
+* id_destination_warehouse
+* date_time_start
+* date_time_end
+}
+
+entity Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_trip
+* position_code
+* cargo_weight
+* refrigeration_temperature
+* id_client
+}
+
+entity Port {
+* id_port
+--
+* name
+* country_code
+* latitude
+* longitude
+* capacity
+}
+
+entity Warehouse {
+* id_warehouse
+--
+* name
+* country_code
+* latitude
+* longitude
+* capacity
+* id_port
+}
+
+Port |o--o| Warehouse
+Trip ||--|| Cargo_Manifest
+
+@enduml

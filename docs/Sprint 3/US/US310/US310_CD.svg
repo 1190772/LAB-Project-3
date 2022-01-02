@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="340px" preserveAspectRatio="none" style="width:212px;height:340px;" version="1.1" viewBox="0 0 212 340" width="212px" zoomAndPan="magnify"><defs><filter height="300%" id="frr0lc80mtht" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[a6a4ac4f33df08955e66c1b1783e9632]
+class PortOccupationUI--><rect codeLine="3" fill="#FEFECE" filter="url(#frr0lc80mtht)" height="61.8359" id="PortOccupationUI" style="stroke:#A80036;stroke-width:1.5;" width="128" x="38.5" y="7"/><ellipse cx="53.5" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M55.5,19.5 Q55.7031,19 55.9375,18.75 Q56.1719,18.5 56.4375,18.5 Q56.9063,18.5 57.2031,18.7813 Q57.5,19.0625 57.5,19.7188 L57.5,21.2813 Q57.5,21.9375 57.2188,22.2188 Q56.9375,22.5 56.5,22.5 Q56.1094,22.5 55.8594,22.3281 Q55.6094,22.1563 55.5,21.7031 Q55.4531,21.3906 55.2813,21.2188 Q54.9688,20.8906 54.4063,20.7031 Q53.8438,20.5 53.2813,20.5 Q52.5781,20.5 51.9844,20.7813 Q51.4063,21.0625 50.9531,21.6875 Q50.5,22.3125 50.5,23.1719 L50.5,24.0938 Q50.5,25.125 51.3438,25.8125 Q52.1875,26.5 53.6875,26.5 Q54.5781,26.5 55.2031,26.2969 Q55.5625,26.1875 55.9688,25.8281 Q56.2344,25.625 56.375,25.5625 Q56.5156,25.5 56.6875,25.5 Q57.0156,25.5 57.25,25.7656 Q57.5,26.0156 57.5,26.375 Q57.5,26.7188 57.1563,27.125 Q56.6563,27.7188 55.8594,28.0469 Q54.8125,28.5 53.5313,28.5 Q52.0313,28.5 50.8281,27.9063 Q49.8594,27.4375 49.1719,26.4219 Q48.5,25.4063 48.5,24.2031 L48.5,23.1094 Q48.5,21.8594 49.0938,20.7656 Q49.7031,19.6719 50.75,19.0938 Q51.8125,18.5 53,18.5 Q53.7188,18.5 54.3438,18.75 Q54.9688,19 55.5,19.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="96" x="67.5" y="27.9102">PortOccupationUI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="39.5" x2="165.5" y1="39" y2="39"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="46.5" y="47"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="58.5" y="54.4189">controller</text><line style="stroke:#A80036;stroke-width:1.5;" x1="39.5" x2="165.5" y1="60.8359" y2="60.8359"/><!--MD5=[72f2c239e10c01a31b004138ef1a566d]
+class PortOccupationController--><rect codeLine="7" fill="#FEFECE" filter="url(#frr0lc80mtht)" height="75.6719" id="PortOccupationController" style="stroke:#A80036;stroke-width:1.5;" width="191" x="7" y="129"/><ellipse cx="31.45" cy="145" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M33.45,141.5 Q33.6531,141 33.8875,140.75 Q34.1219,140.5 34.3875,140.5 Q34.8563,140.5 35.1531,140.7813 Q35.45,141.0625 35.45,141.7188 L35.45,143.2813 Q35.45,143.9375 35.1688,144.2188 Q34.8875,144.5 34.45,144.5 Q34.0594,144.5 33.8094,144.3281 Q33.5594,144.1563 33.45,143.7031 Q33.4031,143.3906 33.2313,143.2188 Q32.9188,142.8906 32.3563,142.7031 Q31.7938,142.5 31.2313,142.5 Q30.5281,142.5 29.9344,142.7813 Q29.3563,143.0625 28.9031,143.6875 Q28.45,144.3125 28.45,145.1719 L28.45,146.0938 Q28.45,147.125 29.2938,147.8125 Q30.1375,148.5 31.6375,148.5 Q32.5281,148.5 33.1531,148.2969 Q33.5125,148.1875 33.9188,147.8281 Q34.1844,147.625 34.325,147.5625 Q34.4656,147.5 34.6375,147.5 Q34.9656,147.5 35.2,147.7656 Q35.45,148.0156 35.45,148.375 Q35.45,148.7188 35.1063,149.125 Q34.6063,149.7188 33.8094,150.0469 Q32.7625,150.5 31.4813,150.5 Q29.9813,150.5 28.7781,149.9063 Q27.8094,149.4375 27.1219,148.4219 Q26.45,147.4063 26.45,146.2031 L26.45,145.1094 Q26.45,143.8594 27.0438,142.7656 Q27.6531,141.6719 28.7,141.0938 Q29.7625,140.5 30.95,140.5 Q31.6688,140.5 32.2938,140.75 Q32.9188,141 33.45,141.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="138" x="47.55" y="149.9102">PortOccupationController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="197" y1="161" y2="161"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="169"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="87" x="27" y="176.4189">portOccupationDb</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="197" y1="182.8359" y2="182.8359"/><ellipse cx="18" cy="193.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="165" x="27" y="198.2549">getPortOccupation(port_id, month)</text><!--MD5=[99f1505da56d8d34a692aa849fcef092]
+class PortOccupationDb--><rect codeLine="12" fill="#FEFECE" filter="url(#frr0lc80mtht)" height="61.8359" id="PortOccupationDb" style="stroke:#A80036;stroke-width:1.5;" width="191" x="7" y="265"/><ellipse cx="48.55" cy="281" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M50.55,277.5 Q50.7531,277 50.9875,276.75 Q51.2219,276.5 51.4875,276.5 Q51.9563,276.5 52.2531,276.7813 Q52.55,277.0625 52.55,277.7188 L52.55,279.2813 Q52.55,279.9375 52.2688,280.2188 Q51.9875,280.5 51.55,280.5 Q51.1594,280.5 50.9094,280.3281 Q50.6594,280.1563 50.55,279.7031 Q50.5031,279.3906 50.3313,279.2188 Q50.0188,278.8906 49.4563,278.7031 Q48.8938,278.5 48.3313,278.5 Q47.6281,278.5 47.0344,278.7813 Q46.4563,279.0625 46.0031,279.6875 Q45.55,280.3125 45.55,281.1719 L45.55,282.0938 Q45.55,283.125 46.3938,283.8125 Q47.2375,284.5 48.7375,284.5 Q49.6281,284.5 50.2531,284.2969 Q50.6125,284.1875 51.0188,283.8281 Q51.2844,283.625 51.425,283.5625 Q51.5656,283.5 51.7375,283.5 Q52.0656,283.5 52.3,283.7656 Q52.55,284.0156 52.55,284.375 Q52.55,284.7188 52.2063,285.125 Q51.7063,285.7188 50.9094,286.0469 Q49.8625,286.5 48.5813,286.5 Q47.0813,286.5 45.8781,285.9063 Q44.9094,285.4375 44.2219,284.4219 Q43.55,283.4063 43.55,282.2031 L43.55,281.1094 Q43.55,279.8594 44.1438,278.7656 Q44.7531,277.6719 45.8,277.0938 Q46.8625,276.5 48.05,276.5 Q48.7688,276.5 49.3938,276.75 Q50.0188,277 50.55,277.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="100" x="68.45" y="285.9102">PortOccupationDb</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="197" y1="297" y2="297"/><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="197" y1="305" y2="305"/><ellipse cx="18" cy="316" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="165" x="27" y="320.4189">getPortOccupation(port_id, month)</text><!--MD5=[0b60f259ea473ea5b2fcc1c25c5baefa]
+reverse link PortOccupationUI to PortOccupationController--><path codeLine="16" d="M102.5,74.25 C102.5,91.24 102.5,111.62 102.5,128.86 " fill="none" id="PortOccupationUI-backto-PortOccupationController" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="102.5,69.1,98.5,78.1,102.5,74.1,106.5,78.1,102.5,69.1" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2b96b05f510af47d315ff213931d4ef0]
+reverse link PortOccupationController to PortOccupationDb--><path codeLine="17" d="M102.5,210.52 C102.5,228.36 102.5,248.68 102.5,264.93 " fill="none" id="PortOccupationController-backto-PortOccupationDb" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="102.5,205.08,98.5,214.08,102.5,210.08,106.5,214.08,102.5,205.08" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[10ba54b20079bf3fb4c1176d0e0e7dd2]
+@startuml
+'https://plantuml.com/class-diagram
+
+class PortOccupationUI {
+- controller
+}
+
+class PortOccupationController {
+- portOccupationDb
++ getPortOccupation(port_id, month)
+}
+
+class PortOccupationDb {
++ getPortOccupation(port_id, month)
+}
+
+PortOccupationUI <.. PortOccupationController
+PortOccupationController <.. PortOccupationDb
+
+@enduml
+
+@startuml
+
+class PortOccupationUI {
+- controller
+}
+
+class PortOccupationController {
+- portOccupationDb
++ getPortOccupation(port_id, month)
+}
+
+class PortOccupationDb {
++ getPortOccupation(port_id, month)
+}
+
+PortOccupationUI <.. PortOccupationController
+PortOccupationController <.. PortOccupationDb
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>
