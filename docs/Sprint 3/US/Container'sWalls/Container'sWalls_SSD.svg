@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="442px" preserveAspectRatio="none" style="width:447px;height:442px;" version="1.1" viewBox="0 0 447 442" width="447px" zoomAndPan="magnify"><defs><filter height="300%" id="f81t15j5129bf" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f81t15j5129bf)" height="238.8125" style="stroke:#A80036;stroke-width:1.0;" width="10" x="42.5" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f81t15j5129bf)" height="81.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="374.5" y="121.9609"/><rect fill="#FFFFFF" filter="url(#f81t15j5129bf)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="374.5" y="233.3672"/><rect fill="#FFFFFF" filter="url(#f81t15j5129bf)" height="44.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="374.5" y="294.0703"/><rect fill="#FFFFFF" filter="url(#f81t15j5129bf)" height="172.1094" style="stroke:#000000;stroke-width:2.0;" width="423.5" x="10" y="136.9609"/><rect fill="#FFFFFF" filter="url(#f81t15j5129bf)" height="139.7578" style="stroke:#000000;stroke-width:2.0;" width="403.5" x="20" y="162.3125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="47" x2="47" y1="89.6094" y2="356.4219"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="379.5" x2="379.5" y1="89.6094" y2="356.4219"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="30" y="86.5332">User</text><ellipse cx="47.5" cy="15" fill="#FEFECE" filter="url(#f81t15j5129bf)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M47.5,23 L47.5,50 M34.5,31 L60.5,31 M47.5,50 L34.5,65 M47.5,50 L60.5,65 " fill="none" filter="url(#f81t15j5129bf)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="30" y="369.9551">User</text><ellipse cx="47.5" cy="383.0313" fill="#FEFECE" filter="url(#f81t15j5129bf)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M47.5,391.0313 L47.5,418.0313 M34.5,399.0313 L60.5,399.0313 M47.5,418.0313 L34.5,433.0313 M47.5,418.0313 L60.5,433.0313 " fill="none" filter="url(#f81t15j5129bf)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#f81t15j5129bf)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="64" x="345.5" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="352.5" y="74.5332">:System</text><rect fill="#FEFECE" filter="url(#f81t15j5129bf)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="64" x="345.5" y="355.4219"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="352.5" y="376.9551">:System</text><rect fill="#FFFFFF" filter="url(#f81t15j5129bf)" height="238.8125" style="stroke:#A80036;stroke-width:1.0;" width="10" x="42.5" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f81t15j5129bf)" height="81.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="374.5" y="121.9609"/><rect fill="#FFFFFF" filter="url(#f81t15j5129bf)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="374.5" y="233.3672"/><rect fill="#FFFFFF" filter="url(#f81t15j5129bf)" height="44.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="374.5" y="294.0703"/><polygon fill="#A80036" points="362.5,117.9609,372.5,121.9609,362.5,125.9609,366.5,121.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="52.5" x2="368.5" y1="121.9609" y2="121.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="59.5" y="117.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="292" x="70.5" y="117.1045">asks to know the thermal resistance of a container</text><path d="M10,136.9609 L83,136.9609 L83,144.9609 L73,154.9609 L10,154.9609 L10,136.9609 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="172.1094" style="stroke:#000000;stroke-width:2.0;" width="423.5" x="10" y="136.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="25" y="151.4561">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="78" x="98" y="150.3799">[for each wall]</text><path d="M20,162.3125 L93,162.3125 L93,170.3125 L83,180.3125 L20,180.3125 L20,162.3125 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="139.7578" style="stroke:#000000;stroke-width:2.0;" width="403.5" x="20" y="162.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="35" y="176.8076">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="83" x="108" y="175.7314">[for each layer]</text><polygon fill="#A80036" points="63.5,199.0156,53.5,203.0156,63.5,207.0156,59.5,203.0156" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="57.5" x2="378.5" y1="203.0156" y2="203.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="69.5" y="198.1592">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="80.5" y="198.1592">asks to select the wall material</text><polygon fill="#A80036" points="362.5,229.3672,372.5,233.3672,362.5,237.3672,366.5,233.3672" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="52.5" x2="368.5" y1="233.3672" y2="233.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="59.5" y="228.5107">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="70.5" y="228.5107">selects material</text><polygon fill="#A80036" points="63.5,259.7188,53.5,263.7188,63.5,267.7188,59.5,263.7188" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="57.5" x2="378.5" y1="263.7188" y2="263.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="69.5" y="258.8623">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="170" x="80.5" y="258.8623">asks for the width of the layer</text><polygon fill="#A80036" points="362.5,290.0703,372.5,294.0703,362.5,298.0703,366.5,294.0703" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="52.5" x2="368.5" y1="294.0703" y2="294.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="59.5" y="289.2139">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="70.5" y="289.2139">types requested data</text><polygon fill="#A80036" points="58.5,334.4219,48.5,338.4219,58.5,342.4219,54.5,338.4219" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="52.5" x2="378.5" y1="338.4219" y2="338.4219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="64.5" y="333.5654">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="274" x="75.5" y="333.5654">returns the the thermal resistance the container</text><!--MD5=[fbd4700866f08bff4d81441fb51c4e0a]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor User as U
+
+activate U
+U -> ":System" : asks to know the thermal resistance of a container
+
+loop for each wall
+loop for each layer
+activate ":System"
+":System" - -> U : asks to select the wall material
+deactivate ":System"
+
+U -> ":System" : selects material
+
+activate ":System"
+":System" - -> U : asks for the width of the layer
+deactivate ":System"
+
+U -> ":System" : types requested data
+activate ":System"
+end
+end
+
+":System" - -> U : returns the the thermal resistance the container
+deactivate ":System"
+
+deactivate U
+
+@enduml
+
+@startuml
+
+autonumber
+
+actor User as U
+
+activate U
+U -> ":System" : asks to know the thermal resistance of a container
+
+loop for each wall
+loop for each layer
+activate ":System"
+":System" - -> U : asks to select the wall material
+deactivate ":System"
+
+U -> ":System" : selects material
+
+activate ":System"
+":System" - -> U : asks for the width of the layer
+deactivate ":System"
+
+U -> ":System" : types requested data
+activate ":System"
+end
+end
+
+":System" - -> U : returns the the thermal resistance the container
+deactivate ":System"
+
+deactivate U
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
