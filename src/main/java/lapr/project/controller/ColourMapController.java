@@ -29,6 +29,7 @@ public class ColourMapController {
         return map;
     }
 
+    //O(E+A) , O(n^2)
     private <V> int atributeColour(List<V> l, Map<V, Integer> map, int numberOfColours) {
         List<Integer> listOfColours = new LinkedList<>();
         for (int i = 0; i < numberOfColours; i++) {
