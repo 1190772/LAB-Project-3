@@ -12,4 +12,8 @@ public enum Colours {
         this.hexCode = hexCode;
 
     }
+
+    public static Colours ordinal(int index){
+        return Colours.values()[index];
+    }
 }

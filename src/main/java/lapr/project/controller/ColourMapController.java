@@ -5,7 +5,7 @@ import lapr.project.utils.graph.Graph;
 import java.util.*;
 
 public class ColourMapController {
-    private int calculateNumberOfColours(Graph grafo) {
+    public int calculateNumberOfColours(Graph grafo) {
         if (grafo == null) {
             return 0;
         }
@@ -18,7 +18,7 @@ public class ColourMapController {
         }
         return max;
     }
-    private<V, E> Map<V, Integer> colourMap (Graph<V, E> grafo){
+    public<V, E> Map<V, Integer> colourMap (Graph<V, E> grafo){
         int numberOfColours = calculateNumberOfColours(grafo);
         Map<V, Integer> map = new HashMap<>();
         for (V vertex : grafo.vertices()) {
@@ -30,7 +30,7 @@ public class ColourMapController {
     }
 
     //O(E+A) , O(n^2)
-    private <V> int atributeColour(List<V> l, Map<V, Integer> map, int numberOfColours) {
+    public <V> int atributeColour(List<V> l, Map<V, Integer> map, int numberOfColours) {
         List<Integer> listOfColours = new LinkedList<>();
         for (int i = 0; i < numberOfColours; i++) {
             listOfColours.add(i);
