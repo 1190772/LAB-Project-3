@@ -22,6 +22,7 @@ public class PortManagerUI implements Runnable{
 
     List<MenuItem> options = new ArrayList<>();
     options.add(new MenuItem("Import Ports", new ImportPortsUI()));
+    options.add(new MenuItem("Map of port resources", new PortOccupationUI()));
     int option;
 
     do {
