@@ -9,7 +9,7 @@ activate PM
 PM -> ":System" : asks for map of port resources
 
 activate ":System"
-":System" --> "PM" : requests data (month)
+":System" --> "PM" : requests data (port_id, month)
 deactivate ":System"
 
 PM -> ":System" : types requested data

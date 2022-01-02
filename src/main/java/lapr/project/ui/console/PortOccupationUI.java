@@ -15,7 +15,7 @@ public class PortOccupationUI implements Runnable {
         String portID;
         String month;
 
-        portID = Utils.readLineFromConsole("Inser port id:");
+        portID = Utils.readLineFromConsole("Insert port id:");
         month = Utils.readLineFromConsole("Insert month (YYYY-MM):");
 
         System.out.println(controller.getPortOccupation(portID, month));

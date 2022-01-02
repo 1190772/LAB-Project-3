@@ -8,7 +8,7 @@ public class PortOccupationDb {
 
     public String getPortOccupation(String portID, String month) {
         Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
-        String report = "An error occurred";
+        String report = "An error occurred.";
 
         String sqlCommand = "SELECT portOccupation(?, TO_DATE(?,'YYYY-MM')) from dual";
         try (PreparedStatement portOccupationPreparedStatement = connection.prepareStatement(sqlCommand)) {
