@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RefrigeratedContainerUI {
+- controller
+}
+
+class RefrigeratedContainerController {
++ refrigeratedContainer(List<Pair<WallMaterial,Double>> topWall,\nList<Pair<WallMaterial,Double>> leftWall,\nList<Pair<WallMaterial,Double>> rightWall,\nList<Pair<WallMaterial,Double>> bottomWall)
++ refrigeratedContainer(List<Pair<WallMaterial,Double>> topWall,\nList<Pair<WallMaterial,Double>> leftWall,\nList<Pair<WallMaterial,Double>> rightWall,\nList<Pair<WallMaterial,Double>> bottomWall,\ndouble containerLength, double containerWidth, double containerHeight)
+}
+
+class RefrigeratedContainer {
+- double length
+- double width
+- double height
+
+- List<Pair<WallMaterial,Double>> topWall
+- List<Pair<WallMaterial,Double>> leftWall
+- List<Pair<WallMaterial,Double>> rightWall
+- List<Pair<WallMaterial,Double>> bottomWall
+
++ RefrigeratedContainer(List<Pair<WallMaterial, Double>> topWall,\n List<Pair<WallMaterial, Double>> leftWall,\n List<Pair<WallMaterial, Double>> rightWall,\n List<Pair<WallMaterial, Double>> bottomWall)
++ RefrigeratedContainer(List<Pair<WallMaterial, Double>> wall)
+- getThremalResistance()
++ toString()
+}
+
+enum WallMaterial {
+- double k
++ WallMaterial(double k)
++ getK()
+}
+
+
+RefrigeratedContainerController <.. RefrigeratedContainerUI
+RefrigeratedContainer <-- RefrigeratedContainerController
+WallMaterial <-- RefrigeratedContainer
+WallMaterial <.. RefrigeratedContainerController
+
+@enduml

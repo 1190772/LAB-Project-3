@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor User as U
+
+participant ":RefrigeratedContainerUI" as UI
+participant ":RefrigeratedContainerController" as CTRL
+participant ":RefrigeratedContainer" as RC
+participant ":WallMaterial" as WM
+
+activate U
+U -> UI : asks to know which places are closest to all other places
+
+loop for each wall
+loop for each layer
+
+activate UI
+UI --> U : asks to select the wall material
+deactivate UI
+
+U -> UI : selects material
+
+activate UI
+UI --> U : asks for the width of the layer
+deactivate UI
+
+U -> UI : types requested data
+activate UI
+
+end
+end
+
+UI -> CTRL : getThermalResistance(topWall, leftWall, rightWall, bottomWall,\n\t containerLength, containerWidth, containerHeight)
+activate CTRL
+
+CTRL -> RC : rc = new RefrigeratedContainer(topWall, leftWall, rightWall, bottomWall)
+activate RC
+CTRL -> RC : rc.setMeasures(containerLength, containerWidth, containerHeight)
+
+RC --> CTRL : result = rc.toString()
+deactivate RC
+
+deactivate CTRL
+
+UI --> U : returns the the thermal resistance the container
+
+deactivate UI
+deactivate U
+@enduml
