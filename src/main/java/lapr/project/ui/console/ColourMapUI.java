@@ -25,7 +25,6 @@ public class ColourMapUI implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(App.getInstance().getCompany().getFreightNetwork());
         System.out.println(remap(controller.colourMap(App.getInstance().getCompany().getFreightNetwork())));
     }
 }
