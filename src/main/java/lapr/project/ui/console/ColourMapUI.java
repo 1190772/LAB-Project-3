@@ -1,2 +1,9 @@
-package lapr.project.ui.console;public class ColourMapUI {
+package lapr.project.ui.console;
+
+import lapr.project.utils.graph.Graph;
+
+public class ColourMapUI {
+
+
+
 }
