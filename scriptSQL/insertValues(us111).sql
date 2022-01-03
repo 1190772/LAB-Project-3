@@ -210,7 +210,8 @@ INSERT INTO Ship VALUES ('IMO7777777',211122229, 'References'          ,3, 400, 
 INSERT INTO Ship VALUES ('IMO8888888',611122221, 'Black Pearl'         ,4, 400, 'PTE6V' ,43, 480, 20 ,11.8 ,600 ,343382);
 INSERT INTO Ship VALUES ('IMO9999999',611122222, 'Queen Anne Revenge'  ,2, 400, 'BRE6V' ,45, 440, 14 ,8.7  ,560 ,343383);
 INSERT INTO Ship VALUES ('IMO6161616',611122223, 'The Fair Wind'       ,3, 400, 'USE6V' ,53, 395, 15 ,9.8  ,440 ,343384);
-INSERT INTO Ship VALUES ('IMO6262626',611122224, 'Royal Fortune'       ,2, 400, 'CVE6V' ,35, 400, 16 ,8.8  ,500 ,343385);
+
+INSERT INTO Ship VALUES ('IMO6262626',611122224, 'Royal Fortune'       ,2, 400, 'CVE6V' ,35, 400, 16 ,8.8  ,2,343385);
 
 
 -- ** tabela position ship**
@@ -258,11 +259,11 @@ INSERT INTO Trip VALUES (1236,'IMO1111111',null,    null, 'IN233',null ,11221, t
 INSERT INTO Trip VALUES (1237,'IMO4444444',null,    null, 'ES456',null ,11222, timestamp '2021-03-13 19:35:33', timestamp '2021-04-22 07:36:33');
 INSERT INTO Trip VALUES (1238,'IMO5555555',null,    null, 'PT345',null ,11223, timestamp '2021-09-01 19:35:33', timestamp '2021-10-12 08:36:33');
 INSERT INTO Trip VALUES (1239,'IMO6666666',null,    null, 'IN233',null ,11224, timestamp '2021-08-20 19:35:33', timestamp '2021-09-22 09:36:33');
-INSERT INTO Trip VALUES (1240,        null,12345,'IN233',    null,11224, null, timestamp '2020-01-01 02:02:11',timestamp '2020-03-03 02:02:11');
+INSERT INTO Trip VALUES (1240,'IMO6666666',12345,'IN233',    null,11224, null, timestamp '2020-01-01 02:02:11',timestamp '2020-03-03 02:02:11');
 
-INSERT INTO Trip VALUES (2235,null,12345,'PT345', null, null, 11221, timestamp '2021-02-08 19:35:33', timestamp '2021-03-01 06:13:23');
-INSERT INTO Trip VALUES (2236,null,12346,'AN345', null, null, 11222, timestamp '2021-03-15 19:35:33', timestamp '2021-04-22 07:26:13');
-INSERT INTO Trip VALUES (2237,null,12347,'IN233', null, null, 11223, timestamp '2021-04-23 19:35:33', timestamp '2022-04-22 08:26:13');
+INSERT INTO Trip VALUES (2235,'IMO6666666',12345,'PT345', null, null, 11221, timestamp '2021-02-08 19:35:33', timestamp '2021-03-01 06:13:23');
+INSERT INTO Trip VALUES (2236,'IMO5555555',12346,'AN345', null, null, 11222, timestamp '2021-03-15 19:35:33', timestamp '2021-04-22 07:26:13');
+INSERT INTO Trip VALUES (2237,'IMO5555555',12347,'IN233', null, null, 11223, timestamp '2021-04-23 19:35:33', timestamp '2022-04-22 08:26:13');
 INSERT INTO Trip VALUES (2238,'IMO6161616',null, 'PT345',null, null,11221, timestamp '2020-05-21 19:35:33', timestamp '2022-05-22 08:26:13');
 INSERT INTO Trip VALUES (2239,'IMO6262626',null, 'IN233',null, null,11222, timestamp '2020-06-10 19:35:33', timestamp '2022-06-22 08:26:13');
 
@@ -304,6 +305,8 @@ INSERT INTO Cargo_Manifest VALUES (32122,'NIKJ5555556' ,2235, 110201, 80000,  3,
 INSERT INTO Cargo_Manifest VALUES (32122,'ADIZ6666667' ,2236, 031102, 90000,  4, 1884443);
 INSERT INTO Cargo_Manifest VALUES (32122,'FILR7777778' ,2237, 011103, 120000,-5, 1884444);
 INSERT INTO Cargo_Manifest VALUES (12122,'BICR8888889' ,2238, 100705, 100000,-5, 1884445);
+
+
 
 
 -- ** tabela Unloading_Cargo_Manifest**

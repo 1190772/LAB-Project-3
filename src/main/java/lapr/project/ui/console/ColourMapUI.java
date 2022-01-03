@@ -2,7 +2,6 @@ package lapr.project.ui.console;
 
 import lapr.project.controller.App;
 import lapr.project.controller.ColourMapController;
-import lapr.project.utils.graph.Graph;
 
 import java.util.HashMap;
 import java.util.Map;
