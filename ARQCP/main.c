@@ -4,6 +4,7 @@
 
 #include "occupation.h"
 #include "checkContainer.h"
+#include "occupied_slots.h"
 
 const int MAX_X = 50;
 const int MAX_Y = 50;
@@ -11,9 +12,13 @@ const int MAX_Z = 50;
 const int ID_CONTAINER_SIZE = 12;
 int x,y,z;
 char *position_data_ptr;
+int pos[2] = {70300, 100705};
+int* pos_ptr = pos;
+const int N_POS = 2;
 
 void show_occupation();
 void show_checkContainer();
+void show_occupied_slots();
 
 int main(){
 
@@ -81,3 +86,10 @@ void show_checkContainer() {
 
 }
 
+void show_occupied_slots() {
+	unsigned int res;
+	
+	res = occupied_slots();
+
+	printf("Número de espaços ocupados: %d\n", res);
+}
