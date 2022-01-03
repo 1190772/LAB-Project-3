@@ -115,11 +115,11 @@ public class BuildFreightNetworkController {
                 for (Country country : countries) {
                     if (!port1.getCountry().equals(country)) {
                         for (Port port2 : ports) {
-                            if (port2.getCountry().equals(country) && port2.getID() != port1.getID()) {
+                            if (port2.getCountry().equals(country) && !port2.getID().equals(port1.getID())) {
                                 int i = 0;
                                 distance = -1;
                                 while (i < seaDistances.size() && distance == -1) {
-                                    if (seaDistances.get(i).getIdPort1() == port1.getID() && seaDistances.get(i).getIdPort2() == port2.getID() || seaDistances.get(i).getIdPort1() == port2.getID() && seaDistances.get(i).getIdPort2() == port1.getID())
+                                    if (seaDistances.get(i).getIdPort1().equals(port1.getID()) && seaDistances.get(i).getIdPort2().equals(port2.getID()) || seaDistances.get(i).getIdPort1().equals(port2.getID()) && seaDistances.get(i).getIdPort2().equals(port1.getID()))
                                         distance = seaDistances.get(i).getDistance();
                                     i++;
                                 }
