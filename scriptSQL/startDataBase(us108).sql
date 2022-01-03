@@ -276,3 +276,37 @@ end if;
 
 End Valida_CM;
 /
+create or replace trigger Valida_Trip
+before insert or update
+on Trip
+for each row
+
+Declare
+var_trip_minimum integer;
+
+Begin
+
+select Count (*)
+into var_trip_minimum
+from  Trip
+where Trip.ship_imo = :new.ship_imo;
+
+if var_trip_minimum >= 1 then
+
+select Count(*)
+into var_trip_minimum
+from  Trip
+where Trip.ship_imo = :new.ship_imo
+and ((trip.date_time_start <= :new.date_time_start
+and trip.date_time_end >= :new.date_time_start)
+or (trip.date_time_start <= :new.date_time_end
+and trip.date_time_end >= :new.date_time_end));
+
+if var_trip_minimum > 0 then
+ raise_application_error(-20112,'The ship is already occupied');
+  end if;
+end if;
+
+End Valida_Trip;
+/
+
