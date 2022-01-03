@@ -6,10 +6,10 @@ autonumber
 actor "Traffic Manager" as TM
 
 activate TM
-TM -> ":System" : asks to build a freight network
+TM -> ":System" : asks to colour the map
 
 activate ":System"
-":System" --> ":System" : Builds a freight network
+":System" --> ":System" : colours the map using as few colours as possible
 deactivate ":System"
 
 deactivate TM

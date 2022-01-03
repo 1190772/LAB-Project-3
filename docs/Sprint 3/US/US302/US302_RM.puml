@@ -28,18 +28,10 @@ entity Border {
 * country2
 }
 
-entity Sea_Distance {
-* id_port1
-* id_port2
---
-* distance
-}
 
 Country ||--o{ Port
 Country }|--o| Border
 Country }|--o| Border
 
-Sea_Distance ||--|{ Port
-Sea_Distance ||--|{ Port
 
 @enduml

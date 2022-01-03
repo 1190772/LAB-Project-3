@@ -5,45 +5,39 @@ autonumber
 
 actor "Traffic Manager" as TM
 
-participant ":buildFreightNetworkUI" as UI
-participant ":buildFreightNetworkController" as CTRL
-participant ":PortStore" as P
-participant ":SeaDistanceStore" as SD
-participant ":BorderStore" as B
-participant ":CountryStore" as C
+participant ":ColourMapUI" as UI
+participant ":ColourMapController" as CTRL
+participant ":Company" as COMP
 participant ":FreightNetwork" as NET
 
 activate TM
-TM -> UI : asks to build a freight network
+TM -> UI : asks to colour the map
 
 activate UI
-UI -> CTRL : buildFreightNetwork()
+UI -> CTRL : colourMap()
 
 activate CTRL
+CTRL->COMP : getCompany()
 
-CTRL -> P : ports = getPorts()
-activate P
-deactivate P
+activate COMP
+COMP->NET : getFreightNetwork()
 
-CTRL -> SD : seaDists = getSeaDistances()
-activate SD
-deactivate SD
-
-CTRL -> B : borders = getBorders()
-activate B
-deactivate B
-
-CTRL -> C : countries = getCountries()
-activate C
-deactivate C
-
-CTRL -> CTRL : buildFreightNetwork()
-
-create NET
-CTRL --> NET : BuildFreightNetwork(false, vs, m)
-
+activate NET
 deactivate NET
+deactivate COMP
+
+CTRL -> CTRL : calculateNumberOfColours()
+
+CTRL -> CTRL : atributeColour()
+
+CTRL -> CTRL : colourMap()
+
+UI -> TM : Map associated with colours is printed
+
 deactivate CTRL
 deactivate UI
-deactivate TM
+
+
+
+
 @enduml
