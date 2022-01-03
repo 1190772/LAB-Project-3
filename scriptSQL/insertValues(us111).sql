@@ -242,10 +242,10 @@ INSERT INTO Port VALUES ('ES456', 'MariBela'   , 'IN', 26.97284 ,  26.97284, 90)
 
 -- **tabela warehouse **
 
-INSERT INTO Warehouse VALUES (11221, 'Warehouse Port'  , 'PT', 34.11492 , 26.38083,100 );
-INSERT INTO Warehouse VALUES (11222, 'The warehouse'   , 'ES', 19.63635 , 22.68017,110 );
-INSERT INTO Warehouse VALUES (11223, 'Port Warehouse'  , 'AO', 22.68017 , 25.42360,120 );
-INSERT INTO Warehouse VALUES (11224, 'Cruz warehouse'  , 'IN', 26.97284 , 26.97284,130 );
+INSERT INTO Warehouse VALUES (11221, 'Warehouse Port'  , 'PT', 34.11492 , 26.38083,100, 'PT345' );
+INSERT INTO Warehouse VALUES (11222, 'The warehouse'   , 'ES', 19.63635 , 22.68017,110, 'AN345' );
+INSERT INTO Warehouse VALUES (11223, 'Port Warehouse'  , 'AO', 22.68017 , 25.42360,120, 'IN233' );
+INSERT INTO Warehouse VALUES (11224, 'Cruz warehouse'  , 'IN', 26.97284 , 26.97284,130, 'ES456' );
 
 -- ** tabela trip **
 

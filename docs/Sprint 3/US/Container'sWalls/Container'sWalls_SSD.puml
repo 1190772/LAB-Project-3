@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor User as U
+
+activate U
+U -> ":System" : asks to know the thermal resistance of a container
+
+loop for each wall
+loop for each layer
+activate ":System"
+":System" --> U : asks to select the wall material
+deactivate ":System"
+
+U -> ":System" : selects material
+
+activate ":System"
+":System" --> U : asks for the width of the layer
+deactivate ":System"
+
+U -> ":System" : types requested data
+activate ":System"
+end
+end
+
+":System" --> U : returns the the thermal resistance the container
+deactivate ":System"
+
+deactivate U
+
+@enduml

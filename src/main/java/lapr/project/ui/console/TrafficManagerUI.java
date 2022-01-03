@@ -30,6 +30,7 @@ public class TrafficManagerUI implements Runnable {
         options.add(new MenuItem("Import Borders from file", new ImportBordersUI()));
         options.add(new MenuItem("Import Sea Distances from file", new ImportSeaDistancesUI()));
         options.add(new MenuItem("Build Freight Network", new BuildFreightNetworkUI()));
+        options.add(new MenuItem("Colour Map", new ColourMapUI()));
 
         int option = 0;
         do {

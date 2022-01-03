@@ -20,6 +20,18 @@ class Port {
 -PortStaff
 }
 
+class Warehouse {
+-Identification
+-Name
+-Continent
+-Country
+-Latitude
+-longitude
+-WarehouseManager
+-WarehouseStaff
+}
+
 Company "1" -- "*" Port : Owns >
+Company "1" -- "*" Warehouse : Owns >
 
 @enduml

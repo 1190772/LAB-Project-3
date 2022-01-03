@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="579px" preserveAspectRatio="none" style="width:1478px;height:579px;" version="1.1" viewBox="0 0 1478 579" width="1478px" zoomAndPan="magnify"><defs><filter height="300%" id="f1lesqxp5x4td1" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="376.5703" style="stroke:#A80036;stroke-width:1.0;" width="10" x="42.5" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="81.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="413.5" y="121.9609"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="413.5" y="233.3672"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="182.1094" style="stroke:#A80036;stroke-width:1.0;" width="10" x="413.5" y="294.0703"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="91.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="818.5" y="354.7734"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="60.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="1272.5" y="385.125"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="172.1094" style="stroke:#000000;stroke-width:2.0;" width="516" x="10" y="136.9609"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="139.7578" style="stroke:#000000;stroke-width:2.0;" width="496" x="20" y="162.3125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="47" x2="47" y1="89.6094" y2="494.1797"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="418" x2="418" y1="89.6094" y2="494.1797"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="823" x2="823" y1="89.6094" y2="494.1797"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1277" x2="1277" y1="89.6094" y2="494.1797"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1418" x2="1418" y1="89.6094" y2="494.1797"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="30" y="86.5332">User</text><ellipse cx="47.5" cy="15" fill="#FEFECE" filter="url(#f1lesqxp5x4td1)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M47.5,23 L47.5,50 M34.5,31 L60.5,31 M47.5,50 L34.5,65 M47.5,50 L60.5,65 " fill="none" filter="url(#f1lesqxp5x4td1)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="30" y="507.7129">User</text><ellipse cx="47.5" cy="520.7891" fill="#FEFECE" filter="url(#f1lesqxp5x4td1)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M47.5,528.7891 L47.5,555.7891 M34.5,536.7891 L60.5,536.7891 M47.5,555.7891 L34.5,570.7891 M47.5,555.7891 L60.5,570.7891 " fill="none" filter="url(#f1lesqxp5x4td1)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#f1lesqxp5x4td1)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="171" x="331" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="338" y="74.5332">:RefrigeratedContainerUI</text><rect fill="#FEFECE" filter="url(#f1lesqxp5x4td1)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="171" x="331" y="493.1797"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="338" y="514.7129">:RefrigeratedContainerUI</text><rect fill="#FEFECE" filter="url(#f1lesqxp5x4td1)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="221" x="711" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="718" y="74.5332">:RefrigeratedContainerController</text><rect fill="#FEFECE" filter="url(#f1lesqxp5x4td1)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="221" x="711" y="493.1797"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="718" y="514.7129">:RefrigeratedContainerController</text><rect fill="#FEFECE" filter="url(#f1lesqxp5x4td1)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="159" x="1196" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="1203" y="74.5332">:RefrigeratedContainer</text><rect fill="#FEFECE" filter="url(#f1lesqxp5x4td1)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="159" x="1196" y="493.1797"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="1203" y="514.7129">:RefrigeratedContainer</text><rect fill="#FEFECE" filter="url(#f1lesqxp5x4td1)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="95" x="1369" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="1376" y="74.5332">:WallMaterial</text><rect fill="#FEFECE" filter="url(#f1lesqxp5x4td1)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="95" x="1369" y="493.1797"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="1376" y="514.7129">:WallMaterial</text><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="376.5703" style="stroke:#A80036;stroke-width:1.0;" width="10" x="42.5" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="81.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="413.5" y="121.9609"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="413.5" y="233.3672"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="182.1094" style="stroke:#A80036;stroke-width:1.0;" width="10" x="413.5" y="294.0703"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="91.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="818.5" y="354.7734"/><rect fill="#FFFFFF" filter="url(#f1lesqxp5x4td1)" height="60.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="1272.5" y="385.125"/><polygon fill="#A80036" points="401.5,117.9609,411.5,121.9609,401.5,125.9609,405.5,121.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="52.5" x2="407.5" y1="121.9609" y2="121.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="59.5" y="117.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="331" x="70.5" y="117.1045">asks to know which places are closest to all other places</text><path d="M10,136.9609 L83,136.9609 L83,144.9609 L73,154.9609 L10,154.9609 L10,136.9609 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="172.1094" style="stroke:#000000;stroke-width:2.0;" width="516" x="10" y="136.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="25" y="151.4561">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="78" x="98" y="150.3799">[for each wall]</text><path d="M20,162.3125 L93,162.3125 L93,170.3125 L83,180.3125 L20,180.3125 L20,162.3125 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="139.7578" style="stroke:#000000;stroke-width:2.0;" width="496" x="20" y="162.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="35" y="176.8076">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="83" x="108" y="175.7314">[for each layer]</text><polygon fill="#A80036" points="63.5,199.0156,53.5,203.0156,63.5,207.0156,59.5,203.0156" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="57.5" x2="417.5" y1="203.0156" y2="203.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="69.5" y="198.1592">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="80.5" y="198.1592">asks to select the wall material</text><polygon fill="#A80036" points="401.5,229.3672,411.5,233.3672,401.5,237.3672,405.5,233.3672" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="52.5" x2="407.5" y1="233.3672" y2="233.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="59.5" y="228.5107">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="70.5" y="228.5107">selects material</text><polygon fill="#A80036" points="63.5,259.7188,53.5,263.7188,63.5,267.7188,59.5,263.7188" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="57.5" x2="417.5" y1="263.7188" y2="263.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="69.5" y="258.8623">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="170" x="80.5" y="258.8623">asks for the width of the layer</text><polygon fill="#A80036" points="401.5,290.0703,411.5,294.0703,401.5,298.0703,405.5,294.0703" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="52.5" x2="407.5" y1="294.0703" y2="294.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="59.5" y="289.2139">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="70.5" y="289.2139">types requested data</text><polygon fill="#A80036" points="806.5,350.7734,816.5,354.7734,806.5,358.7734,810.5,354.7734" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="423.5" x2="812.5" y1="354.7734" y2="354.7734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="430.5" y="341.7412">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="365" x="441.5" y="333.5654">getThermalResistance(topWall, leftWall, rightWall, bottomWall,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="289" x="477.5" y="349.917">containerLength, containerWidth, containerHeight)</text><polygon fill="#A80036" points="1260.5,381.125,1270.5,385.125,1260.5,389.125,1264.5,385.125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="828.5" x2="1266.5" y1="385.125" y2="385.125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="835.5" y="380.2686">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="414" x="846.5" y="380.2686">rc = new RefrigeratedContainer(topWall, leftWall, rightWall, bottomWall)</text><polygon fill="#A80036" points="1260.5,411.4766,1270.5,415.4766,1260.5,419.4766,1264.5,415.4766" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="828.5" x2="1266.5" y1="415.4766" y2="415.4766"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="835.5" y="410.6201">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="383" x="846.5" y="410.6201">rc.setMeasures(containerLength, containerWidth, containerHeight)</text><polygon fill="#A80036" points="834.5,441.8281,824.5,445.8281,834.5,449.8281,830.5,445.8281" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="828.5" x2="1276.5" y1="445.8281" y2="445.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="840.5" y="440.9717">9</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="851.5" y="440.9717">result = rc.toString()</text><polygon fill="#A80036" points="58.5,472.1797,48.5,476.1797,58.5,480.1797,54.5,476.1797" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="52.5" x2="417.5" y1="476.1797" y2="476.1797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="64.5" y="471.3232">10</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="274" x="82.5" y="471.3232">returns the the thermal resistance the container</text><!--MD5=[7ff5de7b4ceb06f63cca147b30c55632]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor User as U
+
+participant ":RefrigeratedContainerUI" as UI
+participant ":RefrigeratedContainerController" as CTRL
+participant ":RefrigeratedContainer" as RC
+participant ":WallMaterial" as WM
+
+activate U
+U -> UI : asks to know which places are closest to all other places
+
+loop for each wall
+loop for each layer
+
+activate UI
+UI - -> U : asks to select the wall material
+deactivate UI
+
+U -> UI : selects material
+
+activate UI
+UI - -> U : asks for the width of the layer
+deactivate UI
+
+U -> UI : types requested data
+activate UI
+
+end
+end
+
+UI -> CTRL : getThermalResistance(topWall, leftWall, rightWall, bottomWall,\n\t containerLength, containerWidth, containerHeight)
+activate CTRL
+
+CTRL -> RC : rc = new RefrigeratedContainer(topWall, leftWall, rightWall, bottomWall)
+activate RC
+CTRL -> RC : rc.setMeasures(containerLength, containerWidth, containerHeight)
+
+RC - -> CTRL : result = rc.toString()
+deactivate RC
+
+deactivate CTRL
+
+UI - -> U : returns the the thermal resistance the container
+
+deactivate UI
+deactivate U
+@enduml
+
+@startuml
+
+autonumber
+
+actor User as U
+
+participant ":RefrigeratedContainerUI" as UI
+participant ":RefrigeratedContainerController" as CTRL
+participant ":RefrigeratedContainer" as RC
+participant ":WallMaterial" as WM
+
+activate U
+U -> UI : asks to know which places are closest to all other places
+
+loop for each wall
+loop for each layer
+
+activate UI
+UI - -> U : asks to select the wall material
+deactivate UI
+
+U -> UI : selects material
+
+activate UI
+UI - -> U : asks for the width of the layer
+deactivate UI
+
+U -> UI : types requested data
+activate UI
+
+end
+end
+
+UI -> CTRL : getThermalResistance(topWall, leftWall, rightWall, bottomWall,\n\t containerLength, containerWidth, containerHeight)
+activate CTRL
+
+CTRL -> RC : rc = new RefrigeratedContainer(topWall, leftWall, rightWall, bottomWall)
+activate RC
+CTRL -> RC : rc.setMeasures(containerLength, containerWidth, containerHeight)
+
+RC - -> CTRL : result = rc.toString()
+deactivate RC
+
+deactivate CTRL
+
+UI - -> U : returns the the thermal resistance the container
+
+deactivate UI
+deactivate U
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

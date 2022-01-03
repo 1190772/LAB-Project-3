@@ -145,7 +145,8 @@ create table Warehouse(
     country_code	          char(2),
     latitude		    	  number(12,9),
     longitude		    	  number(12,9),
-    capacity                  integer
+    capacity                  integer,
+    id_port			          char(6)
 );
 
 create table Client(
