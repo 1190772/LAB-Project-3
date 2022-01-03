@@ -35,4 +35,11 @@ public class Utils {
         return r * c;
     }
 
+    public static double thermalResistance(double thickness, double k, double area) {
+        return thickness/(k*area);
+    }
+
+    public static double thermalFlux(double thermalVariation, double resistance) {
+        return (double) Math.round((thermalVariation/resistance)*100)/100;
+    }
 }

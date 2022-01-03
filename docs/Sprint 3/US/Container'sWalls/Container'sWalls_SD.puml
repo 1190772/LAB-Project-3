@@ -32,7 +32,7 @@ activate UI
 end
 end
 
-UI -> CTRL : getThermalResistance(topWall, leftWall, rightWall, bottomWall,\n\t containerLength, containerWidth, containerHeight)
+UI -> CTRL : getDetails(topWall, leftWall, rightWall, bottomWall,\n\t containerLength, containerWidth, containerHeight)
 activate CTRL
 
 CTRL -> RC : rc = new RefrigeratedContainer(topWall, leftWall, rightWall, bottomWall)
