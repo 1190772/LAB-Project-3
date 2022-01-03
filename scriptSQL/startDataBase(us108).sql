@@ -180,6 +180,7 @@ create table Cargo_Manifest(
 );
 
 
+
 create table Unloading_Cargo_Manifest(
     id_cargo_manifest         integer,
     id_container              char(11),

@@ -1,0 +1,33 @@
+create or replace trigger Valida_CM
+before insert or update
+on Cargo_Manifest
+for each row
+
+Declare
+var_qtd_containers integer;
+var_ship_capacity integer;
+ERROR_found exception;
+
+Begin
+
+select (Cargo_Manifest.id_container)
+into var_qtd_containers
+from Cargo_Manifest
+where Cargo_Manifest.id_cargo_manifest = :new.id_cargo_manifest;
+
+select Ship.capacity_ship
+into var_ship_capacity
+from Ship, Cargo_Manifest, Trip
+where Ship.imo_code = Trip.ship_imo
+And Cargo_Manifest.id_trip = Trip.id_trip
+And Cargo_Manifest.id_cargo_manifest = :new.id_cargo_manifest;
+
+if var_qtd_containers > var_ship_capacity then
+ Raise ERROR_found;
+end if;
+
+Exception
+ When ERROR_found then
+ raise_application_error(-20111,'You have reached the ship capacity');
+
+End Valida_CM;
