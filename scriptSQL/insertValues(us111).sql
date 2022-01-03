@@ -251,19 +251,19 @@ INSERT INTO Warehouse VALUES (11224, 'Cruz warehouse'  , 'IN', 26.97284 , 26.972
 -- ** tabela trip **
 
 INSERT INTO Trip VALUES (1231,'IMO1234567',null,'PT345', 'ES456',null, null, timestamp '2020-01-01 02:02:11',timestamp '2020-03-03 02:02:11');
-INSERT INTO Trip VALUES (1232,'IMO1212121',null, 'AN345',  null  ,11221,null ,timestamp '2020-02-12 03:13:22', timestamp '2021-03-02 02:36:33');
-INSERT INTO Trip VALUES (1233,'IMO2121212',null, 'IN233',  null  ,11222,null ,timestamp '2021-11-23 11:24:33', timestamp '2022-04-02 03:36:33');
-INSERT INTO Trip VALUES (1234,'IMO2222222',null, 'ES456',  null  ,11223,null ,timestamp '2021-06-20 19:35:33', timestamp '2022-05-02 04:36:33');
+INSERT INTO Trip VALUES (1232,'IMO1212121',null, 'AN345',  null ,null  ,11221,timestamp '2020-02-12 03:13:22', timestamp '2021-03-02 02:36:33');
+INSERT INTO Trip VALUES (1233,'IMO2121212',null, 'IN233',  null ,null  ,11222,timestamp '2021-11-23 11:24:33', timestamp '2022-04-02 03:36:33');
+INSERT INTO Trip VALUES (1234,'IMO2222222',null, 'ES456',  null ,null  ,11223,timestamp '2021-06-20 19:35:33', timestamp '2022-05-02 04:36:33');
 INSERT INTO Trip VALUES (1235,'IMO1111111',null,    null, 'AN345',11224,null ,timestamp '2021-05-18 19:35:33', timestamp '2022-06-02 05:36:33');
-INSERT INTO Trip VALUES (1236,'IMO1111111',null,    null, 'IN233',null ,11221, timestamp '2021-04-25 19:35:33', timestamp '2021-05-02 06:36:33');
-INSERT INTO Trip VALUES (1237,'IMO4444444',null,    null, 'ES456',null ,11222, timestamp '2021-03-13 19:35:33', timestamp '2021-04-22 07:36:33');
-INSERT INTO Trip VALUES (1238,'IMO5555555',null,    null, 'PT345',null ,11223, timestamp '2021-09-01 19:35:33', timestamp '2021-10-12 08:36:33');
-INSERT INTO Trip VALUES (1239,'IMO6666666',null,    null, 'IN233',null ,11224, timestamp '2021-08-20 19:35:33', timestamp '2021-09-22 09:36:33');
-INSERT INTO Trip VALUES (1240,'IMO6666666',12345,'IN233',    null,11224, null, timestamp '2020-01-01 02:02:11',timestamp '2020-03-03 02:02:11');
+INSERT INTO Trip VALUES (1236,'IMO1111111',null,    null, 'IN233',11221,null , timestamp '2021-04-25 19:35:33', timestamp '2021-05-02 06:36:33');
+INSERT INTO Trip VALUES (1237,'IMO4444444',null,    null, 'ES456',11222,null , timestamp '2021-03-13 19:35:33', timestamp '2021-04-22 07:36:33');
+INSERT INTO Trip VALUES (1238,'IMO5555555',null,    null, 'PT345',11223,null , timestamp '2021-09-01 19:35:33', timestamp '2021-10-12 08:36:33');
+INSERT INTO Trip VALUES (1239,'IMO6666666',null,    null, 'IN233',11224,null , timestamp '2021-08-20 19:35:33', timestamp '2021-09-22 09:36:33');
+INSERT INTO Trip VALUES (1240,'IMO6666666',12345,'IN233',    null,null ,11224, timestamp '2020-01-01 02:02:11',timestamp '2020-03-03 02:02:11');
 
-INSERT INTO Trip VALUES (2235,'IMO6666666',12345,'PT345', null, null, 11221, timestamp '2021-02-08 19:35:33', timestamp '2021-03-01 06:13:23');
-INSERT INTO Trip VALUES (2236,'IMO5555555',12346,'AN345', null, null, 11222, timestamp '2021-03-15 19:35:33', timestamp '2021-04-22 07:26:13');
-INSERT INTO Trip VALUES (2237,'IMO5555555',12347,'IN233', null, null, 11223, timestamp '2021-04-23 19:35:33', timestamp '2022-04-22 08:26:13');
+INSERT INTO Trip VALUES (2235,'IMO6666666',null,'PT345', null, null, 11221, timestamp '2021-02-08 19:35:33', timestamp '2021-03-01 06:13:23');
+INSERT INTO Trip VALUES (2236,'IMO5555555',null,'AN345', null, null, 11222, timestamp '2021-03-15 19:35:33', timestamp '2021-04-22 07:26:13');
+INSERT INTO Trip VALUES (2237,'IMO5555555',null,'IN233', null, null, 11223, timestamp '2021-04-23 19:35:33', timestamp '2022-04-22 08:26:13');
 INSERT INTO Trip VALUES (2238,'IMO6161616',null, 'PT345',null, null,11221, timestamp '2020-05-21 19:35:33', timestamp '2022-05-22 08:26:13');
 INSERT INTO Trip VALUES (2239,'IMO6262626',null, 'IN233',null, null,11222, timestamp '2020-06-10 19:35:33', timestamp '2022-06-22 08:26:13');
 
