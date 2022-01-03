@@ -8,7 +8,7 @@ actor "Client" as C
 participant ":ContainersRouteUI" as UI
 participant ":ContainersRouteController" as CTRL
 participant ":DatabaseFunctions" as DBF
-participant ":ContainersRoute" as CR
+Database Database as DB
 
 activate C
 C -> UI : asks for container's route
@@ -31,9 +31,9 @@ activate DBF
 
 loop while Unloading Cargo Manifest does not have a line relative to the container
 
-    DBF --> CR : list.add(new ContainersRoute(startingPoint, endingPoint,\n startingDateTime, endingDateTime, tranCort))
-    activate CR
-    deactivate CR
+    DBF --> DB : list.add(startingPoint, endingPoint,\n startingDateTime, endingDateTime, tranCort)
+    activate DB
+    deactivate DB
 end
 
 "UI" --> C : shows container's route and other details

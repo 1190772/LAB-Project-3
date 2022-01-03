@@ -16,11 +16,11 @@ import java.util.logging.Logger;
 
 public class DatabaseFunctions {
 
-    private static ResultSet getResultSetFromSysRefCursor(DatabaseConnection databaseConnection, String function, String colummsForTable) throws SQLException {
+    private static ResultSet getResultSetFromSysRefCursor(DatabaseConnection databaseConnection, String function, String columnsForTable) throws SQLException {
         Connection connection = databaseConnection.getConnection();
         SQL sql = App.getInstance().getSql();
         ResultSet result;
-        String sqlCommand = "create table result(" + colummsForTable + ")";
+        String sqlCommand = "create table result(" + columnsForTable + ")";
         sql.executeLine(sqlCommand);
 
         sqlCommand = "declare\n" +

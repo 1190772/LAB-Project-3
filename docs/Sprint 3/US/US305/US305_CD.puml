@@ -6,28 +6,18 @@ class ContainersRoutesUI {
 }
 
 class ContainersRoutesController {
-- ContainersRouteStoreDb
 + getContainersRoutes(userID, containerID)
 }
 
-class ContainersRouteStoreDb {
-+ getContainersRoutes(userID, containerID)
+class DatabaseFunctions {
++ getContainersRoutes(databaseConnection, userID, containerID)
+- loadFunction(filename)
+- getResultSetFromSysRefCursor(databaseConnection, function, columnsForTable) throws SQLException
 }
 
-class ContainersRoute {
-- startingPoint
-- endingPoint
-- startingDateTime
-- endingDateTime
-- transport
 
-+ ContainersRoute(startingPoint, endingPoint,\n startingDateTime, endingDateTime, transport)
-+ toString()
-}
 
 ContainersRoutesController <.. ContainersRoutesUI
-ContainersRouteStoreDb <.. ContainersRoutesController
-ContainersRoute <-- ContainersRouteStoreDb
-ContainersRoute <.. ContainersRoutesUI
+DatabaseFunctions <.. ContainersRoutesController
 
 @enduml
