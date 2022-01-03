@@ -6,7 +6,6 @@ import lapr.project.model.shared.Utils;
 import lapr.project.utils.AVL;
 import lapr.project.utils.DatabaseConnection;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;

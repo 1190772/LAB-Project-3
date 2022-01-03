@@ -1,0 +1,59 @@
+.section .data
+
+.global x
+.global y
+.global z
+
+.global pos_ptr
+.global N_POS
+
+.section .text
+	.global checkContainer
+    .global occupied_slots
+
+#unsigned int occupied_slots()
+occupied_slots:
+
+pushq %rbx
+
+movq pos_ptr(%rip), %rsi # place pos_ptr in rsi
+movl N_POS(%rip), %edi # place N_POS in edi
+movl $100, %ecx # initialize divisor      
+movl $0, %ebx # initialize occupied slots to 0
+
+my_loop:
+    cmpl $0, %edi #check if all positions have been checked
+    je end
+
+    movl (%rsi), %eax # move current position to eax
+    movl $0, %edx
+    idivl %ecx # divide current position by 100
+    movl %edx, z(%rip) # move remainder to z
+    movl $0, %edx
+    idivl %ecx # divide by 100 again
+    movl %edx, y(%rip) # move remainder to y
+    movl %eax, x(%rip)
+
+    pushq %rsi
+    pushq %rdi
+    pushq %rcx
+    call checkContainer
+    popq %rcx
+    popq %rdi
+    popq %rsi
+    
+    cmpb $0, %al # check if empty
+    je next
+    
+    incl %ebx # Increments number of occupied slots
+
+next:
+    addq $4, %rsi # Incrementing the pointer address
+    decl %edi # decrement the position counter
+    jmp my_loop
+
+end:
+    movl %ebx, %eax
+    popq %rbx
+    ret
+    

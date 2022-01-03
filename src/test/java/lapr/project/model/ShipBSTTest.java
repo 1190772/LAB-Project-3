@@ -138,17 +138,24 @@ class ShipBSTTest {
         ArrayList<Ship> ships = new ArrayList<>();
         ArrayList<ShipPosition> positions1 = new ArrayList<>();
         ArrayList<ShipPosition> positions2 = new ArrayList<>();
+        Ship ship1 = new Ship("210950000","name1","IMO3284563",10,70,"C4SQ2",60,166,25,100,(float) 9.5);
+        Ship ship2 = new Ship("212180000","name2","IMO3456073",10,70,"5BBA4",60,166,25,100,(float) 9.5);
+        ShipPosition position1 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 0), 42.97800,-66.96500,12.9,13.1,355, 'B', 0);
+        ShipPosition position2 = new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 50.97890,-50.97010,12.9,13.1,355, 'B', 0);
 
-        ships.add(new Ship("210950000","name1","IMO3284563",10,70,"C4SQ2",60,166,25,100,(float) 9.5));
-        ships.add(new Ship("212180000","name2","IMO3456073",10,70,"5BBA4",60,166,25,100,(float) 9.5));
+        ships.add(ship1);
+        ships.add(ship2);
 
-        positions1.add(new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 0), 42.97800,-66.96500,12.9,13.1,355, 'B', 0));
-        positions2.add(new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 50.97890,-50.97010,12.9,13.1,355, 'B', 0));
+        positions1.add(position1);
+        positions2.add(position2);
 
         when(shipStoreDb.getAllShips()).thenReturn(ships);
         when(shipStoreDb.getShipPostions("IMO3284563")).thenReturn(positions1);
         when(shipStoreDb.getShipPostions("IMO3456073")).thenReturn(positions2);
         Assertions.assertTrue(shipBST.loadShipsFromDatabase());
+        Assertions.assertEquals(ship2, shipBST.findShip("IMO3456073"));
+        Assertions.assertEquals(position1, shipBST.findShip("IMO3284563").getPositions(LocalDateTime.of(2020, 12, 31, 0, 0), LocalDateTime.of(2020, 12, 31, 20, 0)).get(0));
+        Assertions.assertEquals(position2, shipBST.findShip("IMO3456073").getPositions(LocalDateTime.of(2020, 12, 31, 0, 0), LocalDateTime.of(2020, 12, 31, 20, 0)).get(0));
 
         when(shipStoreDb.getAllShips()).thenThrow(new SQLException());
         Assertions.assertFalse(shipBST.loadShipsFromDatabase());
