@@ -14,9 +14,9 @@ public class BorderStore {
     private ArrayList<Border> borders;
     private final BorderStoreDb bordersDb;
 
-    public BorderStore() {
+    public BorderStore(BorderStoreDb borderStoreDb) {
         borders = new ArrayList<>();
-        bordersDb = new BorderStoreDb();
+        bordersDb = borderStoreDb;
     }
 
     public void saveBordersToDb() {
@@ -26,17 +26,16 @@ public class BorderStore {
         }
     }
 
-    public boolean refresh(){
-        boolean returnValue = true;
+    public boolean refresh() {
+        boolean success = true;
 
         try {
             borders = (ArrayList<Border>) bordersDb.getAllBorders(App.getInstance().getCompany().getCountryStore().getCountries());
         } catch (SQLException e) {
-            e.printStackTrace();
-            returnValue = false;
+            success = false;
         }
 
-        return returnValue;
+        return success;
     }
 
     public List<Border> getBorders() { return new ArrayList<>(borders); }

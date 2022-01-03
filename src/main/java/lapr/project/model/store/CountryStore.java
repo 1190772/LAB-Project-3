@@ -14,9 +14,9 @@ public class CountryStore {
     private ArrayList<Country> countries;
     private final CountryStoreDb countriesDb;
 
-    public CountryStore() {
+    public CountryStore(CountryStoreDb countryStoreDb) {
         countries = new ArrayList<>();
-        countriesDb = new CountryStoreDb();
+        this.countriesDb = countryStoreDb;
     }
 
     public Country getCountryByName(String countryName) {
@@ -51,16 +51,15 @@ public class CountryStore {
     }
 
     public boolean refresh() {
-        boolean returnValue = true;
+        boolean success = true;
 
         try {
             countries = (ArrayList<Country>) countriesDb.getAllCountries();
         } catch (SQLException e) {
-            e.printStackTrace();
-            returnValue = false;
+            success = false;
         }
 
-        return returnValue;
+        return success;
     }
 
     public List<Country> getCountries() { return new ArrayList<>(countries); }
