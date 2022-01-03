@@ -85,6 +85,7 @@ public class RefrigeratedContainer {
     }
 
     private String getResistance() {
+        String resistanceUnit = "K/W\n";
         StringBuilder result = new StringBuilder();
         double resistance = 0;
         double area = width * length;
@@ -92,33 +93,33 @@ public class RefrigeratedContainer {
         result.append("Top Wall: ");
         for (Pair<WallMaterial, Double> pair : topWall)
             resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        String RESISTANCE_UNIT = "K/W\n";
-        result.append(resistance).append(RESISTANCE_UNIT);
+        result.append(resistance).append(resistanceUnit);
 
         resistance = 0;
         area = height * length;
         result.append("Left Wall: ");
         for (Pair<WallMaterial, Double> pair : leftWall)
             resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(resistance).append(RESISTANCE_UNIT);
+        result.append(resistance).append(resistanceUnit);
 
         resistance = 0;
         result.append("Right Wall: ");
         for (Pair<WallMaterial, Double> pair : rightWall)
             resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(resistance).append(RESISTANCE_UNIT);
+        result.append(resistance).append(resistanceUnit);
 
         resistance = 0;
         area = width * length;
         result.append("Bottom Wall: ");
         for (Pair<WallMaterial, Double> pair : bottomWall)
             resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(resistance).append(RESISTANCE_UNIT);
+        result.append(resistance).append(resistanceUnit);
 
         return result.toString();
     }
 
     private String getThermalFlux() {
+        String thermalFluxUnit = "W/m^2\n";
         StringBuilder result = new StringBuilder();
         double resistance = 0;
         double area = width * length;
@@ -126,28 +127,27 @@ public class RefrigeratedContainer {
         result.append("Top Wall: ");
         for (Pair<WallMaterial, Double> pair : topWall)
             resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        String THERMAL_FLUX_UNIT = "W/m^2\n";
-        result.append(thermalFlux(thermalVariation, resistance)).append(THERMAL_FLUX_UNIT);
+        result.append(thermalFlux(thermalVariation, resistance)).append(thermalFluxUnit);
 
         resistance = 0;
         area = height * length;
         result.append("Left Wall: ");
         for (Pair<WallMaterial, Double> pair : leftWall)
             resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(thermalFlux(thermalVariation, resistance)).append(THERMAL_FLUX_UNIT);
+        result.append(thermalFlux(thermalVariation, resistance)).append(thermalFluxUnit);
 
         resistance = 0;
         result.append("Right Wall: ");
         for (Pair<WallMaterial, Double> pair : rightWall)
             resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(thermalFlux(thermalVariation, resistance)).append(THERMAL_FLUX_UNIT);
+        result.append(thermalFlux(thermalVariation, resistance)).append(thermalFluxUnit);
 
         resistance = 0;
         area = width * length;
         result.append("Bottom Wall: ");
         for (Pair<WallMaterial, Double> pair : bottomWall)
             resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(thermalFlux(thermalVariation, resistance)).append(THERMAL_FLUX_UNIT);
+        result.append(thermalFlux(thermalVariation, resistance)).append(thermalFluxUnit);
 
         return result.toString();
     }

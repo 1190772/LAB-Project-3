@@ -1,12 +1,15 @@
 package lapr.project.model.store;
 
+import lapr.project.data.BorderStoreDb;
 import lapr.project.model.Border;
 import lapr.project.model.Country;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
+import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -26,7 +29,7 @@ class BorderStoreTest {
 
     @Test
     void addBorderGetBorders() {
-        BorderStore borderStore = new BorderStore();
+        BorderStore borderStore = new BorderStore(null);
 
         borderStore.addBorder(border1);
         borderStore.addBorder(border2);
@@ -35,11 +38,15 @@ class BorderStoreTest {
     }
 
     @Test
-    void refresh() {
-        BorderStore borderStore = mock(BorderStore.class);
+    void refresh() throws SQLException {
+        BorderStoreDb borderStoreDb = mock(BorderStoreDb.class);
+        BorderStore borderStore = new BorderStore(borderStoreDb);
 
-        when(borderStore.refresh()).thenReturn(true);
+        when(borderStoreDb.getAllBorders(anyList())).thenReturn(borders);
+        borderStore.refresh();
+        Assertions.assertEquals(borders, borderStore.getBorders());
 
-        Assertions.assertTrue(borderStore.refresh());
+        when(borderStoreDb.getAllBorders(anyList())).thenThrow(new SQLException());
+        Assertions.assertFalse(borderStore.refresh());
     }
 }

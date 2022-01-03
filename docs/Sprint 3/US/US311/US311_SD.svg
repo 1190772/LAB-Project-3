@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="486px" preserveAspectRatio="none" style="width:1156px;height:486px;" version="1.1" viewBox="0 0 1156 486" width="1156px" zoomAndPan="magnify"><defs><filter height="300%" id="f28a7n7b1wu61" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="283.1641" style="stroke:#A80036;stroke-width:1.0;" width="10" x="19" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="339" y="138.3125"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="183.7578" style="stroke:#A80036;stroke-width:1.0;" width="10" x="339" y="199.0156"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="153.4063" style="stroke:#A80036;stroke-width:1.0;" width="10" x="542" y="229.3672"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="123.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="793" y="259.7188"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="1074" y="315.4219"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="78.7031" style="stroke:#000000;stroke-width:2.0;" width="427" x="715.5" y="274.7188"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="24" x2="24" y1="89.6094" y2="400.7734"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="344" x2="344" y1="89.6094" y2="400.7734"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="547" x2="547" y1="89.6094" y2="400.7734"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="797.5" x2="797.5" y1="89.6094" y2="400.7734"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1078.5" x2="1078.5" y1="89.6094" y2="400.7734"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="5" y="86.5332">Crew</text><ellipse cx="24" cy="15" fill="#FEFECE" filter="url(#f28a7n7b1wu61)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M24,23 L24,50 M11,31 L37,31 M24,50 L11,65 M24,50 L37,65 " fill="none" filter="url(#f28a7n7b1wu61)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="5" y="414.3066">Crew</text><ellipse cx="24" cy="427.3828" fill="#FEFECE" filter="url(#f28a7n7b1wu61)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M24,435.3828 L24,462.3828 M11,443.3828 L37,443.3828 M24,462.3828 L11,477.3828 M24,462.3828 L37,477.3828 " fill="none" filter="url(#f28a7n7b1wu61)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#f28a7n7b1wu61)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="62" x="311" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="318" y="74.5332">:CrewUI</text><rect fill="#FEFECE" filter="url(#f28a7n7b1wu61)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="62" x="311" y="399.7734"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="318" y="421.3066">:CrewUI</text><rect fill="#FEFECE" filter="url(#f28a7n7b1wu61)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="112" x="489" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="496" y="74.5332">:CrewController</text><rect fill="#FEFECE" filter="url(#f28a7n7b1wu61)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="112" x="489" y="399.7734"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="496" y="421.3066">:CrewController</text><rect fill="#FEFECE" filter="url(#f28a7n7b1wu61)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="141" x="725.5" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="732.5" y="74.5332">:DatabaseFunctions</text><rect fill="#FEFECE" filter="url(#f28a7n7b1wu61)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="141" x="725.5" y="399.7734"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="732.5" y="421.3066">:DatabaseFunctions</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="1045.5" y="86.5332">Database</text><path d="M1061,36 C1061,26 1079,26 1079,26 C1079,26 1097,26 1097,36 L1097,62 C1097,72 1079,72 1079,72 C1079,72 1061,72 1061,62 L1061,36 " fill="#FEFECE" filter="url(#f28a7n7b1wu61)" style="stroke:#000000;stroke-width:1.5;"/><path d="M1061,36 C1061,46 1079,46 1079,46 C1079,46 1097,46 1097,36 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="1045.5" y="414.3066">Database</text><path d="M1061,427.3828 C1061,417.3828 1079,417.3828 1079,417.3828 C1079,417.3828 1097,417.3828 1097,427.3828 L1097,453.3828 C1097,463.3828 1079,463.3828 1079,463.3828 C1079,463.3828 1061,463.3828 1061,453.3828 L1061,427.3828 " fill="#FEFECE" filter="url(#f28a7n7b1wu61)" style="stroke:#000000;stroke-width:1.5;"/><path d="M1061,427.3828 C1061,437.3828 1079,437.3828 1079,437.3828 C1079,437.3828 1097,437.3828 1097,427.3828 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="283.1641" style="stroke:#A80036;stroke-width:1.0;" width="10" x="19" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="339" y="138.3125"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="183.7578" style="stroke:#A80036;stroke-width:1.0;" width="10" x="339" y="199.0156"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="153.4063" style="stroke:#A80036;stroke-width:1.0;" width="10" x="542" y="229.3672"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="123.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="793" y="259.7188"/><rect fill="#FFFFFF" filter="url(#f28a7n7b1wu61)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="1074" y="315.4219"/><polygon fill="#A80036" points="327,134.3125,337,138.3125,327,142.3125,331,138.3125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="29" x2="333" y1="138.3125" y2="138.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="36" y="125.2803">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="280" x="47" y="117.1045">asks for a list of containers, and respective data,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="121" x="51" y="133.4561">loaded on to the ship</text><polygon fill="#A80036" points="40,164.6641,30,168.6641,40,172.6641,36,168.6641" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="34" x2="343" y1="168.6641" y2="168.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="46" y="163.8076">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="57" y="163.8076">requests data (shipID)</text><polygon fill="#A80036" points="327,195.0156,337,199.0156,327,203.0156,331,199.0156" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="29" x2="333" y1="199.0156" y2="199.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="36" y="194.1592">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="47" y="194.1592">types requested data</text><polygon fill="#A80036" points="530,225.3672,540,229.3672,530,233.3672,534,229.3672" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="349" x2="536" y1="229.3672" y2="229.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="356" y="224.5107">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="163" x="367" y="224.5107">getContainersOfShip(shipID)</text><polygon fill="#A80036" points="781,255.7188,791,259.7188,781,263.7188,785,259.7188" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="552" x2="787" y1="259.7188" y2="259.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="559" y="254.8623">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="211" x="570" y="254.8623">result = getContainersOfShip(shipID)</text><path d="M715.5,274.7188 L788.5,274.7188 L788.5,282.7188 L778.5,292.7188 L715.5,292.7188 L715.5,274.7188 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="78.7031" style="stroke:#000000;stroke-width:2.0;" width="427" x="715.5" y="274.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="730.5" y="289.2139">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="334" x="803.5" y="288.1377">[for each container in the current cargo manifest of the ship]</text><polygon fill="#A80036" points="1062,311.4219,1072,315.4219,1062,319.4219,1066,315.4219" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="803" x2="1068" y1="315.4219" y2="315.4219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="810" y="310.5654">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="241" x="821" y="310.5654">list.add(containerID, type, position, cargo)</text><polygon fill="#A80036" points="35,378.7734,25,382.7734,35,386.7734,31,382.7734" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="29" x2="343" y1="382.7734" y2="382.7734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="41" y="377.917">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="236" x="52" y="377.917">shows container's route and other details</text><!--MD5=[2e899f0c838e44d2aa9506ec0642692a]
+@startuml
+'https://plantuml.com/class-diagram
+
+autonumber
+
+actor "Crew" as C
+
+participant ":CrewUI" as UI
+participant ":CrewController" as CTRL
+participant ":DatabaseFunctions" as DBF
+Database Database as DB
+
+activate C
+C -> UI : asks for a list of containers, and respective data,\n loaded on to the ship
+
+activate UI
+UI - -> C : requests data (shipID)
+deactivate UI
+
+C -> UI : types requested data
+activate UI
+
+
+
+UI -> CTRL : getContainersOfShip(shipID)
+
+activate CTRL
+
+CTRL -> DBF : result = getContainersOfShip(shipID)
+activate DBF
+
+loop for each container in the current cargo manifest of the ship
+
+    DBF - -> DB : list.add(containerID, type, position, cargo)
+    activate DB
+    deactivate DB
+end
+
+"UI" - -> C : shows container's route and other details
+
+deactivate DBF
+deactivate CTRL
+deactivate UI
+deactivate C
+
+@enduml
+
+@startuml
+
+autonumber
+
+actor "Crew" as C
+
+participant ":CrewUI" as UI
+participant ":CrewController" as CTRL
+participant ":DatabaseFunctions" as DBF
+Database Database as DB
+
+activate C
+C -> UI : asks for a list of containers, and respective data,\n loaded on to the ship
+
+activate UI
+UI - -> C : requests data (shipID)
+deactivate UI
+
+C -> UI : types requested data
+activate UI
+
+
+
+UI -> CTRL : getContainersOfShip(shipID)
+
+activate CTRL
+
+CTRL -> DBF : result = getContainersOfShip(shipID)
+activate DBF
+
+loop for each container in the current cargo manifest of the ship
+
+    DBF - -> DB : list.add(containerID, type, position, cargo)
+    activate DB
+    deactivate DB
+end
+
+"UI" - -> C : shows container's route and other details
+
+deactivate DBF
+deactivate CTRL
+deactivate UI
+deactivate C
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

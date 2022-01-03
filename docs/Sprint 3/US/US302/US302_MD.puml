@@ -20,11 +20,6 @@ class Port {
 -PortStaff
 }
 
-class SeaDistance {
--Port1
--Port2
--Distance
-}
 
 class Country {
 -Continent
@@ -45,5 +40,4 @@ class Border {
 Company "1" -- "1..*" Port : Owns >
 Company "1" -- "*" Country : knows >
 Country "1" -- "*" Border : has >
-Port "1" -- "1..*" SeaDistance : has >
 @enduml

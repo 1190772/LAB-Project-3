@@ -5,10 +5,10 @@ autonumber
 
 actor "Crew" as C
 
-participant ":ContainersRouteUI" as UI
-participant ":ContainersRouteController" as CTRL
+participant ":CrewUI" as UI
+participant ":CrewController" as CTRL
 participant ":DatabaseFunctions" as DBF
-participant ":ContainersRoute" as CR
+Database Database as DB
 
 activate C
 C -> UI : asks for a list of containers, and respective data,\n loaded on to the ship
@@ -29,11 +29,11 @@ activate CTRL
 CTRL -> DBF : result = getContainersOfShip(shipID)
 activate DBF
 
-loop while Unloading Cargo Manifest does not have a line relative to the container
+loop for each container in the current cargo manifest of the ship
 
-    DBF --> CR : list.add(new ContainersRoute(startingPoint, endingPoint,\n startingDateTime, endingDateTime, tranCort))
-    activate CR
-    deactivate CR
+    DBF --> DB : list.add(containerID, type, position, cargo)
+    activate DB
+    deactivate DB
 end
 
 "UI" --> C : shows container's route and other details

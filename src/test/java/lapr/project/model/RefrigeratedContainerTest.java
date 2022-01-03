@@ -91,6 +91,10 @@ public class RefrigeratedContainerTest {
         assertThrows(IllegalArgumentException.class, () -> refrigeratedContainer2 = new RefrigeratedContainer(wallType1, new ArrayList<>(), wallType2, wallType1, thermalVariation2), "List of Materials for the left wall cannot be empty!");
         assertThrows(IllegalArgumentException.class, () -> refrigeratedContainer2 = new RefrigeratedContainer(wallType1, wallType2, new ArrayList<>(), wallType1, thermalVariation2), "List of Materials for the right wall cannot be empty!");
         assertThrows(IllegalArgumentException.class, () -> refrigeratedContainer2 = new RefrigeratedContainer(wallType1, wallType2, wallType2, new ArrayList<>(), thermalVariation2), "List of Materials for the bottom wall cannot be empty!");
+
+        assertThrows(IllegalArgumentException.class, () -> refrigeratedContainer1.setLength(0), "Length cannot be less or equal to 0!");
+        assertThrows(IllegalArgumentException.class, () -> refrigeratedContainer1.setWidth(0), "Width cannot be less or equal to 0!");
+        assertThrows(IllegalArgumentException.class, () -> refrigeratedContainer1.setHeight(0), "Height cannot be less or equal to 0!");
     }
 
     @Test

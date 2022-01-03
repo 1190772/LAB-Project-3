@@ -1,9 +1,11 @@
 package lapr.project.model.store;
 
+import lapr.project.data.CountryStoreDb;
 import lapr.project.model.Country;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static org.mockito.Mockito.mock;
@@ -25,7 +27,7 @@ class CountryStoreTest {
 
     @Test
     void getCountryByName() {
-        CountryStore countryStore = new CountryStore();
+        CountryStore countryStore = new CountryStore(null);
 
         countryStore.addCountry(country1);
         countryStore.addCountry(country2);
@@ -36,7 +38,7 @@ class CountryStoreTest {
 
     @Test
     void getCountryByAlpha2code() {
-        CountryStore countryStore = new CountryStore();
+        CountryStore countryStore = new CountryStore(null);
 
         countryStore.addCountry(country1);
         countryStore.addCountry(country2);
@@ -47,7 +49,7 @@ class CountryStoreTest {
 
     @Test
     void addCountryGetCountries() {
-        CountryStore countryStore = new CountryStore();
+        CountryStore countryStore = new CountryStore(null);
 
         countryStore.addCountry(country1);
         countryStore.addCountry(country2);
@@ -56,11 +58,15 @@ class CountryStoreTest {
     }
 
     @Test
-    void refresh() {
-        CountryStore countryStore = mock(CountryStore.class);
+    void refresh() throws SQLException {
+        CountryStoreDb countryStoreDb = mock(CountryStoreDb.class);
+        CountryStore countryStore = new CountryStore(countryStoreDb);
 
-        when(countryStore.refresh()).thenReturn(true);
+        when(countryStoreDb.getAllCountries()).thenReturn(countries);
+        countryStore.refresh();
+        Assertions.assertEquals(countries, countryStore.getCountries());
 
-        Assertions.assertTrue(countryStore.refresh());
+        when(countryStoreDb.getAllCountries()).thenThrow(new SQLException());
+        Assertions.assertFalse(countryStore.refresh());
     }
 }
