@@ -1,9 +1,11 @@
 package lapr.project.model.store;
 
+import lapr.project.data.SeaDistanceStoreDb;
 import lapr.project.model.SeaDistance;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static org.mockito.Mockito.mock;
@@ -25,7 +27,7 @@ class SeaDistanceStoreTest {
 
     @Test
     void addSeaDistanceGetSeaDistances() {
-        SeaDistanceStore seaDistanceStore = new SeaDistanceStore();
+        SeaDistanceStore seaDistanceStore = new SeaDistanceStore(null);
 
         seaDistanceStore.addSeaDistance(seaDistance1);
         seaDistanceStore.addSeaDistance(seaDistance2);
@@ -34,11 +36,15 @@ class SeaDistanceStoreTest {
     }
 
     @Test
-    void refresh() {
-        SeaDistanceStore seaDistanceStore = mock(SeaDistanceStore.class);
+    void refresh() throws SQLException {
+        SeaDistanceStoreDb seaDistanceStoreDb = mock(SeaDistanceStoreDb.class);
+        SeaDistanceStore seaDistanceStore = new SeaDistanceStore(seaDistanceStoreDb);
 
-        when(seaDistanceStore.refresh()).thenReturn(true);
+        when(seaDistanceStoreDb.getAllSeaDistances()).thenReturn(seaDistances);
+        seaDistanceStore.refresh();
+        Assertions.assertEquals(seaDistances, seaDistanceStore.getSeadists());
 
-        Assertions.assertTrue(seaDistanceStore.refresh());
+        when(seaDistanceStoreDb.getAllSeaDistances()).thenThrow(new SQLException());
+        Assertions.assertFalse(seaDistanceStore.refresh());
     }
 }

@@ -14,9 +14,9 @@ public class SeaDistanceStore {
     private ArrayList<SeaDistance> seadists;
     private final SeaDistanceStoreDb seadistsDb;
 
-    public SeaDistanceStore() {
+    public SeaDistanceStore(SeaDistanceStoreDb seaDistanceStoreDb) {
         seadists = new ArrayList<>();
-        seadistsDb = new SeaDistanceStoreDb();
+        seadistsDb = seaDistanceStoreDb;
     }
 
     public void saveSeaDistancesToDb() {
@@ -27,16 +27,15 @@ public class SeaDistanceStore {
     }
 
     public boolean refresh() {
-        boolean returnValue = true;
+        boolean success = true;
 
         try {
             seadists = (ArrayList<SeaDistance>) seadistsDb.getAllSeaDistances();
         } catch (SQLException e) {
-            e.printStackTrace();
-            returnValue = false;
+            success = false;
         }
 
-        return returnValue;
+        return success;
     }
 
     public List<SeaDistance> getSeadists() { return new ArrayList<>(seadists); }
