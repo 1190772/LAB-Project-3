@@ -110,4 +110,36 @@ public class DatabaseFunctions {
 
         return result.toString();
     }
+
+    public static String getContainersOfShip(DatabaseConnection databaseConnection, String shipIMO) {
+        loadFunction("docs/Sprint 3/US/US311/US311Script.sql");
+
+        StringBuilder result  =new StringBuilder();
+        result.append("Ship: ").append(shipIMO).append("\n");
+        String function = "getContainersOfShip('"+ shipIMO +"')";
+        String columnsForTable = "id_container              char(11),\n" +
+                "    position_code             number(6,0),\n" +
+                "    cargo_weight              integer,\n" +
+                "    refrigeration_temperature number(3,1)";
+
+        try(ResultSet resultSet = getResultSetFromSysRefCursor(databaseConnection, function, columnsForTable)){
+            while (resultSet.next()){
+                result.append("id_container = ").append(resultSet.getString(1));
+                String aid = resultSet.getString(2);
+                if (aid==null)
+                    result.append(" This container is not refrigerated");
+                else
+                    result.append(" refrigeration_temperature = ").append(aid).append("ºC");
+                result.append(" position_code = ").append(resultSet.getString(3));
+                result.append(" cargo_weight = ").append(resultSet.getString(4)).append("\n");
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseFunctions.class.getName()).log(Level.SEVERE, null, ex);
+            databaseConnection.registerError(ex);
+        }
+
+
+        return result.toString();
+    }
 }
