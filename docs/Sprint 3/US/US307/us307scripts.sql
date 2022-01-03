@@ -1,3 +1,5 @@
+-- **primeira versão da us **
+
 CREATE OR REPLACE TRIGGER Accomodate_Manifest BEFORE INSERT OR UPDATE ON UNLOADING_CARGO_MANIFEST
                                                                    for each row
 
