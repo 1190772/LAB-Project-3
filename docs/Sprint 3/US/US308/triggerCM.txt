@@ -43,4 +43,4 @@ delete from Cargo_manifest where (id_cargo_manifest = 12199);
 
 select * from cargo_manifest;
 
--- Não insere o terceiro e o quarto porque a capacidade do ship é igual a 2 --
+-- Não insere o terceiro e o quart porque a capacidade do ship é 2 --
