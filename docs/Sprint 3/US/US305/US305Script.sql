@@ -35,3 +35,6 @@ BEGIN
 
 END;
 /
+
+--Test in java aplication
+--    System.out.println(DatabaseFunctions.getContainersRoute(App.getInstance().getSql().getDatabaseConnection(), "1884441", "BICJ4444445")); 2 stops
