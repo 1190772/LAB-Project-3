@@ -1,5 +1,6 @@
 package lapr.project.data;
 
+import lapr.project.controller.App;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipPosition;
 import lapr.project.utils.DatabaseConnection;
@@ -7,6 +8,7 @@ import lapr.project.utils.DatabaseConnection;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -231,20 +233,48 @@ public class ShipStoreDb implements Persistable{
         }
     }
 
-    public ResultSet getAllShips(DatabaseConnection databaseConnection) throws SQLException {
-        Connection connection = databaseConnection.getConnection();
+    public List<Ship> getAllShips() throws SQLException {
+        ArrayList<Ship> res = new ArrayList<>();
+        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Ship";
+
         try (PreparedStatement shipsPreparedStatement = connection.prepareStatement(sqlCommand)) {
-            return shipsPreparedStatement.executeQuery();
+            try (ResultSet shipsResultSet = shipsPreparedStatement.executeQuery()) {
+                while (shipsResultSet.next())
+                    res.add(new Ship(shipsResultSet.getString("mmsi_code"),
+                            shipsResultSet.getString("name_ship"),
+                            shipsResultSet.getString("imo_code"),
+                            shipsResultSet.getInt("number_generators"),
+                            shipsResultSet.getInt("power_out_generator"),
+                            shipsResultSet.getString("call_sign"),
+                            shipsResultSet.getInt("vessel_type"),
+                            shipsResultSet.getInt("length_ship"),
+                            shipsResultSet.getInt("width_ship"),
+                            shipsResultSet.getInt("capacity_ship"),
+                            shipsResultSet.getFloat("draft")));
+            }
         }
+        return res;
     }
 
-    public ResultSet getShipPostions(DatabaseConnection databaseConnection, String shipIMO) throws SQLException {
-        Connection connection = databaseConnection.getConnection();
+    public List<ShipPosition> getShipPostions(String shipIMO) throws SQLException {
+        ArrayList<ShipPosition> res = new ArrayList<>();
+        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Position_Ship where id_ship = ?";
+
         try (PreparedStatement positionsPreparedStatement = connection.prepareStatement(sqlCommand)) {
             positionsPreparedStatement.setString(1, shipIMO);
-            return positionsPreparedStatement.executeQuery();
+            try (ResultSet positionsResultSet = positionsPreparedStatement.executeQuery()) {
+                while (positionsResultSet.next())
+                    res.add(new ShipPosition(positionsResultSet.getTimestamp("base_date_time").toLocalDateTime(),
+                        positionsResultSet.getDouble("latitude"),
+                        positionsResultSet.getDouble("longitude"),
+                        positionsResultSet.getDouble("sog"),
+                        positionsResultSet.getDouble("cog"),
+                        positionsResultSet.getInt("heading"),
+                        positionsResultSet.getString("transceiver_class").charAt(0)));
+            }
         }
+        return res;
     }
 }

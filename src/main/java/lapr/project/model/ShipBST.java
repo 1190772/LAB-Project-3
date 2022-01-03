@@ -18,49 +18,29 @@ public class ShipBST extends AVL<Ship> {
 
     private final ShipStoreDb shipStoreDb;
 
-    public ShipBST() {
+    public ShipBST(ShipStoreDb shipStoreDb) {
         super();
-        shipStoreDb = new ShipStoreDb();
+        this.shipStoreDb = shipStoreDb;
     }
 
     public boolean loadShipsFromDatabase() {
-        boolean returnValue = true;
+        boolean success = true;
+        ArrayList<Ship> ships;
+        ArrayList<ShipPosition> positions;
 
         try {
-            DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
-            ResultSet ships = shipStoreDb.getAllShips(connection);
-            while (ships.next()) {
-                Ship ship = new Ship(ships.getString("mmsi_code"),
-                        ships.getString("name_ship"),
-                        ships.getString("imo_code"),
-                        ships.getInt("number_generators"),
-                        ships.getInt("power_out_generator"),
-                        ships.getString("call_sign"),
-                        ships.getInt("vessel_type"),
-                        ships.getInt("length_ship"),
-                        ships.getInt("width_ship"),
-                        ships.getInt("capacity_ship"),
-                        ships.getFloat("draft"));
+            ships = (ArrayList<Ship>) shipStoreDb.getAllShips();
+            for (Ship ship : ships) {
                 insert(ship);
-                ResultSet positions = shipStoreDb.getShipPostions(connection, ships.getString("imo_code"));
-                while (positions.next()) {
-                ship.addPosition(new ShipPosition(positions.getTimestamp("base_date_time").toLocalDateTime(),
-                        positions.getDouble("latitude"),
-                        positions.getDouble("longitude"),
-                        positions.getDouble("sog"),
-                        positions.getDouble("cog"),
-                        positions.getInt("heading"),
-                        positions.getString("transceiver_class").charAt(0)));
-                }
-                positions.close();
+                positions = (ArrayList<ShipPosition>) shipStoreDb.getShipPostions(ship.getIMO());
+                for (ShipPosition position : positions)
+                    ship.addPosition(position);
             }
-            ships.close();
         } catch (SQLException e) {
-            e.printStackTrace();
-            returnValue = false;
+            success = false;
         }
 
-        return returnValue;
+        return success;
     }
 
     public void saveShipsToDb() {

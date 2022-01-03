@@ -1,10 +1,12 @@
 package lapr.project.model;
 
+import lapr.project.data.PortStoreDb;
 import lapr.project.utils.TwoDTree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +20,7 @@ class Port2DTreeTest {
 
     @BeforeEach
     void setUp() {
-        port2DTree = new Port2DTree();
+        port2DTree = new Port2DTree(null);
         portList.add(new Port( "1", "Liverpool", null, 53.46666667,-3.033333333, 0));
         portList.add(new Port( "2", "Liverpool", null, 33.71666667,-118.2666667, 0));
         portList.add(new Port( "3", "Liverpool", null, 40.66666667,-74.16666667, 0));
@@ -49,11 +51,14 @@ class Port2DTreeTest {
     }
 
     @Test
-    void loadPortsFromDatabase() {
-        Port2DTree port2DTree = mock(Port2DTree.class);
+    void loadPortsFromDatabase() throws SQLException {
+        PortStoreDb portStoreDb = mock(PortStoreDb.class);
+        Port2DTree port2DTree = new Port2DTree(portStoreDb);
 
-        when(port2DTree.loadPortsFromDatabase()).thenReturn(true);
-
+        when(portStoreDb.getAllPorts()).thenReturn(portList);
         Assertions.assertTrue(port2DTree.loadPortsFromDatabase());
+
+        when(portStoreDb.getAllPorts()).thenThrow(new SQLException());
+        Assertions.assertFalse(port2DTree.loadPortsFromDatabase());
     }
 }

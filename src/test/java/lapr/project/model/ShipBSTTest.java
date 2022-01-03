@@ -1,8 +1,11 @@
 package lapr.project.model;
 
+import lapr.project.data.ShipStoreDb;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -20,7 +23,7 @@ class ShipBSTTest {
     Ship ship4;
 
     public ShipBSTTest() {
-        shipBST = new ShipBST();
+        shipBST = new ShipBST(null);
         ship1 = new Ship("210950000","name1","IMO9395044",10,70,"C4SQ2",60,166,25,100,(float) 9.5);
         ship2 = new Ship("212180000","name2","IMO9643544",10,70,"5BBA4",60,166,25,100,(float) 9.5);
         ship3 = new Ship("228339600","name3","IMO9450648",10,70,"FLSU",70,166,25,100,(float) 9.5);
@@ -129,12 +132,26 @@ class ShipBSTTest {
     }
 
     @Test
-    void loadShipsFromDatabase() {
-        ShipBST shipBST = mock(ShipBST.class);
+    void loadShipsFromDatabase() throws SQLException {
+        ShipStoreDb shipStoreDb = mock(ShipStoreDb.class);
+        ShipBST shipBST = new ShipBST(shipStoreDb);
+        ArrayList<Ship> ships = new ArrayList<>();
+        ArrayList<ShipPosition> positions1 = new ArrayList<>();
+        ArrayList<ShipPosition> positions2 = new ArrayList<>();
 
-        when(shipBST.loadShipsFromDatabase()).thenReturn(true);
+        ships.add(new Ship("210950000","name1","IMO3284563",10,70,"C4SQ2",60,166,25,100,(float) 9.5));
+        ships.add(new Ship("212180000","name2","IMO3456073",10,70,"5BBA4",60,166,25,100,(float) 9.5));
 
+        positions1.add(new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 0), 42.97800,-66.96500,12.9,13.1,355, 'B', 0));
+        positions2.add(new ShipPosition(LocalDateTime.of(2020, 12, 31, 17, 16), 50.97890,-50.97010,12.9,13.1,355, 'B', 0));
+
+        when(shipStoreDb.getAllShips()).thenReturn(ships);
+        when(shipStoreDb.getShipPostions("IMO3284563")).thenReturn(positions1);
+        when(shipStoreDb.getShipPostions("IMO3456073")).thenReturn(positions2);
         Assertions.assertTrue(shipBST.loadShipsFromDatabase());
+
+        when(shipStoreDb.getAllShips()).thenThrow(new SQLException());
+        Assertions.assertFalse(shipBST.loadShipsFromDatabase());
     }
 
 }

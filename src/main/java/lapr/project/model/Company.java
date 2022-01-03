@@ -1,8 +1,6 @@
 package lapr.project.model;
 
-import lapr.project.data.BorderStoreDb;
-import lapr.project.data.CountryStoreDb;
-import lapr.project.data.SeaDistanceStoreDb;
+import lapr.project.data.*;
 import lapr.project.model.store.BorderStore;
 import lapr.project.model.store.CountryStore;
 import lapr.project.model.store.SeaDistanceStore;
@@ -21,8 +19,8 @@ public class Company {
 
     public Company(String designation) {
         this.designation = designation;
-        shipBST = new ShipBST();
-        port2DTree = new Port2DTree();
+        shipBST = new ShipBST(new ShipStoreDb());
+        port2DTree = new Port2DTree(new PortStoreDb());
         this.authFacade = new AuthFacade();
         freightNetwork = null;
         borderStore = new BorderStore(new BorderStoreDb());
