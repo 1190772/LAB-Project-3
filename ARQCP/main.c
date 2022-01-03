@@ -58,6 +58,9 @@ int main(){
     printf("Position[10][07][05] = %s\n",&position_data[10][7][5][0]);
     printf("Position[10][10][12] = %s\n\n",&position_data[10][10][12][0]);
 
+    show_occupation();
+    show_checkContainer();
+    show_occupied_slots();
 
 
     return 0;
@@ -91,5 +94,5 @@ void show_occupied_slots() {
 	
 	res = occupied_slots();
 
-	printf("Número de espaços ocupados: %d\n", res);
+	printf("\noccupied_slots()\nNúmero de espaços ocupados: %u\n", res);
 }
