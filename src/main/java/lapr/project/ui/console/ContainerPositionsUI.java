@@ -18,16 +18,13 @@ public class ContainerPositionsUI implements Runnable {
     public void run() {
         int cargoManifestID;
         ArrayList<String> containerPositions;
-        FileWriter fileWriter;
 
         cargoManifestID = Utils.readIntegerFromConsole("Cargo Manifest ID: ");
         containerPositions = controller.getContainerPositions(cargoManifestID);
 
-        try {
-            fileWriter = new FileWriter("positions.txt", false);
+        try (FileWriter fileWriter = new FileWriter("positions.txt", false)) {
             for (String string : containerPositions)
                 fileWriter.write(string + "\n");
-            fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
