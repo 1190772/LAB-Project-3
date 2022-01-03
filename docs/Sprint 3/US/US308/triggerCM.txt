@@ -6,28 +6,41 @@ for each row
 Declare
 var_qtd_containers integer;
 var_ship_capacity integer;
-ERROR_found exception;
 
 Begin
 
-select (Cargo_Manifest.id_container)
+select Count(*)
 into var_qtd_containers
-from Cargo_Manifest
-where Cargo_Manifest.id_cargo_manifest = :new.id_cargo_manifest;
+from Cargo_Manifest;
+
+if var_qtd_containers <> 0 then
+
+select Count(*)
+into var_qtd_containers
+from Cargo_Manifest, Trip
+where Cargo_Manifest.id_trip = Trip.id_trip
+And Trip.id_trip = :new.id_trip;
 
 select Ship.capacity_ship
 into var_ship_capacity
-from Ship, Cargo_Manifest, Trip
+from Ship,Trip
 where Ship.imo_code = Trip.ship_imo
-And Cargo_Manifest.id_trip = Trip.id_trip
-And Cargo_Manifest.id_cargo_manifest = :new.id_cargo_manifest;
+And Trip.id_trip = :new.id_trip;
 
-if var_qtd_containers > var_ship_capacity then
- Raise ERROR_found;
+if var_qtd_containers >= var_ship_capacity then
+ raise_application_error(-20111,'You have reached the ship capacity');
+  end if;
 end if;
 
-Exception
- When ERROR_found then
- raise_application_error(-20111,'You have reached the ship capacity');
-
 End Valida_CM;
+/
+INSERT INTO Cargo_Manifest VALUES (12199,'ADIZ6666667' ,2239, 100705, 100000,-5, 1884445);
+INSERT INTO Cargo_Manifest VALUES (12199,'FILR7777778' ,2239, 100705, 100000,-5, 1884445);
+INSERT INTO Cargo_Manifest VALUES (12199,'BICR8888889' ,2239, 100705, 100000,-5, 1884445);
+INSERT INTO Cargo_Manifest VALUES (12199,'NIKJ1111116' ,2239, 100705, 100000,-5, 1884445);
+
+delete from Cargo_manifest where (id_cargo_manifest = 12199);
+
+select * from cargo_manifest;
+
+-- Não insere o terceiro e o quarto porque a capacidade do ship é igual a 2 --

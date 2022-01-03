@@ -239,3 +239,40 @@ BEGIN
     END IF;
 
 END;
+/
+create or replace trigger Valida_CM
+before insert or update
+on Cargo_Manifest
+for each row
+
+Declare
+var_qtd_containers integer;
+var_ship_capacity integer;
+
+Begin
+
+select Count(*)
+into var_qtd_containers
+from Cargo_Manifest;
+
+if var_qtd_containers <> 0 then
+
+select Count(*)
+into var_qtd_containers
+from Cargo_Manifest, Trip
+where Cargo_Manifest.id_trip = Trip.id_trip
+And Trip.id_trip = :new.id_trip;
+
+select Ship.capacity_ship
+into var_ship_capacity
+from Ship,Trip
+where Ship.imo_code = Trip.ship_imo
+And Trip.id_trip = :new.id_trip;
+
+if var_qtd_containers >= var_ship_capacity then
+ raise_application_error(-20111,'You have reached the ship capacity');
+  end if;
+end if;
+
+End Valida_CM;
+/
