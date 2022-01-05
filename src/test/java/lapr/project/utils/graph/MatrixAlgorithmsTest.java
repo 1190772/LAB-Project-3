@@ -62,15 +62,15 @@ class MatrixAlgorithmsTest {
      */
     @Test
     public void testBreadthFirstSearch() {
-        Assertions.assertNull(Algorithms.breadthFirstSearch(completeMap, "LX"), "Should be null if vertex does not exist");
+        Assertions.assertTrue(Algorithms.breadthFirstSearch(completeMap, "LX").isEmpty(), "Should be null if vertex does not exist");
 
-        LinkedList<String> path = Algorithms.breadthFirstSearch(incompleteMap, "Faro");
+        LinkedList<String> path = (LinkedList<String>) Algorithms.breadthFirstSearch(incompleteMap, "Faro");
 
         assertEquals(1, path.size(), "Should be just one");
 
         assertEquals("Faro", path.peekFirst());
 
-        path = Algorithms.breadthFirstSearch(incompleteMap, "Porto");
+        path = (LinkedList<String>) Algorithms.breadthFirstSearch(incompleteMap, "Porto");
         assertEquals(7, path.size(), "Should give seven vertices");
 
         assertEquals("Porto", path.removeFirst(), "BreathFirst Porto");
@@ -84,7 +84,7 @@ class MatrixAlgorithmsTest {
         expected = new LinkedList<>(Arrays.asList("Lisboa"));
         checkContentEquals(expected, path.subList(5, 6), "BreathFirst Porto");
 
-        path = Algorithms.breadthFirstSearch(incompleteMap, "Viseu");
+        path = (LinkedList<String>) Algorithms.breadthFirstSearch(incompleteMap, "Viseu");
         expected = new LinkedList<>(Arrays.asList("Viseu", "Guarda", "Castelo Branco"));
         assertEquals(expected, path, "BreathFirst Viseu");
     }
@@ -94,20 +94,20 @@ class MatrixAlgorithmsTest {
      */
     @Test
     public void testDepthFirstSearch() {
-        assertNull(Algorithms.depthFirstSearch(completeMap, "LX"), "Should be null if vertex does not exist");
+        assertTrue(Algorithms.depthFirstSearch(completeMap, "LX").isEmpty(), "Should be null if vertex does not exist");
 
-        LinkedList<String> path = Algorithms.depthFirstSearch(incompleteMap, "Faro");
+        LinkedList<String> path = (LinkedList<String>) Algorithms.depthFirstSearch(incompleteMap, "Faro");
         assertEquals(1, path.size(), "Should be just one");
 
         assertEquals("Faro", path.peekFirst());
 
-        path = Algorithms.breadthFirstSearch(incompleteMap, "Porto");
+        path = (LinkedList<String>) Algorithms.breadthFirstSearch(incompleteMap, "Porto");
         assertEquals(7, path.size(), "Should give seven vertices");
 
         assertEquals("Porto", path.removeFirst(), "DepthFirst Porto");
         assertTrue(new LinkedList<>(Arrays.asList("Aveiro", "Braga", "Vila Real")).contains(path.removeFirst()), "DepthFirst Porto");
 
-        path = Algorithms.breadthFirstSearch(incompleteMap, "Viseu");
+        path = (LinkedList<String>) Algorithms.breadthFirstSearch(incompleteMap, "Viseu");
         List<String> expected = new LinkedList<>(Arrays.asList("Viseu", "Guarda", "Castelo Branco"));
         assertEquals(expected, path, "DepthFirst Viseu");
     }
@@ -191,6 +191,21 @@ class MatrixAlgorithmsTest {
         Algorithms.shortestPaths(incompleteMap, "Braga", Integer::compare, Integer::sum, 0, paths, dists);
         assertEquals(255, dists.get(completeMap.key("Leiria")), "Path between Braga and Leiria should be 255 Km");
         assertEquals(Arrays.asList("Braga", "Porto", "Aveiro", "Leiria"), paths.get(completeMap.key("Leiria")), "Path to Leiria");
+    }
+
+    @Test
+    void allpathsTest() {
+        List<LinkedList<String>> result = Algorithms.allPaths(Objects.requireNonNull(Algorithms.minDistGraph(completeMap, Integer::compareTo, Integer::sum)), "Porto", "Aveiro");
+        String expected = "[[Porto, Braga, Vila Real, Aveiro]," +
+                            " [Porto, Braga, Vila Real, Coimbra, Aveiro]," +
+                            " [Porto, Braga, Vila Real, Coimbra, Leiria, Aveiro]," +
+                            " [Porto, Braga, Vila Real, Coimbra, Leiria, Viseu, Aveiro]," +
+                            " [Porto, Braga, Vila Real, Coimbra, Leiria, Viseu, Guarda, Aveiro]," +
+                            " [Porto, Braga, Vila Real, Coimbra, Leiria, Viseu, Guarda, Castelo Branco, Aveiro]," +
+                            " [Porto, Braga, Vila Real, Coimbra, Leiria, Viseu, Guarda, Castelo Branco, Lisboa, Aveiro]," +
+                            " [Porto, Braga, Vila Real, Coimbra, Leiria, Viseu, Guarda, Castelo Branco, Lisboa, Faro, Aveiro]," +
+                            " [Porto, Braga, Aveiro], [Porto, Aveiro]]";
+        assertEquals(expected, result.toString());
     }
 
 

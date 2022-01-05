@@ -1,8 +1,6 @@
 package lapr.project.utils.graph;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.function.BinaryOperator;
 
 /**
@@ -17,14 +15,14 @@ public class Algorithms {
      * @param vert vertex that will be the source of the search
      * @return a LinkedList with the vertices of breadth-first search
      */
-    public static <V, E> LinkedList<V> breadthFirstSearch(Graph<V, E> g, V vert) {
+    public static <V, E> List<V> breadthFirstSearch(Graph<V, E> g, V vert) {
+        LinkedList<V> result = new LinkedList<>();
         if (!g.validVertex(vert))
-            return null;
+            return result;
 
         ArrayList<V> qaux = new ArrayList<>();
         qaux.add(vert);
         boolean[] visited = new boolean[g.numVertices()];
-        LinkedList<V> result = new LinkedList<>();
         while (!qaux.isEmpty()) {
             V v = qaux.remove(0);
             if (!visited[g.key(v)])
@@ -48,7 +46,7 @@ public class Algorithms {
      * @param visited set of previously visited vertices
      * @param qdfs    return LinkedList with vertices of depth-first search
      */
-    private static <V, E> void depthFirstSearch(Graph<V, E> g, V vOrig, boolean[] visited, LinkedList<V> qdfs) {
+    private static <V, E> void depthFirstSearch(Graph<V, E> g, V vOrig, boolean[] visited, List<V> qdfs) {
         if (visited[g.key(vOrig)])
             return;
         qdfs.add(vOrig);
@@ -64,10 +62,10 @@ public class Algorithms {
      * @param vert vertex of graph g that will be the source of the search
      * @return a LinkedList with the vertices of depth-first search
      */
-    public static <V, E> LinkedList<V> depthFirstSearch(Graph<V, E> g, V vert) {
-        if (!g.validVertex(vert))
-            return null;
+    public static <V, E> List<V> depthFirstSearch(Graph<V, E> g, V vert) {
         LinkedList<V> qdfs = new LinkedList<>();
+        if (!g.validVertex(vert))
+            return qdfs;
         boolean[] visited = new boolean[g.numVertices()];
         depthFirstSearch(g, vert, visited, qdfs);
         return qdfs;
@@ -85,14 +83,14 @@ public class Algorithms {
      * @param paths   ArrayList with all the paths (in correct order)
      */
     private static <V, E> void allPaths(Graph<V, E> g, V vOrig, V vDest, boolean[] visited,
-                                        LinkedList<V> path, ArrayList<LinkedList<V>> paths) {
+                                        LinkedList<V> path, List<LinkedList<V>> paths) {
 
         path.add(vOrig);
         visited[g.key(vOrig)] = true;
         for (V vAdj : g.adjVertices(vOrig)) {
             if (vAdj.equals(vDest)) {
                 path.add(vDest);
-                paths.add(path);
+                paths.add(new LinkedList<>(path));
                 path.removeLast();
             } else if (!visited[g.key(vAdj)])
                 allPaths(g, vAdj, vDest, visited, path, paths);
@@ -108,7 +106,7 @@ public class Algorithms {
      * @param vDest information of the Vertex destination
      * @return paths ArrayList with all paths from vOrig to vDest
      */
-    public static <V, E> ArrayList<LinkedList<V>> allPaths(Graph<V, E> g, V vOrig, V vDest) {
+    public static <V, E> List<LinkedList<V>> allPaths(Graph<V, E> g, V vOrig, V vDest) {
 
         ArrayList<LinkedList<V>> result = new ArrayList<>();
         boolean[] visited = new boolean[g.numVertices()];
@@ -212,7 +210,7 @@ public class Algorithms {
      */
     public static <V, E> boolean shortestPaths(Graph<V, E> g, V vOrig,
                                                Comparator<E> ce, BinaryOperator<E> sum, E zero,
-                                               ArrayList<LinkedList<V>> paths, ArrayList<E> dists) {
+                                               List<LinkedList<V>> paths, List<E> dists) {
 
         if (g.key(vOrig) == -1)
             return false;
