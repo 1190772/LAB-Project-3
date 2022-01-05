@@ -5,12 +5,12 @@ import lapr.project.utils.graph.Graph;
 import java.util.*;
 
 public class ColourMapController {
-    public int calculateNumberOfColours(Graph grafo) {
+    public<V,E> int calculateNumberOfColours(Graph<V,E> grafo) {
         if (grafo == null) {
             return 0;
         }
         int max = -1;
-        for (Object vertex : grafo.vertices()) {
+        for (V vertex : grafo.vertices()) {
             int num = grafo.adjVertices(vertex).size();
             if (num > max) {
                 max = num;

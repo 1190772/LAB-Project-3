@@ -76,7 +76,7 @@ public class PortStoreDb implements Persistable {
     }
 
     public List<Port> getAllPorts() throws SQLException {
-        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Port";
         ArrayList<Port> res = new ArrayList<>();
 

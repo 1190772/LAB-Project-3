@@ -1,7 +1,6 @@
 package lapr.project.data;
 
 import lapr.project.controller.App;
-import lapr.project.model.ContainerOperation;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +12,7 @@ public class CargoManifestStoreDb {
 
     public ArrayList<String> getContainerPositions(int cargoManifestID) {
         ArrayList<String> containerPositions = new ArrayList<>();
-        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
         String positionCode;
         String containerID;
 

@@ -75,7 +75,7 @@ public class CountryStoreDb implements Persistable {
     }
 
     public List<Country> getAllCountries() throws SQLException {
-        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Country";
         ArrayList<Country> res = new ArrayList<>();
 
@@ -98,7 +98,7 @@ public class CountryStoreDb implements Persistable {
 
     public String getCountryCodeByName(String name) throws SQLException {
         String res = "";
-        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
         String sqlCommand = "select alpha2_code from Country where country = ?";
 
         try (PreparedStatement countryCodePreparedStatement = connection.prepareStatement(sqlCommand)) {

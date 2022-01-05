@@ -235,7 +235,7 @@ public class ShipStoreDb implements Persistable{
 
     public List<Ship> getAllShips() throws SQLException {
         ArrayList<Ship> res = new ArrayList<>();
-        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Ship";
 
         try (PreparedStatement shipsPreparedStatement = connection.prepareStatement(sqlCommand)) {
@@ -259,7 +259,7 @@ public class ShipStoreDb implements Persistable{
 
     public List<ShipPosition> getShipPostions(String shipIMO) throws SQLException {
         ArrayList<ShipPosition> res = new ArrayList<>();
-        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Position_Ship where id_ship = ?";
 
         try (PreparedStatement positionsPreparedStatement = connection.prepareStatement(sqlCommand)) {

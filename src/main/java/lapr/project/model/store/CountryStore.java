@@ -44,7 +44,7 @@ public class CountryStore {
     }
 
     public void saveCountriesToDb() {
-        DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
+        DatabaseConnection connection = App.getInstance().getCompany().getDatabaseConnection();
         for ( Country country: countries ) {
             countriesDb.save(connection, country);
         }

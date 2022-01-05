@@ -3,7 +3,6 @@ package lapr.project.ui.console;
 import lapr.project.controller.TopNShipsController;
 import lapr.project.model.Ship;
 
-import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;

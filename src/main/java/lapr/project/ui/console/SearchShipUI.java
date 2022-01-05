@@ -4,7 +4,6 @@ import lapr.project.controller.SearchShipController;
 import lapr.project.model.Ship;
 import lapr.project.model.ShipPosition;
 
-import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;

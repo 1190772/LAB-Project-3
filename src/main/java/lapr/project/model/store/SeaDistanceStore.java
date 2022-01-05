@@ -20,7 +20,7 @@ public class SeaDistanceStore {
     }
 
     public void saveSeaDistancesToDb() {
-        DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
+        DatabaseConnection connection = App.getInstance().getCompany().getDatabaseConnection();
         for ( SeaDistance seaDistance: seadists ) {
             seadistsDb.save(connection, seaDistance);
         }

@@ -69,7 +69,7 @@ public class BorderStoreDb implements Persistable{
     }
 
     public List<Border> getAllBorders(List<Country> countries) throws SQLException {
-        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Border";
         ArrayList<Border> res = new ArrayList<>();
         String countryID;

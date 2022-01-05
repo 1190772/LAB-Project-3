@@ -20,7 +20,7 @@ public class BorderStore {
     }
 
     public void saveBordersToDb() {
-        DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
+        DatabaseConnection connection = App.getInstance().getCompany().getDatabaseConnection();
         for ( Border border: borders ) {
             bordersDb.save(connection, border);
         }

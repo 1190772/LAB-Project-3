@@ -58,7 +58,7 @@ public class Port2DTree extends TwoDTree<Port> {
     }
 
     public void savePortsToDb() {
-        DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
+        DatabaseConnection connection = App.getInstance().getCompany().getDatabaseConnection();
         savePortsToDb(connection, root);
     }
 

@@ -2,7 +2,6 @@ package lapr.project.controller;
 
 import lapr.project.model.Company;
 import lapr.project.model.shared.Constants;
-import lapr.project.model.shared.SQL;
 import lapr.project.ui.auth.AuthFacade;
 import lapr.project.ui.auth.UserSession;
 
@@ -19,13 +18,11 @@ public class App {
     private final Company company;
     private static App singleton = null;
     private final AuthFacade authFacade;
-    private final SQL sql;
 
     private App() {
         Properties properties = getProperties();
         this.company = new Company(properties.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
         this.authFacade = new AuthFacade();
-        sql = new SQL(Constants.DATABASE_USERNAME, Constants.DATABASE_THE_OTHER_ONE);
         bootstrap();
     }
 
@@ -81,6 +78,4 @@ public class App {
     public Company getCompany() {
         return this.company;
     }
-
-    public SQL getSql() { return sql; }
 }

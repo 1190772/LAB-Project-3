@@ -16,5 +16,6 @@ public class Constants {
 
     public static final String DATABASE_USERNAME = "LAPR3_G033";
     public static final String DATABASE_THE_OTHER_ONE = "bddad33";
+    public static final String URL = "jdbc:oracle:thin:@//vsrvbd1.dei.isep.ipp.pt:1521/pdborcl";
 
 }

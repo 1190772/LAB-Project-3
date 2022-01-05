@@ -43,7 +43,7 @@ public class ShipBST extends AVL<Ship> {
     }
 
     public void saveShipsToDb() {
-        DatabaseConnection connection = App.getInstance().getSql().getDatabaseConnection();
+        DatabaseConnection connection = App.getInstance().getCompany().getDatabaseConnection();
         saveShipsToDb(root, connection);
     }
 

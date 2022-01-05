@@ -73,7 +73,7 @@ public class SeaDistanceStoreDb implements Persistable {
 
 
     public List<SeaDistance> getAllSeaDistances() throws SQLException {
-        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
         String sqlCommand = "select * from Sea_Distance";
         ArrayList<SeaDistance> res = new ArrayList<>();
 

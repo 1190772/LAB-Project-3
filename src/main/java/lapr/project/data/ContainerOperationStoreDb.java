@@ -14,7 +14,7 @@ public class ContainerOperationStoreDb {
 
     public List<ContainerOperation> getContainerOperationsByCargoManifestID(int cargoManifestID) {
         ArrayList<ContainerOperation> containerOperations = new ArrayList<>();
-        Connection connection = App.getInstance().getSql().getDatabaseConnection().getConnection();
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
 
         // get container operations of the chosen Cargo Manifest
         String sqlCommand = "select * from Container_Operation where id_cargo_manifest = ?";

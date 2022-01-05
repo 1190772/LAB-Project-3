@@ -1,13 +1,16 @@
 package lapr.project.model;
 
 import lapr.project.data.*;
+import lapr.project.model.shared.Constants;
 import lapr.project.model.store.BorderStore;
 import lapr.project.model.store.CountryStore;
 import lapr.project.model.store.SeaDistanceStore;
 import lapr.project.ui.auth.AuthFacade;
+import lapr.project.utils.DatabaseConnection;
 
 public class Company {
     private final String designation;
+    private final DatabaseConnection databaseConnection;
 
     private final AuthFacade authFacade;
     private final ShipBST shipBST;
@@ -19,6 +22,7 @@ public class Company {
 
     public Company(String designation) {
         this.designation = designation;
+        databaseConnection = new DatabaseConnection(Constants.URL, Constants.DATABASE_USERNAME, Constants.DATABASE_THE_OTHER_ONE);
         shipBST = new ShipBST(new ShipStoreDb());
         port2DTree = new Port2DTree(new PortStoreDb());
         this.authFacade = new AuthFacade();
@@ -30,6 +34,10 @@ public class Company {
 
     public String getDesignation() {
         return designation;
+    }
+
+    public DatabaseConnection getDatabaseConnection() {
+        return databaseConnection;
     }
 
     public ShipBST getShips() { return shipBST; }
