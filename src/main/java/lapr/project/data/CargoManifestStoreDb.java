@@ -7,10 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CargoManifestStoreDb {
 
-    public ArrayList<String> getContainerPositions(int cargoManifestID) {
+    public List<String> getContainerPositions(int cargoManifestID) {
         ArrayList<String> containerPositions = new ArrayList<>();
         Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
         String positionCode;

@@ -4,7 +4,7 @@ import lapr.project.controller.PortOccupationController;
 
 public class PortOccupationUI implements Runnable {
 
-    private PortOccupationController controller;
+    private final PortOccupationController controller;
 
     public PortOccupationUI() {
         controller = new PortOccupationController();

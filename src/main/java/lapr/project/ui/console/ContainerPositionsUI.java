@@ -4,7 +4,7 @@ import lapr.project.controller.ContainerPositionsController;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 public class ContainerPositionsUI implements Runnable {
 
@@ -17,7 +17,7 @@ public class ContainerPositionsUI implements Runnable {
     @Override
     public void run() {
         int cargoManifestID;
-        ArrayList<String> containerPositions;
+        List<String> containerPositions;
 
         cargoManifestID = Utils.readIntegerFromConsole("Cargo Manifest ID: ");
         containerPositions = controller.getContainerPositions(cargoManifestID);

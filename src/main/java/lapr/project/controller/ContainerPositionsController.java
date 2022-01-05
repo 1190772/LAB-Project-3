@@ -2,7 +2,7 @@ package lapr.project.controller;
 
 import lapr.project.data.CargoManifestStoreDb;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ContainerPositionsController {
 
@@ -12,7 +12,7 @@ public class ContainerPositionsController {
         cargoManifestStoreDb = new CargoManifestStoreDb();
     }
 
-    public ArrayList<String> getContainerPositions(int cargoManifestID) {
+    public List<String> getContainerPositions(int cargoManifestID) {
         return cargoManifestStoreDb.getContainerPositions(cargoManifestID);
     }
 }

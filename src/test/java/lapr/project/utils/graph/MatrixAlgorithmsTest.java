@@ -123,6 +123,14 @@ class MatrixAlgorithmsTest {
         assertNull(lenPath, "Length path should be null if vertex does not exist");
         assertEquals(0, shortPath.size(), "Shortest Path does not exist");
 
+        lenPath = Algorithms.shortestPath(completeMap, "PT", "LX", Integer::compare, Integer::sum, 0, shortPath);
+        assertNull(lenPath, "Length path should be null if vertex does not exist");
+        assertEquals(0, shortPath.size(), "Shortest Path does not exist");
+
+        lenPath = Algorithms.shortestPath(completeMap, "PT", "Lisboa", Integer::compare, Integer::sum, 0, shortPath);
+        assertNull(lenPath, "Length path should be null if vertex does not exist");
+        assertEquals(0, shortPath.size(), "Shortest Path does not exist");
+
         lenPath = Algorithms.shortestPath(incompleteMap, "Porto", "Faro", Integer::compare, Integer::sum, 0, shortPath);
         assertNull(lenPath, "Length path should be null if vertex does not exist");
         assertEquals(0, shortPath.size(), "Shortest Path does not exist");
@@ -165,6 +173,8 @@ class MatrixAlgorithmsTest {
     public void testShortestPaths() {
         ArrayList<LinkedList<String>> paths = new ArrayList<>();
         ArrayList<Integer> dists = new ArrayList<>();
+
+        assertFalse(Algorithms.shortestPaths(completeMap, "PT", Integer::compare, Integer::sum, 0, paths, dists));
 
         Algorithms.shortestPaths(completeMap, "Porto", Integer::compare, Integer::sum, 0, paths, dists);
 
