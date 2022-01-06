@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Traffic Manager: as TM
+(Asks to know the shortest path between two places) as (Use)
+
+TM ---> (Use)
+@enduml
