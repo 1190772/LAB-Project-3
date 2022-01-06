@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+participant ":ShortestPathUI" as UI
+participant ":ShortestPathController" as CTRL
+participant "Company" as C
+participant "Algorithms" as ALG
+
+activate TM
+TM -> UI : Asks to know the shortest path between two places
+
+activate UI
+UI --> TM : asks for the origin and destination
+deactivate UI
+
+TM -> UI : types requested data
+
+activate UI
+UI --> TM : asks to select the type of trajectory
+deactivate UI
+
+TM -> UI : selects option
+
+alt
+activate UI
+UI -> CTRL : shortestPathLand(vOrig, vDest, path)
+activate CTRL
+else
+UI -> CTRL : shortestPathSea(vOrig, vDest, path)
+else
+UI -> CTRL : shortestPathLandSea(vOrig, vDest, path)
+else
+UI -> CTRL : shortestPathStops(vOrig, vDest, path, stops)
+end
+
+CTRL -> C : freightNetwork = getFreightNetwork()
+activate C
+deactivate C
+
+CTRL -> ALG : shortestPath(vOrig, vDest, Long::compareTo, Long::sum, 0, path)
+activate ALG
+deactivate ALG
+deactivate CTRL
+
+UI --> TM : returns the shortest path
+deactivate UI
+deactivate TM
+@enduml

@@ -15,10 +15,10 @@ deactivate ":System"
 TM -> ":System" : types requested data
 
 activate ":System"
-":System" --> TM : asks for to select the type of trajectory
+":System" --> TM : asks to select the type of trajectory
 deactivate ":System"
 
-TM -> ":System" : select option
+TM -> ":System" : selects option
 
 activate ":System"
 ":System" --> TM : returns the shortest path

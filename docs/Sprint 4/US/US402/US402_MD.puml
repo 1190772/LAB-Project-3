@@ -1,0 +1,13 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam classAttributeIconSize 0
+
+left to right direction
+
+class FreightNetwork {
+-Names of capitals and ports
+-Distances
+}
+
+@enduml

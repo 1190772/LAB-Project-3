@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ShortestPathUI {
+- controller
+}
+
+class ShortestPathController {
+- FreightNetwork freightNetwork
++ shortestPathLand(vOrig, vDest, path)
++ shortestPathSea(vOrig, vDest, path)
++ shortestPathLandSea(vOrig, vDest, path)
++ shortestPathStops(vOrig, vDest, path, stops)
+}
+
+class Algorithms {
++ shortestPath(Graph<V, E> g, V vOrig, V vDest, Comparator<E> ce,\n BinaryOperator<E> sum, E zero, LinkedList<V> shortPath)
+- shortestPathDijkstra(Graph<V, E> g, V vOrig, Comparator<E> ce,\n BinaryOperator<E> sum, E zero, boolean[] visited, V[] pathKeys, E[] dist)
+}
+
+ShortestPathController <.. ShortestPathUI
+Algorithms <.. ShortestPathController
+
+@enduml
