@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : Asks for  most efficient circuit
+
+activate ":System"
+":System" --> "TM" : requests data (cargo manifest id)
+deactivate ":System"
+
+TM -> ":System" : types requested data
+
+activate ":System"
+":System" --> "TM" : Shows most efficient circuit
+deactivate ":System"
+
+deactivate TM
+
+@enduml

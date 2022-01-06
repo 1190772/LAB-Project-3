@@ -8,11 +8,17 @@ actor "Ship Captain" as SP
 activate SP
 SP -> ":System" : asks for container operations
 
+autonumber 1.1
+
 activate ":System"
 ":System" --> "SP" : requests data (cargo manifest id)
 deactivate ":System"
 
+autonumber 2
+
 SP -> ":System" : types requested data
+
+autonumber 2.1
 
 activate ":System"
 ":System" --> SP : shows container operations of the chosen manifest

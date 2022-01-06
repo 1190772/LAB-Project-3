@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Traffic Manager: as TM
+(Asks for  most efficient circuit) as (Use)
+
+TM ---> (Use)
+@enduml

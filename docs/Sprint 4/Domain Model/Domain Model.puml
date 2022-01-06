@@ -1,0 +1,147 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam classAttributeIconSize 0
+
+class Company {
+-Designation
+}
+
+class Container {
+-Identification
+-Payload
+-Tare
+-Gross
+-Width
+-Height
+-Length
+-Refrigerated
+-Temperature
+}
+
+class Ship {
+-MMSI
+-Name
+-IMO
+-Number of Energy Generators
+-Generators' Power Output
+-Call sign
+-Vessel type
+-Length
+-Width
+-Capacity
+-Draft
+-FleetManager
+-ShipCaptain
+-ShipChiefElectricalEngineer
+}
+
+class ShipPosition {
+-Base Date Time
+-Latitude
+-Longitude
+-Speed over ground SOG
+-Course over ground COG
+-Heading
+-Position
+-Transceiver Class
+}
+
+class Truck {
+-TruckDriver
+}
+
+class Client {
+-Name
+-Address
+-Phone_number
+}
+
+class Port {
+-Identification
+-Name
+-Continent
+-Country
+-Latitude
+-longitude
+-PortMagager
+-PortStaff
+}
+
+class SeaDistance {
+-Port1
+-Port2
+-Distance
+}
+
+class Warehouse {
+-Identification
+-Name
+-Continent
+-Country
+-Latitude
+-longitude
+-WarehouseManager
+-WarehouseStaff
+}
+
+class Employee {
+-Name
+-Email
+-Password
+}
+
+class OrganizationRole {
+-Description
+}
+
+class TrafficManager
+
+class CargoManifest {
+-Destination
+-Date_time_start
+-Date_time_end
+}
+
+class Trip {
+-Starting point
+-Destination
+}
+
+class Country {
+-Continent
+-Alpha2-Code
+-Alpha3-Code
+-Country
+-Population
+-Capital
+-Latitude
+-Longitude
+}
+
+class Border {
+-Country1
+-Country2
+}
+
+Company "1" -- "1..*" Ship : Owns >
+Company "1" -- "1..*" Truck : Owns >
+Company "1" -- "1..*" Port : Owns >
+Company "1" -- "*" Warehouse : Owns >
+Company "1" -- "*" Employee : Employs >
+Company "1" --- "*" OrganizationRole : Comprehends >
+Company "1" -- "*" Country : knows >
+Employee "*" - "1" OrganizationRole : Has/Plays >
+Ship "1" -- "*" Trip : performs >
+Trip "1..*" -- "1..*" CargoManifest : has >
+Ship "1" -- "1..*" ShipPosition : has >
+TrafficManager "1" - "*" ShipPosition : Controls >
+TrafficManager "1" -- "*" Truck : Controls position of >
+Truck "1" -- "*" Trip : performs >
+CargoManifest "*" -- "1..*" Container : Keeps track of >
+Container "1..*" -- "1" Client : tranports goods of >
+Country "1" -- "*" Border : has >
+Port "1" -- "1..*" SeaDistance : has >
+
+
+@enduml
