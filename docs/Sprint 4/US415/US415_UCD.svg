@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="111px" preserveAspectRatio="none" style="width:661px;height:111px;" version="1.1" viewBox="0 0 661 111" width="661px" zoomAndPan="magnify"><defs><filter height="300%" id="f11ys6kruyr1fd" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[8b944653c655024075d894af29a33c78]
+entity SC--><ellipse cx="46.5" cy="20.5" fill="#FEFECE" filter="url(#f11ys6kruyr1fd)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M46.5,28.5 L46.5,55.5 M33.5,36.5 L59.5,36.5 M46.5,55.5 L33.5,70.5 M46.5,55.5 L59.5,70.5 " fill="none" filter="url(#f11ys6kruyr1fd)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="6" y="90.5332">Ship Captain</text><ellipse cx="428.5019" cy="52.5004" fill="#FEFECE" filter="url(#f11ys6kruyr1fd)" rx="220.5019" ry="46.5004" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="414" x="221.5019" y="56.2289">Asks the amount of auxiliary power equipment necessary for a trip</text><!--MD5=[1f58a08cc5dd49b85ffaa7505db96a07]
+link SC to Use--><path d="M87.09,52.5 C116.1,52.5 158.07,52.5 202.68,52.5 " fill="none" id="SC-to-Use" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="207.85,52.5,198.85,48.5,202.85,52.5,198.85,56.5,207.85,52.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[fe431db1b631eb0f075a4090c985cfa8]
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Ship Captain: as SC
+(Asks the amount of auxiliary power equipment necessary for a trip) as (Use)
+
+SC - - -> (Use)
+@enduml
+
+@startuml
+
+left to right direction
+
+:Ship Captain: as SC
+(Asks the amount of auxiliary power equipment necessary for a trip) as (Use)
+
+SC - - -> (Use)
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Ship Captain: as SC
+(Asks the amount of auxiliary power equipment necessary for a trip) as (Use)
+
+SC ---> (Use)
+@enduml
