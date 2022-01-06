@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : Asks for  most efficient circuit
+
+activate ":System"
+":System" --> "TM" : requests data (journey time, number of sections, duration of each section, temperature of each section)
+deactivate ":System"
+
+TM -> ":System" : types requested data
+
+activate ":System"
+":System" --> "TM" : Shows energy for 7ºC containers and energy for -5ºC containers
+deactivate ":System"
+
+deactivate TM
+
+@enduml

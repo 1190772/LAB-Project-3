@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Ship Chief Electrical Engineer: as SCEE
+(Asks the amount of energy necessary for a trip) as (Use)
+
+SCEE ---> (Use)
+@enduml
