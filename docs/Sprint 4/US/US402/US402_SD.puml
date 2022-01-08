@@ -34,7 +34,7 @@ UI -> CTRL : shortestPathSea(vOrig, vDest, path)
 else
 UI -> CTRL : shortestPathLandSea(vOrig, vDest, path)
 else
-UI -> CTRL : shortestPathStops(vOrig, vDest, path, stops)
+UI -> CTRL : shortestPathStops(stops, path)
 end
 
 CTRL -> C : freightNetwork = getFreightNetwork()

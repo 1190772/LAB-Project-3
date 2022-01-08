@@ -172,7 +172,7 @@ public class Algorithms {
      */
     public static <V, E> E shortestPath(Graph<V, E> g, V vOrig, V vDest,
                                         Comparator<E> ce, BinaryOperator<E> sum, E zero,
-                                        LinkedList<V> shortPath) {
+                                        List<V> shortPath) {
         if (g.key(vOrig)==-1||g.key(vDest)==-1)
             return null;
 
@@ -191,7 +191,7 @@ public class Algorithms {
         E lengthPath = dist[g.key(vDest)];
         if (lengthPath == null)
             return null;
-        getPath(g, vOrig, vDest, path, shortPath);
+        getPath(g, vOrig, vDest, path,(LinkedList<V>) shortPath);
         return lengthPath;
 
     }
