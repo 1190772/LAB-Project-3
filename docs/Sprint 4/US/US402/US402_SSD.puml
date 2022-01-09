@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : Asks to know the shortest path between two places
+
+activate ":System"
+":System" --> TM : asks for the origin and destination
+deactivate ":System"
+
+TM -> ":System" : types requested data
+
+activate ":System"
+":System" --> TM : asks to select the type of trajectory
+deactivate ":System"
+
+TM -> ":System" : selects option
+
+activate ":System"
+":System" --> TM : returns the shortest path
+deactivate ":System"
+
+deactivate TM
+
+@enduml

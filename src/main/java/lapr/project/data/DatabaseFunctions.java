@@ -20,7 +20,7 @@ public class DatabaseFunctions {
         }
     }
 
-    public void scriptInTextFile(DatabaseConnection databaseConnection, String filename) {
+    public static void scriptInTextFile(DatabaseConnection databaseConnection, String filename) {
         try (Scanner in = new Scanner((new FileReader(filename)))) {
             StringBuilder sqlLine = new StringBuilder();
             while (in.hasNextLine()) {
