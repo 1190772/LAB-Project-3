@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+participant ":buildFreightNetworkUI" as UI
+participant ":buildFreightNetworkController" as CTRL
+participant ":FreightNetwork" as NET
+
+activate TM
+TM -> UI : Asks for  most efficient circuit
+
+activate UI
+UI --> TM : requests data (source location)
+
+TM -> UI : types requested data
+
+autonumber 3.1
+
+UI -> CTRL : getMostEfficientCircuit(source location)
+activate CTRL
+
+CTRL -> NET : getMostEfficientCircuit(source location)
+activate NET
+
+autonumber 4
+
+UI --> TM : Shows most efficient circuit
+
+deactivate NET
+deactivate CTRL
+deactivate UI
+deactivate TM
+@enduml

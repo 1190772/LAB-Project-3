@@ -9,7 +9,7 @@ activate TM
 TM -> ":System" : Asks for  most efficient circuit
 
 activate ":System"
-":System" --> "TM" : requests data (cargo manifest id)
+":System" --> "TM" : requests data (source location)
 deactivate ":System"
 
 TM -> ":System" : types requested data
