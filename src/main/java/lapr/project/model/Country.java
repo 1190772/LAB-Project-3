@@ -1,6 +1,7 @@
 package lapr.project.model;
 
-public class Country {
+public class Country implements FreightNetworkVertex
+    {
 
     private final String alpha2code;
     private final String alpha3code;

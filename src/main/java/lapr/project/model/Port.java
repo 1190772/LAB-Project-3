@@ -1,6 +1,7 @@
 package lapr.project.model;
 
-public class Port {
+public class Port implements FreightNetworkVertex
+    {
     private final String  id;
     private final String name;
     private final Country country;
