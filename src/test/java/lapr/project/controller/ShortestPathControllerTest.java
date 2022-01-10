@@ -95,6 +95,7 @@ public class ShortestPathControllerTest {
         assertEquals("[Country = Belmopan, Port = port1, Country = Belmopan, Country = Mexico City, Port = port4]", path.toString());
         stops.add(vertices.get(3));
         assertEquals(0, new ShortestPathController().shortestPathLand(stops, path));
+        assertTrue(path.isEmpty());
 
     }
 
@@ -108,6 +109,7 @@ public class ShortestPathControllerTest {
         assertEquals("[Port = port1, Port = port2, Port = port1]", path.toString());
         stops.add(vertices.get(4));
         assertEquals(0, new ShortestPathController().shortestPathSea(stops, path));
+        assertTrue(path.isEmpty());
     }
 
     @Test
