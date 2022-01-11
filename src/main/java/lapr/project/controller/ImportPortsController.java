@@ -36,18 +36,21 @@ public class ImportPortsController {
     public void importPorts(String fileName) {
         String[] parameters;
         ArrayList<Port> list = new ArrayList<>();
+        App.getInstance().getCompany().getCountryStore().refresh();
 
         try (Scanner in = new Scanner((new FileReader(fileName)))) {
             in.nextLine();
             while (in.hasNextLine()) {
                 parameters = in.nextLine().split(",");
                 String continent = parameters[0];
-                Country country = App.getInstance().getCompany().getCountryStore().getCountryByAlpha2code(parameters[1]);
-                String id = parameters[2];
-                String name = parameters[3];
-                double latitude = Double.parseDouble(parameters[4]);
-                double longitude = Double.parseDouble(parameters[5]);
-                list.add(new Port(id, name, country, latitude, longitude, 0));
+                Country country = App.getInstance().getCompany().getCountryStore().getCountryByName(parameters[1]);
+                if (country != null) {
+                    String id = parameters[2];
+                    String name = parameters[3];
+                    double latitude = Double.parseDouble(parameters[4]);
+                    double longitude = Double.parseDouble(parameters[5]);
+                    list.add(new Port(id, name, country, latitude, longitude, 0));
+                }
             }
             ports.createBalancedPort2DTree(list);
         } catch (IOException e) {

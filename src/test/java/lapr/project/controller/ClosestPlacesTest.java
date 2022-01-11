@@ -3,8 +3,11 @@ package lapr.project.controller;
 import lapr.project.model.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import oracle.ucp.util.Pair;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class ClosestPlacesTest {
     private final ArrayList<Country> countries;
@@ -62,7 +65,21 @@ public class ClosestPlacesTest {
 
     @Test
     void closestPlaces() {
-        Assertions.assertEquals("{America=[[Country = Belmopan, 711570], [Country = Mexico City, 711570], [Port = port4, 726835], [Port = port1, 731553], [Port = port3, 734835]]}",new ClosestPlacesController().closestPlaces( freightNetwork, 5).toString());
+
+        Map<String, List<Pair<FreightNetworkVertex, Long>>> map = new ClosestPlacesController().closestPlaces( freightNetwork, 5);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append('{');
+        for (String continent : map.keySet()) {
+            sb.append(continent).append("=[");
+            for (Pair<FreightNetworkVertex, Long> pair : map.get(continent)) {
+                sb.append('[').append(pair.get1st().getVertexName()).append(", ").append(pair.get2nd()).append("], ");
+            }
+            sb.append("], ");
+        }
+        sb.append('}');
+
+        Assertions.assertEquals("{America=[[Country = Belmopan, 711570], [Country = Mexico City, 711570], [Port = port4, 726835], [Port = port1, 731553], [Port = port3, 734835], ], }", sb.toString());
         Assertions.assertEquals("{}", new ClosestPlacesController().closestPlaces(new BuildFreightNetworkController().buildFreightNetwork(countries, ports, new ArrayList<>(), seaDistances, 0), 5).toString());
     }
 }

@@ -1,7 +1,6 @@
 package lapr.project.model;
 
-public class Country implements FreightNetworkVertex
-    {
+public class Country implements FreightNetworkVertex {
 
     private final String alpha2code;
     private final String alpha3code;
@@ -41,6 +40,20 @@ public class Country implements FreightNetworkVertex
 
     @Override
     public String toString() {
+        return "Country{" +
+            "alpha2code='" + alpha2code + '\'' +
+            ", alpha3code='" + alpha3code + '\'' +
+            ", name='" + name + '\'' +
+            ", capital='" + capital + '\'' +
+            ", continent='" + continent + '\'' +
+            ", population=" + population +
+            ", latitude=" + latitude +
+            ", longitude=" + longitude +
+            '}';
+    }
+
+@Override
+    public String getVertexName() {
         return "Country = " + capital;
     }
 }

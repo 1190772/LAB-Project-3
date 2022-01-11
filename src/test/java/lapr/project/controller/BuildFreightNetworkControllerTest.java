@@ -65,7 +65,7 @@ class BuildFreightNetworkControllerTest {
     @Test
     void buildFreightNetwork0() {
         BuildFreightNetworkController controller = new BuildFreightNetworkController();
-        ArrayList<Object> vs = new ArrayList<>();
+        ArrayList<FreightNetworkVertex> vs = new ArrayList<>();
         vs.add(country1);
         vs.add(country2);
         vs.add(port1);
@@ -92,7 +92,7 @@ class BuildFreightNetworkControllerTest {
     @Test
     void buildFreightNetwork1() {
         BuildFreightNetworkController controller = new BuildFreightNetworkController();
-        ArrayList<Object> vs = new ArrayList<>();
+        ArrayList<FreightNetworkVertex> vs = new ArrayList<>();
         vs.add(country1);
         vs.add(country2);
         vs.add(port1);
@@ -125,7 +125,7 @@ class BuildFreightNetworkControllerTest {
     @Test
     void buildFreightNetwork2() {
         BuildFreightNetworkController controller = new BuildFreightNetworkController();
-        ArrayList<Object> vs = new ArrayList<>();
+        ArrayList<FreightNetworkVertex> vs = new ArrayList<>();
         vs.add(country1);
         vs.add(country2);
         vs.add(port1);

@@ -40,7 +40,7 @@ public class BuildFreightNetworkController {
     }
 
     public FreightNetwork buildFreightNetwork(List<Country> countries, List<Port> ports, List<Border> borders, List<SeaDistance> seaDistances, int n) {
-        ArrayList<Object> vs = new ArrayList<>();
+        ArrayList<FreightNetworkVertex> vs = new ArrayList<>();
         Long[][] m;
         int index1;
         int index2;

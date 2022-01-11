@@ -1,6 +1,7 @@
 package lapr.project.ui.console;
 
 import lapr.project.controller.MostEfficientCircuitController;
+import lapr.project.model.FreightNetworkVertex;
 
 import javax.naming.OperationNotSupportedException;
 import java.util.LinkedList;
@@ -30,7 +31,7 @@ public class MostEfficientCircuitUI implements Runnable{
     @Override
     public void run() {
         String sourceLocation;
-        LinkedList<String> circuit = new LinkedList<>();
+        LinkedList<FreightNetworkVertex> circuit = new LinkedList<>();
 
         sourceLocation = Utils.readLineFromConsole("Source Location: ");
         try {
@@ -39,7 +40,7 @@ public class MostEfficientCircuitUI implements Runnable{
             e.printStackTrace();
         }
 
-        for (String place : circuit)
-            System.out.println(place);
+    for (FreightNetworkVertex place : circuit)
+            System.out.println(place.getName());
     }
 }

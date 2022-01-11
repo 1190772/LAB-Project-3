@@ -3,6 +3,7 @@ package lapr.project.controller;
 import lapr.project.data.ContainerOperationStoreDb;
 import lapr.project.model.ContainerOperation;
 import lapr.project.model.FreightNetwork;
+import lapr.project.model.FreightNetworkVertex;
 
 import javax.naming.OperationNotSupportedException;
 import java.util.LinkedList;
@@ -27,7 +28,7 @@ public class MostEfficientCircuitController {
      * @param sourceLocation the starting location.
      * @return Most efficient circuit.
      */
-    public LinkedList<String> getMostEfficientCircuit(String sourceLocation) throws OperationNotSupportedException {
+    public LinkedList<FreightNetworkVertex> getMostEfficientCircuit(String sourceLocation) throws OperationNotSupportedException {
         FreightNetwork freightNetwork = App.getInstance().getCompany().getFreightNetwork();
         return freightNetwork.getMostEfficientCircuit(sourceLocation);
     }

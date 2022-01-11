@@ -1,7 +1,6 @@
 package lapr.project.model;
 
-public class Port implements FreightNetworkVertex
-    {
+public class Port implements FreightNetworkVertex {
     private final String  id;
     private final String name;
     private final Country country;
@@ -42,6 +41,18 @@ public class Port implements FreightNetworkVertex
 
     @Override
     public String toString() {
+        return "Port{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", country=" + country +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", capacity=" + capacity +
+                '}';
+    }
+
+    @Override
+    public String getVertexName() {
         return "Port = " + name;
     }
 }

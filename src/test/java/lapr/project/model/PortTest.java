@@ -11,7 +11,7 @@ public class PortTest {
     Country country=new Country("UK", null, "United Kingdom", "London", "Europe", 0, 0, 0);
     double latitude=53.46666667;
     double longitude=-3.033333333;
-    String toString = "Port = Liverpool";
+    String toString = "Port{id='29002', name='Liverpool', country=Country{alpha2code='UK', alpha3code='null', name='United Kingdom', capital='London', continent='Europe', population=0.0, latitude=0.0, longitude=0.0}, latitude=53.46666667, longitude=-3.033333333, capacity=0}";
 
     public PortTest(){
         port = new Port(id, name, country, latitude, longitude, 0);

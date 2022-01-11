@@ -1,6 +1,7 @@
 package lapr.project.controller;
 
 import lapr.project.model.Country;
+import lapr.project.model.FreightNetworkVertex;
 import lapr.project.model.Port;
 import lapr.project.utils.graph.Algorithms;
 import lapr.project.utils.graph.Edge;
@@ -11,33 +12,33 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ShortestPathController {
-    public Long shortestPathLand(List<Object> stops, List<Object> path) {
+    public Long shortestPathLand(List<FreightNetworkVertex> stops, List<FreightNetworkVertex> path) {
         verifyLists(stops, path);
-        MatrixGraph<Object, Long> freightNetwork = App.getInstance().getCompany().getFreightNetwork().clone();
-        for (Edge<Object, Long> edge : freightNetwork.edges())
+        MatrixGraph<FreightNetworkVertex, Long> freightNetwork = App.getInstance().getCompany().getFreightNetwork().clone();
+        for (Edge<FreightNetworkVertex, Long> edge : freightNetwork.edges())
             if (edge.getVOrig().getClass() == Port.class && edge.getVDest().getClass() == Port.class)
                 freightNetwork.removeEdge(edge.getVOrig(), edge.getVDest());
         return shortestPathStops(freightNetwork, stops, path);
     }
 
-    public Long shortestPathSea(List<Object> stops, List<Object> path) {
+    public Long shortestPathSea(List<FreightNetworkVertex> stops, List<FreightNetworkVertex> path) {
         verifyLists(stops, path);
-        MatrixGraph<Object, Long> freightNetwork = App.getInstance().getCompany().getFreightNetwork().clone();
-        for (Object o : freightNetwork.vertices())
+        MatrixGraph<FreightNetworkVertex, Long> freightNetwork = App.getInstance().getCompany().getFreightNetwork().clone();
+        for (FreightNetworkVertex o : freightNetwork.vertices())
             if (o.getClass() == Country.class)
                 freightNetwork.removeVertex(o);
         return shortestPathStops(freightNetwork, stops, path);
     }
 
-    public Long shortestPathLandSea(List<Object> stops, List<Object> path) {
+    public Long shortestPathLandSea(List<FreightNetworkVertex> stops, List<FreightNetworkVertex> path) {
         verifyLists(stops, path);
         return shortestPathStops(App.getInstance().getCompany().getFreightNetwork(), stops, path);
     }
 
-    private Long shortestPathStops(Graph<Object, Long> freightNetwork, List<Object> stops, List<Object> path) {
+    private Long shortestPathStops(Graph<FreightNetworkVertex, Long> freightNetwork, List<FreightNetworkVertex> stops, List<FreightNetworkVertex> path) {
         Long distance = 0L;
         for (int i = 0; i < stops.size() - 1; i++) {
-            List<Object> temp = new LinkedList<>();
+            List<FreightNetworkVertex> temp = new LinkedList<>();
             Long lenghtPath = Algorithms.shortestPath(freightNetwork, stops.get(i), stops.get(i + 1), Long::compareTo, Long::sum, 0L, temp);
             if (lenghtPath ==null){
                 path.removeAll(path);
@@ -51,7 +52,7 @@ public class ShortestPathController {
         return distance;
     }
 
-    private void verifyLists(List<Object> stops, List<Object> path) {
+    private void verifyLists(List<FreightNetworkVertex> stops, List<FreightNetworkVertex> path) {
         if (stops == null)
             throw new IllegalArgumentException("The list stops cannot be null");
         if (path == null)

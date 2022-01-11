@@ -25,7 +25,7 @@ public class CountryTest {
         assertEquals(population, country.getPopulation());
         assertEquals(latitude, country.getLatitude());
         assertEquals(longitude, country.getLongitude());
-        assertEquals("Country = cap", country.toString());
+        assertEquals("Country{alpha2code='al2', alpha3code='al3', name='name', capital='cap', continent='con', population=1.0, latitude=2.0, longitude=2.0}", country.toString());
     }
 
 }
