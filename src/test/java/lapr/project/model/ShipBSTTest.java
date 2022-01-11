@@ -4,7 +4,6 @@ import lapr.project.data.ShipStoreDb;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -87,6 +86,10 @@ class ShipBSTTest {
 
         assertSame(expected[60].get(0), actual[60].get(0));
         assertSame(expected[70].get(0), actual[70].get(0));
+
+        actual = shipBST.topNShips(100, LocalDateTime.of(2020, 12, 31, 16, 0), LocalDateTime.of(2020, 12, 31, 19, 18));
+        assertSame(expected[60].get(0), actual[60].get(0));
+        assertSame(expected[70].get(0), actual[70].get(0));
     }
 
     @Test
@@ -160,5 +163,4 @@ class ShipBSTTest {
         when(shipStoreDb.getAllShips()).thenThrow(new SQLException());
         Assertions.assertFalse(shipBST.loadShipsFromDatabase());
     }
-
 }

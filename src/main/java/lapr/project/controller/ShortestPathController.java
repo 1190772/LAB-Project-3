@@ -41,7 +41,7 @@ public class ShortestPathController {
             List<FreightNetworkVertex> temp = new LinkedList<>();
             Long lenghtPath = Algorithms.shortestPath(freightNetwork, stops.get(i), stops.get(i + 1), Long::compareTo, Long::sum, 0L, temp);
             if (lenghtPath ==null){
-                path.removeAll(path);
+                path.clear();
                 return 0L;
             }
             distance += lenghtPath;
