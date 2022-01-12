@@ -1,6 +1,5 @@
 package lapr.project.model;
 
-import lapr.project.utils.graph.Edge;
 import lapr.project.utils.graph.MatrixGraph;
 
 import javax.naming.OperationNotSupportedException;
