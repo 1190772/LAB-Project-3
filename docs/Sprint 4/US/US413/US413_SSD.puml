@@ -3,21 +3,21 @@
 
 autonumber
 
-actor "Traffic Manager" as TM
+actor "Ship Chief Electrical Engineer" as SCEE
 
-activate TM
-TM -> ":System" : Asks for  most efficient circuit
-
-activate ":System"
-":System" --> "TM" : requests data (journey time, number of sections, duration of each section, temperature of each section)
-deactivate ":System"
-
-TM -> ":System" : types requested data
+activate SCEE
+SCEE -> ":System" : Asks for total energy required for a trip
 
 activate ":System"
-":System" --> "TM" : Shows energy for 7ºC containers and energy for -5ºC containers
+":System" --> "SCEE" : requests data (trip ID)
 deactivate ":System"
 
-deactivate TM
+SCEE -> ":System" : types requested data
+
+activate ":System"
+":System" --> "SCEE" : Shows total energy for 7ºC containers and for -5ºC containers
+deactivate ":System"
+
+deactivate SCEE
 
 @enduml

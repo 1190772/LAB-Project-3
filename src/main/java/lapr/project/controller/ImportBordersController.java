@@ -26,8 +26,8 @@ public class ImportBordersController {
             in.nextLine();
             while (in.hasNextLine()) {
                 parameters = in.nextLine().split(",");
-                Country country1 = countryStore.getCountryByName(parameters[0]);
-                Country country2 = countryStore.getCountryByName(parameters[1]);
+                Country country1 = countryStore.getCountryByName(parameters[0].trim());
+                Country country2 = countryStore.getCountryByName(parameters[1].trim());
                 if (country1 != null && country2 != null)
                     borderStore.addBorder(new Border(country1, country2));
             }

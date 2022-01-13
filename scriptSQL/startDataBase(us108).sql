@@ -127,7 +127,8 @@ create table Country (
 	continent	varChar(10),
 	population	number constraint ck_population_country_positive check (population > 0),
 	latitude	number(12,9),
-	longitude	number(12,9)
+	longitude	number(12,9),
+	temperature number
 );
 
 create table Port(

@@ -228,11 +228,11 @@ INSERT INTO Position_Ship VALUES ('IMO3333333' , timestamp '2020-04-06  06:16:11
 
 -- ** tabela Country **
 
-INSERT INTO Country VALUES ('PT','PRT','Portugal','Lisbon','Europe',10.31,38.71666667,-9.133333);
-INSERT INTO Country VALUES ('ES','ESP','Spain','Madrid','Europe',46.53,40.4,-3.683333);
-INSERT INTO Country VALUES ('BR','BRA','Brazil','Brasilia','America',206.12,-15.78333333,-47.916667);
-INSERT INTO Country VALUES ('AO','AGO','Angola','Luanda','Africa',32.87,-8.838333,13.234444);
-INSERT INTO Country VALUES ('IN','IND','India','Nova Delhi','Asia',1393.41,28.644800,28.644800);
+INSERT INTO Country VALUES ('PT','PRT','Portugal','Lisbon','Europe',10.31,38.71666667,-9.133333, 17);
+INSERT INTO Country VALUES ('ES','ESP','Spain','Madrid','Europe',46.53,40.4,-3.683333, 15);
+INSERT INTO Country VALUES ('BR','BRA','Brazil','Brasilia','America',206.12,-15.78333333,-47.916667, 22);
+INSERT INTO Country VALUES ('AO','AGO','Angola','Luanda','Africa',32.87,-8.838333,13.234444, 15.6);
+INSERT INTO Country VALUES ('IN','IND','India','Nova Delhi','Asia',1393.41,28.644800,28.644800, 25.78);
 
 -- ** tabela Port**
 

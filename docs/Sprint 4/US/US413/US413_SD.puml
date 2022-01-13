@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Ship Chief Electrical Engineer" as SCEE
+
+participant ":TripEnergyUI" as UI
+participant ":TripEnergyController" as CTRL
+participant ":TripStoreDb" as TRIPS
+
+activate SCEE
+SCEE -> UI : Asks for total energy required for a trip
+
+activate UI
+UI --> SCEE : requests data (trip ID)
+
+SCEE -> UI : types requested data
+
+autonumber 3.1
+
+UI -> CTRL : getTripEnergy(trip ID)
+activate CTRL
+
+CTRL -> TRIPS : getTripEnergy(trip ID)
+activate TRIPS
+
+autonumber 4
+
+UI --> SCEE : Shows total energy for 7ºC containers and for -5ºC containers
+
+deactivate TRIPS
+deactivate CTRL
+deactivate UI
+deactivate SCEE
+@enduml

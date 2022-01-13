@@ -1,0 +1,251 @@
+@startuml
+
+entity Contianer_Operation {
+* id_cargo_manifest
+* id_container
+* base_date_time
+--
+* id_employee
+* type_operation
+}
+
+entity Type_Operation {
+* code
+--
+* description
+}
+
+entity Trip {
+* id_trip
+--
+* ship_imo
+* id_truck
+* id_start_port
+* id_destination_port
+* id_start_warehouse
+* id_destination_warehouse
+* date_time_start
+* date_time_end
+}
+
+entity Container {
+* id_container
+--
+* iso_code
+
+* tare
+* max_weight_incl_container
+* max_weight
+* max_volume
+
+* id_owner
+* id_equipment
+* serial_number
+* check_digit
+}
+
+entity ISO {
+* iso_code
+--
+* length_code
+* width_height_code
+* container_type_code
+}
+
+entity Length {
+* length_code
+--
+* value
+}
+
+entity Width_Height {
+* width_height_code
+--
+* value
+}
+
+entity Container_Type {
+* container_type_code
+--
+* value
+}
+
+entity Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_trip
+* position_code
+* cargo_weight
+* refrigeration_temperature
+* id_client
+}
+
+entity Unloading_Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_warehouse
+}
+
+entity Loading_Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_warehouse
+}
+
+entity Truck {
+* id_truck
+--
+* id_employee
+}
+
+entity Ship {
+* imo_code
+--
+* mmsi_code
+* name_ship
+* number_generators
+* power_out_generator
+* call_sign
+* vessel_type
+* Length_ship
+* width_ship
+* capacity_ship
+* draft
+* id_employee_captain
+}
+
+entity Port {
+* id_port
+--
+* name
+* country_code
+* latitude
+* longitude
+* capacity
+}
+
+entity Warehouse {
+* id_warehouse
+--
+* name
+* country_code
+* latitude
+* longitude
+* capacity
+* id_port
+}
+
+entity Employee{
+* id_employee
+--
+* role_id
+* name_employee
+* user_password
+ address_employee
+ phone_employee
+}
+
+entity Position_Ship {
+* imo_code
+* base_date_time
+--
+* latitude
+* longitude
+* sog
+* cog
+* heading
+* position
+* transceiver_class
+* cargo
+}
+
+entity Role {
+* role_id
+--
+* designation
+}
+
+entity Client {
+* id_client
+--
+* name
+* address
+* phone_number
+}
+
+entity Container_Owner {
+* id_owner
+--
+* name_owner
+}
+
+entity Container_Equipment_Identifier {
+* id_equipment
+--
+* description
+}
+
+entity Country {
+* alpha2_code
+--
+* alpha3_code
+* capital
+* country
+* continent
+* population
+* latitude
+* longitude
+* temperature
+}
+
+entity Border {
+* country1
+* country2
+}
+
+entity Sea_Distance {
+* id_port1
+* id_port2
+--
+* distance
+}
+
+ISO }o--|| Length
+ISO }o--|| Width_Height
+ISO }o--|| Container_Type
+
+Container }o--|| Container_Owner
+Container }o--|| Container_Equipment_Identifier
+Container }o--|| ISO
+Trip ||--|| Cargo_Manifest
+Cargo_Manifest }o--|| Container
+Cargo_Manifest }|--|| Client
+Position_Ship }o--|| Ship
+
+Employee }o--|| Truck
+Trip }o--|| Truck
+Ship ||--o{ Trip
+Ship ||--o{ Employee
+Warehouse ||--o{ Employee
+Port ||--o{ Employee
+Port |o--o| Warehouse
+Employee }o--|| Role
+
+Unloading_Cargo_Manifest ||--|| Cargo_Manifest
+Loading_Cargo_Manifest ||--|| Cargo_Manifest
+
+Country ||--o{ Port
+Country ||--o{ Warehouse
+Country }|--o| Border
+Country }|--o| Border
+Sea_Distance ||--|{ Port
+Sea_Distance ||--|{ Port
+
+Cargo_Manifest ||--|{ Contianer_Operation
+Contianer_Operation }o--|| Type_Operation
+
+
+@enduml

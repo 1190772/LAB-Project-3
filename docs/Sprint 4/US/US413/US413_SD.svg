@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="377px" preserveAspectRatio="none" style="width:906px;height:377px;" version="1.1" viewBox="0 0 906 377" width="906px" zoomAndPan="magnify"><defs><filter height="300%" id="ffjz9prd3dlxz" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#ffjz9prd3dlxz)" height="174.1094" style="stroke:#A80036;stroke-width:1.0;" width="10" x="96.5" y="99.6094"/><rect fill="#FFFFFF" filter="url(#ffjz9prd3dlxz)" height="151.7578" style="stroke:#A80036;stroke-width:1.0;" width="10" x="495.5" y="121.9609"/><rect fill="#FFFFFF" filter="url(#ffjz9prd3dlxz)" height="60.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="668.5" y="213.0156"/><rect fill="#FFFFFF" filter="url(#ffjz9prd3dlxz)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="841.5" y="243.3672"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="101" x2="101" y1="89.6094" y2="291.7188"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="500.5" x2="500.5" y1="89.6094" y2="291.7188"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="673.5" x2="673.5" y1="89.6094" y2="291.7188"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="846" x2="846" y1="89.6094" y2="291.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="5" y="86.5332">Ship Chief Electrical Engineer</text><ellipse cx="101.5" cy="15" fill="#FEFECE" filter="url(#ffjz9prd3dlxz)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M101.5,23 L101.5,50 M88.5,31 L114.5,31 M101.5,50 L88.5,65 M101.5,50 L114.5,65 " fill="none" filter="url(#ffjz9prd3dlxz)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="5" y="305.252">Ship Chief Electrical Engineer</text><ellipse cx="101.5" cy="318.3281" fill="#FEFECE" filter="url(#ffjz9prd3dlxz)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M101.5,326.3281 L101.5,353.3281 M88.5,334.3281 L114.5,334.3281 M101.5,353.3281 L88.5,368.3281 M101.5,353.3281 L114.5,368.3281 " fill="none" filter="url(#ffjz9prd3dlxz)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#ffjz9prd3dlxz)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="100" x="448.5" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="455.5" y="74.5332">:TripEnergyUI</text><rect fill="#FEFECE" filter="url(#ffjz9prd3dlxz)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="100" x="448.5" y="290.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="455.5" y="312.252">:TripEnergyUI</text><rect fill="#FEFECE" filter="url(#ffjz9prd3dlxz)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="150" x="596.5" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="603.5" y="74.5332">:TripEnergyController</text><rect fill="#FEFECE" filter="url(#ffjz9prd3dlxz)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="150" x="596.5" y="290.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="603.5" y="312.252">:TripEnergyController</text><rect fill="#FEFECE" filter="url(#ffjz9prd3dlxz)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="95" x="797" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="804" y="74.5332">:TripStoreDb</text><rect fill="#FEFECE" filter="url(#ffjz9prd3dlxz)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="95" x="797" y="290.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="804" y="312.252">:TripStoreDb</text><rect fill="#FFFFFF" filter="url(#ffjz9prd3dlxz)" height="174.1094" style="stroke:#A80036;stroke-width:1.0;" width="10" x="96.5" y="99.6094"/><rect fill="#FFFFFF" filter="url(#ffjz9prd3dlxz)" height="151.7578" style="stroke:#A80036;stroke-width:1.0;" width="10" x="495.5" y="121.9609"/><rect fill="#FFFFFF" filter="url(#ffjz9prd3dlxz)" height="60.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="668.5" y="213.0156"/><rect fill="#FFFFFF" filter="url(#ffjz9prd3dlxz)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="841.5" y="243.3672"/><polygon fill="#A80036" points="483.5,117.9609,493.5,121.9609,483.5,125.9609,487.5,121.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="106.5" x2="489.5" y1="121.9609" y2="121.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="113.5" y="117.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="221" x="124.5" y="117.1045">Asks for total energy required for a trip</text><polygon fill="#A80036" points="117.5,148.3125,107.5,152.3125,117.5,156.3125,113.5,152.3125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="111.5" x2="494.5" y1="152.3125" y2="152.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="123.5" y="147.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="134.5" y="147.4561">requests data (trip ID)</text><polygon fill="#A80036" points="483.5,178.6641,493.5,182.6641,483.5,186.6641,487.5,182.6641" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="106.5" x2="489.5" y1="182.6641" y2="182.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="113.5" y="177.8076">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="124.5" y="177.8076">types requested data</text><polygon fill="#A80036" points="656.5,209.0156,666.5,213.0156,656.5,217.0156,660.5,213.0156" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="505.5" x2="662.5" y1="213.0156" y2="213.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="512.5" y="208.1592">3.1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="534.5" y="208.1592">getTripEnergy(trip ID)</text><polygon fill="#A80036" points="829.5,239.3672,839.5,243.3672,829.5,247.3672,833.5,243.3672" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="678.5" x2="835.5" y1="243.3672" y2="243.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="685.5" y="238.5107">3.2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="707.5" y="238.5107">getTripEnergy(trip ID)</text><polygon fill="#A80036" points="112.5,269.7188,102.5,273.7188,112.5,277.7188,108.5,273.7188" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="106.5" x2="499.5" y1="273.7188" y2="273.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="118.5" y="268.8623">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="354" x="129.5" y="268.8623">Shows total energy for 7ºC containers and for -5ºC containers</text><!--MD5=[565dc9a9b9adf3b056512531456bbe7f]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Ship Chief Electrical Engineer" as SCEE
+
+participant ":TripEnergyUI" as UI
+participant ":TripEnergyController" as CTRL
+participant ":TripStoreDb" as TRIPS
+
+activate SCEE
+SCEE -> UI : Asks for total energy required for a trip
+
+activate UI
+UI - -> SCEE : requests data (trip ID)
+
+SCEE -> UI : types requested data
+
+autonumber 3.1
+
+UI -> CTRL : getTripEnergy(trip ID)
+activate CTRL
+
+CTRL -> TRIPS : getTripEnergy(trip ID)
+activate TRIPS
+
+autonumber 4
+
+UI - -> SCEE : Shows total energy for 7ºC containers and for -5ºC containers
+
+deactivate TRIPS
+deactivate CTRL
+deactivate UI
+deactivate SCEE
+@enduml
+
+@startuml
+
+autonumber
+
+actor "Ship Chief Electrical Engineer" as SCEE
+
+participant ":TripEnergyUI" as UI
+participant ":TripEnergyController" as CTRL
+participant ":TripStoreDb" as TRIPS
+
+activate SCEE
+SCEE -> UI : Asks for total energy required for a trip
+
+activate UI
+UI - -> SCEE : requests data (trip ID)
+
+SCEE -> UI : types requested data
+
+autonumber 3.1
+
+UI -> CTRL : getTripEnergy(trip ID)
+activate CTRL
+
+CTRL -> TRIPS : getTripEnergy(trip ID)
+activate TRIPS
+
+autonumber 4
+
+UI - -> SCEE : Shows total energy for 7ºC containers and for -5ºC containers
+
+deactivate TRIPS
+deactivate CTRL
+deactivate UI
+deactivate SCEE
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

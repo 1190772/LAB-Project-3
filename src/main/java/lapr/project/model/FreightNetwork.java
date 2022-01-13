@@ -32,9 +32,11 @@ public class FreightNetwork extends MatrixGraph<FreightNetworkVertex, Long> {
         FreightNetworkVertex vOrig = startVertex;
         Edge<FreightNetworkVertex, Long> shortestEdge;
         Long shortestDistance;
+        boolean readyToReturn = false;
 
         if (startVertex != null) {
             res.add(vOrig);
+            visited[key(startVertex)] = true;
 
             do {
                 shortestDistance = Long.MAX_VALUE;
@@ -48,13 +50,16 @@ public class FreightNetwork extends MatrixGraph<FreightNetworkVertex, Long> {
 
                 if (shortestEdge != null) {
                     vOrig = shortestEdge.getVDest();
-                    if (vOrig != startVertex)
-                        visited[key(vOrig)] = true;
+                    visited[key(vOrig)] = true;
                     res.add(vOrig);
                 }
-                else {
+                else if (readyToReturn){
                     vOrig = res.getLast();
                     res.removeLast();
+                }
+                else {
+                    visited[key(startVertex)] = false;
+                    readyToReturn = true;
                 }
             } while (vOrig != startVertex);
         }
