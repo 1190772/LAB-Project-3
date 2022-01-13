@@ -1,8 +1,8 @@
 package lapr.project.model;
 
+import lapr.project.utils.graph.Edge;
 import lapr.project.utils.graph.MatrixGraph;
 
-import javax.naming.OperationNotSupportedException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,8 +25,40 @@ public class FreightNetwork extends MatrixGraph<FreightNetworkVertex, Long> {
         return startVertex;
     }
 
-    public LinkedList<FreightNetworkVertex> getMostEfficientCircuit(String sourceLocation) throws OperationNotSupportedException {
-        throw new OperationNotSupportedException();
+    public LinkedList<FreightNetworkVertex> getMostEfficientCircuit(String sourceLocation) {
+        LinkedList<FreightNetworkVertex> res = new LinkedList<>();
+        FreightNetworkVertex startVertex = findVertexByName(sourceLocation);
+        boolean[] visited = new boolean[numVertices()];
+        FreightNetworkVertex vOrig = startVertex;
+        Edge<FreightNetworkVertex, Long> shortestEdge;
+        Long shortestDistance;
+
+        if (startVertex != null) {
+            res.add(vOrig);
+
+            do {
+                shortestDistance = Long.MAX_VALUE;
+                shortestEdge = null;
+                for (Edge<FreightNetworkVertex, Long> edge : outgoingEdges(vOrig)) {
+                    if (!visited[key(edge.getVDest())] && (edge.getWeight() < shortestDistance)) {
+                        shortestEdge = edge;
+                        shortestDistance = shortestEdge.getWeight();
+                    }
+                }
+
+                if (shortestEdge != null) {
+                    vOrig = shortestEdge.getVDest();
+                    if (vOrig != startVertex)
+                        visited[key(vOrig)] = true;
+                    res.add(vOrig);
+                }
+                else {
+                    vOrig = res.getLast();
+                    res.removeLast();
+                }
+            } while (vOrig != startVertex);
+        }
+        return res;
     }
 
     public String toString() {

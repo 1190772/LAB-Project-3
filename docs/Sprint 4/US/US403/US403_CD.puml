@@ -12,6 +12,7 @@ class MostEfficientCircuitController {
 
 class FreightNetwork {
 + getMostEfficientCircuit(source location)
++ findVertexByName(name)
 }
 
 MostEfficientCircuitController <.. MostEfficientCircuitUI

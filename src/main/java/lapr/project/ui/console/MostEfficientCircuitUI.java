@@ -31,16 +31,11 @@ public class MostEfficientCircuitUI implements Runnable{
     @Override
     public void run() {
         String sourceLocation;
-        LinkedList<FreightNetworkVertex> circuit = new LinkedList<>();
+        LinkedList<FreightNetworkVertex> circuit;
 
         sourceLocation = Utils.readLineFromConsole("Source Location: ");
-        try {
-            circuit = controller.getMostEfficientCircuit(sourceLocation);
-        } catch (OperationNotSupportedException e) {
-            e.printStackTrace();
-        }
-
-    for (FreightNetworkVertex place : circuit)
-            System.out.println(place.getName());
+        circuit = controller.getMostEfficientCircuit(sourceLocation);
+        for (FreightNetworkVertex place : circuit)
+            System.out.println(place.getName() + " (" + place.getLatitude() + "," + place.getLongitude() + ')');
     }
 }

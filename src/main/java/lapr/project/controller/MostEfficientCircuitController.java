@@ -28,7 +28,7 @@ public class MostEfficientCircuitController {
      * @param sourceLocation the starting location.
      * @return Most efficient circuit.
      */
-    public LinkedList<FreightNetworkVertex> getMostEfficientCircuit(String sourceLocation) throws OperationNotSupportedException {
+    public LinkedList<FreightNetworkVertex> getMostEfficientCircuit(String sourceLocation) {
         FreightNetwork freightNetwork = App.getInstance().getCompany().getFreightNetwork();
         return freightNetwork.getMostEfficientCircuit(sourceLocation);
     }

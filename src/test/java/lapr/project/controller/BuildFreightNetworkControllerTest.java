@@ -156,13 +156,4 @@ class BuildFreightNetworkControllerTest {
         FreightNetwork expected = new FreightNetwork(vs, m);
         assertEquals(expected, actual);
     }
-
-    @Test
-    void findVertexByNameTest() {
-        BuildFreightNetworkController controller = new BuildFreightNetworkController();
-        FreightNetwork freightNetwork = controller.buildFreightNetwork(countries, ports, borders, seaDistances, 0);
-        Assertions.assertEquals(country1, freightNetwork.findVertexByName(country1.getName()));
-        Assertions.assertEquals(country2, freightNetwork.findVertexByName(country2.getName()));
-        Assertions.assertNull(freightNetwork.findVertexByName("Invalid Name"));
-    }
 }

@@ -24,6 +24,8 @@ activate CTRL
 
 CTRL -> NET : getMostEfficientCircuit(source location)
 activate NET
+NET --> NET : startVextex = findVertexByName(source location)
+NET --> NET : getMostEfficientCircuit(startVertex)
 
 autonumber 4
 
