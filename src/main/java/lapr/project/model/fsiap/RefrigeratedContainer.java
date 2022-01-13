@@ -13,6 +13,7 @@ public class RefrigeratedContainer {
     private double width = 244;
     private double height = 610;
     private final double thermalVariation;
+    private final String[] walls = {"Top Wall: ", "Left Wall: ", "Right Wall: ", "Bottom Wall: ", "Front Door: ", "Back Door: "};
 
     private List<Pair<WallMaterial, Double>> topWall;
     private List<Pair<WallMaterial, Double>> leftWall;
@@ -141,23 +142,8 @@ public class RefrigeratedContainer {
         StringBuilder result = new StringBuilder();
         List<Double> resistance = getResistance();
 
-        result.append("Top Wall: ");
-        result.append(resistance.get(0)).append(resistanceUnit);
-
-        result.append("Left Wall: ");
-        result.append(resistance.get(1)).append(resistanceUnit);
-
-        result.append("Right Wall: ");
-        result.append(resistance.get(2)).append(resistanceUnit);
-
-        result.append("Bottom Wall: ");
-        result.append(resistance.get(3)).append(resistanceUnit);
-
-        result.append("Front Door: ");
-        result.append(resistance.get(4)).append(resistanceUnit);
-
-        result.append("Back Door: ");
-        result.append(resistance.get(5)).append(resistanceUnit);
+        for (int i = 0; i<walls.length;i++)
+            result.append(walls[i]).append(resistance.get(i)).append(resistanceUnit);
 
         return result.toString();
     }
@@ -167,23 +153,8 @@ public class RefrigeratedContainer {
         StringBuilder result = new StringBuilder();
         List<Double> thermalFlux = getThermalFlux();
 
-        result.append("Top Wall: ");
-        result.append(thermalFlux.get(0)).append(thermalFluxUnit);
-
-        result.append("Left Wall: ");
-        result.append(thermalFlux.get(1)).append(thermalFluxUnit);
-
-        result.append("Right Wall: ");
-        result.append(thermalFlux.get(2)).append(thermalFluxUnit);
-
-        result.append("Bottom Wall: ");
-        result.append(thermalFlux.get(3)).append(thermalFluxUnit);
-
-        result.append("Front Door: ");
-        result.append(thermalFlux.get(4)).append(thermalFluxUnit);
-
-        result.append("Back Door: ");
-        result.append(thermalFlux.get(5)).append(thermalFluxUnit);
+        for (int i = 0; i<walls.length;i++)
+            result.append(walls[i]).append(thermalFlux.get(i)).append(thermalFluxUnit);
 
         return result.toString();
     }
