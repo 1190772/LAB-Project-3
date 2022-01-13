@@ -91,7 +91,7 @@ public class ShortestPathControllerTest {
         stops.add(vertices.get(0));
         stops.add(vertices.get(2));
         stops.add(vertices.get(5));
-        assertEquals(1258614, new ShortestPathController().shortestPathLand(stops, path));
+        assertEquals(1208657, new ShortestPathController().shortestPathLand(stops, path));
 
         StringBuilder sb = new StringBuilder();
         sb.append('[');
@@ -99,7 +99,7 @@ public class ShortestPathControllerTest {
             sb.append(vertex.getVertexName()).append(", ");
         sb.append(']');
 
-        assertEquals("[Country = Belmopan, Port = port1, Country = Belmopan, Country = Mexico City, Port = port4, ]", sb.toString());
+        assertEquals("[Port = port4, Country = Mexico City, Country = Belmopan, Port = port1, ]", sb.toString());
         stops.add(vertices.get(3));
         assertEquals(0, new ShortestPathController().shortestPathLand(stops, path));
         assertTrue(path.isEmpty());
@@ -111,8 +111,7 @@ public class ShortestPathControllerTest {
         stops = new ArrayList<>();
         stops.add(vertices.get(2));
         stops.add(vertices.get(3));
-        stops.add(vertices.get(2));
-        assertEquals(20000, new ShortestPathController().shortestPathSea(stops, path));
+        assertEquals(10000, new ShortestPathController().shortestPathSea(stops, path));
 
         StringBuilder sb = new StringBuilder();
         sb.append('[');
@@ -120,7 +119,7 @@ public class ShortestPathControllerTest {
             sb.append(vertex.getVertexName()).append(", ");
         sb.append(']');
 
-        assertEquals("[Port = port1, Port = port2, Port = port1, ]", sb.toString());
+        assertEquals("[Port = port1, Port = port2, ]", sb.toString());
         stops.add(vertices.get(4));
         assertEquals(0, new ShortestPathController().shortestPathSea(stops, path));
         assertTrue(path.isEmpty());
@@ -133,7 +132,7 @@ public class ShortestPathControllerTest {
         stops.add(vertices.get(2));
         stops.add(vertices.get(3));
         stops.add(vertices.get(5));
-        assertEquals(1278614, new ShortestPathController().shortestPathLandSea(stops, path));
+        assertEquals(1218657, new ShortestPathController().shortestPathLandSea(stops, path));
 
         StringBuilder sb = new StringBuilder();
         sb.append('[');
@@ -141,6 +140,6 @@ public class ShortestPathControllerTest {
             sb.append(vertex.getVertexName()).append(", ");
         sb.append(']');
 
-        assertEquals("[Country = Belmopan, Port = port1, Port = port2, Port = port1, Country = Belmopan, Country = Mexico City, Port = port4, ]", sb.toString());
+        assertEquals("[Port = port4, Country = Mexico City, Country = Belmopan, Port = port1, Port = port2, ]", sb.toString());
     }
 }
