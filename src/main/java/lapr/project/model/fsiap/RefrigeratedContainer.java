@@ -1,6 +1,7 @@
 package lapr.project.model.fsiap;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static lapr.project.model.shared.Utils.*;
@@ -17,12 +18,16 @@ public class RefrigeratedContainer {
     private List<Pair<WallMaterial, Double>> leftWall;
     private List<Pair<WallMaterial, Double>> rightWall;
     private List<Pair<WallMaterial, Double>> bottomWall;
+    private List<Pair<WallMaterial, Double>> frontDoor;
+    private List<Pair<WallMaterial, Double>> backDoor;
 
-    public RefrigeratedContainer(List<Pair<WallMaterial, Double>> topWall, List<Pair<WallMaterial, Double>> leftWall, List<Pair<WallMaterial, Double>> rightWall, List<Pair<WallMaterial, Double>> bottomWall, double thermalVariation) {
+    public RefrigeratedContainer(List<Pair<WallMaterial, Double>> topWall, List<Pair<WallMaterial, Double>> leftWall, List<Pair<WallMaterial, Double>> rightWall, List<Pair<WallMaterial, Double>> bottomWall, List<Pair<WallMaterial, Double>> frontDoor, List<Pair<WallMaterial, Double>> backDoor, double thermalVariation) {
         setTopWall(topWall);
         setLeftWall(leftWall);
         setRightWall(rightWall);
         setBottomWall(bottomWall);
+        setFrontDoor(frontDoor);
+        setBackDoor(backDoor);
         this.thermalVariation = thermalVariation;
     }
 
@@ -31,6 +36,8 @@ public class RefrigeratedContainer {
         setLeftWall(wall);
         setRightWall(wall);
         setBottomWall(wall);
+        setFrontDoor(wall);
+        setBackDoor(wall);
         this.thermalVariation = thermalVariation;
     }
 
@@ -84,70 +91,99 @@ public class RefrigeratedContainer {
         this.bottomWall = new ArrayList<>(bottomWall);
     }
 
-    private String getResistance() {
+    public void setFrontDoor(List<Pair<WallMaterial, Double>> frontDoor) {
+        if (frontDoor == null)
+            throw new IllegalArgumentException("List of Materials for the front door cannot be null!");
+        if (frontDoor.isEmpty())
+            throw new IllegalArgumentException("List of Materials for the front door cannot be empty!");
+        this.frontDoor = new ArrayList<>(frontDoor);
+    }
+
+    public void setBackDoor(List<Pair<WallMaterial, Double>> backDoor) {
+        if (backDoor == null)
+            throw new IllegalArgumentException("List of Materials for the back door cannot be null!");
+        if (backDoor.isEmpty())
+            throw new IllegalArgumentException("List of Materials for the back door cannot be empty!");
+        this.backDoor = new ArrayList<>(backDoor);
+    }
+
+    public List<Double> getResistance() {
+        return new ArrayList<>(Arrays.asList(calculateResistance(topWall, getWallArea("Top")), calculateResistance(leftWall, getWallArea("Side")), calculateResistance(rightWall, getWallArea("Side")), calculateResistance(bottomWall, getWallArea("Bottom")), calculateResistance(frontDoor, getWallArea("Door")), calculateResistance(backDoor, getWallArea("Door"))));
+    }
+
+    private double calculateResistance(List<Pair<WallMaterial, Double>> wallMaterial, double area) {
+        double resistance = 0;
+        for (Pair<WallMaterial, Double> pair : wallMaterial)
+            resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
+        return resistance;
+    }
+
+    public double getWallArea(String side) {
+        switch (side) {
+            case "Door":
+                return width * height;
+            case "Side":
+                return length * height;
+            default:
+                return length * width;
+        }
+    }
+
+    public List<Double> getThermalFlux() {
+        List<Double> thermalFlux = new ArrayList<>();
+        for (double resistance : getResistance())
+            thermalFlux.add(thermalFlux(thermalVariation, resistance));
+        return thermalFlux;
+    }
+
+    private String getResistanceText() {
         String resistanceUnit = "K/W\n";
         StringBuilder result = new StringBuilder();
-        double resistance = 0;
-        double area = width * length;
+        List<Double> resistance = getResistance();
 
         result.append("Top Wall: ");
-        for (Pair<WallMaterial, Double> pair : topWall)
-            resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(resistance).append(resistanceUnit);
+        result.append(resistance.get(0)).append(resistanceUnit);
 
-        resistance = 0;
-        area = height * length;
         result.append("Left Wall: ");
-        for (Pair<WallMaterial, Double> pair : leftWall)
-            resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(resistance).append(resistanceUnit);
+        result.append(resistance.get(1)).append(resistanceUnit);
 
-        resistance = 0;
         result.append("Right Wall: ");
-        for (Pair<WallMaterial, Double> pair : rightWall)
-            resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(resistance).append(resistanceUnit);
+        result.append(resistance.get(2)).append(resistanceUnit);
 
-        resistance = 0;
-        area = width * length;
         result.append("Bottom Wall: ");
-        for (Pair<WallMaterial, Double> pair : bottomWall)
-            resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(resistance).append(resistanceUnit);
+        result.append(resistance.get(3)).append(resistanceUnit);
+
+        result.append("Front Door: ");
+        result.append(resistance.get(4)).append(resistanceUnit);
+
+        result.append("Back Door: ");
+        result.append(resistance.get(5)).append(resistanceUnit);
 
         return result.toString();
     }
 
-    private String getThermalFlux() {
+    private String getThermalFluxText() {
         String thermalFluxUnit = "W/m^2\n";
         StringBuilder result = new StringBuilder();
-        double resistance = 0;
-        double area = width * length;
+        List<Double> thermalFlux = getThermalFlux();
 
         result.append("Top Wall: ");
-        for (Pair<WallMaterial, Double> pair : topWall)
-            resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(thermalFlux(thermalVariation, resistance)).append(thermalFluxUnit);
+        result.append(thermalFlux.get(0)).append(thermalFluxUnit);
 
-        resistance = 0;
-        area = height * length;
         result.append("Left Wall: ");
-        for (Pair<WallMaterial, Double> pair : leftWall)
-            resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(thermalFlux(thermalVariation, resistance)).append(thermalFluxUnit);
+        result.append(thermalFlux.get(1)).append(thermalFluxUnit);
 
-        resistance = 0;
         result.append("Right Wall: ");
-        for (Pair<WallMaterial, Double> pair : rightWall)
-            resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(thermalFlux(thermalVariation, resistance)).append(thermalFluxUnit);
+        result.append(thermalFlux.get(2)).append(thermalFluxUnit);
 
-        resistance = 0;
-        area = width * length;
         result.append("Bottom Wall: ");
-        for (Pair<WallMaterial, Double> pair : bottomWall)
-            resistance += thermalResistance(pair.get2nd(), pair.get1st().getK(), area);
-        result.append(thermalFlux(thermalVariation, resistance)).append(thermalFluxUnit);
+        result.append(thermalFlux.get(3)).append(thermalFluxUnit);
+
+        result.append("Front Door: ");
+        result.append(thermalFlux.get(4)).append(thermalFluxUnit);
+
+        result.append("Back Door: ");
+        result.append(thermalFlux.get(5)).append(thermalFluxUnit);
 
         return result.toString();
     }
@@ -167,22 +203,22 @@ public class RefrigeratedContainer {
             wallThickness += pair.get2nd();
         double newWidth = width - wallThickness;
 
-        return length* newWidth * newHeight;
+        return length * newWidth * newHeight;
     }
 
     @Override
     public String toString() {
         return "RefrigeratedContainer{" +
                 "length=" + length +
-                "m, width=" + width +
-                "m, height=" + height +
-                "m,\ntopWall=" + topWall +
+                "cm, width=" + width +
+                "cm, height=" + height +
+                "cm,\ntopWall=" + topWall +
                 ",\nleftWall=" + leftWall +
                 ",\nrightWall=" + rightWall +
                 ",\nbottomWall=" + bottomWall +
-                ",\nResistance= " + getResistance() +
-                "Thermal Flux= " + getThermalFlux() +
+                ",\nResistance= " + getResistanceText() +
+                "Thermal Flux= " + getThermalFluxText() +
                 "Total cargo volume= " + getVolume() +
-                "m^3\n}";
+                "cm^3\n}";
     }
 }
