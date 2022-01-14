@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Port Staff" as PS
+
+activate PS
+PS -> ":System" : Fill a dynamically reserved array in memory with all \nthe container's information in its respective place
+
+activate ":System"
+":System" --> PS : creates array
+deactivate ":System"
+
+
+deactivate PS
+
+@enduml
