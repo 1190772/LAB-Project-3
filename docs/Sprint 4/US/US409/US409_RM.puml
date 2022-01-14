@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+entity Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_trip
+* position_code
+* cargo_weight
+* refrigeration_temperature
+* id_client
+}
+
+entity Container {
+* id_container
+--
+* iso_code
+
+* tare
+* max_weight_incl_container
+* max_weight
+* max_volume
+
+* id_owner
+* id_equipment
+* serial_number
+* check_digit
+}
+
+Cargo_Manifest }o--|| Container
+
+
+@enduml
