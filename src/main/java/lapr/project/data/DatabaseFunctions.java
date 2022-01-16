@@ -1,5 +1,6 @@
 package lapr.project.data;
 
+import lapr.project.controller.App;
 import lapr.project.utils.DatabaseConnection;
 
 import java.io.FileNotFoundException;
@@ -160,5 +161,23 @@ public class DatabaseFunctions {
 
 
         return result.toString();
+    }
+
+    public static String getTripEnergyDetails(int tripID) {
+        String res = "An error occurred.";
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
+
+        String sqlCommand = "select tripEnergyDetails(?) from dual";
+        try (PreparedStatement TripPreparedStatement = connection.prepareStatement(sqlCommand)) {
+            TripPreparedStatement.setInt(1, tripID);
+            try (ResultSet TripResultSet = TripPreparedStatement.executeQuery()) {
+                TripResultSet.next();
+                res = TripResultSet.getString(1);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return res;
     }
 }
