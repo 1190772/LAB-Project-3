@@ -22,8 +22,10 @@ autonumber 3.1
 UI -> CTRL : getTripEnergy(trip ID)
 activate CTRL
 
-CTRL -> TRIPS : getTripEnergy(trip ID)
+CTRL -> TRIPS : getTripEnergyDetails(trip ID)(trip ID)
 activate TRIPS
+
+CTRL -> CTRL : calculateTripEnergy()
 
 autonumber 4
 

@@ -9,9 +9,9 @@ import static lapr.project.model.shared.Utils.*;
 import oracle.ucp.util.Pair;
 
 public class RefrigeratedContainer {
-    private double length = 244;
-    private double width = 244;
-    private double height = 610;
+    private double length = 2.44;
+    private double width = 2.44;
+    private double height = 6.10;
     private final double thermalVariation;
     private final String[] walls = {"Top Wall: ", "Left Wall: ", "Right Wall: ", "Bottom Wall: ", "Front Door: ", "Back Door: "};
 
@@ -181,15 +181,15 @@ public class RefrigeratedContainer {
     public String toString() {
         return "RefrigeratedContainer{" +
                 "length=" + length +
-                "cm, width=" + width +
-                "cm, height=" + height +
-                "cm,\ntopWall=" + topWall +
+                "m, width=" + width +
+                "m, height=" + height +
+                "m,\ntopWall=" + topWall +
                 ",\nleftWall=" + leftWall +
                 ",\nrightWall=" + rightWall +
                 ",\nbottomWall=" + bottomWall +
                 ",\nResistance= " + getResistanceText() +
                 "Thermal Flux= " + getThermalFluxText() +
                 "Total cargo volume= " + getVolume() +
-                "cm^3\n}";
+                "m^3\n}";
     }
 }

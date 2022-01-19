@@ -5,6 +5,7 @@ import lapr.project.model.fsiap.RefrigeratedContainer;
 import lapr.project.model.fsiap.WallMaterial;
 import oracle.ucp.util.Pair;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class TripEnergyController {
@@ -24,6 +25,7 @@ public class TripEnergyController {
     public String calculateTripEnergy(int seconds1, int seconds2, float temperature1, float temperature2, int amount1, int amount2) {
         double energy1 = 0;
         double energy2 = 0;
+        DecimalFormat format = new DecimalFormat("0.00E00");
 
         ArrayList<Pair<WallMaterial, Double>> materialList1 = new ArrayList<>();
         materialList1.add(new Pair<>(WallMaterial.STAINLESS_STEEL, WallMaterial.STAINLESS_STEEL.getK()));
@@ -61,7 +63,7 @@ public class TripEnergyController {
         energy2 += thermalFlux2part2 * seconds2 * totalArea;
         energy2 *= amount2;
 
-        return "Total energy for -5ºC containers: " + energy1 + "J.\nTotal energy for 7ºC containers: " + energy2 + "J.";
+        return "Total energy for -5ºC containers: " + format.format(energy1) + " J.\nTotal energy for  7ºC containers: " + format.format(energy2) + " J.";
     }
 
 }

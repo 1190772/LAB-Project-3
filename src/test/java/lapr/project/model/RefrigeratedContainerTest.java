@@ -29,49 +29,49 @@ public class RefrigeratedContainerTest {
 
     @Test
     void toStringTest() {
-        assertEquals("RefrigeratedContainer{length=244.0cm, width=244.0cm, height=610.0cm,\n" +
+        assertEquals("RefrigeratedContainer{length=2.44m, width=2.44m, height=6.1m,\n" +
                 "topWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "leftWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "rightWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "bottomWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
-                "Resistance= Top Wall: 3.125029509625945E-5K/W\n" +
-                "Left Wall: 1.2500118038503778E-5K/W\n" +
-                "Right Wall: 1.2500118038503778E-5K/W\n" +
-                "Bottom Wall: 3.125029509625945E-5K/W\n" +
-                "Front Door: 1.2500118038503778E-5K/W\n" +
-                "Back Door: 1.2500118038503778E-5K/W\n" +
-                "Thermal Flux= Top Wall: 799992.45W/m^2\n" +
-                "Left Wall: 1999981.11W/m^2\n" +
-                "Right Wall: 1999981.11W/m^2\n" +
-                "Bottom Wall: 799992.45W/m^2\n" +
-                "Front Door: 1999981.11W/m^2\n" +
-                "Back Door: 1999981.11W/m^2\n" +
-                "Total cargo volume= 3.627529456E7cm^3\n" +
+                "Resistance= Top Wall: 0.31250295096259445K/W\n" +
+                "Left Wall: 0.1250011803850378K/W\n" +
+                "Right Wall: 0.1250011803850378K/W\n" +
+                "Bottom Wall: 0.31250295096259445K/W\n" +
+                "Front Door: 0.1250011803850378K/W\n" +
+                "Back Door: 0.1250011803850378K/W\n" +
+                "Thermal Flux= Top Wall: 80.0W/m^2\n" +
+                "Left Wall: 200.0W/m^2\n" +
+                "Right Wall: 200.0W/m^2\n" +
+                "Bottom Wall: 80.0W/m^2\n" +
+                "Front Door: 200.0W/m^2\n" +
+                "Back Door: 200.0W/m^2\n" +
+                "Total cargo volume= 32.24703999999999m^3\n" +
                 "}", refrigeratedContainer1.toString());
-        assertEquals("RefrigeratedContainer{length=244.0cm, width=244.0cm, height=610.0cm,\n" +
+        assertEquals("RefrigeratedContainer{length=2.44m, width=2.44m, height=6.1m,\n" +
                 "topWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "leftWall=[[CORTEN_STEEL, 0.02], [EXPANDED_POLYSTYRENE, 0.06], [BAMBOO, 0.02]],\n" +
                 "rightWall=[[CORTEN_STEEL, 0.02], [EXPANDED_POLYSTYRENE, 0.06], [BAMBOO, 0.02]],\n" +
                 "bottomWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
-                "Resistance= Top Wall: 3.125029509625945E-5K/W\n" +
-                "Left Wall: 9.013111142505999E-6K/W\n" +
-                "Right Wall: 9.013111142505999E-6K/W\n" +
-                "Bottom Wall: 3.125029509625945E-5K/W\n" +
-                "Front Door: 9.013111142505999E-6K/W\n" +
-                "Back Door: 1.2500118038503778E-5K/W\n" +
-                "Thermal Flux= Top Wall: 415996.07W/m^2\n" +
-                "Left Wall: 1442343.25W/m^2\n" +
-                "Right Wall: 1442343.25W/m^2\n" +
-                "Bottom Wall: 415996.07W/m^2\n" +
-                "Front Door: 1442343.25W/m^2\n" +
-                "Back Door: 1039990.18W/m^2\n" +
-                "Total cargo volume= 3.627529456E7cm^3\n" +
+                "Resistance= Top Wall: 0.31250295096259445K/W\n" +
+                "Left Wall: 0.09013111142506K/W\n" +
+                "Right Wall: 0.09013111142506K/W\n" +
+                "Bottom Wall: 0.31250295096259445K/W\n" +
+                "Front Door: 0.09013111142506K/W\n" +
+                "Back Door: 0.1250011803850378K/W\n" +
+                "Thermal Flux= Top Wall: 41.6W/m^2\n" +
+                "Left Wall: 144.23W/m^2\n" +
+                "Right Wall: 144.23W/m^2\n" +
+                "Bottom Wall: 41.6W/m^2\n" +
+                "Front Door: 144.23W/m^2\n" +
+                "Back Door: 104.0W/m^2\n" +
+                "Total cargo volume= 32.24703999999999m^3\n" +
                 "}", refrigeratedContainer2.toString());
 
         refrigeratedContainer1.setLength(10);
         refrigeratedContainer1.setWidth(10);
         refrigeratedContainer1.setHeight(10);
-        assertEquals("RefrigeratedContainer{length=10.0cm, width=10.0cm, height=10.0cm,\n" +
+        assertEquals("RefrigeratedContainer{length=10.0m, width=10.0m, height=10.0m,\n" +
                 "topWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "leftWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "rightWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
@@ -88,7 +88,7 @@ public class RefrigeratedContainerTest {
                 "Bottom Wall: 1343.71W/m^2\n" +
                 "Front Door: 1343.71W/m^2\n" +
                 "Back Door: 1343.71W/m^2\n" +
-                "Total cargo volume= 960.4000000000001cm^3\n" +
+                "Total cargo volume= 960.4000000000001m^3\n" +
                 "}", refrigeratedContainer1.toString());
     }
 
@@ -120,26 +120,26 @@ public class RefrigeratedContainerTest {
         assertThrows(IllegalArgumentException.class, () -> controller.getDetails(walls, thermalVariation1), "The list has to contain at least a composition of one wall!");
 
         walls.add(wallType1);
-        assertEquals("RefrigeratedContainer{length=244.0cm, width=244.0cm, height=610.0cm,\n" +
+        assertEquals("RefrigeratedContainer{length=2.44m, width=2.44m, height=6.1m,\n" +
                 "topWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "leftWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "rightWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "bottomWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
-                "Resistance= Top Wall: 3.125029509625945E-5K/W\n" +
-                "Left Wall: 1.2500118038503778E-5K/W\n" +
-                "Right Wall: 1.2500118038503778E-5K/W\n" +
-                "Bottom Wall: 3.125029509625945E-5K/W\n" +
-                "Front Door: 1.2500118038503778E-5K/W\n" +
-                "Back Door: 1.2500118038503778E-5K/W\n" +
-                "Thermal Flux= Top Wall: 799992.45W/m^2\n" +
-                "Left Wall: 1999981.11W/m^2\n" +
-                "Right Wall: 1999981.11W/m^2\n" +
-                "Bottom Wall: 799992.45W/m^2\n" +
-                "Front Door: 1999981.11W/m^2\n" +
-                "Back Door: 1999981.11W/m^2\n" +
-                "Total cargo volume= 3.627529456E7cm^3\n" +
+                "Resistance= Top Wall: 0.31250295096259445K/W\n" +
+                "Left Wall: 0.1250011803850378K/W\n" +
+                "Right Wall: 0.1250011803850378K/W\n" +
+                "Bottom Wall: 0.31250295096259445K/W\n" +
+                "Front Door: 0.1250011803850378K/W\n" +
+                "Back Door: 0.1250011803850378K/W\n" +
+                "Thermal Flux= Top Wall: 80.0W/m^2\n" +
+                "Left Wall: 200.0W/m^2\n" +
+                "Right Wall: 200.0W/m^2\n" +
+                "Bottom Wall: 80.0W/m^2\n" +
+                "Front Door: 200.0W/m^2\n" +
+                "Back Door: 200.0W/m^2\n" +
+                "Total cargo volume= 32.24703999999999m^3\n" +
                 "}", controller.getDetails(walls, thermalVariation1).toString());
-        assertEquals("RefrigeratedContainer{length=10.0cm, width=10.0cm, height=10.0cm,\n" +
+        assertEquals("RefrigeratedContainer{length=10.0m, width=10.0m, height=10.0m,\n" +
                 "topWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "leftWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "rightWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
@@ -156,7 +156,7 @@ public class RefrigeratedContainerTest {
                 "Bottom Wall: 1343.71W/m^2\n" +
                 "Front Door: 1343.71W/m^2\n" +
                 "Back Door: 1343.71W/m^2\n" +
-                "Total cargo volume= 960.4000000000001cm^3\n" +
+                "Total cargo volume= 960.4000000000001m^3\n" +
                 "}", controller.getDetails(walls, thermalVariation1, 10, 10, 10).toString());
 
         walls.add(wallType2);
@@ -165,26 +165,26 @@ public class RefrigeratedContainerTest {
         walls.add(wallType1);
         walls.add(wallType2);
         walls.add(wallType1);
-        assertEquals("RefrigeratedContainer{length=244.0cm, width=244.0cm, height=610.0cm,\n" +
+        assertEquals("RefrigeratedContainer{length=2.44m, width=2.44m, height=6.1m,\n" +
                 "topWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "leftWall=[[CORTEN_STEEL, 0.02], [EXPANDED_POLYSTYRENE, 0.06], [BAMBOO, 0.02]],\n" +
                 "rightWall=[[CORTEN_STEEL, 0.02], [EXPANDED_POLYSTYRENE, 0.06], [BAMBOO, 0.02]],\n" +
                 "bottomWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
-                "Resistance= Top Wall: 3.125029509625945E-5K/W\n" +
-                "Left Wall: 9.013111142505999E-6K/W\n" +
-                "Right Wall: 9.013111142505999E-6K/W\n" +
-                "Bottom Wall: 3.125029509625945E-5K/W\n" +
-                "Front Door: 9.013111142505999E-6K/W\n" +
-                "Back Door: 1.2500118038503778E-5K/W\n" +
-                "Thermal Flux= Top Wall: 799992.45W/m^2\n" +
-                "Left Wall: 2773737.02W/m^2\n" +
-                "Right Wall: 2773737.02W/m^2\n" +
-                "Bottom Wall: 799992.45W/m^2\n" +
-                "Front Door: 2773737.02W/m^2\n" +
-                "Back Door: 1999981.11W/m^2\n" +
-                "Total cargo volume= 3.627529456E7cm^3\n" +
+                "Resistance= Top Wall: 0.31250295096259445K/W\n" +
+                "Left Wall: 0.09013111142506K/W\n" +
+                "Right Wall: 0.09013111142506K/W\n" +
+                "Bottom Wall: 0.31250295096259445K/W\n" +
+                "Front Door: 0.09013111142506K/W\n" +
+                "Back Door: 0.1250011803850378K/W\n" +
+                "Thermal Flux= Top Wall: 80.0W/m^2\n" +
+                "Left Wall: 277.37W/m^2\n" +
+                "Right Wall: 277.37W/m^2\n" +
+                "Bottom Wall: 80.0W/m^2\n" +
+                "Front Door: 277.37W/m^2\n" +
+                "Back Door: 200.0W/m^2\n" +
+                "Total cargo volume= 32.24703999999999m^3\n" +
                 "}", controller.getDetails(walls, thermalVariation1).toString());
-        assertEquals("RefrigeratedContainer{length=10.0cm, width=10.0cm, height=10.0cm,\n" +
+        assertEquals("RefrigeratedContainer{length=10.0m, width=10.0m, height=10.0m,\n" +
                 "topWall=[[STAINLESS_STEEL, 0.025], [POLYURETHANE_FOAM, 0.05], [PLYWOOD, 0.025]],\n" +
                 "leftWall=[[CORTEN_STEEL, 0.02], [EXPANDED_POLYSTYRENE, 0.06], [BAMBOO, 0.02]],\n" +
                 "rightWall=[[CORTEN_STEEL, 0.02], [EXPANDED_POLYSTYRENE, 0.06], [BAMBOO, 0.02]],\n" +
@@ -201,7 +201,7 @@ public class RefrigeratedContainerTest {
                 "Bottom Wall: 1343.71W/m^2\n" +
                 "Front Door: 1863.57W/m^2\n" +
                 "Back Door: 1343.71W/m^2\n" +
-                "Total cargo volume= 960.4000000000001cm^3\n" +
+                "Total cargo volume= 960.4000000000001m^3\n" +
                 "}", controller.getDetails(walls, thermalVariation1, 10, 10, 10).toString());
     }
 
