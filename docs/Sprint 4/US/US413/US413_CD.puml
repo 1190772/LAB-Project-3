@@ -6,15 +6,15 @@ class TripEnergyUI {
 }
 
 class TripEnergyController {
-- tripStoreDb
 + getTripEnergy(trip ID)
++ calculateTripEnergy()
 }
 
-class TripStoreDb {
-+ getTripEnergy(trip ID)
+class DatabaseFunctions {
++ getTripEnergyDetails(trip ID)
 }
 
 TripEnergyController <.. TripEnergyUI
-TripStoreDb <.. TripEnergyController
+DatabaseFunctions <.. TripEnergyController
 
 @enduml

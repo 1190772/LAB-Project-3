@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class TripGeneratorsUI {
+- controller
+}
+
+class TripGeneratorsController {
++ getTripGenerators()
+}
+
+class DatabaseFunctions {
++ getTripGenerators()
+}
+
+TripGeneratorsController <.. TripGeneratorsUI
+DatabaseFunctions <.. TripGeneratorsController
+
+@enduml

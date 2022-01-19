@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="377px" preserveAspectRatio="none" style="width:1008px;height:377px;" version="1.1" viewBox="0 0 1008 377" width="1008px" zoomAndPan="magnify"><defs><filter height="300%" id="f1knectn53jz80" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1knectn53jz80)" height="174.1094" style="stroke:#A80036;stroke-width:1.0;" width="10" x="43.5" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f1knectn53jz80)" height="151.7578" style="stroke:#A80036;stroke-width:1.0;" width="10" x="581.5" y="121.9609"/><rect fill="#FFFFFF" filter="url(#f1knectn53jz80)" height="60.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="747.5" y="213.0156"/><rect fill="#FFFFFF" filter="url(#f1knectn53jz80)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="920.5" y="243.3672"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="48" x2="48" y1="89.6094" y2="291.7188"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="586" x2="586" y1="89.6094" y2="291.7188"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="752" x2="752" y1="89.6094" y2="291.7188"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="925" x2="925" y1="89.6094" y2="291.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="5" y="86.5332">Ship Captain</text><ellipse cx="48.5" cy="15" fill="#FEFECE" filter="url(#f1knectn53jz80)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M48.5,23 L48.5,50 M35.5,31 L61.5,31 M48.5,50 L35.5,65 M48.5,50 L61.5,65 " fill="none" filter="url(#f1knectn53jz80)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="5" y="305.252">Ship Captain</text><ellipse cx="48.5" cy="318.3281" fill="#FEFECE" filter="url(#f1knectn53jz80)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M48.5,326.3281 L48.5,353.3281 M35.5,334.3281 L61.5,334.3281 M48.5,353.3281 L35.5,368.3281 M48.5,353.3281 L61.5,368.3281 " fill="none" filter="url(#f1knectn53jz80)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#f1knectn53jz80)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="127" x="521" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="528" y="74.5332">:TripGeneratorsUI</text><rect fill="#FEFECE" filter="url(#f1knectn53jz80)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="127" x="521" y="290.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="528" y="312.252">:TripGeneratorsUI</text><rect fill="#FEFECE" filter="url(#f1knectn53jz80)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="177" x="662" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="669" y="74.5332">:TripGeneratorsController</text><rect fill="#FEFECE" filter="url(#f1knectn53jz80)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="177" x="662" y="290.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="669" y="312.252">:TripGeneratorsController</text><rect fill="#FEFECE" filter="url(#f1knectn53jz80)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="141" x="853" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="860" y="74.5332">:DatabaseFunctions</text><rect fill="#FEFECE" filter="url(#f1knectn53jz80)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="141" x="853" y="290.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="860" y="312.252">:DatabaseFunctions</text><rect fill="#FFFFFF" filter="url(#f1knectn53jz80)" height="174.1094" style="stroke:#A80036;stroke-width:1.0;" width="10" x="43.5" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f1knectn53jz80)" height="151.7578" style="stroke:#A80036;stroke-width:1.0;" width="10" x="581.5" y="121.9609"/><rect fill="#FFFFFF" filter="url(#f1knectn53jz80)" height="60.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="747.5" y="213.0156"/><rect fill="#FFFFFF" filter="url(#f1knectn53jz80)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="920.5" y="243.3672"/><polygon fill="#A80036" points="569.5,117.9609,579.5,121.9609,569.5,125.9609,573.5,121.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="53.5" x2="575.5" y1="121.9609" y2="121.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="60.5" y="117.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="382" x="71.5" y="117.1045">Asks the amount of auxiliary power equipment necessary for a trip</text><polygon fill="#A80036" points="64.5,148.3125,54.5,152.3125,64.5,156.3125,60.5,152.3125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="58.5" x2="580.5" y1="152.3125" y2="152.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="70.5" y="147.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="493" x="81.5" y="147.4561">requests data (energy per type of container, energy as function of container positions)</text><polygon fill="#A80036" points="569.5,178.6641,579.5,182.6641,569.5,186.6641,573.5,182.6641" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="53.5" x2="575.5" y1="182.6641" y2="182.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="60.5" y="177.8076">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="71.5" y="177.8076">types requested data</text><polygon fill="#A80036" points="735.5,209.0156,745.5,213.0156,735.5,217.0156,739.5,213.0156" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="591.5" x2="741.5" y1="213.0156" y2="213.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="598.5" y="208.1592">3.1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="620.5" y="208.1592">getTripGenerators()</text><polygon fill="#A80036" points="908.5,239.3672,918.5,243.3672,908.5,247.3672,912.5,243.3672" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="757.5" x2="914.5" y1="243.3672" y2="243.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="764.5" y="238.5107">3.2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="786.5" y="238.5107">getTripGenerators()</text><polygon fill="#A80036" points="59.5,269.7188,49.5,273.7188,59.5,277.7188,55.5,273.7188" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="53.5" x2="585.5" y1="273.7188" y2="273.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="65.5" y="268.8623">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="317" x="76.5" y="268.8623">Shows amount of 75KW generators required for the trip</text><!--MD5=[66b0af603ff7edceea242ec1d77d0f85]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Ship Captain" as SP
+
+participant ":TripGeneratorsUI" as UI
+participant ":TripGeneratorsController" as CTRL
+participant ":DatabaseFunctions" as TRIPS
+
+activate SP
+SP -> UI : Asks the amount of auxiliary power equipment necessary for a trip
+
+activate UI
+UI - -> SP : requests data (energy per type of container, energy as function of container positions)
+
+SP -> UI : types requested data
+
+autonumber 3.1
+
+UI -> CTRL : getTripGenerators()
+activate CTRL
+
+CTRL -> TRIPS : getTripGenerators()
+activate TRIPS
+
+autonumber 4
+
+UI - -> SP : Shows amount of 75KW generators required for the trip
+
+deactivate TRIPS
+deactivate CTRL
+deactivate UI
+deactivate SP
+@enduml
+
+@startuml
+
+autonumber
+
+actor "Ship Captain" as SP
+
+participant ":TripGeneratorsUI" as UI
+participant ":TripGeneratorsController" as CTRL
+participant ":DatabaseFunctions" as TRIPS
+
+activate SP
+SP -> UI : Asks the amount of auxiliary power equipment necessary for a trip
+
+activate UI
+UI - -> SP : requests data (energy per type of container, energy as function of container positions)
+
+SP -> UI : types requested data
+
+autonumber 3.1
+
+UI -> CTRL : getTripGenerators()
+activate CTRL
+
+CTRL -> TRIPS : getTripGenerators()
+activate TRIPS
+
+autonumber 4
+
+UI - -> SP : Shows amount of 75KW generators required for the trip
+
+deactivate TRIPS
+deactivate CTRL
+deactivate UI
+deactivate SP
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>
