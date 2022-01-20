@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam classAttributeIconSize 0
+
+class Company {
+-Designation
+}
+
+
+
+class Ship {
+-MMSI
+-Name
+-IMO
+-Number of Energy Generators
+-Generators' Power Output
+-Call sign
+-Vessel type
+-Length
+-Width
+-Capacity
+-Draft
+-FleetManager
+-ShipCaptain
+-ShipChiefElectricalEngineer
+}
+
+class Truck {
+-TruckDriver
+}
+
+class CargoManifest {
+-Destination
+-Date_time_start
+-Date_time_end
+}
+
+class Trip {
+-Starting point
+-Destination
+}
+
+Company "1" -- "1..*" Ship : Owns >
+Company "1" -- "1..*" Truck : Owns >
+Ship "1" -- "*" Trip : performs >
+Trip "1..*" -- "1..*" CargoManifest : has >
+Truck "1" -- "*" Trip : performs >
+
+
+@enduml

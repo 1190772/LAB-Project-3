@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Port Manager" as PM
+
+activate PM
+PM -> ":System" : Asks for the loading and unloading map for next week
+
+activate ":System"
+":System" --> "PM" : requests data (portID)
+deactivate ":System"
+
+PM -> ":System" : types requested data
+
+activate ":System"
+":System" --> PM : shows a list with all th details
+deactivate ":System"
+
+deactivate PM
+
+@enduml

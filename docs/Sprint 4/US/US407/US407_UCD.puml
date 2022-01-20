@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Port Manager: as PM
+(Asks for the loading and unloading map for next week) as (Use)
+
+PM ---> (Use)
+@enduml

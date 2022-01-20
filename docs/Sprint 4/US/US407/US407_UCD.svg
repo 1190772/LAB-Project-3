@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="96px" preserveAspectRatio="none" style="width:590px;height:96px;" version="1.1" viewBox="0 0 590 96" width="590px" zoomAndPan="magnify"><defs><filter height="300%" id="f186bg7t3dqyqk" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[1035515eb14b5228f153ae78bdf69e99]
+entity PM--><ellipse cx="49" cy="14" fill="#FEFECE" filter="url(#f186bg7t3dqyqk)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M49,22 L49,49 M36,30 L62,30 M49,49 L36,64 M49,49 L62,64 " fill="none" filter="url(#f186bg7t3dqyqk)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="6" y="84.0332">Port Manager</text><ellipse cx="395.9675" cy="45.9935" fill="#FEFECE" filter="url(#f186bg7t3dqyqk)" rx="182.9675" ry="38.9935" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="337" x="227.4675" y="49.722">Asks for the loading and unloading map for next week</text><!--MD5=[86d588b5a7ba165b902aef127c7d2631]
+link PM to Use--><path d="M92.3,46 C122.1,46 164.3,46 207.75,46 " fill="none" id="PM-to-Use" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="212.78,46,203.78,42,207.78,46,203.78,50,212.78,46" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[03e478949423ed63413fd5d3a13aae07]
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Port Manager: as PM
+(Asks for the loading and unloading map for next week) as (Use)
+
+PM - - -> (Use)
+@enduml
+
+@startuml
+
+left to right direction
+
+:Port Manager: as PM
+(Asks for the loading and unloading map for next week) as (Use)
+
+PM - - -> (Use)
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
