@@ -1,5 +1,5 @@
-main: main.o occupation.o checkContainer.o occupied_slots.o
-	gcc -Wall main.o occupation.o checkContainer.o occupied_slots.o -o main
+main: main.o occupation.o checkContainer.o occupied_slots.o dynamicArray.o
+	gcc -Wall main.o occupation.o checkContainer.o occupied_slots.o dynamicArray.o -o main
 
 main.o: main.c occupation.h checkContainer.h
 	gcc -Wall -c main.c
@@ -12,6 +12,9 @@ checkContainer.o: checkContainer.s checkContainer.h
 
 occupied_slots.o: occupied_slots.s occupied_slots.h
 	gcc -Wall -c occupied_slots.s
+
+dynamicArray.o: dynamicArray.c dynamicArray.h
+	gcc -Wall -c dynamicArray.c
 
 run: main
 	./main
