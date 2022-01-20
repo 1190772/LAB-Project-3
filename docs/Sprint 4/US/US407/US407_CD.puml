@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ResourcesOfPortNextWeekUI {
+- controller
+}
+
+class ResourcesOfPortNextWeekController {
++ getResourcesOfPortNextWeek(portID)
+}
+
+class DatabaseFunctions {
++ getResourcesOfPortNextWeek(databaseConnection, portID)
+- loadFunction(filename)
+- getResultSetFromSysRefCursor(databaseConnection, function, columnsForTable) throws SQLException
+}
+
+
+
+ResourcesOfPortNextWeekController <.. ResourcesOfPortNextWeekUI
+DatabaseFunctions <.. ResourcesOfPortNextWeekController
+
+@enduml
