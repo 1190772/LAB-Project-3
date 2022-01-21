@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import oracle.ucp.util.Pair;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -75,15 +76,19 @@ class FreightNetworkTest {
 
     @Test
     void getMostEfficientCircuit() {
-        LinkedList<FreightNetworkVertex> expected = new LinkedList<>();
-        expected.add(country1);
-        expected.add(port1);
-        expected.add(port2);
-        expected.add(port3);
-        expected.add(port4);
-        expected.add(country2);
-        expected.add(country1);
-        Assertions.assertEquals(expected, freightNetwork.getMostEfficientCircuit("Belize"));
+        LinkedList<FreightNetworkVertex> expectedCircuit = new LinkedList<>();
+        int expectedDistance = 1248657;
+        Pair<LinkedList<FreightNetworkVertex>, Integer> actual;
+        expectedCircuit.add(country1);
+        expectedCircuit.add(port1);
+        expectedCircuit.add(port2);
+        expectedCircuit.add(port3);
+        expectedCircuit.add(port4);
+        expectedCircuit.add(country2);
+        expectedCircuit.add(country1);
+        actual = freightNetwork.getMostEfficientCircuit("Belize");
+        Assertions.assertEquals(expectedCircuit, actual.get1st());
+        Assertions.assertEquals(expectedDistance, actual.get2nd());
     }
 
     @Test

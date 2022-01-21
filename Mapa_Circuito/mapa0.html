@@ -1,0 +1,267 @@
+<html>
+
+   <head>
+     <title> Trajecto </title>
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=UTF-8">
+   </head>
+
+<script>
+
+var PATH = [
+   ["Portugal",38.71666667,-9.133333],
+   ["Setubal",38.5,-8.916666667],
+   ["Leixoes",41.18333333,-8.7],
+   ["Brest",48.4,-4.5],
+   ["Dublin",53.35,-6.266666667],
+   ["Liverpool",53.46666667,-3.033333333],
+   ["Dunkirk",51.05,2.366666667],
+   ["Zeebrugge",51.33333333,3.2],
+   ["Vlissingen",51.45,3.6],
+   ["Antwerp",51.23333333,4.466666667],
+   ["London",51.5,-0.066666667],
+   ["Hamburg",53.55,9.983333333],
+   ["Rostock",54.15,12.1],
+   ["Copenhagen",55.7,12.61666667],
+   ["Aarhus",56.15,10.21666667],
+   ["Stockholm",59.33333333,18.05],
+   ["Sweden",59.33333333,18.05],
+   ["Finland",60.16666667,24.933333],
+   ["Helsinki",60.16666667,24.95],
+   ["Tallinn",59.45,24.76666667],
+   ["Kotka",60.46666667,26.95],
+   ["St Petersburg",59.88333333,30.21666667],
+   ["Poland",52.25,21.0],
+   ["Lithuania",54.68333333,25.316667],
+   ["Belarus",53.9,27.566667],
+   ["Latvia",56.95,24.1],
+   ["Estonia",59.43333333,24.716667],
+   ["Russia",55.75,37.6],
+   ["Ukraine",50.43333333,30.516667],
+   ["Moldova",47.0,28.85],
+   ["Romania",44.43333333,26.1],
+   ["Galatz",45.41666667,28.08333333],
+   ["Constantza",44.16666667,28.65],
+   ["Varna",43.2,27.95],
+   ["Bourgas",42.5,27.48333333],
+   ["Ambarli",40.98333333,28.53333333],
+   ["Piraeus",37.95,23.63333333],
+   ["Aspropyrgos",38.03333333,23.58333333],
+   ["Vlore",40.48333333,19.48333333],
+   ["Split",43.5,16.43333333],
+   ["Rijeka",45.31666667,14.43333333],
+   ["Piran",45.51666667,13.6],
+   ["Venice",45.43333333,12.33333333],
+   ["Izola",45.51666667,13.68333333],
+   ["Vlone",40.48333333,19.48333333],
+   ["Koper",45.55,13.73333333],
+   ["Slovenia",46.05,14.516667],
+   ["Croatia",45.8,16.0],
+   ["Bosnia",43.86666667,18.416667],
+   ["Montenegro",42.43333333,19.266667],
+   ["Albania",41.31666667,19.816667],
+   ["Macedonia",42.0,21.433333],
+   ["Kosovo",42.66666667,21.166667],
+   ["Serbia",44.83333333,20.5],
+   ["Hungary",47.5,19.083333],
+   ["Slovakia",48.15,17.116667],
+   ["Austria",48.2,16.366667],
+   ["Czech Republic",50.08333333,14.466667],
+   ["Netherlands",52.35,4.916667],
+   ["Belgium",50.83333333,4.333333],
+   ["Luxembourg",49.6,6.116667],
+   ["France",48.86666667,2.333333],
+   ["Switzerland",46.91666667,7.466667],
+   ["Liechtenstein",47.13333333,9.516667],
+   ["Venezuela",10.48333333,-66.866667],
+   ["Colombia",4.6,-74.083333],
+   ["Buenaventura",3.916666667,-77.05],
+   ["Esmeraldas",1.0,-79.63333333],
+   ["Guayaquil",-2.266666667,-79.9],
+   ["Callao",-12.05,-77.16666667],
+   ["Matarani",-17.0,-72.1],
+   ["Valparaiso",-33.01666667,-71.63333333],
+   ["San Vicente",-36.73333333,-73.15],
+   ["Bahia Blanca",-38.78333333,-62.26666667],
+   ["Montevideo",-34.9,-56.21666667],
+   ["Buenos Aires",-34.56666667,-58.38333333],
+   ["Rio Grande",-32.06666667,-52.06666667],
+   ["Santos",-23.93333333,-46.31666667],
+   ["Salvador",-12.96666667,-38.51666667],
+   ["Funchal",32.65,-16.91666667],
+   ["Ponta Delgada",37.73333333,-25.66666667],
+   ["Horta",38.53333333,-28.61666667],
+   ["Spain",40.4,-3.683333],
+   ["Portugal",38.71666667,-9.133333]
+]
+
+
+//--------------------------------------------------------------------
+
+function $id (id)
+{
+var res = document.getElementById(id);
+if (res==null)
+   alert("$id: id not found: '"+id+"'");
+return( res );
+}
+
+//-----------------------------------------------------
+
+</script>
+
+
+<body onload="run()">
+
+   <center>
+
+   <h1> Trajecto </h1>
+
+   <canvas id="crt" width=1800 height=900 tabindex="1"
+style='background-color: #EEEEFF;background-image: url(world.jpg)'>
+        ZX Text (JavaScript)
+   </canvas><br>
+
+
+   </center>
+
+
+   </body>
+
+</html>
+
+
+
+
+
+<script>
+
+//----------------------------------------------------
+
+var CANVAS // o canvas do ecran (elemento HTML)
+var CRT    // o ecran dentro do canvas (elemento javascript)
+
+//-------------------------------------------
+
+function zplot (x, y, cor)
+   {
+   CRT.fillStyle = cor
+   CRT.fillRect( x, y, 1, 1 ); 
+   }// setpixel
+
+function zline (x1, y1, x2, y2, cor)
+   {
+   var plotx,ploty,x,y;
+   var inc,dx,dy;
+   var i;
+
+   plotx=x1; ploty=y1;
+   x=x2-x1; y=y2-y1;
+   dx=Math.sign(x); dy=Math.sign(y);
+   x=Math.abs(x); y=Math.abs(y);
+
+   if (x>y)
+    {
+     inc=x/2;
+     for(i=x;i>0;i--)
+      {
+       inc=inc+y;
+       if (x<inc) {inc=inc-x; ploty=ploty+dy;}
+       plotx=plotx+dx;
+       zplot(plotx,ploty,cor);
+      }
+    }
+   else /* y>x */
+    {
+     inc=y/2;
+     for(i=y;i>0;i--)
+      {
+       inc=inc+x;
+       if (y<inc) {inc=inc-y; plotx=plotx+dx;}
+       ploty=ploty+dy;
+       zplot(plotx,ploty,cor);
+      }
+    }
+   }// zline
+
+//----------------------------------------------
+
+function sgn (n)
+   {
+   var result;
+
+   if ( n < 0 )
+     result =  -1
+   else
+   if ( n > 0 )
+     result =  1
+   else
+   result =  0;
+   return (result);
+   }// sgn
+
+//--------------------------------------------------
+
+function set_position (x,y)
+   {
+   X0 = x
+   Y0 = y       
+   }
+
+//-----------------------------------------------------
+
+function cls()
+   {
+   CRT.clearRect(0,0,480,300);
+   }// init
+
+function init()
+   {
+   CANVAS = $id('crt')
+   CRT = CANVAS.getContext("2d");
+   }// init
+
+//------------------------------------
+
+var IX
+var X,Y
+var X0,Y0
+
+function next()
+   {
+
+   zline( X0, Y0, X, Y, 'red' );
+   X0 = X
+   Y0 = Y
+   X = PATH[IX][2]
+   Y = -PATH[IX][1]
+   X = Math.round(900+5*X)
+   Y = Math.round(450+5*Y)
+   zline( X0, Y0, X, Y, 'yellow' );
+
+   IX++
+
+   if ( IX < PATH.length )
+     setTimeout(next,500)
+
+   }// next
+
+//------------------------------------
+
+function run()
+   {
+   init()       
+
+   cls()       
+
+   IX = 0
+   X = PATH[IX][2]
+   Y = -PATH[IX][1]
+   X = Math.round(900+5*X)
+   Y = Math.round(450+5*Y)
+   X0 = X
+   Y0 = Y
+
+   next()
+   }
+
+</script>

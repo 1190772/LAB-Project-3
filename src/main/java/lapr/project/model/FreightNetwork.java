@@ -1,7 +1,7 @@
 package lapr.project.model;
 
-import lapr.project.utils.graph.Edge;
 import lapr.project.utils.graph.MatrixGraph;
+import oracle.ucp.util.Pair;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -25,37 +25,40 @@ public class FreightNetwork extends MatrixGraph<FreightNetworkVertex, Long> {
         return startVertex;
     }
 
-    public LinkedList<FreightNetworkVertex> getMostEfficientCircuit(String sourceLocation) {
-        LinkedList<FreightNetworkVertex> res = new LinkedList<>();
+    public Pair<LinkedList<FreightNetworkVertex>, Integer> getMostEfficientCircuit(String sourceLocation) {
+        LinkedList<FreightNetworkVertex> circuit = new LinkedList<>();
         FreightNetworkVertex startVertex = findVertexByName(sourceLocation);
         boolean[] visited = new boolean[numVertices()];
         FreightNetworkVertex vOrig = startVertex;
-        Edge<FreightNetworkVertex, Long> shortestEdge;
+        FreightNetworkVertex closestVertex;
         Long shortestDistance;
+        int totalDistance = 0;
         boolean readyToReturn = false;
 
         if (startVertex != null) {
-            res.add(vOrig);
+            circuit.add(vOrig);
             visited[key(startVertex)] = true;
 
             do {
                 shortestDistance = Long.MAX_VALUE;
-                shortestEdge = null;
-                for (Edge<FreightNetworkVertex, Long> edge : outgoingEdges(vOrig)) {
-                    if (!visited[key(edge.getVDest())] && (edge.getWeight() < shortestDistance)) {
-                        shortestEdge = edge;
-                        shortestDistance = shortestEdge.getWeight();
+                closestVertex = null;
+                for (FreightNetworkVertex adj : adjVertices(vOrig)) {
+                    if (!visited[key(adj)] && (edge(vOrig, adj).getWeight() < shortestDistance)) {
+                        closestVertex = adj;
+                        shortestDistance = edge(vOrig, adj).getWeight();
                     }
                 }
 
-                if (shortestEdge != null) {
-                    vOrig = shortestEdge.getVDest();
+                if (closestVertex != null) {
+                    vOrig = closestVertex;
                     visited[key(vOrig)] = true;
-                    res.add(vOrig);
+                    circuit.add(vOrig);
+                    totalDistance += shortestDistance;
                 }
                 else if (readyToReturn){
-                    vOrig = res.getLast();
-                    res.removeLast();
+                    circuit.removeLast();
+                    totalDistance -= edge(circuit.getLast(), vOrig).getWeight();
+                    vOrig = circuit.getLast();
                 }
                 else {
                     visited[key(startVertex)] = false;
@@ -63,7 +66,7 @@ public class FreightNetwork extends MatrixGraph<FreightNetworkVertex, Long> {
                 }
             } while (vOrig != startVertex);
         }
-        return res;
+        return new Pair<>(circuit, totalDistance);
     }
 
     public String toString() {

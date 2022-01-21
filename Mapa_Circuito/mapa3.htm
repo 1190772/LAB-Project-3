@@ -1,0 +1,149 @@
+
+//--------------------------------------------------------------------
+
+function $id (id)
+{
+var res = document.getElementById(id);
+if (res==null)
+   alert("$id: id not found: '"+id+"'");
+return( res );
+}
+
+//-----------------------------------------------------
+
+</script>
+
+
+<body onload="run()">
+
+   <center>
+
+   <h1> Trajecto </h1>
+
+   <canvas id="crt" width=1800 height=900 tabindex="1"
+style='background-color: #EEEEFF;background-image: url(mapa.jpg)'>
+        ZX Text (JavaScript)
+   </canvas><br>
+
+
+   </center>
+
+
+   </body>
+
+</html>
+
+
+
+
+
+<script>
+
+//----------------------------------------------------
+
+var CANVAS // o canvas do ecran (elemento HTML)
+var CRT    // o ecran dentro do canvas (elemento javascript)
+
+//-------------------------------------------
+
+function line (x1, y1, x2, y2, cor)
+   {
+   var plotx,ploty,x,y;
+   var inc,dx,dy;
+   var i;
+
+   CRT.strokeStyle = cor;
+   CRT.beginPath();
+   CRT.moveTo(x1, y1);
+   CRT.lineTo(x2, y2);
+   CRT.stroke();
+   
+   }// line
+
+function linha_grossa(x1, y1, x2, y2, cor)
+  {
+  for (var x = -4; x < 4; x++)
+    for (var y = -4; y < 4; y++)
+      line(x1+x, y1+y, x2+x, y2+y, cor)
+  }
+
+//----------------------------------------------
+
+function set_position (x,y)
+   {
+   X0 = x
+   Y0 = y       
+   }
+
+//-----------------------------------------------------
+
+function cls()
+   {
+   CRT.clearRect(0,0,480,300);
+   }// init
+
+function init()
+   {
+   CANVAS = $id('crt')
+   CRT = CANVAS.getContext("2d");
+   }// init
+
+//------------------------------------
+
+var IX
+var X,Y
+var X0,Y0
+
+function next()
+   {
+
+   linha_grossa( X0, Y0, X, Y, 'red' );
+   X0 = X
+   Y0 = Y
+   X = PATH[IX][2] // longitude
+   Y = -PATH[IX][1] // latitude
+   X = Math.round(900+5*X)
+   Y = Math.round(450+5*Y)
+   linha_grossa( X0, Y0, X, Y, 'yellow' );
+   
+   CRT.fillStyle = "White"
+   CRT.fillRect(850,800,480,300);
+   CRT.fillStyle = "Black"
+   CRT.font = "30px Verdana";
+   CRT.fillText(PATH[IX][0], 850, 850);
+
+   IX++
+
+   if ( IX < PATH.length-1 )
+     setTimeout(next,250)
+   else
+     {
+     CRT.fillStyle = "White"
+     CRT.fillRect(850,800,480,300);
+     CRT.fillStyle = "Black"
+     CRT.font = "30px Verdana";
+     CRT.fillText(PATH[IX][0] + " " + PATH[IX][1] + " km", 850, 850);
+     }
+
+   }// next
+
+//------------------------------------
+
+function run()
+   {
+   init()       
+
+   cls()       
+
+   IX = 0
+   X = PATH[IX][2]
+   Y = -PATH[IX][1]
+   X = Math.round(900+5*X)
+   Y = Math.round(450+5*Y)
+   X0 = X
+   Y0 = Y
+
+   next()
+   }
+
+</script>

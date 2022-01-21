@@ -4,6 +4,7 @@ import lapr.project.data.ContainerOperationStoreDb;
 import lapr.project.model.ContainerOperation;
 import lapr.project.model.FreightNetwork;
 import lapr.project.model.FreightNetworkVertex;
+import oracle.ucp.util.Pair;
 
 import javax.naming.OperationNotSupportedException;
 import java.util.LinkedList;
@@ -28,7 +29,7 @@ public class MostEfficientCircuitController {
      * @param sourceLocation the starting location.
      * @return Most efficient circuit.
      */
-    public LinkedList<FreightNetworkVertex> getMostEfficientCircuit(String sourceLocation) {
+    public Pair<LinkedList<FreightNetworkVertex>, Integer> getMostEfficientCircuit(String sourceLocation) {
         FreightNetwork freightNetwork = App.getInstance().getCompany().getFreightNetwork();
         return freightNetwork.getMostEfficientCircuit(sourceLocation);
     }

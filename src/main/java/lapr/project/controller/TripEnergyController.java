@@ -32,19 +32,15 @@ public class TripEnergyController {
         materialList1.add(new Pair<>(WallMaterial.POLYURETHANE_FOAM, WallMaterial.POLYURETHANE_FOAM.getK()));
         materialList1.add(new Pair<>(WallMaterial.PLYWOOD, WallMaterial.PLYWOOD.getK()));
         RefrigeratedContainer type1part1 = new RefrigeratedContainer(materialList1, temperature1 + 5);
-        double totalArea = 0;
-        totalArea += type1part1.getWallArea("Door") * 2;
-        totalArea += type1part1.getWallArea("Side") * 2;
-        totalArea += type1part1.getWallArea("Top") * 2;
         double thermalFlux1part1 = 0;
         for (double thermalFlux : type1part1.getThermalFlux())
             thermalFlux1part1 += thermalFlux;
-        energy1 += thermalFlux1part1 * seconds1 * totalArea;
+        energy1 += thermalFlux1part1 * seconds1;
         RefrigeratedContainer type1part2 = new RefrigeratedContainer(materialList1, temperature2 + 5);
         double thermalFlux1part2 = 0;
         for (double thermalFlux : type1part2.getThermalFlux())
             thermalFlux1part2 += thermalFlux;
-        energy1 += thermalFlux1part2 * seconds2 * totalArea;
+        energy1 += thermalFlux1part2 * seconds2;
         energy1 *= amount1;
 
         ArrayList<Pair<WallMaterial, Double>> materialList2 = new ArrayList<>();
@@ -55,12 +51,12 @@ public class TripEnergyController {
         double thermalFlux2part1 = 0;
         for (double thermalFlux : type2part1.getThermalFlux())
             thermalFlux2part1 += thermalFlux;
-        energy2 += thermalFlux2part1 * seconds1 * totalArea;
+        energy2 += thermalFlux2part1 * seconds1;
         RefrigeratedContainer type2part2 = new RefrigeratedContainer(materialList2, temperature2 - 7);
         double thermalFlux2part2 = 0;
         for (double thermalFlux : type2part2.getThermalFlux())
             thermalFlux2part2 += thermalFlux;
-        energy2 += thermalFlux2part2 * seconds2 * totalArea;
+        energy2 += thermalFlux2part2 * seconds2;
         energy2 *= amount2;
 
         return "Total energy for -5ºC containers: " + format.format(energy1) + " J.\nTotal energy for  7ºC containers: " + format.format(energy2) + " J.";
