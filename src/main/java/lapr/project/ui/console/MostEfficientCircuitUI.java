@@ -4,9 +4,7 @@ import lapr.project.controller.MostEfficientCircuitController;
 import lapr.project.model.FreightNetworkVertex;
 import oracle.ucp.util.Pair;
 
-import javax.naming.OperationNotSupportedException;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -31,7 +29,7 @@ public class MostEfficientCircuitUI implements Runnable{
     controller = new MostEfficientCircuitController();
     }
 
-    private void copy_ficheiro(String path1, String path2) {
+    private void copyFile(String path1, String path2) {
         Scanner fileReader;
         FileWriter fileWriter;
 
@@ -49,7 +47,7 @@ public class MostEfficientCircuitUI implements Runnable{
         }
     }
 
-    private void append_ficheiro(String path1, String path2) {
+    private void appendFile(String path1, String path2) {
         Scanner fileReader;
         FileWriter fileWriter;
 
@@ -101,8 +99,8 @@ public class MostEfficientCircuitUI implements Runnable{
         System.out.println("Total Distance: " + totalDistance + " km");
 
         // Contrução do programa javascript de visualização do circuito
-        copy_ficheiro("Mapa_Circuito/mapa1.htm", "Mapa_Circuito/mapa.html");
-        append_ficheiro("Mapa_Circuito/mapa2.json", "Mapa_Circuito/mapa.html");
-        append_ficheiro("Mapa_Circuito/mapa3.htm", "Mapa_Circuito/mapa.html");
+        copyFile("Mapa_Circuito/mapa1.htm", "Mapa_Circuito/mapa.html");
+        appendFile("Mapa_Circuito/mapa2.json", "Mapa_Circuito/mapa.html");
+        appendFile("Mapa_Circuito/mapa3.htm", "Mapa_Circuito/mapa.html");
     }
 }

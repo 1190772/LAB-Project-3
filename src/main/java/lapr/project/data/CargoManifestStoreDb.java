@@ -60,8 +60,8 @@ public class CargoManifestStoreDb {
                     s.append(" ").append(cargoManifestResultSet.getString(3));
                     s.append(" ").append(cargoManifestResultSet.getInt(4));
 
-                    for (int i = 5; i<=7; i++)
-                    s.append(" ").append(cargoManifestResultSet.getDouble(i)/100);
+                    for (int i = 5; i <= 7; i++)
+                        s.append(" ").append(cargoManifestResultSet.getDouble(i) / 100);
 
 
                     containerInfo.add(s.toString());

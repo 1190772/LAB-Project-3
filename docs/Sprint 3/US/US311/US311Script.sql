@@ -15,5 +15,5 @@ END;
 /
 
 --Test in java aplication
---    System.out.println(DatabaseFunctions.getContainersOfShip(App.getInstance().getSql().getDatabaseConnection(), "IMO1111111")); 4 containers
---    System.out.println(DatabaseFunctions.getContainersOfShip(App.getInstance().getSql().getDatabaseConnection(), "IMO1234567")); 0 containers
+--    System.out.println(DatabaseFunctions.getContainersOfShip(App.getInstance().getCompany().getDatabaseConnection(), "IMO1111111")); 4 containers
+--    System.out.println(DatabaseFunctions.getContainersOfShip(App.getInstance().getCompany().getDatabaseConnection(), "IMO1234567")); 0 containers
