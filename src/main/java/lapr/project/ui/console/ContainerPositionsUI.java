@@ -19,10 +19,19 @@ public class ContainerPositionsUI implements Runnable {
         int cargoManifestID;
         List<String> containerPositions;
 
-        cargoManifestID = Utils.readIntegerFromConsole("Cargo Manifest ID: ");
+        cargoManifestID = 12122;//Utils.readIntegerFromConsole("Cargo Manifest ID: ");
         containerPositions = controller.getContainerPositions(cargoManifestID);
 
-        try (FileWriter fileWriter = new FileWriter("positions.txt", false)) {
+        try (FileWriter fileWriter = new FileWriter("ARQCP/positions.txt", false)) {
+            for (String string : containerPositions)
+                fileWriter.write(string + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        containerPositions = controller.getContainerInfo(cargoManifestID);
+
+        try (FileWriter fileWriter = new FileWriter("ARQCP/characteristics.txt", false)) {
             for (String string : containerPositions)
                 fileWriter.write(string + "\n");
         } catch (IOException e) {

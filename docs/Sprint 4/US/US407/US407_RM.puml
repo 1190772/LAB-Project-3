@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+entity Trip {
+* id_trip
+--
+* ship_imo
+* id_truck
+* id_start_port
+* id_destination_port
+* id_start_warehouse
+* id_destination_warehouse
+* date_time_start
+* date_time_end
+}
+
+entity Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_trip
+* position_code
+* cargo_weight
+* refrigeration_temperature
+* id_client
+}
+
+entity Unloading_Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_warehouse
+}
+
+entity Loading_Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_warehouse
+}
+
+Trip ||--|| Cargo_Manifest
+
+Unloading_Cargo_Manifest ||--|| Cargo_Manifest
+Loading_Cargo_Manifest ||--|| Cargo_Manifest
+
+@enduml

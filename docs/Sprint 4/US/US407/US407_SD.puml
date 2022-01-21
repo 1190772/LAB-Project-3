@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+autonumber
+
+actor "Port Manager" as PM
+
+participant ":ResourcesOfPortNextWeekUI" as UI
+participant ":ResourcesOfPortNextWeekController" as CTRL
+participant ":DatabaseFunctions" as DBF
+Database Database as DB
+
+activate PM
+PM -> UI : Asks for the loading and unloading map for next week
+
+activate UI
+UI --> PM : requests data (portID)
+deactivate UI
+
+PM -> UI : types requested data
+activate UI
+
+
+
+UI -> CTRL : getResourcesOfPortNextWeek(portID)
+
+activate CTRL
+
+CTRL -> DBF : result = getResourcesOfPortNextWeek(portID)
+activate DBF
+
+loop while Unloading and Loading Cargo Manifest do not have line which dates the following week
+
+    DBF --> DB : list.add(date, vehicle, containerID, containerPosition, refrigerationTemperature, cargo, tare, dimensions)
+    activate DB
+    deactivate DB
+end
+
+"UI" --> PM : shows a list with all th details
+
+deactivate DBF
+deactivate CTRL
+deactivate UI
+deactivate PM
+
+@enduml

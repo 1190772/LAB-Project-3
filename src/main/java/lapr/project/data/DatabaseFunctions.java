@@ -180,4 +180,67 @@ public class DatabaseFunctions {
 
         return res;
     }
+
+    public static String getResourcesOfPortNextWeek(DatabaseConnection databaseConnection, String portID) {
+        loadFunction(databaseConnection, "docs/Sprint 4/US/US407/US407Script.sql");
+
+        StringBuilder result = new StringBuilder();
+        String function = "getContainersToUnloadInVehicleNextWeek('" + portID + "')";
+        String columnsForTable ="    date_time_end             timestamp,\n" +
+                "    ship_imo                  char(10),\n" +
+                "    id_truck                  integer,\n" +
+                "    id_container              char(11),\n" +
+                "    position_code             number(6,0),\n" +
+                "    cargo_weight              integer,\n" +
+                "    refrigeration_temperature number(3,1),\n" +
+                "    tare                      integer,\n" +
+                "    value_length              integer,\n" +
+                "    value_width               integer,\n" +
+                "    value_height              integer";
+
+        try (ResultSet resultSet = getResultSetFromSysRefCursor(databaseConnection, function, columnsForTable)) {
+            result.append("Containers to unload:\n\t");
+            if (resultSet!=null)
+            while (resultSet.next()) {
+                for (int i = 0; i<11;i++)
+                    result.append(resultSet.getString(i+1)).append(" ");
+                result.append("\n\t");
+            }
+            else
+                result.append("No Containers to unload.");
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseFunctions.class.getName()).log(Level.SEVERE, null, ex);
+            databaseConnection.registerError(ex);
+        }
+
+        function = "getContainersToLoadInVehicleNextWeek('" + portID + "')";
+        columnsForTable = "    date_time_start           timestamp,\n" +
+                "    ship_imo                  char(10),\n" +
+                "    id_truck                  integer,\n" +
+                "    id_container              char(11),\n" +
+                "    position_code             number(6,0),\n" +
+                "    cargo_weight              integer,\n" +
+                "    refrigeration_temperature number(3,1),\n" +
+                "    tare                      integer,\n" +
+                "    value_length              integer,\n" +
+                "    value_width               integer,\n" +
+                "    value_height              integer";
+
+        try (ResultSet resultSet = getResultSetFromSysRefCursor(databaseConnection, function, columnsForTable)) {
+            result.append("\nContainers to load:\n\t");
+            if (resultSet!=null)
+                while (resultSet.next()) {
+                    for (int i = 0; i<11;i++)
+                        result.append(resultSet.getString(i+1)).append(" ");
+                    result.append("\n\t");
+                }
+            else
+                result.append("No Containers to unload.");
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseFunctions.class.getName()).log(Level.SEVERE, null, ex);
+            databaseConnection.registerError(ex);
+        }
+
+        return result.toString();
+    }
 }
