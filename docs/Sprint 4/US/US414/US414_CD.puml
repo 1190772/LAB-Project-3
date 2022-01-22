@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class TripEnergyUI {
+- controller
+}
+
+class TripEnergyController {
++ getTripEnergy(numberContainers, temperatureContainer, \ntemperatureStart, temperatureEnd, numberExposedSides, journeyTime)
+}
+
+TripEnergyController <.. TripEnergyUI
+
+@enduml

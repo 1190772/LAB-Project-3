@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="218px" preserveAspectRatio="none" style="width:389px;height:218px;" version="1.1" viewBox="0 0 389 218" width="389px" zoomAndPan="magnify"><defs><filter height="300%" id="fuojupnfnoqzk" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[3486008d08590c12c7ec6e4e2bdd34b8]
+class TripEnergyUI--><rect codeLine="3" fill="#FEFECE" filter="url(#fuojupnfnoqzk)" height="61.8359" id="TripEnergyUI" style="stroke:#A80036;stroke-width:1.5;" width="103" x="139.5" y="143"/><ellipse cx="154.5" cy="159" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M156.5,155.5 Q156.7031,155 156.9375,154.75 Q157.1719,154.5 157.4375,154.5 Q157.9063,154.5 158.2031,154.7813 Q158.5,155.0625 158.5,155.7188 L158.5,157.2813 Q158.5,157.9375 158.2188,158.2188 Q157.9375,158.5 157.5,158.5 Q157.1094,158.5 156.8594,158.3281 Q156.6094,158.1563 156.5,157.7031 Q156.4531,157.3906 156.2813,157.2188 Q155.9688,156.8906 155.4063,156.7031 Q154.8438,156.5 154.2813,156.5 Q153.5781,156.5 152.9844,156.7813 Q152.4063,157.0625 151.9531,157.6875 Q151.5,158.3125 151.5,159.1719 L151.5,160.0938 Q151.5,161.125 152.3438,161.8125 Q153.1875,162.5 154.6875,162.5 Q155.5781,162.5 156.2031,162.2969 Q156.5625,162.1875 156.9688,161.8281 Q157.2344,161.625 157.375,161.5625 Q157.5156,161.5 157.6875,161.5 Q158.0156,161.5 158.25,161.7656 Q158.5,162.0156 158.5,162.375 Q158.5,162.7188 158.1563,163.125 Q157.6563,163.7188 156.8594,164.0469 Q155.8125,164.5 154.5313,164.5 Q153.0313,164.5 151.8281,163.9063 Q150.8594,163.4375 150.1719,162.4219 Q149.5,161.4063 149.5,160.2031 L149.5,159.1094 Q149.5,157.8594 150.0938,156.7656 Q150.7031,155.6719 151.75,155.0938 Q152.8125,154.5 154,154.5 Q154.7188,154.5 155.3438,154.75 Q155.9688,155 156.5,155.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="71" x="168.5" y="163.9102">TripEnergyUI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="140.5" x2="241.5" y1="175" y2="175"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="147.5" y="183"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="159.5" y="190.4189">controller</text><line style="stroke:#A80036;stroke-width:1.5;" x1="140.5" x2="241.5" y1="196.8359" y2="196.8359"/><!--MD5=[27a727c24222a4189eb93b4b062a8cbb]
+class TripEnergyController--><rect codeLine="7" fill="#FEFECE" filter="url(#fuojupnfnoqzk)" height="75.6719" id="TripEnergyController" style="stroke:#A80036;stroke-width:1.5;" width="368" x="7" y="7"/><ellipse cx="130.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M132.25,19.5 Q132.4531,19 132.6875,18.75 Q132.9219,18.5 133.1875,18.5 Q133.6563,18.5 133.9531,18.7813 Q134.25,19.0625 134.25,19.7188 L134.25,21.2813 Q134.25,21.9375 133.9688,22.2188 Q133.6875,22.5 133.25,22.5 Q132.8594,22.5 132.6094,22.3281 Q132.3594,22.1563 132.25,21.7031 Q132.2031,21.3906 132.0313,21.2188 Q131.7188,20.8906 131.1563,20.7031 Q130.5938,20.5 130.0313,20.5 Q129.3281,20.5 128.7344,20.7813 Q128.1563,21.0625 127.7031,21.6875 Q127.25,22.3125 127.25,23.1719 L127.25,24.0938 Q127.25,25.125 128.0938,25.8125 Q128.9375,26.5 130.4375,26.5 Q131.3281,26.5 131.9531,26.2969 Q132.3125,26.1875 132.7188,25.8281 Q132.9844,25.625 133.125,25.5625 Q133.2656,25.5 133.4375,25.5 Q133.7656,25.5 134,25.7656 Q134.25,26.0156 134.25,26.375 Q134.25,26.7188 133.9063,27.125 Q133.4063,27.7188 132.6094,28.0469 Q131.5625,28.5 130.2813,28.5 Q128.7813,28.5 127.5781,27.9063 Q126.6094,27.4375 125.9219,26.4219 Q125.25,25.4063 125.25,24.2031 L125.25,23.1094 Q125.25,21.8594 125.8438,20.7656 Q126.4531,19.6719 127.5,19.0938 Q128.5625,18.5 129.75,18.5 Q130.4688,18.5 131.0938,18.75 Q131.7188,19 132.25,19.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="113" x="150.75" y="27.9102">TripEnergyController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="374" y1="39" y2="39"/><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="374" y1="47" y2="47"/><ellipse cx="18" cy="58" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="272" x="27" y="62.4189">getTripEnergy(numberContainers, temperatureContainer,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="342" x="27" y="76.2549">temperatureStart, temperatureEnd, numberExposedSides, journeyTime)</text><!--MD5=[ad1665084441c8aa2703d1e7ceefbdb3]
+reverse link TripEnergyController to TripEnergyUI--><path codeLine="11" d="M191,88.52 C191,106.36 191,126.68 191,142.93 " fill="none" id="TripEnergyController-backto-TripEnergyUI" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="191,83.08,187,92.08,191,88.08,195,92.08,191,83.08" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7ca72cb202d716b02b233f4039567e51]
+@startuml
+'https://plantuml.com/class-diagram
+
+class TripEnergyUI {
+- controller
+}
+
+class TripEnergyController {
++ getTripEnergy(numberContainers, temperatureContainer, \ntemperatureStart, temperatureEnd, numberExposedSides, journeyTime)
+}
+
+TripEnergyController <.. TripEnergyUI
+
+@enduml
+
+@startuml
+
+class TripEnergyUI {
+- controller
+}
+
+class TripEnergyController {
++ getTripEnergy(numberContainers, temperatureContainer, \ntemperatureStart, temperatureEnd, numberExposedSides, journeyTime)
+}
+
+TripEnergyController <.. TripEnergyUI
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

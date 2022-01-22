@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Ship Chief \nElectrical Engineer" as SCEE
+
+participant ":TripEnergyUI" as UI
+participant ":TripEnergyController" as CTRL
+
+activate SCEE
+SCEE -> UI : Asks the amount of energy the container needs for a trip, \ndepending on the position
+
+activate UI
+UI --> SCEE : requests data (numberContainers, temperatureContainer, \ntemperatureStart, temperatureEnd, numberExposedSides, journeyTime)
+deactivate UI
+
+SCEE -> UI : types requested data
+activate UI
+
+
+UI -> CTRL : getTripEnergy(numberContainers, temperatureContainer, \ntemperatureStart, temperatureEnd, numberExposedSides, journeyTime)
+activate CTRL
+
+UI --> SCEE : Shows the amount of energy necessary
+deactivate CTRL
+deactivate UI
+deactivate SCEE
+@enduml

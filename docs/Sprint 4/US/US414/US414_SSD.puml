@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Ship Chief \nElectrical Engineer" as SCEE
+
+activate SCEE
+SCEE -> ":System" : Asks the amount of energy the container needs for a trip, \ndepending on the position
+
+activate ":System"
+":System" --> "SCEE" : requests data (numberContainers, temperatureContainer, \ntemperatureStart, temperatureEnd, numberExposedSides, journeyTime)
+deactivate ":System"
+
+SCEE -> ":System" : types requested data
+
+activate ":System"
+":System" --> "SCEE" : Shows the amount of energy necessary
+deactivate ":System"
+
+deactivate SCEE
+
+@enduml

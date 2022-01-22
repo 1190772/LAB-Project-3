@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:       Ship Chief \nElectrical Engineer: as SC
+(Asks the amount of energy the container needs for a trip, \ndepending on the position) as (Use)
+
+SC ---> (Use)
+@enduml
