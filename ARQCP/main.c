@@ -7,6 +7,7 @@
 #include "occupied_slots.h"
 #include "dynamicArray.h"
 #include "isRefrigerated.h"
+#include "checkEnergy.h"
 
 const int MAX_X = 50;
 const int MAX_Y = 50;
@@ -22,6 +23,7 @@ void show_occupation();
 void show_checkContainer();
 void show_occupied_slots();
 void show_isRefrigerated(Container *container_ptr, int length);
+void showCheckEnergy(Container* container_ptr);
 
 int main(){
 
@@ -78,16 +80,18 @@ int main(){
 	fillDynamicArray(container_ptr, wall_ptr);
 
 	demonstrationUS409(container_ptr, 3);
-
-	/*Code for other US400 before the free lines of code*/
 	
 	
 	show_isRefrigerated(container_ptr, 5);
-	
+	showCheckEnergy(container_ptr);
 	
 	free(container_ptr);
 	free(wall_ptr);
     return 0;
+}
+
+void showCheckEnergy(Container* container_ptr){
+     printf("\nenergy = %f J\n",checkEnergy(20,2,5,10,container_ptr));
 }
 
 void show_occupation() {
