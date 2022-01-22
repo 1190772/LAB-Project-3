@@ -36,10 +36,14 @@ public class Utils {
     }
 
     public static double thermalResistance(double thickness, double k, double area) {
-        return thickness/(k*area);
+        return thickness / (k * area);
     }
 
     public static double thermalFlux(double thermalVariation, double resistance) {
-        return (double) Math.round((thermalVariation/resistance)*100)/100;
+        return (double) Math.round((thermalVariation / resistance) * 100) / 100;
+    }
+
+    public static double energy(double thermalFlux, double time) {
+        return thermalFlux * time;
     }
 }
