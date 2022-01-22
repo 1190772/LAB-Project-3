@@ -30,8 +30,8 @@ SELECT count(*) INTO cargoManifest_count
     FROM cargo_manifest cm, trip t
     WHERE cm.id_trip = id_Trip and t.ship_imo = imo_Ship;
     
-    counter = 0;
-    n_row = 1;
+    counter := 0;
+    n_row := 1;
     
 
 WHILE counter < cargoManifest_count
