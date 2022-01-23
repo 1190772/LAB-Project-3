@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+activate TM
+TM -> ":System" : Asks to get the top N ports with greater centrality
+
+activate ":System"
+":System" --> TM : Asks the number of ports
+deactivate ":System"
+TM -> ":System" : Write the number of ports
+activate ":System"
+":System" --> TM : Returns the top N ports with greater centrality
+deactivate ":System"
+
+
+@enduml

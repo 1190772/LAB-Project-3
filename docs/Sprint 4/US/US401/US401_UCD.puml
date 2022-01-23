@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Traffic Manager: as TM
+(Wish to know wich ports are more critical in this freight network) as (Use)
+
+TM ---> (Use)
+@enduml

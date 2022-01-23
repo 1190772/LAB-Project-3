@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="106px" preserveAspectRatio="none" style="width:659px;height:106px;background:#FFFFFF;" version="1.1" viewBox="0 0 659 106" width="659px" zoomAndPan="magnify"><defs><filter height="300%" id="fhlyprdy2w9i6" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[c6ddddda358f072e4f19aa798de5fbe9]
+entity TM--><ellipse cx="56" cy="18.5" fill="#FEFECE" filter="url(#fhlyprdy2w9i6)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M56,26.5 L56,53.5 M43,34.5 L69,34.5 M56,53.5 L43,68.5 M56,53.5 L69,68.5 " fill="none" filter="url(#fhlyprdy2w9i6)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="6" y="88.5332">Traffic Manager</text><ellipse cx="437.2301" cy="50.446" fill="#FEFECE" filter="url(#fhlyprdy2w9i6)" rx="210.2301" ry="44.446" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="393" x="240.7301" y="54.1745">Wish to know wich ports are more critical in this freight network</text><!--MD5=[e96b729b963beef67941650a20dbe6bb]
+link TM to Use--><path d="M106.16,50.5 C136.73,50.5 178.38,50.5 221.79,50.5 " fill="none" id="TM-to-Use" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="226.82,50.5,217.82,46.5,221.82,50.5,217.82,54.5,226.82,50.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[bb3839aa31aa74dc7e5fec6143ba375c]
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Traffic Manager: as TM
+(Wish to know wich ports are more critical in this freight network) as (Use)
+
+TM - - -> (Use)
+@enduml
+
+@startuml
+
+left to right direction
+
+:Traffic Manager: as TM
+(Wish to know wich ports are more critical in this freight network) as (Use)
+
+TM - - -> (Use)
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 14:26:11 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
