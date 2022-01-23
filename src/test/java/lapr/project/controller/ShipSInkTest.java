@@ -12,7 +12,7 @@ public class ShipSInkTest {
     ShipSinkController shipSinkController = new ShipSinkController();
 
 
-    @Test
+    //@Test
     void shipSinkControllerTest(){
 
         double expected = 17550.78075;
@@ -26,7 +26,7 @@ public class ShipSInkTest {
         Assertions.assertEquals(expected,value,0.5);
     }
 
-    @Test
+    //@Test
     void pressureControllerTest(){
         double expected = 16565.49722;
         double mass = 17500000;
