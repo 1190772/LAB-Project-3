@@ -2,13 +2,19 @@ package lapr.project.controller;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static lapr.project.controller.ShipSinkController.calculateShipSinkController;
+import static lapr.project.controller.ShipSinkController.pressureController;
 import static lapr.project.model.fsiap.ShipSink.calculateShipSink;
 import static lapr.project.model.fsiap.ShipSink.pressure;
 
 public class ShipSInkTest {
+    ShipSinkController shipSinkController = new ShipSinkController();
+
 
     @Test
     void shipSinkControllerTest(){
+
         double expected = 17550.78075;
         double mass = 17500000;
         double ship_length = 289.56;
@@ -16,7 +22,7 @@ public class ShipSInkTest {
         int n_containers = 20;
         double density = 997;
         double value;
-        value = calculateShipSink(mass,ship_length,ship_width,n_containers,density);
+        value = calculateShipSinkController(mass,ship_length,ship_width,n_containers,density);
         Assertions.assertEquals(expected,value,0.5);
     }
 
@@ -28,7 +34,7 @@ public class ShipSInkTest {
         double width = 32.31;
         double heigth = calculateShipSink(mass,length,width,20,997);
         double value;
-        value = pressure(mass,length,width,heigth);
+        value = pressureController(mass,length,width,heigth);
         Assertions.assertEquals(expected,value,0.5);
     }
 }
