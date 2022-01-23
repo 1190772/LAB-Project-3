@@ -237,9 +237,9 @@ INSERT INTO Country VALUES ('IN','IND','India','Nova Delhi','Asia',1393.41,28.64
 -- ** tabela Port**
 
 INSERT INTO Port VALUES ('PT345', 'Portuguelas', 'PT', 34.11492 ,  26.38083, 60);
-INSERT INTO Port VALUES ('AN345', 'Porto Mar'  , 'ES', 9.63635  ,  22.68017, 70);
-INSERT INTO Port VALUES ('IN233', 'Dalil'      , 'AO', 22.68017 ,  25.42360, 80);
-INSERT INTO Port VALUES ('ES456', 'MariBela'   , 'IN', 26.97284 ,  26.97284, 90);
+INSERT INTO Port VALUES ('AN345', 'Porto Mar'  , 'AO', 9.63635  ,  22.68017, 70);
+INSERT INTO Port VALUES ('IN233', 'Dalil'      , 'IN', 22.68017 ,  25.42360, 80);
+INSERT INTO Port VALUES ('ES456', 'MariBela'   , 'ES', 26.97284 ,  26.97284, 90);
 
 -- **tabela warehouse **
 

@@ -24,6 +24,8 @@ public class ShipCaptainUI implements Runnable{
         List<MenuItem> options = new ArrayList<>();
         options.add(new MenuItem("Check Container Operations", new ContainerOperationsUI()));
         options.add(new MenuItem("Determine unladen center of mass", new UnladenCenterOfMassUI()));
+        options.add(new MenuItem("Trip Generators", new TripGeneratorsUI()));
+
         int option;
 
             do {
