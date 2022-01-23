@@ -32,6 +32,7 @@ public class TrafficManagerUI implements Runnable {
         options.add(new MenuItem("Build Freight Network", new BuildFreightNetworkUI()));
         options.add(new MenuItem("Colour Map", new ColourMapUI()));
         options.add(new MenuItem("Most Efficent Circuit", new MostEfficientCircuitUI()));
+        options.add(new MenuItem("Top N Critical Ports", new CriticalPortsUI()));
 
         int option = 0;
         do {
