@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Ship Captain" as SC
+
+participant ":PositionContainerUI" as UI
+participant ":PositionContainerController" as CTRL
+
+activate SC
+SC -> UI : Asks where to position containers on the vessel
+
+activate UI
+UI --> SC : asks for containers, x, y, z max and original center of mass
+deactivate UI
+
+SC -> UI : types requested data
+
+activate UI
+UI -> CTRL : positionContainers(containers, xMax, yMax, zMax, centerMass)
+activate CTRL
+deactivate CTRL
+
+UI --> SC : returns layout of containers and new center of mass
+deactivate UI
+deactivate SC
+@enduml

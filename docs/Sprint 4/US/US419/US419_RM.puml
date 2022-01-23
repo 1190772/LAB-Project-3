@@ -1,0 +1,65 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+entity Ship {
+* imo_code
+--
+* mmsi_code
+* name_ship
+* number_generators
+* power_out_generator
+* call_sign
+* vessel_type
+* Length_ship
+* width_ship
+* capacity_ship
+* draft
+* id_employee_captain
+}
+
+entity Trip {
+* id_trip
+--
+* ship_imo
+* id_truck
+* id_start_port
+* id_destination_port
+* id_start_warehouse
+* id_destination_warehouse
+* date_time_start
+* date_time_end
+}
+
+entity Container {
+* id_container
+--
+* iso_code
+
+* tare
+* max_weight_incl_container
+* max_weight
+* max_volume
+
+* id_owner
+* id_equipment
+* serial_number
+* check_digit
+}
+
+entity Cargo_Manifest {
+* id_cargo_manifest
+* id_container
+--
+* id_trip
+* position_code
+* cargo_weight
+* refrigeration_temperature
+* id_client
+}
+
+
+Ship ||--o{ Trip
+Trip ||--|| Cargo_Manifest
+Cargo_Manifest }o--|| Container
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ShortestPathUI {
+- controller
+}
+
+class ShortestPathController {
++ Matrix positionContainers(containers, xMax, yMax, zMax, centerMass)
+}
+
+ShortestPathController <.. ShortestPathUI
+
+@enduml
