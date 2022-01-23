@@ -278,4 +278,21 @@ public class DatabaseFunctions {
 
         return result.toString();
     }
+
+    public static String getLightTrips() {
+        String res = "An error occurred.";
+        Connection connection = App.getInstance().getCompany().getDatabaseConnection().getConnection();
+
+        String sqlCommand = "select lightTrips from dual";
+        try (PreparedStatement tripPreparedStatement = connection.prepareStatement(sqlCommand)) {
+            try (ResultSet tripResultSet = tripPreparedStatement.executeQuery()) {
+                tripResultSet.next();
+                res = tripResultSet.getString(1);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return res;
+    }
 }

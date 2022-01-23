@@ -1,16 +1,17 @@
-#include "isRefrigerated.h"
 #include "dynamicArray.h"
 
-double checkEnergy(int temp,char x,char y, char z, Container* container_ptr){
+int enoughEnergy(int temp, Container* container_ptr, unsigned long availableEnergy, int length){
 
 double delta_t;
 double rt;
 double area;
-double energy;
+double energy=0;
 int time_secs = 3600;
-Container **ptr_ptr = &container_ptr;
+int i;
+int enough=0;
 
-if(isRefrigerated(container_ptr,x,y,z,5,ptr_ptr)){
+for(i=0; i<length; i++){
+if(container_ptr->refrigeration_temperature!=0){
 
    delta_t = temp - container_ptr->refrigeration_temperature;
 
@@ -20,13 +21,14 @@ if(isRefrigerated(container_ptr,x,y,z,5,ptr_ptr)){
    rt = container_ptr->wall->thickness/(container_ptr->wall->k*area) + (container_ptr->wall+1)->thickness/((container_ptr->wall+1)->k*area)
         + (container_ptr->wall+2)->thickness/((container_ptr->wall+2)->k*area); 
 
-   energy = delta_t/rt * time_secs;
+   energy += delta_t/rt * time_secs;
 
-} else {
-
-   energy = 0;
 }
- return energy;
+container_ptr++;
 }
-
+ if(energy<=availableEnergy){
+ enough = 1;
+}
+ return enough;
+}
 

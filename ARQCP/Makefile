@@ -1,5 +1,5 @@
-main: main.o occupation.o checkContainer.o occupied_slots.o dynamicArray.o isRefrigerated.o checkEnergy.o
-	gcc -Wall main.o occupation.o checkContainer.o occupied_slots.o dynamicArray.o isRefrigerated.o checkEnergy.o -o main
+main: main.o occupation.o checkContainer.o occupied_slots.o dynamicArray.o isRefrigerated.o checkEnergy.o enoughEnergy.o
+	gcc -Wall main.o occupation.o checkContainer.o occupied_slots.o dynamicArray.o isRefrigerated.o checkEnergy.o enoughEnergy.o -o main
 
 main.o: main.c occupation.h checkContainer.h
 	gcc -Wall -c main.c
@@ -21,6 +21,9 @@ isRefrigerated.o: isRefrigerated.s isRefrigerated.h
 
 checkEnergy.o: checkEnergy.c checkEnergy.h
 	gcc -Wall -c checkEnergy.c
+	
+enoughEnergy.o: enoughEnergy.c enoughEnergy.h
+	gcc -Wall -c enoughEnergy.c
 
 run: main
 	./main

@@ -12,7 +12,7 @@
 .section .text
 .global isRefrigerated
 isRefrigerated:
-	# container_ptr in rdi, x in sil, y in dl, z in cl, length in r8d
+	# container_ptr in rdi, x in sil, y in dl, z in cl, length in r8d, ptr_ptr int %r9
 	
 	movl $0, %eax
 	
@@ -30,6 +30,7 @@ position_loop:
 	# Container Found
 	cmpb $0, TEMPERATURE_OFFSET(%rdi) # test if refrigerated
 	je end
+	movq %rdi, (%r9) # set caller container_ptr to the found container
 	movl $1, %eax
 	jmp end
 next:

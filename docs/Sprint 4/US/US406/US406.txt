@@ -1,0 +1,37 @@
+CREATE OR REPLACE FUNCTION lightTrips RETURN varchar 
+    is
+    
+    results varchar(1000);
+    imoShip ship.imo_code%type;
+    startPortID trip.id_start_port%type;
+    endPortID trip.id_destination_port%type;
+    dateTimeStart trip.date_time_start%type;
+    dateTimeEnd trip.date_time_end%type;
+    occupancy real;
+    
+    cursor trips is 
+    select ship_imo, id_start_port, id_destination_port, date_time_start, date_time_end
+    from Trip;
+       
+    BEGIN
+    
+    open trips;
+    LOOP
+        FETCH trips into imoShip, startPortID, endPortID, dateTimeStart, dateTimeEnd;
+        EXIT WHEN trips%notfound;
+        
+        occupancy := Average_Occupancy_Rate(imoShip, dateTimeStart, dateTimeEnd);
+        
+        IF dateTimeEnd <= CURRENT_DATE and occupancy < 66 then       
+            results := results || 'Ship: ' || imoShip || ' start: ' || startPortID || ' ' || dateTimeStart || ' end: ' || endPortID || ' ' || dateTimeEnd || chr(10);
+        END IF;
+        
+    END LOOP;
+    CLOSE trips;
+    
+   return results;
+    
+END;
+/
+
+select lightTrips from dual;

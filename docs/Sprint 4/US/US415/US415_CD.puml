@@ -9,11 +9,6 @@ class TripGeneratorsController {
 + getTripGenerators()
 }
 
-class DatabaseFunctions {
-+ getTripGenerators()
-}
-
 TripGeneratorsController <.. TripGeneratorsUI
-DatabaseFunctions <.. TripGeneratorsController
 
 @enduml

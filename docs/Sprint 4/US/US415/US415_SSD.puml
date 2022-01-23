@@ -9,7 +9,7 @@ activate SP
 SP -> ":System" : Asks the amount of auxiliary power equipment necessary for a trip
 
 activate ":System"
-":System" --> "SP" : requests data (energy per type of container, energy as function of container positions)
+":System" --> "SP" : requests data (energy, time)
 deactivate ":System"
 
 SP -> ":System" : types requested data
