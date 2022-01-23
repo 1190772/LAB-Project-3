@@ -23,8 +23,11 @@ public class CriticalPortsController implements Comparator<Pair<Integer, Port>> 
                 if(vertex.equals(dest)){
                     continue;
                 }
+                List<FreightNetworkVertex> listaP = new LinkedList<>();
+                listaP.add(vertex);
+                listaP.add(dest);
                 List<FreightNetworkVertex> path = new LinkedList<>();
-                ctrl.shortestPathSea(new LinkedList<>(), path);
+                ctrl.shortestPathSea(listaP, path);
                 countVertices(path, vertices);
             }
         }
@@ -52,7 +55,7 @@ public class CriticalPortsController implements Comparator<Pair<Integer, Port>> 
             }
         }
     }
-
+    // complexidade do shortest path x o(n^2)
     //Compara dois pairs
     @Override
     public int compare(Pair<Integer, Port> integerPortPair, Pair<Integer, Port> t1) {
