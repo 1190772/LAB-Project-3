@@ -1,3 +1,5 @@
+#ifndef DYNAMICARRAY_H
+#define DYNAMICARRAY_H
 typedef struct {
 	double k, thickness;
         char material[21];
@@ -17,3 +19,4 @@ void wall(Wall *wall_ptr);
 int container_size();
 int wall_size();
 void demonstrationUS409(Container *container_ptr, int n);
+#endif

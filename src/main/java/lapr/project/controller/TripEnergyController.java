@@ -3,10 +3,15 @@ package lapr.project.controller;
 import lapr.project.data.DatabaseFunctions;
 import lapr.project.model.fsiap.RefrigeratedContainer;
 import lapr.project.model.fsiap.WallMaterial;
+
+import static lapr.project.model.shared.Utils.*;
+
 import oracle.ucp.util.Pair;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class TripEnergyController {
 
@@ -14,11 +19,11 @@ public class TripEnergyController {
         String[] values = DatabaseFunctions.getTripEnergyDetails(tripID).split(",");
         if (!values[0].equals("An error occurred."))
             return calculateTripEnergy(Integer.parseInt(values[0]),
-                                       Integer.parseInt(values[1]),
-                                       Float.parseFloat(values[2]),
-                                       Float.parseFloat(values[3]),
-                                       Integer.parseInt(values[4]),
-                                       Integer.parseInt(values[5]));
+                    Integer.parseInt(values[1]),
+                    Float.parseFloat(values[2]),
+                    Float.parseFloat(values[3]),
+                    Integer.parseInt(values[4]),
+                    Integer.parseInt(values[5]));
         else return values[0];
     }
 
@@ -60,6 +65,36 @@ public class TripEnergyController {
         energy2 *= amount2;
 
         return "Total energy for -5ºC containers: " + format.format(energy1) + " J.\nTotal energy for  7ºC containers: " + format.format(energy2) + " J.";
+    }
+
+    public double getTripEnergy(Map<Double, List<Pair<Integer, Integer>>> containers, List<Double> temperatureVariations, List<Integer> duration) {
+        double energy = 0;
+        for (Double exposedArea : containers.keySet())
+            for (Pair<Integer, Integer> pair : containers.get(exposedArea))
+                energy += calculateTripEnergy(pair.get2nd(), pair.get1st(), exposedArea, temperatureVariations, duration);
+
+        return energy;
+    }
+
+    private long calculateTripEnergy(int numberContainers, int temperatureContainer, double exposedArea, List<Double> temperatureVariations, List<Integer> duration) {
+        long energy = 0;
+        if (exposedArea != 0) {
+            double thermalResistanceExposed = temperatureContainer == -5 ?
+                    thermalResistance(0.025, 16.2, exposedArea) + thermalResistance(0.05, 0.03, exposedArea) + thermalResistance(0.025, 0.13, exposedArea) :
+                    thermalResistance(0.02, 25, exposedArea) + thermalResistance(0.06, 0.046, exposedArea) + thermalResistance(0.02, 0.55, exposedArea);
+            for (int i = 0; i < temperatureVariations.size(); i++)
+                energy += energy(thermalFlux(temperatureVariations.get(i) - temperatureContainer, thermalResistanceExposed), duration.get(i));
+        }
+
+        exposedArea = 71.4432 - exposedArea;
+        if (exposedArea != 0) {
+            double thermalResistanceNotExposed = temperatureContainer == -5 ?
+                    thermalResistance(0.025, 16.2, exposedArea) + thermalResistance(0.05, 0.03, exposedArea) + thermalResistance(0.025, 0.13, exposedArea) :
+                    thermalResistance(0.02, 25, exposedArea) + thermalResistance(0.06, 0.046, exposedArea) + thermalResistance(0.02, 0.55, exposedArea);
+            for (int i = 0; i < temperatureVariations.size(); i++)
+                energy += energy(thermalFlux(temperatureVariations.get(0) - temperatureContainer, thermalResistanceNotExposed), duration.get(i));
+        }
+        return energy * numberContainers;
     }
 
 }
