@@ -8,8 +8,9 @@ double rt;
 double area;
 double energy;
 int time_secs = 3600;
+Container **ptr_ptr = &container_ptr;
 
-if(isRefrigerated(container_ptr,x,y,z,5)){
+if(isRefrigerated(container_ptr,x,y,z,5,ptr_ptr)){
 
    delta_t = temp - container_ptr->refrigeration_temperature;
 
