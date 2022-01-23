@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="543px" preserveAspectRatio="none" style="width:1216px;height:543px;background:#FFFFFF;" version="1.1" viewBox="0 0 1216 543" width="1216px" zoomAndPan="magnify"><defs><filter height="300%" id="f1fj2lty9890vr" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="349.5156" style="stroke:#A80036;stroke-width:1.0;" width="10" x="53" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="392" y="121.9609"/><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="257.4609" style="stroke:#A80036;stroke-width:1.0;" width="10" x="392" y="182.6641"/><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="173.4063" style="stroke:#A80036;stroke-width:1.0;" width="10" x="649" y="229.3672"/><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="967" y="259.7188"/><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="1118.5" y="320.0703"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="58" x2="58" y1="89.6094" y2="458.125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="397" x2="397" y1="89.6094" y2="458.125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="654" x2="654" y1="89.6094" y2="458.125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="971.5" x2="971.5" y1="89.6094" y2="458.125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1123.5" x2="1123.5" y1="89.6094" y2="458.125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="5" y="86.5332">Traffic Manager</text><ellipse cx="58" cy="15" fill="#FEFECE" filter="url(#f1fj2lty9890vr)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M58,23 L58,50 M45,31 L71,31 M58,50 L45,65 M58,50 L71,65 " fill="none" filter="url(#f1fj2lty9890vr)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="5" y="471.6582">Traffic Manager</text><ellipse cx="58" cy="484.7344" fill="#FEFECE" filter="url(#f1fj2lty9890vr)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M58,492.7344 L58,519.7344 M45,500.7344 L71,500.7344 M58,519.7344 L45,534.7344 M58,519.7344 L71,534.7344 " fill="none" filter="url(#f1fj2lty9890vr)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#f1fj2lty9890vr)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="106" x="342" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="349" y="74.5332">:CriticalPortsUI</text><rect fill="#FEFECE" filter="url(#f1fj2lty9890vr)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="106" x="342" y="457.125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="349" y="478.6582">:CriticalPortsUI</text><rect fill="#FEFECE" filter="url(#f1fj2lty9890vr)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="156" x="574" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="581" y="74.5332">:CriticalPortsController</text><rect fill="#FEFECE" filter="url(#f1fj2lty9890vr)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="156" x="574" y="457.125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="581" y="478.6582">:CriticalPortsController</text><rect fill="#FEFECE" filter="url(#f1fj2lty9890vr)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="113" x="913.5" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="920.5" y="74.5332">:FreightNetwork</text><rect fill="#FEFECE" filter="url(#f1fj2lty9890vr)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="113" x="913.5" y="457.125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="920.5" y="478.6582">:FreightNetwork</text><rect fill="#FEFECE" filter="url(#f1fj2lty9890vr)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="162" x="1040.5" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="1047.5" y="74.5332">:ShortestPathController</text><rect fill="#FEFECE" filter="url(#f1fj2lty9890vr)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="162" x="1040.5" y="457.125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="1047.5" y="478.6582">:ShortestPathController</text><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="349.5156" style="stroke:#A80036;stroke-width:1.0;" width="10" x="53" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="392" y="121.9609"/><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="257.4609" style="stroke:#A80036;stroke-width:1.0;" width="10" x="392" y="182.6641"/><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="173.4063" style="stroke:#A80036;stroke-width:1.0;" width="10" x="649" y="229.3672"/><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="967" y="259.7188"/><rect fill="#FFFFFF" filter="url(#f1fj2lty9890vr)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="1118.5" y="320.0703"/><polygon fill="#A80036" points="380,117.9609,390,121.9609,380,125.9609,384,121.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="386" y1="121.9609" y2="121.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="70" y="117.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="299" x="81" y="117.1045">Asks to know the shortest path between two places</text><polygon fill="#A80036" points="74,148.3125,64,152.3125,74,156.3125,70,152.3125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="396" y1="152.3125" y2="152.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="80" y="147.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="195" x="91" y="147.4561">asks for the origin and destination</text><polygon fill="#A80036" points="380,178.6641,390,182.6641,380,186.6641,384,182.6641" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="386" y1="182.6641" y2="182.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="70" y="177.8076">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="81" y="177.8076">types requested data</text><polygon fill="#A80036" points="637,225.3672,647,229.3672,637,233.3672,641,229.3672" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="402" x2="643" y1="229.3672" y2="229.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="409" y="216.335">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="199" x="420" y="208.1592">getCriticalPorts(App.getInstance().</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="217" x="420" y="224.5107">getCompany().getFreightNetwork(), n)</text><polygon fill="#A80036" points="955,255.7188,965,259.7188,955,263.7188,959,259.7188" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="659" x2="961" y1="259.7188" y2="259.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="666" y="254.8623">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="113" x="677" y="254.8623">getFreightNetwork()</text><polygon fill="#A80036" points="1106.5,316.0703,1116.5,320.0703,1106.5,324.0703,1110.5,320.0703" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="659" x2="1112.5" y1="320.0703" y2="320.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="666" y="315.2139">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="677" y="315.2139">ctrl.shortestPathSea(listaP, path)</text><line style="stroke:#A80036;stroke-width:1.0;" x1="659" x2="701" y1="401.7734" y2="401.7734"/><line style="stroke:#A80036;stroke-width:1.0;" x1="701" x2="701" y1="401.7734" y2="414.7734"/><line style="stroke:#A80036;stroke-width:1.0;" x1="654" x2="701" y1="414.7734" y2="414.7734"/><polygon fill="#A80036" points="664,410.7734,654,414.7734,664,418.7734,660,414.7734" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="666" y="388.7412">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="279" x="677" y="380.5654">countVertices(List&lt;FreightNetworkVertex&gt; path,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164" x="677" y="396.917">Map&lt;Port, Integer&gt; vertices)</text><polygon fill="#A80036" points="74,436.125,64,440.125,74,444.125,70,440.125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="68" x2="396" y1="440.125" y2="440.125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="80" y="435.2686">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="257" x="91" y="435.2686">Shows the top N ports with greater centrality</text><!--MD5=[694e6f5561d97c62a6c22213464f9191]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+participant ":CriticalPortsUI" as UI
+participant ":CriticalPortsController" as CTRL
+participant ":FreightNetwork" as NET
+participant ":ShortestPathController" as SPC
+
+
+activate TM
+TM -> UI : Asks to know the shortest path between two places
+
+activate UI
+UI - -> TM : asks for the origin and destination
+deactivate UI
+
+TM -> UI : types requested data
+
+activate UI
+UI -> CTRL : getCriticalPorts(App.getInstance().\ngetCompany().getFreightNetwork(), n)
+
+activate CTRL
+CTRL -> NET : getFreightNetwork()
+
+activate NET
+deactivate NET
+
+CTRL -> SPC : ctrl.shortestPathSea(listaP, path)
+activate SPC
+deactivate SPC
+
+CTRL -> CTRL : countVertices(List<FreightNetworkVertex> path, \nMap<Port, Integer> vertices)
+
+deactivate CTRL
+
+UI -> TM : Shows the top N ports with greater centrality
+
+deactivate UI
+@enduml
+
+@startuml
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+participant ":CriticalPortsUI" as UI
+participant ":CriticalPortsController" as CTRL
+participant ":FreightNetwork" as NET
+participant ":ShortestPathController" as SPC
+
+
+activate TM
+TM -> UI : Asks to know the shortest path between two places
+
+activate UI
+UI - -> TM : asks for the origin and destination
+deactivate UI
+
+TM -> UI : types requested data
+
+activate UI
+UI -> CTRL : getCriticalPorts(App.getInstance().\ngetCompany().getFreightNetwork(), n)
+
+activate CTRL
+CTRL -> NET : getFreightNetwork()
+
+activate NET
+deactivate NET
+
+CTRL -> SPC : ctrl.shortestPathSea(listaP, path)
+activate SPC
+deactivate SPC
+
+CTRL -> CTRL : countVertices(List<FreightNetworkVertex> path, \nMap<Port, Integer> vertices)
+
+deactivate CTRL
+
+UI -> TM : Shows the top N ports with greater centrality
+
+deactivate UI
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 14:26:11 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
