@@ -7,13 +7,12 @@ actor "Ship Captain" as SP
 
 participant ":TripGeneratorsUI" as UI
 participant ":TripGeneratorsController" as CTRL
-participant ":DatabaseFunctions" as TRIPS
 
 activate SP
 SP -> UI : Asks the amount of auxiliary power equipment necessary for a trip
 
 activate UI
-UI --> SP : requests data (energy per type of container, energy as function of container positions)
+UI --> SP : requests data (energy, time)
 
 SP -> UI : types requested data
 
@@ -22,14 +21,10 @@ autonumber 3.1
 UI -> CTRL : getTripGenerators()
 activate CTRL
 
-CTRL -> TRIPS : getTripGenerators()
-activate TRIPS
-
 autonumber 4
 
 UI --> SP : Shows amount of 75KW generators required for the trip
 
-deactivate TRIPS
 deactivate CTRL
 deactivate UI
 deactivate SP
