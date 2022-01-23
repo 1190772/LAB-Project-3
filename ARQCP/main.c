@@ -8,6 +8,7 @@
 #include "dynamicArray.h"
 #include "isRefrigerated.h"
 #include "checkEnergy.h"
+#include "enoughEnergy.h"
 
 const int MAX_X = 50;
 const int MAX_Y = 50;
@@ -23,6 +24,7 @@ void show_occupation();
 void show_checkContainer();
 void show_occupied_slots();
 void showCheckEnergy(Container* container_ptr);
+void showEnoughEnergy(Container* container_ptr);
 
 int main(){
 
@@ -82,6 +84,8 @@ int main(){
 	
 	showCheckEnergy(container_ptr);
 	
+	showEnoughEnergy(container_ptr);
+	
 	free(container_ptr);
 	free(wall_ptr);
     return 0;
@@ -91,6 +95,11 @@ void showCheckEnergy(Container* container_ptr){
      printf("\nenergy = %f J\n",checkEnergy(20,2,5,10,container_ptr));
      printf("energy = %f J\n",checkEnergy(20,5,10,1,container_ptr));
      printf("energy = %f J\n",checkEnergy(20,7,3,0,container_ptr));
+}
+
+void showEnoughEnergy(Container* container_ptr){
+	printf("\nWith low energy: %d \n", enoughEnergy(20, container_ptr, 10, 5));
+	printf("With high energy: %d \n", enoughEnergy(20, container_ptr, 1000000000, 5));
 }
 
 void show_occupation() {
@@ -123,3 +132,5 @@ void show_occupied_slots() {
 
 	printf("\noccupied_slots()\nNúmero de espaços ocupados: %u\n", res);
 }
+
+
