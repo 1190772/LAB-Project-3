@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Ship Captain: as SC
+(Asks where to position containers on the vessel) as (Use)
+
+SC ---> (Use)
+@enduml
