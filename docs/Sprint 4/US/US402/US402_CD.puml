@@ -10,7 +10,9 @@ class ShortestPathController {
 + shortestPathLand(vOrig, vDest, path)
 + shortestPathSea(vOrig, vDest, path)
 + shortestPathLandSea(vOrig, vDest, path)
-+ shortestPathStops(vOrig, vDest, path, stops)
+- shortestPathStops(vOrig, vDest, path, stops)
+- getShortestPathOfPermutations(Graph<FreightNetworkVertex, Long> freightNetwork, \nList<FreightNetworkVertex> stops, List<FreightNetworkVertex> path)
+- verifyLists(List<FreightNetworkVertex> stops, List<FreightNetworkVertex> path)
 }
 
 class Algorithms {

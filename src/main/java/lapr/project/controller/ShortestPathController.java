@@ -39,12 +39,12 @@ public class ShortestPathController {
         Long distance = 0L;
         for (int i = 0; i < stops.size() - 1; i++) {
             List<FreightNetworkVertex> temp = new LinkedList<>();
-            Long lenghtPath = Algorithms.shortestPath(freightNetwork, stops.get(i), stops.get(i + 1), Long::compareTo, Long::sum, 0L, temp);
-            if (lenghtPath == null) {
+            Long lengthPath = Algorithms.shortestPath(freightNetwork, stops.get(i), stops.get(i + 1), Long::compareTo, Long::sum, 0L, temp);
+            if (lengthPath == null) {
                 path.clear();
                 return 0L;
             }
-            distance += lenghtPath;
+            distance += lengthPath;
             temp.remove(temp.size() - 1);
             path.addAll(temp);
         }

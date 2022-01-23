@@ -1,5 +1,6 @@
 package lapr.project.model.shared;
 
+import static lapr.project.controller.PositionContainersController.Coordinates;
 import lapr.project.model.ShipPosition;
 
 public class Utils {
@@ -45,5 +46,13 @@ public class Utils {
 
     public static double energy(double thermalFlux, double time) {
         return thermalFlux * time;
+    }
+
+    public static Coordinates calculateCenterMass(Coordinates centerMass, Coordinates newCoordinates, double oldMass, double addedMass) {
+        Coordinates result = new Coordinates(0,0,0);
+        result.setX((centerMass.getX()*oldMass+ newCoordinates.getX()*addedMass)/(oldMass+addedMass));
+        result.setY((centerMass.getY()*oldMass+ newCoordinates.getY()*addedMass)/(oldMass+addedMass));
+        result.setZ((centerMass.getZ()*oldMass+ newCoordinates.getZ()*addedMass)/(oldMass+addedMass));
+        return result;
     }
 }
