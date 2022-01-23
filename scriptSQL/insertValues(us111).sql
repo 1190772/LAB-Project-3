@@ -261,7 +261,7 @@ INSERT INTO Trip VALUES (1238,'IMO5555555',null,    null, 'PT345',11223,null , t
 INSERT INTO Trip VALUES (1239,'IMO6666666',null,    null, 'IN233',11224,null , timestamp '2021-08-20 19:35:33', timestamp '2021-09-22 09:36:33');
 INSERT INTO Trip VALUES (1240,'IMO6666666',12345,'IN233',    null,null ,11224, timestamp '2020-01-01 02:02:11',timestamp '2020-03-03 02:02:11');
 
-INSERT INTO Trip VALUES (1249,'IMO6666666',null,'IN233','IN233',null, null, timestamp '2022-01-25 02:02:11',timestamp '2022-01-28 02:02:11');
+INSERT INTO Trip VALUES (1249,'IMO6666666',null,'IN233','IN233',null, null, timestamp '2022-02-01 02:02:11',timestamp '2022-02-04 02:02:11');
 
 INSERT INTO Trip VALUES (2235,'IMO6666666',null,'PT345', null, null, 11221, timestamp '2021-02-08 19:35:33', timestamp '2021-03-01 06:13:23');
 INSERT INTO Trip VALUES (2236,'IMO5555555',null,'AN345', null, null, 11222, timestamp '2021-03-15 19:35:33', timestamp '2021-04-22 07:26:13');
