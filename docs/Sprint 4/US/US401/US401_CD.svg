@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="489px" preserveAspectRatio="none" style="width:695px;height:489px;background:#FFFFFF;" version="1.1" viewBox="0 0 695 489" width="695px" zoomAndPan="magnify"><defs><filter height="300%" id="fbph8fk24ayeg" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[6a6e411292a3770c65cbe023911f2e79]
+class CriticalPortsUI--><rect codeLine="3" fill="#FEFECE" filter="url(#fbph8fk24ayeg)" height="61.8359" id="CriticalPortsUI" style="stroke:#A80036;stroke-width:1.5;" width="111" x="334.5" y="414"/><ellipse cx="349.5" cy="430" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M351.5,426.5 Q351.7031,426 351.9375,425.75 Q352.1719,425.5 352.4375,425.5 Q352.9063,425.5 353.2031,425.7813 Q353.5,426.0625 353.5,426.7188 L353.5,428.2813 Q353.5,428.9375 353.2188,429.2188 Q352.9375,429.5 352.5,429.5 Q352.1094,429.5 351.8594,429.3281 Q351.6094,429.1563 351.5,428.7031 Q351.4531,428.3906 351.2813,428.2188 Q350.9688,427.8906 350.4063,427.7031 Q349.8438,427.5 349.2813,427.5 Q348.5781,427.5 347.9844,427.7813 Q347.4063,428.0625 346.9531,428.6875 Q346.5,429.3125 346.5,430.1719 L346.5,431.0938 Q346.5,432.125 347.3438,432.8125 Q348.1875,433.5 349.6875,433.5 Q350.5781,433.5 351.2031,433.2969 Q351.5625,433.1875 351.9688,432.8281 Q352.2344,432.625 352.375,432.5625 Q352.5156,432.5 352.6875,432.5 Q353.0156,432.5 353.25,432.7656 Q353.5,433.0156 353.5,433.375 Q353.5,433.7188 353.1563,434.125 Q352.6563,434.7188 351.8594,435.0469 Q350.8125,435.5 349.5313,435.5 Q348.0313,435.5 346.8281,434.9063 Q345.8594,434.4375 345.1719,433.4219 Q344.5,432.4063 344.5,431.2031 L344.5,430.1094 Q344.5,428.8594 345.0938,427.7656 Q345.7031,426.6719 346.75,426.0938 Q347.8125,425.5 349,425.5 Q349.7188,425.5 350.3438,425.75 Q350.9688,426 351.5,426.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="79" x="363.5" y="434.9102">CriticalPortsUI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="335.5" x2="444.5" y1="446" y2="446"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="342.5" y="454"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="354.5" y="461.4189">controller</text><line style="stroke:#A80036;stroke-width:1.5;" x1="335.5" x2="444.5" y1="467.8359" y2="467.8359"/><!--MD5=[a7f69b09398c771a0c5db1e070644c57]
+class CriticalPortsController--><rect codeLine="7" fill="#FEFECE" filter="url(#fbph8fk24ayeg)" height="103.3438" id="CriticalPortsController" style="stroke:#A80036;stroke-width:1.5;" width="400" x="190" y="251"/><ellipse cx="325.25" cy="267" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M327.25,263.5 Q327.4531,263 327.6875,262.75 Q327.9219,262.5 328.1875,262.5 Q328.6563,262.5 328.9531,262.7813 Q329.25,263.0625 329.25,263.7188 L329.25,265.2813 Q329.25,265.9375 328.9688,266.2188 Q328.6875,266.5 328.25,266.5 Q327.8594,266.5 327.6094,266.3281 Q327.3594,266.1563 327.25,265.7031 Q327.2031,265.3906 327.0313,265.2188 Q326.7188,264.8906 326.1563,264.7031 Q325.5938,264.5 325.0313,264.5 Q324.3281,264.5 323.7344,264.7813 Q323.1563,265.0625 322.7031,265.6875 Q322.25,266.3125 322.25,267.1719 L322.25,268.0938 Q322.25,269.125 323.0938,269.8125 Q323.9375,270.5 325.4375,270.5 Q326.3281,270.5 326.9531,270.2969 Q327.3125,270.1875 327.7188,269.8281 Q327.9844,269.625 328.125,269.5625 Q328.2656,269.5 328.4375,269.5 Q328.7656,269.5 329,269.7656 Q329.25,270.0156 329.25,270.375 Q329.25,270.7188 328.9063,271.125 Q328.4063,271.7188 327.6094,272.0469 Q326.5625,272.5 325.2813,272.5 Q323.7813,272.5 322.5781,271.9063 Q321.6094,271.4375 320.9219,270.4219 Q320.25,269.4063 320.25,268.2031 L320.25,267.1094 Q320.25,265.8594 320.8438,264.7656 Q321.4531,263.6719 322.5,263.0938 Q323.5625,262.5 324.75,262.5 Q325.4688,262.5 326.0938,262.75 Q326.7188,263 327.25,263.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="121" x="345.75" y="271.9102">CriticalPortsController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="191" x2="589" y1="283" y2="283"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="198" y="291"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="15" x="210" y="298.4189">ctrl</text><line style="stroke:#A80036;stroke-width:1.5;" x1="191" x2="589" y1="304.8359" y2="304.8359"/><ellipse cx="201" cy="315.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="237" x="210" y="320.2549">CriticalPortsController(ShortestPathController ctrl)</text><ellipse cx="201" cy="329.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="211" x="210" y="334.0908">getCriticalPorts(FreightNetwork graph, int n)</text><ellipse cx="201" cy="343.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="374" x="210" y="347.9268">countVertices(List&lt;FreightNetworkVertex&gt; path, Map&lt;Port, Integer&gt; vertices)</text><!--MD5=[9b4d6350505f0ccf5a42f8153c75860f]
+class ShortestPathController--><rect codeLine="14" fill="#FEFECE" filter="url(#fbph8fk24ayeg)" height="61.8359" id="ShortestPathController" style="stroke:#A80036;stroke-width:1.5;" width="446" x="7" y="129"/><ellipse cx="163.25" cy="145" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M165.25,141.5 Q165.4531,141 165.6875,140.75 Q165.9219,140.5 166.1875,140.5 Q166.6563,140.5 166.9531,140.7813 Q167.25,141.0625 167.25,141.7188 L167.25,143.2813 Q167.25,143.9375 166.9688,144.2188 Q166.6875,144.5 166.25,144.5 Q165.8594,144.5 165.6094,144.3281 Q165.3594,144.1563 165.25,143.7031 Q165.2031,143.3906 165.0313,143.2188 Q164.7188,142.8906 164.1563,142.7031 Q163.5938,142.5 163.0313,142.5 Q162.3281,142.5 161.7344,142.7813 Q161.1563,143.0625 160.7031,143.6875 Q160.25,144.3125 160.25,145.1719 L160.25,146.0938 Q160.25,147.125 161.0938,147.8125 Q161.9375,148.5 163.4375,148.5 Q164.3281,148.5 164.9531,148.2969 Q165.3125,148.1875 165.7188,147.8281 Q165.9844,147.625 166.125,147.5625 Q166.2656,147.5 166.4375,147.5 Q166.7656,147.5 167,147.7656 Q167.25,148.0156 167.25,148.375 Q167.25,148.7188 166.9063,149.125 Q166.4063,149.7188 165.6094,150.0469 Q164.5625,150.5 163.2813,150.5 Q161.7813,150.5 160.5781,149.9063 Q159.6094,149.4375 158.9219,148.4219 Q158.25,147.4063 158.25,146.2031 L158.25,145.1094 Q158.25,143.8594 158.8438,142.7656 Q159.4531,141.6719 160.5,141.0938 Q161.5625,140.5 162.75,140.5 Q163.4688,140.5 164.0938,140.75 Q164.7188,141 165.25,141.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="125" x="183.75" y="149.9102">ShortestPathController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="452" y1="161" y2="161"/><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="452" y1="169" y2="169"/><ellipse cx="18" cy="180" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="420" x="27" y="184.4189">shortestPathSea(List&lt;FreightNetworkVertex&gt; stops, List&lt;FreightNetworkVertex&gt; path)</text><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company--><rect codeLine="18" fill="#FEFECE" filter="url(#fbph8fk24ayeg)" height="61.8359" id="Company" style="stroke:#A80036;stroke-width:1.5;" width="123" x="488.5" y="129"/><ellipse cx="520.6" cy="145" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M522.6,141.5 Q522.8031,141 523.0375,140.75 Q523.2719,140.5 523.5375,140.5 Q524.0063,140.5 524.3031,140.7813 Q524.6,141.0625 524.6,141.7188 L524.6,143.2813 Q524.6,143.9375 524.3188,144.2188 Q524.0375,144.5 523.6,144.5 Q523.2094,144.5 522.9594,144.3281 Q522.7094,144.1563 522.6,143.7031 Q522.5531,143.3906 522.3813,143.2188 Q522.0688,142.8906 521.5063,142.7031 Q520.9438,142.5 520.3813,142.5 Q519.6781,142.5 519.0844,142.7813 Q518.5063,143.0625 518.0531,143.6875 Q517.6,144.3125 517.6,145.1719 L517.6,146.0938 Q517.6,147.125 518.4438,147.8125 Q519.2875,148.5 520.7875,148.5 Q521.6781,148.5 522.3031,148.2969 Q522.6625,148.1875 523.0688,147.8281 Q523.3344,147.625 523.475,147.5625 Q523.6156,147.5 523.7875,147.5 Q524.1156,147.5 524.35,147.7656 Q524.6,148.0156 524.6,148.375 Q524.6,148.7188 524.2563,149.125 Q523.7563,149.7188 522.9594,150.0469 Q521.9125,150.5 520.6313,150.5 Q519.1313,150.5 517.9281,149.9063 Q516.9594,149.4375 516.2719,148.4219 Q515.6,147.4063 515.6,146.2031 L515.6,145.1094 Q515.6,143.8594 516.1938,142.7656 Q516.8031,141.6719 517.85,141.0938 Q518.9125,140.5 520.1,140.5 Q520.8188,140.5 521.4438,140.75 Q522.0688,141 522.6,141.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="538.4" y="149.9102">Company</text><line style="stroke:#A80036;stroke-width:1.5;" x1="489.5" x2="610.5" y1="161" y2="161"/><line style="stroke:#A80036;stroke-width:1.5;" x1="489.5" x2="610.5" y1="169" y2="169"/><ellipse cx="499.5" cy="180" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="508.5" y="184.4189">getFreightNetwork()</text><!--MD5=[074ba6ad47b234bd73d65012320c1634]
+class FreightNetwork--><rect codeLine="22" fill="#FEFECE" filter="url(#fbph8fk24ayeg)" height="61.8359" id="FreightNetwork" style="stroke:#A80036;stroke-width:1.5;" width="263" x="418.5" y="7"/><ellipse cx="504.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M506.25,19.5 Q506.4531,19 506.6875,18.75 Q506.9219,18.5 507.1875,18.5 Q507.6563,18.5 507.9531,18.7813 Q508.25,19.0625 508.25,19.7188 L508.25,21.2813 Q508.25,21.9375 507.9688,22.2188 Q507.6875,22.5 507.25,22.5 Q506.8594,22.5 506.6094,22.3281 Q506.3594,22.1563 506.25,21.7031 Q506.2031,21.3906 506.0313,21.2188 Q505.7188,20.8906 505.1563,20.7031 Q504.5938,20.5 504.0313,20.5 Q503.3281,20.5 502.7344,20.7813 Q502.1563,21.0625 501.7031,21.6875 Q501.25,22.3125 501.25,23.1719 L501.25,24.0938 Q501.25,25.125 502.0938,25.8125 Q502.9375,26.5 504.4375,26.5 Q505.3281,26.5 505.9531,26.2969 Q506.3125,26.1875 506.7188,25.8281 Q506.9844,25.625 507.125,25.5625 Q507.2656,25.5 507.4375,25.5 Q507.7656,25.5 508,25.7656 Q508.25,26.0156 508.25,26.375 Q508.25,26.7188 507.9063,27.125 Q507.4063,27.7188 506.6094,28.0469 Q505.5625,28.5 504.2813,28.5 Q502.7813,28.5 501.5781,27.9063 Q500.6094,27.4375 499.9219,26.4219 Q499.25,25.4063 499.25,24.2031 L499.25,23.1094 Q499.25,21.8594 499.8438,20.7656 Q500.4531,19.6719 501.5,19.0938 Q502.5625,18.5 503.75,18.5 Q504.4688,18.5 505.0938,18.75 Q505.7188,19 506.25,19.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="83" x="524.75" y="27.9102">FreightNetwork</text><line style="stroke:#A80036;stroke-width:1.5;" x1="419.5" x2="680.5" y1="39" y2="39"/><line style="stroke:#A80036;stroke-width:1.5;" x1="419.5" x2="680.5" y1="47" y2="47"/><ellipse cx="429.5" cy="58" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="237" x="438.5" y="62.4189">FreightNetwork(List&lt;Object&gt; vertices, Long[][] m)</text><!--MD5=[48e6c52ecb02960d513f64ae573b24bd]
+reverse link CriticalPortsController to CriticalPortsUI--><path codeLine="28" d="M390,359.42 C390,377.98 390,397.93 390,413.79 " fill="none" id="CriticalPortsController-backto-CriticalPortsUI" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="390,354.22,386,363.22,390,359.22,394,363.22,390,354.22" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3220793ba3c8bdef660d086c17848e92]
+reverse link Company to CriticalPortsController--><path codeLine="29" d="M511.89,194.46 C492.67,211.34 468.95,232.17 447.56,250.96 " fill="none" id="Company-backto-CriticalPortsController" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="515.68,191.14,506.2783,194.0739,511.9233,194.4396,511.5576,200.0846,515.68,191.14" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c01f124a9e0565f15cfb893a90f50051]
+reverse link ShortestPathController to CriticalPortsController--><path codeLine="30" d="M268.11,194.46 C287.33,211.34 311.05,232.17 332.44,250.96 " fill="none" id="ShortestPathController-backto-CriticalPortsController" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="264.32,191.14,268.4424,200.0846,268.0767,194.4396,273.7217,194.0739,264.32,191.14" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[71d798667e864a43fd2f4e21e212e241]
+reverse link FreightNetwork to Company--><path codeLine="31" d="M550,74.52 C550,91.75 550,112.24 550,128.73 " fill="none" id="FreightNetwork-backto-Company" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="550,69.28,546,78.28,550,74.28,554,78.28,550,69.28" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ab8225738bdf30a40c8c979a879d9c81]
+@startuml
+'https://plantuml.com/class-diagram
+
+class CriticalPortsUI {
+- controller
+}
+
+class CriticalPortsController {
+- ctrl
++ CriticalPortsController(ShortestPathController ctrl)
++ getCriticalPorts(FreightNetwork graph, int n)
++countVertices(List<FreightNetworkVertex> path, Map<Port, Integer> vertices)
+}
+
+class ShortestPathController {
++shortestPathSea(List<FreightNetworkVertex> stops, List<FreightNetworkVertex> path)
+}
+
+class Company {
++ getFreightNetwork()
+}
+
+class FreightNetwork{
++ FreightNetwork(List<Object> vertices, Long[][] m)
+}
+
+
+
+CriticalPortsController <.. CriticalPortsUI
+Company <.. CriticalPortsController
+ShortestPathController <.. CriticalPortsController
+FreightNetwork <.. Company
+
+
+
+@enduml
+
+@startuml
+
+class CriticalPortsUI {
+- controller
+}
+
+class CriticalPortsController {
+- ctrl
++ CriticalPortsController(ShortestPathController ctrl)
++ getCriticalPorts(FreightNetwork graph, int n)
++countVertices(List<FreightNetworkVertex> path, Map<Port, Integer> vertices)
+}
+
+class ShortestPathController {
++shortestPathSea(List<FreightNetworkVertex> stops, List<FreightNetworkVertex> path)
+}
+
+class Company {
++ getFreightNetwork()
+}
+
+class FreightNetwork{
++ FreightNetwork(List<Object> vertices, Long[][] m)
+}
+
+
+
+CriticalPortsController <.. CriticalPortsUI
+Company <.. CriticalPortsController
+ShortestPathController <.. CriticalPortsController
+FreightNetwork <.. Company
+
+
+
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 14:26:11 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

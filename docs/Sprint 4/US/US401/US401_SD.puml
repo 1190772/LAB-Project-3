@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Traffic Manager" as TM
+
+participant ":CriticalPortsUI" as UI
+participant ":CriticalPortsController" as CTRL
+participant ":FreightNetwork" as NET
+participant ":ShortestPathController" as SPC
+
+
+activate TM
+TM -> UI : Asks to know the shortest path between two places
+
+activate UI
+UI --> TM : asks for the origin and destination
+deactivate UI
+
+TM -> UI : types requested data
+
+activate UI
+UI -> CTRL : getCriticalPorts(App.getInstance().\ngetCompany().getFreightNetwork(), n)
+
+activate CTRL
+CTRL -> NET : getFreightNetwork()
+
+activate NET
+deactivate NET
+
+CTRL -> SPC : ctrl.shortestPathSea(listaP, path)
+activate SPC
+deactivate SPC
+
+CTRL -> CTRL : countVertices(List<FreightNetworkVertex> path, \nMap<Port, Integer> vertices)
+
+deactivate CTRL
+
+UI -> TM : Shows the top N ports with greater centrality
+
+deactivate UI
+@enduml

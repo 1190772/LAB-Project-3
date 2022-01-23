@@ -1,0 +1,37 @@
+
+@startuml
+'https://plantuml.com/class-diagram
+
+class CriticalPortsUI {
+- controller
+}
+
+class CriticalPortsController {
+- ctrl
++ CriticalPortsController(ShortestPathController ctrl)
++ getCriticalPorts(FreightNetwork graph, int n)
++countVertices(List<FreightNetworkVertex> path, Map<Port, Integer> vertices)
+}
+
+class ShortestPathController {
++shortestPathSea(List<FreightNetworkVertex> stops, List<FreightNetworkVertex> path)
+}
+
+class Company {
++ getFreightNetwork()
+}
+
+class FreightNetwork{
++ FreightNetwork(List<Object> vertices, Long[][] m)
+}
+
+
+
+CriticalPortsController <.. CriticalPortsUI
+Company <.. CriticalPortsController
+ShortestPathController <.. CriticalPortsController
+FreightNetwork <.. Company
+
+
+
+@enduml
